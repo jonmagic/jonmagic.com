@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include "head.njk" %}
+</head>
+<body>
+  <div class="page">
+    <main class="content">
+      {{ content | safe }}
+    </main>
+    {% include "avatars.njk" %}
+  </div>
+  <div class="mobile-avatar" id="mobileAvatar"></div>
+  <div class="page">
+    {% include "footer.njk" %}
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>
