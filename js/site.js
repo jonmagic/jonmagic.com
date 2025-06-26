@@ -7,7 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Shuffle the avatars in the avatar column
   const column = document.getElementById('avatarColumn');
-  if (!column) return;
+  const mobile = document.getElementById('mobileAvatar');
+  console.log({ mobile })
+  if (!column || !mobile) return;
   const avatars = Array.from(column.children);
   const shuffled = avatars.sort(() => Math.random() - 0.5);
   shuffled.forEach(el => column.appendChild(el));
@@ -19,4 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
   avatars.forEach((avatar, index) => {
     avatar.style.display = index < maxVisible ? 'block' : 'none';
   });
+  const single = shuffled[0].cloneNode(true);
+  single.style.display = 'block';
+  mobile.appendChild(single);
 });

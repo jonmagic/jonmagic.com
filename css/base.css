@@ -144,13 +144,38 @@ footer {
   transform: scale(1.05);
 }
 
+.mobile-avatar {
+  display: none;
+  justify-content: center;
+  margin: 2rem auto;
+}
+
+.mobile-avatar img {
+  width: 96px;
+  height: 96px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 /* Responsive: fallback to single column */
 @media (max-width: 768px) {
-  .page {
-    flex-direction: column;
-  }
-
   .avatar-column {
     display: none;
+  }
+
+  .mobile-avatar {
+    display: flex;
+  }
+
+  .page {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content {
+    width: 100%;
   }
 }
