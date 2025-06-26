@@ -5,6 +5,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.on('afterBuild', () => {
     fs.writeFileSync('_site/.nojekyll', '');
+    fs.writeFileSync('_site/CNAME', 'jonmagic.com');
   });
   return {
     dir: {
