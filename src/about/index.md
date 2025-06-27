@@ -1,6 +1,6 @@
 ---
 layout: layout.njk
-title: jonmagic.com
+title: About Jon Magic
 ---
 
 # Hi, my name is Jon and I'm a husband, father, software developer, and investor.
@@ -15,6 +15,8 @@ I am open to new consulting opportunities and advisory roles so reach out if you
 - scaling applications to serve hundreds of thousands or millions of customers
 
 Thank you for your time.
+
+## Contact
 
 - [Send me an email](mailto:jonmagic@gmail.com)
 - [Check out my code on GitHub](https://github.com/jonmagic)

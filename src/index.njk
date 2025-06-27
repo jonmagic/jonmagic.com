@@ -1,0 +1,27 @@
+---
+layout: layout.njk
+title: jonmagic.com
+---
+
+<div class="home-layout">
+  <main class="main-content">
+    {# Show the most recent post in full #}
+    {% set latest = collections.posts | reverse | first %}
+    {% if latest %}
+      <article>
+        <h2><a href="{{ latest.url }}">{{ latest.data.title }}</a></h2>
+        {{ latest.templateContent | safe }}
+      </article>
+    {% else %}
+      <p>No posts yet.</p>
+    {% endif %}
+  </main>
+  <aside class="sidebar">
+    <h3>Recent Posts</h3>
+    <ul>
+      {% for post in collections.posts | reverse | slice(0, 5) %}
+        <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </aside>
+</div>
