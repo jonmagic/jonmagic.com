@@ -1,3 +1,87 @@
+/* Header redesign */
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem auto 2rem auto;
+  max-width: 1024px;
+  padding: 0 var(--spacing);
+}
+
+.avatar-placeholder {
+  width: 128px;
+  height: 128px;
+  background: #eee;
+  border-radius: 1rem;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12), 0 1.5px 4px rgba(0,0,0,0.10);
+}
+
+.site-title-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.site-title {
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem 0;
+  font-family: var(--font-mono);
+}
+
+.site-subtitle {
+  font-size: 1.25rem;
+  color: var(--muted);
+}
+
+/* Main layout with sidebar */
+.layout-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1024px;
+  margin: 2rem auto;
+  padding: 0 var(--spacing);
+}
+
+.sidebar {
+  width: 256px;
+  flex-shrink: 0;
+  background: var(--code-bg);
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.sidebar h2 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  color: var(--muted);
+  font-family: var(--font-mono);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.sidebar li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
 /* Normalize and base style layering */
 :root {
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -161,21 +245,16 @@ footer {
 }
 
 /* Responsive: fallback to single column */
-@media (max-width: 768px) {
-  .avatar-column {
-    display: none;
-  }
-
-  .mobile-avatar {
-    display: flex;
-  }
-
-  .page {
+@media (max-width: 900px) {
+  .site-header, .layout-main {
     flex-direction: column;
     align-items: center;
   }
-
-  .content {
+  .sidebar {
     width: 100%;
+    margin-top: 2rem;
+  }
+  .avatar-placeholder {
+    margin-bottom: 1rem;
   }
 }

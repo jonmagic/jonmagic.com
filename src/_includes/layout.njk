@@ -4,13 +4,19 @@
   {% include "head.njk" %}
 </head>
 <body>
-  <div class="page">
+  <header class="site-header">
+    <div class="avatar-placeholder" id="headerAvatar"></div>
+    <div class="site-title-group">
+      <h1 class="site-title">jonmagic.com</h1>
+      <div class="site-subtitle">You are a ...</div>
+    </div>
+  </header>
+  <div class="page layout-main">
     <main class="content">
       {{ content | safe }}
     </main>
-    {% include "avatars.njk" %}
+    {% include "sidebar.njk" %}
   </div>
-  <div class="mobile-avatar" id="mobileAvatar"></div>
   <div class="page">
     {% include "footer.njk" %}
   </div>

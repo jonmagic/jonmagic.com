@@ -1,0 +1,24 @@
+<aside class="sidebar">
+  <section class="nav">
+    <h2>Navigation</h2>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about/">About</a></li>
+  </section>
+  <section class="recent-posts">
+    <h2>Recent Posts</h2>
+    <ul>
+      {%- set recentPosts = collections.posts -%}
+      {%- for post in recentPosts -%}
+        <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+      {%- endfor -%}
+    </ul>
+  </section>
+  <section class="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li><a href="https://github.com/jonmagic">GitHub</a></li>
+      <!-- Add more project links here -->
+    </ul>
+  </section>
+</aside>

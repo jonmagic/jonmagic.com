@@ -1,9 +1,19 @@
-{% extends "layout.njk" %}
-
-{% block content %}
-  <article class="post">
-    <h1>{{ title }}</h1>
-    <p class="post-date">{{ date | date("MMMM d, yyyy") }}</p>
-    {{ content | safe }}
-  </article>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include "head.njk" %}
+</head>
+<body>
+  <div class="page layout-main">
+    <main class="content">
+      <h1>{{ title }}</h1>
+      {{ content | safe }}
+    </main>
+    {% include "sidebar.njk" %}
+  </div>
+  <div class="page">
+    {% include "footer.njk" %}
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>

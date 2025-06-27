@@ -1,9 +1,7 @@
 ---
-layout: layout.njk
-title: About Jon Magic
+layout: post
+title: Hi, my name is Jon and I'm a husband, father, software developer, and investor.
 ---
-
-# Hi, my name is Jon and I'm a husband, father, software developer, and investor.
 
 I have over two decades of experience building businesses, products, and teams. I love to learn, iterate, and fail fast on the path to success. I strive to lead with a servant’s heart and improve the lives of those around me.
 
