@@ -47,7 +47,7 @@
   }
 
   .site-nav {
-    background: #161b22;
+    background: #272822 !important;
     border-bottom-color: #30363d;
   }
 
@@ -168,7 +168,7 @@ pre {
 }
 
 .site-nav {
-  background: var(--subtle-bg);
+  background: #f5f2f0;
   border-bottom: 1px solid var(--subtle-border);
   width: 100%;
   box-shadow: var(--shadow-small);
