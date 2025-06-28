@@ -2,6 +2,9 @@
 layout: layout
 title: Intention vs Perception
 date: 2014-11-23
+tags:
+  - post
+  - migrated
 ---
 
 It is interesting to study the gap between the intention of communication and the perception of communication in the context of leadership. “We’re going to do X going forward” can be interpreted as “You’re doing a crappy job at Y so we’re going to try X now” or “We decided that it is better to do X instead of Y because we had a meeting you weren’t invited to since we don’t really value your opinion” and the list of interpretations goes on.

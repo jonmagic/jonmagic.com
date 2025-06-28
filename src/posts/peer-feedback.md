@@ -2,6 +2,9 @@
 layout: layout
 title: Peer feedback
 date: 2023-04-25
+tags:
+  - post
+  - migrated
 ---
 
 It’s that time of year again and I’m asking for peer feedback and writing feedback for teammates and realized I’ve learned a few things about this process over the years that I think are worth sharing.

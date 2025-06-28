@@ -2,6 +2,8 @@
 layout: layout
 title: The Uncertain Future of Coding Careers and Why I'm Still Hopeful
 date: 2025-06-27
+tags:
+  - post
 ---
 
 A friend of mine, bright, driven, and relatively new to programming, asked me a heavy question the other day. “Did I make a mistake? Did I choose the right career?”
