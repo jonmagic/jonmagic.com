@@ -22,6 +22,11 @@
   font-size: 2.5rem;
 }
 
+.homepage .site-nav {
+  margin-top: 2rem;
+  border-top: 1px solid #f4f1ec;
+}
+
 /* Post date typing effect */
 .post-date-container {
   margin-top: -0.3rem;
@@ -82,58 +87,83 @@
   color: var(--muted);
 }
 
-/* Main layout with site navigation */
+/* Main layout with horizontal site navigation */
 .layout-main {
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
   max-width: 1024px;
-  margin: 0.75rem auto 0 auto;
+  margin: 0 auto;
   padding: 0 var(--spacing);
 }
 
 .site-nav {
-  width: 256px;
-  flex-shrink: 0;
-  background: var(--code-bg);
-  border-radius: 12px;
-  padding: 1.5rem 1rem 1rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  background: #e8e5e0;
+  border-bottom: 1px solid #d1cdc7;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-.site-nav h2 {
-  font-size: 1.1rem;
-  margin-top: 0;
-  margin-bottom: 0.25rem;
-  color: var(--muted);
-  font-family: var(--font-mono);
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0.75rem var(--spacing);
+  gap: 2rem;
 }
 
-.site-nav ul {
+.nav-links {
+  display: flex;
   list-style: none;
-  padding-left: 1.25rem;
-  margin: 0 0 1.5rem 0;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
 }
 
-.site-nav li {
-  margin-bottom: 0.2rem;
-  position: relative;
+.nav-links li {
+  margin: 0;
 }
 
-.site-nav li::before {
-  content: "•";
-  color: var(--muted);
-  opacity: 0.8;
-  position: absolute;
-  left: -1rem;
+.nav-links a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--text);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+  background: transparent;
 }
 
-.site-nav a {
-  color: var(--accent);
+.nav-links a:hover {
+  background: var(--accent);
+  color: #ffffff;
   text-decoration: none;
 }
-.site-nav a:hover {
-  text-decoration: underline;
+
+/* Social media icons styling */
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.social-links a {
+  display: inline-block;
+  padding: 0.25rem;
+  background: transparent;
+  border-radius: 4px;
+  transition: transform 0.15s ease;
+}
+
+.social-links a:hover {
+  transform: scale(1.1);
+}
+
+.social-links img {
+  width: 24px;
+  height: 24px;
+  display: block;
 }
 
 /* Normalize and base style layering */
@@ -141,11 +171,13 @@
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
 
-  --bg: #ffffff;
+  --bg: #fefcf9;
   --text: #111111;
   --accent: #0366d6;
   --muted: #666;
   --code-bg: #f6f8fa;
+  --card-bg: #ffffff;
+  --card-border: #ccc;
 
   --spacing: 1.25rem;
   --max-width: 700px;
@@ -158,6 +190,33 @@
     --accent: #58a6ff;
     --muted: #8b949e;
     --code-bg: #161b22;
+    --card-bg: #161b22;
+    --card-border: #30363d;
+  }
+
+  .site-nav {
+    background: #161b22;
+    border-bottom-color: #30363d;
+  }
+
+  /* Dark mode text overrides for project cards */
+  .project-name {
+    color: #f0f6fc !important;
+  }
+
+  .project-summary,
+  .project-summary p {
+    color: #c9d1d9 !important;
+  }
+
+  .project-card-link:hover .project-summary,
+  .project-card-link:hover .project-summary p {
+    color: #c9d1d9 !important;
+  }
+
+  /* Make GitHub icon visible in dark mode */
+  .social-links .github-icon {
+    filter: invert(1) brightness(0.8);
   }
 }
 
@@ -242,6 +301,8 @@ pre {
 .content {
   flex: 1;
   min-width: 0; /* prevents overflow */
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
 /* Footer prep */
@@ -325,10 +386,10 @@ footer {
 }
 
 .project-card {
-  border: 1px solid var(--muted);
+  border: 1px solid var(--card-border);
   border-radius: 8px;
   padding: 1.5rem;
-  background: var(--bg);
+  background: var(--card-bg);
   transition: all 0.2s ease;
   height: 100%;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -340,33 +401,28 @@ footer {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-@media (prefers-color-scheme: dark) {
-  .project-card {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  }
-
-  .project-card-link:hover .project-card {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  }
-}
-
 .project-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  position: relative;
   margin-bottom: 1rem;
 }
 
 .project-name {
   margin: 0;
   font-size: 1.25rem;
-  flex: 1;
   color: var(--text) !important;
+  line-height: 1.3;
+  padding-right: 96px; /* Prevent overlap with avatar */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .project-avatar {
-  flex-shrink: 0;
-  margin-left: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
 }
 
 .project-avatar img {
@@ -378,6 +434,15 @@ footer {
   font-size: 0.95rem;
   line-height: 1.5;
   color: var(--muted);
+  margin-top: 0;
+}
+
+.project-summary::before {
+  content: "";
+  width: 96px;
+  height: 80px;
+  float: right;
+  margin: 0 0 0.5rem 1rem;
 }
 
 .project-summary p {
@@ -415,28 +480,28 @@ footer {
   }
 
   .project-card-header {
-    flex-direction: column;
-    align-items: flex-start;
+    padding-right: 96px; /* Keep space for avatar on mobile too */
   }
 
   .project-avatar {
-    margin-left: 0;
-    margin-top: 1rem;
-    align-self: flex-end;
+    width: 64px;
+    height: 64px;
+  }
+
+  .project-avatar img {
+    width: 64px;
+    height: 64px;
   }
 }
 
 /* Responsive: fallback to single column */
 @media (max-width: 900px) {
-  .site-header, .layout-main {
+  .site-header {
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
   }
-  .site-nav {
-    width: 100%;
-    margin-top: 2rem;
-  }
+
   .avatar-placeholder {
     margin-bottom: 1rem;
   }
@@ -450,5 +515,32 @@ footer {
   .dos-typing-container {
     width: 100%;
     text-align: left;
+  }
+
+  /* Make navigation responsive */
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .social-links {
+    align-self: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .nav-links a {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
   }
 }
