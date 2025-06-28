@@ -1,10 +1,14 @@
 const fs = require("fs");
 const markdownIt = require('markdown-it');
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 let markdownItEmoji = require('markdown-it-emoji');
 if (markdownItEmoji.default) markdownItEmoji = markdownItEmoji.default;
 
 module.exports = function(eleventyConfig) {
+  // Add RSS plugin
+  eleventyConfig.addPlugin(pluginRss);
+
   // Enable emoji support in markdown for Eleventy 3.x
   const mdLib = markdownIt({
     html: true,
