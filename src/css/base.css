@@ -451,14 +451,21 @@ img.avatar {
 
 /* Typing Effect
    ========================================================================== */
+
 .dos-typing-container {
   font-family: var(--font-mono);
   font-size: 1.5rem;
-  color: var(--muted);
+  color: #690; /* Match Prism string color in light mode */
   letter-spacing: 0.02em;
   white-space: nowrap;
   overflow: hidden;
   width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  .dos-typing-container {
+    color: #a6e22e !important; /* Match Prism string color in dark mode */
+  }
 }
 
 .dos-cursor {
