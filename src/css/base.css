@@ -21,7 +21,7 @@
 
   --spacing: 1.25rem;
   --max-width: 700px;
-  --max-width-large: 1024px;
+  --max-width-large: 800px;
 
   --border-radius-small: 6px;
   --border-radius-medium: 8px;
@@ -492,7 +492,7 @@ img.avatar {
 }
 
 .homepage .site-nav {
-  margin-top: 2rem;
+  margin-top: 1.6rem;
   border-top: 1px solid var(--subtle-border);
 }
 
