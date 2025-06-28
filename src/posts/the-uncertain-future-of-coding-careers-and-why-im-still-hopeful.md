@@ -12,7 +12,7 @@ The question hung in the air. It wasn't born from a bad day or a frustrating bug
 
 I had to be honest. I hear them. Loud and clear.
 
-I’m no expert, and my perspective is limited to my own journey, nearly 30 years in the tech world, with about 15 of those as a full time software developer. I’ve seen a few cycles of boom and bust, but I’ll admit, this moment feels different. When I first got access to GitHub Copilot a few years ago, I had my own panic. I’m in my 40s. Was I becoming a fossil? How could I keep up?
+I’m no expert, and my perspective is limited to my own journey, roughly 28 years in the tech world, nearly 15 of those as a full time software developer. I’ve seen a few cycles of boom and bust, but I’ll admit, this moment feels different. When I first got access to GitHub Copilot a few years ago, I had my own panic. I’m in my 40s. Was I becoming a fossil? How could I keep up?
 
 That initial fear, however, eventually gave way to something else, a fire. It was a rallying cry to push myself, to embrace my love for learning, and to continuously grow. It reinforced a mindset I've tried to cultivate over the years, to constantly work to make my current role obsolete, because in doing so, I’m constantly working my way into my next one.
 
