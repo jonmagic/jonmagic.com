@@ -6,6 +6,11 @@
 <body>
   <div class="page layout-main">
     <main class="content">
+      {% if date %}
+      <div class="post-date-container">
+        <span id="post-date-typing" class="post-date-typing" data-date="{{ date.toISOString().split('T')[0] }}"></span>
+      </div>
+      {% endif %}
       <h1>{{ title }}</h1>
       {{ content | safe }}
     </main>
