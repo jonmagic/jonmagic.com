@@ -5,6 +5,68 @@ document.addEventListener('DOMContentLoaded', function() {
     yearSpan.textContent = new Date().getFullYear();
   }
 
+  // MS-DOS style typing effect with cycling phrases
+  var dosTyping = document.getElementById('dos-typing');
+  if (dosTyping) {
+    var phrases = [
+      'Summarize this transcript...',
+      'You are a coding assistant...',
+      'Describe the functionality of this code...',
+      'Fix the grammar in...',
+      'Give me an executive summary of this issue...',
+      'Extract a todo list from this conversation...',
+    ];
+    for (var i = phrases.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = phrases[i];
+      phrases[i] = phrases[j];
+      phrases[j] = temp;
+    }
+
+    var currentPhraseIndex = 0;
+    var currentCharIndex = 0;
+    var isTyping = true;
+
+    function typeChar() {
+      var currentPhrase = phrases[currentPhraseIndex];
+      var typingSpeed = 80 + Math.random() * 60; // human-like speed
+      var backspaceSpeed = 30 + Math.random() * 20; // faster backspacing
+
+      if (isTyping) {
+        // Typing phase
+        if (currentCharIndex <= currentPhrase.length) {
+          dosTyping.innerHTML = currentPhrase.slice(0, currentCharIndex) + '<span class="dos-cursor">█</span>';
+          currentCharIndex++;
+          setTimeout(typeChar, typingSpeed);
+        } else {
+          // Finished typing, pause for 2 seconds then start backspacing
+          setTimeout(() => {
+            isTyping = false;
+            typeChar();
+          }, 2000);
+        }
+      } else {
+        // Backspacing phase
+        if (currentCharIndex > 0) {
+          currentCharIndex--;
+          dosTyping.innerHTML = currentPhrase.slice(0, currentCharIndex) + '<span class="dos-cursor">█</span>';
+          setTimeout(typeChar, backspaceSpeed);
+        } else {
+          // Finished backspacing, pause for 1 second then move to next phrase
+          setTimeout(() => {
+            currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+            isTyping = true;
+            typeChar();
+          }, 1000);
+        }
+      }
+    }
+
+    // Start with just the blinking cursor
+    dosTyping.innerHTML = '<span class="dos-cursor">█</span>';
+    setTimeout(typeChar, 600);
+  }
+
   // Load avatars.json and set a random avatar in the header
   const headerAvatar = document.getElementById('headerAvatar');
   if (headerAvatar) {

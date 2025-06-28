@@ -1,3 +1,19 @@
+/* MS-DOS style typing effect */
+.dos-typing-container {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font-size: 1.5rem;
+  color: #888;
+  letter-spacing: 0.02em;
+}
+.dos-cursor {
+  display: inline-block;
+  width: 1ch;
+  animation: dos-blink 0.8s steps(1) infinite;
+}
+@keyframes dos-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
 /* Header redesign */
 .site-header {
   display: flex;
@@ -25,6 +41,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
 }
 
 .site-title {
