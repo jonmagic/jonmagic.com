@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>jonmagic.com</title>
+  <subtitle>My thoughts on software development, team building, and life.</subtitle>
+  <link href="https://jonmagic.com/feed.xml" rel="self"/>
+  <link href="https://jonmagic.com"/>
+  <updated>2025-06-27T00:00:00Z</updated>
+  <id>https://jonmagic.com/</id>
+  <author>
+    <name>Jonathan Hoyt</name>
+    <email>jonmagic@gmail.com</email>
+  </author>
+  
+  <entry>
+    <title>The Uncertain Future of Coding Careers and Why I’m Still Hopeful</title>
+    <link href="https://jonmagic.com/posts/the-uncertain-future-of-coding-careers-and-why-im-still-hopeful/"/>
+    <updated>2025-06-27T00:00:00Z</updated>
+    <id>https://jonmagic.com/posts/the-uncertain-future-of-coding-careers-and-why-im-still-hopeful/</id>
+    <content type="html">&lt;p&gt;A friend of mine, bright, driven, and relatively new to programming, asked me a heavy question the other day. “Did I make a mistake? Did I choose the right career?”&lt;/p&gt;
+&lt;p&gt;The question hung in the air. It wasn&#39;t born from a bad day or a frustrating bug. It came from a much deeper place of anxiety, one that I suspect many in our industry are feeling right now. They saw recent waves of layoffs, they read the headlines about Artificial Intelligence, and they felt the ground shifting under their feet. The promise of a stable, in-demand career in tech, which seemed like a sure thing just a few years ago, now felt fragile.&lt;/p&gt;
+&lt;p&gt;“I’m so early in my career,” they said, “I worry if I’ll even have a job in a few years. It’s hard to stay motivated.”&lt;/p&gt;
+&lt;p&gt;I had to be honest. I hear them. Loud and clear.&lt;/p&gt;
+&lt;p&gt;I’m no expert, and my perspective is limited to my own journey, roughly 28 years in the tech world, nearly 15 of those as a full time software developer. I’ve seen a few cycles of boom and bust, but I’ll admit, this moment feels different. When I first got access to GitHub Copilot a few years ago, I had my own panic. I’m in my 40s. Was I becoming a fossil? How could I keep up?&lt;/p&gt;
+&lt;p&gt;That initial fear, however, eventually gave way to something else, a fire. It was a rallying cry to push myself, to embrace my love for learning, and to continuously grow. It reinforced a mindset I&#39;ve tried to cultivate over the years, to constantly work to make my current role obsolete, because in doing so, I’m constantly working my way into my next one.&lt;/p&gt;
+&lt;p&gt;This is the sober part of the conversation, the industry has pendulums. Companies hire like mad for whatever reason, and then they overcorrect with layoffs. It’s a stressful reality. Imposter syndrome, that nagging feeling of being a fraud, doesn&#39;t go away. I still feel it. But over time, I&#39;ve learned to reframe it. Instead of feeling overwhelmed by all the brilliant people around me, I now feel a sense of awe and a desire to learn from them. It’s fuel.&lt;/p&gt;
+&lt;p&gt;But what about the elephant in the room, AI? My friend’s biggest fear was that AI will simply do what’s expected of a more junior engineer, making their role disappear.&lt;/p&gt;
+&lt;p&gt;This is where my hope for the future comes in.&lt;/p&gt;
+&lt;p&gt;I don’t believe we’re heading for a world where artificial general intelligence (AGI) makes human ingenuity obsolete. Look closely at every major breakthrough, even those in AI-driven medicine. It’s still humans pointing the AI down the right paths. Human creativity is the spark.&lt;/p&gt;
+&lt;p&gt;What I see is a future where AI handles the grunt work, freeing us up to focus on the truly human part of creation: the next step, the novel idea, the new invention. If we don’t have to spend five years of our early careers doing repetitive tasks, that isn’t a threat, it’s a massive opportunity. It’s an acceleration of our potential.&lt;/p&gt;
+&lt;p&gt;This led me to a profound realization that now guides my work. We are all, collectively, building a giant, shared brain.&lt;/p&gt;
+&lt;p&gt;Every time you write a blog post, answer a question on a forum, or push a project to GitHub, you are contributing to this massive corpus of human knowledge. The next generation of AI models will ingest that information. Your solution, your idea, your unique way of explaining something, becomes part of the shared intelligence of our species. When someone else, somewhere else, asks a question that overlaps with something you shared, they’ll be able to build on your work.&lt;/p&gt;
+&lt;p&gt;We are not just leveling up ourselves when we write and share; we are leveling up all of humanity.&lt;/p&gt;
+&lt;p&gt;So, how do we thrive in this new world?&lt;/p&gt;
+&lt;p&gt;First, we must become masters of context. The effectiveness of AI hinges on the quality of the information we give it. I’ve started obsessively collecting my own context, transcripts, notes, ideas, with the goal of building a personal, searchable database that I can use to augment my own thinking and my interactions with AI.&lt;/p&gt;
+&lt;p&gt;Second, we must learn to be shepherds, not just button-pushers. For those of us who write code, this means getting exceptionally good at describing problems and guiding AI to generate solutions. For our colleagues in non-engineering roles, it means learning to see opportunities for automation and building the AI agents to handle them. We all need to adopt a mindset of invention.&lt;/p&gt;
+&lt;p&gt;Finally, we must guard against brain atrophy. We can’t let the tool do all the thinking. Use AI as an accelerator, a tireless research assistant, and a pair programmer, but never as a replacement for your own curiosity and ingenuity.&lt;/p&gt;
+&lt;p&gt;So, did my friend make a mistake choosing to be a programmer?&lt;/p&gt;
+&lt;p&gt;Absolutely not. The barrier to entry for creating things with software will get lower, but this doesn’t devalue the profession, it transforms it. The demand for people who can solve problems, think critically, and apply human ingenuity will be higher than ever.&lt;/p&gt;
+&lt;p&gt;The future of this career isn&#39;t about being replaced by a machine. It&#39;s about being amplified by one. Our challenge, and our great opportunity, is to learn how to contribute to that giant, shared brain and use its power to build things we can barely even imagine today.&lt;/p&gt;
+&lt;h2&gt;Footnotes&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Junior engineers are still essential (&lt;a href=&quot;https://www.businessinsider.com/github-ceo-hiring-junior-engineers-interns-important-2025-6&quot;&gt;businessinsider.com&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Copilot boosts satisfaction and productivity (&lt;a href=&quot;https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-in-the-enterprise-with-accenture/&quot;&gt;github.blog&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Copilot makes devs ~55% faster (&lt;a href=&quot;https://arxiv.org/abs/2302.06590&quot;&gt;arxiv.org&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Copilot improves speed, solution quality (&lt;a href=&quot;https://arxiv.org/abs/2506.10051&quot;&gt;arxiv.org&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Copilot training data includes public GitHub repos (&lt;a href=&quot;https://linearb.io/blog/is-github-copilot-worth-it&quot;&gt;linearb.io&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Large language models trained on Stack Overflow, GitHub, Wikipedia (&lt;a href=&quot;https://arxiv.org/abs/2303.08733&quot;&gt;arxiv.org&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Layoffs in 2023 hit 262,735 (&lt;a href=&quot;https://techcrunch.com/2024/05/01/a-comprehensive-archive-of-2023-tech-layoffs/&quot;&gt;techcrunch.com&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Tech layoffs in 2024 (&lt;a href=&quot;https://www.fastcompany.com/91358076/tech-layoffs-list-june-2025-microsoft-google-disney-zoominfo&quot;&gt;fastcompany.com&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Over 62,000 layoffs already in early 2025 (&lt;a href=&quot;https://www.nerdwallet.com/article/finance/tech-layoffs&quot;&gt;nerdwallet&lt;/a&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Feedback&lt;/h2&gt;
+&lt;p&gt;Feedback is welcome: &lt;a href=&quot;https://github.com/jonmagic/jonmagic.com/discussions/2&quot;&gt;discussions/2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Thank you for your time 🙏&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Peer feedback</title>
+    <link href="https://jonmagic.com/posts/peer-feedback/"/>
+    <updated>2023-04-25T00:00:00Z</updated>
+    <id>https://jonmagic.com/posts/peer-feedback/</id>
+    <content type="html">&lt;p&gt;It’s that time of year again and I’m asking for peer feedback and writing feedback for teammates and realized I’ve learned a few things about this process over the years that I think are worth sharing.&lt;/p&gt;
+&lt;h2&gt;Asking for peer feedback&lt;/h2&gt;
+&lt;p&gt;A close teammate and friend &lt;strong&gt;@kmcq&lt;/strong&gt; gave this piece of advice recently and it really stuck and has made this review cycle at work much more straightforward and enjoyable:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;One thing that I’ve found helps me write better peer reviews more efficiently for folks is for the requester to mention something that they’d like me to highlight: a project, quality, or whatever that I can speak to that adds evidence to what they’ll be writing themselves. This helps focus things and saves a lot of time.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I took that idea and ran with it and when I started asking my peers for feedback I included links to things I wrote or code I shipped that they could reference.&lt;/p&gt;
+&lt;p&gt;This greatly reduces the burden on the people you are asking but at the same time I don’t want to limit what they include in their feedback, so my requests went something like this:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Would you be willing to provide me peer feedback? The feedback form has pre-defined questions but here are some potential areas from our IC expectations that I would appreciate feedback on and links to work related to those areas that I completed during this review cycle:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Leadership and Communication&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Provides substantial technical leadership to help others learn and grow
+&lt;ul&gt;
+&lt;li&gt;example 1&lt;/li&gt;
+&lt;li&gt;example 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Technical Contributions&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Demonstrates deep knowledge of data – knows what data is needed, how to find new or missing data, connects disparate or ambiguous data
+&lt;ul&gt;
+&lt;li&gt;example 1&lt;/li&gt;
+&lt;li&gt;example 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Typically when I provide feedback I focus it on just one expectation or project so you could just pick one of those examples above that you feel comfortable speaking to or choose something else entirely. Critical but constructive feedback is welcome and desired. If there is something I can be doing better for you or the team please don’t hold back.&lt;/p&gt;
+&lt;p&gt;I would of course be happy to give you peer feedback if I can be of service.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Writing peer feedback&lt;/h2&gt;
+&lt;p&gt;I’ve been writing peer feedback two to four times a year for up to a dozen individuals for the majority of my 11 years at GitHub. Here are a few guidelines I use today that I’ve learned over the years.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;When someone asks you for peer feedback, ask them to apply the advice above! It’s a lot easier and faster to write feedback when the range of possibilities has already been narrowed down.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Address the feedback to them and not some third party like their manager.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Instead of:
+“I appreciate how Rachel gathers requirements from stakeholders and delivers high impact results.”&lt;/li&gt;
+&lt;li&gt;Prefer:
+“&lt;strong&gt;Rachel&lt;/strong&gt;, I appreciate how you gather requirements from stakeholders and deliver high impact results.”
+This feedback is for them—not their manager.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;There should be no surprises when giving constructive feedback during a review cycle. I like to reinforce feedback I’ve already given during the cycle, and if possible, provide examples of how I’ve seen them improve—and encourage more of that behavior.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Intention vs Perception</title>
+    <link href="https://jonmagic.com/posts/intention-vs-perception/"/>
+    <updated>2014-11-23T00:00:00Z</updated>
+    <id>https://jonmagic.com/posts/intention-vs-perception/</id>
+    <content type="html">&lt;p&gt;It is interesting to study the gap between the intention of communication and the perception of communication in the context of leadership. “We’re going to do X going forward” can be interpreted as “You’re doing a crappy job at Y so we’re going to try X now” or “We decided that it is better to do X instead of Y because we had a meeting you weren’t invited to since we don’t really value your opinion” and the list of interpretations goes on.&lt;/p&gt;
+&lt;p&gt;In my experience perception rarely matches intention, so figuring out how to change your message to get across what you actually intended is a fun challenge.&lt;/p&gt;
+&lt;p&gt;There are probably many ways to do it successfully, but I only have experience with a few so I’ll share those (YMMV).&lt;/p&gt;
+&lt;h3&gt;Earn the trust of those impacted&lt;/h3&gt;
+&lt;p&gt;Earning trust takes time. Time spent learning about someone, how to communicate with them, what they are passionate about, understanding their fears.&lt;/p&gt;
+&lt;p&gt;I like to take people out to lunch, video chat, pair program on a code kata, or help with a problem they are having.&lt;/p&gt;
+&lt;p&gt;This is the first opportunity to be a servant leader I think. Serve the people you lead and, more likely than not, you will gain their respect and trust.&lt;/p&gt;
+&lt;h3&gt;Give ownership&lt;/h3&gt;
+&lt;p&gt;When someone is going to change the way I work, what I’m working on, or who I’m working with, the psychological toll of that change can be greatly reduced if I feel like I have control over my own destiny.&lt;/p&gt;
+&lt;p&gt;I look forward to working with leaders that engage me and get me involved in the decision-making process. They ask things like “What do you think about doing X instead of Y; what would be the benefits and what would be the drawbacks?”&lt;/p&gt;
+&lt;p&gt;Asking for, listening, and reacting to my feedback gives me ownership of an idea, even if it was not my own. Reacting is not necessarily implementing my feedback, but this process of involvement changes the way the idea was communicated and perceived.&lt;/p&gt;
+&lt;h3&gt;Avoid surprises&lt;/h3&gt;
+&lt;p&gt;There is a bonus to talking one-on-one with everyone on a team about an idea before announcing it at a meeting or in an email. You avoid surprises. Turns out not many people enjoy surprises, unless it’s a surprise party.&lt;/p&gt;
+&lt;p&gt;Having an opportunity to hear and discuss an idea before it is executed gives me time to get comfortable with it. If you have gained my trust then I also feel like I have time to provide feedback before the idea becomes reality.&lt;/p&gt;
+</content>
+  </entry>
+</feed>
