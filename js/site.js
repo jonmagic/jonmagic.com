@@ -135,10 +135,8 @@ document.addEventListener('DOMContentLoaded', function() {
           if (currentCharIndex <= dateText.length) {
             setTimeout(typeDate, typingSpeed);
           } else {
-            // Finished typing, remove cursor after a short pause
-            setTimeout(() => {
-              postDateTyping.innerHTML = dateText;
-            }, 1000);
+            // Finished typing, keep cursor blinking.
+            postDateTyping.innerHTML = dateText + '<span class="post-date-cursor">█</span>';
           }
         }
       }

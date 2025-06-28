@@ -1,172 +1,9 @@
-/* MS-DOS style typing effect */
-.dos-typing-container {
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-  font-size: 1.5rem;
-  color: #888;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 100%;
-}
-.dos-cursor {
-  display: inline-block;
-  width: 1ch;
-  animation: dos-blink 0.8s steps(1) infinite;
-}
-@keyframes dos-blink {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
-}
+/* ==========================================================================
+   1. Globals and Base Styles
+   ========================================================================== */
 
-.homepage-title {
-  font-size: 2.5rem;
-}
-
-.homepage .site-nav {
-  margin-top: 2rem;
-  border-top: 1px solid #f4f1ec;
-}
-
-/* Post date typing effect */
-.post-date-container {
-  margin-top: -0.3rem;
-}
-.post-date-typing {
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-  font-size: 1rem;
-  color: var(--muted);
-  opacity: 0.8;
-  letter-spacing: 0.02em;
-}
-.post-date-cursor {
-  display: inline-block;
-  width: 1ch;
-  animation: dos-blink 0.8s steps(1) infinite;
-}
-
-/* Header redesign */
-.site-header {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  margin: 1.5rem auto 0rem auto;
-  max-width: 1024px;
-  padding: 0 var(--spacing);
-}
-
-.avatar-placeholder {
-  width: 128px;
-  height: 128px;
-  background: #eee;
-  border-radius: 1rem;
-  overflow: hidden;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12), 0 1.5px 4px rgba(0,0,0,0.10);
-}
-
-.site-title-group {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  flex: 1;
-  min-width: 0;
-}
-
-.site-title {
-  margin: 0 0 0.5rem 0;
-  font-family: var(--font-mono);
-  line-height: 1.3;
-}
-
-.site-subtitle {
-  font-size: 1.25rem;
-  color: var(--muted);
-}
-
-/* Main layout with horizontal site navigation */
-.layout-main {
-  max-width: 1024px;
-  margin: 0 auto;
-  padding: 0 var(--spacing);
-}
-
-.site-nav {
-  background: #e8e5e0;
-  border-bottom: 1px solid #d1cdc7;
-  width: 100%;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.nav-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1024px;
-  margin: 0 auto;
-  padding: 0.75rem var(--spacing);
-  gap: 2rem;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 2rem;
-}
-
-.nav-links li {
-  margin: 0;
-}
-
-.nav-links a {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: var(--text);
-  text-decoration: none;
-  font-family: var(--font-mono);
-  font-size: 0.95rem;
-  border-radius: 6px;
-  transition: all 0.15s ease;
-  background: transparent;
-}
-
-.nav-links a:hover {
-  background: var(--accent);
-  color: #ffffff;
-  text-decoration: none;
-}
-
-/* Social media icons styling */
-.social-links {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.social-links a {
-  display: inline-block;
-  padding: 0.25rem;
-  background: transparent;
-  border-radius: 4px;
-  transition: transform 0.15s ease;
-}
-
-.social-links a:hover {
-  transform: scale(1.1);
-}
-
-.social-links img {
-  width: 24px;
-  height: 24px;
-  display: block;
-}
-
-/* Normalize and base style layering */
+/* Variables
+   ========================================================================== */
 :root {
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
@@ -178,9 +15,21 @@
   --code-bg: #f6f8fa;
   --card-bg: #ffffff;
   --card-border: #ccc;
+  --subtle-bg: #e8e5e0;
+  --subtle-border: #d1cdc7;
+  --accent-text: #ffffff;
 
   --spacing: 1.25rem;
   --max-width: 700px;
+  --max-width-large: 800px;
+
+  --border-radius-small: 6px;
+  --border-radius-medium: 8px;
+  --border-radius-large: 1rem;
+
+  --shadow-small: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-medium: 0 2px 8px rgba(0,0,0,0.12), 0 1.5px 4px rgba(0,0,0,0.10);
+  --shadow-large: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -192,6 +41,9 @@
     --code-bg: #161b22;
     --card-bg: #161b22;
     --card-border: #30363d;
+    --subtle-bg: #161b22;
+    --subtle-border: #30363d;
+    --accent-text: #0d1117;
   }
 
   .site-nav {
@@ -220,6 +72,8 @@
   }
 }
 
+/* Reset and Body
+   ========================================================================== */
 *,
 *::before,
 *::after {
@@ -236,6 +90,8 @@ html, body {
   line-height: 1.6;
 }
 
+/* Base Typography
+   ========================================================================== */
 h1, h2, h3 {
   margin-top: var(--spacing);
   font-family: var(--font-mono);
@@ -257,6 +113,138 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Code Blocks
+   ========================================================================== */
+code, pre {
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+/* ==========================================================================
+   2. Main Layout Structure
+   ========================================================================== */
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 1.5rem auto 0rem auto;
+  max-width: var(--max-width-large);
+  padding: 0 var(--spacing);
+}
+
+.site-title-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1;
+  min-width: 0;
+}
+
+.site-title {
+  margin: 0 0 0.5rem 0;
+  font-family: var(--font-mono);
+  line-height: 1.3;
+}
+
+.site-subtitle {
+  font-size: 1.25rem;
+  color: var(--muted);
+}
+
+.layout-main {
+  max-width: var(--max-width-large);
+  margin: 0 auto;
+  padding: 0 var(--spacing);
+}
+
+.site-nav {
+  background: var(--subtle-bg);
+  border-bottom: 1px solid var(--subtle-border);
+  width: 100%;
+  box-shadow: var(--shadow-small);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width-large);
+  margin: 0 auto;
+  padding: 0.75rem var(--spacing);
+  gap: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--text);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  border-radius: var(--border-radius-small);
+  transition: all 0.15s ease;
+  background: transparent;
+}
+
+.nav-links a:hover {
+  background: var(--accent);
+  color: var(--accent-text);
+  text-decoration: none;
+}
+
+.page {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: var(--max-width-large);
+  margin: 1.5rem auto;
+  padding: 0 var(--spacing);
+}
+
+.content {
+  flex: 1;
+  min-width: 0; /* prevents overflow */
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+footer {
+  flex: 1;
+  font-size: 0.9em;
+  color: var(--muted);
+  border-top: 1px solid var(--muted);
+  padding-top: 1rem;
+  margin-top: 2rem;
+}
+
+/* ==========================================================================
+   3. Component Styles
+   ========================================================================== */
+
+/* Avatars
+   ========================================================================== */
 img.avatar {
   width: 96px;
   height: 96px;
@@ -273,49 +261,19 @@ img.avatar {
   margin-bottom: var(--spacing);
 }
 
-/* Code blocks */
-code, pre {
-  font-family: var(--font-mono);
-  font-size: 0.95em;
-  background-color: var(--code-bg);
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
-}
-
-pre {
-  padding: 1rem;
-  overflow-x: auto;
-  white-space: pre-wrap;
-}
-
-/* Page layout */
-.page {
+.avatar-placeholder {
+  width: 128px;
+  height: 128px;
+  background: var(--subtle-bg);
+  border-radius: var(--border-radius-large);
+  overflow: hidden;
+  flex-shrink: 0;
   display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-  max-width: 1024px;
-  margin: 1.5rem auto;
-  padding: 0 var(--spacing);
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-medium);
 }
 
-.content {
-  flex: 1;
-  min-width: 0; /* prevents overflow */
-  max-width: 1024px;
-  margin: 0 auto;
-}
-
-/* Footer prep */
-footer {
-  flex: 1;
-  font-size: 0.9em;
-  color: var(--muted);
-  border-top: 1px solid var(--muted);
-  padding-top: 1rem;
-  margin-top: 2rem;
-}
-
-/* avatar column */
 .avatar-column {
   width: 96px;
   flex-shrink: 0;
@@ -326,7 +284,6 @@ footer {
   top: 2rem;
 }
 
-/* Avatar image style */
 .avatar-frame {
   width: 96px;
   height: 96px;
@@ -359,7 +316,8 @@ footer {
     0 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-/* Projects grid and card styling */
+/* Projects Grid
+   ========================================================================== */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -387,7 +345,7 @@ footer {
 
 .project-card {
   border: 1px solid var(--card-border);
-  border-radius: 8px;
+  border-radius: var(--border-radius-medium);
   padding: 1.5rem;
   background: var(--card-bg);
   transition: all 0.2s ease;
@@ -398,7 +356,7 @@ footer {
 .project-card-link:hover .project-card {
   border-color: var(--accent);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-large);
 }
 
 .project-card-header {
@@ -426,7 +384,7 @@ footer {
 }
 
 .project-avatar img {
-  border-radius: 6px;
+  border-radius: var(--border-radius-small);
   display: block;
 }
 
@@ -456,7 +414,90 @@ footer {
   color: var(--muted);
 }
 
-/* Individual project page styling */
+/* Social Links
+   ========================================================================== */
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.social-links a {
+  display: inline-block;
+  padding: 0.25rem;
+  background: transparent;
+  border-radius: 4px;
+  transition: transform 0.15s ease;
+}
+
+.social-links a:hover {
+  transform: scale(1.1);
+}
+
+.social-links img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* Typing Effect
+   ========================================================================== */
+.dos-typing-container {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+
+.dos-cursor {
+  display: inline-block;
+  width: 1ch;
+  animation: dos-blink 0.8s steps(1) infinite;
+}
+
+@keyframes dos-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.post-date-container {
+  margin-bottom: 1rem;
+}
+
+.post-date-typing {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--muted);
+  opacity: 0.8;
+  letter-spacing: 0.02em;
+}
+
+.post-date-cursor {
+  display: inline-block;
+  width: 1ch;
+  animation: dos-blink 0.8s steps(1) infinite;
+}
+
+/* ==========================================================================
+   4. Page-Specific Styles
+   ========================================================================== */
+
+/* Homepage
+   ========================================================================== */
+.homepage-title {
+  font-size: 2.5rem;
+}
+
+.homepage .site-nav {
+  margin-top: 1.6rem;
+  border-top: 1px solid var(--subtle-border);
+}
+
+/* Individual Project Page
+   ========================================================================== */
 .project-header {
   margin-bottom: 2rem;
 }
@@ -474,27 +515,9 @@ footer {
   max-width: var(--max-width);
 }
 
-@media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card-header {
-    padding-right: 96px; /* Keep space for avatar on mobile too */
-  }
-
-  .project-avatar {
-    width: 64px;
-    height: 64px;
-  }
-
-  .project-avatar img {
-    width: 64px;
-    height: 64px;
-  }
-}
-
-/* Responsive: fallback to single column */
+/* ==========================================================================
+   5. Responsive Media Queries
+   ========================================================================== */
 @media (max-width: 900px) {
   .site-header {
     flex-direction: column;
@@ -530,6 +553,26 @@ footer {
 
   .social-links {
     align-self: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card-header {
+    padding-right: 96px; /* Keep space for avatar on mobile too */
+  }
+
+  .project-avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .project-avatar img {
+    width: 64px;
+    height: 64px;
   }
 }
 
