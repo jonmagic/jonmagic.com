@@ -22,7 +22,7 @@ But what about the elephant in the room, AI? My friend’s biggest fear was that
 
 This is where my hope for the future comes in.
 
-I don’t believe we’re heading for a world where a artificial general intelligence (AGI) makes human ingenuity obsolete. Look closely at every major breakthrough, even those in AI-driven medicine. It’s still humans pointing the AI down the right paths. Human creativity is the spark.
+I don’t believe we’re heading for a world where artificial general intelligence (AGI) makes human ingenuity obsolete. Look closely at every major breakthrough, even those in AI-driven medicine. It’s still humans pointing the AI down the right paths. Human creativity is the spark.
 
 What I see is a future where AI handles the grunt work, freeing us up to focus on the truly human part of creation: the next step, the novel idea, the new invention. If we don’t have to spend five years of our early careers doing repetitive tasks, that isn’t a threat, it’s a massive opportunity. It’s an acceleration of our potential.
 
