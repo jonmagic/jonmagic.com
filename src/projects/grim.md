@@ -2,7 +2,7 @@
 title: grim
 github: https://github.com/jonmagic/grim
 avatar: /images/projects/grim.webp
-summary: A command-line tool for managing Git repositories with powerful batch operations and repository discovery.
+summary: A Ruby gem for extracting a PDF page as an image and retrieving its text as a string.
 order: 5
 permalink: false
 ---

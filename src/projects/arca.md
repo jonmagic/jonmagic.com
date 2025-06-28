@@ -2,7 +2,7 @@
 title: arca
 github: https://github.com/jonmagic/arca
 avatar: /images/projects/arca.webp
-summary: A callback analyzer for ActiveRecord models designed to help you escape callback hell by analyzing callback complexity and usage patterns.
+summary: A tool for analyzing ActiveRecord callback complexity and usage to help you escape callback hell.
 order: 9
 permalink: false
 ---
