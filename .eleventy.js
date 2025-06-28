@@ -23,10 +23,16 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addGlobalData("layout", "layout.njk");
   eleventyConfig.addGlobalData("post", "post.njk");
+  eleventyConfig.addGlobalData("project", "project.njk");
 
   // Add a collection for blog posts
   eleventyConfig.addCollection('posts', function(collectionApi) {
     return collectionApi.getFilteredByGlob('src/posts/*.md');
+  });
+
+  // Add a collection for projects
+  eleventyConfig.addCollection('projects', function(collectionApi) {
+    return collectionApi.getFilteredByGlob('src/projects/*.md');
   });
 
   // Generate avatars.json in src/ and _site/ before build

@@ -1,0 +1,25 @@
+---
+layout: post
+title: Projects
+---
+
+<div class="projects-grid">
+{%- set sortedProjects = collections.projects | sort(false, false, 'data.order') -%}
+{%- for project in sortedProjects -%}
+  <a href="{{ project.data.github }}" class="project-card-link">
+    <article class="project-card">
+      <div class="project-card-header">
+        <h2 class="project-name">{{ project.data.title }}</h2>
+        {%- if project.data.avatar -%}
+        <div class="project-avatar">
+          <img src="{{ project.data.avatar }}" alt="{{ project.data.title }} avatar" width="80" height="80">
+        </div>
+        {%- endif -%}
+      </div>
+      <div class="project-summary">
+        <p>{{ project.data.summary }}</p>
+      </div>
+    </article>
+  </a>
+{%- endfor -%}
+</div>
