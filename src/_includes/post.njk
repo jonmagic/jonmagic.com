@@ -11,7 +11,7 @@
         <span id="post-date-typing" class="post-date-typing" data-date="{{ date.toISOString().split('T')[0] }}"></span>
       </div>
       {% endif %}
-      <h1>{{ title }}</h1>
+      <h1 class="site-title">{{ title }}</h1>
       {{ content | safe }}
     </main>
     {% include "site-nav.njk" %}
