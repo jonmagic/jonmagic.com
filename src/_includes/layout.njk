@@ -3,11 +3,13 @@
 <head>
   {% include "head.njk" %}
 </head>
-<body class="homepage">
+{% set bodyClasses = ["homepage"] if page.url == "/" else [] %}
+<body class="{{ bodyClasses | join(' ') }}">
+  {% if page.url == "/" %}
   <header class="site-header">
     <div class="avatar-placeholder" id="headerAvatar"></div>
     <div class="site-title-group">
-      <h1 class="site-title homepage-title">jonmagic.com</h1>
+      <h1 class="site-title homepage-title">{{ title }}</h1>
       <div class="dos-typing-container">
         <span id="dos-typing"><span class="dos-cursor">█</span></span>
       </div>
@@ -19,6 +21,20 @@
       {{ content | safe }}
     </main>
   </div>
+  {% else %}
+  {% include "site-nav.njk" %}
+  <div class="page layout-main">
+    <main class="content">
+      {% if date %}
+      <div class="post-date-container">
+        <span id="post-date-typing" class="post-date-typing" data-date="{{ date.toISOString().split('T')[0] }}"></span>
+      </div>
+      {% endif %}
+      <h1 class="site-title">{{ title }}</h1>
+      {{ content | safe }}
+    </main>
+  </div>
+  {% endif %}
   <div class="page">
     {% include "footer.njk" %}
   </div>

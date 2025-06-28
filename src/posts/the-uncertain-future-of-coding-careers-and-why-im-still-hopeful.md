@@ -1,6 +1,6 @@
 ---
-layout: post
-title: The Uncertain Future of Coding Careers and Why I’m Still Hopeful
+layout: layout
+title: The Uncertain Future of Coding Careers and Why I'm Still Hopeful
 date: 2025-06-27
 ---
 

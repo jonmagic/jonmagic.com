@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: layout
 title: Hi, my name is Jon and I'm a husband, father, software developer, and investor.
 ---
 

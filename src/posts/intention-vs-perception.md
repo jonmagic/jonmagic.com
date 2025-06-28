@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: layout
 title: Intention vs Perception
 date: 2014-11-23
 ---
