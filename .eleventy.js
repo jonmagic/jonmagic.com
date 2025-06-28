@@ -1,4 +1,5 @@
 const fs = require("fs");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const markdownIt = require('markdown-it');
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
@@ -6,6 +7,8 @@ let markdownItEmoji = require('markdown-it-emoji');
 if (markdownItEmoji.default) markdownItEmoji = markdownItEmoji.default;
 
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addPlugin(syntaxHighlight);
+
   // Add RSS plugin
   eleventyConfig.addPlugin(pluginRss);
 
@@ -13,7 +16,8 @@ module.exports = function(eleventyConfig) {
   const mdLib = markdownIt({
     html: true,
     breaks: false,
-    linkify: true
+    linkify: true,
+    typographer: true
   }).use(markdownItEmoji);
   eleventyConfig.setLibrary('md', mdLib);
 
