@@ -71,6 +71,35 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(typeChar, 600);
   }
 
+  // Post date typing effect (types once and stays)
+  var postDateTyping = document.getElementById('post-date-typing');
+  if (postDateTyping) {
+    var dateText = postDateTyping.getAttribute('data-date');
+    if (dateText) {
+      var currentCharIndex = 0;
+      var typingSpeed = 80 + Math.random() * 40; // slightly faster than the homepage
+
+      function typeDate() {
+        if (currentCharIndex <= dateText.length) {
+          postDateTyping.innerHTML = dateText.slice(0, currentCharIndex) + '<span class="post-date-cursor">█</span>';
+          currentCharIndex++;
+          if (currentCharIndex <= dateText.length) {
+            setTimeout(typeDate, typingSpeed);
+          } else {
+            // Finished typing, remove cursor after a short pause
+            setTimeout(() => {
+              postDateTyping.innerHTML = dateText;
+            }, 1000);
+          }
+        }
+      }
+
+      // Start with just the blinking cursor
+      postDateTyping.innerHTML = '<span class="post-date-cursor">█</span>';
+      setTimeout(typeDate, 300);
+    }
+  }
+
   // Load avatars.json and set a random avatar in the header
   const headerAvatar = document.getElementById('headerAvatar');
   if (headerAvatar) {
