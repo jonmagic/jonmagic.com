@@ -4,6 +4,7 @@
   {% include "head.njk" %}
 </head>
 <body>
+  {% include "site-nav.njk" %}
   <div class="page layout-main">
     <main class="content">
       {% if date %}
@@ -14,7 +15,6 @@
       <h1 class="site-title">{{ title }}</h1>
       {{ content | safe }}
     </main>
-    {% include "site-nav.njk" %}
   </div>
   <div class="page">
     {% include "footer.njk" %}
