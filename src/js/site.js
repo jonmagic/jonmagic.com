@@ -9,17 +9,58 @@ document.addEventListener('DOMContentLoaded', function() {
   var dosTyping = document.getElementById('dos-typing');
   if (dosTyping) {
     var phrases = [
-      'Generate an execute summary of...',
+      'Generate an executive summary of...',
       'You are a coding assistant...',
       'Explain this code...',
       'Fix grammar and spelling...',
       'Extract todo list from...',
-      'Generate documentation for...',
-      'Try and make me smile...',
+      'Create documentation for...',
+      'Tell me a dad joke about...',
       'Refactor this function to...',
       'Write unit tests for...',
       'Convert this code to...',
     ];
+
+    // Calculate max characters that fit without wrapping
+    function getMaxCharWidth() {
+      var container = dosTyping.parentElement;
+      var containerWidth = container.offsetWidth;
+
+      // On mobile, use the full site-header width instead of just the title group
+      if (window.innerWidth <= 900) {
+        var siteHeader = container.closest('.site-header');
+        if (siteHeader) {
+          containerWidth = siteHeader.offsetWidth - 40; // Account for padding
+        }
+      }
+
+      var testSpan = document.createElement('span');
+      testSpan.style.visibility = 'hidden';
+      testSpan.style.position = 'absolute';
+      testSpan.style.fontFamily = window.getComputedStyle(container).fontFamily;
+      testSpan.style.fontSize = window.getComputedStyle(container).fontSize;
+      testSpan.style.letterSpacing = window.getComputedStyle(container).letterSpacing;
+      testSpan.textContent = 'A';
+      document.body.appendChild(testSpan);
+      var charWidth = testSpan.offsetWidth;
+      document.body.removeChild(testSpan);
+
+      // Account for cursor width and some padding
+      var maxChars = Math.floor((containerWidth - 20) / charWidth);
+      return Math.max(15, maxChars); // minimum 15 characters (increased from 10)
+    }
+
+    // Truncate phrases if they're too long
+    function truncatePhrase(phrase, maxChars) {
+      if (phrase.length <= maxChars) return phrase;
+      return phrase.substring(0, maxChars - 3) + '...';
+    }
+
+    var maxChars = getMaxCharWidth();
+    phrases = phrases.map(function(phrase) {
+      return truncatePhrase(phrase, maxChars);
+    });
+
     for (var i = phrases.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
       var temp = phrases[i];
@@ -30,6 +71,14 @@ document.addEventListener('DOMContentLoaded', function() {
     var currentPhraseIndex = 0;
     var currentCharIndex = 0;
     var isTyping = true;
+
+    // Recalculate on window resize
+    window.addEventListener('resize', function() {
+      maxChars = getMaxCharWidth();
+      phrases = phrases.map(function(phrase) {
+        return truncatePhrase(phrase, maxChars);
+      });
+    });
 
     function typeChar() {
       var currentPhrase = phrases[currentPhraseIndex];
