@@ -230,6 +230,15 @@ pre {
   margin: 0 auto;
 }
 
+.content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--shadow-medium);
+}
+
 footer {
   flex: 1;
   font-size: 0.9em;
