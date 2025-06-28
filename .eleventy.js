@@ -1,5 +1,18 @@
 const fs = require("fs");
+const markdownIt = require('markdown-it');
+
+let markdownItEmoji = require('markdown-it-emoji');
+if (markdownItEmoji.default) markdownItEmoji = markdownItEmoji.default;
+
 module.exports = function(eleventyConfig) {
+  // Enable emoji support in markdown for Eleventy 3.x
+  const mdLib = markdownIt({
+    html: true,
+    breaks: false,
+    linkify: true
+  }).use(markdownItEmoji);
+  eleventyConfig.setLibrary('md', mdLib);
+
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/js");

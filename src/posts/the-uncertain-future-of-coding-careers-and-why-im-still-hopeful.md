@@ -60,6 +60,6 @@ The future of this career isn't about being replaced by a machine. It's about be
 
 ## Feedback
 
-Feedback is welcome: https://github.com/jonmagic/jonmagic.com/discussions/2
+Feedback is welcome: [discussions/2](https://github.com/jonmagic/jonmagic.com/discussions/2)
 
 Thank you for your time :pray:
