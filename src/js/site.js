@@ -9,12 +9,16 @@ document.addEventListener('DOMContentLoaded', function() {
   var dosTyping = document.getElementById('dos-typing');
   if (dosTyping) {
     var phrases = [
-      'Summarize this transcript...',
+      'Generate an execute summary of...',
       'You are a coding assistant...',
-      'Describe the functionality of this code...',
-      'Fix the grammar in...',
-      'Give me an executive summary of this issue...',
-      'Extract a todo list from this conversation...',
+      'Explain this code...',
+      'Fix grammar and spelling...',
+      'Extract todo list from...',
+      'Generate documentation for...',
+      'Try and make me smile...',
+      'Refactor this function to...',
+      'Write unit tests for...',
+      'Convert this code to...',
     ];
     for (var i = phrases.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
