@@ -4,9 +4,15 @@
       {%- if page.url != '/' -%}
       <li><a href="/">Home</a></li>
       {%- endif -%}
+      {%- if page.url != '/posts/' -%}
       <li><a href="/posts/">Posts</a></li>
+      {%- endif -%}
+      {%- if page.url != '/projects/' -%}
       <li><a href="/projects/">Projects</a></li>
+      {%- endif -%}
+      {%- if page.url != '/about/' -%}
       <li><a href="/about/">About</a></li>
+      {%- endif -%}
     </ul>
     <div class="social-links">
       <a href="https://github.com/jonmagic" title="GitHub Profile">
