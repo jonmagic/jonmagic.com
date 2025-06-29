@@ -598,6 +598,13 @@ img.avatar {
   color: var(--text) !important;
 }
 
+/* Post card footer for search results */
+.post-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 /* Social Links
    ========================================================================== */
 .social-links {
