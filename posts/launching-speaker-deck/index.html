@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YGV0G2L1W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YGV0G2L1W3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Launching Speaker Deck</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/css/base.css">
+<link rel="alternate" type="application/atom+xml" title="JonMagic.com RSS Feed" href="/feed.xml">
+
+</head>
+
+<body class="">
+  
+  <nav class="site-nav">
+  <div class="nav-container">
+    <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/posts/">Posts</a></li><li><a href="/projects/">Projects</a></li><li><a href="/about/">About</a></li></ul>
+    <div class="social-links">
+      <a href="https://github.com/jonmagic" title="GitHub Profile">
+        <img src="/images/github.png" alt="GitHub Profile" width="24" height="24" class="github-icon">
+      </a>
+      <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile">
+        <img src="/images/linkedin.png" alt="LinkedIn Profile" width="24" height="24" class="linkedin-icon">
+      </a>
+      <a href="/feed.xml" title="RSS Feed">
+        <img src="/images/rss.png" alt="RSS Feed" width="24" height="24" class="rss-icon">
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <div class="page layout-main">
+    <main class="content">
+      
+      <div class="post-date-container">
+        <span id="post-date-typing" class="post-date-typing" data-date="2011-10-10"></span>
+      </div>
+      
+      <h1 class="site-title">Launching Speaker Deck</h1>
+      <p>Looking back at the last two weeks since launching Speaker Deck.</p>
+<h3>Launching</h3>
+<p>Knowing when to launch a product is a painstaking task and ultimately you are never sure if it’s the right time, but at some point you have to pull the trigger. September 26th <a href="http://orderedlist.com/the-team/">we</a> finally committed and launched <a href="http://speakerdeck.com">Speaker Deck</a> to the world.</p>
+<p>The past two weeks since launch have been pretty intense, we’ve had over 2500 signups and over 1000 presentations uploaded. We’ve received hundreds of emails, people just telling us how excited they are about Speaker Deck and many of them asking for a feature or requesting help. Seeing everyone’s reactions has confirmed in our minds that we weren’t the only ones feeling severe slide hosting pain.</p>
+<p>The <a href="http://twitter.com/#!/search/speakerdeck">twitter search for speakerdeck</a> has seen a constant stream of tweets, almost all of them linking directly to specific slide decks, which is awesome!</p>
+<h3>Fixing</h3>
+<p>Thankfully <a href="http://heroku.com">Heroku</a> has been a fantastic platform for Speaker Deck so far. During peak traffic we’ve been able to easily scale up both our web capacity (how many requests we can handle from your browsers) and the background worker capacity (where we process your PDFs into individual slides).</p>
+<p>No story is complete without some drama though, right? When we opened up signups we almost immediately began seeing presentations that wouldn’t process. Thankfully within a week we were able to <a href="http://jonmagic.com/blog/archives/2011/10/06/grim-multiprocessor-to-the-rescue/">roll out fixes</a> that got us past this hurdle.</p>
+<p>We also ran into problems with slides acting like they were never processed even though they had. This turned out to be race conditions. In addition, there were issues with caching. There were a couple instances where we cached something and then missed clearing that item from the cache when the item was updated. Hard bugs to track down but easy to fix thankfully.</p>
+<p>All in all things went really well, thankfully, since we were all gone to New Orleans for <a href="http://rubyconf.org">RubyConf</a> and without good internet. Looking back, launching 2 days before a road trip was probably not the wisest thing we’ve ever done.</p>
+<h3>Future</h3>
+<p>I’m betting many of you are thinking “how the heck is this sustainable?” I’ll let you know when we figure it out. Seriously though, we do have plans to monetize and I’d like to start talking about them to see what you folks think.</p>
+<p>The first idea is just what we’re doing right now, mentioning our other products (<a href="http://get.gaug.es">Gauges</a> &amp; <a href="http://get.harmonyapp.com">Harmony</a>) in a very small and tasteful way in the sidebar. For this plan to succeed on its own there would have to be a lot of people clicking through and signing up for our other products.</p>
+<p>The second plan is to add pro accounts. We’ve heard a lot of great feedback about bigger features people want, like private presentations that you can share with a select group and also statistics. We’d love to hear more about features you want, especially the ones you’d be willing to pay for.</p>
+<p>We of course still have a lot of core features to build, like search, full screen mode, following presenters, activity streams, and so much more.</p>
+<h3>Conclusion</h3>
+<p>All of us at Ordered List just want to say thanks. It has been a wild ride and we’ve been blown away by how many people are using Speaker Deck and all the good will that has been coming our way. Thank you for making it a success!</p>
+
+    </main>
+  </div>
+  
+  <div class="page">
+    <footer>
+  © Jonathan Hoyt <span id="year"></span> — built <s>by hand</s> with an LLM
+</footer>
+
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>

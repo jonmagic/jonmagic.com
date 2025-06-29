@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YGV0G2L1W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YGV0G2L1W3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Twelve (gauge)</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/css/base.css">
+<link rel="alternate" type="application/atom+xml" title="JonMagic.com RSS Feed" href="/feed.xml">
+
+</head>
+
+<body class="">
+  
+  <nav class="site-nav">
+  <div class="nav-container">
+    <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/posts/">Posts</a></li><li><a href="/projects/">Projects</a></li><li><a href="/about/">About</a></li></ul>
+    <div class="social-links">
+      <a href="https://github.com/jonmagic" title="GitHub Profile">
+        <img src="/images/github.png" alt="GitHub Profile" width="24" height="24" class="github-icon">
+      </a>
+      <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile">
+        <img src="/images/linkedin.png" alt="LinkedIn Profile" width="24" height="24" class="linkedin-icon">
+      </a>
+      <a href="/feed.xml" title="RSS Feed">
+        <img src="/images/rss.png" alt="RSS Feed" width="24" height="24" class="rss-icon">
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <div class="page layout-main">
+    <main class="content">
+      
+      <div class="post-date-container">
+        <span id="post-date-typing" class="post-date-typing" data-date="2011-12-09"></span>
+      </div>
+      
+      <h1 class="site-title">Twelve (gauge)</h1>
+      <p>Today I hacked together an easy to use gem for accessing the <a href="http://get.gaug.es">Gauges</a> API.</p>
+<p>When I started this morning 12-gauge was the first thing I thought, so I called the gem Twelve (silly I know).</p>
+<p>I had fun figuring out the API (with a little help from <a href="http://twitter.com/bkeepers">Brandon</a>) and then writing the gem using some of the proxy object and method missing stuff I was learning a few weeks ago.</p>
+<h3>Installation</h3>
+<pre class="language-bash"><code class="language-bash">gem <span class="token function">install</span> twelve</code></pre>
+<h3>Usage</h3>
+<p>Get the client ready:</p>
+<pre class="language-ruby"><code class="language-ruby">access_token <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"abcd1234"</span></span>
+bfg <span class="token operator">=</span> <span class="token class-name">Twelve</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span>access_token<span class="token punctuation">)</span></code></pre>
+<p>Request your Gauges info:</p>
+<pre class="language-ruby"><code class="language-ruby">bfg<span class="token punctuation">.</span>me</code></pre>
+<p>For me I got this back:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><span class="token string">"name"</span>=><span class="token string">"Jonathan Hoyt"</span><span class="token punctuation">,</span> <span class="token string">"urls"</span>=><span class="token punctuation">{</span><span class="token string">"self"</span>=><span class="token string">"https://secure.gaug.es/me"</span><span class="token punctuation">,</span> <span class="token string">"gauges"</span>=><span class="token string">"https://secure.gaug.es/gauges"</span><span class="token punctuation">,</span> <span class="token string">"clients"</span>=><span class="token string">"https://secure.gaug.es/clients"</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">"id"</span>=><span class="token string">"..."</span><span class="token punctuation">,</span> <span class="token string">"last_name"</span>=><span class="token string">"Hoyt"</span><span class="token punctuation">,</span> <span class="token string">"first_name"</span>=><span class="token string">"Jonathan"</span><span class="token punctuation">,</span> <span class="token string">"email"</span>=><span class="token string">"jonmagic@gmail.com"</span><span class="token punctuation">}</span></code></pre>
+<p>Next try these:</p>
+<pre class="language-ruby"><code class="language-ruby">bfg<span class="token punctuation">.</span>clients
+bfg<span class="token punctuation">.</span>gauges</code></pre>
+<h3>More Documentation and Examples</h3>
+<p>It’s a full-fledged client, so you can create, update, and delete gauges as well as see all the different types of information available on a gauge. See the docs on <a href="https://github.com/jonmagic/twelve">GitHub</a>!</p>
+
+    </main>
+  </div>
+  
+  <div class="page">
+    <footer>
+  © Jonathan Hoyt <span id="year"></span> — built <s>by hand</s> with an LLM
+</footer>
+
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>

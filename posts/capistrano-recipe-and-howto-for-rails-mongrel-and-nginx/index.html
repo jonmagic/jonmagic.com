@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YGV0G2L1W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YGV0G2L1W3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capistrano recipe and howto for Rails, Mongrel, and Nginx</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/css/base.css">
+<link rel="alternate" type="application/atom+xml" title="JonMagic.com RSS Feed" href="/feed.xml">
+
+</head>
+
+<body class="">
+  
+  <nav class="site-nav">
+  <div class="nav-container">
+    <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/posts/">Posts</a></li><li><a href="/projects/">Projects</a></li><li><a href="/about/">About</a></li></ul>
+    <div class="social-links">
+      <a href="https://github.com/jonmagic" title="GitHub Profile">
+        <img src="/images/github.png" alt="GitHub Profile" width="24" height="24" class="github-icon">
+      </a>
+      <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile">
+        <img src="/images/linkedin.png" alt="LinkedIn Profile" width="24" height="24" class="linkedin-icon">
+      </a>
+      <a href="/feed.xml" title="RSS Feed">
+        <img src="/images/rss.png" alt="RSS Feed" width="24" height="24" class="rss-icon">
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <div class="page layout-main">
+    <main class="content">
+      
+      <div class="post-date-container">
+        <span id="post-date-typing" class="post-date-typing" data-date="2008-01-10"></span>
+      </div>
+      
+      <h1 class="site-title">Capistrano recipe and howto for Rails, Mongrel, and Nginx</h1>
+      <h3>UPDATE: This is outdated due to the release of Capistrano 2… I will work on a new tutorial as soon as I have a project I need to deploy… 1-10-08</h3>
+<p>All righty then. Recently my firm (<a href="http://www.sabretechllc.com">SabreTech</a>) got a contract to write and deploy a fairly complicated web app for a local business. Immediately I asked my friend <a href="http://mintchaos.com">Xian</a> to give me some deployment ideas, and he suggested I use <a href="http://nginx.net/">nginx</a> as my web server instead of <a href="http://www.apache.org/">Apache</a> as well as <a href="http://slicehost.com">Slicehost</a> as my vps host provider…</p>
+<p>So I set up my Slicehost account and started hacking. About a week later (five hours of work snuck in here and there), I’ve got my vps up and running smoothly. I’ve been using <a href="http://weblog.jamisbuck.org/2006/3/6/switchtower-renamed">Capistrano</a> for deployment for awhile, but I also wanted to use it to set up my server, and that is when I ran across deprec. <a href="http://deprec.rubyforge.org/">Deprec</a> is a nice little gem with a ton of capistrano recipes for setting up and deploying a server. It had some great recipes for deploying to <a href="http://ubuntu.org">Ubuntu</a>, so I chose Ubuntu as my OS for my new slice (vps).</p>
+<p>Now I just had to write some of my own recipes for setting up and deploying with Nginx instead of Apache. That is where most of my time was spent. Below you’ll find my instructions and recipes:</p>
+<h4>Prerequisites</h4>
+<ol>
+<li>Install the capistrano and deprec gems on your development machine</li>
+<li>Cap your app; in the root of your app dir, run: <code>cap -A</code></li>
+<li>Set up deprec: from the root of your app, run <code>deprec_dotfiles</code> which just creates a file in your user dir called <code>.caprc</code>, which contains the following line:<br>
+<code>require 'deprec/recipes'</code></li>
+<li>Your server must be running ubuntu (it should work on any debian based OS though)</li>
+<li>Your svn repository must be accessible by the same user listed in your <code>deploy.rb</code></li>
+<li><a href="http://jonmagic.com/assets/2008/1/10/nginx.conf.txt"><code>nginx.conf</code></a>, <code>database.yml.production</code>, and <code>deploy.rb</code> must exist and be configured in <code>app/config</code> (and checked into your repository)</li>
+<li>You need to take <a href="http://jonmagic.com/assets/2008/1/10/jonmagic_recipes.txt">this file</a> and append the contents to the bottom of your <code>config/deploy.rb</code> (these are the recipes I wrote)</li>
+<li>Make sure and configure the mongrel settings in your <code>deploy.rb</code></li>
+</ol>
+<h4>Instructions</h4>
+<ol>
+<li>Log into your server as root and add a new user (the user you specify in your <code>deploy.rb</code>), set the password, and finally add to sudoers file
+<ol>
+<li><code>useradd -m bobby</code></li>
+<li><code>passwd bobby</code></li>
+<li><code>visudo</code></li>
+</ol>
+</li>
+<li>From the root of your app run:<br>
+<code>cap install_rails_stack_with_nginx</code></li>
+<li>The last one takes a while, but when it is done run:<br>
+<code>cap svn_cache_credentials</code></li>
+<li>Finally run:<br>
+<code>cap deploy_first_time</code>
+<ol>
+<li>(When it asks for mysql user password just press enter, unless you changed the mysql root password)</li>
+</ol>
+</li>
+</ol>
+<h4>Files</h4>
+<ul>
+<li><a href="http://jonmagic.com/assets/2008/1/10/nginx.conf.txt">nginx.conf</a></li>
+<li><a href="http://jonmagic.com/assets/2008/1/10/jonmagic_recipes.txt">my recipes, add to bottom of deploy.rb</a></li>
+</ul>
+
+    </main>
+  </div>
+  
+  <div class="page">
+    <footer>
+  © Jonathan Hoyt <span id="year"></span> — built <s>by hand</s> with an LLM
+</footer>
+
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YGV0G2L1W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YGV0G2L1W3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grim MultiProcessor to the Rescue!</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/css/base.css">
+<link rel="alternate" type="application/atom+xml" title="JonMagic.com RSS Feed" href="/feed.xml">
+
+</head>
+
+<body class="">
+  
+  <nav class="site-nav">
+  <div class="nav-container">
+    <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/posts/">Posts</a></li><li><a href="/projects/">Projects</a></li><li><a href="/about/">About</a></li></ul>
+    <div class="social-links">
+      <a href="https://github.com/jonmagic" title="GitHub Profile">
+        <img src="/images/github.png" alt="GitHub Profile" width="24" height="24" class="github-icon">
+      </a>
+      <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile">
+        <img src="/images/linkedin.png" alt="LinkedIn Profile" width="24" height="24" class="linkedin-icon">
+      </a>
+      <a href="/feed.xml" title="RSS Feed">
+        <img src="/images/rss.png" alt="RSS Feed" width="24" height="24" class="rss-icon">
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <div class="page layout-main">
+    <main class="content">
+      
+      <div class="post-date-container">
+        <span id="post-date-typing" class="post-date-typing" data-date="2011-10-06"></span>
+      </div>
+      
+      <h1 class="site-title">Grim MultiProcessor to the Rescue!</h1>
+      <p>We recently ran into issues with certain versions of GhostScript not being able to convert PDFs into images. Here’s how we solved the problem.</p>
+<h3>The Problem</h3>
+<p>Last week we launched <a href="http://speakerdeck.com">Speaker Deck</a> and since launch over 2000 people have signed up and uploaded almost a 1000 presentations. We were using GhostScript 9.04 because it is faster than 9.02 by a factor of two and fixed some processing problems we had experienced converting certain PDFs.</p>
+<pre><code>convert: Postscript delegate failed `presentation.pdf': No such file or directory @ error/pdf.c/ReadPDFImage/663.
+convert: missing an image filename `slide.jpg' @ error/convert.c/ConvertImageCommand/3011.
+</code></pre>
+<p>Unfortunately we ran into the same processing issue with 9.04 and through trial and error figured out that those presentations that wouldn’t process with 9.04 would process with 9.02. So what to do! GhostScript 9.04 works for most presentations and is faster but fails on certain PDFs where 9.02 actually does work.</p>
+<h3>The Solution</h3>
+<p>We are using <a href="http://jonmagic.com/blog/archives/2011/09/06/grim/">Grim</a> to convert PDFs into images, so I decided that Grim needed to be updated to support multiple processors. Better yet I thought it would be cool if Grim could automatically try multiple processors if you specified more than one, starting with the first and falling back to secondary processors as needed.</p>
+<p>I started working on adding Processors to Grim while at <a href="http://rubyconf.org">RubyConf</a> and Monday finished up getting it all working. I started by pulling out the ImageMagick and GhostScript specific code into an ImageMagickProcessor class that lets you pass in the path to convert and gs (ImageMagick and GhostScript executables).</p>
+<pre class="language-ruby"><code class="language-ruby">Grim<span class="token punctuation">.</span>processor <span class="token operator">=</span> Grim<span class="token double-colon punctuation">::</span><span class="token class-name">ImageMagickProcessor</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token symbol">:imagemagick_path</span> <span class="token operator">=></span> <span class="token string-literal"><span class="token string">"/path/to/convert"</span></span><span class="token punctuation">,</span> <span class="token symbol">:ghostscript_path</span> <span class="token operator">=></span> <span class="token string-literal"><span class="token string">"/path/to/gs"</span></span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>Once I had that working (super easy thanks to a great test suite!) I started in on the MultiProcessor.</p>
+<p>The MultiProcessor accepts an array of processors and uses them in order, falling back to secondary processors when the first in line fails. If none of them succeed it just raises the same error the processors on their own raise.</p>
+<pre class="language-ruby"><code class="language-ruby">Grim<span class="token punctuation">.</span>processor <span class="token operator">=</span> Grim<span class="token double-colon punctuation">::</span><span class="token class-name">MultiProcessor</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+  Grim<span class="token double-colon punctuation">::</span><span class="token class-name">ImageMagickProcessor</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token symbol">:imagemagick_path</span> <span class="token operator">=></span> <span class="token string-literal"><span class="token string">"/path/to/6.7/convert"</span></span><span class="token punctuation">,</span> <span class="token symbol">:ghostscript_path</span> <span class="token operator">=></span> <span class="token string-literal"><span class="token string">"/path/to/9.04/gs"</span></span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  Grim<span class="token double-colon punctuation">::</span><span class="token class-name">ImageMagickProcessor</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token symbol">:imagemagick_path</span> <span class="token operator">=></span> <span class="token string-literal"><span class="token string">"/path/to/6.6/convert"</span></span><span class="token punctuation">,</span> <span class="token symbol">:ghostscript_path</span> <span class="token operator">=></span> <span class="token string-literal"><span class="token string">"/path/to/9.02/gs"</span></span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<p>Monday we deployed <a href="http://speakerdeck.com">Speaker Deck</a> with the updated Grim gem and reprocessed the 13 presentations that were stuck. Every single one of them processed without a hitch!</p>
+<h3>The Future</h3>
+<p>Now that the actual processing logic has been split out into easy to build Processor classes, I see us building more processors for Grim. Why not a Quartz processor, or a processor that works on Windows.</p>
+<p>If you would like to use Grim in your project or get involved with development just head over to the <a href="http://github.com/jonmagic/grim">Grim repo on Github</a>.</p>
+
+    </main>
+  </div>
+  
+  <div class="page">
+    <footer>
+  © Jonathan Hoyt <span id="year"></span> — built <s>by hand</s> with an LLM
+</footer>
+
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>

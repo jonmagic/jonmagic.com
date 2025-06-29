@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YGV0G2L1W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YGV0G2L1W3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hubot Scripts Explained</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/css/base.css">
+<link rel="alternate" type="application/atom+xml" title="JonMagic.com RSS Feed" href="/feed.xml">
+
+</head>
+
+<body class="">
+  
+  <nav class="site-nav">
+  <div class="nav-container">
+    <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/posts/">Posts</a></li><li><a href="/projects/">Projects</a></li><li><a href="/about/">About</a></li></ul>
+    <div class="social-links">
+      <a href="https://github.com/jonmagic" title="GitHub Profile">
+        <img src="/images/github.png" alt="GitHub Profile" width="24" height="24" class="github-icon">
+      </a>
+      <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile">
+        <img src="/images/linkedin.png" alt="LinkedIn Profile" width="24" height="24" class="linkedin-icon">
+      </a>
+      <a href="/feed.xml" title="RSS Feed">
+        <img src="/images/rss.png" alt="RSS Feed" width="24" height="24" class="rss-icon">
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <div class="page layout-main">
+    <main class="content">
+      
+      <div class="post-date-container">
+        <span id="post-date-typing" class="post-date-typing" data-date="2011-10-28"></span>
+      </div>
+      
+      <h1 class="site-title">hubot Scripts Explained</h1>
+      <p>Ok, so now you’ve got your shiny new hubot up and ready to listen to your every command. But what should we tell him to do with our nonsense!</p>
+<h3>Basics</h3>
+<p>Scripts for <a href="https://github.com/github/hubot">hubot</a> are written with <a href="http://jashkenas.github.com/coffee-script/">CoffeeScript</a>. This is what a basic script looks like:</p>
+<pre class="language-coffeescript"><code class="language-coffeescript"><span class="token comment"># hubot greeting.</span>
+#
+<span class="token comment"># (hi|hello) - say hi to your butler</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">(</span>robot<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span>
+  robot<span class="token punctuation">.</span>respond <span class="token operator">/</span>hi<span class="token operator">|</span>hello<span class="token operator">/</span>i<span class="token punctuation">,</span> <span class="token punctuation">(</span>msg<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span>
+    msg<span class="token punctuation">.</span>send <span class="token string">"Howdy!"</span></code></pre>
+<p>Lets break this script down. The first line is just a description of the script. The third line tells hubot what to include in the help (when you ask hubot for help).</p>
+<p>The actual code starts on the module.exports line. Every script you make will start with that line.</p>
+<pre class="language-coffeescript"><code class="language-coffeescript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">(</span>robot<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span></code></pre>
+<p>The next line tells hubot to respond to hi and hello.</p>
+<pre class="language-coffeescript"><code class="language-coffeescript">robot<span class="token punctuation">.</span>respond <span class="token operator">/</span>hi<span class="token operator">|</span>hello<span class="token operator">/</span>i<span class="token punctuation">,</span> <span class="token punctuation">(</span>msg<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span></code></pre>
+<p>It uses a <a href="http://en.wikipedia.org/wiki/Regular_expression">regular expression</a> to parse the text, looking for the words hi and hello. The i after the last slash tells the regular expression to not be case sensitive, so it will also match Hi and Hello.</p>
+<p>I like to use <a href="http://rubular.com/">rubular</a> for writing and testing regular expressions. Its quick, easy to use, and while javascript regular expressions aren’t exactly like ruby regular expressions I haven’t run into any inconsistencies yet.</p>
+<p>Finally we tell hubot to take the message and send a message back.</p>
+<pre class="language-coffeescript"><code class="language-coffeescript">msg<span class="token punctuation">.</span>send <span class="token string">"Howdy!"</span></code></pre>
+<h3>Respond vs Hear</h3>
+<p>I didn’t discover this at first and thought that hubot only responded to commands directed at him, but then I discovered robot.hear! Whereas robot.respond only matches messages directed at hubot, robot.hear will run your regular expression against any chat message!</p>
+<pre class="language-coffeescript"><code class="language-coffeescript"><span class="token comment"># Hubot has an attitude</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">(</span>robot<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span>
+  robot<span class="token punctuation">.</span>hear <span class="token operator">/</span>tired<span class="token operator">|</span>too hard<span class="token operator">|</span>to hard<span class="token operator">|</span>upset<span class="token operator">|</span>bored<span class="token operator">/</span>i<span class="token punctuation">,</span> <span class="token punctuation">(</span>msg<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span>
+    msg<span class="token punctuation">.</span>send <span class="token string">"Panzy"</span></code></pre>
+<p>See what I did there 😃 Any time someone in our chat room says they are tired, that something is too hard, upset, or bored, hubot tells them they’re a panzy. Oh yeah. This robot butler has an attitude.</p>
+<h3>Random</h3>
+<p>I saw this used first in the shipit script, which displays a random shipit squirrel for your viewing pleasure whenever someone says the words “ship it” in your chat room.</p>
+<pre class="language-coffeescript"><code class="language-coffeescript"><span class="token comment"># Rodent Motivation</span>
+#
+<span class="token comment"># ship it - Display a motivation squirrel</span>
+#
+
+squirrels <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token string">"/images/posts/hubot-scripts-explained/20100714-d6q52xajfh4cimxr3888yb77ru.jpg"</span><span class="token punctuation">,</span>
+  <span class="token string">"/images/posts/hubot-scripts-explained/20111026-r2wsngtu4jftwxmsytdke6arwd.png"</span><span class="token punctuation">,</span>
+  <span class="token string">"/images/posts/hubot-scripts-explained/Screen_Shot_2011-10-27_at_9.36.45_AM.png"</span><span class="token punctuation">,</span>
+  <span class="token string">"/images/posts/hubot-scripts-explained/squirrel.png"</span>
+<span class="token punctuation">]</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">(</span>robot<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span>
+  robot<span class="token punctuation">.</span>hear <span class="token operator">/</span>ship it<span class="token operator">/</span>i<span class="token punctuation">,</span> <span class="token punctuation">(</span>msg<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span>
+    msg<span class="token punctuation">.</span>send msg<span class="token punctuation">.</span>random squirrels</code></pre>
+<p>Notice the array that we create with 4 different shipit squirrel images. Then notice this line:</p>
+<pre class="language-coffeescript"><code class="language-coffeescript">msg<span class="token punctuation">.</span>send msg<span class="token punctuation">.</span>random squirrels</code></pre>
+<p>The msg object has a random method on it which we can pass an array and it will pick a random item from that array! Super handy to keep things from getting repetitive.</p>
+<h3>Reply</h3>
+<p>You can reply to a user by changing the send command to reply like this:</p>
+<pre class="language-coffeescript"><code class="language-coffeescript">msg<span class="token punctuation">.</span>reply <span class="token string">"Why thank you sir!"</span></code></pre>
+<p>Replies will be directed at a specific user, example: “@hoyt Why thank you sir!”</p>
+<h3>Http</h3>
+<p>So far we’ve only talked about how to make hubot listen and respond in various ways. Hubot really starts to get interesting when we empower him to go out and do our bidding in the larger world though. This is where hubot really starts to become powerful!</p>
+<pre class="language-coffeescript"><code class="language-coffeescript"><span class="token comment"># Whois for gems, because gem names are like domains in the 90's</span>
+#
+<span class="token comment"># gem whois &lt;gemname> - returns gem details if it exists</span>
+#
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">(</span>robot<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span>
+  robot<span class="token punctuation">.</span>respond <span class="token operator">/</span>gem <span class="token function">whois</span> <span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">/</span>i<span class="token punctuation">,</span> <span class="token punctuation">(</span>msg<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span>
+    gemname <span class="token operator">=</span> <span class="token function">escape</span><span class="token punctuation">(</span>msg<span class="token punctuation">.</span>match<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    msg<span class="token punctuation">.</span><span class="token function">http</span><span class="token punctuation">(</span><span class="token string">"http://rubygems.org/api/v1/gems/<span class="token interpolation variable">#{gemname}</span>.json"</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> res<span class="token punctuation">,</span> body<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span>
+        <span class="token keyword">try</span>
+          json <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span>
+          msg<span class="token punctuation">.</span>send <span class="token string">"   gem name: <span class="token interpolation variable">#{json.name}</span>\n\
+     owners: <span class="token interpolation variable">#{json.authors}</span>\n\
+       info: <span class="token interpolation variable">#{json.info}</span>\n\
+    version: <span class="token interpolation variable">#{json.version}</span>\n\
+  downloads: <span class="token interpolation variable">#{json.downloads}</span>\n"</span>
+        <span class="token keyword">catch</span> error
+          msg<span class="token punctuation">.</span>send <span class="token string">"Gem not found. It will be mine. Oh yes. It will be mine. *sinister laugh*"</span></code></pre>
+<p>This script is doing quite a bit so we’ll dissect it line by line.</p>
+<pre class="language-coffeescript"><code class="language-coffeescript">robot<span class="token punctuation">.</span>respond <span class="token operator">/</span>gem <span class="token function">whois</span> <span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">/</span>i<span class="token punctuation">,</span> <span class="token punctuation">(</span>msg<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span></code></pre>
+<p>This tells hubot to look for messages directed at him that have the words “gem whois” and then some string.</p>
+<pre class="language-coffeescript"><code class="language-coffeescript">gemname <span class="token operator">=</span> <span class="token function">escape</span><span class="token punctuation">(</span>msg<span class="token punctuation">.</span>match<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<p>Now I grab the gemname from the regular expression. msg.match with an integer will match the captured item from the regular expression. You use parenthesis to capture strings in regular expressions, and they get numbered left to right by however many there are. In this case its the first one, so we pass 1 to msg.match and then assign it off to our variable gemname.</p>
+<pre class="language-coffeescript"><code class="language-coffeescript">msg<span class="token punctuation">.</span><span class="token function">http</span><span class="token punctuation">(</span><span class="token string">"http://rubygems.org/api/v1/gems/<span class="token interpolation variable">#{gemname}</span>.json"</span><span class="token punctuation">)</span></code></pre>
+<p>Next we tell the msg.http object to use this url, with the gemname interpolated in it.</p>
+<pre class="language-coffeescript"><code class="language-coffeescript"><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> res<span class="token punctuation">,</span> body<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span></code></pre>
+<p>The .get() function kicks off the request and returns 3 objects, err, res, and body. In this case we’re only interested in body.</p>
+<pre class="language-coffeescript"><code class="language-coffeescript"><span class="token keyword">try</span>
+  json <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span>
+  msg<span class="token punctuation">.</span>send <span class="token string">"   gem name: <span class="token interpolation variable">#{json.name}</span>\n\
+    owners: <span class="token interpolation variable">#{json.authors}</span>\n\
+    info: <span class="token interpolation variable">#{json.info}</span>\n\
+    version: <span class="token interpolation variable">#{json.version}</span>\n\
+    downloads: <span class="token interpolation variable">#{json.downloads}</span>\n"</span>
+<span class="token keyword">catch</span> error
+  msg<span class="token punctuation">.</span>send <span class="token string">"Gem not found. It will be mine. Oh yes. It will be mine. *sinister laugh*"</span></code></pre>
+<p>If JSON.parse is able to parse the body then it displays the gem information, if it errors we get the “Gem not found” message.</p>
+<h3>Advanced HTTP</h3>
+<p>What if you want to hit an API that requires authentication? Here is a script that uses http basic auth when hitting the <a href="http://dnsimple.com">dnsimple</a> api to check domain name availability.</p>
+<pre class="language-coffeescript"><code class="language-coffeescript"><span class="token comment"># Domain availability via DNSimple, requires you set</span>
+<span class="token comment"># DNSIMPLE_USERNAME &amp; DNSIMPLE_PASSWORD environment variables</span>
+#
+<span class="token comment"># check domain &lt;domainname> - returns whether a domain is available</span>
+#
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">(</span>robot<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span>
+  robot<span class="token punctuation">.</span>hear <span class="token operator">/</span>check <span class="token function">domain</span> <span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">/</span>i<span class="token punctuation">,</span> <span class="token punctuation">(</span>msg<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span>
+    domain <span class="token operator">=</span> <span class="token function">escape</span><span class="token punctuation">(</span>msg<span class="token punctuation">.</span>match<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    user <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">DNSIMPLE_USERNAME</span>
+    pass <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">DNSIMPLE_PASSWORD</span>
+    auth <span class="token operator">=</span> <span class="token string">'Basic '</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">Buffer</span><span class="token punctuation">(</span>user <span class="token operator">+</span> <span class="token string">':'</span> <span class="token operator">+</span> pass<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">'base64'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    msg<span class="token punctuation">.</span><span class="token function">http</span><span class="token punctuation">(</span><span class="token string">"https://dnsimple.com/domains/<span class="token interpolation variable">#{domain}</span>/check"</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">headers</span><span class="token punctuation">(</span><span class="token property">Authorization</span><span class="token operator">:</span> auth<span class="token punctuation">,</span> <span class="token property">Accept</span><span class="token operator">:</span> <span class="token string">'application/json'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> res<span class="token punctuation">,</span> body<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span>
+        <span class="token keyword">switch</span> res<span class="token punctuation">.</span>statusCode
+          <span class="token keyword">when</span> <span class="token number">200</span>
+            msg<span class="token punctuation">.</span>send <span class="token string">"Sorry, <span class="token interpolation variable">#{domain}</span> is not available."</span>
+          <span class="token keyword">when</span> <span class="token number">404</span>
+            msg<span class="token punctuation">.</span>send <span class="token string">"Cybersquat that s***!"</span>
+          <span class="token keyword">when</span> <span class="token number">401</span>
+            msg<span class="token punctuation">.</span>send <span class="token string">"You need to authenticate by setting the DNSIMPLE_USERNAME &amp; DNSIMPLE_PASSWORD environment variables"</span>
+          <span class="token keyword">else</span>
+            msg<span class="token punctuation">.</span>send <span class="token string">"Unable to process your request and we're not sure why :("</span></code></pre>
+<p>We do the same thing as the last example, grabbing the domain name that is captured by the regular expression, but then things get a bit different.</p>
+<pre class="language-coffeescript"><code class="language-coffeescript">user <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">DNSIMPLE_USERNAME</span>
+pass <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">DNSIMPLE_PASSWORD</span></code></pre>
+<p>Here we grab some environment variables and assign them to variables. If you are <a href="http://jonmagic.com/blog/archives/2011/10/28/hipchat-hubot-and-me/">deploying hubot to Heroku</a> then setting environment variables is crazy easy:</p>
+<pre class="language-coffeescript"><code class="language-coffeescript">heroku <span class="token property">config</span><span class="token operator">:</span>add <span class="token constant">DNSIMPLE_USERNAME</span><span class="token operator">=</span>john<span class="token class-member variable">@doe</span><span class="token punctuation">.</span>com <span class="token constant">DNSIMPLE_PASSWORD</span><span class="token operator">=</span>4w3s0m3p4ssw0rd</code></pre>
+<p>Next we have to create the auth string that we’ll stuff into the authorization header.</p>
+<pre class="language-coffeescript"><code class="language-coffeescript">auth <span class="token operator">=</span> <span class="token string">'Basic '</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">Buffer</span><span class="token punctuation">(</span>user <span class="token operator">+</span> <span class="token string">':'</span> <span class="token operator">+</span> pass<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">'base64'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Creating that auth string is some javascript voodoo that took me awhile to figure out, finally finding an article on <a href="http://stackoverflow.com/questions/3905126/how-to-use-http-client-in-node-js-if-there-are-basic-authorization">stackoverflow</a> that had the magic I needed.</p>
+<pre class="language-coffeescript"><code class="language-coffeescript">msg<span class="token punctuation">.</span><span class="token function">http</span><span class="token punctuation">(</span><span class="token string">"https://dnsimple.com/domains/<span class="token interpolation variable">#{domain}</span>/check"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">headers</span><span class="token punctuation">(</span><span class="token property">Authorization</span><span class="token operator">:</span> auth<span class="token punctuation">,</span> <span class="token property">Accept</span><span class="token operator">:</span> <span class="token string">'application/json'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> res<span class="token punctuation">,</span> body<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span></code></pre>
+<p>The really interesting line in the code above is the .headers() line. We can set headers for the http request before calling .get(), allowing us to configure the Authorization and Accept headers! Now the last bit.</p>
+<pre class="language-coffeescript"><code class="language-coffeescript"><span class="token keyword">switch</span> res<span class="token punctuation">.</span>statusCode
+  <span class="token keyword">when</span> <span class="token number">200</span>
+    msg<span class="token punctuation">.</span>send <span class="token string">"Sorry, <span class="token interpolation variable">#{domain}</span> is not available."</span>
+  <span class="token keyword">when</span> <span class="token number">404</span>
+    msg<span class="token punctuation">.</span>send <span class="token string">"Cybersquat that s***!"</span>
+  <span class="token keyword">when</span> <span class="token number">401</span>
+    msg<span class="token punctuation">.</span>send <span class="token string">"You need to authenticate by setting the DNSIMPLE_USERNAME &amp; DNSIMPLE_PASSWORD environment variables"</span>
+  <span class="token keyword">else</span>
+    msg<span class="token punctuation">.</span>send <span class="token string">"Unable to process your request and we're not sure why :("</span></code></pre>
+<p>The response (res) object has a statusCode method on it which we can use to match http response codes. Based on the dnsimple api I was able to make a simple switch statement with the correct replies for each status code.</p>
+<h3>Conclusion</h3>
+<p>I hope this is helpful to some folks out there. I can’t wait to see what other hubot scripts people write!</p>
+<p>Make sure to fork the <a href="https://github.com/github/hubot-scripts">hubot-scripts</a> repo, add your scripts, and do a pull request once you’ve got them working. The gem whois and dnsimple scripts above have already been accepted into the hubot-scripts library!</p>
+<p>Enjoy 😃</p>
+
+    </main>
+  </div>
+  
+  <div class="page">
+    <footer>
+  © Jonathan Hoyt <span id="year"></span> — built <s>by hand</s> with an LLM
+</footer>
+
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>

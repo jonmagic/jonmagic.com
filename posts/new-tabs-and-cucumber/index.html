@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YGV0G2L1W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YGV0G2L1W3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New Tabs and Cucumber</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/css/base.css">
+<link rel="alternate" type="application/atom+xml" title="JonMagic.com RSS Feed" href="/feed.xml">
+
+</head>
+
+<body class="">
+  
+  <nav class="site-nav">
+  <div class="nav-container">
+    <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/posts/">Posts</a></li><li><a href="/projects/">Projects</a></li><li><a href="/about/">About</a></li></ul>
+    <div class="social-links">
+      <a href="https://github.com/jonmagic" title="GitHub Profile">
+        <img src="/images/github.png" alt="GitHub Profile" width="24" height="24" class="github-icon">
+      </a>
+      <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile">
+        <img src="/images/linkedin.png" alt="LinkedIn Profile" width="24" height="24" class="linkedin-icon">
+      </a>
+      <a href="/feed.xml" title="RSS Feed">
+        <img src="/images/rss.png" alt="RSS Feed" width="24" height="24" class="rss-icon">
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <div class="page layout-main">
+    <main class="content">
+      
+      <div class="post-date-container">
+        <span id="post-date-typing" class="post-date-typing" data-date="2012-02-07"></span>
+      </div>
+      
+      <h1 class="site-title">New Tabs and Cucumber</h1>
+      <p>While working on an internal app at <a href="http://github.com">GitHub</a> I had to write a <a href="http://cukes.info/">cucumber</a> scenario that ran expectations against a new tab that was opened. Here is how I did it.</p>
+<h3>The Code</h3>
+<p>Searching around the internet, I finally found a tip on <a href="http://stackoverflow.com/questions/3104348/ruby-on-rails-cucumber-how-do-i-follow-a-link-that-opens-a-new-window">StackOverflow</a> that got me moving in the right direction. In this context tabs are referred to as windows.</p>
+<pre class="language-ruby"><code class="language-ruby">page<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>browser<span class="token punctuation">.</span>switch_to<span class="token punctuation">.</span>window<span class="token punctuation">(</span>page<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>browser<span class="token punctuation">.</span>window_handles<span class="token punctuation">.</span>last<span class="token punctuation">)</span></code></pre>
+<p>This code grabs the browser object and calls switch_to window on it and passes in the last opened window.</p>
+<p>Now all we need to do is wrap this in a step so we can use it in our scenarios.</p>
+<pre class="language-ruby"><code class="language-ruby">When <span class="token operator">/</span><span class="token operator">^</span><span class="token constant">I</span> access the <span class="token keyword">new</span> tab$<span class="token operator">/</span> <span class="token keyword">do</span>
+  page<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>browser<span class="token punctuation">.</span>switch_to<span class="token punctuation">.</span>window<span class="token punctuation">(</span>page<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>browser<span class="token punctuation">.</span>window_handles<span class="token punctuation">.</span>last<span class="token punctuation">)</span>
+<span class="token keyword">end</span></code></pre>
+<h3>The Caveat</h3>
+<p>This will only work if you are using <a href="http://seleniumhq.org/docs/">selenium-webdriver</a>. It will <a href="https://github.com/thoughtbot/capybara-webkit/issues/47">not work with capybara-webkit</a> unfortunately. So I switched to selenium, but I told it to use chrome instead of the default firefox and it still works great!</p>
+<pre class="language-ruby"><code class="language-ruby">Capybara<span class="token punctuation">.</span>javascript_driver <span class="token operator">=</span> <span class="token symbol">:selenium</span>
+Capybara<span class="token punctuation">.</span>register_driver <span class="token symbol">:selenium</span> <span class="token keyword">do</span> <span class="token operator">|</span>app<span class="token operator">|</span>
+  Capybara<span class="token double-colon punctuation">::</span>Selenium<span class="token double-colon punctuation">::</span><span class="token class-name">Driver</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span>app<span class="token punctuation">,</span> <span class="token symbol">:browser</span> <span class="token operator">=></span> <span class="token symbol">:chrome</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span></code></pre>
+<h3>The Finale</h3>
+<p>Now its time to see the step in action. Notice I had to tag the feature with @javascript so that it uses the selenium webdriver.</p>
+<pre class="language-ruby"><code class="language-ruby"><span class="token variable">@javascript</span>
+<span class="token symbol">Feature</span><span class="token operator">:</span> Open a discussion
+
+  <span class="token symbol">Scenario</span><span class="token operator">:</span> staff opens a discussion with the mouse
+    Given the following users exist<span class="token operator">:</span>
+      <span class="token operator">|</span> username   <span class="token operator">|</span> email                 <span class="token operator">|</span>
+      <span class="token operator">|</span> test<span class="token operator">-</span>user  <span class="token operator">|</span> integration<span class="token variable">@test</span><span class="token punctuation">.</span>com  <span class="token operator">|</span>
+    And <span class="token constant">I</span> am on the triage page
+    When <span class="token constant">I</span> follow <span class="token string-literal"><span class="token string">"Can't get git running on my mac"</span></span>
+    And <span class="token constant">I</span> access the <span class="token keyword">new</span> tab
+    Then <span class="token constant">I</span> should be on the discussion page <span class="token keyword">for</span> <span class="token string-literal"><span class="token string">"5786909"</span></span>
+    And <span class="token constant">I</span> should see <span class="token string-literal"><span class="token string">"Can't get git running on my mac"</span></span></code></pre>
+<p>The link that I follow opens the new page in a new tab, I select the new tab, then run my expectations against it.</p>
+
+    </main>
+  </div>
+  
+  <div class="page">
+    <footer>
+  © Jonathan Hoyt <span id="year"></span> — built <s>by hand</s> with an LLM
+</footer>
+
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>

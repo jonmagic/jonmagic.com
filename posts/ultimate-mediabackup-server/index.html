@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YGV0G2L1W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YGV0G2L1W3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ultimate media/backup server</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/css/base.css">
+<link rel="alternate" type="application/atom+xml" title="JonMagic.com RSS Feed" href="/feed.xml">
+
+</head>
+
+<body class="">
+  
+  <nav class="site-nav">
+  <div class="nav-container">
+    <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/posts/">Posts</a></li><li><a href="/projects/">Projects</a></li><li><a href="/about/">About</a></li></ul>
+    <div class="social-links">
+      <a href="https://github.com/jonmagic" title="GitHub Profile">
+        <img src="/images/github.png" alt="GitHub Profile" width="24" height="24" class="github-icon">
+      </a>
+      <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile">
+        <img src="/images/linkedin.png" alt="LinkedIn Profile" width="24" height="24" class="linkedin-icon">
+      </a>
+      <a href="/feed.xml" title="RSS Feed">
+        <img src="/images/rss.png" alt="RSS Feed" width="24" height="24" class="rss-icon">
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <div class="page layout-main">
+    <main class="content">
+      
+      <div class="post-date-container">
+        <span id="post-date-typing" class="post-date-typing" data-date="2007-10-22"></span>
+      </div>
+      
+      <h1 class="site-title">Ultimate media/backup server</h1>
+      <p>I’ve been using a winxp box in my living room for some time now, and while it works really well, I do find it lacking. Currently it has a 200gb hdd and a 80gb hdd, runs xp pro, has a video card with composite out so I can go straight to the tv, has <a href="http://azureus.sourceforge.net/">Azureus</a> and <a href="http://www.rulecam.net/ted/">ted</a> to get tv shows,<br>
+<a href="http://filehippo.com/download_klite_codec_pack/">k-lite codec pack</a> with Media Player Classic, and vnc so I can remote control it… Its pretty slick over all, but I’m running out of storage and I want something with more features.</p>
+<h4>So here are my new requirements:</h4>
+<ul>
+<li>Easily expandable storage, without reinstalling my OS or adding RAID cards etc…</li>
+<li>Smaller form factor, my current machine is a full desktop tower</li>
+<li>IR remote control and VNC</li>
+<li>auto download shows</li>
+<li>act as a backup resource for all my computers in the house, which means it has to have redundant storage</li>
+<li>looks pretty, both hardware and software</li>
+</ul>
+<p><em>Well, the only way I know how to meet those requirements is with a <a href="http://www.apple.com/macmini/">Mac Mini</a> and a <a href="http://www.drobo.com/">Drobo</a> storage device.</em></p>
+<h4>How I’ll pimp the Mac Mini</h4>
+<p>I’ll need at least a gig of RAM in the mini, doesn’t matter how big its HDD is though since the Drobo will be plugged into it. I’ll run Leopard with <a href="http://azureus.sourceforge.net/">Azureus</a> and <a href="http://www.rulecam.net/ted/">ted</a> to get my TV content. I’ll set up AFP and SMB file sharing on it so I can access this baby over the network. I’m not sure yet how I’ll remote control, might use VNC, might not???</p>
+<h4>What I’ll do with the Drobo</h4>
+<p>The drobo will be attached to the mini via USB 2.0. I’ll probably start with a few 250gb or 500gb drives, doesn’t matter cuz of the drobo’s magic!!! With the advent of Leopard and Time Machine I’ll be able to set this as a backup drive over the network for all my Macs, never having to worry about data loss again! I’m so excited about this part of it.</p>
+<p>Anyways, there are more details to figure out, and of course I need to find funding 😉 But one can always wish can’t they…</p>
+
+    </main>
+  </div>
+  
+  <div class="page">
+    <footer>
+  © Jonathan Hoyt <span id="year"></span> — built <s>by hand</s> with an LLM
+</footer>
+
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>

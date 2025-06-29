@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YGV0G2L1W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YGV0G2L1W3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting hacked</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/css/base.css">
+<link rel="alternate" type="application/atom+xml" title="JonMagic.com RSS Feed" href="/feed.xml">
+
+</head>
+
+<body class="">
+  
+  <nav class="site-nav">
+  <div class="nav-container">
+    <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/posts/">Posts</a></li><li><a href="/projects/">Projects</a></li><li><a href="/about/">About</a></li></ul>
+    <div class="social-links">
+      <a href="https://github.com/jonmagic" title="GitHub Profile">
+        <img src="/images/github.png" alt="GitHub Profile" width="24" height="24" class="github-icon">
+      </a>
+      <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile">
+        <img src="/images/linkedin.png" alt="LinkedIn Profile" width="24" height="24" class="linkedin-icon">
+      </a>
+      <a href="/feed.xml" title="RSS Feed">
+        <img src="/images/rss.png" alt="RSS Feed" width="24" height="24" class="rss-icon">
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <div class="page layout-main">
+    <main class="content">
+      
+      <div class="post-date-container">
+        <span id="post-date-typing" class="post-date-typing" data-date="2008-06-20"></span>
+      </div>
+      
+      <h1 class="site-title">Getting hacked</h1>
+      <p>My worst nightmare happened last night, and I didn’t even know it until late this morning. I was hacked…</p>
+<h3>Sequence of events:</h3>
+<h4>June 19th</h4>
+<ul>
+<li>10pm EST – hacker figured out my email password, logged in, and sent out a mass email to the top 20 people on my contact list (most contacted people), thankfully gmail calculates this list only when you use the web interface in gmail, which I haven’t used in quite some time since I switched to using Apple Mail.app. Most everyone on the top 20 were family or friends. Mysteriously the hacker does not send the mass mail to Sam or Xian, who were both on my top 20 list. The two people who would have known to call me (rather than email me) and tell me to take immediate action.</li>
+<li>10:16pm EST – Hacker? tries logging into my blog admin section from this ip 90.194.192.57 unsuccessfully</li>
+<li>10:20pm EST – Hacker? successfully logs into my blog admin section from this ip 88.191.47.11</li>
+<li>10:23pm EST – Magically whoever logged in at 10:20 is now logged in under a different ip 128.197.11.30 and figuring out my blogging system</li>
+<li>10:29pm EST – Hacker figures out my layout management system and starts adding javascript to my template files, first my tag.liquid file</li>
+<li>10:31pm EST – Hacker finds my layout.liquid file, the master layout, and adds several javascript lines in there. They cause anyone who visits my site to get forwarded to a nasty porn storm site, and installed some sort of tracking js linked to <a href="http://cetrk.com">cetrk.com</a> and crazyegg? Keeps updating the</li>
+</ul>
+
+    </main>
+  </div>
+  
+  <div class="page">
+    <footer>
+  © Jonathan Hoyt <span id="year"></span> — built <s>by hand</s> with an LLM
+</footer>
+
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>

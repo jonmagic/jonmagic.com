@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YGV0G2L1W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YGV0G2L1W3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moving Speaker Deck to Heroku</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/css/base.css">
+<link rel="alternate" type="application/atom+xml" title="JonMagic.com RSS Feed" href="/feed.xml">
+
+</head>
+
+<body class="">
+  
+  <nav class="site-nav">
+  <div class="nav-container">
+    <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/posts/">Posts</a></li><li><a href="/projects/">Projects</a></li><li><a href="/about/">About</a></li></ul>
+    <div class="social-links">
+      <a href="https://github.com/jonmagic" title="GitHub Profile">
+        <img src="/images/github.png" alt="GitHub Profile" width="24" height="24" class="github-icon">
+      </a>
+      <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile">
+        <img src="/images/linkedin.png" alt="LinkedIn Profile" width="24" height="24" class="linkedin-icon">
+      </a>
+      <a href="/feed.xml" title="RSS Feed">
+        <img src="/images/rss.png" alt="RSS Feed" width="24" height="24" class="rss-icon">
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <div class="page layout-main">
+    <main class="content">
+      
+      <div class="post-date-container">
+        <span id="post-date-typing" class="post-date-typing" data-date="2011-07-27"></span>
+      </div>
+      
+      <h1 class="site-title">Moving Speaker Deck to Heroku</h1>
+      <p>While at RailsConf earlier this year we decided that it would be wise to move Speaker Deck to Heroku and S3, and we finally made it happen.</p>
+<h3>History</h3>
+<p><a href="http://speakerdeck.com">Speaker Deck</a> has been my labor of love since June 1st of last year. <a href="http://orderedlist.com/the-team/#steve-smith">Steve</a> and <a href="http://orderedlist.com/the-team/#john-nunemaker">John</a> had the idea and I set about making it happen in my spare time. It launched October 20th 2010 (with a lot of help from Steve and John) and has been purring along quietly since then. We’ve had 38 people request beta signups and as of today 85 presentations have been uploaded.</p>
+<h3>Getting Started</h3>
+<p>So back to point of this post, we decided that this app, with its hunger for lots of background workers (to process slides) and its desire to scale as adoption grows, mandated that we figure out a scaling strategy that worked for the app, and worked for us and our resources at the moment.</p>
+<p>We had been tossing <a href="http://heroku.com">Heroku</a> around in the back of our minds for awhile and after talking to a couple of the Heroku guys at <a href="http://railsconf.com">RailsConf</a> and having them check if their system had some software we needed (imagemagick/ghostscript), we decided to give it a go.</p>
+<p>Just a few days ago I decided to get to work on it after talking to my coworkers about how to make it happen. <a href="http://orderedlist.com/the-team/#brandon-keepers">Brandon</a> and I dug in and implemented storing slides on S3 (instead of MongoDB’s gridfs) in just a few short hours thanks to the <a href="https://github.com/jnicklas/carrierwave">Carrierwave</a> gem.</p>
+<p>It just so happened that this weekend was the <a href="http://weblog.rubyonrails.org/2011/7/14/rails-3-1-hackfest">Rails 3.1 hackfest</a>, so Saturday we upgraded the app to Rails 3.1 and then to use Ruby 1.9.2 so it could run on the <a href="http://devcenter.heroku.com/articles/cedar">Heroku Cedar Stack</a>. Next we started working on deploying to Heroku.</p>
+<h3>Deploying</h3>
+<p>Deploying ended up being a lot of trial and error. First I ran into an issue with Heroku’s bundler version (a release candidate) not being able to find one of my dependencies, but that was solved with the handy “bundle cache” command. You just do <code>bundle cache</code> and then check <code>vendor/cache</code> into your repo and it sends all the gems up (still in the compressed gem form) so bundler can install them from the <code>vendor/cache</code> dir.</p>
+<p>Finally I couldn’t get my resque workers to run in the right environment, turns out I was missing <code>task 'resque:setup' =&gt; :environment</code> in my Rakefile. Hadn’t needed that on our previous deploy to <a href="http://linode.com">Linode</a>, so it took awhile for me figure that one out.</p>
+<h3>Migrating</h3>
+<p>Brandon and I wrote a script to migrate the data on the old Linode server to our local database and at the same time suck the pdf’s out of Mongo on the old server and then put them on S3 rather than keeping them in gridfs. Then a quick mongodump and mongorestore later our production data was synced from my local machine to our new MongoHQ database.</p>
+<p>Now that the pdf’s were on S3 and the mongo database was populated we just had to reprocess the pdf’s into slides. Technically we could have grabbed the already generated slides from the old server, but we really wanted to see how much we could scale our worker processes on Heroku.</p>
+<p>Here’s the fun part! After a few failed starts (I’ll talk about those in a minute) we had 100 heroku workers processing 5000 slides (an intensive imagemagick/ghostscript task) and it ripped thru them all in just a few minutes. It was awesome to watch the resque web console and typing <code>heroku ps:scale worker=100</code> was a lot of fun!</p>
+<h3>Heroku Scaling Gotchya’s</h3>
+<p><strong>DO NOT</strong> remove workers while you are processing a bunch of stuff unless your jobs are easy to restart. Heroku kills the processes not caring if they were already working on something, leaving jobs in limbo 😕</p>
+<p><strong>DO NOT</strong> change (upgrade/downgrade) your RedisToGo plan while workers are running, your redis db gets replaced instantly, losing any currently processing jobs.</p>
+<h3>Wrap Up</h3>
+<p>Overall this was a fairly painless move and it was so exciting to scale up our background workers and watch 20 slides a second get processed. Now that Speaker Deck is on Heroku and S3 we have one less constraint holding us back from releasing new features and hopefully leaving beta soon.</p>
+
+    </main>
+  </div>
+  
+  <div class="page">
+    <footer>
+  © Jonathan Hoyt <span id="year"></span> — built <s>by hand</s> with an LLM
+</footer>
+
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>

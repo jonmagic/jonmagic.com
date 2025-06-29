@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YGV0G2L1W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YGV0G2L1W3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OSX Styled web gui</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/css/base.css">
+<link rel="alternate" type="application/atom+xml" title="JonMagic.com RSS Feed" href="/feed.xml">
+
+</head>
+
+<body class="">
+  
+  <nav class="site-nav">
+  <div class="nav-container">
+    <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/posts/">Posts</a></li><li><a href="/projects/">Projects</a></li><li><a href="/about/">About</a></li></ul>
+    <div class="social-links">
+      <a href="https://github.com/jonmagic" title="GitHub Profile">
+        <img src="/images/github.png" alt="GitHub Profile" width="24" height="24" class="github-icon">
+      </a>
+      <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile">
+        <img src="/images/linkedin.png" alt="LinkedIn Profile" width="24" height="24" class="linkedin-icon">
+      </a>
+      <a href="/feed.xml" title="RSS Feed">
+        <img src="/images/rss.png" alt="RSS Feed" width="24" height="24" class="rss-icon">
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <div class="page layout-main">
+    <main class="content">
+      
+      <div class="post-date-container">
+        <span id="post-date-typing" class="post-date-typing" data-date="2008-10-15"></span>
+      </div>
+      
+      <h1 class="site-title">OSX Styled web gui</h1>
+      <p>I’ll probably get in trouble for this, but I decided to <a href="http://github.com/jonmagic/webapp_gui/">release it</a> anyways… I’ve been working on some software for running my company and needed a nice GUI, implemented in HTML/CSS/JS. I decided, since I prefer using OSX over any other interface, I wanted my web app to look like OSX too.</p>
+<p>So I started from scratch and made up this GUI using minimal HTML markup, simple CSS (I use the <a href="http://www.blueprintcss.org/">blueprint</a> CSS library as a foundation), the <a href="http://jquery.com">jquery</a> JavaScript library (including jQuery UI elements), and the <a href="http://www.famfamfam.com/lab/icons/silk/">famfamfam silk</a> icon set.</p>
+<p>This is not <strong>TOTALLY</strong> OSX themed, as I couldn’t find any tabs anywhere in OSX that worked for web apps (at least not easily implemented ones), so I used the jQuery tabs instead and just made them match as close as possible to the rest of the theme.</p>
+<h4>Caveat</h4>
+<p>This will not work in IE (I’m pretty sure, but haven’t tested), but it does work in modern versions of WebKit-based browsers (Safari and Chrome) and Firefox.</p>
+<p><a href="http://github.com/jonmagic/webapp_gui/tree/master">Here is the link to my GitHub repo</a></p>
+
+    </main>
+  </div>
+  
+  <div class="page">
+    <footer>
+  © Jonathan Hoyt <span id="year"></span> — built <s>by hand</s> with an LLM
+</footer>
+
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>

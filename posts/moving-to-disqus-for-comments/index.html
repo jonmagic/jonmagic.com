@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YGV0G2L1W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YGV0G2L1W3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moving to Disqus for comments</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/css/base.css">
+<link rel="alternate" type="application/atom+xml" title="JonMagic.com RSS Feed" href="/feed.xml">
+
+</head>
+
+<body class="">
+  
+  <nav class="site-nav">
+  <div class="nav-container">
+    <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/posts/">Posts</a></li><li><a href="/projects/">Projects</a></li><li><a href="/about/">About</a></li></ul>
+    <div class="social-links">
+      <a href="https://github.com/jonmagic" title="GitHub Profile">
+        <img src="/images/github.png" alt="GitHub Profile" width="24" height="24" class="github-icon">
+      </a>
+      <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile">
+        <img src="/images/linkedin.png" alt="LinkedIn Profile" width="24" height="24" class="linkedin-icon">
+      </a>
+      <a href="/feed.xml" title="RSS Feed">
+        <img src="/images/rss.png" alt="RSS Feed" width="24" height="24" class="rss-icon">
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <div class="page layout-main">
+    <main class="content">
+      
+      <div class="post-date-container">
+        <span id="post-date-typing" class="post-date-typing" data-date="2009-02-21"></span>
+      </div>
+      
+      <h1 class="site-title">Moving to Disqus for comments</h1>
+      <p>I’ve been thinking about using Disqus for awhile now and finally decided to bite the bullet when I realized I just couldn’t get the features I wanted out of Mephisto’s built in comment system.</p>
+<p>Setting <a href="http://disqus.com">Disqus</a> up on your blog is easy enough, they’ve got automated stuff for the popular hosted blogging platforms, and easy to insert html/js for those of us running our own custom blogging systems, like <a href="http://mephistoblog.com">Mephisto</a>.</p>
+<p>If you are interested in doing this yourself, read on!</p>
+<p>I wanted to be able to keep the 90+ comments I had already though, and importing didn’t look like it was going to be easy. But then I found <a href="http://gweezlebur.com/2009/01/05/mephisto-to-disqus.html">Michael Ivy’s post on importing from Mephisto to Disqus</a> and got excited at how easy it looked to be. At first I tried using his vanilla script, just filling in the blanks, but quickly realized there were some problems:</p>
+<ol>
+<li>The script didn’t account for your MySQL db having a password</li>
+<li>It gets the article URLs from the article RSS feed, which only returns the last 15 articles by default</li>
+</ol>
+<p>I started tackling the first problem by just changing one line in the script to look like this:</p>
+<pre class="language-ruby"><code class="language-ruby">db <span class="token operator">=</span> Sequel<span class="token punctuation">.</span>mysql<span class="token punctuation">(</span>db<span class="token punctuation">,</span> <span class="token symbol">:user</span> <span class="token operator">=></span> db_user<span class="token punctuation">,</span> <span class="token symbol">:password</span> <span class="token operator">=></span> db_pass<span class="token punctuation">,</span> <span class="token symbol">:host</span> <span class="token operator">=></span> <span class="token string-literal"><span class="token string">'localhost'</span></span><span class="token punctuation">)</span></code></pre>
+<p>and then adding <code>db_pass = 'password_here'</code> to the options stuff above. This kind of worked, except that one of the last lines in the script</p>
+<pre class="language-ruby"><code class="language-ruby">puts <span class="token string-literal"><span class="token string">"Success: </span><span class="token interpolation"><span class="token delimiter punctuation">#{</span><span class="token content">comment<span class="token punctuation">.</span>author</span><span class="token delimiter punctuation">}</span></span><span class="token string"> on </span><span class="token interpolation"><span class="token delimiter punctuation">#{</span><span class="token content">comment<span class="token punctuation">.</span>title</span><span class="token delimiter punctuation">}</span></span><span class="token string">"</span></span></code></pre>
+<p>errored out on <code>comment.author</code>, because Sequel isn’t taking into account relationships between models in Mephisto.</p>
+<p>At this point I decided to rework it a little and just use <code>./script/runner</code> to run the export script, so that I could take full advantage of the Rails app relationships. <a href="http://gist.github.com/68198">Here is my updated script</a>.</p>
+<p>Things still weren’t quite right though, I either had to modify Mephisto to get back all my articles from the RSS feed, or just use ActiveRecord to pull all that stuff. I decided to edit <code>app/controllers/feed_controller.rb</code> and remove the <code>:limit =&gt; 15</code> lines from the three methods at the bottom of that controller. I put them back afterwards 😃</p>
+<p>That should be it, worked great for me, putting all my existing comments into Disqus. Then I just had to modify <code>_comments.liquid</code>, <code>_entry.liquid</code>, and <code>layout.liquid</code> using the built in template editor in Mephisto.</p>
+<p>…nuf said</p>
+
+    </main>
+  </div>
+  
+  <div class="page">
+    <footer>
+  © Jonathan Hoyt <span id="year"></span> — built <s>by hand</s> with an LLM
+</footer>
+
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YGV0G2L1W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YGV0G2L1W3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HipChat, hubot, and Me</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/css/base.css">
+<link rel="alternate" type="application/atom+xml" title="JonMagic.com RSS Feed" href="/feed.xml">
+
+</head>
+
+<body class="">
+  
+  <nav class="site-nav">
+  <div class="nav-container">
+    <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/posts/">Posts</a></li><li><a href="/projects/">Projects</a></li><li><a href="/about/">About</a></li></ul>
+    <div class="social-links">
+      <a href="https://github.com/jonmagic" title="GitHub Profile">
+        <img src="/images/github.png" alt="GitHub Profile" width="24" height="24" class="github-icon">
+      </a>
+      <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile">
+        <img src="/images/linkedin.png" alt="LinkedIn Profile" width="24" height="24" class="linkedin-icon">
+      </a>
+      <a href="/feed.xml" title="RSS Feed">
+        <img src="/images/rss.png" alt="RSS Feed" width="24" height="24" class="rss-icon">
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <div class="page layout-main">
+    <main class="content">
+      
+      <div class="post-date-container">
+        <span id="post-date-typing" class="post-date-typing" data-date="2011-10-28"></span>
+      </div>
+      
+      <h1 class="site-title">HipChat, hubot, and Me</h1>
+      <p>How you can give Siri her very own robot brother with some help from Heroku and HipChat.</p>
+<p>Github released <a href="https://github.com/github/hubot">hubot</a> this week and geeks the world over have been transfixed by his awesomeness. He’s the second robot butler to enter my life lately, <a href="http://www.apple.com/iphone/features/siri.html">Siri</a> being the first. Together these two fulfill my every wish (not quite) and are at my beck and call day and night (too true).</p>
+<p><strong>UPDATE: for a slightly different take <a href="http://martinciu.com/2011/11/deploying-hubot-to-heroku-like-a-boss.html">try these instructions by @martinciu</a></strong></p>
+<p><strong>NOTE: to learn more about writing hubot scripts <a href="http://jonmagic.com/blog/archives/2011/10/28/hubot-scripts-explained/">read this</a></strong></p>
+<h3>Getting Started</h3>
+<p>The first step is to head on over to the <a href="https://github.com/github/hubot/downloads">hubot downloads</a> to grab yourself a copy of the latest hubot tarball. Download it and then open your command line to your download folder. It looked something like this for me:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">cd</span> Downloads
+<span class="token function">tar</span> zxvf hubot-1.1.3.tar.gz
+<span class="token builtin class-name">cd</span> hubot</code></pre>
+<p>Make sure you have node.js and npm installed. I used <a href="http://mxcl.github.com/homebrew/">homebrew</a> to accomplish this.</p>
+<pre class="language-bash"><code class="language-bash">brew <span class="token function">install</span> <span class="token function">node</span>
+brew <span class="token function">install</span> <span class="token function">npm</span></code></pre>
+<p>Then you can just run the hubot binary and it should install all the necessary packages and fire right up.</p>
+<pre class="language-bash"><code class="language-bash">bin/hubot</code></pre>
+<p>If you run into any issues at this point please consult the <a href="https://github.com/github/hubot/issues">hubot Issues</a> page on Github, because someone has probably already run into the issue.</p>
+<h3>Configuring Heroku and HipChat</h3>
+<p>First we need to initialize git for our hubot so he’s actually stored in version control.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> init <span class="token builtin class-name">.</span>
+<span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+<span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"spawning my first robot!"</span></code></pre>
+<p>Next we create a new instance on the <a href="http://devcenter.heroku.com/articles/cedar">Heroku cedar stack</a> (assuming you already are <a href="http://devcenter.heroku.com/articles/quickstart">setup to use Heroku</a>).</p>
+<pre class="language-bash"><code class="language-bash">heroku create my_hubot_app_name <span class="token parameter variable">--stack</span> cedar</code></pre>
+<p>Then we need to setup hubot and Heroku to connect to our <a href="http://hipchat.com">HipChat</a> account.</p>
+<p>This requires creating the user in HipChat and then going to your account page in HipChat (<a href="https://mycompanyhere.hipchat.com/account/xmpp">https://mycompanyhere.hipchat.com/account/xmpp</a>) to get some values that we’ll need for configuring Heroku.</p>
+<p>You’ll also need to go to the Group Admin in HipChat and the API tab to create an API Auth Token. Run the following commands replacing the values with the ones that match in the HipChat settings:</p>
+<pre class="language-bash"><code class="language-bash">heroku config:add <span class="token assign-left variable">HUBOT_HIPCHAT_JID</span><span class="token operator">=</span><span class="token operator">&lt;</span>Username<span class="token operator">></span>
+
+heroku config:add <span class="token assign-left variable">HUBOT_HIPCHAT_NAME</span><span class="token operator">=</span><span class="token operator">&lt;</span>Room nickname<span class="token operator">></span>
+<span class="token comment"># example: heroku config:add HUBOT_HIPCHAT_NAME="Geoffrey Butler"</span>
+
+heroku config:add <span class="token assign-left variable">HUBOT_HIPCHAT_PASSWORD</span><span class="token operator">=</span><span class="token operator">&lt;</span>Password you created <span class="token keyword">for</span> hubots user<span class="token operator">></span>
+heroku config:add <span class="token assign-left variable">HUBOT_HIPCHAT_TOKEN</span><span class="token operator">=</span><span class="token operator">&lt;</span>Token from Group Admin and API<span class="token operator">></span></code></pre>
+<p>We also need to add the RedisToGo addon. (Thanks to <a href="http://profitably.com/">Graham Siener</a> for pointing this out)</p>
+<pre class="language-bash"><code class="language-bash">heroku addons:add redistogo:nano</code></pre>
+<p>Now that Heroku is configured we need to slightly modify our Procfile to use the right adapter and name. Mine looks like this:</p>
+<pre class="language-bash"><code class="language-bash">app: bin/hubot <span class="token parameter variable">-a</span> hipchat <span class="token parameter variable">-n</span> <span class="token string">"Geoffrey Butler"</span></code></pre>
+<p>Replace Geoffrey Butler with whatever you named the user in HipChat. This should exactly match the Room nickname we set above. Once you’ve updated the Procfile and saved it we need to commit it with git.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> Procfile
+<span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"updated Procfile to use hipchat adapter and hipchat room nickname"</span></code></pre>
+<h3>Deploying to Heroku</h3>
+<p>Now we should be ready to deploy.</p>
+<pre><code>git push heroku master
+</code></pre>
+<p>This step failed for me at first. I had to edit package.json and change the dependencies section to look like this:</p>
+<pre class="language-json"><code class="language-json"><span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"hubot"</span><span class="token operator">:</span> <span class="token string">"1.1.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"hubot-scripts"</span><span class="token operator">:</span> <span class="token string">"1.1.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"optparse"</span><span class="token operator">:</span> <span class="token string">"1.0.1"</span>
+<span class="token punctuation">}</span></code></pre>
+<p>The latest version of hubot-scripts blows up on the Heroku Cedar stack unfortunately. So after this step I committed my changes one more time and deployed.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> package.json
+<span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"changed dependencies"</span>
+<span class="token function">git</span> push heroku master</code></pre>
+<p>Woot! It worked! Now that its deployed we just need to start it up.</p>
+<pre class="language-bash"><code class="language-bash">heroku ps:scale <span class="token assign-left variable">app</span><span class="token operator">=</span><span class="token number">1</span></code></pre>
+<p>Inside our HipChat rooms Geoffrey suddenly appeared and I was able to talk to him.</p>
+<pre><code>@geoffrey help
+(thanks|thank you) - say thanks to your butler
+&lt;keyword&gt; tweet - Returns a link to a tweet about &lt;keyword&gt;
+&lt;user&gt; is a badass guitarist - assign a role to a user
+&lt;user&gt; is not a badass guitarist - remove a role from a user
+animate me &lt;query&gt;  - The same thing as `image me`, except adds a few
+ascii me &lt;text&gt; - Show text in ascii art.
+check domain &lt;domainname&gt; - returns whether a domain is available
+convert me &lt;expression&gt; to &lt;units&gt; - Convert expression to given units.
+gem whois &lt;gemname&gt; - returns gem details if it exists
+haters - Returns a random haters gonna hate url
+help - Displays all of the help commands that Hubot knows about.
+image me &lt;query&gt;    - The Original. Queries Google Images for &lt;query&gt; and
+map me &lt;query&gt; - Returns a map view of the area returned by `query`.
+math me &lt;expression&gt; - Calculate the given expression.
+mustache me &lt;query&gt; - Searches Google Images for the specified query and
+mustache me &lt;url&gt;   - Adds a mustache to the specified URL.
+remind me in &lt;time&gt; to &lt;action&gt;    - Set a reminder in &lt;time&gt; to do an &lt;action&gt;
+ship it - Display a motivation squirrel
+show storage - Display the contents that are persisted in redis
+show users - Display all users that hubot knows about
+translate me &lt;phrase&gt; - Searches for a translation for the &lt;phrase&gt; and then
+translate me from &lt;source&gt; into &lt;target&gt; &lt;phrase&gt; - Translates &lt;phrase&gt; from &lt;source&gt; into &lt;target&gt;. Both &lt;source&gt; and &lt;target&gt; are optional
+who is &lt;user&gt; - see what roles a user has
+youtube me &lt;query&gt; - Searches YouTube for the query and returns the video
+</code></pre>
+<p>Awesome! Enjoy 😃</p>
+
+    </main>
+  </div>
+  
+  <div class="page">
+    <footer>
+  © Jonathan Hoyt <span id="year"></span> — built <s>by hand</s> with an LLM
+</footer>
+
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>

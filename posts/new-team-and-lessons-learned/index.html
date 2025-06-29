@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YGV0G2L1W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YGV0G2L1W3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New Team and Lessons Learned</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/css/base.css">
+<link rel="alternate" type="application/atom+xml" title="JonMagic.com RSS Feed" href="/feed.xml">
+
+</head>
+
+<body class="">
+  
+  <nav class="site-nav">
+  <div class="nav-container">
+    <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/posts/">Posts</a></li><li><a href="/projects/">Projects</a></li><li><a href="/about/">About</a></li></ul>
+    <div class="social-links">
+      <a href="https://github.com/jonmagic" title="GitHub Profile">
+        <img src="/images/github.png" alt="GitHub Profile" width="24" height="24" class="github-icon">
+      </a>
+      <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile">
+        <img src="/images/linkedin.png" alt="LinkedIn Profile" width="24" height="24" class="linkedin-icon">
+      </a>
+      <a href="/feed.xml" title="RSS Feed">
+        <img src="/images/rss.png" alt="RSS Feed" width="24" height="24" class="rss-icon">
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <div class="page layout-main">
+    <main class="content">
+      
+      <div class="post-date-container">
+        <span id="post-date-typing" class="post-date-typing" data-date="2013-09-16"></span>
+      </div>
+      
+      <h1 class="site-title">New Team and Lessons Learned</h1>
+      <p>The past few months I have been building a new team at <a href="https://github.com">GitHub</a> focused on solving problems for our business teams. Here are a few valuable lessons we learned along the way.</p>
+<h3>Solving the right problem</h3>
+<p>We solve problems for a living and we have one major constraint, our time. This means we need to be thoughtful in choosing which problems to solve. We cannot solve them all.</p>
+<p>We decided to solve employee expenses at GitHub by building our own expensing system. We had evaluated <a href="http://expensify.com">3rd party services</a> and while they did 90% of what we needed, that last 10% made it seem like it was worth doing on our own.</p>
+<p>What we failed to account for were the other opportunities, the other problems that needed solved, that ultimately would have a more lasting impact on GitHub.</p>
+<p>If we use our company vision, to help people <a href="https://github.com/home">build software better together</a>, as a framework for deciding what to work on, choosing the right problem to solve becomes much easier.</p>
+<p>We should be sensitive to <a href="http://en.wikipedia.org/wiki/Opportunity_cost">opportunity costs</a>. Solve the problem that will have the greatest impact with the lowest cost.</p>
+<h3>Failing fast</h3>
+<p>After choosing the wrong problem to solve we did not set clear goals so that we knew what success or failure meant. As a result it took us four months to realize we were working on the wrong thing.</p>
+<p>Our first goal was to ship a system that received receipts, connected them to transactions, provided automatic and manual classification, and then entered the data into our accounting system.</p>
+<p>The more I learn about software development, or solving any problem really, the more I realize a <a href="http://en.wikipedia.org/wiki/Winning_percentage">winning percentage</a> requires breaking down problems (and their solutions) into smaller and smaller pieces. Shipping quickly and constant iteration mean faster course corrections and less costly failures.</p>
+<p>The fact that we could not easily break the expensing problem down into smaller pieces should have been a red flag.</p>
+<p>We can reduce the costs of failure, both emotionally and economically, if we fail fast. We can’t fail fast unless we ship quickly and iterate.</p>
+<h3>Do the simplest thing first</h3>
+<p>We also started building a platform for different teams (and apps) at GitHub to be able to easily invoice customers. We dreamt up the perfect platform for invoicing, without having tried the simplest thing first.</p>
+<p>The lie we often believe is that we understand what our constraints will be in a week, or a month, or six months and therefore we can save time by optimizing early. The truth is that we cannot foresee the future.</p>
+<p>In the end we learned that invoicing integration needed to be built inside of the products it serves first. After it has been proven it can possibly be extracted into a shared service. This sounds like more work in the long run, but ultimately this process can adapt to change more quickly and easily.</p>
+<h3>One more thing</h3>
+<p>We could have avoided a lot of heartache and wasted resources if I had sought mentorship from people with more experience and context at GitHub.</p>
+<p>For long term success I need to constantly be learning, which means keeping an open mind and a humble spirit. I look forward to the journey<br>
+\m/</p>
+
+    </main>
+  </div>
+  
+  <div class="page">
+    <footer>
+  © Jonathan Hoyt <span id="year"></span> — built <s>by hand</s> with an LLM
+</footer>
+
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>

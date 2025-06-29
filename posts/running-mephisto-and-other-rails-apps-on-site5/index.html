@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YGV0G2L1W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YGV0G2L1W3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Running Mephisto (and other Rails apps) on Site5</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/css/base.css">
+<link rel="alternate" type="application/atom+xml" title="JonMagic.com RSS Feed" href="/feed.xml">
+
+</head>
+
+<body class="">
+  
+  <nav class="site-nav">
+  <div class="nav-container">
+    <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/posts/">Posts</a></li><li><a href="/projects/">Projects</a></li><li><a href="/about/">About</a></li></ul>
+    <div class="social-links">
+      <a href="https://github.com/jonmagic" title="GitHub Profile">
+        <img src="/images/github.png" alt="GitHub Profile" width="24" height="24" class="github-icon">
+      </a>
+      <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile">
+        <img src="/images/linkedin.png" alt="LinkedIn Profile" width="24" height="24" class="linkedin-icon">
+      </a>
+      <a href="/feed.xml" title="RSS Feed">
+        <img src="/images/rss.png" alt="RSS Feed" width="24" height="24" class="rss-icon">
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <div class="page layout-main">
+    <main class="content">
+      
+      <div class="post-date-container">
+        <span id="post-date-typing" class="post-date-typing" data-date="2009-04-20"></span>
+      </div>
+      
+      <h1 class="site-title">Running Mephisto (and other Rails apps) on Site5</h1>
+      <p>There are a few steps in getting the latest Mephisto (0.8.2 at the time of this writing) working on the shared host <a href="http://www.site5.com">Site5</a>. As I’m writing this Site5 is upgrading all their servers to Ruby 1.8.7, Rails 2.2.2, RubyGems 1.3.1, and Mysql 5.0. Thanks to everyone at Site5 that helped, <a href="http://twitter.com/BenAtSite5">Ben</a>, Beau, and the guy I talked to today (forgot his name). Continue reading for the steps I/we had to take to get things running properly.</p>
+<p><strong>UPDATE:</strong> Please make sure to update your .htaccess, Site5 now supports mod_rails on most, if not all of their servers.</p>
+<h3>Get your own gems repository working</h3>
+<ol>
+<li>
+<p>ssh to your account and in <code>~/</code> create a gems dir.</p>
+<pre class="language-sh"><code class="language-sh"><span class="token function">mkdir</span> gems</code></pre>
+</li>
+<li>
+<p>create a .gemrc file in <code>~/</code></p>
+<pre class="language-sh"><code class="language-sh"><span class="token function">nano</span> ~/.gemrc</code></pre>
+</li>
+<li>
+<p>paste the following in (changing username to be your user)</p>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">gemhome</span><span class="token punctuation">:</span> /home/username/gems
+<span class="token key atrule">gempath</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> /home/username/gems
+  <span class="token punctuation">-</span> /usr/lib/ruby/gems/1.8</code></pre>
+</li>
+<li>
+<p>edit (or create) .bash_profile in <code>~/</code></p>
+<pre class="language-sh"><code class="language-sh"><span class="token function">nano</span> ~/.bash_profile</code></pre>
+</li>
+<li>
+<p>paste the following (changing username to be your user)</p>
+<pre class="language-sh"><code class="language-sh"><span class="token builtin class-name">export</span> <span class="token assign-left variable">GEM_PATH</span><span class="token operator">=</span>/home/username/gems:/usr/lib/ruby/gems/1.8
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">GEM_HOME</span><span class="token operator">=</span>/home/username/gems</code></pre>
+</li>
+</ol>
+<p>Now you should be able to run <code>gem environment</code> and see the correct values.</p>
+<h3>Downloading Mephisto and getting it setup.</h3>
+<p>I downloaded the latest release of Mephisto from <a href="http://mephistoblog.com/download">http://mephistoblog.com/download</a>, version 0.8.2 Drax Fixes. Once I had it on my dev machine I scp’d it up to Site5. There I created an apps dir in <code>~/</code> on my Site5 account, and untarred mephisto there. I renamed the dir to <code>mephisto_0.8.2</code> and got to work on configuring stuff. First I copied <code>config/database.example.yml</code> to <code>config/database.yml</code>, went in and deleted all the extra lines, and just configured what I needed. I like to configure my development database, and then for the production one just have it point at the same settings like so:</p>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">development</span><span class="token punctuation">:</span>
+  <span class="token key atrule">adapter</span><span class="token punctuation">:</span> mysql
+  <span class="token key atrule">database</span><span class="token punctuation">:</span> username_database
+  <span class="token key atrule">username</span><span class="token punctuation">:</span> username_dbuser
+  <span class="token key atrule">password</span><span class="token punctuation">:</span> password
+  <span class="token key atrule">host</span><span class="token punctuation">:</span> localhost
+  <span class="token key atrule">encoding</span><span class="token punctuation">:</span> utf8
+
+<span class="token key atrule">test</span><span class="token punctuation">:</span>
+  <span class="token key atrule">adapter</span><span class="token punctuation">:</span> mysql
+  <span class="token key atrule">database</span><span class="token punctuation">:</span> username_testdatabase
+  <span class="token key atrule">username</span><span class="token punctuation">:</span> username_dbtestuser
+  <span class="token key atrule">password</span><span class="token punctuation">:</span> password
+  <span class="token key atrule">host</span><span class="token punctuation">:</span> localhost
+  <span class="token key atrule">encoding</span><span class="token punctuation">:</span> utf8
+
+<span class="token key atrule">production</span><span class="token punctuation">:</span>
+  development</code></pre>
+<p>I’ve been getting into testing stuff more lately, so I went ahead and configured a test database as well. Remember back at the beginning how we had to setup our own spot for gems? Well now we need to tell this application where to look for those gems, and put our app into production mode. <code>nano config/environment.rb</code> and set the top five lines to look like this (leave everything else alone in this file, oh, and make sure to replace username with your user):</p>
+<pre class="language-ruby"><code class="language-ruby"><span class="token comment"># Be sure to restart your web server when you modify this file.</span>
+<span class="token constant">ENV</span><span class="token punctuation">[</span><span class="token string-literal"><span class="token string">'GEM_PATH'</span></span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string-literal"><span class="token string">'/home/username/gems:/usr/lib/ruby/gems/1.8'</span></span>
+<span class="token comment"># Uncomment below to force Rails into production mode when</span>
+<span class="token comment"># you don't control web/app server and can't set it the proper way</span>
+<span class="token constant">ENV</span><span class="token punctuation">[</span><span class="token string-literal"><span class="token string">'RAILS_ENV'</span></span><span class="token punctuation">]</span> <span class="token operator">||=</span> <span class="token string-literal"><span class="token string">'production'</span></span></code></pre>
+<h3>Preparing dependencies and tell Apache what to do with requests!</h3>
+<p>At this point you’ll have to run the following commands inside your <code>mephisto</code> dir to get our dependencies ready.</p>
+<pre class="language-sh"><code class="language-sh">rake config/initializers/session_store.rb
+rake gems:install
+rake db:bootstrap</code></pre>
+<p><strong>THE FOLLOWING .htaccess STUFF IS OBSOLETE, PLEASE JUMP AHEAD</strong></p>
+<p>Once you’ve got that done we’re almost there! The next to last thing is add an <code>.htaccess</code> file to our public folder so that Apache knows to execute <code>dispatch.fcgi</code> when a request comes in. So <code>nano public/.htaccess</code> and paste the following:</p>
+<pre class="language-apache"><code class="language-apache">Options +FollowSymLinks +ExecCGI
+RewriteEngine On
+RewriteRule ^$ index.html [QSA]
+RewriteRule ^([^.]+)$ $1.html [QSA]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ dispatch.fcgi [QSA,L]
+RewriteCond %{HTTP_ACCEPT} application/xrdsxml
+RewriteCond %{HTTP_ACCEPT} !application/xrdsxml\s*;\s*q\s*=\s*0(\.0{1,3})?\s*(,|$)
+ErrorDocument 500 "<h2>Application error</h2>Rails application failed to start properly"</code></pre>
+<p><strong>OK, NOW THAT Site5 SUPPORTS mod_rails MAKE YOUR .htaccess LOOK LIKE THIS</strong></p>
+<pre class="language-apache"><code class="language-apache">PassengerEnabled on</code></pre>
+<p>Last but not least we need to go to <code>~/</code> and rename <code>public_html</code> to <code>public_html_old</code> and then create a symlink like so:</p>
+<pre class="language-sh"><code class="language-sh"><span class="token function">ln</span> <span class="token parameter variable">-s</span> ~/apps/mephisto_0.8.2/public public_html</code></pre>
+<p>That’s it! Open your browser and try to access your site. Things should be working at this point.</p>
+<p>If it returns &quot;Rails application failed to start properly” start looking to make sure you have all the gems you need. One thing I like to do is from my mephisto dir, run <code>./script/console</code> and do a few db lookups, then if that works I run <code>./script/server -e production</code> and then in a second ssh session to my Site5 account I’ll do a <code>curl http://localhost:3000/</code> to see what it returns. Often you can see the exact error doing it this way, and fix the problem!</p>
+<p><strong>OTHER NOTES:</strong></p>
+<ol>
+<li>Do not install image_science gem even though mephisto works with it now. Site5 does not install freeimage on their servers, only imagemagick, and the Rmagick gem, so just go with those.</li>
+<li>You could automate a lot of this with Capistrano, but if you are only doing it once, why bother? I use Capistrano in a lot in other instances, but was just lazy here 😃</li>
+<li>Make sure your permissions on your public folder and dispatch.fcgi are set to 755</li>
+</ol>
+
+    </main>
+  </div>
+  
+  <div class="page">
+    <footer>
+  © Jonathan Hoyt <span id="year"></span> — built <s>by hand</s> with an LLM
+</footer>
+
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>

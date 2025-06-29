@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YGV0G2L1W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YGV0G2L1W3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Integrating with Quickbooks</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/css/base.css">
+<link rel="alternate" type="application/atom+xml" title="JonMagic.com RSS Feed" href="/feed.xml">
+
+</head>
+
+<body class="">
+  
+  <nav class="site-nav">
+  <div class="nav-container">
+    <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/posts/">Posts</a></li><li><a href="/projects/">Projects</a></li><li><a href="/about/">About</a></li></ul>
+    <div class="social-links">
+      <a href="https://github.com/jonmagic" title="GitHub Profile">
+        <img src="/images/github.png" alt="GitHub Profile" width="24" height="24" class="github-icon">
+      </a>
+      <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile">
+        <img src="/images/linkedin.png" alt="LinkedIn Profile" width="24" height="24" class="linkedin-icon">
+      </a>
+      <a href="/feed.xml" title="RSS Feed">
+        <img src="/images/rss.png" alt="RSS Feed" width="24" height="24" class="rss-icon">
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <div class="page layout-main">
+    <main class="content">
+      
+      <div class="post-date-container">
+        <span id="post-date-typing" class="post-date-typing" data-date="2009-04-23"></span>
+      </div>
+      
+      <h1 class="site-title">Integrating with Quickbooks</h1>
+      <p>If you are a software developer working on software for small to medium businesses, then there is a 70% chance (my unscientific calculation) that you’ll run into Quickbooks at some point.</p>
+<p>If you want to integrate with Quickbooks, and especially if you are a developer using ruby, then this post will point you in the right direction for getting things done. So please, read on 😃</p>
+<p><strong>DISCLAIMER:</strong> I am a former associate of Daniel (and <a href="http://www.behindlogic.com">BehindLogic</a>) and I got a freebie for writing this post (which is cool cuz I was gonna write it anyway, but don’t tell him)…</p>
+<p>I’ve been working on writing <a href="http://jonmagic.com/programming/suite">software</a> to manage our small IT consultancy, <a href="http://www.sabretechllc.com">SabreTech Consulting LLC</a> and the time came to be able to integrate with our accounting package, Quickbooks. Awhile back we had tried, unsuccessfully, and so I was not looking forward to it this time around.</p>
+<p>But, a friend of mine has been working on writing a <a href="http://www.behindlogic.com">Quickbooks gem</a> and recently released it to the wild, so I thought I would take a crack at the problem again.</p>
+<p>After getting the gem from him ($199) and the http adapter to sit on our PC that runs quickbooks ($25) I was up and running within minutes. I included the gem in my rails app, fired up my app console, and started creating QB objects and saving them.</p>
+<p>In about 5 hours of work last week I was able to build an interface to easily link clients in Suite to clients in Quickbooks AND make it so when you create a new client in Suite it can automatically create the client in Quickbooks, and populate the phone/email/address fields. Having completed this in such a short time I was feeling pretty good! Working with Quickbooks wasn’t a hassle anymore, so I decided that this week I would tackle turning our completed tickets in Suite (work orders) into invoices in Quickbooks.</p>
+<p>In just 2 days (really fast for me, I’m a slow slow slow programmer) I had wired up an Invoice model in my rails app, had it creating an invoice in quickbooks and putting in the line items for labor, with quantities and descriptions, setting the thank you message at the bottom of the invoice, and setting the “IsToBePrinted” field so that our manager can just click on File &gt; Print Forms &gt; Invoices in Quickbooks and turn all those invoices into paper 😃</p>
+<p>Basically I was able to cut down 3 to 5 minutes of work (for our manager) to a button press and 20 to 60 seconds of server work. That is a time savings (via integration) that most businesses would kill to have.</p>
+<p>Now, while I’m super excited about all this, there were some downers (please fix these Dan!):</p>
+<ul>
+<li>Documentation is very sparse and sometimes incorrect, I’ve actually offered to help him on it</li>
+<li>There are some bugs in the gem. One I found was when creating an invoice and setting the quantity field for a line item, it wouldn’t accept a float, only integers. Daniel replied to my emails within 12 hours, and showed me what to fix in the gem, and said he would fix it soon in the gem and re-release the gem to everyone who had bought it.</li>
+</ul>
+<p>All said and done, I highly recommend the <a href="http://www.behindlogic.com">Quickbooks gem by Daniel Parker of BehindLogic</a>.</p>
+
+    </main>
+  </div>
+  
+  <div class="page">
+    <footer>
+  © Jonathan Hoyt <span id="year"></span> — built <s>by hand</s> with an LLM
+</footer>
+
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>

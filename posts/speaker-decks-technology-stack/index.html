@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YGV0G2L1W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YGV0G2L1W3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Speaker Deck&#39;s Technology Stack</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/css/base.css">
+<link rel="alternate" type="application/atom+xml" title="JonMagic.com RSS Feed" href="/feed.xml">
+
+</head>
+
+<body class="">
+  
+  <nav class="site-nav">
+  <div class="nav-container">
+    <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/posts/">Posts</a></li><li><a href="/projects/">Projects</a></li><li><a href="/about/">About</a></li></ul>
+    <div class="social-links">
+      <a href="https://github.com/jonmagic" title="GitHub Profile">
+        <img src="/images/github.png" alt="GitHub Profile" width="24" height="24" class="github-icon">
+      </a>
+      <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile">
+        <img src="/images/linkedin.png" alt="LinkedIn Profile" width="24" height="24" class="linkedin-icon">
+      </a>
+      <a href="/feed.xml" title="RSS Feed">
+        <img src="/images/rss.png" alt="RSS Feed" width="24" height="24" class="rss-icon">
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <div class="page layout-main">
+    <main class="content">
+      
+      <div class="post-date-container">
+        <span id="post-date-typing" class="post-date-typing" data-date="2011-07-29"></span>
+      </div>
+      
+      <h1 class="site-title">Speaker Deck&#39;s Technology Stack</h1>
+      <p>Ever curious about what the software stack for programs you use looks like? I am, so I thought I’d share what Speaker Deck’s technology stack looks like right now, and then I can look back a year from now and see how much it has changed.</p>
+<p><a href="http://speakerdeck.com">Speaker Deck</a> is a simple application. You upload a PDF of a presentation that has been exported from Keynote, PowerPoint, or something similar, and it turns it into a deck of images that are easily viewed through an HTML5 slide browser.</p>
+<h3>High-Level</h3>
+<p>So what makes it tick? Here’s the rundown from a high level:</p>
+<ul>
+<li>html/css/javascript: currently we don’t use Flash anywhere</li>
+<li><a href="http://www.rubyonrails.org">Ruby on Rails</a> web framework</li>
+<li>A bunch of ruby gems which I’ll list below</li>
+<li><a href="http://mongodb.org">MongoDB</a>, a high-performance document-oriented database</li>
+<li><a href="http://redis.io/">Redis</a>, an advanced key-value store</li>
+<li><a href="http://fog.io">FOG</a>, technically a ruby gem, which gets its own section below, but had to mention it here as it makes storing files in the cloud super easy</li>
+</ul>
+<h3>Service Providers</h3>
+<p>Platform as a service and software as a service providers:</p>
+<ul>
+<li><a href="http://heroku.com">Heroku</a> is a platform for easily and quickly deploying, hosting, and scaling applications built on Ruby, Node.js, and now Clojure. A simple “git push heroku” lets us deploy to the cloud.</li>
+<li><a href="http://mongohq.com">MongoHQ</a> is where we host our MongoDB database. They manage the servers so we don’t have to.</li>
+<li><a href="http://redistogo.com/">Redis To Go</a> is a hosted Redis database solution. We use Redis for job queues and Redis To Go lets us quickly scale our database to meet our needs at the time.</li>
+<li><a href="http://aws.amazon.com/s3/">Amazon Simple Storage Service</a>, otherwise known as Amazon S3, is a quick and easy way for us to host thousands of slides and PDFs without going broke. They charge by the gigabyte for bandwidth and storage and it’s darn cheap.</li>
+</ul>
+<h3>Ruby Gems</h3>
+<ul>
+<li><a href="https://github.com/rails/rails/tree/3-1-stable">rails 3.1</a></li>
+<li><a href="http://flori.github.com/json/">json</a></li>
+<li><a href="https://github.com/rails/sass-rails">sass-rails</a></li>
+<li><a href="https://github.com/rails/coffee-rails">coffee-rails</a></li>
+<li><a href="https://github.com/lautis/uglifier">uglifier</a></li>
+<li><a href="https://github.com/rails/jquery-rails">jquery-rails</a></li>
+<li>Nunemaker’s fork of <a href="https://github.com/jnunemaker/imanip">imanip</a></li>
+<li><a href="https://github.com/jgarber/redcloth">RedCloth</a></li>
+<li><a href="https://github.com/jnunemaker/canable">canable</a></li>
+<li><a href="https://github.com/technoweenie/faraday">faraday</a></li>
+<li><a href="https://github.com/mbleigh/mash">mash</a></li>
+<li><a href="https://github.com/jnunemaker/mongomapper">mongo_mapper</a></li>
+<li><a href="https://github.com/jnunemaker/scam">scam</a></li>
+<li><a href="https://github.com/mislav/will_paginate">will_paginate</a></li>
+<li><a href="http://fog.io">fog</a></li>
+<li><a href="https://github.com/jnicklas/carrierwave">carrierwave</a></li>
+<li><a href="https://github.com/80beans/mm-carrierwave">mm-carrierwave</a></li>
+<li><a href="https://github.com/defunkt/resque">resque</a></li>
+<li><a href="https://github.com/jnunemaker/hunt">hunt</a></li>
+<li><a href="http://rubygems.org/gems/newrelic_rpm">newrelic_rpm</a></li>
+<li><a href="http://rubygems.org/gems/exceptional">exceptional</a></li>
+</ul>
+<p>There are a few more pieces of software we use for testing but this post is already getting kind of long.</p>
+<p>So what are you using in your software stack?</p>
+
+    </main>
+  </div>
+  
+  <div class="page">
+    <footer>
+  © Jonathan Hoyt <span id="year"></span> — built <s>by hand</s> with an LLM
+</footer>
+
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>

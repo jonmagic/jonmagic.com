@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YGV0G2L1W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YGV0G2L1W3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A WebDev&#39;s notes on native Android/iPhone app development</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/css/base.css">
+<link rel="alternate" type="application/atom+xml" title="JonMagic.com RSS Feed" href="/feed.xml">
+
+</head>
+
+<body class="">
+  
+  <nav class="site-nav">
+  <div class="nav-container">
+    <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/posts/">Posts</a></li><li><a href="/projects/">Projects</a></li><li><a href="/about/">About</a></li></ul>
+    <div class="social-links">
+      <a href="https://github.com/jonmagic" title="GitHub Profile">
+        <img src="/images/github.png" alt="GitHub Profile" width="24" height="24" class="github-icon">
+      </a>
+      <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile">
+        <img src="/images/linkedin.png" alt="LinkedIn Profile" width="24" height="24" class="linkedin-icon">
+      </a>
+      <a href="/feed.xml" title="RSS Feed">
+        <img src="/images/rss.png" alt="RSS Feed" width="24" height="24" class="rss-icon">
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <div class="page layout-main">
+    <main class="content">
+      
+      <div class="post-date-container">
+        <span id="post-date-typing" class="post-date-typing" data-date="2010-11-26"></span>
+      </div>
+      
+      <h1 class="site-title">A WebDev&#39;s notes on native Android/iPhone app development</h1>
+      <p>I was contracted to build a fairly simple phototherapy treatment time calculator app for one of our clients recently, and in the process learned A LOT about developing for the iPhone and Android using html/css/javascript.</p>
+<p>The requirements for the job were that the final app feel native and that it be able to be purchased on the respective market place (Appstore or Android Market).</p>
+<p>I’d already written the <a href="http://itunes.apple.com/us/app/daavlin-phototherapy-dose/id386168638?mt=8">app once for the iPhone</a>, using the <a href="http://www.jqtouch.com/">jqTouch</a> library and then wrapping the whole thing with <a href="http://www.phonegap.com/">PhoneGap</a>, but this time around the client wanted to add some features that made me look further than jqTouch.</p>
+<p>Initially I fantasized about a write once deploy twice approach using something like <a href="http://www.appcelerator.com/products/titanium-mobile-application-development/">Appcelerator Titanium</a>. The more I read however the more I realized no matter how I went about this project I was going to end up with more than one codebase, one for the iPhone and at least one for the Android. I decided to go ahead with Appcelerator however and developed for the iPhone first. One of the biggest things I was looking for was a native bottom tab bar for navigating between the different phototherapy calculators (UVB, UVA, UVA1, and Blue), and Appcelerator let me quickly build a native, beautiful, functional app that exactly fit the clients needs.</p>
+<p>After a bit of troubleshooting I had it deploying to my actual iPhone, but no matter how hard I tried I could never manage to get it to deploy to the Android emulator.</p>
+<p>Next I started working on a <a href="http://www.sencha.com/products/touch/">Sencha Touch</a> version of the app, which I planned to wrap with PhoneGap, but after about an hour of digging around in Sencha I decided it didn’t fit my programming aesthetic. I also talked to someone who wrote an app in Sencha and they said it had a ways to go with speed, animations were still jerky on older hardware.</p>
+<p>Finally I decided to give <a href="http://jquerymobile.com/">JqueryMobile</a> a try (thanx Xian!) and it was a great fit for a webdev like me. Using the latest PhoneGap and JqueryMobile I had the app rewritten and running on the Android Emulator in just under 2 hours, and then another 2 hours tweaking the interface and interactions. If you know html/css/javascript, you can write a fairly native feeling app in no time with JqueryMobile.</p>
+<p>Having used jqTouch, Appcelerator, JqueryMobile, PhoneGap, and having looked at Sencha, I have to say Appcelerator was by far the best experience. I enjoyed programming the interface rather than laying out the html and then styling it with CSS. I enjoyed how quickly and easy it was to deploy to the iPhone (I wish it could do the same for Android!). Most of all I loved how it built a native interface, which beats an html5 interface almost every time in my opinion.</p>
+
+    </main>
+  </div>
+  
+  <div class="page">
+    <footer>
+  © Jonathan Hoyt <span id="year"></span> — built <s>by hand</s> with an LLM
+</footer>
+
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>
