@@ -1,0 +1,50 @@
+---
+title: search jonmagic.com
+layout: layout
+---
+
+<div class="search-container">
+  <div class="search-input-container">
+    <input
+      type="text"
+      id="semantic-search-input"
+      placeholder="Search posts by topic, keyword, or concept..."
+      autocomplete="off"
+    >
+    <div id="semantic-search-status" class="search-status" style="display: none;"></div>
+  </div>
+
+  <div id="semantic-search-header" class="search-results-header" style="display: none;"></div>
+  <div id="semantic-search-results" class="search-results posts-grid"></div>
+</div>
+
+<!-- Hidden template for search result cards -->
+<template id="search-result-template">
+  <a href="" class="post-card-link">
+    <div class="post-card">
+      <div class="post-card-background"
+           data-crop-x="0"
+           data-crop-y="0"
+           style="--crop-x: 0%; --crop-y: 0%;">
+      </div>
+      <div class="post-card-content">
+        <h3 class="post-title"></h3>
+        <div class="post-card-footer">
+          <span class="search-score"></span>
+          <div class="post-date"></div>
+        </div>
+      </div>
+    </div>
+  </a>
+</template>
+
+<div class="search-help">
+  <h2>How to search</h2>
+  <p>This semantic search understands the meaning behind your queries, not just keywords. Try searching for:</p>
+  <ul>
+    <li><strong>Topics:</strong> "software engineering", "work-life balance", "technology"</li>
+    <li><strong>Concepts:</strong> "learning new skills", "career growth", "project management"</li>
+    <li><strong>Questions:</strong> "how to set up development environment", "advice for new developers"</li>
+  </ul>
+  <p>The search will find posts that are conceptually related to your query, even if they don't contain the exact words you searched for.</p>
+</div>

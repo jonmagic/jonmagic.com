@@ -162,6 +162,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/js");
+  eleventyConfig.addPassthroughCopy("src/_data/postCropData.json");
 
   eleventyConfig.addGlobalData("layout", "layout.njk");
   eleventyConfig.addGlobalData("post", "post.njk");
@@ -177,8 +178,8 @@ module.exports = function(eleventyConfig) {
     return collectionApi.getFilteredByGlob('src/projects/*.md');
   });
 
-  // Generate avatars.json and postCropData.json before build
-  eleventyConfig.on('beforeBuild', () => {
+  // Generate avatars.json, postCropData.json, and vectors.json before build
+  eleventyConfig.on('beforeBuild', async () => {
     const path = require('path');
 
     // Generate avatars.json
@@ -195,13 +196,44 @@ module.exports = function(eleventyConfig) {
     console.log(`Wrote ${avatars.length} avatars to avatars.json`);
 
     // Generate postCropData.json
-    generatePostCropData();
+    generatePostCropData();    // Generate vectors.json for semantic search (only if needed)
+    try {
+      const { indexVectors, isIndexingNeeded } = require('./src/_build/indexVectors.js');
+      const postsDir = path.join(__dirname, 'src/posts');
+      const vectorsPath = path.join(__dirname, 'src/_data/vectors.json');
+
+      // Only run indexing if actually needed to prevent infinite loops
+      if (isIndexingNeeded(postsDir, vectorsPath)) {
+        console.log('🔍 Starting vector indexing for semantic search...');
+        await indexVectors(postsDir, vectorsPath);
+      } else {
+        console.log('📍 Vector search data is up to date');
+      }
+    } catch (error) {
+      console.error('❌ Vector indexing failed:', error.message);
+      console.warn('Continuing build without semantic search vectors');
+    }
   });
 
-  // Add .nojekyll and CNAME files after build
+  // Add .nojekyll, CNAME, and vectors.json files after build
   eleventyConfig.on('afterBuild', () => {
     fs.writeFileSync('_site/.nojekyll', '');
     fs.writeFileSync('_site/CNAME', 'jonmagic.com');
+
+    // Copy vectors.json to _site if it exists
+    const vectorsSource = path.join(__dirname, 'src/_data/vectors.json');
+    const vectorsTarget = path.join(__dirname, '_site/vectors.json');
+
+    if (fs.existsSync(vectorsSource)) {
+      try {
+        fs.copyFileSync(vectorsSource, vectorsTarget);
+        console.log('📋 Copied vectors.json to _site');
+      } catch (error) {
+        console.warn('Could not copy vectors.json:', error.message);
+      }
+    } else {
+      console.warn('vectors.json not found, semantic search will not be available');
+    }
   });
 
   return {
