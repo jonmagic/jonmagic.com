@@ -1,0 +1,138 @@
+#!/usr/bin/env ruby
+
+require 'json'
+require 'open-uri'
+require 'fileutils'
+require 'nokogiri'
+require 'date'
+require 'open3'
+
+# Method to call the LLM CLI
+def call_llm(prompt, content)
+  puts "  Calling LLM..."
+  command = "llm"
+
+  # Open3.capture3 allows sending content to stdin and capturing stdout/stderr
+  stdout_str, stderr_str, status = Open3.capture3(command, stdin_data: "#{prompt}\n\n#{content}")
+
+  unless status.success?
+    puts "Error calling LLM: #{stderr_str}"
+    exit 1
+  end
+
+  stdout_str
+end
+
+# Method to clean and parse JSON from LLM output
+def parse_llm_json(raw_output)
+  # Clean the string by removing markdown code block fences
+  cleaned_output = raw_output.strip.gsub(/^```json\n/, '').gsub(/\n```$/, '')
+  JSON.parse(cleaned_output)
+rescue JSON::ParserError => e
+  puts "Error parsing JSON from LLM: #{e.message}"
+  puts "Raw LLM output was:"
+  puts raw_output
+  exit 1
+end
+
+# The script will take a url as an argument.
+unless ARGV.length == 1
+  puts "Usage: #{$0} <url>"
+  exit 1
+end
+
+url = ARGV[0]
+puts "Migrating #{url}"
+
+# 1. fetch url
+puts "Fetching URL..."
+html_content = URI.open(url).read
+doc = Nokogiri::HTML(html_content)
+
+# Extract title, date, and slug from the HTML
+post_title = doc.at_css('h1.post-title').text.strip
+post_date = Date.parse(doc.at_css('header.post-header time')['datetime']).to_s
+post_slug = post_title.downcase.gsub(/[^a-z0-9\s-]/, '').gsub(/[\s_]+/, '-')
+puts "Post title: #{post_title}"
+puts "Post date: #{post_date}"
+puts "Post slug: #{post_slug}"
+
+# 2. process with llm to determine what images need downloaded
+puts "Processing with LLM to find images..."
+
+# Extract the main content to narrow the scope for the LLM
+main_content_html = doc.at_css('div.post-content').to_s
+
+image_prompt = <<~PROMPT
+Analyze the following HTML content from a blog post's `div.post-content`.
+Identify all image URLs inside `<img>` tags, but ignore any URLs pointing to `github.githubassets.com` as they are emojis.
+For each valid image, create a new path that follows this pattern: `src/images/posts/#{post_slug}/<original_filename>`.
+Output a JSON object that maps each original image URL to its new path.
+The JSON should be the only thing in your output.
+PROMPT
+
+llm_image_output = call_llm(image_prompt, main_content_html)
+image_map = parse_llm_json(llm_image_output)
+
+puts "Image map created."
+
+# 3. downloading those images
+puts "Downloading images..."
+image_map.each do |original_url, new_path|
+  puts "  Downloading #{original_url} to #{new_path}"
+  # Ensure directory exists
+  FileUtils.mkdir_p(File.dirname(new_path))
+  # Download and save the image
+  begin
+    IO.copy_stream(URI.open(original_url), new_path)
+  rescue StandardError => e
+    puts "    Error downloading #{original_url}: #{e.class} - #{e.message}"
+  end
+end
+
+# 4. process fetched url content again with llm to extract the core post html and convert it to markdown
+puts "Processing with LLM to convert HTML to Markdown..."
+
+# Create a new map with root-relative paths for the markdown content.
+markdown_image_map = image_map.transform_values { |v| v.sub(/^src/, '') }
+
+markdown_prompt = <<~PROMPT
+From the HTML content provided (which is from a `div.post-content` element), convert the content to GitHub Flavored Markdown (GFM).
+Ensure that any code blocks are properly formatted with language identifiers for syntax highlighting.
+Please also clean up any strange artifacts from previous migrations, such as extra backslashes or weird spacing in the text.
+Use the following JSON object to replace the original image `src` URLs with their new root-relative local paths:
+#{markdown_image_map.to_json}
+
+The final output should be only the Markdown content of the post, without any extra explanation or code blocks.
+PROMPT
+
+markdown_content = call_llm(markdown_prompt, main_content_html)
+puts "Markdown content generated."
+
+
+# 5. writing the post markdown including frontmatter
+puts "Writing final post file..."
+post_filename = "src/posts/#{post_slug}.md"
+
+frontmatter = <<~FM
+---
+title: #{post_title}
+date: #{post_date}
+tags:
+  - post
+  - migrated
+---
+
+FM
+
+final_content = frontmatter + markdown_content
+File.write(post_filename, final_content)
+puts "Post created at #{post_filename}"
+
+# 6. create or append to a migrate-post.txt
+new_post_url = "/posts/#{post_slug}/"
+log_entry = "#{url} #{new_post_url}"
+File.open("migrated.txt", "a") do |f|
+  f.write(log_entry)
+end
+puts "#{new_post_url} logged to migrated.txt"
