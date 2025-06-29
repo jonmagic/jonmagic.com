@@ -533,22 +533,22 @@ img.avatar {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('/images/contribution-graph.svg');
-  background-size: 300% 200%; /* Scale up the large SVG to show detail */
+  background-image: url('/images/contribution-graph.webp');
+  background-size: 900px 300px; /* Fixed size to prevent stretching across different grid layouts */
   background-position: var(--crop-x, 0%) var(--crop-y, 0%);
   background-repeat: no-repeat;
-  opacity: 0.15;
+  opacity: 0.12;
   transition: opacity 0.2s ease;
 }
 
 @media (prefers-color-scheme: dark) {
   .post-card-background {
-    background-image: url('/images/contribution-graph-dark.svg');
+    background-image: url('/images/contribution-graph-dark.webp');
   }
 }
 
 .post-card-link:hover .post-card-background {
-  opacity: 0.25;
+  opacity: 0.2;
 }
 
 .post-card-content {
