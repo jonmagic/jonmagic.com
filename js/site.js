@@ -167,4 +167,233 @@ document.addEventListener('DOMContentLoaded', function() {
         headerAvatar.appendChild(img);
       });
   }
+
+  // Semantic search functionality
+  const searchInput = document.getElementById('semantic-search-input');
+  const searchResults = document.getElementById('semantic-search-results');
+  const searchHeader = document.getElementById('semantic-search-header');
+  const searchStatus = document.getElementById('semantic-search-status');
+  const searchHelp = document.querySelector('.search-help');
+
+  if (searchInput && searchResults && searchHeader) {
+    let vectorData = null;
+    let embedQuery = null;
+    let searchModule = null;
+    let isInitialized = false;
+    let searchTimeout = null;
+
+    // Load search dependencies and data
+    async function initializeSearch() {
+      if (isInitialized) return true;
+
+      try {
+        if (searchStatus) {
+          searchStatus.textContent = 'Loading search model...';
+          searchStatus.className = 'search-status loading';
+        }
+
+        // Load vector data
+        const vectorResponse = await fetch('/vectors.json');
+        if (!vectorResponse.ok) {
+          throw new Error('Could not load search vectors');
+        }
+        vectorData = await vectorResponse.json();
+
+        // Load search modules
+        const embedModule = await import('/js/embedQuery.js');
+        searchModule = await import('/js/search.js');
+        embedQuery = embedModule.embedQuery;
+
+        // Check if model is ready
+        await embedModule.isModelReady();
+
+        isInitialized = true;
+
+        if (searchStatus) {
+          searchStatus.textContent = 'Search ready!';
+          searchStatus.className = 'search-status ready';
+          setTimeout(() => {
+            searchStatus.style.display = 'none';
+          }, 2000);
+        }
+
+        return true;
+      } catch (error) {
+        console.error('Search initialization failed:', error);
+        if (searchStatus) {
+          searchStatus.textContent = 'Search unavailable';
+          searchStatus.className = 'search-status error';
+        }
+        return false;
+      }
+    }
+
+    // Perform search with debouncing
+    async function performSearch(query) {
+      if (!query.trim()) {
+        searchResults.innerHTML = '';
+        return;
+      }
+
+      try {
+        if (searchStatus) {
+          searchStatus.textContent = 'Searching...';
+          searchStatus.className = 'search-status searching';
+          searchStatus.style.display = 'block';
+        }
+
+        const results = await searchModule.searchPosts(query, vectorData, embedQuery, 9);
+        displayResults(results, query);
+
+        if (searchStatus) {
+          searchStatus.style.display = 'none';
+        }
+      } catch (error) {
+        console.error('Search failed:', error);
+        searchResults.innerHTML = '<div class="search-error">Search failed. Please try again.</div>';
+
+        if (searchStatus) {
+          searchStatus.textContent = 'Search error';
+          searchStatus.className = 'search-status error';
+        }
+      }
+    }    // Display search results
+    function displayResults(results, query) {
+      if (!results || results.length === 0) {
+        searchHeader.style.display = 'none';
+        if (searchHelp) searchHelp.style.display = 'block';
+        searchResults.innerHTML = `
+          <div class="search-no-results">
+            No posts found for "${query}". Try different keywords or topics.
+          </div>
+        `;
+        return;
+      }
+
+      // Hide search help when showing results
+      if (searchHelp) searchHelp.style.display = 'none';
+
+      const template = document.getElementById('search-result-template');
+      if (!template) {
+        console.error('Search result template not found');
+        return;
+      }
+
+      // Show and populate the header
+      const resultCount = results.length;
+      const plural = resultCount === 1 ? '' : 's';
+      searchHeader.textContent = `Found ${resultCount} post${plural} for "${query}"`;
+      searchHeader.style.display = 'block';
+
+      // Load postCropData for consistent background positioning
+      fetch('/postCropData.json')
+        .then(response => response.json())
+        .then(postCropData => {
+          const resultsHtml = results.map(result => {
+            const { metadata, scorePercent } = result;
+            const postUrl = metadata.url || `/posts/${metadata.slug}/`;
+            const cropData = postCropData[metadata.slug] || {};
+
+            // Clone the template
+            const clone = template.content.cloneNode(true);
+            const link = clone.querySelector('.post-card-link');
+            const background = clone.querySelector('.post-card-background');
+            const title = clone.querySelector('.post-title');
+            const score = clone.querySelector('.search-score');
+            const date = clone.querySelector('.post-date');
+
+            // Populate the template
+            link.href = postUrl;
+            background.setAttribute('data-crop-x', cropData.x || 0);
+            background.setAttribute('data-crop-y', cropData.y || 0);
+            background.style.setProperty('--crop-x', `${cropData.xPercent || 0}%`);
+            background.style.setProperty('--crop-y', `${cropData.yPercent || 0}%`);
+            title.textContent = metadata.title;
+            score.textContent = `${scorePercent}% match`;
+            date.textContent = metadata.date ? new Date(metadata.date).toISOString().split('T')[0] : '';            return clone;
+          });
+
+          // Clear and populate results
+          searchResults.innerHTML = '';
+
+          resultsHtml.forEach(element => {
+            searchResults.appendChild(element);
+          });
+        })
+        .catch(error => {
+          console.warn('Could not load postCropData:', error);
+          // Fallback without crop data
+          const resultsHtml = results.map(result => {
+            const { metadata, scorePercent } = result;
+            const postUrl = metadata.url || `/posts/${metadata.slug}/`;
+
+            // Clone the template
+            const clone = template.content.cloneNode(true);
+            const link = clone.querySelector('.post-card-link');
+            const title = clone.querySelector('.post-title');
+            const score = clone.querySelector('.search-score');
+            const date = clone.querySelector('.post-date');
+
+            // Populate the template
+            link.href = postUrl;
+            title.textContent = metadata.title;
+            score.textContent = `${scorePercent}% match`;
+            date.textContent = metadata.date ? new Date(metadata.date).toISOString().split('T')[0] : '';
+
+            return clone;
+          });
+
+          // Clear and populate results
+          searchResults.innerHTML = '';
+
+          resultsHtml.forEach(element => {
+            searchResults.appendChild(element);
+          });
+        });
+    }
+
+    // Event listeners
+    searchInput.addEventListener('focus', async () => {
+      if (!isInitialized) {
+        await initializeSearch();
+      }
+    });
+
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.trim();
+
+      // Clear previous timeout
+      if (searchTimeout) {
+        clearTimeout(searchTimeout);
+      }
+
+      if (!query) {
+        searchResults.innerHTML = '';
+        searchHeader.style.display = 'none';
+        if (searchHelp) searchHelp.style.display = 'block';
+        return;
+      }
+
+      // Debounce search
+      searchTimeout = setTimeout(async () => {
+        if (isInitialized) {
+          await performSearch(query);
+        } else {
+          const initialized = await initializeSearch();
+          if (initialized) {
+            await performSearch(query);
+          }
+        }
+      }, 300);
+    });
+
+    // Clear results when input is cleared
+    searchInput.addEventListener('keyup', (e) => {
+      if (e.target.value.trim() === '') {
+        searchResults.innerHTML = '';
+        searchHeader.style.display = 'none';
+        if (searchHelp) searchHelp.style.display = 'block';
+      }
+    });
+  }
 });

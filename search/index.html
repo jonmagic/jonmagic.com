@@ -11,7 +11,7 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The longest weekend of my life</title>
+<title>search jonmagic.com</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
       integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -43,12 +43,53 @@
   <div class="page layout-main">
     <main class="content">
       
-      <div class="post-date-container">
-        <span id="post-date-typing" class="post-date-typing" data-date="2006-09-30"></span>
-      </div>
+      <h1 class="site-title">search jonmagic.com</h1>
       
-      <h1 class="site-title">The longest weekend of my life</h1>
-      <p>I don’t even know where to begin… Simply put, an onsite I started on Friday morning turned into an all weekend marathon of Windows 2000 Small Business Server hacking, repeated reinstalls, Mountain Dew, energy drinks, 3 hours of sleep here, 2 there, running between 25 workstations configuring them and cleaning them up, and a whole lot more… It is now a little past 7pm on Sunday and I’m just praying that I can go home soon…</p>
+<div class="search-container">
+  <div class="search-input-container">
+    <input
+      type="text"
+      id="semantic-search-input"
+      placeholder="Search posts by topic, keyword, or concept..."
+      autocomplete="off"
+    >
+    <div id="semantic-search-status" class="search-status" style="display: none;"></div>
+  </div>
+
+  <div id="semantic-search-header" class="search-results-header" style="display: none;"></div>
+  <div id="semantic-search-results" class="search-results posts-grid"></div>
+</div>
+
+<!-- Hidden template for search result cards -->
+<template id="search-result-template">
+  <a href="" class="post-card-link">
+    <div class="post-card">
+      <div class="post-card-background"
+           data-crop-x="0"
+           data-crop-y="0"
+           style="--crop-x: 0%; --crop-y: 0%;">
+      </div>
+      <div class="post-card-content">
+        <h3 class="post-title"></h3>
+        <div class="post-card-footer">
+          <span class="search-score"></span>
+          <div class="post-date"></div>
+        </div>
+      </div>
+    </div>
+  </a>
+</template>
+
+<div class="search-help">
+  <h2>How to search</h2>
+  <p>This semantic search understands the meaning behind your queries, not just keywords. Try searching for:</p>
+  <ul>
+    <li><strong>Topics:</strong> "software engineering", "work-life balance", "technology"</li>
+    <li><strong>Concepts:</strong> "learning new skills", "career growth", "project management"</li>
+    <li><strong>Questions:</strong> "how to set up development environment", "advice for new developers"</li>
+  </ul>
+  <p>The search will find posts that are conceptually related to your query, even if they don't contain the exact words you searched for.</p>
+</div>
 
     </main>
   </div>
