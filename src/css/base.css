@@ -421,7 +421,7 @@ img.avatar {
   font-size: 1.25rem;
   color: var(--text) !important;
   line-height: 1.3;
-  padding-right: 96px; /* Prevent overlap with avatar */
+  padding-right: 90px; /* Prevent overlap with avatar */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -429,10 +429,11 @@ img.avatar {
 
 .project-avatar {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -0.65rem;
+  right: 0rem;
   width: 80px;
   height: 80px;
+  z-index: 1;
 }
 
 .project-avatar img {
