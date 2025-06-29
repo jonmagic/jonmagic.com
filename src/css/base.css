@@ -182,6 +182,9 @@ pre {
     display: inline-block !important;
     margin-left: 0.5rem !important;
   }
+  .avatar-placeholder {
+    display: none !important;
+  }
 }
 
 .site-title-group {
