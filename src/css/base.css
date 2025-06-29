@@ -21,7 +21,7 @@
 
   --spacing: 1.25rem;
   --max-width: 700px;
-  --max-width-large: 800px;
+  --max-width-large: 950px;
 
   --border-radius-small: 6px;
   --border-radius-medium: 8px;
@@ -464,6 +464,134 @@ img.avatar {
 .project-card-link:hover .project-summary,
 .project-card-link:hover .project-summary p {
   color: var(--muted);
+}
+
+/* Posts Grid
+   ========================================================================== */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .posts-grid {
+    grid-template-columns: 1fr;
+    max-width: var(--max-width);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.post-card-link {
+  text-decoration: none !important;
+  color: var(--text) !important;
+  display: block;
+}
+
+.post-card-link:hover,
+.post-card-link:visited,
+.post-card-link:active {
+  text-decoration: none !important;
+  color: var(--text) !important;
+}
+
+.post-card-link:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.post-card {
+  position: relative;
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius-medium);
+  background: var(--card-bg);
+  transition: all 0.2s ease;
+  height: 150px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.post-card-link:hover .post-card {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-large);
+}
+
+.post-card-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/contribution-graph.svg');
+  background-size: 300% 200%; /* Scale up the large SVG to show detail */
+  background-position: var(--crop-x, 0%) var(--crop-y, 0%);
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  transition: opacity 0.2s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  .post-card-background {
+    background-image: url('/images/contribution-graph-dark.svg');
+  }
+}
+
+.post-card-link:hover .post-card-background {
+  opacity: 0.25;
+}
+
+.post-card-content {
+  position: relative;
+  z-index: 2;
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.9) 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .post-card-content {
+    background: linear-gradient(to bottom, transparent 0%, rgba(13, 17, 23, 0.9) 100%);
+  }
+}
+
+.post-date {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: right;
+  align-self: flex-end;
+  opacity: 0.7;
+}
+
+.post-title {
+  margin: 0 0 auto 0;
+  font-size: 1.1rem;
+  color: var(--text) !important;
+  line-height: 1.3;
+  font-family: var(--font-mono);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Ensure title stays readable on hover */
+.post-card-link:hover .post-title {
+  color: var(--text) !important;
 }
 
 /* Social Links

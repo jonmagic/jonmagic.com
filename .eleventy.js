@@ -1,10 +1,148 @@
 const fs = require("fs");
+const path = require("path");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const markdownIt = require('markdown-it');
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 let markdownItEmoji = require('markdown-it-emoji');
 if (markdownItEmoji.default) markdownItEmoji = markdownItEmoji.default;
+
+// Configuration for contribution graph cropping
+const CROP_CONFIG = {
+  gridWidth: 120,
+  gridHeight: 40,
+  cropWidth: 40,
+  cropHeight: 20,
+  squareSize: 8,
+  squareGap: 2
+};
+
+// Seedable random number generator
+function seedRandom(seed) {
+  const m = 0x80000000; // 2**31
+  const a = 1103515245;
+  const c = 12345;
+  let state = seed;
+  return function() {
+    state = (a * state + c) % m;
+    return state / (m - 1);
+  };
+}
+
+// Generate crop data for posts based on title and date for consistency
+function generatePostCropData() {
+  try {
+    const postsDir = path.join(__dirname, 'src/posts');
+    const dataDir = path.join(__dirname, 'src/_data');
+    const cropDataPath = path.join(dataDir, 'postCropData.json');
+
+    // Check if crop data already exists and get its modification time
+    let existingCropData = {};
+    let cropDataExists = false;
+    let cropDataMtime = 0;
+
+    if (fs.existsSync(cropDataPath)) {
+      cropDataExists = true;
+      cropDataMtime = fs.statSync(cropDataPath).mtime.getTime();
+      existingCropData = JSON.parse(fs.readFileSync(cropDataPath, 'utf8'));
+    }
+
+    // Get all markdown files and their modification times
+    const postFiles = fs.readdirSync(postsDir)
+      .filter(file => file.endsWith('.md'))
+      .sort()
+      .reverse();
+
+    // Check if any post files are newer than the crop data
+    let needsRegeneration = !cropDataExists;
+
+    if (cropDataExists) {
+      for (const file of postFiles) {
+        const filePath = path.join(postsDir, file);
+        const fileMtime = fs.statSync(filePath).mtime.getTime();
+        if (fileMtime > cropDataMtime) {
+          needsRegeneration = true;
+          break;
+        }
+      }
+
+      // Also check if we have crop data for all posts
+      for (const file of postFiles) {
+        const slug = path.basename(file, '.md');
+        if (!existingCropData[slug]) {
+          needsRegeneration = true;
+          break;
+        }
+      }
+    }
+
+    if (!needsRegeneration) {
+      console.log('📍 Crop data is up to date, skipping regeneration');
+      return;
+    }
+
+    console.log('🎨 Generating crop data for posts...');
+
+    // Ensure data directory exists
+    if (!fs.existsSync(dataDir)) {
+      fs.mkdirSync(dataDir, { recursive: true });
+    }
+
+    const cropData = {};
+    const maxX = CROP_CONFIG.gridWidth - CROP_CONFIG.cropWidth;
+    const maxY = CROP_CONFIG.gridHeight - CROP_CONFIG.cropHeight;
+
+    for (const file of postFiles) {
+      const slug = path.basename(file, '.md');
+      const filePath = path.join(postsDir, file);
+
+      // Read frontmatter to get title and date for seeding
+      const content = fs.readFileSync(filePath, 'utf8');
+      const frontmatterMatch = content.match(/^---\n(.*?)\n---/s);
+
+      let title = slug;
+      let date = '';
+
+      if (frontmatterMatch) {
+        const frontmatter = frontmatterMatch[1];
+        const titleMatch = frontmatter.match(/title:\s*(.+)/);
+        const dateMatch = frontmatter.match(/date:\s*(.+)/);
+
+        if (titleMatch) title = titleMatch[1].replace(/['"]/g, '');
+        if (dateMatch) date = dateMatch[1];
+      }
+
+      // Create seed from title + date + slug for consistency
+      const seedString = `${title}${date}${slug}`;
+      const seedHash = seedString.split('').reduce((hash, char) => hash + char.charCodeAt(0), 0);
+      const seededRandom = seedRandom(seedHash);
+
+      const x = Math.floor(seededRandom() * maxX);
+      const y = Math.floor(seededRandom() * maxY);
+
+      cropData[slug] = {
+        x: x,
+        y: y,
+        xPercent: (x / maxX) * 100,
+        yPercent: (y / maxY) * 100
+      };
+    }
+
+    // Write crop data
+    fs.writeFileSync(cropDataPath, JSON.stringify(cropData, null, 2));
+
+    console.log(`✓ Generated crop data for ${Object.keys(cropData).length} posts`);
+
+    // Also write config for reference
+    const configPath = path.join(dataDir, 'contributionConfig.json');
+    if (!fs.existsSync(configPath)) {
+      fs.writeFileSync(configPath, JSON.stringify(CROP_CONFIG, null, 2));
+    }
+
+  } catch (error) {
+    console.error('❌ Error generating crop data:', error.message);
+  }
+}
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -39,9 +177,11 @@ module.exports = function(eleventyConfig) {
     return collectionApi.getFilteredByGlob('src/projects/*.md');
   });
 
-  // Generate avatars.json in src/ and _site/ before build
+  // Generate avatars.json and postCropData.json before build
   eleventyConfig.on('beforeBuild', () => {
     const path = require('path');
+
+    // Generate avatars.json
     const avatarsDir = path.join(__dirname, 'src/images/avatars');
     const outputSite = path.join(__dirname, '_site/avatars.json');
     const files = fs.readdirSync(avatarsDir);
@@ -53,6 +193,9 @@ module.exports = function(eleventyConfig) {
       console.warn('Could not write avatars.json to _site:', e);
     }
     console.log(`Wrote ${avatars.length} avatars to avatars.json`);
+
+    // Generate postCropData.json
+    generatePostCropData();
   });
 
   // Add .nojekyll and CNAME files after build
