@@ -1,0 +1,8 @@
+{
+  "gridWidth": 120,
+  "gridHeight": 40,
+  "cropWidth": 40,
+  "cropHeight": 20,
+  "squareSize": 8,
+  "squareGap": 2
+}
