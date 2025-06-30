@@ -132,13 +132,6 @@ function generatePostCropData() {
     fs.writeFileSync(cropDataPath, JSON.stringify(cropData, null, 2));
 
     console.log(`✓ Generated crop data for ${Object.keys(cropData).length} posts`);
-
-    // Also write config for reference
-    const configPath = path.join(dataDir, 'contributionConfig.json');
-    if (!fs.existsSync(configPath)) {
-      fs.writeFileSync(configPath, JSON.stringify(CROP_CONFIG, null, 2));
-    }
-
   } catch (error) {
     console.error('❌ Error generating crop data:', error.message);
   }
