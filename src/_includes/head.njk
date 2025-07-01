@@ -3,6 +3,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ title }}</title>
+
+{# Open Graph meta tags for social media link previews #}
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{% if excerpt %}{{ excerpt }}{% else %}{{ metadata.description }}{% endif %}">
+<meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
+<meta property="og:site_name" content="{{ metadata.title }}">
+<meta property="og:type" content="{% if date %}article{% else %}website{% endif %}">
+<meta property="og:image" content="{{ metadata.url }}{% if avatar %}{{ avatar }}{% else %}/images/avatars/jonmagic-2023-01-18.webp{% endif %}">
+<meta property="og:locale" content="en_US">
+
+{# Twitter Card meta tags #}
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ title }}">
+<meta name="twitter:description" content="{% if excerpt %}{{ excerpt }}{% else %}{{ metadata.description }}{% endif %}">
+
+{# Standard meta tags #}
+<meta name="description" content="{% if excerpt %}{{ excerpt }}{% else %}{{ metadata.description }}{% endif %}">
+<meta name="author" content="{{ metadata.author.name }}">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
       integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
