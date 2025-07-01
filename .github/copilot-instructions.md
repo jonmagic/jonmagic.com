@@ -38,7 +38,7 @@
 
 ## Other Notes
 - **Custom domain:** `CNAME` is set to `jonmagic.com`.
-- **Analytics:** Google Analytics via `gtag.js` in `head.njk`.
+- **Analytics:** Plausible Analytics.
 - **Avatars:** Managed in `src/images/avatars/` and displayed via Nunjucks includes and JS shuffling.
 - **Footer:** Year auto-updates via JS.
 
