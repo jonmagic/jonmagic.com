@@ -1,9 +1,12 @@
 ---
 title: sabretechllc.com redesigned!
-date: 2007-07-13
+date: 2007-07-13T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Check out our freshly revamped website! From photoshopped ideas to a stunning
+  live site in hours—ready for our open house. Dive in and explore the makeover!
 ---
 
 Wow, in preparation for our open house this weekend we have been on a mad spree: remodeling the office, making line cards, new business cards, gift certificates, new tables and chairs, **AND** a [NEW WEBSiTE](http://sabretechllc.com)!!!

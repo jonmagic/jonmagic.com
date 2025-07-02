@@ -1,9 +1,13 @@
 ---
 title: 46 Monument Avenue
-date: 2010-09-30
+date: 2010-09-30T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Discover a charming studio at 46 Monument Avenue with a private patio in
+  Charlestown. Enjoy superb hospitality and a cozy retreat near Boston's North
+  Side.
 ---
 
 This summer my wife and I planned a trip to Boston for our best friend's wedding. While getting ready to book a room I came across [an article](http://techcrunch.com/2010/07/25/fawlty-logic/) about [airbnb.com](http://airbnb.com), so I decided to give it a try. The first 3 attempts to get a room failed, but each time Airbnb sent me a better coupon so I kept trying. The fourth attempt got me [46 Monument Avenue](http://www.airbnb.com/rooms/45987), and it was the best purchase I’ve made in a year.

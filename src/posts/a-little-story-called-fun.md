@@ -1,9 +1,13 @@
 ---
 title: A little story called fun
-date: 2009-03-30
+date: 2009-03-30T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Two friends' birthday trip turns into a hilarious spy thriller, co-written on
+  Facebook during an IKEA visit. Dive into their adventure full of twists and
+  laughs.
 ---
 
 This last weekend I took my wife to Chicago for her birthday, and her best friend flew in from Boston to join us. We had a wonderful weekend, they got to go shopping, we all got to eat amazing food, and I managed to talk them into going to blues and piano joints rather than dance clubs (except for one place that had Jazz upstairs and dancing downstairs).

@@ -1,9 +1,11 @@
 ---
 title: Compiling Executables on Heroku
-date: 2011-07-28
+date: 2011-07-28T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Need pdftotext on Heroku? Discover a smooth hack for compiling executables directly on Heroku's Cedar Stack, making PDFs searchable in no time!
 ---
 
 Are you using Heroku and want to run a program not included in the Heroku environment? I’m going to show you how.

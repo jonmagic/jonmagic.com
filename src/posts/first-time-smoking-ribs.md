@@ -1,9 +1,12 @@
 ---
 title: First time smoking ribs
-date: 2009-05-16
+date: 2009-05-16T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Smoked spare ribs perfection with Nat! Our intense rub taught us lessons; next
+  time: simpler rub, 3-2-1 method, and homemade BBQ sauce for our feast!
 ---
 
 Nat and I smoked pork spare ribs over this Memorial weekend, and they were so yummy.

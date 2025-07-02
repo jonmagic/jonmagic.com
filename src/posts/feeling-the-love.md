@@ -1,9 +1,13 @@
 ---
 title: Feeling the love
-date: 2008-12-18
+date: 2008-12-18T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Birthday joy redefined: Heartfelt wishes, surprise celebrations, and cherished
+  moments with loved ones transform this special day into a new favorite
+  tradition.
 ---
 
 Wow, I must have more friends this year than ever! Several friends called to wish me a happy birthday, I got 10 happy bday text messages, and about 20 emails!

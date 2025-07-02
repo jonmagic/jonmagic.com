@@ -1,9 +1,12 @@
 ---
 title: Rapid Onsite Software Development
-date: 2009-06-24
+date: 2009-06-24T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Tried to build an app in a day for my uncle using Rails; learned a ton about
+  TDD, modals, and more. Not one-day magic, but close! Dive into the journey.
 ---
 
 My uncle has been bugging me to help him with writing some software for awhile now, and this last weekend he sent me another email with a new idea, to help him in his business. I had some time available this week, so I decided to drive down to his shop and try something. My goal was to take his simple idea, boil it down to its essence, and write the whole application in a day using [Rails](http://www.rubyonrails.com).

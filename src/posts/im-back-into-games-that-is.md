@@ -1,9 +1,11 @@
 ---
 title: I'm back! into games that is
-date: 2008-03-11
+date: 2008-03-11T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Diving back into gaming bliss with Valve's Portal—hilarious narration and epic ending! Next up, a fresh adventure with Team Fortress 2. Let's game on!
 ---
 
 Ok, so that's not quite true, I did play some Counter-Strike and stuff last year, but last night and today I really got back into gaming.

@@ -1,9 +1,12 @@
 ---
 title: Finish Weekend
-date: 2011-11-12
+date: 2011-11-12T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Finish Weekend: Collaborate with a diverse crew to conquer your unfinished
+  projects! Join inspiring people and tackle that final 5% together.
 ---
 
 While I initially had issues with the concept of Finish Weekend, I’m really glad I participated and believe everyone involved is better off for it.

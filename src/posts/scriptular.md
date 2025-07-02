@@ -1,9 +1,12 @@
 ---
 title: Scriptular
-date: 2012-03-05
+date: 2012-03-05T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Test JavaScript regex easily with Scriptular! No backend needed; everything
+  runs in your browser. Perfect for developers seeking a simple testing tool.
 ---
 
 Ever since [Hubot](http://hubot.github.com) was released I’ve been regular expressing myself. Here is a tool I built to make testing regular expressions in JavaScript easier.

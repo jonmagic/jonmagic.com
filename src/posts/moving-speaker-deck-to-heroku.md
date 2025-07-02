@@ -1,9 +1,13 @@
 ---
 title: Moving Speaker Deck to Heroku
-date: 2011-07-27
+date: 2011-07-27T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Speaker Deck now rocks on Heroku and S3! We scaled to 100 workers processing
+  slides at lightning speed, pushing limits with ease and gearing up for new
+  features.
 ---
 
 While at RailsConf earlier this year we decided that it would be wise to move Speaker Deck to Heroku and S3, and we finally made it happen.

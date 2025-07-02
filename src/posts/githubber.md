@@ -1,9 +1,12 @@
 ---
 title: GitHubber
-date: 2011-12-05
+date: 2011-12-05T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Ordered List crew joins GitHub! Exciting new chapters, dream resets, and
+  awesome opportunities. Together, we're ready to build something incredible.
 ---
 
 Today the whole crew from Ordered List joins GitHub!

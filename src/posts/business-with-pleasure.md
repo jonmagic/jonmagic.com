@@ -1,9 +1,12 @@
 ---
 title: Business With Pleasure
-date: 2013-05-15
+date: 2013-05-15T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Struggling with work addiction and balance, I share my journey to break
+  destructive cycles, prioritize relationships, and create healthier habits.
 ---
 
 Hi, my name is Jon. I’m an addict. It does not matter what it is—if it makes me feel good, I do more of it.

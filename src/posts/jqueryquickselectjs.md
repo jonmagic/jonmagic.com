@@ -1,9 +1,12 @@
 ---
 title: jquery.quickselect.js
-date: 2008-11-12
+date: 2008-11-12T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Transform your HTML select/option tags into a sleek input box with live search
+  using jquery.quickselect.js. Discover better, quicker search results!
 ---
 
 Thanks to [Daniel](http://behindlogic.com) for creating a [nifty new jquery](http://github.com/dcparker/jquery_plugins/tree/master/quickselect) plugin for me! [Quickselect](http://github.com/dcparker/jquery_plugins/tree/master/quickselect) takes select/option tags in HTML and turns them into an input box with live search, and can even use the [quicksilver.js](http://rails-oceania.googlecode.com/svn/lachiecox/qs_score/trunk/qs_score.js) for more interesting search results.

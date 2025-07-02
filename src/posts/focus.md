@@ -1,9 +1,13 @@
 ---
 title: Focus
-date: 2012-09-07
+date: 2012-09-07T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  In just six months, we built GitHub's custom support system by learning to
+  focus and prioritize core goals. Discover how commitment and innovation led
+  the way.
 ---
 
 We just finished shipping a six month long milestone on one of our support tools at [GitHub](https://github.com). One lesson I learned along the way was focus.

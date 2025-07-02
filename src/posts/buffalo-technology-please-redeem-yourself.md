@@ -1,9 +1,13 @@
 ---
-title: Buffalo Technology, please redeem yourself
-date: 2007-01-19
+title: 'Buffalo Technology, please redeem yourself'
+date: 2007-01-19T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Frustrated with Buffalo's Terastation? Discover the pitfalls of poor tech
+  support and endless RMA loops and why loyal customers are rethinking their
+  options.
 ---
 
 I’ve been eyeing the [Buffalo Terastation](http://www.buffalo-technology.com/products/product-detail.php?productid=97) for awhile now, lots of storage in a nice little package. So when the opportunity to buy one came up, I jumped.

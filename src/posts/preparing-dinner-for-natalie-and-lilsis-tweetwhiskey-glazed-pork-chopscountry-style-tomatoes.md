@@ -1,9 +1,14 @@
 ---
-title: Preparing Dinner for Natalie and lil'sis TweetWhiskey Glazed Pork ChopsCountry Style Tomatoes
-date: 2009-06-17
+title: >-
+  Preparing Dinner for Natalie and lil'sis TweetWhiskey Glazed Pork ChopsCountry
+  Style Tomatoes
+date: 2009-06-17T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Whiskey glazed pork chops and crispy country-style tomato stacks make dinner
+  special for Natalie and lil'sis. Discover this hearty, flavorful meal now!
 ---
 
 ## Whiskey Glazed Pork Chops

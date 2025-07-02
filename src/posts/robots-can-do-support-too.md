@@ -1,9 +1,12 @@
 ---
 title: Robots can do support too
-date: 2014-02-28
+date: 2014-02-28T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Discover how we taught a cheeky robot to handle FAQs in an IRC channel, making
+  support faster and freeing us for more fun stuff. Check out our adventure!
 ---
 
 GitHub launched the [Atom beta](http://atom.io) this week and the response has been great. As the first day was winding down a coworker suggested we write an FAQ and add a robot to answer the frequently asked questions in the IRC channel where people were congregating. Here’s how we taught [hubot](http://hubot.github.com) to do support.

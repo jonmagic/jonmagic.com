@@ -1,9 +1,11 @@
 ---
 title: BarCampGR
-date: 2009-08-22
+date: 2009-08-22T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Enjoying BarCampGR! Dive into some smoky meat magic with my top BBQ tips and recipes. Follow along for cooking secrets and tech musings!
 ---
 
 Just wanted to post a little something while I’m still here at [BarCampGR](http://barcampgr.org/), an attendee driven conference. Its been great fun, as you can see from the many [posts to twitter](http://twitter.com/#search?q=%23barcampgr)…

@@ -1,9 +1,12 @@
 ---
 title: Configuring PBX in a Flash to use Rhino cards
-date: 2009-06-02
+date: 2009-06-02T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Set up your Asterisk-based PBX easily with Rhino cards! Great support and
+  seamless integration using PBX in a Flash—your telecom needs, simplified.
 ---
 
 If you are using a [Rhino Equipment card](http://www.rhinoequipment.com/) as your PSTN or digital interface to the telco, and need help setting it up on your Asterisk-based PBX, look no further!

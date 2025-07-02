@@ -1,9 +1,12 @@
 ---
 title: Make Asterisk use Gmail for emailing faxes
-date: 2009-09-10
+date: 2009-09-10T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Enhance Asterisk with Gmail for fax emailing! Our perl script tweak lets you
+  send fax attachments via Gmail effortlessly—tech magic you need today.
 ---
 
 While [Asterisk](http://www.asterisk.org/) provides a simple way to replace sendmail when sending voicemails, the incoming fax portion of Asterisk is not so easily reconfigured. By studying how it handled an incoming fax from the Asterisk CLI I was able to find this perl script: [ /var/lib/asterisk/bin/fax-process.pl](https://gist.github.com/184641/ddea153508f3373cf2f99ac8ba79fe99ce6fc2fd).
@@ -17,5 +20,5 @@ There were a few libraries I had to install via cpan:
 - install GBARR/Authen-SASL-2.12.tar.gz
 - install C/CW/CWEST/Net-SMTP-SSL-1.01.tar.gz
 
-And finally here is the rewritten script!  
+And finally here is the rewritten script!
 [http://gist.github.com/184654](http://gist.github.com/184654)

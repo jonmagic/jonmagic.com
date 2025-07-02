@@ -1,12 +1,15 @@
 ---
 title: Ultimate media/backup server
-date: 2007-10-22
+date: 2007-10-22T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Transform your media setup with a Mac Mini and Drobo: Compact, easy storage
+  expansion, automatic downloads, and seamless backup for a sleek tech haven.
 ---
 
-I’ve been using a winxp box in my living room for some time now, and while it works really well, I do find it lacking. Currently it has a 200gb hdd and a 80gb hdd, runs xp pro, has a video card with composite out so I can go straight to the tv, has [Azureus](http://azureus.sourceforge.net/) and [ted](http://www.rulecam.net/ted/) to get tv shows,  
+I’ve been using a winxp box in my living room for some time now, and while it works really well, I do find it lacking. Currently it has a 200gb hdd and a 80gb hdd, runs xp pro, has a video card with composite out so I can go straight to the tv, has [Azureus](http://azureus.sourceforge.net/) and [ted](http://www.rulecam.net/ted/) to get tv shows,
 [k-lite codec pack](http://filehippo.com/download_klite_codec_pack/) with Media Player Classic, and vnc so I can remote control it… Its pretty slick over all, but I’m running out of storage and I want something with more features.
 
 #### So here are my new requirements:

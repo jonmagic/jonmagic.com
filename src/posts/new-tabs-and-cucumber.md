@@ -1,9 +1,12 @@
 ---
 title: New Tabs and Cucumber
-date: 2012-02-07
+date: 2012-02-07T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Open new tabs in Cucumber with ease! Learn how to run expectations on them
+  using selenium-webdriver. A simple switch for smooth testing on Chrome.
 ---
 
 While working on an internal app at [GitHub](http://github.com) I had to write a [cucumber](http://cukes.info/) scenario that ran expectations against a new tab that was opened. Here is how I did it.

@@ -1,9 +1,13 @@
 ---
-title: Hey mom, I got a job!
-date: 2010-11-18
+title: 'Hey mom, I got a job!'
+date: 2010-11-18T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Exciting times ahead! I've left SabreTech and joined OrderedList, diving into
+  a new chapter of learning, coding, and smart collaborations. Cheers to fresh
+  starts!
 ---
 
 How a butler was born.

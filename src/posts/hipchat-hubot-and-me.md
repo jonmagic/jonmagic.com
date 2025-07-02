@@ -1,9 +1,10 @@
 ---
-title: HipChat, hubot, and Me
-date: 2011-10-28
+title: 'HipChat, hubot, and Me'
+date: 2011-10-28T00:00:00.000Z
 tags:
   - post
   - migrated
+description: Unleash your own robot squad with Hubot and Siri! Dive into setting up your digital assistant dream team using Heroku and HipChat.
 ---
 
 How you can give Siri her very own robot brother with some help from Heroku and HipChat.

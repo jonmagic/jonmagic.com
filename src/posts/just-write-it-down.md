@@ -1,9 +1,12 @@
 ---
 title: Just Write It Down
-date: 2011-10-03
+date: 2011-10-03T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Boost your memory and productivity with a simple hack: just write it down!
+  Discover how jotting ideas can transform your recall and streamline your life.
 ---
 
 I struggle with remembering great ideas, not so great ideas, things I want to accomplish, and so much more. Let's talk about the easiest way to hack our lives so we can be more productive.

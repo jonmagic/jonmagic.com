@@ -1,9 +1,12 @@
 ---
 title: Grim
-date: 2011-09-06
+date: 2011-09-06T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Turn PDF pages into images or text with Grim, my first Ruby gem! A nifty tool
+  for developers and Speaker Deck users working with presentations.
 ---
 
 Grim is a simple gem for extracting (reaping) a page from a pdf and converting it to an image as well as extract the text from the page as a string.

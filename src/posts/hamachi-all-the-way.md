@@ -1,9 +1,12 @@
 ---
 title: Hamachi all the way...
-date: 2006-09-30
+date: 2006-09-30T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Hamachi makes VPNs a breeze, connecting computers anywhere with simplicity.
+  Share files and more effortlessly—it's like your computers are neighbors!
 ---
 
 Ok, I’ve been following the development of Hamachi, a.k.a. way too darn easy **VPN** for a couple months now… Well I finally started using it today and I’ve got to say… **WOW**, that was way too easy…

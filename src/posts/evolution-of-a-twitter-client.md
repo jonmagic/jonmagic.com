@@ -1,9 +1,12 @@
 ---
 title: Evolution of a twitter client
-date: 2009-05-22
+date: 2009-05-22T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Follow my journey of crafting a custom Twitter client for Windows, inspired by
+  Tweetie! Dive into the app's evolution with Ruby and Shoes.
 ---
 
 One of my clients wants his employees to be able to use Twitter, but there were some strict requirements involved, and I couldn’t find a Twitter client for Windows that met all of those requirements, so I decided to write my own Twitter client.

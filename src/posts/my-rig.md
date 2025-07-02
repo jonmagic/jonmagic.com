@@ -1,9 +1,12 @@
 ---
 title: My Rig
-date: 2006-10-04
+date: 2006-10-04T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Check out my epic Macbook setup: upgraded RAM, killer speed, and seamless OS
+  juggling. Some hiccups? Sure, but the cool factor outweighs all that!
 ---
 
 Not that anyone cares, but I thought I’d post my current computer setup, hardware and software…

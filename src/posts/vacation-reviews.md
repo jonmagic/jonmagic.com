@@ -1,9 +1,13 @@
 ---
 title: Vacation Reviews
-date: 2010-09-30
+date: 2010-09-30T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Just back from a delicious adventure in Boston, Concord, and Milton—foodie
+  gems like oysters and wineries made it unforgettable! Dive into our tasty
+  journey.
 ---
 
 We’re just now back from a great trip to Boston MA, Concord NH, and Milton VT. From trying oysters to a tasting at a winery, our foodie passions drove us to try new things. We made sure to post our reviews on Yelp when we returned home!

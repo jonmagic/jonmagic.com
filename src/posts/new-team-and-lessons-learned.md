@@ -1,9 +1,12 @@
 ---
 title: New Team and Lessons Learned
-date: 2013-09-16
+date: 2013-09-16T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Building a GitHub team taught us to tackle impactful problems, iterate fast,
+  and embrace simplicity. Learnings on mentorship and adaptability for success!
 ---
 
 The past few months I have been building a new team at [GitHub](https://github.com) focused on solving problems for our business teams. Here are a few valuable lessons we learned along the way.
@@ -44,5 +47,5 @@ In the end we learned that invoicing integration needed to be built inside of th
 
 We could have avoided a lot of heartache and wasted resources if I had sought mentorship from people with more experience and context at GitHub.
 
-For long term success I need to constantly be learning, which means keeping an open mind and a humble spirit. I look forward to the journey  
+For long term success I need to constantly be learning, which means keeping an open mind and a humble spirit. I look forward to the journey
 \m/

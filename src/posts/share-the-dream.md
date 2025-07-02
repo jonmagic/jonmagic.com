@@ -1,9 +1,12 @@
 ---
 title: Share the Dream
-date: 2011-03-03
+date: 2011-03-03T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Boost team spirit by sharing passions and dreams for mutual success at work.
+  Embrace each other's energy to stay motivated and happy every day.
 ---
 
 Sharing in the vision and energy of your team is a key factor to success and happiness at work.

@@ -1,9 +1,12 @@
 ---
 title: The Best Work Days
-date: 2011-07-01
+date: 2011-07-01T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Epic workday vibes: Collaborating with Steve and John, nailing new features,
+  sharing wins, and staying stoked for what’s coming next. Pure team synergy!
 ---
 
 Today was an awesome day at work.

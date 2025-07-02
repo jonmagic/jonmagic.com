@@ -1,9 +1,13 @@
 ---
-title: I'm ready to teach... well, almost
-date: 2007-01-20
+title: 'I''m ready to teach... well, almost'
+date: 2007-01-20T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Ready to dive into tech education innovation? Explore the journey from
+  epiphany to a fresh take on training future IT leaders with essential soft
+  skills.
 ---
 
 Two years ago while on vacation in Florida I had an epiphany, one of those moments where something just comes to you, and it feels so right.

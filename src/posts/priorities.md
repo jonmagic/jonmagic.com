@@ -1,9 +1,13 @@
 ---
 title: Priorities
-date: 2011-03-05
+date: 2011-03-05T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Finding balance between work and home life is tough, especially when you love
+  what you do. Prioritize loved ones and cherish quality time—it makes all the
+  difference!
 ---
 
 Balancing your home and work life can be terribly difficult, especially when you love your job.

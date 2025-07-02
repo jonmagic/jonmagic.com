@@ -1,9 +1,12 @@
 ---
 title: Ditch Your Crew
-date: 2011-09-03
+date: 2011-09-03T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Break free from your comfort zone to grow as a programmer and person by
+  meeting new peers, asking questions, and truly listening. You won't regret it!
 ---
 
 Want to be a better programmer and a better person? Ditch your coworkers, go out and meet other peers, ask questions, and most importantly, listen.

@@ -1,9 +1,13 @@
 ---
 title: Rounding out the year
-date: 2006-11-13
+date: 2006-11-13T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Reflecting on a year of gratitude: a new marriage, business milestones,
+  travels, and family joys. Even small wins, like a new laptop, bring big
+  smiles!
 ---
 
 What a great year! Here are some of the things I thank God for everyday:

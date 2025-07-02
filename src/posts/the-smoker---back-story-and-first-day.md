@@ -1,9 +1,11 @@
 ---
 title: The Smoker - Back Story and First Day
-date: 2011-05-12
+date: 2011-05-12T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Started building my dream 55-gallon smoker after a year of planning, with Dad’s help and a perfectly-timed print from a friend. BBQ bliss, here we come!
 ---
 
 I’ve been planning on building a 55 gallon smoker for almost a year and a half now, but the time and resources just haven’t been there. Today marked the first day of real progress!

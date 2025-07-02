@@ -1,9 +1,12 @@
 ---
 title: I bought one
-date: 2006-09-30
+date: 2006-09-30T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Just snagged a slick black MacBook for work! Can't wait to geek out on it and
+  upgrade. Check out some cool links and reviews I dug up while I wait!
 ---
 
 Actually, my business bought one for me, but still… What am I talking about?

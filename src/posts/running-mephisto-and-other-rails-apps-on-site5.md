@@ -1,9 +1,12 @@
 ---
 title: Running Mephisto (and other Rails apps) on Site5
-date: 2009-04-20
+date: 2009-04-20T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Get Mephisto running smoothly on Site5 with tips on setting up Ruby, Rails,
+  and your own gem repository. Dive in for a simple, quirky setup guide!
 ---
 
 There are a few steps in getting the latest Mephisto (0.8.2 at the time of this writing) working on the shared host [Site5](http://www.site5.com). As I’m writing this Site5 is upgrading all their servers to Ruby 1.8.7, Rails 2.2.2, RubyGems 1.3.1, and Mysql 5.0. Thanks to everyone at Site5 that helped, [Ben](http://twitter.com/BenAtSite5), Beau, and the guy I talked to today (forgot his name). Continue reading for the steps I/we had to take to get things running properly.

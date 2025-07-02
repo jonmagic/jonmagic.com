@@ -1,9 +1,12 @@
 ---
 title: Starting to Unplug
-date: 2011-06-30
+date: 2011-06-30T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Discover the joy of unplugging: transform tech habits to enjoy life more,
+  connect deeply with loved ones, and find peace without constant digital buzz.
 ---
 
 Changing the way you live your life sounds weird, and drastic, but I have to admit that I’m really starting to enjoy it.

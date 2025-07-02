@@ -1,9 +1,12 @@
 ---
 title: Globe Gravity Feed Slicer
-date: 2008-11-22
+date: 2008-11-22T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Resurrecting a vintage Globe Gravity Feed Slicer, I uncovered its 1949 charm
+  and sliced my smoked roast like a pro. Check out my DIY restoration journey!
 ---
 
 This is a post from my old blog that I’ve put up for solidarity. To this day I still get emails from people inquiring about this model slicer :)

@@ -1,9 +1,13 @@
 ---
 title: Another Year
-date: 2006-09-30
+date: 2006-09-30T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Reflecting on a whirlwind year of growth, friendship, and personal milestones.
+  Join my journey through late nights, work wins, and life's rollercoaster
+  moments.
 ---
 
 My head hurts…

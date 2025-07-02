@@ -1,9 +1,13 @@
 ---
 title: The History of Speaker Deck
-date: 2011-10-03
+date: 2011-10-03T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Speaker Deck's journey from a simple idea to launch highlights the power of
+  passion and perseverance. Discover how a casual lunch turned into a successful
+  slide-sharing platform!
 ---
 
 How a product was born, from inception to implementation, and distractions to launch.

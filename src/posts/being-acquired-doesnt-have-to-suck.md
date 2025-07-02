@@ -1,9 +1,13 @@
 ---
 title: Being acquired doesn't have to suck
-date: 2012-01-08
+date: 2012-01-08T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Discover how Ordered List's acquisition by GitHub turned seamless, avoiding
+  culture clashes and harnessing synergy, making work more engaging and
+  productive.
 ---
 
 It has been a month since [Ordered List was acquired by GitHub](https://github.com/blog/993-ordered-list-is-a-githubber) and our team of 5 joined their team of 50, and it hasn’t sucked at all. Here are some observations on how to remove the suck from acquisitions.

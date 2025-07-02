@@ -1,9 +1,12 @@
 ---
 title: My Trip to Verona
-date: 2012-05-19
+date: 2012-05-19T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Jet lagged, but thrilled in Verona! From exhilarating cab rides to savoring
+  gelato by the river, immerse yourself in jsDay and Italy's vibrant charm.
 ---
 
 As my plane broke through the clouds, descending into Verona, my eyes were met with seemingly endless farm land, a patchwork quilt, broken up by small patches of trees and wandering erratic roads.

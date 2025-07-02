@@ -1,9 +1,12 @@
 ---
 title: HUBOT img me woman laughing alone with salad
-date: 2012-05-19
+date: 2012-05-19T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Join a journey from London to Verona sharing the magic of Hubot—an open-source
+  robot that’s sparking creativity and laughter in the tech world!
 ---
 
 In the past month I’ve had the opportunity to present this talk twice, first in London England and then in Verona Italy.

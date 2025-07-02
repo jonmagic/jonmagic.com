@@ -1,9 +1,13 @@
 ---
 title: New Guy Blues
-date: 2011-03-02
+date: 2011-03-02T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Feeling like the new kid at work? Discover how having a servant's heart,
+  finding a mentor, and leveraging your strengths can help you shine in a new
+  job.
 ---
 
 Being the new guy in your workplace can be intimidating. It can cause anxiety, frustration, and hamper your productivity. Sometimes it's your coworkers not making it easy for you, sometimes it's just you, your mindset, willingness to stretch your limits.

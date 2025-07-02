@@ -1,10 +1,14 @@
 ---
 layout: layout
 title: Peer feedback
-date: 2023-04-25
+date: 2023-04-25T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Streamline your peer feedback process: provide references to key projects and
+  qualities when asking for feedback, and personalize responses for meaningful
+  insights.
 ---
 
 It’s that time of year again and I’m asking for peer feedback and writing feedback for teammates and realized I’ve learned a few things about this process over the years that I think are worth sharing.

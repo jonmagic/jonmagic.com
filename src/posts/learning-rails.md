@@ -1,9 +1,12 @@
 ---
 title: Learning Rails
-date: 2006-09-30
+date: 2006-09-30T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Diving into Ruby on Rails with no prior coding skills led to a whirlwind four
+  weeks, creating a web app from scratch. Embrace the challenge and learn!
 ---
 
 Wow, what a couple of weeks (months) it has been…

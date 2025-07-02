@@ -1,9 +1,13 @@
 ---
 title: Deliberate Iteration
-date: 2014-05-22
+date: 2014-05-22T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Deliberately iterating on life: mastering notebooks, calendars, and meetings
+  has boosted productivity, balance, and connection. Discover the power of
+  intentional change.
 ---
 
 I’ve never been good at New Years resolutions but this year has been different. Starting the year I decided to iterate on life in a much more deliberate way. Here are the results.

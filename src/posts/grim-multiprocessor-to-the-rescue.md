@@ -1,9 +1,13 @@
 ---
 title: Grim MultiProcessor to the Rescue!
-date: 2011-10-06
+date: 2011-10-06T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Grim MultiProcessor saved the day! It smartly switches between GhostScript
+  versions to fix PDF conversion issues for Speaker Deck. Now processing's a
+  breeze!
 ---
 
 We recently ran into issues with certain versions of GhostScript not being able to convert PDFs into images. Here’s how we solved the problem.

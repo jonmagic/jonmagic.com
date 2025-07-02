@@ -1,9 +1,12 @@
 ---
 title: Obsession and Understanding
-date: 2011-06-29
+date: 2011-06-29T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Balancing work passion with inner peace is key. Discover how finding
+  fulfillment in growth, not obsession, leads to true joy and tranquility.
 ---
 
 I’ve been emotionally up and down a lot the past few months and a lot of it has had to do with work. Don’t get me wrong, I love my job, and therein lies the problem.

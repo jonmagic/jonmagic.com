@@ -1,9 +1,13 @@
 ---
 title: What is my passion?
-date: 2008-08-21
+date: 2008-08-21T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Exploring passions: fixing tech, cherishing family moments, and coding for
+  fun. Join the journey of juggling joys, finding purpose, and embracing the
+  little things.
 ---
 
 I’ve had a hard time with this question lately, and it has been coming up time and time again. I’ve been praying about, asking for guidance, trying to figure out what I should be pouring my heart into.

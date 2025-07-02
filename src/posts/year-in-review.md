@@ -1,9 +1,11 @@
 ---
 title: Year in review
-date: 2017-12-30
+date: 2017-12-30T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Reflecting on a year of family milestones, tech innovation at GitHub, and personal growth. Cheers to cherished moments and learning new things!
 ---
 
 This year flew by with a couple life changing family events, several projects shipped at work, and a lot of learning.

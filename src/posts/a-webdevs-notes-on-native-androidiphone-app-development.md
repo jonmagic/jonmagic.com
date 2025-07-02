@@ -1,9 +1,13 @@
 ---
 title: A WebDev's notes on native Android/iPhone app development
-date: 2010-11-26
+date: 2010-11-26T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Discover a web developer's journey through crafting a native-feeling
+  phototherapy calculator app for iPhone and Android using Appcelerator and
+  JqueryMobile.
 ---
 
 I was contracted to build a fairly simple phototherapy treatment time calculator app for one of our clients recently, and in the process learned A LOT about developing for the iPhone and Android using html/css/javascript.

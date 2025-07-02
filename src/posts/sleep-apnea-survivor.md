@@ -1,9 +1,12 @@
 ---
 title: Sleep Apnea Survivor
-date: 2014-02-13
+date: 2014-02-13T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  I was saved from sleep apnea by the persistence of loved ones. If this story
+  sounds familiar, act now to help someone else get the rest they deserve.
 ---
 
 Almost two years ago a friend and my wife saved my life. They got me to go see a doctor because my sleep was a mix of bone rattling snores, deathly silence, and gasps for air. If this sounds like someone you know, help save a life.

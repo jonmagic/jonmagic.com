@@ -1,9 +1,13 @@
 ---
 title: Why Should We Write?
-date: 2011-10-14
+date: 2011-10-14T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Boost your programming career by writing! Share your insights, tackle everyday
+  challenges, and elevate your brand. Let's make learning & growth a shared
+  journey.
 ---
 
 Building a career as a programmer requires a lot of hard work, determination, and in my opinion a lot of writing.

@@ -1,9 +1,12 @@
 ---
 title: Launching Speaker Deck
-date: 2011-10-10
+date: 2011-10-10T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Speaker Deck is live! With 2500+ signups and 1000+ presentations in 2 weeks,
+  it’s redefining slide hosting and handling scale with ease. Join the ride!
 ---
 
 Looking back at the last two weeks since launching Speaker Deck.

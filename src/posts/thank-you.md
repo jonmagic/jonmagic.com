@@ -1,9 +1,13 @@
 ---
 title: Thank you
-date: 2011-06-08
+date: 2011-06-08T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Appreciate the small acts of kindness! A simple thank-you turned my chocolate
+  craving into a sweet surprise. Gratitude goes a long way—sometimes with
+  chocolate!
 ---
 
 Recognizing someone’s hard work and thanking them for it is always worth it.

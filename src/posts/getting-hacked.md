@@ -1,9 +1,12 @@
 ---
 title: Getting hacked
-date: 2008-06-20
+date: 2008-06-20T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Got hacked last night! Someone cracked my email, tried to access my blog, and
+  messed with my site. It's a wild ride—find out how it all went down.
 ---
 
 My worst nightmare happened last night, and I didn’t even know it until late this morning. I was hacked…

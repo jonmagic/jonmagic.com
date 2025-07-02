@@ -1,12 +1,14 @@
 ---
 title: Family Ribs
-date: 2009-06-28
+date: 2009-06-28T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Cousin's here with his wife for a weekend of ribs, chats, and laughs! Dive into the fun as we prep, smoke, and savor delicious memories together! #FamilyTime
 ---
 
-My cousin and his wife Karen (i.e. Family) are visiting us this weekend.  
+My cousin and his wife Karen (i.e. Family) are visiting us this weekend.
 My cuz is an artist, an [ice sculptor](http://www.theicestudio.com/) and he also [works with sand](http://img30.yfrog.com/i/woz.jpg/)! This is the second year he has visited us while doing work up in Niles MI, but the first time Karen has come to visit us. In fact, it's the first time Karen and my wife have met :-)
 
 Anyways, one of the means I used to entice Karen to visit us was my incessant twittering about food, mwahahaha…

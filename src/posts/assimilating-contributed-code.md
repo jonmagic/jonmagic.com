@@ -1,9 +1,13 @@
 ---
 title: Assimilating Contributed Code
-date: 2011-12-30
+date: 2011-12-30T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Diving into contributor workflows with RubyGems? Discover a simple, effective
+  method for collaborating on massive GitHub pull requests without being a git
+  wizard.
 ---
 
 This year I authored several RubyGems and just this week finally learned how to work with a contributor.

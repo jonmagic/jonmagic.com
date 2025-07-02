@@ -1,9 +1,12 @@
 ---
 title: I'm building a computer
-date: 2008-03-07
+date: 2008-03-07T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Building my ultimate tech/gaming PC at home: Asus board, Intel Core 2 Duo,
+  Nvidia 9600GT, and more. Can't wait to dive into epic gaming sessions!
 ---
 
 I know, I know, that's not a big deal considering I’m part owner in a computer store. But it IS a big deal to me, cuz this computer is going to be my tech/gaming machine for my house. Here is the spec list:

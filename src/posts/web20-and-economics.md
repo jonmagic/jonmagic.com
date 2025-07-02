@@ -1,9 +1,11 @@
 ---
 title: web20 and economics?
-date: 2006-09-30
+date: 2006-09-30T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Diving into Web 2.0 and economics—the journey of a curious soul seeking epiphanies in the digital wave, hoping to make a mark in the web world!
 ---
 
 I’m bored… I’m working pretty hard at [Sabretech](http://www.sabretechllc.com), trying to bring home the bacon, but it is just not enough…

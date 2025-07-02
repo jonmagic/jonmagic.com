@@ -1,9 +1,13 @@
 ---
 title: We have crossed the border.
-date: 2009-02-28
+date: 2009-02-28T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  From high school to global IT support—our small Michigan consultancy just went
+  international, helping clients from France to Egypt. So grateful for the
+  journey!
 ---
 
 When I first got started in computers professionally (while still in highschool) I never dreamed I would be a partner in a company that did business internationally. Before I tell that story let me give you some background.

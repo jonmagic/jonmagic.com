@@ -1,9 +1,11 @@
 ---
-title: It's just the weather, thats all...
-date: 2006-09-30
+title: 'It''s just the weather, thats all...'
+date: 2006-09-30T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Enjoying the storms while building "Optiks", a sleek alternative trouble ticket system for Sabretech with minimalism and 37 Signals magic.
 ---
 
 Good morning…

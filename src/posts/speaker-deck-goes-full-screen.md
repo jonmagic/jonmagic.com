@@ -1,9 +1,12 @@
 ---
 title: Speaker Deck Goes Full-screen
-date: 2012-04-04
+date: 2012-04-04T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Experience Speaker Deck like never before with full-screen presentations! Dive
+  into high-res slides seamlessly, thanks to the latest browser API magic.
 ---
 
 I’m really excited to let you know that we’ve added full-screen support to presentations on [Speaker Deck](http://speakerdeck.com). This feature has been percolating for awhile, going thru several iterations before we found a solution that we really liked.

@@ -1,9 +1,12 @@
 ---
 title: OSX Styled web gui
-date: 2008-10-15
+date: 2008-10-15T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Check out my OSX-inspired web GUI for a sleek, user-friendly interface using
+  HTML, CSS, and jQuery. Dive into the code on GitHub and get creative!
 ---
 
 I’ll probably get in trouble for this, but I decided to [release it](http://github.com/jonmagic/webapp_gui/) anyways… I’ve been working on some software for running my company and needed a nice GUI, implemented in HTML/CSS/JS. I decided, since I prefer using OSX over any other interface, I wanted my web app to look like OSX too.

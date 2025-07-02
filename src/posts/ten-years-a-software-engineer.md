@@ -1,9 +1,13 @@
 ---
 title: Ten Years a Software Engineer
-date: 2016-12-05
+date: 2016-12-05T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Reflecting on 10 years from tinkering to becoming a Senior Engineer at GitHub,
+  exploring retrospectives, and diving into the exciting world of Machine
+  Learning.
 ---
 
 Ten years ago I started programming professionally and now I’m a Senior Engineer at GitHub. This blog post begins with a retrospective and ends with what I’m looking forward to in the future.

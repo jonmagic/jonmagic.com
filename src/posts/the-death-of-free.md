@@ -1,9 +1,12 @@
 ---
 title: The Death of Free
-date: 2010-09-09
+date: 2010-09-09T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Discover why "free" is becoming extinct online and why paying for services can
+  lead to better, more sustainable options. It's all about value and longevity!
 ---
 
 I’m predicting the death of free in the next one or two years. You heard it here first.

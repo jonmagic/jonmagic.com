@@ -1,9 +1,12 @@
 ---
 title: Speaker Deck's Technology Stack
-date: 2011-07-29
+date: 2011-07-29T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Dive into Speaker Deck's tech stack! Check out the cool tools and services
+  that make PDF-to-slide magic happen effortlessly. Curious how it all works?
 ---
 
 Ever curious about what the software stack for programs you use looks like? I am, so I thought I’d share what Speaker Deck’s technology stack looks like right now, and then I can look back a year from now and see how much it has changed.

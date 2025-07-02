@@ -1,9 +1,12 @@
 ---
-title: Best phone system for a small business, Part 1
-date: 2009-08-16
+title: 'Best phone system for a small business, Part 1'
+date: 2009-08-16T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Upgrade your small business phone system cost-effectively with a PBX-based
+  setup. Future-proof and easy to maintain, perfect for 2-100 extensions.
 ---
 
 This article is for small business owners, and even better, for their IT guy/gal… If you are looking at upgrading your phone system, and want to upgrade inexpensively but have a clear upgrade path for the future, I’m going to outline how to build what I believe to be the most cost effective, easy to maintain, pbx based phone system available.

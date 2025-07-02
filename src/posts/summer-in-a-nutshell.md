@@ -1,9 +1,11 @@
 ---
 title: Summer in a nutshell
-date: 2008-08-21
+date: 2008-08-21T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Marriage, new jobs, gaming habits, and family transitions—from Elkhart to Chicago, it's been a summer full of change, adventure, and unforgettable memories.
 ---
 
 Last year I got married. Natalie and I had bought a house in Elkhart, Indiana, and we moved there the same week we married and have been making a home here since then. My memory is so bad I can’t remember what we did last fall, winter, or spring, but I do remember most of this summer :-)

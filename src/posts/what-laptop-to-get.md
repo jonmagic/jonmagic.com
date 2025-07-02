@@ -1,12 +1,16 @@
 ---
 title: What laptop to get?
-date: 2010-11-20
+date: 2010-11-20T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Choosing a new Mac laptop is tough! The 13" MacBook Air is sleek and light,
+  but will it keep up? Dreaming of a 15" Air with power and pixels! What's your
+  take?
 ---
 
-[As you know](http://jonmagic.com/post/1611565836/hey-mom-i-got-a-job)  
+[As you know](http://jonmagic.com/post/1611565836/hey-mom-i-got-a-job)
 I’m taking a new job. New job means new laptop, and I’m having a terrible time deciding what Mac to get. Just browsing Apple’s website I fell in love with the new [13” Macbook Air](https://www.apple.com/macbookair/), but the feedback on Twitter has been 50/50 for/against. Some think it works just fine as a development machine, especially with the rockin' SSD and 4GB of RAM, but others worry that going from MBP to the Air will leave you wanting.
 
 I’ve been using a 15” 2.53 GHz Core 2 Duo Macbook Pro with 4GB of RAM for a few months now, and even it is not fast enough for me (looks like it's the HDD that’s the bottleneck most of the time though).

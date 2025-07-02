@@ -1,9 +1,13 @@
 ---
 title: A waiter once taught me
-date: 2011-08-04
+date: 2011-08-04T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Discover how a waiter in San Francisco taught me the art of customer
+  interaction and the power of confident questioning, transforming service with
+  pride.
 ---
 
 While in San Francisco on our long overdue honeymoon I learned a valuable lesson from our waiter at the Farallon restaurant. While the food was amazing, his confidence and pride in their product was the thing that intrigued me.

@@ -1,9 +1,13 @@
 ---
 title: ATT is not my friend
-date: 2007-03-28
+date: 2007-03-28T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Dealing with big companies like ATT can be a headache. A simple phone fix led
+  to total chaos at work. Here’s what really goes down behind those customer
+  service calls.
 ---
 
 When we bought SabreTech, Brad and I had our phone service changed and found out a nice little policy of ATT (SBC at the time)… We were paying for a static IP address, which means our internet address won’t change on a day to day, year to year basis… But it turns out, if you make any kind of change to your account, dsl or regular phone stuff, they assign you a new set of IPs… This is a major pain for a company like ours, so we’ve avoided making changes to our account since then.

@@ -1,9 +1,12 @@
 ---
 title: Mentors
-date: 2011-10-20
+date: 2011-10-20T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Mentorship transforms coding and life journeys. Dive into authentic stories on
+  growth through guidance and the profound impact of wise mentors.
 ---
 
 We need more mentors. Mentors help us avoid mistakes and give us guidance on how to be better at our jobs and at life.

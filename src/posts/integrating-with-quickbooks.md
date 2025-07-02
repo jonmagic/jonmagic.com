@@ -1,9 +1,12 @@
 ---
 title: Integrating with Quickbooks
-date: 2009-04-23
+date: 2009-04-23T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Easily sync your Ruby app with Quickbooks using a gem! Streamline client data
+  and invoices for seamless business operations, saving time and hassle.
 ---
 
 If you are a software developer working on software for small to medium businesses, then there is a 70% chance (my unscientific calculation) that you’ll run into Quickbooks at some point.

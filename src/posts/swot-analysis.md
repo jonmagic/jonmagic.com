@@ -1,9 +1,12 @@
 ---
 title: SWOT Analysis
-date: 2014-11-17
+date: 2014-11-17T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Level up personally and professionally with a chill SWOT analysis. Discover
+  strengths, tackle weaknesses, and spot growth opportunities like a pro!
 ---
 
 In college I learned how to do a [SWOT analysis](http://en.wikipedia.org/wiki/SWOT_analysis) and I’ve been using it in one form or another at work and in my personal life ever since.

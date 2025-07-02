@@ -1,9 +1,11 @@
 ---
 title: It's about time
-date: 2007-08-02
+date: 2007-08-02T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Just got hitched on a stunning beach day with my amazing wife, Natalie! Stay tuned for more photos—love really does win!
 ---
 
 I’m married!!!

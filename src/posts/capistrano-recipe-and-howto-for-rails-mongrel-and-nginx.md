@@ -1,9 +1,12 @@
 ---
-title: Capistrano recipe and howto for Rails, Mongrel, and Nginx
-date: 2008-01-10
+title: 'Capistrano recipe and howto for Rails, Mongrel, and Nginx'
+date: 2008-01-10T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Streamline your Rails app deployment with Capistrano, Nginx, and Mongrel.
+  Optimize your setup with custom Capistrano recipes for Ubuntu-based servers.
 ---
 
 ### UPDATE: This is outdated due to the release of Capistrano 2… I will work on a new tutorial as soon as I have a project I need to deploy… 1-10-08
@@ -18,7 +21,7 @@ Now I just had to write some of my own recipes for setting up and deploying with
 
 1. Install the capistrano and deprec gems on your development machine
 2. Cap your app; in the root of your app dir, run: `cap -A`
-3. Set up deprec: from the root of your app, run `deprec_dotfiles` which just creates a file in your user dir called `.caprc`, which contains the following line:  
+3. Set up deprec: from the root of your app, run `deprec_dotfiles` which just creates a file in your user dir called `.caprc`, which contains the following line:
    `require 'deprec/recipes'`
 4. Your server must be running ubuntu (it should work on any debian based OS though)
 5. Your svn repository must be accessible by the same user listed in your `deploy.rb`
@@ -32,11 +35,11 @@ Now I just had to write some of my own recipes for setting up and deploying with
     1. `useradd -m bobby`
     2. `passwd bobby`
     3. `visudo`
-2. From the root of your app run:  
+2. From the root of your app run:
    `cap install_rails_stack_with_nginx`
-3. The last one takes a while, but when it is done run:  
+3. The last one takes a while, but when it is done run:
    `cap svn_cache_credentials`
-4. Finally run:  
+4. Finally run:
    `cap deploy_first_time`
     1. (When it asks for mysql user password just press enter, unless you changed the mysql root password)
 

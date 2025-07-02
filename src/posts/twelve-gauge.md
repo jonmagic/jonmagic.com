@@ -1,9 +1,12 @@
 ---
 title: Twelve (gauge)
-date: 2011-12-09
+date: 2011-12-09T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Meet Twelve, my gem for the Gauges API! Dive into fun API tinkering and
+  unleash robust analytics control with this easy-to-use tool. Check it out!
 ---
 
 Today I hacked together an easy to use gem for accessing the [Gauges](http://get.gaug.es) API.

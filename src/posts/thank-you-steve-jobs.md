@@ -1,9 +1,12 @@
 ---
 title: Thank You Steve Jobs
-date: 2011-10-05
+date: 2011-10-05T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Discover how switching to a Mac in 2002 transformed my tech journey, thanks to
+  Steve Jobs and Apple's intuitive, powerful design ethos.
 ---
 
 When did you start using a Mac? Just wanted to share my story and how Steve Jobs and Apple changed my life.

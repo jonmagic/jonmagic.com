@@ -1,9 +1,13 @@
 ---
 title: hubot Scripts Explained
-date: 2011-10-28
+date: 2011-10-28T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Get creative with hubot scripts! Use CoffeeScript and regex to add personality
+  and automate tasks, from snarky replies to API interactions. Unleash the robot
+  butler!
 ---
 
 Ok, so now you’ve got your shiny new hubot up and ready to listen to your every command. But what should we tell him to do with our nonsense!

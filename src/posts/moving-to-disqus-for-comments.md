@@ -1,9 +1,12 @@
 ---
 title: Moving to Disqus for comments
-date: 2009-02-21
+date: 2009-02-21T00:00:00.000Z
 tags:
   - post
   - migrated
+description: >-
+  Switching to Disqus made managing comments a breeze, even importing old ones
+  from Mephisto! Check out my journey and grab the updated script I used.
 ---
 
 I’ve been thinking about using Disqus for awhile now and finally decided to bite the bullet when I realized I just couldn’t get the features I wanted out of Mephisto’s built in comment system.
