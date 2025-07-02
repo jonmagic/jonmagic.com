@@ -387,7 +387,7 @@
       0.0174105204641819
     ],
     "metadata": {
-      "lastIndexed": 1751411919760,
+      "lastIndexed": 1751473830120,
       "title": "46 Monument Avenue",
       "slug": "46-monument-avenue",
       "hash": "6ead9ccd67665aaab0edbf683f049ffd",
@@ -396,6 +396,7 @@
         "post",
         "migrated"
       ],
+      "description": "Discover a charming studio at 46 Monument Avenue with a private patio in Charlestown. Enjoy superb hospitality and a cozy retreat near Boston's North Side.",
       "url": "/posts/46-monument-avenue/"
     }
   },
@@ -787,15 +788,16 @@
       -0.008993062190711498
     ],
     "metadata": {
-      "lastIndexed": 1751411919802,
+      "lastIndexed": 1751473830159,
       "title": "A light at the end of the tunnel",
       "slug": "a-light-at-the-end-of-the-tunnel",
-      "hash": "790555c7b424069be397d93b88bf981d",
+      "hash": "56764b7a55fba3589ef13359dfc5eac3",
       "date": "2009-02-08T00:00:00.000Z",
       "tags": [
         "post",
         "migrated"
       ],
+      "description": "Warm days bring joy: wore sandals, walked the dogs, and braved first solo baths. Winter might return, but for now, relishing every sunny moment!",
       "url": "/posts/a-light-at-the-end-of-the-tunnel/"
     }
   },
@@ -1187,7 +1189,7 @@
       0.025425495579838753
     ],
     "metadata": {
-      "lastIndexed": 1751411919918,
+      "lastIndexed": 1751473830268,
       "title": "A little story called fun",
       "slug": "a-little-story-called-fun",
       "hash": "8ff3e3b5a424d71764e4257d9b6b16f9",
@@ -1196,6 +1198,7 @@
         "post",
         "migrated"
       ],
+      "description": "Two friends' birthday trip turns into a hilarious spy thriller, co-written on Facebook during an IKEA visit. Dive into their adventure full of twists and laughs.",
       "url": "/posts/a-little-story-called-fun/"
     }
   },
@@ -1587,7 +1590,7 @@
       -0.003045188495889306
     ],
     "metadata": {
-      "lastIndexed": 1751411920023,
+      "lastIndexed": 1751473830371,
       "title": "A waiter once taught me",
       "slug": "a-waiter-once-taught-me",
       "hash": "f0a42b7cd922706cc251dbb917bb13f8",
@@ -1596,6 +1599,7 @@
         "post",
         "migrated"
       ],
+      "description": "Discover how a waiter in San Francisco taught me the art of customer interaction and the power of confident questioning, transforming service with pride.",
       "url": "/posts/a-waiter-once-taught-me/"
     }
   },
@@ -1987,7 +1991,7 @@
       0.08093908429145813
     ],
     "metadata": {
-      "lastIndexed": 1751411920121,
+      "lastIndexed": 1751473830469,
       "title": "A WebDev's notes on native Android/iPhone app development",
       "slug": "a-webdevs-notes-on-native-androidiphone-app-development",
       "hash": "d741d202df3d926bb7c6193580af26a1",
@@ -1996,6 +2000,7 @@
         "post",
         "migrated"
       ],
+      "description": "Discover a web developer's journey through crafting a native-feeling phototherapy calculator app for iPhone and Android using Appcelerator and JqueryMobile.",
       "url": "/posts/a-webdevs-notes-on-native-androidiphone-app-development/"
     }
   },
@@ -2387,7 +2392,7 @@
       0.02644455060362816
     ],
     "metadata": {
-      "lastIndexed": 1751411920175,
+      "lastIndexed": 1751473830515,
       "title": "Another Year",
       "slug": "another-year",
       "hash": "6151507249b13433deabd262e9382e17",
@@ -2396,6 +2401,7 @@
         "post",
         "migrated"
       ],
+      "description": "Reflecting on a whirlwind year of growth, friendship, and personal milestones. Join my journey through late nights, work wins, and life's rollercoaster moments.",
       "url": "/posts/another-year/"
     }
   },
@@ -2787,7 +2793,7 @@
       0.013779288157820702
     ],
     "metadata": {
-      "lastIndexed": 1751411920276,
+      "lastIndexed": 1751473830614,
       "title": "Assimilating Contributed Code",
       "slug": "assimilating-contributed-code",
       "hash": "33ff68d18b7964cd63242125affc5a22",
@@ -2796,6 +2802,7 @@
         "post",
         "migrated"
       ],
+      "description": "Diving into contributor workflows with RubyGems? Discover a simple, effective method for collaborating on massive GitHub pull requests without being a git wizard.",
       "url": "/posts/assimilating-contributed-code/"
     }
   },
@@ -3187,7 +3194,7 @@
       0.007094543427228928
     ],
     "metadata": {
-      "lastIndexed": 1751411920356,
+      "lastIndexed": 1751473830699,
       "title": "ATT is not my friend",
       "slug": "att-is-not-my-friend",
       "hash": "7dee04155ca7ebeb5bf08a053f42e18d",
@@ -3196,6 +3203,7 @@
         "post",
         "migrated"
       ],
+      "description": "Dealing with big companies like ATT can be a headache. A simple phone fix led to total chaos at work. Here’s what really goes down behind those customer service calls.",
       "url": "/posts/att-is-not-my-friend/"
     }
   },
@@ -3587,7 +3595,7 @@
       0.09620457887649536
     ],
     "metadata": {
-      "lastIndexed": 1751411920429,
+      "lastIndexed": 1751473830769,
       "title": "BarCampGR",
       "slug": "barcampgr",
       "hash": "ca3e51a817db582054b4b58d735aa32a",
@@ -3596,6 +3604,7 @@
         "post",
         "migrated"
       ],
+      "description": "Enjoying BarCampGR! Dive into some smoky meat magic with my top BBQ tips and recipes. Follow along for cooking secrets and tech musings!",
       "url": "/posts/barcampgr/"
     }
   },
@@ -3987,7 +3996,7 @@
       -0.0020629623904824257
     ],
     "metadata": {
-      "lastIndexed": 1751411920526,
+      "lastIndexed": 1751473830865,
       "title": "Being acquired doesn't have to suck",
       "slug": "being-acquired-doesnt-have-to-suck",
       "hash": "8d94dccb1e00ff1448b616b672a8eda3",
@@ -3996,6 +4005,7 @@
         "post",
         "migrated"
       ],
+      "description": "Discover how Ordered List's acquisition by GitHub turned seamless, avoiding culture clashes and harnessing synergy, making work more engaging and productive.",
       "url": "/posts/being-acquired-doesnt-have-to-suck/"
     }
   },
@@ -4387,7 +4397,7 @@
       0.07608050107955933
     ],
     "metadata": {
-      "lastIndexed": 1751411920641,
+      "lastIndexed": 1751473830974,
       "title": "Best phone system for a small business, Part 1",
       "slug": "best-phone-system-for-a-small-business-part-1",
       "hash": "469950f6cf94945af2bb22ba9c683dd6",
@@ -4396,6 +4406,7 @@
         "post",
         "migrated"
       ],
+      "description": "Upgrade your small business phone system cost-effectively with a PBX-based setup. Future-proof and easy to maintain, perfect for 2-100 extensions.",
       "url": "/posts/best-phone-system-for-a-small-business-part-1/"
     }
   },
@@ -4787,7 +4798,7 @@
       0.03234049305319786
     ],
     "metadata": {
-      "lastIndexed": 1751411920740,
+      "lastIndexed": 1751473831071,
       "title": "Buffalo Technology, please redeem yourself",
       "slug": "buffalo-technology-please-redeem-yourself",
       "hash": "088af4f878b2023c135d53bc8567cb8f",
@@ -4796,6 +4807,7 @@
         "post",
         "migrated"
       ],
+      "description": "Frustrated with Buffalo's Terastation? Discover the pitfalls of poor tech support and endless RMA loops and why loyal customers are rethinking their options.",
       "url": "/posts/buffalo-technology-please-redeem-yourself/"
     }
   },
@@ -5187,7 +5199,7 @@
       0.014284835197031498
     ],
     "metadata": {
-      "lastIndexed": 1751411920837,
+      "lastIndexed": 1751473831172,
       "title": "Business With Pleasure",
       "slug": "business-with-pleasure",
       "hash": "df467855329eb3a20807e214a371d056",
@@ -5196,6 +5208,7 @@
         "post",
         "migrated"
       ],
+      "description": "Struggling with work addiction and balance, I share my journey to break destructive cycles, prioritize relationships, and create healthier habits.",
       "url": "/posts/business-with-pleasure/"
     }
   },
@@ -5587,7 +5600,7 @@
       -0.02849540114402771
     ],
     "metadata": {
-      "lastIndexed": 1751411920843,
+      "lastIndexed": 1751473831178,
       "title": "By the grace of God",
       "slug": "by-the-grace-of-god",
       "hash": "9fc600b2c6195ed0f0f45959d5f2dfa1",
@@ -5596,6 +5609,7 @@
         "post",
         "migrated"
       ],
+      "description": "Getting married on a Florida beach August 2nd! Join me in celebrating this joyous and life-changing moment.",
       "url": "/posts/by-the-grace-of-god/"
     }
   },
@@ -5987,15 +6001,16 @@
       0.04748433455824852
     ],
     "metadata": {
-      "lastIndexed": 1751411920950,
+      "lastIndexed": 1751473831276,
       "title": "Capistrano recipe and howto for Rails, Mongrel, and Nginx",
       "slug": "capistrano-recipe-and-howto-for-rails-mongrel-and-nginx",
-      "hash": "3f6365cb167b9bca5f62b973bf0e9695",
+      "hash": "e410815eb4990c629a435218e9fe5ad4",
       "date": "2008-01-10T00:00:00.000Z",
       "tags": [
         "post",
         "migrated"
       ],
+      "description": "Streamline your Rails app deployment with Capistrano, Nginx, and Mongrel. Optimize your setup with custom Capistrano recipes for Ubuntu-based servers.",
       "url": "/posts/capistrano-recipe-and-howto-for-rails-mongrel-and-nginx/"
     }
   },
@@ -6387,7 +6402,7 @@
       0.03796396777033806
     ],
     "metadata": {
-      "lastIndexed": 1751411920988,
+      "lastIndexed": 1751473831315,
       "title": "clearcheckbook.com, a step in the right direction",
       "slug": "clearcheckbookcom-a-step-in-the-right-direction",
       "hash": "8d5b28a95f8af627e44d82e1c449d72a",
@@ -6396,6 +6411,7 @@
         "post",
         "migrated"
       ],
+      "description": "ClearCheckbook makes managing your money easy with online tracking and nifty features like IM access and handy payment reminders. Perfect for budget newbies!",
       "url": "/posts/clearcheckbookcom-a-step-in-the-right-direction/"
     }
   },
@@ -6787,7 +6803,7 @@
       0.09160459786653519
     ],
     "metadata": {
-      "lastIndexed": 1751411921085,
+      "lastIndexed": 1751473831411,
       "title": "Compiling Executables on Heroku",
       "slug": "compiling-executables-on-heroku",
       "hash": "2b60f3c2a8ac71de6eb1aaa84339edef",
@@ -6796,6 +6812,7 @@
         "post",
         "migrated"
       ],
+      "description": "Need pdftotext on Heroku? Discover a smooth hack for compiling executables directly on Heroku's Cedar Stack, making PDFs searchable in no time!",
       "url": "/posts/compiling-executables-on-heroku/"
     }
   },
@@ -7187,7 +7204,7 @@
       -0.011676061898469925
     ],
     "metadata": {
-      "lastIndexed": 1751411921102,
+      "lastIndexed": 1751473831430,
       "title": "Computers shutting down everywhere",
       "slug": "computers-shutting-down-everywhere",
       "hash": "c4f8b5dbc9d09a356aa39f387ed71632",
@@ -7196,6 +7213,7 @@
         "post",
         "migrated"
       ],
+      "description": "Why are 6 totally different computers in 2 states randomly restarting? The mystery deepens as the only common link is Windows XP. Any ideas?",
       "url": "/posts/computers-shutting-down-everywhere/"
     }
   },
@@ -7587,7 +7605,7 @@
       0.09218502789735794
     ],
     "metadata": {
-      "lastIndexed": 1751411921155,
+      "lastIndexed": 1751473831493,
       "title": "Configuring PBX in a Flash to use Rhino cards",
       "slug": "configuring-pbx-in-a-flash-to-use-rhino-cards",
       "hash": "5788d7fdbc031f292843b7e996a3be6c",
@@ -7596,6 +7614,7 @@
         "post",
         "migrated"
       ],
+      "description": "Set up your Asterisk-based PBX easily with Rhino cards! Great support and seamless integration using PBX in a Flash—your telecom needs, simplified.",
       "url": "/posts/configuring-pbx-in-a-flash-to-use-rhino-cards/"
     }
   },
@@ -7987,7 +8006,7 @@
       0.021076161414384842
     ],
     "metadata": {
-      "lastIndexed": 1751411921253,
+      "lastIndexed": 1751473831590,
       "title": "Deliberate Iteration",
       "slug": "deliberate-iteration",
       "hash": "364dbf19cc026de9c81e2a9f9bdef11f",
@@ -7996,6 +8015,7 @@
         "post",
         "migrated"
       ],
+      "description": "Deliberately iterating on life: mastering notebooks, calendars, and meetings has boosted productivity, balance, and connection. Discover the power of intentional change.",
       "url": "/posts/deliberate-iteration/"
     }
   },
@@ -8387,7 +8407,7 @@
       0.02501504309475422
     ],
     "metadata": {
-      "lastIndexed": 1751411921312,
+      "lastIndexed": 1751473831649,
       "title": "Ditch Your Crew",
       "slug": "ditch-your-crew",
       "hash": "ac0a7d19477a2985a7866356c565c38f",
@@ -8396,6 +8416,7 @@
         "post",
         "migrated"
       ],
+      "description": "Break free from your comfort zone to grow as a programmer and person by meeting new peers, asking questions, and truly listening. You won't regret it!",
       "url": "/posts/ditch-your-crew/"
     }
   },
@@ -8787,7 +8808,7 @@
       0.08027895539999008
     ],
     "metadata": {
-      "lastIndexed": 1751411921358,
+      "lastIndexed": 1751473831690,
       "title": "Evolution of a twitter client",
       "slug": "evolution-of-a-twitter-client",
       "hash": "ba36a022acb326b559f643c4afddcfd4",
@@ -8796,6 +8817,7 @@
         "post",
         "migrated"
       ],
+      "description": "Follow my journey of crafting a custom Twitter client for Windows, inspired by Tweetie! Dive into the app's evolution with Ruby and Shoes.",
       "url": "/posts/evolution-of-a-twitter-client/"
     }
   },
@@ -9187,15 +9209,16 @@
       0.0388777032494545
     ],
     "metadata": {
-      "lastIndexed": 1751411921439,
+      "lastIndexed": 1751473831770,
       "title": "Family Ribs",
       "slug": "family-ribs",
-      "hash": "c10172e66341cb51e0a18577edc4fcdd",
+      "hash": "be5e609c5a1b2873f61e54d51e4f3e9c",
       "date": "2009-06-28T00:00:00.000Z",
       "tags": [
         "post",
         "migrated"
       ],
+      "description": "Cousin's here with his wife for a weekend of ribs, chats, and laughs! Dive into the fun as we prep, smoke, and savor delicious memories together! #FamilyTime",
       "url": "/posts/family-ribs/"
     }
   },
@@ -9587,7 +9610,7 @@
       -0.012652703560888767
     ],
     "metadata": {
-      "lastIndexed": 1751411921523,
+      "lastIndexed": 1751473831818,
       "title": "Feeling the love",
       "slug": "feeling-the-love",
       "hash": "3984c22bd7e664692e5d70fcc37d2e83",
@@ -9596,6 +9619,7 @@
         "post",
         "migrated"
       ],
+      "description": "Birthday joy redefined: Heartfelt wishes, surprise celebrations, and cherished moments with loved ones transform this special day into a new favorite tradition.",
       "url": "/posts/feeling-the-love/"
     }
   },
@@ -9987,7 +10011,7 @@
       0.06863746792078018
     ],
     "metadata": {
-      "lastIndexed": 1751411921670,
+      "lastIndexed": 1751473831914,
       "title": "Finish Weekend",
       "slug": "finish-weekend",
       "hash": "8db07f302cd4670cc3af613a17adf42d",
@@ -9996,6 +10020,7 @@
         "post",
         "migrated"
       ],
+      "description": "Finish Weekend: Collaborate with a diverse crew to conquer your unfinished projects! Join inspiring people and tackle that final 5% together.",
       "url": "/posts/finish-weekend/"
     }
   },
@@ -10387,7 +10412,7 @@
       -0.0068427082151174545
     ],
     "metadata": {
-      "lastIndexed": 1751411921762,
+      "lastIndexed": 1751473831963,
       "title": "First time smoking ribs",
       "slug": "first-time-smoking-ribs",
       "hash": "cf0380e7ac9bf2f6e5ed3d2edd08a73a",
@@ -10396,6 +10421,7 @@
         "post",
         "migrated"
       ],
+      "description": "Smoked spare ribs perfection with Nat! Our intense rub taught us lessons; next time: simpler rub, 3-2-1 method, and homemade BBQ sauce for our feast!",
       "url": "/posts/first-time-smoking-ribs/"
     }
   },
@@ -10787,15 +10813,16 @@
       0.10499420762062073
     ],
     "metadata": {
-      "lastIndexed": 1751411921887,
+      "lastIndexed": 1751473832049,
       "title": "flock, the good and the bad",
       "slug": "flock-the-good-and-the-bad",
-      "hash": "1957b38d1a24bcdb069e3acb9387fb66",
+      "hash": "19b9a9063a0c7b6dbe954dc2b19ae5fb",
       "date": "2006-09-30T00:00:00.000Z",
       "tags": [
         "post",
         "migrated"
       ],
+      "description": "Flock's snappy speed and cool features make it worth a try, despite some bugs and hype. Is it the next go-to browser? Dive in and see for yourself!",
       "url": "/posts/flock-the-good-and-the-bad/"
     }
   },
@@ -11187,7 +11214,7 @@
       0.0473446324467659
     ],
     "metadata": {
-      "lastIndexed": 1751411922029,
+      "lastIndexed": 1751473832146,
       "title": "Focus",
       "slug": "focus",
       "hash": "6818db94eb9795717bb076f9d84e38b7",
@@ -11196,6 +11223,7 @@
         "post",
         "migrated"
       ],
+      "description": "In just six months, we built GitHub's custom support system by learning to focus and prioritize core goals. Discover how commitment and innovation led the way.",
       "url": "/posts/focus/"
     }
   },
@@ -11587,7 +11615,7 @@
       -0.005368813872337341
     ],
     "metadata": {
-      "lastIndexed": 1751411922069,
+      "lastIndexed": 1751473832168,
       "title": "Forever Remember Me",
       "slug": "forever-remember-me",
       "hash": "12788b2ccb903f26f6c6b1bfcd004f2e",
@@ -11596,6 +11624,7 @@
         "post",
         "migrated"
       ],
+      "description": "Create heartfelt memorials for loved ones with Forever Remember Me. Share memories, photos, and tributes in one meaningful online space.",
       "url": "/posts/forever-remember-me/"
     }
   },
@@ -11987,7 +12016,7 @@
       0.010081956163048744
     ],
     "metadata": {
-      "lastIndexed": 1751411922184,
+      "lastIndexed": 1751473832234,
       "title": "Getting hacked",
       "slug": "getting-hacked",
       "hash": "5b0c5dacfa776542a72f91e2578919ac",
@@ -11996,6 +12025,7 @@
         "post",
         "migrated"
       ],
+      "description": "Got hacked last night! Someone cracked my email, tried to access my blog, and messed with my site. It's a wild ride—find out how it all went down.",
       "url": "/posts/getting-hacked/"
     }
   },
@@ -12387,7 +12417,7 @@
       0.09016045182943344
     ],
     "metadata": {
-      "lastIndexed": 1751411922360,
+      "lastIndexed": 1751473832331,
       "title": "GitHubber",
       "slug": "githubber",
       "hash": "c755382fe71e726c4d5c179436b8614c",
@@ -12396,6 +12426,7 @@
         "post",
         "migrated"
       ],
+      "description": "Ordered List crew joins GitHub! Exciting new chapters, dream resets, and awesome opportunities. Together, we're ready to build something incredible.",
       "url": "/posts/githubber/"
     }
   },
@@ -12787,7 +12818,7 @@
       0.038003358989953995
     ],
     "metadata": {
-      "lastIndexed": 1751411922503,
+      "lastIndexed": 1751473832427,
       "title": "Globe Gravity Feed Slicer",
       "slug": "globe-gravity-feed-slicer",
       "hash": "ba4c693a66f2b4e1e239debe6b94db3b",
@@ -12796,6 +12827,7 @@
         "post",
         "migrated"
       ],
+      "description": "Resurrecting a vintage Globe Gravity Feed Slicer, I uncovered its 1949 charm and sliced my smoked roast like a pro. Check out my DIY restoration journey!",
       "url": "/posts/globe-gravity-feed-slicer/"
     }
   },
@@ -13187,7 +13219,7 @@
       -0.004411382135003805
     ],
     "metadata": {
-      "lastIndexed": 1751411922520,
+      "lastIndexed": 1751473832440,
       "title": "Gravy of life",
       "slug": "gravy-of-life",
       "hash": "ad29c1ef4512ac1e52ea28cb73ce420e",
@@ -13196,6 +13228,7 @@
         "post",
         "migrated"
       ],
+      "description": "Discover how 15 minutes of Thanksgiving fun transforms into storytelling magic on my mom's blog—it's warmth, humor, and nostalgia in one!",
       "url": "/posts/gravy-of-life/"
     }
   },
@@ -13587,7 +13620,7 @@
       0.09501996636390686
     ],
     "metadata": {
-      "lastIndexed": 1751411922664,
+      "lastIndexed": 1751473832537,
       "title": "Grim MultiProcessor to the Rescue!",
       "slug": "grim-multiprocessor-to-the-rescue",
       "hash": "16ece2f1d9d2418d5bee42df3481d790",
@@ -13596,6 +13629,7 @@
         "post",
         "migrated"
       ],
+      "description": "Grim MultiProcessor saved the day! It smartly switches between GhostScript versions to fix PDF conversion issues for Speaker Deck. Now processing's a breeze!",
       "url": "/posts/grim-multiprocessor-to-the-rescue/"
     }
   },
@@ -13987,7 +14021,7 @@
       0.047135625034570694
     ],
     "metadata": {
-      "lastIndexed": 1751411922718,
+      "lastIndexed": 1751473832574,
       "title": "Grim",
       "slug": "grim",
       "hash": "e4e60ce4d3fa0afee8ce4e13ae322425",
@@ -13996,6 +14030,7 @@
         "post",
         "migrated"
       ],
+      "description": "Turn PDF pages into images or text with Grim, my first Ruby gem! A nifty tool for developers and Speaker Deck users working with presentations.",
       "url": "/posts/grim/"
     }
   },
@@ -14387,7 +14422,7 @@
       0.0677994042634964
     ],
     "metadata": {
-      "lastIndexed": 1751411922857,
+      "lastIndexed": 1751473832671,
       "title": "Hamachi all the way...",
       "slug": "hamachi-all-the-way",
       "hash": "cd657b8eb0e91760e1e81a748083debe",
@@ -14396,6 +14431,7 @@
         "post",
         "migrated"
       ],
+      "description": "Hamachi makes VPNs a breeze, connecting computers anywhere with simplicity. Share files and more effortlessly—it's like your computers are neighbors!",
       "url": "/posts/hamachi-all-the-way/"
     }
   },
@@ -14787,7 +14823,7 @@
       0.06483933329582214
     ],
     "metadata": {
-      "lastIndexed": 1751411923001,
+      "lastIndexed": 1751473832767,
       "title": "Hey mom, I got a job!",
       "slug": "hey-mom-i-got-a-job",
       "hash": "219ecdcaa4da199fb5c215166d35d376",
@@ -14796,6 +14832,7 @@
         "post",
         "migrated"
       ],
+      "description": "Exciting times ahead! I've left SabreTech and joined OrderedList, diving into a new chapter of learning, coding, and smart collaborations. Cheers to fresh starts!",
       "url": "/posts/hey-mom-i-got-a-job/"
     }
   },
@@ -15187,7 +15224,7 @@
       -0.0017344937659800053
     ],
     "metadata": {
-      "lastIndexed": 1751411923149,
+      "lastIndexed": 1751473832865,
       "title": "HipChat, hubot, and Me",
       "slug": "hipchat-hubot-and-me",
       "hash": "c3cc1e282cdf342487567e99ca333cbe",
@@ -15196,6 +15233,7 @@
         "post",
         "migrated"
       ],
+      "description": "Unleash your own robot squad with Hubot and Siri! Dive into setting up your digital assistant dream team using Heroku and HipChat.",
       "url": "/posts/hipchat-hubot-and-me/"
     }
   },
@@ -15587,7 +15625,7 @@
       0.024737944826483727
     ],
     "metadata": {
-      "lastIndexed": 1751411923248,
+      "lastIndexed": 1751473832930,
       "title": "HUBOT img me woman laughing alone with salad",
       "slug": "hubot-img-me-woman-laughing-alone-with-salad",
       "hash": "d063b4f588b2cbc8c5d14ec597f86070",
@@ -15596,6 +15634,7 @@
         "post",
         "migrated"
       ],
+      "description": "Join a journey from London to Verona sharing the magic of Hubot—an open-source robot that’s sparking creativity and laughter in the tech world!",
       "url": "/posts/hubot-img-me-woman-laughing-alone-with-salad/"
     }
   },
@@ -15987,7 +16026,7 @@
       -0.03502750024199486
     ],
     "metadata": {
-      "lastIndexed": 1751411923421,
+      "lastIndexed": 1751473833032,
       "title": "hubot Scripts Explained",
       "slug": "hubot-scripts-explained",
       "hash": "f19d664a1466e70354b542d90cced639",
@@ -15996,6 +16035,7 @@
         "post",
         "migrated"
       ],
+      "description": "Get creative with hubot scripts! Use CoffeeScript and regex to add personality and automate tasks, from snarky replies to API interactions. Unleash the robot butler!",
       "url": "/posts/hubot-scripts-explained/"
     }
   },
@@ -16387,7 +16427,7 @@
       0.16546772420406342
     ],
     "metadata": {
-      "lastIndexed": 1751411923556,
+      "lastIndexed": 1751473833129,
       "title": "I bought one",
       "slug": "i-bought-one",
       "hash": "2bf49cee6418c7539dfb726f41da8641",
@@ -16396,6 +16436,7 @@
         "post",
         "migrated"
       ],
+      "description": "Just snagged a slick black MacBook for work! Can't wait to geek out on it and upgrade. Check out some cool links and reviews I dug up while I wait!",
       "url": "/posts/i-bought-one/"
     }
   },
@@ -16787,7 +16828,7 @@
       0.0026834076270461082
     ],
     "metadata": {
-      "lastIndexed": 1751411923605,
+      "lastIndexed": 1751473833170,
       "title": "I'm back! into games that is",
       "slug": "im-back-into-games-that-is",
       "hash": "25cb1aff88f17f1474199c6749b6b1a6",
@@ -16796,6 +16837,7 @@
         "post",
         "migrated"
       ],
+      "description": "Diving back into gaming bliss with Valve's Portal—hilarious narration and epic ending! Next up, a fresh adventure with Team Fortress 2. Let's game on!",
       "url": "/posts/im-back-into-games-that-is/"
     }
   },
@@ -17187,7 +17229,7 @@
       0.08976839482784271
     ],
     "metadata": {
-      "lastIndexed": 1751411923711,
+      "lastIndexed": 1751473833236,
       "title": "I'm building a computer",
       "slug": "im-building-a-computer",
       "hash": "78d318e0e453b1a4ba4aa206e922b3d6",
@@ -17196,6 +17238,7 @@
         "post",
         "migrated"
       ],
+      "description": "Building my ultimate tech/gaming PC at home: Asus board, Intel Core 2 Duo, Nvidia 9600GT, and more. Can't wait to dive into epic gaming sessions!",
       "url": "/posts/im-building-a-computer/"
     }
   },
@@ -17587,7 +17630,7 @@
       -0.003612298984080553
     ],
     "metadata": {
-      "lastIndexed": 1751411923728,
+      "lastIndexed": 1751473833250,
       "title": "I'm Engaged!",
       "slug": "im-engaged",
       "hash": "d4997efab51bff7dbe3f1e7089478b06",
@@ -17596,6 +17639,7 @@
         "post",
         "migrated"
       ],
+      "description": "Popped the question on our 4th anniversary and Natalie said yes! Totally surprised her and it was epic. Here's to forever together!",
       "url": "/posts/im-engaged/"
     }
   },
@@ -17987,7 +18031,7 @@
       -0.011740078218281269
     ],
     "metadata": {
-      "lastIndexed": 1751411923738,
+      "lastIndexed": 1751473833260,
       "title": "I'm officially Jon Magic",
       "slug": "im-officially-jon-magic",
       "hash": "45ff0359d217c1b82657bf7eb2ed14b9",
@@ -17996,6 +18040,7 @@
         "post",
         "migrated"
       ],
+      "description": "Jon Magic just got real with my first credit card in the official name. It's not just a brand; it's who I am now! Let's see where this magic takes me. ✨",
       "url": "/posts/im-officially-jon-magic/"
     }
   },
@@ -18387,7 +18432,7 @@
       0.03168521448969841
     ],
     "metadata": {
-      "lastIndexed": 1751411923873,
+      "lastIndexed": 1751473833365,
       "title": "I'm ready to teach... well, almost",
       "slug": "im-ready-to-teach-well-almost",
       "hash": "ac7b6c957917c729b2b99bd6da2ee6e3",
@@ -18396,6 +18441,7 @@
         "post",
         "migrated"
       ],
+      "description": "Ready to dive into tech education innovation? Explore the journey from epiphany to a fresh take on training future IT leaders with essential soft skills.",
       "url": "/posts/im-ready-to-teach-well-almost/"
     }
   },
@@ -18787,15 +18833,16 @@
       -0.0047572944313287735
     ],
     "metadata": {
-      "lastIndexed": 1751411923942,
+      "lastIndexed": 1751473833407,
       "title": "i'm stoked by the waybackmachine",
       "slug": "im-stoked-by-the-waybackmachine",
-      "hash": "d7792753e55fe00be083216768663018",
+      "hash": "b83eeb04bb1234a2d92284fde40cd46e",
       "date": "2008-05-29T00:00:00.000Z",
       "tags": [
         "post",
         "migrated"
       ],
+      "description": "Unearth your lost blog posts with the Wayback Machine! Relive the magic of your old content and discover forgotten gems from the past.",
       "url": "/posts/im-stoked-by-the-waybackmachine/"
     }
   },
@@ -19187,7 +19234,7 @@
       0.05320284515619278
     ],
     "metadata": {
-      "lastIndexed": 1751411924114,
+      "lastIndexed": 1751473833532,
       "title": "Integrating with Quickbooks",
       "slug": "integrating-with-quickbooks",
       "hash": "ee02ca0b1f63fe7647309dfd38e0f94e",
@@ -19196,6 +19243,7 @@
         "post",
         "migrated"
       ],
+      "description": "Easily sync your Ruby app with Quickbooks using a gem! Streamline client data and invoices for seamless business operations, saving time and hassle.",
       "url": "/posts/integrating-with-quickbooks/"
     }
   },
@@ -19587,7 +19635,7 @@
       0.006488549988716841
     ],
     "metadata": {
-      "lastIndexed": 1751411924236,
+      "lastIndexed": 1751473833629,
       "title": "Intention vs Perception",
       "slug": "intention-vs-perception",
       "hash": "4025ee37b6409b43879c41e9e481d1bd",
@@ -19597,6 +19645,7 @@
         "post",
         "migrated"
       ],
+      "description": "Explore the gap between intention and perception in leadership communication. Learn how trust, ownership, and openness can bridge misunderstandings and foster collaboration.",
       "url": "/posts/intention-vs-perception/"
     }
   },
@@ -19988,7 +20037,7 @@
       -0.0008691147668287158
     ],
     "metadata": {
-      "lastIndexed": 1751411924256,
+      "lastIndexed": 1751473833644,
       "title": "It's about time",
       "slug": "its-about-time",
       "hash": "bf39ff14ed4f25ecebe31f06fdb6c07e",
@@ -19997,6 +20046,7 @@
         "post",
         "migrated"
       ],
+      "description": "Just got hitched on a stunning beach day with my amazing wife, Natalie! Stay tuned for more photos—love really does win!",
       "url": "/posts/its-about-time/"
     }
   },
@@ -20388,7 +20438,7 @@
       0.09830550849437714
     ],
     "metadata": {
-      "lastIndexed": 1751411924340,
+      "lastIndexed": 1751473833705,
       "title": "It's just the weather, thats all...",
       "slug": "its-just-the-weather-thats-all",
       "hash": "3e7043dbd028b577f0ca65a8003d971d",
@@ -20397,6 +20447,7 @@
         "post",
         "migrated"
       ],
+      "description": "Enjoying the storms while building \"Optiks\", a sleek alternative trouble ticket system for Sabretech with minimalism and 37 Signals magic.",
       "url": "/posts/its-just-the-weather-thats-all/"
     }
   },
@@ -20788,7 +20839,7 @@
       0.08218817412853241
     ],
     "metadata": {
-      "lastIndexed": 1751411924444,
+      "lastIndexed": 1751473833779,
       "title": "jquery.quickselect.js",
       "slug": "jqueryquickselectjs",
       "hash": "ef5fe3e85b9f19c3d50e965149ec096f",
@@ -20797,6 +20848,7 @@
         "post",
         "migrated"
       ],
+      "description": "Transform your HTML select/option tags into a sleek input box with live search using jquery.quickselect.js. Discover better, quicker search results!",
       "url": "/posts/jqueryquickselectjs/"
     }
   },
@@ -21188,7 +21240,7 @@
       0.036451756954193115
     ],
     "metadata": {
-      "lastIndexed": 1751411924526,
+      "lastIndexed": 1751473833851,
       "title": "Just Write It Down",
       "slug": "just-write-it-down",
       "hash": "dc4ec8f04090a72b28d2ecf314eb2930",
@@ -21197,6 +21249,7 @@
         "post",
         "migrated"
       ],
+      "description": "Boost your memory and productivity with a simple hack: just write it down! Discover how jotting ideas can transform your recall and streamline your life.",
       "url": "/posts/just-write-it-down/"
     }
   },
@@ -21588,7 +21641,7 @@
       0.12388952821493149
     ],
     "metadata": {
-      "lastIndexed": 1751411924662,
+      "lastIndexed": 1751473833950,
       "title": "Launching Speaker Deck",
       "slug": "launching-speaker-deck",
       "hash": "15da7ee9083a3b3b1764ed7c789c49f3",
@@ -21597,6 +21650,7 @@
         "post",
         "migrated"
       ],
+      "description": "Speaker Deck is live! With 2500+ signups and 1000+ presentations in 2 weeks, it’s redefining slide hosting and handling scale with ease. Join the ride!",
       "url": "/posts/launching-speaker-deck/"
     }
   },
@@ -21988,7 +22042,7 @@
       0.0830049142241478
     ],
     "metadata": {
-      "lastIndexed": 1751411924793,
+      "lastIndexed": 1751473834046,
       "title": "Learning Rails",
       "slug": "learning-rails",
       "hash": "0e3a0604335e7577e34d1ed438140119",
@@ -21997,6 +22051,7 @@
         "post",
         "migrated"
       ],
+      "description": "Diving into Ruby on Rails with no prior coding skills led to a whirlwind four weeks, creating a web app from scratch. Embrace the challenge and learn!",
       "url": "/posts/learning-rails/"
     }
   },
@@ -22388,7 +22443,7 @@
       0.07243430614471436
     ],
     "metadata": {
-      "lastIndexed": 1751411924839,
+      "lastIndexed": 1751473834073,
       "title": "Macbook Air smells like",
       "slug": "macbook-air-smells-like",
       "hash": "27b258d2f2a1c33cc761ef534581baf2",
@@ -22397,6 +22452,7 @@
         "post",
         "migrated"
       ],
+      "description": "MacBook Air's design is sleek, but what’s up with the return to IDE tech? Thought we were all-in on SATA. Guess I'm holding out for the MacBook Pro.",
       "url": "/posts/macbook-air-smells-like/"
     }
   },
@@ -22788,15 +22844,16 @@
       0.049632564187049866
     ],
     "metadata": {
-      "lastIndexed": 1751411924946,
+      "lastIndexed": 1751473834142,
       "title": "Make Asterisk use Gmail for emailing faxes",
       "slug": "make-asterisk-use-gmail-for-emailing-faxes",
-      "hash": "08607df4ffe6e542438f103a4943c3f4",
+      "hash": "b69eb7019b032290dbecc4c0a716aa97",
       "date": "2009-09-10T00:00:00.000Z",
       "tags": [
         "post",
         "migrated"
       ],
+      "description": "Enhance Asterisk with Gmail for fax emailing! Our perl script tweak lets you send fax attachments via Gmail effortlessly—tech magic you need today.",
       "url": "/posts/make-asterisk-use-gmail-for-emailing-faxes/"
     }
   },
@@ -23188,7 +23245,7 @@
       0.022066473960876465
     ],
     "metadata": {
-      "lastIndexed": 1751411925101,
+      "lastIndexed": 1751473834239,
       "title": "Mentors",
       "slug": "mentors",
       "hash": "82208eef80a17de150aa93a4a344bc7a",
@@ -23197,6 +23254,7 @@
         "post",
         "migrated"
       ],
+      "description": "Mentorship transforms coding and life journeys. Dive into authentic stories on growth through guidance and the profound impact of wise mentors.",
       "url": "/posts/mentors/"
     }
   },
@@ -23588,7 +23646,7 @@
       0.12226993590593338
     ],
     "metadata": {
-      "lastIndexed": 1751411925244,
+      "lastIndexed": 1751473834336,
       "title": "Moving Speaker Deck to Heroku",
       "slug": "moving-speaker-deck-to-heroku",
       "hash": "f6b3c7ae413fc1f12c6586c2aee36850",
@@ -23597,6 +23655,7 @@
         "post",
         "migrated"
       ],
+      "description": "Speaker Deck now rocks on Heroku and S3! We scaled to 100 workers processing slides at lightning speed, pushing limits with ease and gearing up for new features.",
       "url": "/posts/moving-speaker-deck-to-heroku/"
     }
   },
@@ -23988,7 +24047,7 @@
       0.05074503272771835
     ],
     "metadata": {
-      "lastIndexed": 1751411925387,
+      "lastIndexed": 1751473834436,
       "title": "Moving to Disqus for comments",
       "slug": "moving-to-disqus-for-comments",
       "hash": "050e9cb686bd1250be17c6d379530201",
@@ -23997,6 +24056,7 @@
         "post",
         "migrated"
       ],
+      "description": "Switching to Disqus made managing comments a breeze, even importing old ones from Mephisto! Check out my journey and grab the updated script I used.",
       "url": "/posts/moving-to-disqus-for-comments/"
     }
   },
@@ -24388,7 +24448,7 @@
       0.09800416231155396
     ],
     "metadata": {
-      "lastIndexed": 1751411925540,
+      "lastIndexed": 1751473834533,
       "title": "My Rig",
       "slug": "my-rig",
       "hash": "80cf32287498ad28848e4950ca88c048",
@@ -24397,6 +24457,7 @@
         "post",
         "migrated"
       ],
+      "description": "Check out my epic Macbook setup: upgraded RAM, killer speed, and seamless OS juggling. Some hiccups? Sure, but the cool factor outweighs all that!",
       "url": "/posts/my-rig/"
     }
   },
@@ -24788,7 +24849,7 @@
       0.03734412416815758
     ],
     "metadata": {
-      "lastIndexed": 1751411925666,
+      "lastIndexed": 1751473834633,
       "title": "My Trip to Verona",
       "slug": "my-trip-to-verona",
       "hash": "561e88004acc2857b79ed12311dca8c9",
@@ -24797,6 +24858,7 @@
         "post",
         "migrated"
       ],
+      "description": "Jet lagged, but thrilled in Verona! From exhilarating cab rides to savoring gelato by the river, immerse yourself in jsDay and Italy's vibrant charm.",
       "url": "/posts/my-trip-to-verona/"
     }
   },
@@ -25188,7 +25250,7 @@
       0.03819907084107399
     ],
     "metadata": {
-      "lastIndexed": 1751411925797,
+      "lastIndexed": 1751473834730,
       "title": "New Guy Blues",
       "slug": "new-guy-blues",
       "hash": "bfb258d8b1add7ecc90cacc1d60a6267",
@@ -25197,6 +25259,7 @@
         "post",
         "migrated"
       ],
+      "description": "Feeling like the new kid at work? Discover how having a servant's heart, finding a mentor, and leveraging your strengths can help you shine in a new job.",
       "url": "/posts/new-guy-blues/"
     }
   },
@@ -25588,7 +25651,7 @@
       0.008359639905393124
     ],
     "metadata": {
-      "lastIndexed": 1751411925817,
+      "lastIndexed": 1751473834748,
       "title": "New parts coming",
       "slug": "new-parts-coming",
       "hash": "51fd6967b369200860d6bafcb1e840dd",
@@ -25597,6 +25660,7 @@
         "post",
         "migrated"
       ],
+      "description": "Upgraded my gaming rig with a PNY Geforce 9600 GT and a new power source. Stay tuned for how this hardware boosts my gaming adventures!",
       "url": "/posts/new-parts-coming/"
     }
   },
@@ -25988,7 +26052,7 @@
       0.09826789796352386
     ],
     "metadata": {
-      "lastIndexed": 1751411925940,
+      "lastIndexed": 1751473834844,
       "title": "New Tabs and Cucumber",
       "slug": "new-tabs-and-cucumber",
       "hash": "f059411d0df9a4071e652572766fef8e",
@@ -25997,6 +26061,7 @@
         "post",
         "migrated"
       ],
+      "description": "Open new tabs in Cucumber with ease! Learn how to run expectations on them using selenium-webdriver. A simple switch for smooth testing on Chrome.",
       "url": "/posts/new-tabs-and-cucumber/"
     }
   },
@@ -26388,15 +26453,16 @@
       0.024640502408146858
     ],
     "metadata": {
-      "lastIndexed": 1751411926071,
+      "lastIndexed": 1751473834941,
       "title": "New Team and Lessons Learned",
       "slug": "new-team-and-lessons-learned",
-      "hash": "acaf12559320af53af9b9c37433f72f1",
+      "hash": "41e688f140af0ac851325ad357953bfd",
       "date": "2013-09-16T00:00:00.000Z",
       "tags": [
         "post",
         "migrated"
       ],
+      "description": "Building a GitHub team taught us to tackle impactful problems, iterate fast, and embrace simplicity. Learnings on mentorship and adaptability for success!",
       "url": "/posts/new-team-and-lessons-learned/"
     }
   },
@@ -26788,7 +26854,7 @@
       0.028038453310728073
     ],
     "metadata": {
-      "lastIndexed": 1751411926113,
+      "lastIndexed": 1751473834979,
       "title": "Obsession and Understanding",
       "slug": "obsession-and-understanding",
       "hash": "3943f9eac13013fdd7737d0e52144949",
@@ -26797,6 +26863,7 @@
         "post",
         "migrated"
       ],
+      "description": "Balancing work passion with inner peace is key. Discover how finding fulfillment in growth, not obsession, leads to true joy and tranquility.",
       "url": "/posts/obsession-and-understanding/"
     }
   },
@@ -27188,7 +27255,7 @@
       0.08192572742700577
     ],
     "metadata": {
-      "lastIndexed": 1751411926197,
+      "lastIndexed": 1751473835046,
       "title": "OSX Styled web gui",
       "slug": "osx-styled-web-gui",
       "hash": "e515600eda9534950c6a30432fa9fa8d",
@@ -27197,6 +27264,7 @@
         "post",
         "migrated"
       ],
+      "description": "Check out my OSX-inspired web GUI for a sleek, user-friendly interface using HTML, CSS, and jQuery. Dive into the code on GitHub and get creative!",
       "url": "/posts/osx-styled-web-gui/"
     }
   },
@@ -27588,7 +27656,7 @@
       0.08028773218393326
     ],
     "metadata": {
-      "lastIndexed": 1751411926325,
+      "lastIndexed": 1751473835142,
       "title": "Peer feedback",
       "slug": "peer-feedback",
       "hash": "cdb0f1afc4ce6f9b4a68503acd72f751",
@@ -27598,6 +27666,7 @@
         "post",
         "migrated"
       ],
+      "description": "Streamline your peer feedback process: provide references to key projects and qualities when asking for feedback, and personalize responses for meaningful insights.",
       "url": "/posts/peer-feedback/"
     }
   },
@@ -27989,7 +28058,7 @@
       -0.05073721706867218
     ],
     "metadata": {
-      "lastIndexed": 1751411926447,
+      "lastIndexed": 1751473835242,
       "title": "Preparing Dinner for Natalie and lil'sis TweetWhiskey Glazed Pork ChopsCountry Style Tomatoes",
       "slug": "preparing-dinner-for-natalie-and-lilsis-tweetwhiskey-glazed-pork-chopscountry-style-tomatoes",
       "hash": "add5afddcf6c4c24715fd2f5a2e6e619",
@@ -27998,6 +28067,7 @@
         "post",
         "migrated"
       ],
+      "description": "Whiskey glazed pork chops and crispy country-style tomato stacks make dinner special for Natalie and lil'sis. Discover this hearty, flavorful meal now!",
       "url": "/posts/preparing-dinner-for-natalie-and-lilsis-tweetwhiskey-glazed-pork-chopscountry-style-tomatoes/"
     }
   },
@@ -28389,7 +28459,7 @@
       0.03573661297559738
     ],
     "metadata": {
-      "lastIndexed": 1751411926572,
+      "lastIndexed": 1751473835338,
       "title": "Priorities",
       "slug": "priorities",
       "hash": "7c0bc28ac3f9d99981b4b6f145047860",
@@ -28398,6 +28468,7 @@
         "post",
         "migrated"
       ],
+      "description": "Finding balance between work and home life is tough, especially when you love what you do. Prioritize loved ones and cherish quality time—it makes all the difference!",
       "url": "/posts/priorities/"
     }
   },
@@ -28789,7 +28860,7 @@
       0.09805242717266083
     ],
     "metadata": {
-      "lastIndexed": 1751411926720,
+      "lastIndexed": 1751473835436,
       "title": "Rapid Onsite Software Development",
       "slug": "rapid-onsite-software-development",
       "hash": "5d32cd9397702b32cf4a551c2e9e6465",
@@ -28798,6 +28869,7 @@
         "post",
         "migrated"
       ],
+      "description": "Tried to build an app in a day for my uncle using Rails; learned a ton about TDD, modals, and more. Not one-day magic, but close! Dive into the journey.",
       "url": "/posts/rapid-onsite-software-development/"
     }
   },
@@ -29189,7 +29261,7 @@
       0.009314863942563534
     ],
     "metadata": {
-      "lastIndexed": 1751411926842,
+      "lastIndexed": 1751473835533,
       "title": "Robots can do support too",
       "slug": "robots-can-do-support-too",
       "hash": "f3231b98caed824b29e89ef8edc7ab1e",
@@ -29198,6 +29270,7 @@
         "post",
         "migrated"
       ],
+      "description": "Discover how we taught a cheeky robot to handle FAQs in an IRC channel, making support faster and freeing us for more fun stuff. Check out our adventure!",
       "url": "/posts/robots-can-do-support-too/"
     }
   },
@@ -29589,7 +29662,7 @@
       0.00134419952519238
     ],
     "metadata": {
-      "lastIndexed": 1751411926895,
+      "lastIndexed": 1751473835576,
       "title": "Rounding out the year",
       "slug": "rounding-out-the-year",
       "hash": "fd2f40392a930b79c834e7c06a09cb14",
@@ -29598,6 +29671,7 @@
         "post",
         "migrated"
       ],
+      "description": "Reflecting on a year of gratitude: a new marriage, business milestones, travels, and family joys. Even small wins, like a new laptop, bring big smiles!",
       "url": "/posts/rounding-out-the-year/"
     }
   },
@@ -29989,7 +30063,7 @@
       0.010369066148996353
     ],
     "metadata": {
-      "lastIndexed": 1751411927030,
+      "lastIndexed": 1751473835674,
       "title": "Running Mephisto (and other Rails apps) on Site5",
       "slug": "running-mephisto-and-other-rails-apps-on-site5",
       "hash": "abccdaf3b0910bf70f6ad04814014210",
@@ -29998,6 +30072,7 @@
         "post",
         "migrated"
       ],
+      "description": "Get Mephisto running smoothly on Site5 with tips on setting up Ruby, Rails, and your own gem repository. Dive in for a simple, quirky setup guide!",
       "url": "/posts/running-mephisto-and-other-rails-apps-on-site5/"
     }
   },
@@ -30389,15 +30464,16 @@
       0.06284863501787186
     ],
     "metadata": {
-      "lastIndexed": 1751411927055,
+      "lastIndexed": 1751473835695,
       "title": "SabreTech Employee blogs",
       "slug": "sabretech-employee-blogs",
-      "hash": "7c53bcc436fcf06646f72a8a0301b472",
+      "hash": "3dd97ba3f485be3cbfe985adcea4b337",
       "date": "2007-11-16T00:00:00.000Z",
       "tags": [
         "post",
         "migrated"
       ],
+      "description": "Explore SabreTech team blogs! Sam shares tips on running older Windows apps seamlessly, and Dan offers insights into tech mysteries. Dive in for tech wisdom!",
       "url": "/posts/sabretech-employee-blogs/"
     }
   },
@@ -30789,7 +30865,7 @@
       0.06820452213287354
     ],
     "metadata": {
-      "lastIndexed": 1751411927137,
+      "lastIndexed": 1751473835755,
       "title": "sabretechllc.com redesigned!",
       "slug": "sabretechllccom-redesigned",
       "hash": "0b6cf218d8da09b0efd82ee991a90744",
@@ -30798,6 +30874,7 @@
         "post",
         "migrated"
       ],
+      "description": "Check out our freshly revamped website! From photoshopped ideas to a stunning live site in hours—ready for our open house. Dive in and explore the makeover!",
       "url": "/posts/sabretechllccom-redesigned/"
     }
   },
@@ -31189,7 +31266,7 @@
       0.0036878488026559353
     ],
     "metadata": {
-      "lastIndexed": 1751411927213,
+      "lastIndexed": 1751473835817,
       "title": "Scriptular",
       "slug": "scriptular",
       "hash": "f45cf24526534834f50a133ee7639293",
@@ -31198,6 +31275,7 @@
         "post",
         "migrated"
       ],
+      "description": "Test JavaScript regex easily with Scriptular! No backend needed; everything runs in your browser. Perfect for developers seeking a simple testing tool.",
       "url": "/posts/scriptular/"
     }
   },
@@ -31589,15 +31667,16 @@
       -0.00685487687587738
     ],
     "metadata": {
-      "lastIndexed": 1751411927343,
+      "lastIndexed": 1751473835914,
       "title": "Setting up a Mac",
       "slug": "setting-up-a-mac",
-      "hash": "fcecfaeb3c7db7c638ce18dc37dc8946",
+      "hash": "95f1703cd7627c41ac53a6c10b8abfef",
       "date": "2007-08-15T00:00:00.000Z",
       "tags": [
         "post",
         "migrated"
       ],
+      "description": "Master the art of Mac setup: streamline with fresh installs, essential utilities, and smart tweaks for a clutter-free and efficient workflow. Dive into simplicity!",
       "url": "/posts/setting-up-a-mac/"
     }
   },
@@ -31989,7 +32068,7 @@
       0.040895458310842514
     ],
     "metadata": {
-      "lastIndexed": 1751411927456,
+      "lastIndexed": 1751473835993,
       "title": "Share the Dream",
       "slug": "share-the-dream",
       "hash": "ca31eeab6d421e6224d3e2ff04b1de68",
@@ -31998,6 +32077,7 @@
         "post",
         "migrated"
       ],
+      "description": "Boost team spirit by sharing passions and dreams for mutual success at work. Embrace each other's energy to stay motivated and happy every day.",
       "url": "/posts/share-the-dream/"
     }
   },
@@ -32389,7 +32469,7 @@
       -0.025391189381480217
     ],
     "metadata": {
-      "lastIndexed": 1751411927515,
+      "lastIndexed": 1751473836041,
       "title": "Sleep Apnea Survivor",
       "slug": "sleep-apnea-survivor",
       "hash": "6ffef369ea2f78e9a216be8b1a05532f",
@@ -32398,6 +32478,7 @@
         "post",
         "migrated"
       ],
+      "description": "I was saved from sleep apnea by the persistence of loved ones. If this story sounds familiar, act now to help someone else get the rest they deserve.",
       "url": "/posts/sleep-apnea-survivor/"
     }
   },
@@ -32789,7 +32870,7 @@
       0.10621453076601028
     ],
     "metadata": {
-      "lastIndexed": 1751411927568,
+      "lastIndexed": 1751473836086,
       "title": "Speaker Deck Goes Full-screen",
       "slug": "speaker-deck-goes-full-screen",
       "hash": "f1a1b097d1d6ef18fb0f8b2fd37e1f88",
@@ -32798,6 +32879,7 @@
         "post",
         "migrated"
       ],
+      "description": "Experience Speaker Deck like never before with full-screen presentations! Dive into high-res slides seamlessly, thanks to the latest browser API magic.",
       "url": "/posts/speaker-deck-goes-full-screen/"
     }
   },
@@ -33189,7 +33271,7 @@
       0.12551289796829224
     ],
     "metadata": {
-      "lastIndexed": 1751411927692,
+      "lastIndexed": 1751473836182,
       "title": "Speaker Deck's Technology Stack",
       "slug": "speaker-decks-technology-stack",
       "hash": "58ef4612e6727c4f3a59c31c720fed6e",
@@ -33198,6 +33280,7 @@
         "post",
         "migrated"
       ],
+      "description": "Dive into Speaker Deck's tech stack! Check out the cool tools and services that make PDF-to-slide magic happen effortlessly. Curious how it all works?",
       "url": "/posts/speaker-decks-technology-stack/"
     }
   },
@@ -33589,7 +33672,7 @@
       0.054934099316596985
     ],
     "metadata": {
-      "lastIndexed": 1751411927814,
+      "lastIndexed": 1751473836278,
       "title": "Starting to Unplug",
       "slug": "starting-to-unplug",
       "hash": "b1ff90d274aaacf1bc9e48d17239bf8c",
@@ -33598,6 +33681,7 @@
         "post",
         "migrated"
       ],
+      "description": "Discover the joy of unplugging: transform tech habits to enjoy life more, connect deeply with loved ones, and find peace without constant digital buzz.",
       "url": "/posts/starting-to-unplug/"
     }
   },
@@ -33989,7 +34073,7 @@
       -0.03482910245656967
     ],
     "metadata": {
-      "lastIndexed": 1751411927879,
+      "lastIndexed": 1751473836326,
       "title": "Summer in a nutshell",
       "slug": "summer-in-a-nutshell",
       "hash": "4a069cdd3b1adc756d053504e1b9b48d",
@@ -33998,6 +34082,7 @@
         "post",
         "migrated"
       ],
+      "description": "Marriage, new jobs, gaming habits, and family transitions—from Elkhart to Chicago, it's been a summer full of change, adventure, and unforgettable memories.",
       "url": "/posts/summer-in-a-nutshell/"
     }
   },
@@ -34389,7 +34474,7 @@
       0.03282398730516434
     ],
     "metadata": {
-      "lastIndexed": 1751411927938,
+      "lastIndexed": 1751473836370,
       "title": "Summer Project",
       "slug": "summer-project",
       "hash": "2a1961cc344caca3a3e47c20b40b30e8",
@@ -34398,6 +34483,7 @@
         "post",
         "migrated"
       ],
+      "description": "Building a custom corner desk from wood for my gaming and work setup! Dive into the process, check out progress photos, and see how it all comes together.",
       "url": "/posts/summer-project/"
     }
   },
@@ -34789,7 +34875,7 @@
       -0.020317139104008675
     ],
     "metadata": {
-      "lastIndexed": 1751411928066,
+      "lastIndexed": 1751473836466,
       "title": "SWOT Analysis",
       "slug": "swot-analysis",
       "hash": "253c378d705c19872677e3bbb6720449",
@@ -34798,6 +34884,7 @@
         "post",
         "migrated"
       ],
+      "description": "Level up personally and professionally with a chill SWOT analysis. Discover strengths, tackle weaknesses, and spot growth opportunities like a pro!",
       "url": "/posts/swot-analysis/"
     }
   },
@@ -35189,15 +35276,16 @@
       0.017781520262360573
     ],
     "metadata": {
-      "lastIndexed": 1751411928206,
+      "lastIndexed": 1751473836562,
       "title": "Temperature Time",
       "slug": "temperature-time",
-      "hash": "49cf428f73074073c7c61b27a611de3a",
+      "hash": "682d42be8e34f0b7408e19af7060f1ba",
       "date": "2008-11-01T00:00:00.000Z",
       "tags": [
         "post",
         "migrated"
       ],
+      "description": "Tough brisket blues led to a cool smoker upgrade! Dive into my DIY mod with pics and see how this smoker might just master the perfect brisket.",
       "url": "/posts/temperature-time/"
     }
   },
@@ -35589,7 +35677,7 @@
       0.03591356426477432
     ],
     "metadata": {
-      "lastIndexed": 1751411928333,
+      "lastIndexed": 1751473836662,
       "title": "Ten Years a Software Engineer",
       "slug": "ten-years-a-software-engineer",
       "hash": "85e5c03b1839adf17497e6ebf6a8324f",
@@ -35598,6 +35686,7 @@
         "post",
         "migrated"
       ],
+      "description": "Reflecting on 10 years from tinkering to becoming a Senior Engineer at GitHub, exploring retrospectives, and diving into the exciting world of Machine Learning.",
       "url": "/posts/ten-years-a-software-engineer/"
     }
   },
@@ -35989,7 +36078,7 @@
       0.040879249572753906
     ],
     "metadata": {
-      "lastIndexed": 1751411928474,
+      "lastIndexed": 1751473836767,
       "title": "Thank You Steve Jobs",
       "slug": "thank-you-steve-jobs",
       "hash": "c0d992f3fc9c3d1014503b21ea46fe74",
@@ -35998,6 +36087,7 @@
         "post",
         "migrated"
       ],
+      "description": "Discover how switching to a Mac in 2002 transformed my tech journey, thanks to Steve Jobs and Apple's intuitive, powerful design ethos.",
       "url": "/posts/thank-you-steve-jobs/"
     }
   },
@@ -36389,7 +36479,7 @@
       0.00635179691016674
     ],
     "metadata": {
-      "lastIndexed": 1751411928543,
+      "lastIndexed": 1751473836822,
       "title": "Thank you",
       "slug": "thank-you",
       "hash": "824d26f0f454d6ce2ec5b5c877954c58",
@@ -36398,6 +36488,7 @@
         "post",
         "migrated"
       ],
+      "description": "Appreciate the small acts of kindness! A simple thank-you turned my chocolate craving into a sweet surprise. Gratitude goes a long way—sometimes with chocolate!",
       "url": "/posts/thank-you/"
     }
   },
@@ -36789,7 +36880,7 @@
       0.04158482700586319
     ],
     "metadata": {
-      "lastIndexed": 1751411928595,
+      "lastIndexed": 1751473836856,
       "title": "The Best Work Days",
       "slug": "the-best-work-days",
       "hash": "ff7ec478b1bd5a67064301300d95dd0c",
@@ -36798,6 +36889,7 @@
         "post",
         "migrated"
       ],
+      "description": "Epic workday vibes: Collaborating with Steve and John, nailing new features, sharing wins, and staying stoked for what’s coming next. Pure team synergy!",
       "url": "/posts/the-best-work-days/"
     }
   },
@@ -37189,7 +37281,7 @@
       0.057847607880830765
     ],
     "metadata": {
-      "lastIndexed": 1751411928618,
+      "lastIndexed": 1751473836871,
       "title": "The car that wasn't broken",
       "slug": "the-car-that-wasnt-broken",
       "hash": "78feb39dd34f1991d0228a314c4a2da8",
@@ -37198,6 +37290,7 @@
         "post",
         "migrated"
       ],
+      "description": "Car troubles? Not really! Dive into a twisty tale of unexpected breakdowns and friendly adventures in Goshen. What's going on with that car?",
       "url": "/posts/the-car-that-wasnt-broken/"
     }
   },
@@ -37589,7 +37682,7 @@
       -0.00748088164255023
     ],
     "metadata": {
-      "lastIndexed": 1751411928734,
+      "lastIndexed": 1751473836955,
       "title": "The Death of Free",
       "slug": "the-death-of-free",
       "hash": "6c512871da825be0b4599783e2b301d4",
@@ -37598,6 +37691,7 @@
         "post",
         "migrated"
       ],
+      "description": "Discover why \"free\" is becoming extinct online and why paying for services can lead to better, more sustainable options. It's all about value and longevity!",
       "url": "/posts/the-death-of-free/"
     }
   },
@@ -37989,7 +38083,7 @@
       0.10774248093366623
     ],
     "metadata": {
-      "lastIndexed": 1751411928861,
+      "lastIndexed": 1751473837052,
       "title": "The History of Speaker Deck",
       "slug": "the-history-of-speaker-deck",
       "hash": "bde341592c8f4e859583a36d9353057a",
@@ -37998,6 +38092,7 @@
         "post",
         "migrated"
       ],
+      "description": "Speaker Deck's journey from a simple idea to launch highlights the power of passion and perseverance. Discover how a casual lunch turned into a successful slide-sharing platform!",
       "url": "/posts/the-history-of-speaker-deck/"
     }
   },
@@ -38389,7 +38484,7 @@
       -0.0021839470136910677
     ],
     "metadata": {
-      "lastIndexed": 1751411928885,
+      "lastIndexed": 1751473837081,
       "title": "The longest weekend of my life",
       "slug": "the-longest-weekend-of-my-life",
       "hash": "cad28c9f01b4d3706d2991237c38d726",
@@ -38398,6 +38493,7 @@
         "post",
         "migrated"
       ],
+      "description": "Surviving a wild weekend adventure of hacking, reinstalling, and caffeine-fueled chaos with Windows 2000 servers. Can I finally catch some sleep?",
       "url": "/posts/the-longest-weekend-of-my-life/"
     }
   },
@@ -38789,7 +38885,7 @@
       0.03960606828331947
     ],
     "metadata": {
-      "lastIndexed": 1751411929018,
+      "lastIndexed": 1751473837177,
       "title": "The Smoker - Back Story and First Day",
       "slug": "the-smoker---back-story-and-first-day",
       "hash": "e340bef9dd8cd6a980ef1eeade327f79",
@@ -38798,6 +38894,7 @@
         "post",
         "migrated"
       ],
+      "description": "Started building my dream 55-gallon smoker after a year of planning, with Dad’s help and a perfectly-timed print from a friend. BBQ bliss, here we come!",
       "url": "/posts/the-smoker---back-story-and-first-day/"
     }
   },
@@ -39189,7 +39286,7 @@
       0.06711086630821228
     ],
     "metadata": {
-      "lastIndexed": 1751411929095,
+      "lastIndexed": 1751473837229,
       "title": "the Smoker Trifecta",
       "slug": "the-smoker-trifecta",
       "hash": "e40301e2efd1766cc65123bfe3880904",
@@ -39198,6 +39295,7 @@
         "post",
         "migrated"
       ],
+      "description": "Join my smoking adventure as I complete the trifecta: pork, chicken, and beef brisket! Discover delicious recipes and savor the smoky goodness with me!",
       "url": "/posts/the-smoker-trifecta/"
     }
   },
@@ -39589,7 +39687,7 @@
       0.020993223413825035
     ],
     "metadata": {
-      "lastIndexed": 1751411929232,
+      "lastIndexed": 1751473837328,
       "title": "The Uncertain Future of Coding Careers and Why I'm Still Hopeful",
       "slug": "the-uncertain-future-of-coding-careers-and-why-im-still-hopeful",
       "hash": "8920870f67fcc1686ee5828cca8cc620",
@@ -39598,6 +39696,7 @@
       "tags": [
         "post"
       ],
+      "description": "My thoughts on the future of coding careers in the age of AI, and why I believe that human creativity and ingenuity will always be in demand.",
       "url": "/posts/the-uncertain-future-of-coding-careers-and-why-im-still-hopeful/"
     }
   },
@@ -39989,15 +40088,16 @@
       0.044317763298749924
     ],
     "metadata": {
-      "lastIndexed": 1751411929309,
+      "lastIndexed": 1751473837385,
       "title": "Time for change",
       "slug": "time-for-change",
-      "hash": "ec0217294b3b01eba7789ac466c5a114",
+      "hash": "9c4e3993a75da4578ac7d198a6ae34cb",
       "date": "2005-09-28T00:00:00.000Z",
       "tags": [
         "post",
         "migrated"
       ],
+      "description": "Switched things up with a fresh blog setup using Typo on RubyOnRails! Sleeker look, easier posting, and more fun features. Stay tuned for cool updates!",
       "url": "/posts/time-for-change/"
     }
   },
@@ -40389,7 +40489,7 @@
       0.013888685032725334
     ],
     "metadata": {
-      "lastIndexed": 1751411929424,
+      "lastIndexed": 1751473837463,
       "title": "Twelve (gauge)",
       "slug": "twelve-gauge",
       "hash": "e5ac43dcfd200d58fd3b6f04face4db2",
@@ -40398,6 +40498,7 @@
         "post",
         "migrated"
       ],
+      "description": "Meet Twelve, my gem for the Gauges API! Dive into fun API tinkering and unleash robust analytics control with this easy-to-use tool. Check it out!",
       "url": "/posts/twelve-gauge/"
     }
   },
@@ -40789,15 +40890,16 @@
       0.07785207033157349
     ],
     "metadata": {
-      "lastIndexed": 1751411929555,
+      "lastIndexed": 1751473837559,
       "title": "Ultimate media/backup server",
       "slug": "ultimate-mediabackup-server",
-      "hash": "cd73374b196a4c3859917d8be912aaa9",
+      "hash": "588cf26df5c535fe6b17f122f9645b8c",
       "date": "2007-10-22T00:00:00.000Z",
       "tags": [
         "post",
         "migrated"
       ],
+      "description": "Transform your media setup with a Mac Mini and Drobo: Compact, easy storage expansion, automatic downloads, and seamless backup for a sleek tech haven.",
       "url": "/posts/ultimate-mediabackup-server/"
     }
   },
@@ -41189,7 +41291,7 @@
       0.06425683945417404
     ],
     "metadata": {
-      "lastIndexed": 1751411929679,
+      "lastIndexed": 1751473837656,
       "title": "Vacation Reviews",
       "slug": "vacation-reviews",
       "hash": "74a3303a6e09b053ae88ea175ee12ce4",
@@ -41198,6 +41300,7 @@
         "post",
         "migrated"
       ],
+      "description": "Just back from a delicious adventure in Boston, Concord, and Milton—foodie gems like oysters and wineries made it unforgettable! Dive into our tasty journey.",
       "url": "/posts/vacation-reviews/"
     }
   },
@@ -41589,7 +41692,7 @@
       -0.009826192632317543
     ],
     "metadata": {
-      "lastIndexed": 1751411929759,
+      "lastIndexed": 1751473837731,
       "title": "We have crossed the border.",
       "slug": "we-have-crossed-the-border",
       "hash": "c240bec3607212be570d242d2e7bd093",
@@ -41598,6 +41701,7 @@
         "post",
         "migrated"
       ],
+      "description": "From high school to global IT support—our small Michigan consultancy just went international, helping clients from France to Egypt. So grateful for the journey!",
       "url": "/posts/we-have-crossed-the-border/"
     }
   },
@@ -41989,7 +42093,7 @@
       0.03191090747714043
     ],
     "metadata": {
-      "lastIndexed": 1751411929820,
+      "lastIndexed": 1751473837774,
       "title": "web20 and economics?",
       "slug": "web20-and-economics",
       "hash": "8d50c29efc540d833e191e806c35de1e",
@@ -41998,6 +42102,7 @@
         "post",
         "migrated"
       ],
+      "description": "Diving into Web 2.0 and economics—the journey of a curious soul seeking epiphanies in the digital wave, hoping to make a mark in the web world!",
       "url": "/posts/web20-and-economics/"
     }
   },
@@ -42389,7 +42494,7 @@
       0.0547785721719265
     ],
     "metadata": {
-      "lastIndexed": 1751411929826,
+      "lastIndexed": 1751473837780,
       "title": "Wedding postponed",
       "slug": "wedding-postponed",
       "hash": "17ef4f53386228af8bfbf1fb9a37bb97",
@@ -42398,6 +42503,7 @@
         "post",
         "migrated"
       ],
+      "description": "Our wedding's on hold for now—stay tuned for the new date! Can't wait to celebrate with you all when the time's right.",
       "url": "/posts/wedding-postponed/"
     }
   },
@@ -42789,7 +42895,7 @@
       -0.003941933158785105
     ],
     "metadata": {
-      "lastIndexed": 1751411929867,
+      "lastIndexed": 1751473837819,
       "title": "What is my passion?",
       "slug": "what-is-my-passion",
       "hash": "4de038bb12e76e2854c75e05eeeb8b42",
@@ -42798,6 +42904,7 @@
         "post",
         "migrated"
       ],
+      "description": "Exploring passions: fixing tech, cherishing family moments, and coding for fun. Join the journey of juggling joys, finding purpose, and embracing the little things.",
       "url": "/posts/what-is-my-passion/"
     }
   },
@@ -43189,15 +43296,16 @@
       0.005208409391343594
     ],
     "metadata": {
-      "lastIndexed": 1751411929880,
+      "lastIndexed": 1751473837832,
       "title": "What IT guys do when their bored",
       "slug": "what-it-guys-do-when-their-bored",
-      "hash": "2531b9370f958444ccb82c7beb7335b8",
+      "hash": "5d12dda31c77656997b7c836e9ef4dfc",
       "date": "2009-05-21T00:00:00.000Z",
       "tags": [
         "post",
         "migrated"
       ],
+      "description": "When IT pros get bored, creativity strikes! Dive into their playful world and see what tech magic unfolds when curiosity meets free time.",
       "url": "/posts/what-it-guys-do-when-their-bored/"
     }
   },
@@ -43589,15 +43697,16 @@
       0.11804742366075516
     ],
     "metadata": {
-      "lastIndexed": 1751411930004,
+      "lastIndexed": 1751473837928,
       "title": "What laptop to get?",
       "slug": "what-laptop-to-get",
-      "hash": "f0a10e2bce81e02e96d9bfff462a32d1",
+      "hash": "981b6e87813cfc0367ae57e59ef765c6",
       "date": "2010-11-20T00:00:00.000Z",
       "tags": [
         "post",
         "migrated"
       ],
+      "description": "Choosing a new Mac laptop is tough! The 13\" MacBook Air is sleek and light, but will it keep up? Dreaming of a 15\" Air with power and pixels! What's your take?",
       "url": "/posts/what-laptop-to-get/"
     }
   },
@@ -43989,7 +44098,7 @@
       0.03587315231561661
     ],
     "metadata": {
-      "lastIndexed": 1751411930119,
+      "lastIndexed": 1751473838017,
       "title": "Why Should We Write?",
       "slug": "why-should-we-write",
       "hash": "340bc8c987b0542110933fb1942e63f5",
@@ -43998,6 +44107,7 @@
         "post",
         "migrated"
       ],
+      "description": "Boost your programming career by writing! Share your insights, tackle everyday challenges, and elevate your brand. Let's make learning & growth a shared journey.",
       "url": "/posts/why-should-we-write/"
     }
   },
@@ -44389,7 +44499,7 @@
       0.02595079131424427
     ],
     "metadata": {
-      "lastIndexed": 1751411930256,
+      "lastIndexed": 1751473838124,
       "title": "Year in review",
       "slug": "year-in-review",
       "hash": "40820714b4f33211c882a558089fcde3",
@@ -44398,6 +44508,7 @@
         "post",
         "migrated"
       ],
+      "description": "Reflecting on a year of family milestones, tech innovation at GitHub, and personal growth. Cheers to cherished moments and learning new things!",
       "url": "/posts/year-in-review/"
     }
   }

@@ -9,7 +9,7 @@
 
 
 <meta property="og:title" content="Capistrano recipe and howto for Rails, Mongrel, and Nginx">
-<meta property="og:description" content="My thoughts on software development, team building, and life.">
+<meta property="og:description" content="Streamline your Rails app deployment with Capistrano, Nginx, and Mongrel. Optimize your setup with custom Capistrano recipes for Ubuntu-based servers.">
 <meta property="og:url" content="https://jonmagic.com/posts/capistrano-recipe-and-howto-for-rails-mongrel-and-nginx/">
 <meta property="og:site_name" content="jonmagic.com">
 <meta property="og:type" content="article">
@@ -19,10 +19,10 @@
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Capistrano recipe and howto for Rails, Mongrel, and Nginx">
-<meta name="twitter:description" content="My thoughts on software development, team building, and life.">
+<meta name="twitter:description" content="Streamline your Rails app deployment with Capistrano, Nginx, and Mongrel. Optimize your setup with custom Capistrano recipes for Ubuntu-based servers.">
 
 
-<meta name="description" content="My thoughts on software development, team building, and life.">
+<meta name="description" content="Streamline your Rails app deployment with Capistrano, Nginx, and Mongrel. Optimize your setup with custom Capistrano recipes for Ubuntu-based servers.">
 <meta name="author" content="Jonathan Hoyt">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -69,7 +69,7 @@
 <ol>
 <li>Install the capistrano and deprec gems on your development machine</li>
 <li>Cap your app; in the root of your app dir, run: <code>cap -A</code></li>
-<li>Set up deprec: from the root of your app, run <code>deprec_dotfiles</code> which just creates a file in your user dir called <code>.caprc</code>, which contains the following line:<br>
+<li>Set up deprec: from the root of your app, run <code>deprec_dotfiles</code> which just creates a file in your user dir called <code>.caprc</code>, which contains the following line:
 <code>require 'deprec/recipes'</code></li>
 <li>Your server must be running ubuntu (it should work on any debian based OS though)</li>
 <li>Your svn repository must be accessible by the same user listed in your <code>deploy.rb</code></li>
@@ -86,11 +86,11 @@
 <li><code>visudo</code></li>
 </ol>
 </li>
-<li>From the root of your app run:<br>
+<li>From the root of your app run:
 <code>cap install_rails_stack_with_nginx</code></li>
-<li>The last one takes a while, but when it is done run:<br>
+<li>The last one takes a while, but when it is done run:
 <code>cap svn_cache_credentials</code></li>
-<li>Finally run:<br>
+<li>Finally run:
 <code>cap deploy_first_time</code>
 <ol>
 <li>(When it asks for mysql user password just press enter, unless you changed the mysql root password)</li>

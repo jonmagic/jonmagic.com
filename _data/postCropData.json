@@ -1,668 +1,668 @@
 {
   "year-in-review": {
-    "x": 55,
-    "y": 0,
-    "xPercent": 68.75,
-    "yPercent": 0
-  },
-  "why-should-we-write": {
-    "x": 16,
-    "y": 1,
-    "xPercent": 20,
-    "yPercent": 5
-  },
-  "what-laptop-to-get": {
-    "x": 19,
-    "y": 18,
-    "xPercent": 23.75,
-    "yPercent": 90
-  },
-  "what-it-guys-do-when-their-bored": {
-    "x": 52,
-    "y": 0,
-    "xPercent": 65,
-    "yPercent": 0
-  },
-  "what-is-my-passion": {
-    "x": 62,
-    "y": 14,
-    "xPercent": 77.5,
-    "yPercent": 70
-  },
-  "wedding-postponed": {
-    "x": 62,
-    "y": 4,
-    "xPercent": 77.5,
-    "yPercent": 20
-  },
-  "web20-and-economics": {
-    "x": 1,
-    "y": 1,
-    "xPercent": 1.25,
-    "yPercent": 5
-  },
-  "we-have-crossed-the-border": {
-    "x": 10,
-    "y": 18,
-    "xPercent": 12.5,
-    "yPercent": 90
-  },
-  "vacation-reviews": {
-    "x": 3,
-    "y": 18,
-    "xPercent": 3.75,
-    "yPercent": 90
-  },
-  "ultimate-mediabackup-server": {
-    "x": 60,
-    "y": 15,
-    "xPercent": 75,
-    "yPercent": 75
-  },
-  "twelve-gauge": {
-    "x": 29,
-    "y": 1,
-    "xPercent": 36.25,
-    "yPercent": 5
-  },
-  "time-for-change": {
-    "x": 53,
-    "y": 19,
-    "xPercent": 66.25,
-    "yPercent": 95
-  },
-  "the-uncertain-future-of-coding-careers-and-why-im-still-hopeful": {
-    "x": 75,
-    "y": 19,
-    "xPercent": 93.75,
-    "yPercent": 95
-  },
-  "the-smoker-trifecta": {
-    "x": 19,
-    "y": 7,
-    "xPercent": 23.75,
-    "yPercent": 35
-  },
-  "the-smoker---back-story-and-first-day": {
-    "x": 13,
-    "y": 3,
-    "xPercent": 16.25,
-    "yPercent": 15
-  },
-  "the-longest-weekend-of-my-life": {
-    "x": 51,
-    "y": 1,
-    "xPercent": 63.74999999999999,
-    "yPercent": 5
-  },
-  "the-history-of-speaker-deck": {
-    "x": 62,
-    "y": 2,
-    "xPercent": 77.5,
-    "yPercent": 10
-  },
-  "the-death-of-free": {
-    "x": 39,
-    "y": 3,
-    "xPercent": 48.75,
-    "yPercent": 15
-  },
-  "the-car-that-wasnt-broken": {
-    "x": 29,
-    "y": 12,
-    "xPercent": 36.25,
-    "yPercent": 60
-  },
-  "the-best-work-days": {
-    "x": 0,
-    "y": 12,
-    "xPercent": 0,
-    "yPercent": 60
-  },
-  "thank-you": {
-    "x": 34,
-    "y": 11,
-    "xPercent": 42.5,
-    "yPercent": 55.00000000000001
-  },
-  "thank-you-steve-jobs": {
-    "x": 25,
-    "y": 19,
-    "xPercent": 31.25,
-    "yPercent": 95
-  },
-  "ten-years-a-software-engineer": {
-    "x": 35,
+    "x": 27,
     "y": 16,
-    "xPercent": 43.75,
+    "xPercent": 33.75,
     "yPercent": 80
   },
-  "temperature-time": {
-    "x": 8,
+  "why-should-we-write": {
+    "x": 68,
+    "y": 17,
+    "xPercent": 85,
+    "yPercent": 85
+  },
+  "what-laptop-to-get": {
+    "x": 71,
+    "y": 14,
+    "xPercent": 88.75,
+    "yPercent": 70
+  },
+  "what-it-guys-do-when-their-bored": {
+    "x": 24,
+    "y": 16,
+    "xPercent": 30,
+    "yPercent": 80
+  },
+  "what-is-my-passion": {
+    "x": 33,
+    "y": 10,
+    "xPercent": 41.25,
+    "yPercent": 50
+  },
+  "wedding-postponed": {
+    "x": 33,
     "y": 0,
-    "xPercent": 10,
+    "xPercent": 41.25,
     "yPercent": 0
   },
-  "swot-analysis": {
-    "x": 40,
+  "web20-and-economics": {
+    "x": 53,
+    "y": 18,
+    "xPercent": 66.25,
+    "yPercent": 90
+  },
+  "we-have-crossed-the-border": {
+    "x": 62,
     "y": 15,
-    "xPercent": 50,
+    "xPercent": 77.5,
     "yPercent": 75
   },
-  "summer-project": {
-    "x": 37,
-    "y": 13,
-    "xPercent": 46.25,
-    "yPercent": 65
+  "vacation-reviews": {
+    "x": 55,
+    "y": 15,
+    "xPercent": 68.75,
+    "yPercent": 75
   },
-  "summer-in-a-nutshell": {
+  "ultimate-mediabackup-server": {
+    "x": 32,
+    "y": 11,
+    "xPercent": 40,
+    "yPercent": 55.00000000000001
+  },
+  "twelve-gauge": {
+    "x": 1,
+    "y": 17,
+    "xPercent": 1.25,
+    "yPercent": 85
+  },
+  "time-for-change": {
+    "x": 25,
+    "y": 15,
+    "xPercent": 31.25,
+    "yPercent": 75
+  },
+  "the-uncertain-future-of-coding-careers-and-why-im-still-hopeful": {
+    "x": 47,
+    "y": 15,
+    "xPercent": 58.75,
+    "yPercent": 75
+  },
+  "the-smoker-trifecta": {
+    "x": 71,
+    "y": 3,
+    "xPercent": 88.75,
+    "yPercent": 15
+  },
+  "the-smoker---back-story-and-first-day": {
+    "x": 65,
+    "y": 19,
+    "xPercent": 81.25,
+    "yPercent": 95
+  },
+  "the-longest-weekend-of-my-life": {
+    "x": 22,
+    "y": 17,
+    "xPercent": 27.500000000000004,
+    "yPercent": 85
+  },
+  "the-history-of-speaker-deck": {
+    "x": 34,
+    "y": 19,
+    "xPercent": 42.5,
+    "yPercent": 95
+  },
+  "the-death-of-free": {
+    "x": 11,
+    "y": 19,
+    "xPercent": 13.750000000000002,
+    "yPercent": 95
+  },
+  "the-car-that-wasnt-broken": {
+    "x": 1,
+    "y": 8,
+    "xPercent": 1.25,
+    "yPercent": 40
+  },
+  "the-best-work-days": {
+    "x": 52,
+    "y": 8,
+    "xPercent": 65,
+    "yPercent": 40
+  },
+  "thank-you": {
     "x": 6,
     "y": 7,
     "xPercent": 7.5,
     "yPercent": 35
   },
-  "starting-to-unplug": {
-    "x": 46,
-    "y": 18,
-    "xPercent": 57.49999999999999,
-    "yPercent": 90
-  },
-  "speaker-decks-technology-stack": {
-    "x": 68,
-    "y": 7,
-    "xPercent": 85,
-    "yPercent": 35
-  },
-  "speaker-deck-goes-full-screen": {
-    "x": 12,
-    "y": 2,
-    "xPercent": 15,
-    "yPercent": 10
-  },
-  "sleep-apnea-survivor": {
-    "x": 45,
-    "y": 6,
-    "xPercent": 56.25,
-    "yPercent": 30
-  },
-  "share-the-dream": {
-    "x": 2,
-    "y": 0,
-    "xPercent": 2.5,
-    "yPercent": 0
-  },
-  "setting-up-a-mac": {
-    "x": 75,
+  "thank-you-steve-jobs": {
+    "x": 77,
     "y": 16,
-    "xPercent": 93.75,
+    "xPercent": 96.25,
     "yPercent": 80
   },
-  "scriptular": {
-    "x": 18,
-    "y": 13,
-    "xPercent": 22.5,
-    "yPercent": 65
-  },
-  "sabretechllccom-redesigned": {
-    "x": 72,
-    "y": 5,
-    "xPercent": 90,
-    "yPercent": 25
-  },
-  "sabretech-employee-blogs": {
-    "x": 49,
-    "y": 9,
-    "xPercent": 61.25000000000001,
-    "yPercent": 45
-  },
-  "running-mephisto-and-other-rails-apps-on-site5": {
-    "x": 4,
-    "y": 10,
-    "xPercent": 5,
-    "yPercent": 50
-  },
-  "rounding-out-the-year": {
-    "x": 47,
-    "y": 6,
-    "xPercent": 58.75,
-    "yPercent": 30
-  },
-  "robots-can-do-support-too": {
-    "x": 32,
-    "y": 7,
-    "xPercent": 40,
-    "yPercent": 35
-  },
-  "rapid-onsite-software-development": {
-    "x": 30,
-    "y": 14,
-    "xPercent": 37.5,
-    "yPercent": 70
-  },
-  "priorities": {
-    "x": 59,
-    "y": 4,
-    "xPercent": 73.75,
-    "yPercent": 20
-  },
-  "preparing-dinner-for-natalie-and-lilsis-tweetwhiskey-glazed-pork-chopscountry-style-tomatoes": {
-    "x": 59,
-    "y": 7,
-    "xPercent": 73.75,
-    "yPercent": 35
-  },
-  "peer-feedback": {
-    "x": 10,
-    "y": 19,
-    "xPercent": 12.5,
-    "yPercent": 95
-  },
-  "osx-styled-web-gui": {
-    "x": 79,
-    "y": 16,
-    "xPercent": 98.75,
-    "yPercent": 80
-  },
-  "obsession-and-understanding": {
+  "ten-years-a-software-engineer": {
     "x": 7,
-    "y": 15,
+    "y": 12,
     "xPercent": 8.75,
-    "yPercent": 75
+    "yPercent": 60
   },
-  "new-team-and-lessons-learned": {
-    "x": 41,
-    "y": 4,
-    "xPercent": 51.24999999999999,
-    "yPercent": 20
+  "temperature-time": {
+    "x": 59,
+    "y": 16,
+    "xPercent": 73.75,
+    "yPercent": 80
   },
-  "new-tabs-and-cucumber": {
-    "x": 23,
-    "y": 18,
-    "xPercent": 28.749999999999996,
-    "yPercent": 90
-  },
-  "new-parts-coming": {
-    "x": 61,
-    "y": 0,
-    "xPercent": 76.25,
-    "yPercent": 0
-  },
-  "new-guy-blues": {
-    "x": 44,
-    "y": 2,
-    "xPercent": 55.00000000000001,
-    "yPercent": 10
-  },
-  "my-trip-to-verona": {
-    "x": 27,
-    "y": 2,
-    "xPercent": 33.75,
-    "yPercent": 10
-  },
-  "my-rig": {
-    "x": 19,
-    "y": 13,
-    "xPercent": 23.75,
-    "yPercent": 65
-  },
-  "moving-to-disqus-for-comments": {
-    "x": 23,
-    "y": 15,
-    "xPercent": 28.749999999999996,
-    "yPercent": 75
-  },
-  "moving-speaker-deck-to-heroku": {
-    "x": 76,
-    "y": 6,
-    "xPercent": 95,
-    "yPercent": 30
-  },
-  "mentors": {
-    "x": 19,
-    "y": 7,
-    "xPercent": 23.75,
-    "yPercent": 35
-  },
-  "make-asterisk-use-gmail-for-emailing-faxes": {
-    "x": 71,
-    "y": 18,
-    "xPercent": 88.75,
-    "yPercent": 90
-  },
-  "macbook-air-smells-like": {
-    "x": 44,
-    "y": 4,
-    "xPercent": 55.00000000000001,
-    "yPercent": 20
-  },
-  "learning-rails": {
-    "x": 79,
-    "y": 14,
-    "xPercent": 98.75,
-    "yPercent": 70
-  },
-  "launching-speaker-deck": {
-    "x": 70,
-    "y": 9,
-    "xPercent": 87.5,
-    "yPercent": 45
-  },
-  "just-write-it-down": {
-    "x": 73,
-    "y": 19,
-    "xPercent": 91.25,
-    "yPercent": 95
-  },
-  "jqueryquickselectjs": {
-    "x": 5,
-    "y": 10,
-    "xPercent": 6.25,
-    "yPercent": 50
-  },
-  "its-just-the-weather-thats-all": {
-    "x": 23,
-    "y": 9,
-    "xPercent": 28.749999999999996,
-    "yPercent": 45
-  },
-  "its-about-time": {
-    "x": 19,
+  "swot-analysis": {
+    "x": 12,
     "y": 11,
-    "xPercent": 23.75,
+    "xPercent": 15,
     "yPercent": 55.00000000000001
   },
-  "intention-vs-perception": {
+  "summer-project": {
+    "x": 9,
+    "y": 9,
+    "xPercent": 11.25,
+    "yPercent": 45
+  },
+  "summer-in-a-nutshell": {
     "x": 58,
     "y": 3,
     "xPercent": 72.5,
     "yPercent": 15
   },
-  "integrating-with-quickbooks": {
-    "x": 12,
+  "starting-to-unplug": {
+    "x": 18,
+    "y": 14,
+    "xPercent": 22.5,
+    "yPercent": 70
+  },
+  "speaker-decks-technology-stack": {
+    "x": 40,
+    "y": 3,
+    "xPercent": 50,
+    "yPercent": 15
+  },
+  "speaker-deck-goes-full-screen": {
+    "x": 64,
+    "y": 18,
+    "xPercent": 80,
+    "yPercent": 90
+  },
+  "sleep-apnea-survivor": {
+    "x": 17,
     "y": 2,
-    "xPercent": 15,
+    "xPercent": 21.25,
     "yPercent": 10
   },
-  "im-stoked-by-the-waybackmachine": {
+  "share-the-dream": {
+    "x": 54,
+    "y": 16,
+    "xPercent": 67.5,
+    "yPercent": 80
+  },
+  "setting-up-a-mac": {
+    "x": 47,
+    "y": 13,
+    "xPercent": 58.75,
+    "yPercent": 65
+  },
+  "scriptular": {
+    "x": 69,
+    "y": 10,
+    "xPercent": 86.25,
+    "yPercent": 50
+  },
+  "sabretechllccom-redesigned": {
+    "x": 44,
+    "y": 1,
+    "xPercent": 55.00000000000001,
+    "yPercent": 5
+  },
+  "sabretech-employee-blogs": {
+    "x": 21,
+    "y": 6,
+    "xPercent": 26.25,
+    "yPercent": 30
+  },
+  "running-mephisto-and-other-rails-apps-on-site5": {
+    "x": 56,
+    "y": 7,
+    "xPercent": 70,
+    "yPercent": 35
+  },
+  "rounding-out-the-year": {
+    "x": 19,
+    "y": 2,
+    "xPercent": 23.75,
+    "yPercent": 10
+  },
+  "robots-can-do-support-too": {
+    "x": 4,
+    "y": 3,
+    "xPercent": 5,
+    "yPercent": 15
+  },
+  "rapid-onsite-software-development": {
+    "x": 2,
+    "y": 11,
+    "xPercent": 2.5,
+    "yPercent": 55.00000000000001
+  },
+  "priorities": {
+    "x": 31,
+    "y": 0,
+    "xPercent": 38.75,
+    "yPercent": 0
+  },
+  "preparing-dinner-for-natalie-and-lilsis-tweetwhiskey-glazed-pork-chopscountry-style-tomatoes": {
+    "x": 31,
+    "y": 15,
+    "xPercent": 38.75,
+    "yPercent": 75
+  },
+  "peer-feedback": {
+    "x": 62,
+    "y": 15,
+    "xPercent": 77.5,
+    "yPercent": 75
+  },
+  "osx-styled-web-gui": {
+    "x": 50,
+    "y": 12,
+    "xPercent": 62.5,
+    "yPercent": 60
+  },
+  "obsession-and-understanding": {
+    "x": 59,
+    "y": 12,
+    "xPercent": 73.75,
+    "yPercent": 60
+  },
+  "new-team-and-lessons-learned": {
+    "x": 13,
+    "y": 0,
+    "xPercent": 16.25,
+    "yPercent": 0
+  },
+  "new-tabs-and-cucumber": {
+    "x": 75,
+    "y": 14,
+    "xPercent": 93.75,
+    "yPercent": 70
+  },
+  "new-parts-coming": {
+    "x": 33,
+    "y": 17,
+    "xPercent": 41.25,
+    "yPercent": 85
+  },
+  "new-guy-blues": {
+    "x": 16,
+    "y": 18,
+    "xPercent": 20,
+    "yPercent": 90
+  },
+  "my-trip-to-verona": {
+    "x": 78,
+    "y": 18,
+    "xPercent": 97.5,
+    "yPercent": 90
+  },
+  "my-rig": {
+    "x": 70,
+    "y": 9,
+    "xPercent": 87.5,
+    "yPercent": 45
+  },
+  "moving-to-disqus-for-comments": {
+    "x": 75,
+    "y": 12,
+    "xPercent": 93.75,
+    "yPercent": 60
+  },
+  "moving-speaker-deck-to-heroku": {
+    "x": 48,
+    "y": 2,
+    "xPercent": 60,
+    "yPercent": 10
+  },
+  "mentors": {
+    "x": 71,
+    "y": 3,
+    "xPercent": 88.75,
+    "yPercent": 15
+  },
+  "make-asterisk-use-gmail-for-emailing-faxes": {
+    "x": 42,
+    "y": 15,
+    "xPercent": 52.5,
+    "yPercent": 75
+  },
+  "macbook-air-smells-like": {
+    "x": 16,
+    "y": 0,
+    "xPercent": 20,
+    "yPercent": 0
+  },
+  "learning-rails": {
+    "x": 50,
+    "y": 10,
+    "xPercent": 62.5,
+    "yPercent": 50
+  },
+  "launching-speaker-deck": {
+    "x": 42,
+    "y": 5,
+    "xPercent": 52.5,
+    "yPercent": 25
+  },
+  "just-write-it-down": {
+    "x": 45,
+    "y": 15,
+    "xPercent": 56.25,
+    "yPercent": 75
+  },
+  "jqueryquickselectjs": {
     "x": 56,
     "y": 6,
     "xPercent": 70,
     "yPercent": 30
   },
-  "im-ready-to-teach-well-almost": {
-    "x": 22,
-    "y": 10,
-    "xPercent": 27.500000000000004,
-    "yPercent": 50
+  "its-just-the-weather-thats-all": {
+    "x": 75,
+    "y": 6,
+    "xPercent": 93.75,
+    "yPercent": 30
   },
-  "im-officially-jon-magic": {
-    "x": 23,
-    "y": 11,
-    "xPercent": 28.749999999999996,
-    "yPercent": 55.00000000000001
-  },
-  "im-engaged": {
-    "x": 19,
-    "y": 0,
-    "xPercent": 23.75,
-    "yPercent": 0
-  },
-  "im-building-a-computer": {
-    "x": 45,
-    "y": 5,
-    "xPercent": 56.25,
-    "yPercent": 25
-  },
-  "im-back-into-games-that-is": {
-    "x": 48,
-    "y": 3,
-    "xPercent": 60,
-    "yPercent": 15
-  },
-  "i-bought-one": {
-    "x": 30,
-    "y": 12,
-    "xPercent": 37.5,
-    "yPercent": 60
-  },
-  "hubot-scripts-explained": {
-    "x": 51,
-    "y": 15,
-    "xPercent": 63.74999999999999,
-    "yPercent": 75
-  },
-  "hubot-img-me-woman-laughing-alone-with-salad": {
-    "x": 19,
-    "y": 18,
-    "xPercent": 23.75,
-    "yPercent": 90
-  },
-  "hipchat-hubot-and-me": {
-    "x": 62,
+  "its-about-time": {
+    "x": 71,
     "y": 8,
-    "xPercent": 77.5,
+    "xPercent": 88.75,
     "yPercent": 40
   },
-  "hey-mom-i-got-a-job": {
+  "intention-vs-perception": {
+    "x": 30,
+    "y": 19,
+    "xPercent": 37.5,
+    "yPercent": 95
+  },
+  "integrating-with-quickbooks": {
+    "x": 64,
+    "y": 18,
+    "xPercent": 80,
+    "yPercent": 90
+  },
+  "im-stoked-by-the-waybackmachine": {
+    "x": 27,
+    "y": 2,
+    "xPercent": 33.75,
+    "yPercent": 10
+  },
+  "im-ready-to-teach-well-almost": {
     "x": 74,
-    "y": 14,
+    "y": 6,
     "xPercent": 92.5,
+    "yPercent": 30
+  },
+  "im-officially-jon-magic": {
+    "x": 75,
+    "y": 7,
+    "xPercent": 93.75,
+    "yPercent": 35
+  },
+  "im-engaged": {
+    "x": 71,
+    "y": 16,
+    "xPercent": 88.75,
+    "yPercent": 80
+  },
+  "im-building-a-computer": {
+    "x": 16,
+    "y": 1,
+    "xPercent": 20,
+    "yPercent": 5
+  },
+  "im-back-into-games-that-is": {
+    "x": 20,
+    "y": 0,
+    "xPercent": 25,
+    "yPercent": 0
+  },
+  "i-bought-one": {
+    "x": 1,
+    "y": 9,
+    "xPercent": 1.25,
+    "yPercent": 45
+  },
+  "hubot-scripts-explained": {
+    "x": 22,
+    "y": 11,
+    "xPercent": 27.500000000000004,
+    "yPercent": 55.00000000000001
+  },
+  "hubot-img-me-woman-laughing-alone-with-salad": {
+    "x": 71,
+    "y": 14,
+    "xPercent": 88.75,
     "yPercent": 70
   },
+  "hipchat-hubot-and-me": {
+    "x": 34,
+    "y": 4,
+    "xPercent": 42.5,
+    "yPercent": 20
+  },
+  "hey-mom-i-got-a-job": {
+    "x": 46,
+    "y": 11,
+    "xPercent": 57.49999999999999,
+    "yPercent": 55.00000000000001
+  },
   "hamachi-all-the-way": {
-    "x": 61,
-    "y": 13,
-    "xPercent": 76.25,
-    "yPercent": 65
+    "x": 33,
+    "y": 9,
+    "xPercent": 41.25,
+    "yPercent": 45
   },
   "grim": {
+    "x": 39,
+    "y": 4,
+    "xPercent": 48.75,
+    "yPercent": 20
+  },
+  "grim-multiprocessor-to-the-rescue": {
+    "x": 24,
+    "y": 9,
+    "xPercent": 30,
+    "yPercent": 45
+  },
+  "gravy-of-life": {
+    "x": 38,
+    "y": 6,
+    "xPercent": 47.5,
+    "yPercent": 30
+  },
+  "globe-gravity-feed-slicer": {
+    "x": 22,
+    "y": 11,
+    "xPercent": 27.500000000000004,
+    "yPercent": 55.00000000000001
+  },
+  "githubber": {
+    "x": 0,
+    "y": 10,
+    "xPercent": 0,
+    "yPercent": 50
+  },
+  "getting-hacked": {
+    "x": 28,
+    "y": 2,
+    "xPercent": 35,
+    "yPercent": 10
+  },
+  "forever-remember-me": {
+    "x": 56,
+    "y": 13,
+    "xPercent": 70,
+    "yPercent": 65
+  },
+  "focus": {
+    "x": 52,
+    "y": 17,
+    "xPercent": 65,
+    "yPercent": 85
+  },
+  "flock-the-good-and-the-bad": {
+    "x": 66,
+    "y": 7,
+    "xPercent": 82.5,
+    "yPercent": 35
+  },
+  "first-time-smoking-ribs": {
+    "x": 48,
+    "y": 6,
+    "xPercent": 60,
+    "yPercent": 30
+  },
+  "finish-weekend": {
+    "x": 63,
+    "y": 9,
+    "xPercent": 78.75,
+    "yPercent": 45
+  },
+  "feeling-the-love": {
+    "x": 40,
+    "y": 9,
+    "xPercent": 50,
+    "yPercent": 45
+  },
+  "family-ribs": {
+    "x": 44,
+    "y": 5,
+    "xPercent": 55.00000000000001,
+    "yPercent": 25
+  },
+  "evolution-of-a-twitter-client": {
+    "x": 8,
+    "y": 16,
+    "xPercent": 10,
+    "yPercent": 80
+  },
+  "ditch-your-crew": {
+    "x": 49,
+    "y": 4,
+    "xPercent": 61.25000000000001,
+    "yPercent": 20
+  },
+  "deliberate-iteration": {
+    "x": 1,
+    "y": 6,
+    "xPercent": 1.25,
+    "yPercent": 30
+  },
+  "configuring-pbx-in-a-flash-to-use-rhino-cards": {
+    "x": 8,
+    "y": 11,
+    "xPercent": 10,
+    "yPercent": 55.00000000000001
+  },
+  "computers-shutting-down-everywhere": {
+    "x": 33,
+    "y": 16,
+    "xPercent": 41.25,
+    "yPercent": 80
+  },
+  "compiling-executables-on-heroku": {
     "x": 67,
     "y": 7,
     "xPercent": 83.75,
     "yPercent": 35
   },
-  "grim-multiprocessor-to-the-rescue": {
-    "x": 52,
-    "y": 13,
-    "xPercent": 65,
-    "yPercent": 65
-  },
-  "gravy-of-life": {
-    "x": 66,
-    "y": 10,
-    "xPercent": 82.5,
-    "yPercent": 50
-  },
-  "globe-gravity-feed-slicer": {
-    "x": 50,
-    "y": 15,
-    "xPercent": 62.5,
-    "yPercent": 75
-  },
-  "githubber": {
-    "x": 28,
-    "y": 14,
-    "xPercent": 35,
-    "yPercent": 70
-  },
-  "getting-hacked": {
-    "x": 56,
-    "y": 5,
-    "xPercent": 70,
-    "yPercent": 25
-  },
-  "forever-remember-me": {
-    "x": 5,
-    "y": 17,
-    "xPercent": 6.25,
-    "yPercent": 85
-  },
-  "focus": {
-    "x": 0,
-    "y": 1,
-    "xPercent": 0,
-    "yPercent": 5
-  },
-  "flock-the-good-and-the-bad": {
-    "x": 15,
-    "y": 11,
-    "xPercent": 18.75,
-    "yPercent": 55.00000000000001
-  },
-  "first-time-smoking-ribs": {
-    "x": 76,
-    "y": 10,
-    "xPercent": 95,
-    "yPercent": 50
-  },
-  "finish-weekend": {
-    "x": 11,
-    "y": 13,
-    "xPercent": 13.750000000000002,
-    "yPercent": 65
-  },
-  "feeling-the-love": {
-    "x": 68,
-    "y": 13,
-    "xPercent": 85,
-    "yPercent": 65
-  },
-  "family-ribs": {
-    "x": 72,
-    "y": 9,
-    "xPercent": 90,
-    "yPercent": 45
-  },
-  "evolution-of-a-twitter-client": {
-    "x": 36,
-    "y": 0,
-    "xPercent": 45,
-    "yPercent": 0
-  },
-  "ditch-your-crew": {
-    "x": 77,
-    "y": 8,
-    "xPercent": 96.25,
-    "yPercent": 40
-  },
-  "deliberate-iteration": {
-    "x": 29,
-    "y": 10,
-    "xPercent": 36.25,
-    "yPercent": 50
-  },
-  "configuring-pbx-in-a-flash-to-use-rhino-cards": {
-    "x": 37,
-    "y": 14,
-    "xPercent": 46.25,
-    "yPercent": 70
-  },
-  "computers-shutting-down-everywhere": {
-    "x": 61,
-    "y": 19,
-    "xPercent": 76.25,
-    "yPercent": 95
-  },
-  "compiling-executables-on-heroku": {
-    "x": 15,
-    "y": 11,
-    "xPercent": 18.75,
-    "yPercent": 55.00000000000001
-  },
   "clearcheckbookcom-a-step-in-the-right-direction": {
-    "x": 55,
-    "y": 18,
-    "xPercent": 68.75,
-    "yPercent": 90
+    "x": 27,
+    "y": 14,
+    "xPercent": 33.75,
+    "yPercent": 70
   },
   "capistrano-recipe-and-howto-for-rails-mongrel-and-nginx": {
-    "x": 66,
-    "y": 11,
-    "xPercent": 82.5,
-    "yPercent": 55.00000000000001
-  },
-  "by-the-grace-of-god": {
-    "x": 46,
-    "y": 9,
-    "xPercent": 57.49999999999999,
-    "yPercent": 45
-  },
-  "business-with-pleasure": {
-    "x": 55,
-    "y": 8,
-    "xPercent": 68.75,
-    "yPercent": 40
-  },
-  "buffalo-technology-please-redeem-yourself": {
-    "x": 69,
-    "y": 2,
-    "xPercent": 86.25,
-    "yPercent": 10
-  },
-  "best-phone-system-for-a-small-business-part-1": {
-    "x": 22,
-    "y": 13,
-    "xPercent": 27.500000000000004,
-    "yPercent": 65
-  },
-  "being-acquired-doesnt-have-to-suck": {
-    "x": 11,
-    "y": 3,
-    "xPercent": 13.750000000000002,
-    "yPercent": 15
-  },
-  "barcampgr": {
-    "x": 61,
-    "y": 11,
-    "xPercent": 76.25,
-    "yPercent": 55.00000000000001
-  },
-  "att-is-not-my-friend": {
-    "x": 22,
-    "y": 4,
-    "xPercent": 27.500000000000004,
-    "yPercent": 20
-  },
-  "assimilating-contributed-code": {
-    "x": 36,
-    "y": 10,
-    "xPercent": 45,
-    "yPercent": 50
-  },
-  "another-year": {
-    "x": 33,
-    "y": 8,
-    "xPercent": 41.25,
-    "yPercent": 40
-  },
-  "a-webdevs-notes-on-native-androidiphone-app-development": {
-    "x": 14,
-    "y": 6,
-    "xPercent": 17.5,
-    "yPercent": 30
-  },
-  "a-waiter-once-taught-me": {
-    "x": 79,
-    "y": 2,
-    "xPercent": 98.75,
-    "yPercent": 10
-  },
-  "a-little-story-called-fun": {
-    "x": 6,
-    "y": 8,
-    "xPercent": 7.5,
-    "yPercent": 40
-  },
-  "a-light-at-the-end-of-the-tunnel": {
-    "x": 3,
+    "x": 38,
     "y": 7,
-    "xPercent": 3.75,
+    "xPercent": 47.5,
     "yPercent": 35
   },
-  "46-monument-avenue": {
-    "x": 64,
+  "by-the-grace-of-god": {
+    "x": 18,
+    "y": 5,
+    "xPercent": 22.5,
+    "yPercent": 25
+  },
+  "business-with-pleasure": {
+    "x": 27,
+    "y": 4,
+    "xPercent": 33.75,
+    "yPercent": 20
+  },
+  "buffalo-technology-please-redeem-yourself": {
+    "x": 41,
+    "y": 18,
+    "xPercent": 51.24999999999999,
+    "yPercent": 90
+  },
+  "best-phone-system-for-a-small-business-part-1": {
+    "x": 74,
+    "y": 9,
+    "xPercent": 92.5,
+    "yPercent": 45
+  },
+  "being-acquired-doesnt-have-to-suck": {
+    "x": 63,
+    "y": 19,
+    "xPercent": 78.75,
+    "yPercent": 95
+  },
+  "barcampgr": {
+    "x": 32,
+    "y": 7,
+    "xPercent": 40,
+    "yPercent": 35
+  },
+  "att-is-not-my-friend": {
+    "x": 74,
+    "y": 0,
+    "xPercent": 92.5,
+    "yPercent": 0
+  },
+  "assimilating-contributed-code": {
+    "x": 8,
     "y": 6,
-    "xPercent": 80,
+    "xPercent": 10,
     "yPercent": 30
+  },
+  "another-year": {
+    "x": 5,
+    "y": 4,
+    "xPercent": 6.25,
+    "yPercent": 20
+  },
+  "a-webdevs-notes-on-native-androidiphone-app-development": {
+    "x": 66,
+    "y": 2,
+    "xPercent": 82.5,
+    "yPercent": 10
+  },
+  "a-waiter-once-taught-me": {
+    "x": 51,
+    "y": 18,
+    "xPercent": 63.74999999999999,
+    "yPercent": 90
+  },
+  "a-little-story-called-fun": {
+    "x": 58,
+    "y": 4,
+    "xPercent": 72.5,
+    "yPercent": 20
+  },
+  "a-light-at-the-end-of-the-tunnel": {
+    "x": 54,
+    "y": 3,
+    "xPercent": 67.5,
+    "yPercent": 15
+  },
+  "46-monument-avenue": {
+    "x": 36,
+    "y": 2,
+    "xPercent": 45,
+    "yPercent": 10
   }
 }
