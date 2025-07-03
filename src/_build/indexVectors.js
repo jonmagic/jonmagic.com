@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const matter = require('gray-matter');
 const { createHash } = require('node:crypto');
 
 // Import transformers dynamically since it's an ES module
@@ -9,48 +8,13 @@ let pipeline;
 const MODEL_NAME = 'Xenova/all-MiniLM-L6-v2'; // Use the same model as client-side
 
 /**
- * Check if vector indexing is needed by comparing file modification times
- * @param {string} inputDir - Folder containing .md files
- * @param {string} vectorsPath - Path to vectors.json file
- * @returns {boolean} True if indexing is needed
- */
-function isIndexingNeeded(inputDir, vectorsPath) {
-  if (!fs.existsSync(vectorsPath)) {
-    return true; // No vectors file exists
-  }
-
-  const vectorsStats = fs.statSync(vectorsPath);
-  const vectorsMtime = vectorsStats.mtime.getTime();
-
-  // Check if any markdown file is newer than vectors.json
-  const files = fs.readdirSync(inputDir).filter(f => f.endsWith('.md'));
-
-  for (const file of files) {
-    const filePath = path.join(inputDir, file);
-    const fileStats = fs.statSync(filePath);
-    if (fileStats.mtime.getTime() > vectorsMtime) {
-      return true; // Found a newer file
-    }
-  }
-
-  return false; // All files are older than vectors.json
-}
-
-/**
  * Index all markdown files in a folder and generate vectors.json.
  * Skips unchanged files using MD5 hash comparison.
  *
  * @param {string} inputDir - Folder containing .md files (e.g. './src/posts')
  * @param {string} vectorsPath - Output file (e.g. './src/_data/vectors.json')
- * @param {boolean} force - Force indexing even if not needed
  */
-async function indexVectors(inputDir, vectorsPath, force = false) {
-  // Check if indexing is actually needed
-  if (!force && !isIndexingNeeded(inputDir, vectorsPath)) {
-    console.log('📍 Vector data is up to date, skipping indexing');
-    return;
-  }
-
+async function indexVectors(inputDir, vectorsPath) {
   // Dynamic import for ES module
   if (!pipeline) {
     const transformers = await import('@xenova/transformers');
@@ -84,22 +48,23 @@ async function indexVectors(inputDir, vectorsPath, force = false) {
 
   for (const file of files) {
     const full = path.join(inputDir, file);
+    const relativePath = '/' + path.relative(path.join(process.cwd(), 'src'), full);
     const raw = fs.readFileSync(full, 'utf-8');
-    const { data, content } = matter(raw);
+    const hash = createHash('md5').update(raw).digest('hex');
 
-    const title = data.title || '';
-    const slug = data.slug || path.basename(file, '.md');
-    const textToEmbed = title + '\n\n' + content;
-    const hash = createHash('md5').update(textToEmbed).digest('hex');
-
-    const prev = existing[full];
-    if (prev && prev.hash === hash) {
-      updated[full] = prev;
+    const prev = existing[relativePath];
+    if (prev && prev.metadata && prev.metadata.hash === hash) {
+      updated[relativePath] = prev;
       skippedCount++;
       continue;
     }
 
     console.log(`  📝 Embedding: ${file}`);
+
+    // Use filename (without extension) as title and slug
+    const slug = path.basename(file, '.md');
+    const title = slug;
+    const textToEmbed = raw;
 
     try {
       const tensor = await extractor([textToEmbed], {
@@ -107,14 +72,12 @@ async function indexVectors(inputDir, vectorsPath, force = false) {
         normalize: true
       });
 
-      updated[full] = {
+      updated[relativePath] = {
         vector: Array.from(tensor.data),
         metadata: {
-          lastIndexed: Date.now(),
           title,
           slug,
           hash,
-          ...data,
           url: `/posts/${slug}/`
         }
       };
@@ -123,7 +86,7 @@ async function indexVectors(inputDir, vectorsPath, force = false) {
       console.error(`❌ Error embedding ${file}:`, error.message);
       // Keep existing embedding if available
       if (prev) {
-        updated[full] = prev;
+        updated[relativePath] = prev;
       }
     }
   }
@@ -134,15 +97,28 @@ async function indexVectors(inputDir, vectorsPath, force = false) {
     fs.mkdirSync(outputDir, { recursive: true });
   }
 
-  fs.writeFileSync(vectorsPath, JSON.stringify(updated, null, 2));
+  const newContent = JSON.stringify(updated, null, 2);
+  let shouldWrite = true;
+
+  if (fs.existsSync(vectorsPath)) {
+    const oldContent = fs.readFileSync(vectorsPath, 'utf-8');
+    const oldHash = createHash('md5').update(oldContent).digest('hex');
+    const newHash = createHash('md5').update(newContent).digest('hex');
+    shouldWrite = oldHash !== newHash;
+  }
+
+  if (shouldWrite) {
+    fs.writeFileSync(vectorsPath, newContent);
+    console.log('💾 vectors.json updated.');
+  } else {
+    console.log('🟢 vectors.json unchanged, not rewritten.');
+  }
 
   console.log(`✅ Vector indexing complete:`);
-  console.log(`   📊 ${changedCount} files embedded`);
-  console.log(`   ⏭️  ${skippedCount} files skipped (unchanged)`);
   console.log(`   💾 Total vectors: ${Object.keys(updated).length}`);
   console.log(`   📁 Output: ${vectorsPath}`);
 
   return updated;
 }
 
-module.exports = { indexVectors, isIndexingNeeded };
+module.exports = { indexVectors };

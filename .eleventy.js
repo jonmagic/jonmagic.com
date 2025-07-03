@@ -189,33 +189,29 @@ module.exports = function(eleventyConfig) {
     console.log(`Wrote ${avatars.length} avatars to avatars.json`);
 
     // Generate postCropData.json
-    generatePostCropData();    // Generate vectors.json for semantic search (only if needed)
-    try {
-      const { indexVectors, isIndexingNeeded } = require('./src/_build/indexVectors.js');
-      const postsDir = path.join(__dirname, 'src/posts');
-      const vectorsPath = path.join(__dirname, 'src/_data/vectors.json');
-
-      // Only run indexing if actually needed to prevent infinite loops
-      if (isIndexingNeeded(postsDir, vectorsPath)) {
-        console.log('🔍 Starting vector indexing for semantic search...');
-        await indexVectors(postsDir, vectorsPath);
-      } else {
-        console.log('📍 Vector search data is up to date');
-      }
-    } catch (error) {
-      console.error('❌ Vector indexing failed:', error.message);
-      console.warn('Continuing build without semantic search vectors');
-    }
+    generatePostCropData();
   });
 
   // Add .nojekyll, CNAME, and vectors.json files after build
-  eleventyConfig.on('afterBuild', () => {
+  eleventyConfig.on('afterBuild', async () => {
     fs.writeFileSync('_site/.nojekyll', '');
     fs.writeFileSync('_site/CNAME', 'jonmagic.com');
 
     // Copy vectors.json to _site if it exists
     const vectorsSource = path.join(__dirname, 'src/_data/vectors.json');
     const vectorsTarget = path.join(__dirname, '_site/vectors.json');
+
+    // Generate vectors.json for semantic search (only if needed)
+    try {
+      const { indexVectors } = require('./src/_build/indexVectors.js');
+      const postsDir = path.join(__dirname, 'src/posts');
+      const vectorsPath = path.join(__dirname, 'src/_data/vectors.json');
+
+      await indexVectors(postsDir, vectorsPath);
+    } catch (error) {
+      console.error('❌ Vector indexing failed:', error.message);
+      console.warn('Continuing build without semantic search vectors');
+    }
 
     if (fs.existsSync(vectorsSource)) {
       try {
