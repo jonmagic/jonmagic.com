@@ -103,3 +103,9 @@ You’re not limited to exact words, vector search will match *related* posts.
 Next I'd like to see if client-side [Retrieval Augmented Generation (RAG)](https://en.wikipedia.org/wiki/Retrieval-augmented_generation) is possible.  That is, not only find relevant posts, but also pass their text into a client-side LLM that can summarize or answer questions *about my own blog*, entirely on your device.
 
 If you're interested in following along, [subscribe to the feed](/feed.xml) or check out the [search page](/search/).
+
+## Feedback
+
+Feedback is welcome: [discussions/6](https://github.com/jonmagic/jonmagic.com/discussions/6)
+
+Thank you for your time :pray:
