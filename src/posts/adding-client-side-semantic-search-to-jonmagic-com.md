@@ -5,6 +5,7 @@ tags:
   - post
 description: >-
   How to add client-side semantic search to your static website, no server needed.
+featured: 1
 ---
 
 I recently rebuilt jonmagic.com from the ground up with help from [GitHub Copilot](https://github.com/features/copilot), transforming it from a boring [about page](/about/) into a real blog and migrating over 100 posts from my old blog. After adding this much content, I wanted a way to make it searchable, but using [eleventy](https://www.11ty.dev) on [GitHub Pages](https://pages.github.com/) meant there was no backend to rely on.

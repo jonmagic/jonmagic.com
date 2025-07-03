@@ -7,6 +7,7 @@ tags:
 description: >-
   My thoughts on the future of coding careers in the age of AI, and why I believe
   that human creativity and ingenuity will always be in demand.
+featured: 2
 ---
 
 A friend of mine, bright, driven, and relatively new to programming, asked me a heavy question the other day. “Did I make a mistake? Did I choose the right career?”
