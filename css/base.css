@@ -605,6 +605,13 @@ img.avatar {
   align-items: flex-end;
 }
 
+/* Featured posts list */
+.featured-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 /* Social Links
    ========================================================================== */
 .social-links {

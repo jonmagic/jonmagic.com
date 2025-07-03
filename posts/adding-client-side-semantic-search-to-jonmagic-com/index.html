@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script defer data-domain="jonmagic.com" src="https://plausible.io/js/script.outbound-links.js"></script>
+<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adding client-side semantic search to jonmagic.com</title>
+
+
+<meta property="og:title" content="Adding client-side semantic search to jonmagic.com">
+<meta property="og:description" content="How to add client-side semantic search to your static website, no server needed.">
+<meta property="og:url" content="https://jonmagic.com/posts/adding-client-side-semantic-search-to-jonmagic-com/">
+<meta property="og:site_name" content="jonmagic.com">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://jonmagic.com/images/avatars/jonmagic-2023-01-18.webp">
+<meta property="og:locale" content="en_US">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Adding client-side semantic search to jonmagic.com">
+<meta name="twitter:description" content="How to add client-side semantic search to your static website, no server needed.">
+
+
+<meta name="description" content="How to add client-side semantic search to your static website, no server needed.">
+<meta name="author" content="Jonathan Hoyt">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/search.css">
+<link rel="alternate" type="application/atom+xml" title="JonMagic.com RSS Feed" href="/feed.xml">
+
+</head>
+
+<body class="">
+  
+  <nav class="site-nav">
+  <div class="nav-container">
+    <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/posts/">Posts</a></li><li><a href="/projects/">Projects</a></li><li><a href="/search/">Search</a></li><li><a href="/about/">About</a></li></ul>
+    <div class="social-links">
+      <a href="https://github.com/jonmagic" title="GitHub Profile">
+        <img src="/images/github.png" alt="GitHub Profile" width="24" height="24" class="github-icon">
+      </a>
+      <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile">
+        <img src="/images/linkedin.png" alt="LinkedIn Profile" width="24" height="24" class="linkedin-icon">
+      </a>
+      <a href="/feed.xml" title="RSS Feed">
+        <img src="/images/rss.png" alt="RSS Feed" width="24" height="24" class="rss-icon">
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <div class="page layout-main">
+    <main class="content">
+      
+      <div class="post-date-container">
+        <span id="post-date-typing" class="post-date-typing" data-date="2025-07-03"></span>
+      </div>
+      
+      <h1 class="site-title">Adding client-side semantic search to jonmagic.com</h1>
+      <p>I recently rebuilt <a href="http://jonmagic.com">jonmagic.com</a> from the ground up with help from <a href="https://github.com/features/copilot">GitHub Copilot</a>, transforming it from a boring <a href="/about/">about page</a> into a real blog and migrating over 100 posts from my old blog. After adding this much content, I wanted a way to make it searchable, but using <a href="https://www.11ty.dev">eleventy</a> on <a href="https://pages.github.com/">GitHub Pages</a> meant there was no backend to rely on.</p>
+<p>Most of my projects these days involve building AI-powered features, so I started to wonder if it was possible to add semantic search that runs entirely in the browser, even on a static site? Turns out <a href="https://github.com/jonmagic/jonmagic.com/pull/5">it is</a> and with a little help from ChatGPT and Copilot I had it up and running in an hour.</p>
+<figure>
+  <video controls width="640" poster="/images/search-demo.png">
+    <source src="/images/posts/adding-client-side-semantic-search-to-jonmagic-com/search-demo.mp4" type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+  </video>
+  <figcaption>
+    <strong>Video Demo:</strong> Semantic search returning posts that match concepts, not just keywords.
+  </figcaption>
+</figure>
+<p>The entire semantic search (including the model) runs on your device, inside the browser, using precomputed post embeddings. No server required!</p>
+<p>Try it yourself: <a href="/search/">Search jonmagic.com</a></p>
+<h2>How It Works</h2>
+<p><strong>1. Embedding posts during build.</strong></p>
+<p>At build time, I use <a href="https://xenova.github.io/transformers.js/">@xenova/transformers</a> to generate a vector embedding for each post. This happens in the build script:</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// src/_build/indexVectors.js (excerpt)</span>
+<span class="token keyword">const</span> tensor <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">extractor</span><span class="token punctuation">(</span><span class="token punctuation">[</span>textToEmbed<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">pooling</span><span class="token operator">:</span> <span class="token string">'mean'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">normalize</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+updated<span class="token punctuation">[</span>full<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">vector</span><span class="token operator">:</span> Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>tensor<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">metadata</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p>These go into a static <code>vectors.json</code> file.</p>
+<p><strong>2. Embedding queries in the browser.</strong></p>
+<p>On the search page, as you type, your query text is embedded <strong>client-side</strong> using the <em>same</em> model (MiniLM-L6-v2). That means no server round-trips, and your queries are never sent anywhere.</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// src/js/embedQuery.js (excerpt)</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> pipeline <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2/dist/transformers.min.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> extractor <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">pipeline</span><span class="token punctuation">(</span><span class="token string">'feature-extraction'</span><span class="token punctuation">,</span> <span class="token string">'Xenova/all-MiniLM-L6-v2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">embedQuery</span><span class="token punctuation">(</span><span class="token parameter">query</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> tensor <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">extractor</span><span class="token punctuation">(</span><span class="token punctuation">[</span>query<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">pooling</span><span class="token operator">:</span> <span class="token string">'mean'</span><span class="token punctuation">,</span> <span class="token literal-property property">normalize</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>tensor<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p><strong>3. Finding the best matches.</strong></p>
+<p>The browser calculates cosine similarity between your query embedding and every post embedding. The top matches are shown, sorted by score.</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// src/js/search.js (excerpt)</span>
+<span class="token keyword">function</span> <span class="token function">cosineSim</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> dot <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> normA <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> normB <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> a<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    dot <span class="token operator">+=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">*</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    normA <span class="token operator">+=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">*</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    normB <span class="token operator">+=</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">*</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> dot <span class="token operator">/</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">sqrt</span><span class="token punctuation">(</span>normA<span class="token punctuation">)</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">sqrt</span><span class="token punctuation">(</span>normB<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">topK</span><span class="token punctuation">(</span><span class="token parameter">queryVec<span class="token punctuation">,</span> vectorData<span class="token punctuation">,</span> <span class="token constant">K</span> <span class="token operator">=</span> <span class="token number">10</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span>vectorData<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">[</span>filePath<span class="token punctuation">,</span> item<span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token function">cosineSim</span><span class="token punctuation">(</span>queryVec<span class="token punctuation">,</span> item<span class="token punctuation">.</span>vector<span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">metadata</span><span class="token operator">:</span> item<span class="token punctuation">.</span>metadata
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=></span> b<span class="token punctuation">.</span>score <span class="token operator">-</span> a<span class="token punctuation">.</span>score<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token constant">K</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h2>What You Can Search For</h2>
+<ul>
+<li><strong>Topics:</strong> e.g., <code>&quot;project management&quot;</code>, <code>&quot;learning new skills&quot;</code></li>
+<li><strong>Questions:</strong> e.g., <code>&quot;advice for new developers&quot;</code></li>
+<li><strong>Fuzzy phrases:</strong> e.g., <code>&quot;why did I move to git?&quot;</code> or <code>&quot;being acquired at work&quot;</code></li>
+</ul>
+<p>You’re not limited to exact words, vector search will match <em>related</em> posts.</p>
+<h2>What’s Next?</h2>
+<p>Next I’d like to see if client-side <a href="https://en.wikipedia.org/wiki/Retrieval-augmented_generation">Retrieval Augmented Generation (RAG)</a> is possible.  That is, not only find relevant posts, but also pass their text into a client-side LLM that can summarize or answer questions <em>about my own blog</em>, entirely on your device.</p>
+<p>If you’re interested in following along, <a href="/feed.xml">subscribe to the feed</a> or check out the <a href="/search/">search page</a>.</p>
+
+    </main>
+  </div>
+  
+  <div class="page">
+    <footer>
+  © Jonathan Hoyt <span id="year"></span> — built <s>by hand</s> with an LLM
+</footer>
+
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>
