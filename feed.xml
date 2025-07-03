@@ -85,6 +85,9 @@ updated&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;full&lt;spa
 &lt;h2&gt;What’s Next?&lt;/h2&gt;
 &lt;p&gt;Next I’d like to see if client-side &lt;a href=&quot;https://en.wikipedia.org/wiki/Retrieval-augmented_generation&quot;&gt;Retrieval Augmented Generation (RAG)&lt;/a&gt; is possible.  That is, not only find relevant posts, but also pass their text into a client-side LLM that can summarize or answer questions &lt;em&gt;about my own blog&lt;/em&gt;, entirely on your device.&lt;/p&gt;
 &lt;p&gt;If you’re interested in following along, &lt;a href=&quot;https://jonmagic.com/feed.xml&quot;&gt;subscribe to the feed&lt;/a&gt; or check out the &lt;a href=&quot;https://jonmagic.com/search/&quot;&gt;search page&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Feedback&lt;/h2&gt;
+&lt;p&gt;Feedback is welcome: &lt;a href=&quot;https://github.com/jonmagic/jonmagic.com/discussions/6&quot;&gt;discussions/6&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Thank you for your time 🙏&lt;/p&gt;
 </content>
   </entry>
   
