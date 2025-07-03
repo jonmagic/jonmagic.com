@@ -5,15 +5,29 @@ title: jonmagic.com
 
 <div class="home-layout">
   <main class="main-content">
-    {# Show the most recent post in full #}
-    {% set latest = collections.posts | reverse | first %}
-    {% if latest %}
-      <article>
-        <h2><a href="{{ latest.url }}">{{ latest.data.title }}</a></h2>
-        {{ latest.templateContent | safe }}
-      </article>
-    {% else %}
-      <p>No posts yet.</p>
-    {% endif %}
+    {# Featured posts list #}
+    <section class="featured-posts">
+      <h2>Featured Posts</h2>
+      {% set featured = collections.posts | featured %}
+      {% if featured and featured.length > 0 %}
+        <ul class="featured-list">
+          {% for post in featured %}
+            <li class="featured-item">
+              <div class="featured-meta">
+                {% if post.data.avatar %}
+                  <img src="{{ post.data.avatar }}" alt="Avatar for {{ post.data.title }}" class="featured-avatar" loading="lazy" width="48" height="48">
+                {% endif %}
+                <div class="featured-info">
+                  <h3 class="featured-title"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+                  <p class="featured-desc">{{ post.data.description }}</p>
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>No featured posts yet.</p>
+      {% endif %}
+    </section>
   </main>
 </div>

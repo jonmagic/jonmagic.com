@@ -171,6 +171,18 @@ module.exports = function(eleventyConfig) {
     return collectionApi.getFilteredByGlob('src/projects/*.md');
   });
 
+  // Add a custom Nunjucks filter to filter and sort featured posts
+  eleventyConfig.addNunjucksFilter('featured', function(posts) {
+    if (!Array.isArray(posts)) return [];
+    // Filter posts with a numeric 'featured' property
+    const filtered = posts.filter((post) => {
+      const val = post?.data?.featured;
+      return typeof val === 'number' && !isNaN(val);
+    });
+    // Sort ascending by 'featured' value
+    return filtered.sort((a, b) => a.data.featured - b.data.featured);
+  });
+
   // Generate avatars.json, postCropData.json, and vectors.json before build
   eleventyConfig.on('beforeBuild', async () => {
     const path = require('path');
