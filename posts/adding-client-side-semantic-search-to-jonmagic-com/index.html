@@ -74,6 +74,7 @@
 </figure>
 <p>The entire semantic search (including the model) runs on your device, inside the browser, using precomputed post embeddings. No server required!</p>
 <p>Try it yourself: <a href="/search/">Search jonmagic.com</a></p>
+<p>Later I found out about <a href="https://pagefind.app/">https://pagefind.app/</a> and did briefly consider it but afaict it doesn’t support semantic search and my site only has a little over 100 blog posts so I’m very happy with the solution I landed on.</p>
 <h2>How It Works</h2>
 <p><strong>1. Embedding posts during build.</strong></p>
 <p>At build time, I use <a href="https://xenova.github.io/transformers.js/">@xenova/transformers</a> to generate a vector embedding for each post. This happens in the build script:</p>
