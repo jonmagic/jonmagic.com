@@ -26,6 +26,8 @@ The entire semantic search (including the model) runs on your device, inside the
 
 Try it yourself: [Search jonmagic.com](/search/)
 
+Later I found out about [https://pagefind.app/](https://pagefind.app/) and did briefly consider it but afaict it doesn't support semantic search and my site only has a little over 100 blog posts so I'm very happy with the solution I landed on.
+
 ## How It Works
 
 **1. Embedding posts during build.**
