@@ -14,7 +14,7 @@ My career as a professional software developer started nearly two decades ago, t
 
 ![why the lucky stiff holding a certificate of nonconformity](/images/posts/farewell-railsconf-and-thank-you-for-everything/why-the-lucky-stiff.webp)
 
-That playful moment, community, shared curiosity, set the tone for everything that followed.
+That playful moment, the community, and the shared curiosity, set the tone for everything that followed.
 
 ## From Meetup to Speaker Deck
 
@@ -24,7 +24,7 @@ Shortly after RailsConf, I attended a Ruby meetup at Notre Dame and met [John Nu
 
 In December 2010 I became Ordered List’s first full‑time developer, joining Steve and John, and later [Brandon Keepers](https://opensoul.org/) and [Matt Graham](https://madebygraham.com/). We kept building their first product HarmonyApp, Speaker Deck, and launched Gaug.es, a Rails‑based analytics tool because we disliked using Google Analytics so much, all while consulting on larger projects like Words With Friends to pay the bills.
 
-Through meetups and conferences our team met the GitHub cofounders and many employees like [Tim Clem](https://adaptivepatchwork.com/) and [Zach Holman](https://zachholman.com/) and in the fall of 2011 one of the cofounders reached out to John and Steve to see if they were interested in joining GitHub. What an amazing time and opportunity this was to be GitHub's first acquisition/acquire.
+Through meetups and conferences our team met the GitHub cofounders and employees like [Tim Clem](https://adaptivepatchwork.com/) and [Zach Holman](https://zachholman.com/) and in the fall of 2011 one of the cofounders reached out to John and Steve to see if we were interested in joining GitHub. What an amazing time and opportunity this was to be GitHub's first acquisition/acquire.
 
 ![OrderedList joins GitHub](/images/posts/farewell-railsconf-and-thank-you-for-everything/orderedlist-joins-github.webp)
 
@@ -34,21 +34,21 @@ Through meetups and conferences our team met the GitHub cofounders and many empl
 
 ## A GitHub Career
 
-After our acquihire in late 2011, I worked my way through nearly every department building our support software (a Rails app called Halp), then integrating our business software with the GitHub Rails monolith, then building tools for our customers to migrate between GitHub on-prem instances and our hosted instance, then building 2fa enforcement features for our business customers, before finally landing in the Security department where I've been for nearly 9 years now.
+After our acquihire in late 2011, I worked my way through nearly every department at GitHub building our support software (a Rails app called Halp), then integrating our business software with the GitHub monolith, then building tools for our customers to migrate between GitHub on-prem instances and our hosted instance, then building 2fa enforcement features for our business customers, before finally landing in the Security department where I've been for nearly 9 years now.
 
-In Security I've built multiple Rails applications but only one of them is still in heavy use. Funny enough it's a stream processing application where the Rails MVC has been swapped out with Consumer, Enrichment, and Detection to handle the majority of our automated abuse detection and remediation flows processing billions of events per day.
+In Security I've built multiple Rails applications but only one of them is still in heavy use. Funny enough it's a stream processing application where the Rails MVC has been swapped out with Consumer, Enrichment, and Detection modules to handle the majority of our automated abuse detection and remediation flows processing billions of events per day.
 
 I still work on the GitHub Rails monolith from time to time, but new Rails apps are rare for me now, and I miss it. There’s nothing like spinning up a Rails app from scratch and going from zero to usable in minutes. Rails made it simple to focus on the business problem and get something up and running quickly with the tradeoff that [scaling later may come with some headaches](https://github.com/jonmagic/arca).
 
 ## RailsConf 2025: Final Ride, Fond Farewell
 
-This week in Philadelphia is the **last RailsConf**, concluding nearly 20 years of tradition. Ruby Central is [shifting focus to RubyConf and stewardship of RubyGems and Bundler](https://rubycentral.org/news/announcing-railsconf-2025-and-a-new-chapter-for-ruby-central-events/), while The Rails Foundation steps into Rails stewardship via [Rails World](https://rubyonrails.org/world/), which [sold out Toronto in seconds](https://www.linkedin.com/posts/david-heinemeier-hansson-374b18221_the-first-rails-world-sold-out-in-45-minutes-activity-7328326453291307008--DPg/).
+This week in Philadelphia they are holding the **last RailsConf**, concluding nearly 20 years of tradition. Ruby Central is [shifting focus to RubyConf and stewardship of RubyGems and Bundler](https://rubycentral.org/news/announcing-railsconf-2025-and-a-new-chapter-for-ruby-central-events/), while The Rails Foundation steps into Rails stewardship via [Rails World](https://rubyonrails.org/world/), which [sold out Toronto in seconds](https://www.linkedin.com/posts/david-heinemeier-hansson-374b18221_the-first-rails-world-sold-out-in-45-minutes-activity-7328326453291307008--DPg/).
 
 **DHH**, creator of Rails, [shares the sentiment](https://world.hey.com/dhh/the-last-railsconf-c6188593):
 
 > "Few numbers exemplified the early growth… we bootstrapped something from nothing, turned it into an epoch‑defining event… RailsConf 2025 will be the last RailsConf… I raise my glass to the final RailsConf."
 
-While I haven’t been deeply involved in the Rails community recently, as I prepared this post I learned how Rails World and RubyConf are shaping Rails’ future, and I'm hopeful for the aspiring or seasoned software developers that find Rails and it changes their life like it did mine.
+While I haven’t been deeply involved in the Rails community recently, as I prepared this post I learned how Rails World and RubyConf are shaping Rails’ future, and I'm hopeful for the aspiring or seasoned software developer that finds Rails and it changes their life like it did mine.
 
 ## A Thankful Reflection
 
