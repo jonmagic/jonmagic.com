@@ -22,7 +22,7 @@ Shortly after RailsConf, I attended a Ruby meetup at Notre Dame and met [John Nu
 
 ## Joining OrderedList & Building a Business on Rails
 
-In December 2010 I became Ordered List’s first full‑time developer, joining Steve and John, and later [Brandon Keepers](https://opensoul.org/) and [Matt Graham](https://madebygraham.com/). We kept building their first product HarmonyApp, Speaker Deck, and launched Gaug.es, a Rails‑based analytics tool because we disliked using Google Analytics so much, all while consulting on larger projects like Words With Friends to pay the bills.
+In December 2010 I became OrderedList’s first full‑time developer, joining Steve and John, and later [Brandon Keepers](https://opensoul.org/) and [Matt Graham](https://madebygraham.com/). We kept building their first product HarmonyApp, Speaker Deck, and launched Gaug.es, a Rails‑based analytics tool because we disliked using Google Analytics so much, all while consulting on larger projects like Words With Friends to pay the bills.
 
 Through meetups and conferences our team met the GitHub cofounders and employees like [Tim Clem](https://adaptivepatchwork.com/) and [Zach Holman](https://zachholman.com/) and in the fall of 2011 one of the cofounders reached out to John and Steve to see if we were interested in joining GitHub. What an amazing time and opportunity this was to be GitHub's first acquisition/acquire.
 
