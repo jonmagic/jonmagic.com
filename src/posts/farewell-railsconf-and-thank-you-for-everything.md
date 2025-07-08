@@ -10,7 +10,7 @@ description: >-
 featured: 1
 ---
 
-**2006, Chicago.** Nearly everyone at the first RailsConf clacked away on a MacBook, except about fifty rebels. My friend Christian Metts, [who had introduced me to Rails](https://jonmagic.com/posts/ten-years-a-software-engineer/), and I printed *Certificates of Non-Conformity*, forged Bill Gates’ and Linus Torvalds’ signatures, and handed them to the non-MacBook crowd [while Christian snapped photos of each proud hold-out](https://www.flickr.com/photos/mintchaos/albums/72157594176520552/), including the elusive *why the lucky stiff*.
+**2006, Chicago.** Nearly everyone at the first RailsConf tapped away on a MacBook, except about fifty rebels. My friend Christian Metts, [who had introduced me to Rails](https://jonmagic.com/posts/ten-years-a-software-engineer/), and I printed *Certificates of Non-Conformity*, forged Bill Gates’ and Linus Torvalds’ signatures, and handed them to the non-MacBook crowd [while Christian snapped photos of each proud hold-out](https://www.flickr.com/photos/mintchaos/albums/72157594176520552/), including the elusive *why the lucky stiff*.
 
 ![why the lucky stiff holding a certificate of nonconformity](/images/posts/farewell-railsconf-and-thank-you-for-everything/why-the-lucky-stiff.webp)
 
@@ -20,7 +20,7 @@ That playful moment, the community, and the shared curiosity, set the tone for e
 
 Like many, [using Rails forced me to learn Ruby](https://jonmagic.com/posts/ten-years-a-software-engineer/), and that first conference pushed me deeper. Soon after, I drove to a Ruby meetup at Notre Dame and met [John Nunemaker](https://johnnunemaker.com) and [Steve Smith](https://orderedlist.com). One afternoon over beers at Fiddler’s Hearth in South Bend, they vented about SlideShare’s terrible slide uploads. I opened my terminal, installed ImageMagick, and hacked together a PDF-to-image converter on the spot. That bar-top prototype grew into [Speaker Deck](https://speakerdeck.com) and my first **RubyGem**, [Grim](https://jonmagic.com/posts/grim/).
 
-## Joining OrderedList & Building a Business on Rails
+## Building Businesses on Rails
 
 In December 2010 I became OrderedList’s first full-time developer, joining Steve, John, and later [Brandon Keepers](https://opensoul.org/) and [Matt Graham](https://madebygraham.com/). We iterated on their first product Harmony, launched Speaker Deck to the public, and shipped Gaug.es, a Rails-based analytics tool born from our dislike of Google Analytics. Consulting gigs on products like *Words With Friends* paid the bills.
 
@@ -31,6 +31,9 @@ Through meetups and conferences our team met the GitHub co-founders and early em
 ## A GitHub Career
 
 After our acquihire in late 2011, I worked my way through nearly every department at GitHub building our support software (a Rails app called Halp), integrating our business systems with the GitHub monolith, building tools for our customers to migrate between GitHub on-prem instances and our hosted instance, shipping 2fa enforcement features for our business customers, and finally landing in the Security department where I've been for nearly 9 years now.
+
+> [!NOTE]
+> Brandon, John, and I were among GitHub’s earliest users, with **IDs #173, #235, and #623**.
 
 In Security I've built multiple Rails applications but only one of them is still in heavy use. Funny enough it's a stream processing application where the Rails MVC has been swapped out with Consumer, Enrichment, and Detection modules to handle the majority of our automated abuse detection and remediation flows processing billions of events per day.
 
