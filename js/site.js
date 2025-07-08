@@ -1,17 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Animate the favicon
-  const faviconFrames = [
-    '/images/favicon-frame01.png',
-    '/images/favicon-frame02.png',
-  ];
-  const link = document.querySelector("link[rel~='icon']") || document.createElement('link');
-  let current = 0;
-  setInterval(() => {
-    link.rel = 'icon';
-    link.href = faviconFrames[current];
-    document.head.appendChild(link);
-    current = (current + 1) % faviconFrames.length;
-  }, 800);
+  // const faviconFrames = [
+  //   '/images/favicon-frame01.png',
+  //   '/images/favicon-frame02.png',
+  // ];
+  // const link = document.querySelector("link[rel~='icon']") || document.createElement('link');
+  // let current = 0;
+  // setInterval(() => {
+  //   link.rel = 'icon';
+  //   link.href = faviconFrames[current];
+  //   document.head.appendChild(link);
+  //   current = (current + 1) % faviconFrames.length;
+  // }, 800);
 
   // Set the current year in the footer
   var yearSpan = document.getElementById('year');
