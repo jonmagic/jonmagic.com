@@ -7,6 +7,8 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 let markdownItEmoji = require('markdown-it-emoji');
 if (markdownItEmoji.default) markdownItEmoji = markdownItEmoji.default;
 
+const githubAlerts = require('./src/_build/markdown-it-github-alerts');
+
 // Configuration for contribution graph cropping
 const CROP_CONFIG = {
   gridWidth: 120,
@@ -143,13 +145,13 @@ module.exports = function(eleventyConfig) {
   // Add RSS plugin
   eleventyConfig.addPlugin(pluginRss);
 
-  // Enable emoji support in markdown for Eleventy 3.x
+  // Enable emoji support and GitHub alerts in markdown for Eleventy 3.x
   const mdLib = markdownIt({
     html: true,
     breaks: false,
     linkify: true,
     typographer: true
-  }).use(markdownItEmoji);
+  }).use(markdownItEmoji).use(githubAlerts);
   eleventyConfig.setLibrary('md', mdLib);
 
   eleventyConfig.addPassthroughCopy("src/css");
