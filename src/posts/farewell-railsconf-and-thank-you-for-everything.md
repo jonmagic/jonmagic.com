@@ -10,33 +10,31 @@ description: >-
 featured: 1
 ---
 
-My career as a professional software developer started nearly two decades ago, though it truly took root at the first RailsConf in Chicago in 2006. My IT consultancy was [already using Rails](https://jonmagic.com/posts/learning-rails/), but RailsConf gave me a glimpse of something even more exciting, a community of developers. Christian Metts (who introduced me to Rails) and I noticed nearly everyone at the conference had MacBooks, even us, while only about fifty attendees didn’t. We decided to honor those "non‑MacBook" folks with tongue‑in‑cheek **Certificates of Nonconformity**, signed (jokingly) by Bill Gates and Linus Torvalds, and [snapped pics](https://www.flickr.com/photos/mintchaos/albums/72157594176520552/), including one of *why the lucky stiff*.
+**2006, Chicago.** Nearly everyone at the first RailsConf clacked away on a MacBook, except about fifty rebels. My friend Christian Metts, [who had introduced me to Rails](https://jonmagic.com/posts/ten-years-a-software-engineer/), and I printed *Certificates of Non-Conformity*, forged Bill Gates’ and Linus Torvalds’ signatures, and handed them to the non-MacBook crowd [while Christian snapped photos of each proud hold-out](https://www.flickr.com/photos/mintchaos/albums/72157594176520552/), including the elusive *why the lucky stiff*.
 
 ![why the lucky stiff holding a certificate of nonconformity](/images/posts/farewell-railsconf-and-thank-you-for-everything/why-the-lucky-stiff.webp)
 
 That playful moment, the community, and the shared curiosity, set the tone for everything that followed.
 
-## From Meetup to Speaker Deck
+## Finding Rails & Finding My People
 
-Shortly after RailsConf, I attended a Ruby meetup at Notre Dame and met [John Nunemaker](https://johnnunemaker.com) and [Steve Smith](https://orderedlist.com). One afternoon over a few beers at Fiddler’s Hearth in South Bend Indiana they started griping about SlideShare after trying to upload slides from a recent conference one of them had spoken at. So I pulled up my terminal, installed ImageMagick, and started hacking on a PDF‑to‑image converter for slides. [That quick hack at the bar turned into a years long collaboration](https://jonmagic.com/posts/the-history-of-speaker-deck/) on [Speaker Deck](https://speakerdeck.com) and later my [first Rubygem Grim](https://jonmagic.com/posts/grim/).
+Like many, [using Rails forced me to learn Ruby](https://jonmagic.com/posts/ten-years-a-software-engineer/), and that first conference pushed me deeper. Soon after, I drove to a Ruby meetup at Notre Dame and met [John Nunemaker](https://johnnunemaker.com) and [Steve Smith](https://orderedlist.com). One afternoon over beers at Fiddler’s Hearth in South Bend, they vented about SlideShare’s terrible slide uploads. I opened my terminal, installed ImageMagick, and hacked together a PDF-to-image converter on the spot. That bar-top prototype grew into [Speaker Deck](https://speakerdeck.com) and my first **RubyGem**, [Grim](https://jonmagic.com/posts/grim/).
 
 ## Joining OrderedList & Building a Business on Rails
 
-In December 2010 I became OrderedList’s first full‑time developer, joining Steve and John, and later [Brandon Keepers](https://opensoul.org/) and [Matt Graham](https://madebygraham.com/). We kept building their first product HarmonyApp, Speaker Deck, and launched Gaug.es, a Rails‑based analytics tool because we disliked using Google Analytics so much, all while consulting on larger projects like Words With Friends to pay the bills.
+In December 2010 I became OrderedList’s first full-time developer, joining Steve, John, and later [Brandon Keepers](https://opensoul.org/) and [Matt Graham](https://madebygraham.com/). We iterated on their first product Harmony, launched Speaker Deck to the public, and shipped Gaug.es, a Rails-based analytics tool born from our dislike of Google Analytics. Consulting gigs on products like *Words With Friends* paid the bills.
 
-Through meetups and conferences our team met the GitHub cofounders and employees like [Tim Clem](https://adaptivepatchwork.com/) and [Zach Holman](https://zachholman.com/) and in the fall of 2011 one of the cofounders reached out to John and Steve to see if we were interested in joining GitHub. What an amazing time and opportunity this was to be GitHub's first acquisition/acquihire.
+Through meetups and conferences our team met the GitHub co-founders and early employees such as [Tim Clem](https://adaptivepatchwork.com/) and [Zach Holman](https://zachholman.com/). In the fall of 2011 GitHub invited us to join as their first **acqui-hire**.
 
 ![OrderedList joins GitHub](/images/posts/farewell-railsconf-and-thank-you-for-everything/orderedlist-joins-github.webp)
 
-> Side note 1: A year before GitHub was founded I exchanged emails with one of the cofounders Chris Wanstrath after he emailed me about a Rails consulting opportunity I had posted on a Ruby forum. I'd forgotten about this email exchange until 2013 and I'd been working for GitHub for nearly 2 years.
-
-> Side note 2: Brandon, John, and I were some of GitHub's earliest users with ids #173, #235, and #623
-
 ## A GitHub Career
 
-After our acquihire in late 2011, I worked my way through nearly every department at GitHub building our support software (a Rails app called Halp), then integrating our business software with the GitHub monolith, then building tools for our customers to migrate between GitHub on-prem instances and our hosted instance, then building 2fa enforcement features for our business customers, before finally landing in the Security department where I've been for nearly 9 years now.
+After our acquihire in late 2011, I worked my way through nearly every department at GitHub building our support software (a Rails app called Halp), integrating our business systems with the GitHub monolith, building tools for our customers to migrate between GitHub on-prem instances and our hosted instance, shipping 2fa enforcement features for our business customers, and finally landing in the Security department where I've been for nearly 9 years now.
 
 In Security I've built multiple Rails applications but only one of them is still in heavy use. Funny enough it's a stream processing application where the Rails MVC has been swapped out with Consumer, Enrichment, and Detection modules to handle the majority of our automated abuse detection and remediation flows processing billions of events per day.
+
+![building hamzo at an offsite](/images/posts/farewell-railsconf-and-thank-you-for-everything/building-hamzo-at-an-offsite.webp)
 
 I still work on the GitHub Rails monolith from time to time, but new Rails apps are rare for me now, and I miss it. There’s nothing like spinning up a Rails app from scratch and going from zero to usable in minutes. Rails made it simple to focus on the business problem and get something up and running quickly with the tradeoff that [scaling later may come with some headaches](https://github.com/jonmagic/arca).
 
