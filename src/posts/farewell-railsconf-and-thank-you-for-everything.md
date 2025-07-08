@@ -10,7 +10,7 @@ description: >-
 featured: 1
 ---
 
-**2006, Chicago.** Nearly everyone at the first RailsConf tapped away on a MacBook, except about fifty rebels. My friend [Christian Metts](http://mintchaos.com), who had [introduced me to Rails](https://jonmagic.com/posts/ten-years-a-software-engineer/), and I printed *Certificates of Non-Conformity*, forged Bill Gates’ and Linus Torvalds’ signatures, and handed them to the non-MacBook crowd [while Christian snapped photos of each proud hold-out](https://www.flickr.com/photos/mintchaos/albums/72157594176520552/), including the elusive *why the lucky stiff*.
+**2006, Chicago.** Nearly everyone at the first RailsConf tapped away on a MacBook, except about fifty rebels. My friend [Christian Metts](http://mintchaos.com), who had [introduced me to Rails](https://jonmagic.com/posts/ten-years-a-software-engineer/), and I printed [*Certificates of Nonconformity*](/images/posts/farewell-railsconf-and-thank-you-for-everything/certificate.webp), forged Bill Gates’ and Linus Torvalds’ signatures, and handed them to the non-MacBook crowd [while Christian snapped photos of each proud hold-out](https://www.flickr.com/photos/mintchaos/albums/72157594176520552/), including the elusive *why the lucky stiff*.
 
 ![why the lucky stiff holding a certificate of nonconformity](/images/posts/farewell-railsconf-and-thank-you-for-everything/why-the-lucky-stiff.webp)
 
