@@ -18,7 +18,7 @@ That playful moment, the community, and the shared curiosity, set the tone for e
 
 ## From Meetup to Speaker Deck
 
-Shortly after RailsConf, I attended a Ruby meetup at Notre Dame and met [John Nunemaker](https://johnnunemaker.com) and [Steve Smith](https://orderedlist.com). One afternoon over a few beers at Fiddler’s in South Bend Indiana they started griping about SlideShare after trying to upload slides from a recent conference one of them had spoken at. So I pulled up my terminal, installed ImageMagick, and started hacking a PDF‑to‑image converter for slides. [That quick hack at the bar turned into a years long collaboration](https://jonmagic.com/posts/the-history-of-speaker-deck/) on [Speaker Deck](https://speakerdeck.com) and later my [first Rubygem called Grim](https://jonmagic.com/posts/grim/).
+Shortly after RailsConf, I attended a Ruby meetup at Notre Dame and met [John Nunemaker](https://johnnunemaker.com) and [Steve Smith](https://orderedlist.com). One afternoon over a few beers at Fiddler’s in South Bend Indiana they started griping about SlideShare after trying to upload slides from a recent conference one of them had spoken at. So I pulled up my terminal, installed ImageMagick, and started hacking on a PDF‑to‑image converter for slides. [That quick hack at the bar turned into a years long collaboration](https://jonmagic.com/posts/the-history-of-speaker-deck/) on [Speaker Deck](https://speakerdeck.com) and later my [first Rubygem Grim](https://jonmagic.com/posts/grim/).
 
 ## Joining OrderedList & Building a Business on Rails
 
@@ -40,7 +40,7 @@ In Security I've built multiple Rails applications but only one of them is still
 
 I still work on the GitHub Rails monolith from time to time, but new Rails apps are rare for me now, and I miss it. There’s nothing like spinning up a Rails app from scratch and going from zero to usable in minutes. Rails made it simple to focus on the business problem and get something up and running quickly with the tradeoff that [scaling later may come with some headaches](https://github.com/jonmagic/arca).
 
-## RailsConf 2025: Final Ride, Fond Farewell
+## The Last RailsConf
 
 This week in Philadelphia they are holding the **last RailsConf**, concluding nearly 20 years of tradition. Ruby Central is [shifting focus to RubyConf and stewardship of RubyGems and Bundler](https://rubycentral.org/news/announcing-railsconf-2025-and-a-new-chapter-for-ruby-central-events/), while The Rails Foundation steps into Rails stewardship via [Rails World](https://rubyonrails.org/world/), which [sold out Toronto in seconds](https://www.linkedin.com/posts/david-heinemeier-hansson-374b18221_the-first-rails-world-sold-out-in-45-minutes-activity-7328326453291307008--DPg/).
 
