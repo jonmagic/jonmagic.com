@@ -10,7 +10,7 @@ description: >-
 featured: 1
 ---
 
-My career as a professional software developer started nearly two decades ago, though it truly took root at the first RailsConf in Chicago in 2006. My consultancy was [already using Rails](https://jonmagic.com/posts/learning-rails/), but RailsConf gave me a glimpse of something even more exciting, a community of developers. Christian Metts (who introduced me Rails) and I noticed nearly everyone at the conference had MacBooks, even us, while only about fifty attendees didn’t. We decided to honor those "non‑MacBook" folks with tongue‑in‑cheek **Certificates of Nonconformity**, signed (jokingly) by Bill Gates and Linus Torvalds, and [snapped pics](https://www.flickr.com/photos/mintchaos/albums/72157594176520552/), including one of *why the lucky stiff*.
+My career as a professional software developer started nearly two decades ago, though it truly took root at the first RailsConf in Chicago in 2006. My IT consultancy was [already using Rails](https://jonmagic.com/posts/learning-rails/), but RailsConf gave me a glimpse of something even more exciting, a community of developers. Christian Metts (who introduced me to Rails) and I noticed nearly everyone at the conference had MacBooks, even us, while only about fifty attendees didn’t. We decided to honor those "non‑MacBook" folks with tongue‑in‑cheek **Certificates of Nonconformity**, signed (jokingly) by Bill Gates and Linus Torvalds, and [snapped pics](https://www.flickr.com/photos/mintchaos/albums/72157594176520552/), including one of *why the lucky stiff*.
 
 ![why the lucky stiff holding a certificate of nonconformity](/images/posts/farewell-railsconf-and-thank-you-for-everything/why-the-lucky-stiff.webp)
 
@@ -18,13 +18,13 @@ That playful moment, the community, and the shared curiosity, set the tone for e
 
 ## From Meetup to Speaker Deck
 
-Shortly after RailsConf, I attended a Ruby meetup at Notre Dame and met [John Nunemaker](https://johnnunemaker.com) and [Steve Smith](https://orderedlist.com). One afternoon over a few beers at Fiddler’s in South Bend Indiana they started griping about SlideShare after trying to upload slides from a recent conference one of them had spoken at. So I pulled up my terminal, installed ImageMagick, and started hacking on a PDF‑to‑image converter for slides. [That quick hack at the bar turned into a years long collaboration](https://jonmagic.com/posts/the-history-of-speaker-deck/) on [Speaker Deck](https://speakerdeck.com) and later my [first Rubygem Grim](https://jonmagic.com/posts/grim/).
+Shortly after RailsConf, I attended a Ruby meetup at Notre Dame and met [John Nunemaker](https://johnnunemaker.com) and [Steve Smith](https://orderedlist.com). One afternoon over a few beers at Fiddler’s Hearth in South Bend Indiana they started griping about SlideShare after trying to upload slides from a recent conference one of them had spoken at. So I pulled up my terminal, installed ImageMagick, and started hacking on a PDF‑to‑image converter for slides. [That quick hack at the bar turned into a years long collaboration](https://jonmagic.com/posts/the-history-of-speaker-deck/) on [Speaker Deck](https://speakerdeck.com) and later my [first Rubygem Grim](https://jonmagic.com/posts/grim/).
 
 ## Joining OrderedList & Building a Business on Rails
 
 In December 2010 I became OrderedList’s first full‑time developer, joining Steve and John, and later [Brandon Keepers](https://opensoul.org/) and [Matt Graham](https://madebygraham.com/). We kept building their first product HarmonyApp, Speaker Deck, and launched Gaug.es, a Rails‑based analytics tool because we disliked using Google Analytics so much, all while consulting on larger projects like Words With Friends to pay the bills.
 
-Through meetups and conferences our team met the GitHub cofounders and employees like [Tim Clem](https://adaptivepatchwork.com/) and [Zach Holman](https://zachholman.com/) and in the fall of 2011 one of the cofounders reached out to John and Steve to see if we were interested in joining GitHub. What an amazing time and opportunity this was to be GitHub's first acquisition/acquire.
+Through meetups and conferences our team met the GitHub cofounders and employees like [Tim Clem](https://adaptivepatchwork.com/) and [Zach Holman](https://zachholman.com/) and in the fall of 2011 one of the cofounders reached out to John and Steve to see if we were interested in joining GitHub. What an amazing time and opportunity this was to be GitHub's first acquisition/acquihire.
 
 ![OrderedList joins GitHub](/images/posts/farewell-railsconf-and-thank-you-for-everything/orderedlist-joins-github.webp)
 
