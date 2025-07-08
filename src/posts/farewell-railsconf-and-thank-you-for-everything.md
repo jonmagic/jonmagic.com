@@ -18,7 +18,7 @@ That playful moment, the community, and the shared curiosity, set the tone for e
 
 ## Finding Rails & Finding My People
 
-Like many, [using Rails forced me to learn Ruby](https://jonmagic.com/posts/ten-years-a-software-engineer/), and that first conference pushed me deeper. Soon after, I drove to a Ruby meetup at Notre Dame and met [John Nunemaker](https://johnnunemaker.com) and [Steve Smith](https://orderedlist.com). One afternoon over beers at Fiddler’s Hearth in South Bend, they vented about SlideShare’s terrible slide uploads. I opened my terminal, installed ImageMagick, and hacked together a PDF-to-image converter on the spot. That bar-top prototype grew into [Speaker Deck](https://speakerdeck.com) and my first **RubyGem**, [Grim](https://jonmagic.com/posts/grim/).
+Like many, using Rails was [the forcing function for me to learn Ruby](https://jonmagic.com/posts/ten-years-a-software-engineer/) (with help from [why's poignant guide to Ruby](https://poignant.guide/) :pray:), and that first conference pushed me deeper. Soon after, I drove to a Ruby meetup at Notre Dame and met [John Nunemaker](https://johnnunemaker.com) and [Steve Smith](https://orderedlist.com). One afternoon over beers at Fiddler’s Hearth in South Bend, they vented about SlideShare’s terrible user experience. I opened my terminal, installed ImageMagick, and hacked together a PDF-to-image converter on the spot. That bar-top prototype grew into [Speaker Deck](https://speakerdeck.com) and my first **RubyGem**, [Grim](https://jonmagic.com/posts/grim/).
 
 ## Building Businesses on Rails
 
