@@ -30,7 +30,7 @@ I initially tried built-in "auto-summaries" from meeting software, but they were
 
 ![zoom transcript](/images/posts/context-rules-everything-around-me/zoom-transcript.gif)
 
-For in-person offsites, I used my phone’s Voice Memos to capture audio. I’d import these recordings into the MacWhisper app, which automatically transcribed and even attempted speaker detection. Although I’d sometimes need to tag speakers manually, the payoff was huge: every stray comment or subtle nuance was preserved.
+For in-person offsites, I used my phone’s Voice Memos to capture audio. I’d import these recordings into the MacWhisper app, which automatically transcribed and even attempted speaker detection. Although I’d sometimes need to tag speakers manually, the payoff was huge: every voice or contribution or subtle nuance was preserved.
 
 With these transcripts, a quick AI pass yielded exactly the details I needed:
 
@@ -125,13 +125,13 @@ Always check local rules and company policy before recording. In some regions, i
 
 ## Accessibility & Inclusivity
 
-It’s not just about saving you time: transcripts help Deaf teammates, those who prefer reading over listening, or anyone dealing with multiple demands on their attention. Having a verbatim record fosters inclusive communication, especially across time zones. This is about building a team culture where everyone has equal access to context—even if they missed the meeting entirely.
+This isn’t just about saving you time. it’s about ensuring every voice is amplified. Transcripts help teammates who are Deaf, communicate differently, or absorb information best via text. They also bridge gaps across remote, asynchronous, and time‑zone‑spread teams. making sure no one is left out.
 
 ## C.R.E.A.M. — Context Rules Everything Around Me
 
 In the '90s, Wu‑Tang Clan rapped [Cash Rules Everything Around Me](https://www.youtube.com/watch?v=PBwAxmrE194). At early GitHub, **C.R.E.A.M.** was a north star for open financial ops. In 2024, my own C.R.E.A.M. stands for: **Context Rules Everything Around Me**.
 
-Where do you go from here? Try capturing just one meeting tomorrow and feeding the transcript to your favorite LLM. If you’re already doing that, level up with advanced prompts or a record and transcribe process at an offsite. Let me know how it goes.
+Where do you go from here? Try capturing one meeting this week and feeding the transcript to your favorite LLM. If you’re already doing that, level up with advanced prompts or a record and transcribe process at an offsite. Let me know how it goes.
 
 ## Feedback
 
