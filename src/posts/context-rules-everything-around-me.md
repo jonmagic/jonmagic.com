@@ -55,11 +55,14 @@ One anecdote stands out: during a three day offsite, I recorded 24 hours of brai
 
 Some testimonials from folks who have adopted my workflows and prompts:
 
-> "This is fantastic @jonmagic - the quality of the executive summary is suprisingly high! Going to use the heck out of this 🙇🏼"
->
-> "This is soooooo good. I'm going to have to play with this. I've also started to move much faster and by the end of the week, I will reflect on discussions I've had and not remember who they were with "Where did I hear this? Didn't they say...?" Thank you @jonmagic."
->
-> "h/t to @jonmagic, I’ve fully bought into using transcripts and AI summaries for meetings. While they’re not perfect and can hallucinate, they let me stay present instead of taking notes."
+> [!TIP]
+> This is fantastic @jonmagic - the quality of the executive summary is suprisingly high! Going to use the heck out of this 🙇🏼
+
+> [!TIP]
+> This is soooooo good. I'm going to have to play with this. I've also started to move much faster and by the end of the week, I will reflect on discussions I've had and not remember who they were with "Where did I hear this? Didn't they say...?" Thank you @jonmagic.
+
+> [!TIP]
+> h/t to @jonmagic, I’ve fully bought into using transcripts and AI summaries for meetings. While they’re not perfect and can hallucinate, they let me stay present instead of taking notes.
 
 ## The Minimal Reproducible Stack
 
