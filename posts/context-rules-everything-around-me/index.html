@@ -64,9 +64,7 @@
       
       <h1 class="site-title">Context Rules Everything Around Me</h1>
       <p>I was drowning in meetings, losing track of decisions, and manually typing notes I never revisited. Then I found a better way—capture once, reuse everywhere with AI. In this post, I’ll show how I record and transcribe meetings, feed transcripts to large language models, and generate immediate action lists, summaries, and architecture drafts. It transformed my workflow from frantic note-taking to an effortless <em>meeting superpower</em>.</p>
-<div class="markdown-alert markdown-alert-note">
-<p class="markdown-alert-title">Note</p>
-<p><strong>TL;DR</strong></p>
+<div class="markdown-alert markdown-alert-note"><p><strong>TL;DR</strong></p>
 <ul>
 <li>I record nearly every meeting call (or use my phone’s Voice Memos for in-person).</li>
 <li>I use Zoom’s built-in transcript (or convert a recording to a transcript using a tool like <a href="https://goodsnooze.gumroad.com/l/macwhisper">MacWhisper</a>).</li>
@@ -111,14 +109,16 @@
 <li>
 <p><strong>Capture</strong></p>
 <ul>
-<li>Use Zoom or Teams recordings, making sure you enable transcripts (see gif above). <strong>IMPORTANT:</strong> Get into the habit of hitting that Trascript button as soon as you join a meeting and for Zoom <a href="https://gist.github.com/jonmagic/a9ebeb20d7cdf94923533e0f59ad188e">use an AppleScript like this</a> to ensure the Save transcript button is clicked frequently to ensure you don’t lose any of the transcript before the call ends.</li>
+<li>Use Zoom or Teams recordings, making sure you enable transcripts (see gif above).</li>
 <li>For in-person: use your phone’s Voice Memos or any handheld recorder.</li>
 </ul>
+<div class="markdown-alert markdown-alert-important"><p>Get into the habit of hitting that Transcript or Record button as soon as you join a meeting and for Zoom <a href="https://gist.github.com/jonmagic/a9ebeb20d7cdf94923533e0f59ad188e">use an AppleScript like this</a> to ensure the <strong>Save transcript</strong> button is clicked frequently so that you don’t lose any of the transcript before the call ends.</p>
+</div>
 </li>
 <li>
 <p><strong>Transcribe</strong></p>
 <ul>
-<li>Skip this step if you were able to get a transcript during hte capture phase.</li>
+<li>Skip this step if you were able to get a transcript during the capture phase.</li>
 <li>For voice recordings Voice Memos is great and will generate a transcription for you if the recording isn’t too long.</li>
 <li>If you prefer a desktop app, tools like <a href="https://goodsnooze.gumroad.com/l/macwhisper">MacWhisper.cpp</a> add speaker detection automatically.</li>
 </ul>
@@ -126,8 +126,8 @@
 <li>
 <p><strong>Prompt</strong></p>
 <ul>
-<li>Feed your transcript into an LLM with along with the processing instructions (aka a prompt). <a href="https://github.com/copilot">GitHub Copilot</a> is an excellent LLM and free (or inexpensive depending on your volume).</li>
-<li>That prompt might produce an “executive summary” or an “action item list,” depending on which prompt file you pick. See <a href="https://github.com/jonmagic/prompts">my repository of prompts</a> for a few options to get you started.</li>
+<li>Feed your transcript into an LLM along with the processing instructions (aka a prompt). <a href="https://github.com/copilot">GitHub Copilot</a> is an excellent LLM and free (or inexpensive depending on your volume).</li>
+<li>That prompt might produce an “executive summary” or an “action item list,” depending on which prompt you decide to use. See <a href="https://github.com/jonmagic/prompts">my repository of prompts</a> for a few options to get you started.</li>
 </ul>
 </li>
 <li>
@@ -138,12 +138,10 @@
 </ul>
 </li>
 </ol>
-<p>I use these steps multiple times a day from meetings to capturing ideas while taking short walks. I recorded all of the context needed for an architectural decision record the other day and from there it was just a short conversation with an LLM to put it into the ADR format.</p>
+<p><em>I use these steps multiple times a day from meetings to capturing ideas while taking short walks. I recorded all of the context needed for an architectural decision record the other day and from there it was just a short conversation with an LLM to put it into the ADR format.</em></p>
 <p><img src="/images/posts/context-rules-everything-around-me/walk-and-record.webp" alt="walk and record"></p>
 <h2>Advanced Moves</h2>
-<div class="markdown-alert markdown-alert-note">
-<p class="markdown-alert-title">Note</p>
-<p><strong>Heads-up:</strong> The tools below live in my <a href="https://github.com/jonmagic/scripts"><code>jonmagic/scripts</code></a> repo.
+<div class="markdown-alert markdown-alert-note"><p><strong>Heads-up:</strong> The tools below live in my <a href="https://github.com/jonmagic/scripts"><code>jonmagic/scripts</code></a> repo.
 They assume you’re comfortable cloning a repository, installing and configuring the <a href="https://cli.github.com/">gh</a> cli, installing and configuring the <a href="https://llm.datasette.io/en/stable/">llm</a> cli, and creating shell aliases. They’re optional, but once they click, they feel like cheating.</p>
 </div>
 <h3><code>fetch-github-conversation</code> — one-command context vacuum</h3>
@@ -159,7 +157,7 @@ fgc https://github.com/org/repo/issues/123</code></pre>
 commit</code></pre>
 <p><em>Why it matters</em> – You get crisp, context-rich commit messages without the mental tax of writing them from scratch—perfect when you’re shipping ten tiny PRs a day.</p>
 <h3><code>github-conversations-research-agent</code> — deep-dive, cite-everything analysis</h3>
-<p>Full tutorial coming soon but in the meantime if you’re curious to see a advanced agent and semantic RAG setup at work to thoroughly answer questions that require multi-turn research <a href="https://gist.github.com/jonmagic/552a6df70428775c221831f2a95063bc">check out this gist</a>.</p>
+<p>Full tutorial coming soon but in the meantime if you’re curious to see an advanced agent and semantic RAG setup at work to thoroughly answer questions that require multi-turn research <a href="https://gist.github.com/jonmagic/552a6df70428775c221831f2a95063bc">check out this gist</a>.</p>
 <h2>Privacy &amp; Consent</h2>
 <p>Always check local rules and company policy before recording. In some regions, it’s mandatory to disclose or request consent from all participants. Data security is crucial: if transcripts contain sensitive or personal information, encrypt them at rest and redact as needed before sending them to cloud-based LLMs. In short: be transparent, and protect confidentiality.</p>
 <h2>Accessibility &amp; Inclusivity</h2>

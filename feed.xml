@@ -17,9 +17,7 @@
     <updated>2025-07-16T00:00:00Z</updated>
     <id>https://jonmagic.com/posts/context-rules-everything-around-me/</id>
     <content type="html">&lt;p&gt;I was drowning in meetings, losing track of decisions, and manually typing notes I never revisited. Then I found a better way—capture once, reuse everywhere with AI. In this post, I’ll show how I record and transcribe meetings, feed transcripts to large language models, and generate immediate action lists, summaries, and architecture drafts. It transformed my workflow from frantic note-taking to an effortless &lt;em&gt;meeting superpower&lt;/em&gt;.&lt;/p&gt;
-&lt;div class=&quot;markdown-alert markdown-alert-note&quot;&gt;
-&lt;p class=&quot;markdown-alert-title&quot;&gt;Note&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;markdown-alert markdown-alert-note&quot;&gt;&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;I record nearly every meeting call (or use my phone’s Voice Memos for in-person).&lt;/li&gt;
 &lt;li&gt;I use Zoom’s built-in transcript (or convert a recording to a transcript using a tool like &lt;a href=&quot;https://goodsnooze.gumroad.com/l/macwhisper&quot;&gt;MacWhisper&lt;/a&gt;).&lt;/li&gt;
@@ -64,14 +62,16 @@
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Capture&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Use Zoom or Teams recordings, making sure you enable transcripts (see gif above). &lt;strong&gt;IMPORTANT:&lt;/strong&gt; Get into the habit of hitting that Trascript button as soon as you join a meeting and for Zoom &lt;a href=&quot;https://gist.github.com/jonmagic/a9ebeb20d7cdf94923533e0f59ad188e&quot;&gt;use an AppleScript like this&lt;/a&gt; to ensure the Save transcript button is clicked frequently to ensure you don’t lose any of the transcript before the call ends.&lt;/li&gt;
+&lt;li&gt;Use Zoom or Teams recordings, making sure you enable transcripts (see gif above).&lt;/li&gt;
 &lt;li&gt;For in-person: use your phone’s Voice Memos or any handheld recorder.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;div class=&quot;markdown-alert markdown-alert-important&quot;&gt;&lt;p&gt;Get into the habit of hitting that Transcript or Record button as soon as you join a meeting and for Zoom &lt;a href=&quot;https://gist.github.com/jonmagic/a9ebeb20d7cdf94923533e0f59ad188e&quot;&gt;use an AppleScript like this&lt;/a&gt; to ensure the &lt;strong&gt;Save transcript&lt;/strong&gt; button is clicked frequently so that you don’t lose any of the transcript before the call ends.&lt;/p&gt;
+&lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Transcribe&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Skip this step if you were able to get a transcript during hte capture phase.&lt;/li&gt;
+&lt;li&gt;Skip this step if you were able to get a transcript during the capture phase.&lt;/li&gt;
 &lt;li&gt;For voice recordings Voice Memos is great and will generate a transcription for you if the recording isn’t too long.&lt;/li&gt;
 &lt;li&gt;If you prefer a desktop app, tools like &lt;a href=&quot;https://goodsnooze.gumroad.com/l/macwhisper&quot;&gt;MacWhisper.cpp&lt;/a&gt; add speaker detection automatically.&lt;/li&gt;
 &lt;/ul&gt;
@@ -79,8 +79,8 @@
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Prompt&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Feed your transcript into an LLM with along with the processing instructions (aka a prompt). &lt;a href=&quot;https://github.com/copilot&quot;&gt;GitHub Copilot&lt;/a&gt; is an excellent LLM and free (or inexpensive depending on your volume).&lt;/li&gt;
-&lt;li&gt;That prompt might produce an “executive summary” or an “action item list,” depending on which prompt file you pick. See &lt;a href=&quot;https://github.com/jonmagic/prompts&quot;&gt;my repository of prompts&lt;/a&gt; for a few options to get you started.&lt;/li&gt;
+&lt;li&gt;Feed your transcript into an LLM along with the processing instructions (aka a prompt). &lt;a href=&quot;https://github.com/copilot&quot;&gt;GitHub Copilot&lt;/a&gt; is an excellent LLM and free (or inexpensive depending on your volume).&lt;/li&gt;
+&lt;li&gt;That prompt might produce an “executive summary” or an “action item list,” depending on which prompt you decide to use. See &lt;a href=&quot;https://github.com/jonmagic/prompts&quot;&gt;my repository of prompts&lt;/a&gt; for a few options to get you started.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -91,12 +91,10 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;I use these steps multiple times a day from meetings to capturing ideas while taking short walks. I recorded all of the context needed for an architectural decision record the other day and from there it was just a short conversation with an LLM to put it into the ADR format.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;I use these steps multiple times a day from meetings to capturing ideas while taking short walks. I recorded all of the context needed for an architectural decision record the other day and from there it was just a short conversation with an LLM to put it into the ADR format.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://jonmagic.com/images/posts/context-rules-everything-around-me/walk-and-record.webp&quot; alt=&quot;walk and record&quot; /&gt;&lt;/p&gt;
 &lt;h2&gt;Advanced Moves&lt;/h2&gt;
-&lt;div class=&quot;markdown-alert markdown-alert-note&quot;&gt;
-&lt;p class=&quot;markdown-alert-title&quot;&gt;Note&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Heads-up:&lt;/strong&gt; The tools below live in my &lt;a href=&quot;https://github.com/jonmagic/scripts&quot;&gt;&lt;code&gt;jonmagic/scripts&lt;/code&gt;&lt;/a&gt; repo.
+&lt;div class=&quot;markdown-alert markdown-alert-note&quot;&gt;&lt;p&gt;&lt;strong&gt;Heads-up:&lt;/strong&gt; The tools below live in my &lt;a href=&quot;https://github.com/jonmagic/scripts&quot;&gt;&lt;code&gt;jonmagic/scripts&lt;/code&gt;&lt;/a&gt; repo.
 They assume you’re comfortable cloning a repository, installing and configuring the &lt;a href=&quot;https://cli.github.com/&quot;&gt;gh&lt;/a&gt; cli, installing and configuring the &lt;a href=&quot;https://llm.datasette.io/en/stable/&quot;&gt;llm&lt;/a&gt; cli, and creating shell aliases. They’re optional, but once they click, they feel like cheating.&lt;/p&gt;
 &lt;/div&gt;
 &lt;h3&gt;&lt;code&gt;fetch-github-conversation&lt;/code&gt; — one-command context vacuum&lt;/h3&gt;
@@ -112,7 +110,7 @@ fgc https://github.com/org/repo/issues/123&lt;/code&gt;&lt;/pre&gt;
 commit&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;em&gt;Why it matters&lt;/em&gt; – You get crisp, context-rich commit messages without the mental tax of writing them from scratch—perfect when you’re shipping ten tiny PRs a day.&lt;/p&gt;
 &lt;h3&gt;&lt;code&gt;github-conversations-research-agent&lt;/code&gt; — deep-dive, cite-everything analysis&lt;/h3&gt;
-&lt;p&gt;Full tutorial coming soon but in the meantime if you’re curious to see a advanced agent and semantic RAG setup at work to thoroughly answer questions that require multi-turn research &lt;a href=&quot;https://gist.github.com/jonmagic/552a6df70428775c221831f2a95063bc&quot;&gt;check out this gist&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Full tutorial coming soon but in the meantime if you’re curious to see an advanced agent and semantic RAG setup at work to thoroughly answer questions that require multi-turn research &lt;a href=&quot;https://gist.github.com/jonmagic/552a6df70428775c221831f2a95063bc&quot;&gt;check out this gist&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Privacy &amp;amp; Consent&lt;/h2&gt;
 &lt;p&gt;Always check local rules and company policy before recording. In some regions, it’s mandatory to disclose or request consent from all participants. Data security is crucial: if transcripts contain sensitive or personal information, encrypt them at rest and redact as needed before sending them to cloud-based LLMs. In short: be transparent, and protect confidentiality.&lt;/p&gt;
 &lt;h2&gt;Accessibility &amp;amp; Inclusivity&lt;/h2&gt;
@@ -142,9 +140,7 @@ commit&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&quot;https://jonmagic.com/images/posts/farewell-railsconf-and-thank-you-for-everything/orderedlist-joins-github.webp&quot; alt=&quot;OrderedList joins GitHub&quot; /&gt;&lt;/p&gt;
 &lt;h2&gt;A GitHub Career&lt;/h2&gt;
 &lt;p&gt;After our acquihire in late 2011, I worked my way through nearly every department at GitHub building our support software (a Rails app called Halp), integrating our business systems with the GitHub monolith, building tools for our customers to migrate between GitHub on-prem instances and our hosted instance, shipping 2fa enforcement features for our business customers, and finally landing in the Security department where I’ve been for nearly 9 years now.&lt;/p&gt;
-&lt;div class=&quot;markdown-alert markdown-alert-note&quot;&gt;
-&lt;p class=&quot;markdown-alert-title&quot;&gt;Note&lt;/p&gt;
-&lt;p&gt;Brandon, John, and I were among GitHub’s earliest users, with &lt;strong&gt;IDs #173, #235, and #623&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&quot;markdown-alert markdown-alert-note&quot;&gt;&lt;p&gt;Brandon, John, and I were among GitHub’s earliest users, with &lt;strong&gt;IDs #173, #235, and #623&lt;/strong&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;In Security I’ve built multiple Rails applications but only one of them is still in heavy use. Funny enough it’s a stream processing application where the Rails MVC has been swapped out with Consumer, Enrichment, and Detection modules to handle the majority of our automated abuse detection and remediation flows processing billions of events per day.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://jonmagic.com/images/posts/farewell-railsconf-and-thank-you-for-everything/building-hamzo-at-an-offsite.webp&quot; alt=&quot;building hamzo at an offsite&quot; /&gt;&lt;/p&gt;
