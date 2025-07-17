@@ -112,7 +112,7 @@ fgc https://github.com/org/repo/issues/123&lt;/code&gt;&lt;/pre&gt;
 commit&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;em&gt;Why it matters&lt;/em&gt; – You get crisp, context-rich commit messages without the mental tax of writing them from scratch—perfect when you’re shipping ten tiny PRs a day.&lt;/p&gt;
 &lt;h3&gt;&lt;code&gt;github-conversations-research-agent&lt;/code&gt; — deep-dive, cite-everything analysis&lt;/h3&gt;
-&lt;p&gt;Full tutorial coming soon but in the meantime if you’re curious to see a complex agent and semantic RAG setup at work to answer complex questions that require multi-turn research &lt;a href=&quot;https://gist.github.com/jonmagic/552a6df70428775c221831f2a95063bc&quot;&gt;check out this gist&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Full tutorial coming soon but in the meantime if you’re curious to see a advanced agent and semantic RAG setup at work to thoroughly answer questions that require multi-turn research &lt;a href=&quot;https://gist.github.com/jonmagic/552a6df70428775c221831f2a95063bc&quot;&gt;check out this gist&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Privacy &amp;amp; Consent&lt;/h2&gt;
 &lt;p&gt;Always check local rules and company policy before recording. In some regions, it’s mandatory to disclose or request consent from all participants. Data security is crucial: if transcripts contain sensitive or personal information, encrypt them at rest and redact as needed before sending them to cloud-based LLMs. In short: be transparent, and protect confidentiality.&lt;/p&gt;
 &lt;h2&gt;Accessibility &amp;amp; Inclusivity&lt;/h2&gt;
