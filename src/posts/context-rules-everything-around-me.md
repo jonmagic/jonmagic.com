@@ -66,23 +66,26 @@ Some testimonials from folks who have adopted my workflows and prompts:
 Below is the core technology and workflow I suggest trying. It’s easy to set up on a weekend, and you’ll see immediate results.
 
 1. **Capture**
-   - Use Zoom or Teams recordings, making sure you enable transcripts (see gif above). **IMPORTANT:** Get into the habit of hitting that Trascript button as soon as you join a meeting and for Zoom [use an AppleScript like this](https://gist.github.com/jonmagic/a9ebeb20d7cdf94923533e0f59ad188e) to ensure the Save transcript button is clicked frequently to ensure you don't lose any of the transcript before the call ends.
+   - Use Zoom or Teams recordings, making sure you enable transcripts (see gif above).
    - For in-person: use your phone’s Voice Memos or any handheld recorder.
 
+   > [!IMPORTANT]
+   > Get into the habit of hitting that Transcript or Record button as soon as you join a meeting and for Zoom [use an AppleScript like this](https://gist.github.com/jonmagic/a9ebeb20d7cdf94923533e0f59ad188e) to ensure the **Save transcript** button is clicked frequently so that you don't lose any of the transcript before the call ends.
+
 2. **Transcribe**
-   - Skip this step if you were able to get a transcript during hte capture phase.
+   - Skip this step if you were able to get a transcript during the capture phase.
    - For voice recordings Voice Memos is great and will generate a transcription for you if the recording isn't too long.
    - If you prefer a desktop app, tools like [MacWhisper.cpp](https://goodsnooze.gumroad.com/l/macwhisper) add speaker detection automatically.
 
 3. **Prompt**
-   - Feed your transcript into an LLM with along with the processing instructions (aka a prompt). [GitHub Copilot](https://github.com/copilot) is an excellent LLM and free (or inexpensive depending on your volume).
-   - That prompt might produce an "executive summary" or an "action item list," depending on which prompt file you pick. See [my repository of prompts](https://github.com/jonmagic/prompts) for a few options to get you started.
+   - Feed your transcript into an LLM along with the processing instructions (aka a prompt). [GitHub Copilot](https://github.com/copilot) is an excellent LLM and free (or inexpensive depending on your volume).
+   - That prompt might produce an "executive summary" or an "action item list," depending on which prompt you decide to use. See [my repository of prompts](https://github.com/jonmagic/prompts) for a few options to get you started.
 
 4. **Outputs**
    - Store the final summary as text or Markdown (version-control it if you want an audit trail).
    - Share or link it to relevant tasks, tickets, or Slack for easy reference.
 
-I use these steps multiple times a day from meetings to capturing ideas while taking short walks. I recorded all of the context needed for an architectural decision record the other day and from there it was just a short conversation with an LLM to put it into the ADR format.
+*I use these steps multiple times a day from meetings to capturing ideas while taking short walks. I recorded all of the context needed for an architectural decision record the other day and from there it was just a short conversation with an LLM to put it into the ADR format.*
 
 ![walk and record](/images/posts/context-rules-everything-around-me/walk-and-record.webp)
 
@@ -117,7 +120,7 @@ commit
 
 ### `github-conversations-research-agent` — deep-dive, cite-everything analysis
 
-Full tutorial coming soon but in the meantime if you're curious to see a advanced agent and semantic RAG setup at work to thoroughly answer questions that require multi-turn research [check out this gist](https://gist.github.com/jonmagic/552a6df70428775c221831f2a95063bc).
+Full tutorial coming soon but in the meantime if you're curious to see an advanced agent and semantic RAG setup at work to thoroughly answer questions that require multi-turn research [check out this gist](https://gist.github.com/jonmagic/552a6df70428775c221831f2a95063bc).
 
 ## Privacy & Consent
 

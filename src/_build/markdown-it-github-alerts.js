@@ -60,9 +60,7 @@ function githubAlerts(md) {
     }
 
     if (alertType) {
-      return `<div class="markdown-alert markdown-alert-${alertType}">
-<p class="markdown-alert-title">${alertTitle}</p>
-`;
+      return `<div class="markdown-alert markdown-alert-${alertType}">`;
     }
 
     // If not an alert, use original blockquote
