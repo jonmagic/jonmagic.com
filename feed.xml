@@ -4,12 +4,127 @@
   <subtitle>My thoughts on software development, team building, and life.</subtitle>
   <link href="https://jonmagic.com/feed.xml" rel="self"/>
   <link href="https://jonmagic.com"/>
-  <updated>2025-07-07T23:59:59Z</updated>
+  <updated>2025-07-16T00:00:00Z</updated>
   <id>https://jonmagic.com/</id>
   <author>
     <name>Jonathan Hoyt</name>
     <email>jonmagic@gmail.com</email>
   </author>
+  
+  <entry>
+    <title>Context Rules Everything Around Me</title>
+    <link href="https://jonmagic.com/posts/context-rules-everything-around-me/"/>
+    <updated>2025-07-16T00:00:00Z</updated>
+    <id>https://jonmagic.com/posts/context-rules-everything-around-me/</id>
+    <content type="html">&lt;p&gt;I was drowning in meetings, losing track of decisions, and manually typing notes I never revisited. Then I found a better way—capture once, reuse everywhere with AI. In this post, I’ll show how I record and transcribe meetings, feed transcripts to large language models, and generate immediate action lists, summaries, and architecture drafts. It transformed my workflow from frantic note-taking to an effortless &lt;em&gt;meeting superpower&lt;/em&gt;.&lt;/p&gt;
+&lt;div class=&quot;markdown-alert markdown-alert-note&quot;&gt;
+&lt;p class=&quot;markdown-alert-title&quot;&gt;Note&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I record nearly every meeting call (or use my phone’s Voice Memos for in-person).&lt;/li&gt;
+&lt;li&gt;I use Zoom’s built-in transcript (or convert a recording to a transcript using a tool like &lt;a href=&quot;https://goodsnooze.gumroad.com/l/macwhisper&quot;&gt;MacWhisper&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;I run the transcript through an LLM (like &lt;a href=&quot;https://github.com/copilot&quot;&gt;GitHub Copilot&lt;/a&gt;, ChatGPT, or GoogleGemini) with a prompt to produce &lt;a href=&quot;https://github.com/jonmagic/prompts/blob/main/summarize/zoom-transcript-executive-summary.md&quot;&gt;executive summaries&lt;/a&gt;, &lt;a href=&quot;https://github.com/jonmagic/prompts/blob/main/summarize/transcript-meeting-notes.md&quot;&gt;decision logs&lt;/a&gt;, or &lt;a href=&quot;https://github.com/jonmagic/prompts&quot;&gt;whatever artifacts I need&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;In my experience, meeting clarity shot up, and my weekly status prep time fell by about 80%.&lt;/li&gt;
+&lt;li&gt;See below for the minimal reproducible “transcript→prompt→artifact” stack you can try this weekend.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2&gt;Too Many Meetings, Too Little Clarity&lt;/h2&gt;
+&lt;p&gt;Last last year, I moved into a principal engineer role at GitHub, and my meeting load tripled almost overnight. I was juggling dozens of syncs, architecture reviews, async updates, and 1:1s every week. I’d leave a call with a few scribbled bullet points, but promptly forget half of the decisions by the next day. The bigger my scope became, the less my scattered note-taking kept me afloat.&lt;/p&gt;
+&lt;p&gt;I realized that if I wanted to stay on top of critical decisions—let alone communicate them to peers and leadership—I needed a better system. Enter full transcripts. Once I started capturing entire conversations verbatim, it finally “clicked” that I could feed this raw context into AI to produce highlights and next steps. The difference was night and day.&lt;/p&gt;
+&lt;h2&gt;Why Transcripts? The Breakthrough&lt;/h2&gt;
+&lt;p&gt;I initially tried built-in “auto-summaries” from meeting software, but they were half-baked or missed nuance because the prompts sucked and they lacked good speaker attributions. Then I discovered the Zoom accessibility transcript option on calls: a text feed with speaker labels that I could save manually. Suddenly, I had an accurate record of “who said what,” ready to pipe into an LLM. This overcame the usual “notes are incomplete” feeling and let me be fully present in meetings rather than trying to type everything I heard.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jonmagic.com/images/posts/context-rules-everything-around-me/zoom-transcript.gif&quot; alt=&quot;zoom transcript&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;For in-person offsites, I used my phone’s Voice Memos to capture audio. I’d import these recordings into the MacWhisper app, which automatically transcribed and even attempted speaker detection. Although I’d sometimes need to tag speakers manually, the payoff was huge: every stray comment or subtle nuance was preserved.&lt;/p&gt;
+&lt;p&gt;With these transcripts, a quick AI pass yielded exactly the details I needed:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A bullet-pointed to-do list with owners.&lt;/li&gt;
+&lt;li&gt;A short summary for my manager’s weekly update.&lt;/li&gt;
+&lt;li&gt;A “what we decided” snippet for reference in a follow-up doc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Before transcripts, I’d scramble to reconstruct these details by memory or rummage through half-finished notes. Now it’s one prompt away.&lt;/p&gt;
+&lt;h2&gt;Proof: Fewer “Did We Decide That?” Moments&lt;/h2&gt;
+&lt;p&gt;After a few weeks of using transcripts in all my calls, I noticed:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I was participating in meetings instead of just taking notes.&lt;/li&gt;
+&lt;li&gt;My personal “action item capture rate” soared—I rarely missed tasks assigned in a meeting.&lt;/li&gt;
+&lt;li&gt;I got ~4x more context out of the same meeting time because I could always re-check the transcript.&lt;/li&gt;
+&lt;li&gt;My writing speed for proposals and status updates skyrocketed, saving me up to 80% of the typical prep time.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Best of all, the entire team benefited. Fewer “Wait, I thought we agreed on something else” rewinds. Less chat message churn. I even started copying my executive summaries to meeting participants within seconds of a call being done, which drastically reduced random pings for clarifications.&lt;/p&gt;
+&lt;p&gt;One anecdote stands out: during a three day offsite, I recorded 24 hours of brainstorming with Voice Memos, then fed them into a speech-to-text model. I posted a daily summary to keep everyone aligned. After the offsite, I produced a single, cohesive doc capturing all decisions, complete with quotes and proposals. That doc ended up steering part of our next quarter’s roadmap—something that wouldn’t have been possible if we’d relied on my scribbles alone.&lt;/p&gt;
+&lt;p&gt;Some testimonials from folks who have adopted my workflows and prompts:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“This is fantastic @jonmagic - the quality of the executive summary is suprisingly high! Going to use the heck out of this 🙇🏼”&lt;/p&gt;
+&lt;p&gt;“This is soooooo good. I’m going to have to play with this. I’ve also started to move much faster and by the end of the week, I will reflect on discussions I’ve had and not remember who they were with “Where did I hear this? Didn’t they say…?” Thank you @jonmagic.”&lt;/p&gt;
+&lt;p&gt;“h/t to @jonmagic, I’ve fully bought into using transcripts and AI summaries for meetings. While they’re not perfect and can hallucinate, they let me stay present instead of taking notes.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;The Minimal Reproducible Stack&lt;/h2&gt;
+&lt;p&gt;Below is the core technology and workflow I suggest trying. It’s easy to set up on a weekend, and you’ll see immediate results.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Capture&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use Zoom or Teams recordings, making sure you enable transcripts (see gif above). &lt;strong&gt;IMPORTANT:&lt;/strong&gt; Get into the habit of hitting that Trascript button as soon as you join a meeting and for Zoom &lt;a href=&quot;https://gist.github.com/jonmagic/a9ebeb20d7cdf94923533e0f59ad188e&quot;&gt;use an AppleScript like this&lt;/a&gt; to ensure the Save transcript button is clicked frequently to ensure you don’t lose any of the transcript before the call ends.&lt;/li&gt;
+&lt;li&gt;For in-person: use your phone’s Voice Memos or any handheld recorder.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Transcribe&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Skip this step if you were able to get a transcript during hte capture phase.&lt;/li&gt;
+&lt;li&gt;For voice recordings Voice Memos is great and will generate a transcription for you if the recording isn’t too long.&lt;/li&gt;
+&lt;li&gt;If you prefer a desktop app, tools like &lt;a href=&quot;https://goodsnooze.gumroad.com/l/macwhisper&quot;&gt;MacWhisper.cpp&lt;/a&gt; add speaker detection automatically.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Prompt&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Feed your transcript into an LLM with along with the processing instructions (aka a prompt). &lt;a href=&quot;https://github.com/copilot&quot;&gt;GitHub Copilot&lt;/a&gt; is an excellent LLM and free (or inexpensive depending on your volume).&lt;/li&gt;
+&lt;li&gt;That prompt might produce an “executive summary” or an “action item list,” depending on which prompt file you pick. See &lt;a href=&quot;https://github.com/jonmagic/prompts&quot;&gt;my repository of prompts&lt;/a&gt; for a few options to get you started.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Outputs&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Store the final summary as text or Markdown (version-control it if you want an audit trail).&lt;/li&gt;
+&lt;li&gt;Share or link it to relevant tasks, tickets, or Slack for easy reference.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I use these steps multiple times a day from meetings to capturing ideas while taking short walks. I recorded all of the context needed for an architectural decision record the other day and from there it was just a short conversation with an LLM to put it into the ADR format.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jonmagic.com/images/posts/context-rules-everything-around-me/walk-and-record.webp&quot; alt=&quot;walk and record&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;Advanced Moves&lt;/h2&gt;
+&lt;div class=&quot;markdown-alert markdown-alert-note&quot;&gt;
+&lt;p class=&quot;markdown-alert-title&quot;&gt;Note&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Heads-up:&lt;/strong&gt; The tools below live in my &lt;a href=&quot;https://github.com/jonmagic/scripts&quot;&gt;&lt;code&gt;jonmagic/scripts&lt;/code&gt;&lt;/a&gt; repo.
+They assume you’re comfortable cloning a repository, installing and configuring the &lt;a href=&quot;https://cli.github.com/&quot;&gt;gh&lt;/a&gt; cli, installing and configuring the &lt;a href=&quot;https://llm.datasette.io/en/stable/&quot;&gt;llm&lt;/a&gt; cli, and creating shell aliases. They’re optional, but once they click, they feel like cheating.&lt;/p&gt;
+&lt;/div&gt;
+&lt;h3&gt;&lt;code&gt;fetch-github-conversation&lt;/code&gt; — one-command context vacuum&lt;/h3&gt;
+&lt;p&gt;Pull an entire Issue, Pull Request, or Discussion thread (comments + diffs) to STDOUT, ready for your favorite prompt.&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;fgc&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token environment constant&quot;&gt;$HOME&lt;/span&gt;/scripts/fetch-github-conversation&quot;&lt;/span&gt;
+
+fgc https://github.com/org/repo/issues/123&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;Why it matters&lt;/em&gt; – Grabbing the full conversation (including all comments) lets the LLM reason with complete history, producing tighter summaries and reducing “what happened earlier?” churn.&lt;/p&gt;
+&lt;h3&gt;&lt;code&gt;prepare-commit&lt;/code&gt; — AI-drafted commit messages&lt;/h3&gt;
+&lt;p&gt;An interactive script for generating a git commit commit of your staged changes using the &lt;a href=&quot;https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716&quot;&gt;semantic commit message guidelines&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;commit&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;~/code/jonmagic/scripts/bin/prepare-commit --commit-message-prompt-path ~/code/jonmagic/prompts/generate/commit-message.md&#39;&lt;/span&gt;
+
+commit&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;Why it matters&lt;/em&gt; – You get crisp, context-rich commit messages without the mental tax of writing them from scratch—perfect when you’re shipping ten tiny PRs a day.&lt;/p&gt;
+&lt;h3&gt;&lt;code&gt;github-conversations-research-agent&lt;/code&gt; — deep-dive, cite-everything analysis&lt;/h3&gt;
+&lt;p&gt;Full tutorial coming soon but in the meantime if you’re curious to see a complex agent and semantic RAG setup at work to answer complex questions that require multi-turn research &lt;a href=&quot;https://gist.github.com/jonmagic/552a6df70428775c221831f2a95063bc&quot;&gt;check out this gist&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Privacy &amp;amp; Consent&lt;/h2&gt;
+&lt;p&gt;Always check local rules and company policy before recording. In some regions, it’s mandatory to disclose or request consent from all participants. Data security is crucial: if transcripts contain sensitive or personal information, encrypt them at rest and redact as needed before sending them to cloud-based LLMs. In short: be transparent, and protect confidentiality.&lt;/p&gt;
+&lt;h2&gt;Accessibility &amp;amp; Inclusivity&lt;/h2&gt;
+&lt;p&gt;It’s not just about saving you time: transcripts help Deaf teammates, those who prefer reading over listening, or anyone dealing with multiple demands on their attention. Having a verbatim record fosters inclusive communication, especially across time zones. This is about building a team culture where everyone has equal access to context—even if they missed the meeting entirely.&lt;/p&gt;
+&lt;h2&gt;C.R.E.A.M. — Context Rules Everything Around Me&lt;/h2&gt;
+&lt;p&gt;In the &#39;90s, Wu‑Tang Clan rapped &lt;a href=&quot;https://www.youtube.com/watch?v=PBwAxmrE194&quot;&gt;Cash Rules Everything Around Me&lt;/a&gt;. At early GitHub, &lt;strong&gt;C.R.E.A.M.&lt;/strong&gt; was a north star for open financial ops. In 2024, my own C.R.E.A.M. stands for: &lt;strong&gt;Context Rules Everything Around Me&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Where do you go from here? Try capturing just one meeting tomorrow and feeding the transcript to your favorite LLM. If you’re already doing that, level up with advanced prompts or a record and transcribe process at an offsite. Let me know how it goes.&lt;/p&gt;
+&lt;h2&gt;Feedback&lt;/h2&gt;
+&lt;p&gt;I would love ot hear from you: &lt;a href=&quot;https://github.com/jonmagic/jonmagic.com/discussions/8&quot;&gt;discussions/8&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Thank you for your time 🙏&lt;/p&gt;
+</content>
+  </entry>
   
   <entry>
     <title>Farewell RailsConf and Thank You For Everything</title>

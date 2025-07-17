@@ -557,6 +557,12 @@
     "xPercent": 1.25,
     "yPercent": 30
   },
+  "context-rules-everything-around-me": {
+    "x": 31,
+    "y": 9,
+    "xPercent": 38.75,
+    "yPercent": 45
+  },
   "configuring-pbx-in-a-flash-to-use-rhino-cards": {
     "x": 8,
     "y": 11,
