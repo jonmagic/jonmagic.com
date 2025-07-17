@@ -51,11 +51,12 @@
 &lt;p&gt;Best of all, the entire team benefited. Fewer “Wait, I thought we agreed on something else” rewinds. Less chat message churn. I even started copying my executive summaries to meeting participants within seconds of a call being done, which drastically reduced random pings for clarifications.&lt;/p&gt;
 &lt;p&gt;One anecdote stands out: during a three day offsite, I recorded 24 hours of brainstorming with Voice Memos, then fed them into a speech-to-text model. I posted a daily summary to keep everyone aligned. After the offsite, I produced a single, cohesive doc capturing all decisions, complete with quotes and proposals. That doc ended up steering part of our next quarter’s roadmap—something that wouldn’t have been possible if we’d relied on my scribbles alone.&lt;/p&gt;
 &lt;p&gt;Some testimonials from folks who have adopted my workflows and prompts:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“This is fantastic @jonmagic - the quality of the executive summary is suprisingly high! Going to use the heck out of this 🙇🏼”&lt;/p&gt;
-&lt;p&gt;“This is soooooo good. I’m going to have to play with this. I’ve also started to move much faster and by the end of the week, I will reflect on discussions I’ve had and not remember who they were with “Where did I hear this? Didn’t they say…?” Thank you @jonmagic.”&lt;/p&gt;
-&lt;p&gt;“h/t to @jonmagic, I’ve fully bought into using transcripts and AI summaries for meetings. While they’re not perfect and can hallucinate, they let me stay present instead of taking notes.”&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;div class=&quot;markdown-alert markdown-alert-tip&quot;&gt;&lt;p&gt;This is fantastic @jonmagic - the quality of the executive summary is suprisingly high! Going to use the heck out of this 🙇🏼&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;markdown-alert markdown-alert-tip&quot;&gt;&lt;p&gt;This is soooooo good. I’m going to have to play with this. I’ve also started to move much faster and by the end of the week, I will reflect on discussions I’ve had and not remember who they were with “Where did I hear this? Didn’t they say…?” Thank you @jonmagic.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;markdown-alert markdown-alert-tip&quot;&gt;&lt;p&gt;h/t to @jonmagic, I’ve fully bought into using transcripts and AI summaries for meetings. While they’re not perfect and can hallucinate, they let me stay present instead of taking notes.&lt;/p&gt;
+&lt;/div&gt;
 &lt;h2&gt;The Minimal Reproducible Stack&lt;/h2&gt;
 &lt;p&gt;Below is the core technology and workflow I suggest trying. It’s easy to set up on a weekend, and you’ll see immediate results.&lt;/p&gt;
 &lt;ol&gt;
