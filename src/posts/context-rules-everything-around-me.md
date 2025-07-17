@@ -117,7 +117,7 @@ commit
 
 ### `github-conversations-research-agent` — deep-dive, cite-everything analysis
 
-Full tutorial coming soon but in the meantime if you're curious to see a complex agent and semantic RAG setup at work to answer complex questions that require multi-turn research [check out this gist](https://gist.github.com/jonmagic/552a6df70428775c221831f2a95063bc).
+Full tutorial coming soon but in the meantime if you're curious to see a advanced agent and semantic RAG setup at work to thoroughly answer questions that require multi-turn research [check out this gist](https://gist.github.com/jonmagic/552a6df70428775c221831f2a95063bc).
 
 ## Privacy & Consent
 
