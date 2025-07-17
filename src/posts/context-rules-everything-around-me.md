@@ -135,6 +135,6 @@ Where do you go from here? Try capturing one meeting this week and feeding the t
 
 ## Feedback
 
-I would love ot hear from you: [discussions/8](https://github.com/jonmagic/jonmagic.com/discussions/8)
+I would love to hear from you: [discussions/8](https://github.com/jonmagic/jonmagic.com/discussions/8)
 
 Thank you for your time :pray:
