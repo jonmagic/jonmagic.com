@@ -82,6 +82,10 @@ Below is the core technology and workflow I suggest trying. It’s easy to set u
    - Store the final summary as text or Markdown (version-control it if you want an audit trail).
    - Share or link it to relevant tasks, tickets, or Slack for easy reference.
 
+I use these steps multiple times a day from meetings to capturing ideas while taking short walks. I recorded all of the context needed for an architectural decision record the other day and from there it was just a short conversation with an LLM to put it into the ADR format.
+
+![walk and record](/images/posts/context-rules-everything-around-me/walk-and-record.webp)
+
 ## Advanced Moves
 
 > [!NOTE]
