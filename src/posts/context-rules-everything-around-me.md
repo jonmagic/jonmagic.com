@@ -20,7 +20,7 @@ I was drowning in meetings, losing track of decisions, and manually typing notes
 
 ## Too Many Meetings, Too Little Clarity
 
-Last last year, I moved into a principal engineer role at GitHub, and my meeting load tripled almost overnight. I was juggling dozens of syncs, architecture reviews, async updates, and 1:1s every week. I’d leave a call with a few scribbled bullet points, but promptly forget half of the decisions by the next day. The bigger my scope became, the less my scattered note-taking kept me afloat.
+Late last year, I moved into a principal engineer role at GitHub, and my meeting load tripled almost overnight. I was juggling dozens of syncs, architecture reviews, async updates, and 1:1s every week. I’d leave a call with a few scribbled bullet points, but promptly forget half of the decisions by the next day. The bigger my scope became, the less my scattered note-taking kept me afloat.
 
 I realized that if I wanted to stay on top of critical decisions—let alone communicate them to peers and leadership—I needed a better system. Enter full transcripts. Once I started capturing entire conversations verbatim, it finally "clicked" that I could feed this raw context into AI to produce highlights and next steps. The difference was night and day.
 
