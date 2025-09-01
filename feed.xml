@@ -4,12 +4,91 @@
   <subtitle>My thoughts on software development, team building, and life.</subtitle>
   <link href="https://jonmagic.com/feed.xml" rel="self"/>
   <link href="https://jonmagic.com"/>
-  <updated>2025-07-16T00:00:00Z</updated>
+  <updated>2025-09-01T00:00:00Z</updated>
   <id>https://jonmagic.com/</id>
   <author>
     <name>Jonathan Hoyt</name>
     <email>jonmagic@gmail.com</email>
   </author>
+  
+  <entry>
+    <title>Designing Collaborations, Not Just Automations</title>
+    <link href="https://jonmagic.com/posts/designing-collaborations-not-just-automations/"/>
+    <updated>2025-09-01T00:00:00Z</updated>
+    <id>https://jonmagic.com/posts/designing-collaborations-not-just-automations/</id>
+    <content type="html">&lt;p&gt;In my last post, &lt;a href=&quot;https://jonmagic.com/posts/the-uncertain-future-of-coding-careers-and-why-im-still-hopeful/&quot;&gt;&lt;em&gt;The Uncertain Future of Coding Careers (and Why I’m Still Hopeful)&lt;/em&gt;&lt;/a&gt;, I wrote about something I’ve always found exciting as a developer: working myself out of a job so I can work myself into the next one. I don’t come from a CS background and my programming journey has always been focused on solving problems that matter to me, and that often means automating away the tedious parts of my work.&lt;/p&gt;
+&lt;p&gt;The pattern has been consistent: every time I automate away repetitive work, new challenges appear upstream. And the upstream work is often more interesting, more impactful, and more human.&lt;/p&gt;
+&lt;p&gt;This sequel is about how I’m seeing that play out in real time. It’s a story about reflection, the hidden purpose of seemingly tedious tasks, and the surprising power of &lt;strong&gt;designing collaborations&lt;/strong&gt;, not just automations.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jonmagic.com/images/posts/designing-collaborations-not-just-automations/jonmagic-contemplating-collaborations.webp&quot; alt=&quot;jonmagic contemplating collaborations&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;When Automation Delays Understanding&lt;/h2&gt;
+&lt;p&gt;For almost a year, I tried every possible way to automate my weekly writeup to leadership (at GitHub we refer to these as snippets): pasting prompts into &lt;a href=&quot;https://github.com/copilot&quot;&gt;Copilot&lt;/a&gt;, &lt;a href=&quot;https://gist.github.com/jonmagic/83445be775791b7d3a5cc6c97641dc57&quot;&gt;building agentic workflows&lt;/a&gt;, trying out yet-to-be-released tools my coworkers are building, you name it I tried it. And every time I ran into the same problems:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The output was terrible.&lt;/strong&gt; It was verbose, inconsistent, or just plain wrong. I spent almost as much time fixing the results as I would have spent writing them myself.&lt;/p&gt;
+&lt;p&gt;But more importantly, &lt;strong&gt;I wasn’t learning anything.&lt;/strong&gt; Snippets became a chore. I wasn’t reflecting, I wasn’t seeing patterns in my work, I wasn’t building understanding of what mattered. It was just another TPS report—faster busywork, not better outcomes.&lt;/p&gt;
+&lt;p&gt;Here’s what took me too long to realize: writing snippets wasn’t just about informing leadership. The act of reflection—forcing myself to review the week, identify what worked, process what I learned—was building understanding in my own mind. When I automated that away, I lost something valuable: the cognitive work that made me better at my job.&lt;/p&gt;
+&lt;p&gt;This applies beyond snippets. Code reviews aren’t just about catching bugs—they’re about building shared understanding of the codebase. Documentation isn’t just about recording information—it’s about clarifying your own thinking. Even debugging isn’t just about fixing problems—it’s about building mental models of how systems work.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Not all tasks exist to produce an output. Some exist to build understanding.&lt;/strong&gt; Automating those defeats the whole purpose.&lt;/p&gt;
+&lt;h2&gt;The Breakthrough: Preserve Learning, Reduce Grunt Work&lt;/h2&gt;
+&lt;p&gt;Two things shifted my approach:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;A self-reflection habit.&lt;/strong&gt; In my weekly “how I work” review, I noticed my best outcomes always came from collaboration—pairing with teammates, debating with peers, even bouncing ideas off Copilot. Collaboration, human or AI, was where the wins came from.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Discovering VS Code Chat Modes.&lt;/strong&gt; &lt;a href=&quot;https://code.visualstudio.com/docs/copilot/customization/custom-chat-modes&quot;&gt;Chat Modes&lt;/a&gt; gave me a way to design a lightweight, &lt;em&gt;context-specific collaborator&lt;/em&gt; in seconds. Instead of trying to build a &lt;a href=&quot;https://gist.github.com/jonmagic/83445be775791b7d3a5cc6c97641dc57&quot;&gt;complex multi-step agentic workflow&lt;/a&gt;, I could create an AI partner with a few paragraphs of instructions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The key question became: &lt;strong&gt;“What am I supposed to learn from doing this?”&lt;/strong&gt; If the answer was “nothing,” automate away. If the answer was meaningful, design a collaboration that preserves the learning while reducing the grunt work.&lt;/p&gt;
+&lt;p&gt;The result was my &lt;a href=&quot;https://gist.github.com/jonmagic/bdb9ce0d706ed31c427cd1c13e2e285a&quot;&gt;Snippets Interviewer ChatMode&lt;/a&gt;. It doesn’t just spit out text. It asks me questions. It checks sources. It pauses for confirmation. It lets me edit and interject. Most importantly, it helps me &lt;em&gt;think&lt;/em&gt; about what I did that week and learn from it.&lt;/p&gt;
+&lt;p&gt;Now, writing snippets takes 5-10 minutes instead of an hour. But I end the process feeling grateful, reflective, and ready for the week ahead. When the task disappeared, so did the meaning. When I designed a collaboration, both the efficiency and the understanding remained.&lt;/p&gt;
+&lt;h2&gt;Why This Matters Beyond Individual Tasks&lt;/h2&gt;
+&lt;p&gt;The future of coding careers isn’t about doing tasks faster—it’s about &lt;strong&gt;designing better collaborations&lt;/strong&gt; that preserve what humans need while eliminating what we don’t.&lt;/p&gt;
+&lt;p&gt;I’ve been seeing this pattern emerge:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Automation replaces execution.&lt;/strong&gt; Once we know exactly what needs doing, machines can do it faster and cheaper.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Collaboration enhances exploration and understanding.&lt;/strong&gt; When problems are ambiguous, when we need to learn, when we don’t even know what questions to ask yet, collaboration is where value is created.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This insight is a fundamental career principle. The more you move upstream into framing, guiding, and curating—the work that builds understanding—the less replaceable you become.&lt;/p&gt;
+&lt;p&gt;And it scales beyond individual work. I’ve started creating Chat Modes for my team, like &lt;a href=&quot;https://gist.github.com/jonmagic/357ca10264ac198c95d68a0203c6b1f4&quot;&gt;this one that helps us upgrade project documentation&lt;/a&gt;. It turns a solo documentation task into a collaborative process where the improved docs help new teammates onboard faster and old teammates reload context with less effort. As I wrote in &lt;a href=&quot;https://jonmagic.com/posts/context-rules-everything-around-me/&quot;&gt;Context Rules Everything Around Me&lt;/a&gt;, context creates the foundation for more effective AI collaboration.&lt;/p&gt;
+&lt;h2&gt;What AI Still Can’t Do&lt;/h2&gt;
+&lt;p&gt;In conversations with friends (and with ChatGPT itself, ironically), I keep coming back to a nagging question: can we ever teach machines to truly explore? To intuit? To decide what’s worth understanding?&lt;/p&gt;
+&lt;p&gt;Right now, the answer is no. LLMs are incredible at predicting what comes next, but not at deciding what &lt;em&gt;ought&lt;/em&gt; to come next. They don’t have goals. They don’t want anything. They don’t care.&lt;/p&gt;
+&lt;p&gt;That means exploration, venturing into the unknown, choosing what’s worth solving, building understanding through reflection—that’s still ours. And that’s good news, because exploration and understanding are the most rewarding parts of the job.&lt;/p&gt;
+&lt;p&gt;My snippets Chat Mode is a perfect example. The AI can search, summarize, and draft. But only I can decide which risks matter, which collaborations deserve a shoutout, which themes are worth elevating. That’s exploration. That’s understanding. That’s me.&lt;/p&gt;
+&lt;h2&gt;Climbing the Abstraction Ladder&lt;/h2&gt;
+&lt;p&gt;I’m thinking about this as an abstraction ladder where each rung preserves human understanding while eliminating mechanical work:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A generation ago, debugging memory management was a big part of coding.&lt;/li&gt;
+&lt;li&gt;Then we moved up to writing applications without worrying about memory.&lt;/li&gt;
+&lt;li&gt;Now we’re moving up again: coding with AI pair programmers that handle boilerplate, syntax, even architecture patterns.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If your career is tied to a specific rung, the ladder can feel scary. But if your career is tied to &lt;em&gt;climbing the ladder itself&lt;/em&gt;—to curiosity, adaptability, and upstream thinking—you’re better positioned for whatever comes next.&lt;/p&gt;
+&lt;p&gt;The skill that endures isn’t “knowing X language” or “mastering Y framework.” It’s: &lt;strong&gt;designing collaborations that preserve understanding while eliminating busywork.&lt;/strong&gt; Every new collaboration we design creates value that’s harder to automate away because it amplifies human insight rather than replacing it.&lt;/p&gt;
+&lt;h2&gt;New Metrics of Accomplishment&lt;/h2&gt;
+&lt;p&gt;Something unexpected happened when I redesigned snippets around collaboration: the &lt;em&gt;purpose&lt;/em&gt; of snippets changed.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Before, snippets were proof of activity. A list of what I did.&lt;/li&gt;
+&lt;li&gt;Now, snippets are a reflection. A mirror of what mattered, a record of collaboration, and a chance to give credit.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;By shifting from automation to collaboration, I didn’t just make snippets faster—I made them more meaningful. I came away not with a report, but with insights, gratitude, and perspective.&lt;/p&gt;
+&lt;p&gt;I think this previews what’s ahead for all of us. As AI accelerates execution, the real measure of accomplishment won’t be “how much we did” but “how well we understood, framed, collaborated, and explored.”&lt;/p&gt;
+&lt;h2&gt;So What’s Next?&lt;/h2&gt;
+&lt;p&gt;If automation keeps marching forward, and it will, what kind of work should we focus on?&lt;/p&gt;
+&lt;p&gt;Here’s my short list—all work that builds understanding:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Framing problems&lt;/strong&gt;: defining what to solve is harder than solving it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Exploring ambiguity&lt;/strong&gt;: the messy, undefined spaces where understanding emerges.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Curating judgment&lt;/strong&gt;: knowing which answers are right, safe, ethical, or impactful.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Designing collaborations&lt;/strong&gt;: building processes (with humans and AIs) that preserve learning while reducing grunt work.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Recognizing others&lt;/strong&gt;: amplifying collaboration, giving credit, building trust.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you’re looking for a career compass in uncertain times, ask yourself: “What am I supposed to learn from this work?” Then design collaborations that preserve that learning.&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;When I look back on my first experiments with automating snippets, I see the broader automation trap. I thought the goal was to make the task disappear. But when the task disappeared, so did the meaning—and the understanding it was supposed to build.&lt;/p&gt;
+&lt;p&gt;The breakthrough came from reframing the question. Not “How do I automate this?” but &lt;strong&gt;“How do I design a collaboration that preserves what I need to learn while eliminating what I don’t?”&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;That’s the bigger lesson for coding careers in the age of AI. The robots aren’t replacing us anytime soon. They’ll get smarter, they’ll remix our work, they’ll even surprise us. But the frontier of exploration, understanding, and meaningful collaboration is still ours.&lt;/p&gt;
+&lt;p&gt;If you want to thrive in that future, don’t just automate—collaborate. Design partnerships that make you smarter, more reflective, and more human, not just faster.&lt;/p&gt;
+</content>
+  </entry>
   
   <entry>
     <title>Context Rules Everything Around Me</title>
