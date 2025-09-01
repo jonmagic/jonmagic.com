@@ -38,8 +38,8 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;The key question became: &lt;strong&gt;“What am I supposed to learn from doing this?”&lt;/strong&gt; If the answer was “nothing,” automate away. If the answer was meaningful, design a collaboration that preserves the learning while reducing the grunt work.&lt;/p&gt;
-&lt;p&gt;The result was my &lt;a href=&quot;https://gist.github.com/jonmagic/bdb9ce0d706ed31c427cd1c13e2e285a&quot;&gt;Snippets Interviewer Chat Mode&lt;/a&gt;. It doesn’t just spit out text. It asks me questions. It checks sources. It pauses for confirmation. It lets me edit and interject. Most importantly, it helps me &lt;em&gt;think&lt;/em&gt; about what I did that week and learn from it.&lt;/p&gt;
-&lt;p&gt;Now, writing snippets takes 5-10 minutes instead of an hour. But I end the process feeling grateful, reflective, and ready for the week ahead. When the task disappeared, so did the meaning. When I designed a collaboration, both the efficiency and the understanding remained.&lt;/p&gt;
+&lt;p&gt;The result was my &lt;a href=&quot;https://gist.github.com/jonmagic/bdb9ce0d706ed31c427cd1c13e2e285a&quot;&gt;&lt;strong&gt;Snippets Interviewer Chat Mode&lt;/strong&gt;&lt;/a&gt;. Instead of only collecting context and generating near final output in one go, it asks me questions, checks sources, and lets me edit and interject. Most importantly, &lt;strong&gt;it helps me think&lt;/strong&gt; about what I did that week by turning it into a conversation.&lt;/p&gt;
+&lt;p&gt;When I automated the task I regained 30-45 minutes of time but &lt;strong&gt;the meaning disappeared&lt;/strong&gt;. When I designed a collaboration, &lt;strong&gt;both efficiency and understanding remained&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2&gt;Why This Matters Beyond Individual Tasks&lt;/h2&gt;
 &lt;p&gt;The future of coding careers isn’t about doing tasks faster—it’s about &lt;strong&gt;designing better collaborations&lt;/strong&gt; that preserve what humans need while eliminating what we don’t.&lt;/p&gt;
 &lt;p&gt;I’ve been seeing this pattern emerge:&lt;/p&gt;
