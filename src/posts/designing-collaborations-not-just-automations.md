@@ -42,7 +42,7 @@ Two things shifted my approach:
 
 The key question became: **"What am I supposed to learn from doing this?"** If the answer was "nothing," automate away. If the answer was meaningful, design a collaboration that preserves the learning while reducing the grunt work.
 
-The result was my [Snippets Interviewer ChatMode](https://gist.github.com/jonmagic/bdb9ce0d706ed31c427cd1c13e2e285a). It doesn't just spit out text. It asks me questions. It checks sources. It pauses for confirmation. It lets me edit and interject. Most importantly, it helps me *think* about what I did that week and learn from it.
+The result was my [Snippets Interviewer Chat Mode](https://gist.github.com/jonmagic/bdb9ce0d706ed31c427cd1c13e2e285a). It doesn't just spit out text. It asks me questions. It checks sources. It pauses for confirmation. It lets me edit and interject. Most importantly, it helps me *think* about what I did that week and learn from it.
 
 Now, writing snippets takes 5-10 minutes instead of an hour. But I end the process feeling grateful, reflective, and ready for the week ahead. When the task disappeared, so did the meaning. When I designed a collaboration, both the efficiency and the understanding remained.
 
