@@ -32,6 +32,10 @@
       {% endif %}
       <h1 class="site-title">{{ title }}</h1>
       {{ content | safe }}
+      {# Conditional post CTA for posts from 2010 or newer #}
+      {% if date and page.url and page.url.startsWith('/posts/') and date.getFullYear() >= 2010 %}
+      {% include 'post-cta.njk' %}
+      {% endif %}
     </main>
   </div>
   {% endif %}
