@@ -57,14 +57,14 @@ Here's the tactical part most people won't tell you. Your first few interviews w
 
 I've failed a lot of interviews. I failed at Google. I failed at startups where the combined experience of the entire team was less than mine. I failed at companies where I was good friends with people on the team I was interviewing for, people who knew my work. Each failure taught me something. Interviewing is a skill that requires repetition, not cramming.
 
-And here's the paradox—those periodic check-ins with the market actually made me appreciate GitHub more. Seeing what else was out there helped me recognize what I had. That quick check to see if the grass was greener helped me come back each time and appreciate where I was even more.
+And here's the irony—those periodic check-ins with the market actually made me appreciate GitHub more. Seeing what else was out there helped me recognize what I had. That quick check to see if the grass was greener helped me come back each time and appreciate where I was even more.
 
 > [!TIP]
 > **Feedback I received on this post:** "One thing that can accelerate this learning is paying for professional mock interviews. It's humbling how quickly an experienced interviewer can spot your blind spots. That external feedback is worth far more than another week of solo practice."
 
 ### Do As Much of Your Work in the Open as Possible
 
-If you can't show your work, you can't prove your work. This has been one of my core practices for over a decade—make things public whenever possible.
+If you can't show your work, you can't prove your work. This has been one of my core practices for almost two decades—make things public whenever possible.
 
 Every blog post I wrote about [Hubot](https://jonmagic.com/posts/hubot-scripts-explained/) in [2011](https://jonmagic.com/posts/hipchat-hubot-and-me/) is still online, still demonstrating my technical thinking. [The Speaker Deck project](https://jonmagic.com/posts/the-history-of-speaker-deck/) I helped build is still in my portfolio. The conference talks I gave in [Italy](https://jonmagic.com/posts/my-trip-to-verona/) and elsewhere are still searchable. All of this public work has opened doors I didn't even know existed.
 
@@ -103,13 +103,13 @@ After doing this a few times, patterns emerge. You start to see where you're vul
 
 One of the most accelerating forces in my career has been [mentorship](https://jonmagic.com/posts/mentors/), both receiving it and eventually giving it.
 
-When I started at Ordered List, I paired with Brandon three or four days a week. He had years of programming experience and taught me how to write maintainable code, how to think through problems, how to build elegant solutions. That intensive pairing compressed years of learning into months.
+When I started at Ordered List, I paired with [Brandon Keepers](https://opensoul.org) three or four days a week. He had years of programming experience and taught me how to write maintainable code, how to think through problems, how to build elegant solutions. That intensive pairing compressed years of learning into months.
 
 John mentored me on career growth and personal development through weekly meetings. We talked about goals, about challenges, about life beyond code. That external perspective helped me see patterns I couldn't see myself.
 
 Mentorship accelerates your growth, gives you perspective from someone who's seen more careers (including failures), holds you accountable, and expands your network. A good mentor warns you about pitfalls before you hit them.
 
-Finding mentors takes patience. The relationship with Steve and John that eventually led to my job started four years before they hired me. You can't sprint relationship building. But you can be intentional about seeking out people you respect and learning from them.
+Finding mentors takes patience. The relationship with Steve and John that eventually led to my job started years before they hired me. You can't sprint relationship building. But you can be intentional about seeking out people you respect and learning from them.
 
 And eventually, you pay it forward. Mentoring others isn't just good karma—it deepens your own understanding and expands your network in new directions.
 
@@ -158,7 +158,7 @@ Here's what I've learned. The best time to build job security is when you don't 
 
 When you're employed and comfortable, you can be selective about opportunities. You can practice interviewing without desperation. You can build relationships without ulterior motives. You can create public work without pressure.
 
-When layoffs come (and they always do eventually), that preparation is what saves you. Not because you have a backup plan, but because you've built something more valuable than job security—you've built career security.
+When layoffs come (and they will), that preparation is what saves you. Not because you have a backup plan, but because you've built something more valuable than job security—you've built career security.
 
 The relationships are already there. The portfolio already exists. The interview muscles are warm. The network already knows your work. You're not starting from zero.
 
@@ -168,4 +168,4 @@ I can't promise my friend that they won't be affected by the next round of layof
 
 But I can tell them what I believe. Their value isn't determined by any single company's decision. Their career security comes from the skills they build, the relationships they nurture, the work they share publicly, and the preparation they do now.
 
-Nothing is guaranteed. But that's exactly why we prepare.
+Nothing is guaranteed. And that's exactly why we prepare.
