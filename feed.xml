@@ -4,12 +4,118 @@
   <subtitle>My thoughts on software development, team building, and life.</subtitle>
   <link href="https://jonmagic.com/feed.xml" rel="self"/>
   <link href="https://jonmagic.com"/>
-  <updated>2025-09-01T00:00:00Z</updated>
+  <updated>2025-10-23T00:00:00Z</updated>
   <id>https://jonmagic.com/</id>
   <author>
     <name>Jonathan Hoyt</name>
     <email>jonmagic@gmail.com</email>
   </author>
+  
+  <entry>
+    <title>Building Career Security in an Uncertain World</title>
+    <link href="https://jonmagic.com/posts/building-career-security-in-an-uncertain-world/"/>
+    <updated>2025-10-23T00:00:00Z</updated>
+    <id>https://jonmagic.com/posts/building-career-security-in-an-uncertain-world/</id>
+    <content type="html">&lt;p&gt;Earlier today I saw a friend post about layoffs. Someone they were collaborating with on a project had just been let go. “I will be anxiously distracted for the next few days,” they wrote, “trying to yet again pivot a collaboration I was planning on.”&lt;/p&gt;
+&lt;p&gt;The conversation that followed touched on questions many of us are wrestling with right now. How can critical engineering positions get cut when security issues are mounting? Why plan a project if the people who can execute it aren’t considered essential? And underneath those tactical questions sat a deeper, more personal one: Am I next?&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jonmagic.com/images/posts/building-career-security-in-an-uncertain-world/walk-and-talk.webp&quot; alt=&quot;walking and talking about job security&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;I wanted to respond with empathy, but also with something useful. Their frustration is completely valid—the randomness of layoffs makes planning feel futile. But I’ve learned something over nearly 14 years at GitHub and 28 years in tech that might help.&lt;/p&gt;
+&lt;p&gt;Job security doesn’t exist. It never did. Companies make decisions that don’t make business sense to those on the ground. Layoffs happen even when the work is critical. The promise of a stable position is always fragile.&lt;/p&gt;
+&lt;p&gt;But career security? That’s real to a degree. And it’s built through deliberate practice, not by holding tight to any single job.&lt;/p&gt;
+&lt;h2&gt;The Uncomfortable Truth&lt;/h2&gt;
+&lt;p&gt;I’ve watched this cycle play out more times than I can count. Earlier this year, we lost three teammates on my own team at GitHub. Amazing humans doing important work. It didn’t make sense then and it doesn’t make sense now. The logic of layoffs is rarely visible from the inside.&lt;/p&gt;
+&lt;p&gt;The tech industry swings wildly between hiring binges and brutal layoffs. Companies staff up when they want to impress investors with growth metrics, then slash headcount when those same investors demand profitability. It’s a cycle that serves shareholders, not the people doing the actual work. And navigating this gets harder, not easier, as you advance in your career—the financial stakes rise as you take on mortgages, family responsibilities, and all the obligations that come with building a life.&lt;/p&gt;
+&lt;p&gt;So how do I deal with this reality? I accept it, and I prepare.&lt;/p&gt;
+&lt;h2&gt;Nothing is Guaranteed, So Always Be Preparing&lt;/h2&gt;
+&lt;p&gt;Here’s what I told my colleague, and what I try to practice myself: Nothing is guaranteed, so it’s important for each of us to consider our strengths and weaknesses and to prepare.&lt;/p&gt;
+&lt;p&gt;That preparation isn’t about living in fear. It’s about building the kind of career resilience that creates opportunities even when your current job disappears. And critically, it’s about being careful not to tie your identity to the company’s decisions. Your mental health depends on recognizing that business decisions you can’t control don’t define your worth. You can control your skills, your relationships, and your preparation—so that’s where to focus your energy.&lt;/p&gt;
+&lt;h3&gt;Build Relationships Inside and Outside Your Company&lt;/h3&gt;
+&lt;p&gt;The most important preparation isn’t technical—it’s relational. I wouldn’t be at GitHub if I hadn’t met &lt;a href=&quot;https://orderedlist.com/&quot;&gt;Steve Smith&lt;/a&gt; and &lt;a href=&quot;https://johnnunemaker.com/&quot;&gt;John Nunemaker&lt;/a&gt; at a small meetup at Notre Dame back in 2007. We kept in touch, built a friendship over three years, and in 2010 &lt;a href=&quot;https://jonmagic.com/posts/hey-mom-i-got-a-job/&quot;&gt;they offered me a job&lt;/a&gt; at Ordered List. A year later, when &lt;a href=&quot;https://jonmagic.com/posts/githubber/&quot;&gt;GitHub acquired Ordered List&lt;/a&gt;, that entire relationship network came with me.&lt;/p&gt;
+&lt;p&gt;One conversation at one meetup created a cascade of opportunities that shaped my entire career. But here’s the thing—I wasn’t networking in the transactional sense. I was genuinely interested in what they were building. I showed up consistently. I contributed where I could. The relationship was real long before it became professionally valuable.&lt;/p&gt;
+&lt;p&gt;Network with intention, but with authenticity. Get off your butt and go to meetups even when you don’t feel like it. Reach out to people whose work you admire. Contribute to projects and communities you care about. These relationships compound over time in ways you can’t predict.&lt;/p&gt;
+&lt;h3&gt;Interview Every 1-4 Years, Even When You’re Happy&lt;/h3&gt;
+&lt;p&gt;This one is uncomfortable to hear, but it’s critical. Go on interviews even when you don’t need a job.&lt;/p&gt;
+&lt;p&gt;I’ve done this every 3-4 years since joining GitHub. Not necessarily because I was looking to leave, but because interview skills atrophy without use. I’ve never been a naturally strong interviewer, so it’s been important for me to exercise that muscle and get over my fears and insecurities.&lt;/p&gt;
+&lt;p&gt;Here’s the tactical part most people won’t tell you. Your first few interviews when you start interviewing again should never be with the company you want to work for. Those are practice. Those are to shake the rust off. Learn from those early interviews on companies that are further down your list.&lt;/p&gt;
+&lt;p&gt;I’ve failed a lot of interviews. I failed at Google. I failed at startups where the combined experience of the entire team was less than mine. I failed at companies where I was good friends with people on the team I was interviewing for, people who knew my work. Each failure taught me something. Interviewing is a skill that requires repetition, not cramming.&lt;/p&gt;
+&lt;div class=&quot;markdown-alert markdown-alert-note&quot;&gt;&lt;p&gt;One thing that can accelerate this learning is paying for professional mock interviews. It’s humbling how quickly an experienced interviewer can spot your blind spots. That external feedback is worth far more than another week of solo practice.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;And here’s the paradox—those periodic check-ins with the market actually made me appreciate GitHub more. Seeing what else was out there helped me recognize what I had. That quick check to see if the grass was greener helped me come back each time and appreciate where I was even more.&lt;/p&gt;
+&lt;h3&gt;Do As Much of Your Work in the Open as Possible&lt;/h3&gt;
+&lt;p&gt;If you can’t show your work, you can’t prove your work. This has been one of my core practices for over a decade—make things public whenever possible.&lt;/p&gt;
+&lt;p&gt;Every blog post I wrote about &lt;a href=&quot;https://jonmagic.com/posts/hubot-scripts-explained/&quot;&gt;Hubot&lt;/a&gt; in &lt;a href=&quot;https://jonmagic.com/posts/hipchat-hubot-and-me/&quot;&gt;2011&lt;/a&gt; is still online, still demonstrating my technical thinking. &lt;a href=&quot;https://jonmagic.com/posts/the-history-of-speaker-deck/&quot;&gt;The Speaker Deck project&lt;/a&gt; I helped build is still in my portfolio. The conference talks I gave in &lt;a href=&quot;https://jonmagic.com/posts/my-trip-to-verona/&quot;&gt;Italy&lt;/a&gt; and elsewhere are still searchable. All of this public work has opened doors I didn’t even know existed.&lt;/p&gt;
+&lt;p&gt;Your portfolio is your interview that never stops running. When I joined Ordered List, and later when GitHub acquired us, people didn’t need to guess what I could do. They could see my code, read my explanations, watch my talks. The friction of hiring me was lower because the evidence was public.&lt;/p&gt;
+&lt;p&gt;Here’s the ladder I’ve seen work:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Foundation&lt;/strong&gt;: Code in public repositories. Contribute to open source. Even small contributions count.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Next level&lt;/strong&gt;: Start a blog. Document what you’re learning. It doesn’t have to be groundbreaking—tutorials and how-tos are incredibly valuable.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Level up&lt;/strong&gt;: Build a cadence of writing and sharing. Consistency matters more than perfection.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;If you’re brave or even if you’re not&lt;/strong&gt;: Try public speaking. Start at local meetups. Work up to conference talks.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Throughout all of this&lt;/strong&gt;: Build genuine relationships. The network you create while doing public work is as valuable as the work itself.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The content you create today can help you get interviews years from now. I know because it’s happened to me.&lt;/p&gt;
+&lt;div class=&quot;markdown-alert markdown-alert-important&quot;&gt;&lt;p&gt;Continue doing solid work even when things look uncertain, but be strategic about where you invest your energy. When you sense instability, don’t over-invest in work that only benefits the company internally. If possible channel that energy into public work that builds your portfolio.&lt;/p&gt;
+&lt;/div&gt;
+&lt;h3&gt;Document Everything&lt;/h3&gt;
+&lt;p&gt;This is both practical and strategic. Document your work, your decisions, your contributions. Keep a record of your accomplishments, the problems you solved, the impact you had.&lt;/p&gt;
+&lt;p&gt;Why? Because when you do need to interview, you’ll have concrete examples ready. Because when performance review time comes, you won’t be trying to remember what you did six months ago. Because if your role gets eliminated, you’ll have a clear narrative of your value to share with the next employer.&lt;/p&gt;
+&lt;p&gt;I keep notes on everything. Conversations, technical decisions, projects shipped. It’s my external memory and my career insurance policy.&lt;/p&gt;
+&lt;h3&gt;Analyze Yourself&lt;/h3&gt;
+&lt;p&gt;I learned the &lt;a href=&quot;https://en.wikipedia.org/wiki/SWOT_analysis&quot;&gt;SWOT analysis framework&lt;/a&gt; in college and &lt;a href=&quot;https://jonmagic.com/posts/swot-analysis/&quot;&gt;I’ve been using it ever since&lt;/a&gt;. Every few months, I sit down with pen and paper and brutally assess my Strengths, Weaknesses, Opportunities, and Threats.&lt;/p&gt;
+&lt;div class=&quot;markdown-alert markdown-alert-note&quot;&gt;&lt;p&gt;There are great alternatives to SWOT including SOAR (Strengths, Opportunities, Aspirations, Results), &lt;a href=&quot;https://en.wikipedia.org/wiki/Gap_analysis&quot;&gt;Gap Analysis&lt;/a&gt;, and &lt;a href=&quot;https://en.wikipedia.org/wiki/Balanced_scorecard&quot;&gt;Personal Balanced Scorecard&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The key is brutal honesty. You’re not sharing this with anyone, so don’t sugar-coat the weaknesses. Don’t undersell the strengths. Look for opportunities that address multiple weaknesses while building on strengths. Identify threats that could turn strengths into weaknesses.&lt;/p&gt;
+&lt;p&gt;After doing this a few times, patterns emerge. You start to see where you’re vulnerable, where you need to grow, where the market is moving. This isn’t abstract self-help—it’s strategic career planning.&lt;/p&gt;
+&lt;h2&gt;The Long Game&lt;/h2&gt;
+&lt;p&gt;One of the most accelerating forces in my career has been &lt;a href=&quot;https://jonmagic.com/posts/mentors/&quot;&gt;mentorship&lt;/a&gt;, both receiving it and eventually giving it.&lt;/p&gt;
+&lt;p&gt;When I started at Ordered List, I paired with Brandon three or four days a week. He had years of programming experience and taught me how to write maintainable code, how to think through problems, how to build elegant solutions. That intensive pairing compressed years of learning into months.&lt;/p&gt;
+&lt;p&gt;John mentored me on career growth and personal development through weekly meetings. We talked about goals, about challenges, about life beyond code. That external perspective helped me see patterns I couldn’t see myself.&lt;/p&gt;
+&lt;p&gt;Mentorship accelerates your growth, gives you perspective from someone who’s seen more careers (including failures), holds you accountable, and expands your network. A good mentor warns you about pitfalls before you hit them.&lt;/p&gt;
+&lt;p&gt;Finding mentors takes patience. The relationship with Steve and John that eventually led to my job started four years before they hired me. You can’t sprint relationship building. But you can be intentional about seeking out people you respect and learning from them.&lt;/p&gt;
+&lt;p&gt;And eventually, you pay it forward. Mentoring others isn’t just good karma—it deepens your own understanding and expands your network in new directions.&lt;/p&gt;
+&lt;h2&gt;The Reality of Failure&lt;/h2&gt;
+&lt;p&gt;I need to say this clearly. Building career security through these practices doesn’t mean you won’t fail. You will. I have.&lt;/p&gt;
+&lt;p&gt;I’ve failed interviews at companies I desperately wanted to join. I’ve given talks that landed flat. I’ve written a lot of code that got rejected. I’ve built relationships that didn’t lead anywhere personally or professionally.&lt;/p&gt;
+&lt;p&gt;But each failure was data. Each one taught me something. The key is to not let failure discourage you from continuing to build these muscles.&lt;/p&gt;
+&lt;p&gt;Interview prep isn’t something most people can do in a few days or even weeks. It takes repetition to build the skills and confidence to pass technical interviews. Portfolio building isn’t a weekend project. Public speaking doesn’t get comfortable after one talk.&lt;/p&gt;
+&lt;p&gt;This is all a long game. Start now, not when you need it.&lt;/p&gt;
+&lt;h2&gt;What This Looks Like in Practice&lt;/h2&gt;
+&lt;p&gt;Let me be concrete about what “always be preparing” means:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;This month:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Attend one meetup or community event&lt;/li&gt;
+&lt;li&gt;Write one blog post or tutorial (even a short one)&lt;/li&gt;
+&lt;li&gt;Update your resume/portfolio with recent work&lt;/li&gt;
+&lt;li&gt;Reach out to one person you admire&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;This quarter:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Do a SWOT analysis on yourself&lt;/li&gt;
+&lt;li&gt;Contribute to one open source project&lt;/li&gt;
+&lt;li&gt;Have coffee with someone outside your immediate team&lt;/li&gt;
+&lt;li&gt;Document your major accomplishments&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;This year:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Go on at least 2-3 practice interviews&lt;/li&gt;
+&lt;li&gt;Invest in your interview skills (prep courses, mock interviews, or practice platforms)&lt;/li&gt;
+&lt;li&gt;Give one talk (even at a small meetup)&lt;/li&gt;
+&lt;li&gt;Build one public project&lt;/li&gt;
+&lt;li&gt;Find or strengthen one mentoring relationship&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;None of these are radical. None require quitting your job or working 80-hour weeks. But together, consistently practiced, they build the foundation of career security.&lt;/p&gt;
+&lt;p&gt;And here’s permission you might need. If you’re overwhelmed, there’s nothing wrong with coasting short-term. Take care of yourself first. This is a marathon, not a sprint. Sometimes the smartest career move is to preserve your mental health and energy for when you really need it.&lt;/p&gt;
+&lt;h2&gt;The Paradox of Preparation&lt;/h2&gt;
+&lt;p&gt;Here’s what I’ve learned. The best time to build job security is when you don’t need it.&lt;/p&gt;
+&lt;p&gt;When you’re employed and comfortable, you can be selective about opportunities. You can practice interviewing without desperation. You can build relationships without ulterior motives. You can create public work without pressure.&lt;/p&gt;
+&lt;p&gt;When layoffs come (and they always do eventually), that preparation is what saves you. Not because you have a backup plan, but because you’ve built something more valuable than job security—you’ve built career security.&lt;/p&gt;
+&lt;p&gt;The relationships are already there. The portfolio already exists. The interview muscles are warm. The network already knows your work. You’re not starting from zero.&lt;/p&gt;
+&lt;h2&gt;Back to My Colleague&lt;/h2&gt;
+&lt;p&gt;I can’t promise my colleague that they won’t be affected by the next round of layoffs. I can’t make the next collaboration work out. I can’t make any of this fair or sensible.&lt;/p&gt;
+&lt;p&gt;But I can tell them what I believe: Their value isn’t determined by any single company’s decision. Their career security comes from the skills they build, the relationships they nurture, the work they share publicly, and the preparation they do now.&lt;/p&gt;
+&lt;p&gt;Nothing is guaranteed. But that’s exactly why we prepare.&lt;/p&gt;
+</content>
+  </entry>
   
   <entry>
     <title>Designing Collaborations, Not Just Automations</title>
