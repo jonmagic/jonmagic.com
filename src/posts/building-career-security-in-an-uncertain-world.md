@@ -15,15 +15,18 @@ The conversation that followed touched on questions many of us are wrestling wit
 
 ![walking and talking about job security](/images/posts/building-career-security-in-an-uncertain-world/walk-and-talk.webp)
 
-I wanted to respond with empathy, but also with something useful. Their frustration is completely valid—the randomness of layoffs makes planning feel futile. But I've learned something over nearly 14 years at GitHub and 28 years in tech that might help.
+I wanted to respond with empathy, but also with something useful, so I shared a few thoughts in the moment and then started working on this post.
 
-Job security doesn't exist. It never did. Companies make decisions that don't make business sense to those on the ground. Layoffs happen even when the work is critical. The promise of a stable position is always fragile.
+Their frustration is completely valid—the randomness of layoffs makes planning feel futile. But I've learned something over nearly 14 years at GitHub and 28 years in tech that might help. Job security doesn't exist. It never did. Companies make decisions that don't make business sense to those on the ground. Layoffs happen even when the work is critical. The promise of a stable position is always fragile.
 
 But career security? That's real to a degree. And it's built through deliberate practice, not by holding tight to any single job.
 
+> [!TIP]
+> **Feedback I received on this post:** when it feels like things are going sidways make sure to "take 5min to check-in with yourself and name what are you feeling in the moment instead of catastrophizing in your head. It gives a more clear perspective of what steps you have access to do next."
+
 ## The Uncomfortable Truth
 
-I've watched this cycle play out more times than I can count. Earlier this year, we lost three teammates on my own team at GitHub. Amazing humans doing important work. It didn't make sense then and it doesn't make sense now. The logic of layoffs is rarely visible from the inside.
+I've watched this cycle play out more times than I can count. Earlier this year, we lost three teammates on my own team at GitHub to layoffs. Amazing humans doing important work. It didn't make sense then and it doesn't make sense now. The logic of layoffs is rarely visible from the inside.
 
 The tech industry swings wildly between hiring binges and brutal layoffs. Companies staff up when they want to impress investors with growth metrics, then slash headcount when those same investors demand profitability. It's a cycle that serves shareholders, not the people doing the actual work. And navigating this gets harder, not easier, as you advance in your career—the financial stakes rise as you take on mortgages, family responsibilities, and all the obligations that come with building a life.
 
@@ -53,10 +56,10 @@ Here's the tactical part most people won't tell you. Your first few interviews w
 
 I've failed a lot of interviews. I failed at Google. I failed at startups where the combined experience of the entire team was less than mine. I failed at companies where I was good friends with people on the team I was interviewing for, people who knew my work. Each failure taught me something. Interviewing is a skill that requires repetition, not cramming.
 
-> [!NOTE]
-> One thing that can accelerate this learning is paying for professional mock interviews. It's humbling how quickly an experienced interviewer can spot your blind spots. That external feedback is worth far more than another week of solo practice.
-
 And here's the paradox—those periodic check-ins with the market actually made me appreciate GitHub more. Seeing what else was out there helped me recognize what I had. That quick check to see if the grass was greener helped me come back each time and appreciate where I was even more.
+
+> [!TIP]
+> **Feedback I received on this post:** "One thing that can accelerate this learning is paying for professional mock interviews. It's humbling how quickly an experienced interviewer can spot your blind spots. That external feedback is worth far more than another week of solo practice."
 
 ### Do As Much of Your Work in the Open as Possible
 
@@ -75,9 +78,6 @@ Here's the ladder I've seen work:
 5. **Throughout all of this**: Build genuine relationships. The network you create while doing public work is as valuable as the work itself.
 
 The content you create today can help you get interviews years from now. I know because it's happened to me.
-
-> [!IMPORTANT]
-> Continue doing solid work even when things look uncertain, but be strategic about where you invest your energy. When you sense instability, don't over-invest in work that only benefits the company internally. If possible channel that energy into public work that builds your portfolio.
 
 ### Document Everything
 
