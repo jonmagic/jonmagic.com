@@ -23,7 +23,7 @@ Their frustration is completely valid—the randomness of layoffs makes planning
 But career security? That's real to a degree. And it's built through deliberate practice, not by holding tight to any single job.
 
 > [!TIP]
-> **Feedback I received on this post:** when it feels like things are going sidways make sure to "take 5min to check-in with yourself and name what are you feeling in the moment instead of catastrophizing in your head. It gives a more clear perspective of what steps you have access to do next."
+> **Feedback I received on this post:** when it feels like things are going sideways make sure to "take 5min to check-in with yourself and name what are you feeling in the moment instead of catastrophizing in your head. It gives a more clear perspective of what steps you have access to do next."
 
 ## The Uncomfortable Truth
 
