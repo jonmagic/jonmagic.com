@@ -3,5 +3,5 @@ title: prompts
 github: https://github.com/jonmagic/prompts
 avatar: /images/projects/prompts.webp
 description: The battle tested prompts I use every day, from generating executive summaries to optimizing them via the semantic manifold principle.
-order: 3
+order: 5
 permalink: false

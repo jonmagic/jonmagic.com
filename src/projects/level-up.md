@@ -3,5 +3,5 @@ title: level-up
 github: https://github.com/jonmagic/level-up
 avatar: /images/projects/level-up.webp
 description: An AI tool that analyzes GitHub contributions and gives personalized feedback to help developers improve.
-order: 8
+order: 10
 permalink: false
