@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const markdownIt = require('markdown-it');
+const markdownItAnchor = require('markdown-it-anchor');
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 let markdownItEmoji = require('markdown-it-emoji');
@@ -151,7 +152,17 @@ module.exports = function(eleventyConfig) {
     breaks: false,
     linkify: true,
     typographer: true
-  }).use(markdownItEmoji).use(githubAlerts);
+  })
+    .use(markdownItEmoji)
+    .use(githubAlerts)
+    .use(markdownItAnchor, {
+      permalink: markdownItAnchor.permalink.linkInsideHeader({
+        symbol: '#',
+        placement: 'before',
+        class: 'heading-anchor',
+        ariaHidden: true
+      })
+    });
   eleventyConfig.setLibrary('md', mdLib);
 
   eleventyConfig.addPassthroughCopy("src/css");

@@ -97,6 +97,40 @@ h1, h2, h3 {
   font-family: var(--font-mono);
 }
 
+h1, h2, h3, h4, h5, h6 {
+  position: relative;
+}
+
+.heading-anchor {
+  float: left;
+  margin-left: -1.2em;
+  padding-right: 0.4em;
+  opacity: 0;
+  color: var(--muted);
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.heading-anchor:hover {
+  text-decoration: none; /* prevent underline on # */
+}
+
+h1:hover .heading-anchor,
+h2:hover .heading-anchor,
+h3:hover .heading-anchor,
+h4:hover .heading-anchor,
+h5:hover .heading-anchor,
+h6:hover .heading-anchor,
+.heading-anchor:focus,
+.heading-anchor:focus-visible {
+  opacity: 0.8; /* match top-of-post date tone */
+}
+
+.heading-anchor:focus,
+.heading-anchor:focus-visible {
+  outline: none;
+}
+
 p, ul {
   margin-bottom: var(--spacing);
 }
