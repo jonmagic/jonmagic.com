@@ -64,7 +64,7 @@
       
       <h1 class="site-title">hubot Scripts Explained</h1>
       <p>Ok, so now you’ve got your shiny new hubot up and ready to listen to your every command. But what should we tell him to do with our nonsense!</p>
-<h3>Basics</h3>
+<h3 id="basics" tabindex="-1"><a class="heading-anchor" href="#basics" aria-hidden="true">#</a> Basics</h3>
 <p>Scripts for <a href="https://github.com/github/hubot">hubot</a> are written with <a href="http://jashkenas.github.com/coffee-script/">CoffeeScript</a>. This is what a basic script looks like:</p>
 <pre class="language-coffeescript"><code class="language-coffeescript"><span class="token comment"># hubot greeting.</span>
 #
@@ -82,7 +82,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <p>I like to use <a href="http://rubular.com/">rubular</a> for writing and testing regular expressions. Its quick, easy to use, and while javascript regular expressions aren’t exactly like ruby regular expressions I haven’t run into any inconsistencies yet.</p>
 <p>Finally we tell hubot to take the message and send a message back.</p>
 <pre class="language-coffeescript"><code class="language-coffeescript">msg<span class="token punctuation">.</span>send <span class="token string">"Howdy!"</span></code></pre>
-<h3>Respond vs Hear</h3>
+<h3 id="respond-vs-hear" tabindex="-1"><a class="heading-anchor" href="#respond-vs-hear" aria-hidden="true">#</a> Respond vs Hear</h3>
 <p>I didn’t discover this at first and thought that hubot only responded to commands directed at him, but then I discovered robot.hear! Whereas robot.respond only matches messages directed at hubot, robot.hear will run your regular expression against any chat message!</p>
 <pre class="language-coffeescript"><code class="language-coffeescript"><span class="token comment"># Hubot has an attitude</span>
 
@@ -90,7 +90,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
   robot<span class="token punctuation">.</span>hear <span class="token operator">/</span>tired<span class="token operator">|</span>too hard<span class="token operator">|</span>to hard<span class="token operator">|</span>upset<span class="token operator">|</span>bored<span class="token operator">/</span>i<span class="token punctuation">,</span> <span class="token punctuation">(</span>msg<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span>
     msg<span class="token punctuation">.</span>send <span class="token string">"Panzy"</span></code></pre>
 <p>See what I did there 😃 Any time someone in our chat room says they are tired, that something is too hard, upset, or bored, hubot tells them they’re a panzy. Oh yeah. This robot butler has an attitude.</p>
-<h3>Random</h3>
+<h3 id="random" tabindex="-1"><a class="heading-anchor" href="#random" aria-hidden="true">#</a> Random</h3>
 <p>I saw this used first in the shipit script, which displays a random shipit squirrel for your viewing pleasure whenever someone says the words “ship it” in your chat room.</p>
 <pre class="language-coffeescript"><code class="language-coffeescript"><span class="token comment"># Rodent Motivation</span>
 #
@@ -110,11 +110,11 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <p>Notice the array that we create with 4 different shipit squirrel images. Then notice this line:</p>
 <pre class="language-coffeescript"><code class="language-coffeescript">msg<span class="token punctuation">.</span>send msg<span class="token punctuation">.</span>random squirrels</code></pre>
 <p>The msg object has a random method on it which we can pass an array and it will pick a random item from that array! Super handy to keep things from getting repetitive.</p>
-<h3>Reply</h3>
+<h3 id="reply" tabindex="-1"><a class="heading-anchor" href="#reply" aria-hidden="true">#</a> Reply</h3>
 <p>You can reply to a user by changing the send command to reply like this:</p>
 <pre class="language-coffeescript"><code class="language-coffeescript">msg<span class="token punctuation">.</span>reply <span class="token string">"Why thank you sir!"</span></code></pre>
 <p>Replies will be directed at a specific user, example: “@hoyt Why thank you sir!”</p>
-<h3>Http</h3>
+<h3 id="http" tabindex="-1"><a class="heading-anchor" href="#http" aria-hidden="true">#</a> Http</h3>
 <p>So far we’ve only talked about how to make hubot listen and respond in various ways. Hubot really starts to get interesting when we empower him to go out and do our bidding in the larger world though. This is where hubot really starts to become powerful!</p>
 <pre class="language-coffeescript"><code class="language-coffeescript"><span class="token comment"># Whois for gems, because gem names are like domains in the 90's</span>
 #
@@ -154,7 +154,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <span class="token keyword">catch</span> error
   msg<span class="token punctuation">.</span>send <span class="token string">"Gem not found. It will be mine. Oh yes. It will be mine. *sinister laugh*"</span></code></pre>
 <p>If JSON.parse is able to parse the body then it displays the gem information, if it errors we get the “Gem not found” message.</p>
-<h3>Advanced HTTP</h3>
+<h3 id="advanced-http" tabindex="-1"><a class="heading-anchor" href="#advanced-http" aria-hidden="true">#</a> Advanced HTTP</h3>
 <p>What if you want to hit an API that requires authentication? Here is a script that uses http basic auth when hitting the <a href="http://dnsimple.com">dnsimple</a> api to check domain name availability.</p>
 <pre class="language-coffeescript"><code class="language-coffeescript"><span class="token comment"># Domain availability via DNSimple, requires you set</span>
 <span class="token comment"># DNSIMPLE_USERNAME &amp; DNSIMPLE_PASSWORD environment variables</span>
@@ -202,7 +202,7 @@ pass <span class="token operator">=</span> process<span class="token punctuation
   <span class="token keyword">else</span>
     msg<span class="token punctuation">.</span>send <span class="token string">"Unable to process your request and we're not sure why :("</span></code></pre>
 <p>The response (res) object has a statusCode method on it which we can use to match http response codes. Based on the dnsimple api I was able to make a simple switch statement with the correct replies for each status code.</p>
-<h3>Conclusion</h3>
+<h3 id="conclusion" tabindex="-1"><a class="heading-anchor" href="#conclusion" aria-hidden="true">#</a> Conclusion</h3>
 <p>I hope this is helpful to some folks out there. I can’t wait to see what other hubot scripts people write!</p>
 <p>Make sure to fork the <a href="https://github.com/github/hubot-scripts">hubot-scripts</a> repo, add your scripts, and do a pull request once you’ve got them working. The gem whois and dnsimple scripts above have already been accepted into the hubot-scripts library!</p>
 <p>Enjoy 😃</p>

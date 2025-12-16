@@ -67,7 +67,7 @@
 <p>Github released <a href="https://github.com/github/hubot">hubot</a> this week and geeks the world over have been transfixed by his awesomeness. He’s the second robot butler to enter my life lately, <a href="http://www.apple.com/iphone/features/siri.html">Siri</a> being the first. Together these two fulfill my every wish (not quite) and are at my beck and call day and night (too true).</p>
 <p><strong>UPDATE: for a slightly different take <a href="http://martinciu.com/2011/11/deploying-hubot-to-heroku-like-a-boss.html">try these instructions by @martinciu</a></strong></p>
 <p><strong>NOTE: to learn more about writing hubot scripts <a href="http://jonmagic.com/blog/archives/2011/10/28/hubot-scripts-explained/">read this</a></strong></p>
-<h3>Getting Started</h3>
+<h3 id="getting-started" tabindex="-1"><a class="heading-anchor" href="#getting-started" aria-hidden="true">#</a> Getting Started</h3>
 <p>The first step is to head on over to the <a href="https://github.com/github/hubot/downloads">hubot downloads</a> to grab yourself a copy of the latest hubot tarball. Download it and then open your command line to your download folder. It looked something like this for me:</p>
 <pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">cd</span> Downloads
 <span class="token function">tar</span> zxvf hubot-1.1.3.tar.gz
@@ -78,7 +78,7 @@ brew <span class="token function">install</span> <span class="token function">np
 <p>Then you can just run the hubot binary and it should install all the necessary packages and fire right up.</p>
 <pre class="language-bash"><code class="language-bash">bin/hubot</code></pre>
 <p>If you run into any issues at this point please consult the <a href="https://github.com/github/hubot/issues">hubot Issues</a> page on Github, because someone has probably already run into the issue.</p>
-<h3>Configuring Heroku and HipChat</h3>
+<h3 id="configuring-heroku-and-hipchat" tabindex="-1"><a class="heading-anchor" href="#configuring-heroku-and-hipchat" aria-hidden="true">#</a> Configuring Heroku and HipChat</h3>
 <p>First we need to initialize git for our hubot so he’s actually stored in version control.</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">git</span> init <span class="token builtin class-name">.</span>
 <span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
@@ -102,7 +102,7 @@ heroku config:add <span class="token assign-left variable">HUBOT_HIPCHAT_TOKEN</
 <p>Replace Geoffrey Butler with whatever you named the user in HipChat. This should exactly match the Room nickname we set above. Once you’ve updated the Procfile and saved it we need to commit it with git.</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> Procfile
 <span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"updated Procfile to use hipchat adapter and hipchat room nickname"</span></code></pre>
-<h3>Deploying to Heroku</h3>
+<h3 id="deploying-to-heroku" tabindex="-1"><a class="heading-anchor" href="#deploying-to-heroku" aria-hidden="true">#</a> Deploying to Heroku</h3>
 <p>Now we should be ready to deploy.</p>
 <pre><code>git push heroku master
 </code></pre>

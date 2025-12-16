@@ -63,11 +63,11 @@
       </div>
       
       <h1 class="site-title">Capistrano recipe and howto for Rails, Mongrel, and Nginx</h1>
-      <h3>UPDATE: This is outdated due to the release of Capistrano 2… I will work on a new tutorial as soon as I have a project I need to deploy… 1-10-08</h3>
+      <h3 id="update%3A-this-is-outdated-due-to-the-release-of-capistrano-2%E2%80%A6-i-will-work-on-a-new-tutorial-as-soon-as-i-have-a-project-i-need-to-deploy%E2%80%A6-1-10-08" tabindex="-1"><a class="heading-anchor" href="#update%3A-this-is-outdated-due-to-the-release-of-capistrano-2%E2%80%A6-i-will-work-on-a-new-tutorial-as-soon-as-i-have-a-project-i-need-to-deploy%E2%80%A6-1-10-08" aria-hidden="true">#</a> UPDATE: This is outdated due to the release of Capistrano 2… I will work on a new tutorial as soon as I have a project I need to deploy… 1-10-08</h3>
 <p>All righty then. Recently my firm (<a href="http://www.sabretechllc.com">SabreTech</a>) got a contract to write and deploy a fairly complicated web app for a local business. Immediately I asked my friend <a href="http://mintchaos.com">Xian</a> to give me some deployment ideas, and he suggested I use <a href="http://nginx.net/">nginx</a> as my web server instead of <a href="http://www.apache.org/">Apache</a> as well as <a href="http://slicehost.com">Slicehost</a> as my vps host provider…</p>
 <p>So I set up my Slicehost account and started hacking. About a week later (five hours of work snuck in here and there), I’ve got my vps up and running smoothly. I’ve been using <a href="http://weblog.jamisbuck.org/2006/3/6/switchtower-renamed">Capistrano</a> for deployment for awhile, but I also wanted to use it to set up my server, and that is when I ran across deprec. <a href="http://deprec.rubyforge.org/">Deprec</a> is a nice little gem with a ton of capistrano recipes for setting up and deploying a server. It had some great recipes for deploying to <a href="http://ubuntu.org">Ubuntu</a>, so I chose Ubuntu as my OS for my new slice (vps).</p>
 <p>Now I just had to write some of my own recipes for setting up and deploying with Nginx instead of Apache. That is where most of my time was spent. Below you’ll find my instructions and recipes:</p>
-<h4>Prerequisites</h4>
+<h4 id="prerequisites" tabindex="-1"><a class="heading-anchor" href="#prerequisites" aria-hidden="true">#</a> Prerequisites</h4>
 <ol>
 <li>Install the capistrano and deprec gems on your development machine</li>
 <li>Cap your app; in the root of your app dir, run: <code>cap -A</code></li>
@@ -79,7 +79,7 @@
 <li>You need to take <a href="http://jonmagic.com/assets/2008/1/10/jonmagic_recipes.txt">this file</a> and append the contents to the bottom of your <code>config/deploy.rb</code> (these are the recipes I wrote)</li>
 <li>Make sure and configure the mongrel settings in your <code>deploy.rb</code></li>
 </ol>
-<h4>Instructions</h4>
+<h4 id="instructions" tabindex="-1"><a class="heading-anchor" href="#instructions" aria-hidden="true">#</a> Instructions</h4>
 <ol>
 <li>Log into your server as root and add a new user (the user you specify in your <code>deploy.rb</code>), set the password, and finally add to sudoers file
 <ol>
@@ -99,7 +99,7 @@
 </ol>
 </li>
 </ol>
-<h4>Files</h4>
+<h4 id="files" tabindex="-1"><a class="heading-anchor" href="#files" aria-hidden="true">#</a> Files</h4>
 <ul>
 <li><a href="http://jonmagic.com/assets/2008/1/10/nginx.conf.txt">nginx.conf</a></li>
 <li><a href="http://jonmagic.com/assets/2008/1/10/jonmagic_recipes.txt">my recipes, add to bottom of deploy.rb</a></li>

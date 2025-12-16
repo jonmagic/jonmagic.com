@@ -65,7 +65,7 @@
       <h1 class="site-title">Grim</h1>
       <p>Grim is a simple gem for extracting (reaping) a page from a pdf and converting it to an image as well as extract the text from the page as a string.</p>
 <p><a href="https://github.com/jonmagic/grim">Grim</a> is my first Ruby gem! Not technically my first OSS contribution, but definitely my first gem. This project came out of <a href="http://speakerdeck.com">Speaker Deck</a> and is used by Speaker Deck whenever you upload a presentation.</p>
-<h3>Sample usage</h3>
+<h3 id="sample-usage" tabindex="-1"><a class="heading-anchor" href="#sample-usage" aria-hidden="true">#</a> Sample usage</h3>
 <pre class="language-ruby"><code class="language-ruby">pdf <span class="token operator">=</span> Grim<span class="token punctuation">.</span>reap<span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"/path/to/pdf"</span></span><span class="token punctuation">)</span>
 count <span class="token operator">=</span> pdf<span class="token punctuation">.</span>count
 pdf<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string-literal"><span class="token string">'/path/to/image.png'</span></span><span class="token punctuation">)</span>

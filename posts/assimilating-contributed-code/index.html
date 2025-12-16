@@ -68,24 +68,24 @@
 <p>Of course <a href="http://github.com">GitHub</a> has the great <strong>Merge pull request</strong> option when an auto-merge is possible, and I use that quite often, but the workflow on OSS projects sometimes requires you to run the tests locally and make any modifications before merging it.</p>
 <p>A quick search didn’t turn up any easy to read instructions, and I’m no git guru, so it took me a few minutes to figure out a simple workflow.</p>
 <p>Here is how I checked out, tested, modified, and merged a <a href="https://github.com/jonmagic/ghee/pull/1">massive pull request</a> for <a href="http://github.com/jonmagic/ghee">Ghee</a> from <a href="https://github.com/rauhryan">Ryan Rauh</a> this week.</p>
-<h3>1. Clone my repo and create a feature branch</h3>
+<h3 id="1.-clone-my-repo-and-create-a-feature-branch" tabindex="-1"><a class="heading-anchor" href="#1.-clone-my-repo-and-create-a-feature-branch" aria-hidden="true">#</a> 1. Clone my repo and create a feature branch</h3>
 <pre class="language-bash"><code class="language-bash"><span class="token function">git</span> clone git@github.com:jonmagic/ghee.git
 <span class="token builtin class-name">cd</span> ghee
 <span class="token function">git</span> checkout <span class="token parameter variable">-b</span> repos_support master</code></pre>
 <p>This creates a new branch called <code>repos_support</code>, based off of <code>master</code>, and checks it out.</p>
-<h3>2. Pull contributors code into your local branch</h3>
+<h3 id="2.-pull-contributors-code-into-your-local-branch" tabindex="-1"><a class="heading-anchor" href="#2.-pull-contributors-code-into-your-local-branch" aria-hidden="true">#</a> 2. Pull contributors code into your local branch</h3>
 <pre class="language-bash"><code class="language-bash"><span class="token function">git</span> pull https://github.com/rauhryan/ghee.git repos_support</code></pre>
 <p>This pulls the <code>repos_support</code> branch from the remote repo and merges it into the branch you have checked out (which we also called <code>repos_support</code>).</p>
-<h3>3. Run tests, make modifications, commit changes</h3>
+<h3 id="3.-run-tests%2C-make-modifications%2C-commit-changes" tabindex="-1"><a class="heading-anchor" href="#3.-run-tests%2C-make-modifications%2C-commit-changes" aria-hidden="true">#</a> 3. Run tests, make modifications, commit changes</h3>
 <pre class="language-bash"><code class="language-bash">bundle <span class="token builtin class-name">exec</span> rake
 <span class="token function">touch</span> OHNOES.txt
 <span class="token function">git</span> <span class="token function">add</span> OHNOES.txt
 <span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"Added OHNOES"</span></code></pre>
-<h3>4. Checkout master, merge feature branch, push</h3>
+<h3 id="4.-checkout-master%2C-merge-feature-branch%2C-push" tabindex="-1"><a class="heading-anchor" href="#4.-checkout-master%2C-merge-feature-branch%2C-push" aria-hidden="true">#</a> 4. Checkout master, merge feature branch, push</h3>
 <pre class="language-bash"><code class="language-bash"><span class="token function">git</span> checkout master
 <span class="token function">git</span> merge repos_support
 <span class="token function">git</span> push</code></pre>
-<h3>Conclusion</h3>
+<h3 id="conclusion" tabindex="-1"><a class="heading-anchor" href="#conclusion" aria-hidden="true">#</a> Conclusion</h3>
 <p>This workflow follows the <a href="http://en.wikipedia.org/wiki/KISS_principle">kiss principle</a>, so it worked quite well for me.</p>
 <p><strong>Please give me feedback.</strong> I would love to hear about how other people accomplish this task, so I encourage you to leave links/tips/tricks in the comments below.</p>
 <p>Also be sure to checkout <a href="https://github.com/jonmagic/ghee/compare/71fe16a34aad6edf9d17379e7f3dd413e6855e21...2065149ff01be1770d3d51bdb8b9272ebb972e4d">Ryan’s awesome work</a> on <a href="http://github.com/jonmagic/ghee">Ghee</a>, a simple ruby client for the <a href="http://developer.github.com/v3/">GitHub API V3</a>.</p>

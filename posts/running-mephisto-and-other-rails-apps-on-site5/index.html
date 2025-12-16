@@ -65,7 +65,7 @@
       <h1 class="site-title">Running Mephisto (and other Rails apps) on Site5</h1>
       <p>There are a few steps in getting the latest Mephisto (0.8.2 at the time of this writing) working on the shared host <a href="http://www.site5.com">Site5</a>. As I’m writing this Site5 is upgrading all their servers to Ruby 1.8.7, Rails 2.2.2, RubyGems 1.3.1, and Mysql 5.0. Thanks to everyone at Site5 that helped, <a href="http://twitter.com/BenAtSite5">Ben</a>, Beau, and the guy I talked to today (forgot his name). Continue reading for the steps I/we had to take to get things running properly.</p>
 <p><strong>UPDATE:</strong> Please make sure to update your .htaccess, Site5 now supports mod_rails on most, if not all of their servers.</p>
-<h3>Get your own gems repository working</h3>
+<h3 id="get-your-own-gems-repository-working" tabindex="-1"><a class="heading-anchor" href="#get-your-own-gems-repository-working" aria-hidden="true">#</a> Get your own gems repository working</h3>
 <ol>
 <li>
 <p>ssh to your account and in <code>~/</code> create a gems dir.</p>
@@ -93,7 +93,7 @@
 </li>
 </ol>
 <p>Now you should be able to run <code>gem environment</code> and see the correct values.</p>
-<h3>Downloading Mephisto and getting it setup.</h3>
+<h3 id="downloading-mephisto-and-getting-it-setup." tabindex="-1"><a class="heading-anchor" href="#downloading-mephisto-and-getting-it-setup." aria-hidden="true">#</a> Downloading Mephisto and getting it setup.</h3>
 <p>I downloaded the latest release of Mephisto from <a href="http://mephistoblog.com/download">http://mephistoblog.com/download</a>, version 0.8.2 Drax Fixes. Once I had it on my dev machine I scp’d it up to Site5. There I created an apps dir in <code>~/</code> on my Site5 account, and untarred mephisto there. I renamed the dir to <code>mephisto_0.8.2</code> and got to work on configuring stuff. First I copied <code>config/database.example.yml</code> to <code>config/database.yml</code>, went in and deleted all the extra lines, and just configured what I needed. I like to configure my development database, and then for the production one just have it point at the same settings like so:</p>
 <pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">development</span><span class="token punctuation">:</span>
   <span class="token key atrule">adapter</span><span class="token punctuation">:</span> mysql
@@ -119,7 +119,7 @@
 <span class="token comment"># Uncomment below to force Rails into production mode when</span>
 <span class="token comment"># you don't control web/app server and can't set it the proper way</span>
 <span class="token constant">ENV</span><span class="token punctuation">[</span><span class="token string-literal"><span class="token string">'RAILS_ENV'</span></span><span class="token punctuation">]</span> <span class="token operator">||=</span> <span class="token string-literal"><span class="token string">'production'</span></span></code></pre>
-<h3>Preparing dependencies and tell Apache what to do with requests!</h3>
+<h3 id="preparing-dependencies-and-tell-apache-what-to-do-with-requests!" tabindex="-1"><a class="heading-anchor" href="#preparing-dependencies-and-tell-apache-what-to-do-with-requests!" aria-hidden="true">#</a> Preparing dependencies and tell Apache what to do with requests!</h3>
 <p>At this point you’ll have to run the following commands inside your <code>mephisto</code> dir to get our dependencies ready.</p>
 <pre class="language-sh"><code class="language-sh">rake config/initializers/session_store.rb
 rake gems:install

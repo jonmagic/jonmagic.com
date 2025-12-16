@@ -64,7 +64,7 @@
       
       <h1 class="site-title">Robots can do support too</h1>
       <p>GitHub launched the <a href="http://atom.io">Atom beta</a> this week and the response has been great. As the first day was winding down a coworker suggested we write an FAQ and add a robot to answer the frequently asked questions in the IRC channel where people were congregating. Here’s how we taught <a href="http://hubot.github.com">hubot</a> to do support.</p>
-<h3>Questions and answers</h3>
+<h3 id="questions-and-answers" tabindex="-1"><a class="heading-anchor" href="#questions-and-answers" aria-hidden="true">#</a> Questions and answers</h3>
 <p>First my coworker gathered the questions that were being asked over and over again:</p>
 <ul>
 <li>where do I get an invite?</li>
@@ -81,7 +81,7 @@
 <pre class="language-javascript"><code class="language-javascript"><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">invit(es?|ation)</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span>
 <span class="token operator">/</span><span class="token punctuation">(</span>windows<span class="token operator">|</span>linux<span class="token punctuation">)</span><span class="token operator">/</span>i
 <span class="token operator">/</span><span class="token punctuation">(</span><span class="token function">pric</span><span class="token punctuation">(</span>e<span class="token operator">|</span>ing<span class="token punctuation">)</span><span class="token operator">|</span>cost<span class="token punctuation">)</span><span class="token operator">/</span>i</code></pre>
-<h3>Training the robot</h3>
+<h3 id="training-the-robot" tabindex="-1"><a class="heading-anchor" href="#training-the-robot" aria-hidden="true">#</a> Training the robot</h3>
 <p>Meanwhile I used the <a href="https://github.com/github/hubot/blob/master/docs/README.md">Getting Started</a> instructions to fire up a hubot instance.</p>
 <p>Using <a href="http://shapeshed.com/setting-up-nodejs-and-npm-on-mac-osx/">npm</a> I installed the hubot and coffee-script packages.</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> hubot coffee-script</code></pre>
@@ -146,7 +146,7 @@ heroku config:set <span class="token assign-left variable">HUBOT_IRC_UNFLOOD</sp
 <p>Step 2 was deploying to Heroku.</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">git</span> push heroku master</code></pre>
 <p><strong>That was it, I didn’t have to do any trouble shooting, atomicHubot connected to the irc channel and began fielding questions!</strong></p>
-<h3>Conclusion</h3>
+<h3 id="conclusion" tabindex="-1"><a class="heading-anchor" href="#conclusion" aria-hidden="true">#</a> Conclusion</h3>
 <p>Adding this hubot to the irc channel helped reduce the number of questions we had to answer and increased the speed at which common questions were answered.</p>
 <p>There are probably easier ways to setup auto reply answers in irc channels but hubot is a tool I’m familiar with and love to hack on. It only took a few minutes to setup and I’ll probably use the same technique in the future.</p>
 <p>This may not work for everyone but hubot sure helped out in a pinch, give it a try sometime. For tips on writing hubot scripts see my post <a href="http://theprogrammingbutler.com/blog/archives/2011/10/28/hubot-scripts-explained/">hubot Scripts Explained</a>.</p>

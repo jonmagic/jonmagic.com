@@ -64,7 +64,7 @@
       
       <h1 class="site-title">New Tabs and Cucumber</h1>
       <p>While working on an internal app at <a href="http://github.com">GitHub</a> I had to write a <a href="http://cukes.info/">cucumber</a> scenario that ran expectations against a new tab that was opened. Here is how I did it.</p>
-<h3>The Code</h3>
+<h3 id="the-code" tabindex="-1"><a class="heading-anchor" href="#the-code" aria-hidden="true">#</a> The Code</h3>
 <p>Searching around the internet, I finally found a tip on <a href="http://stackoverflow.com/questions/3104348/ruby-on-rails-cucumber-how-do-i-follow-a-link-that-opens-a-new-window">StackOverflow</a> that got me moving in the right direction. In this context tabs are referred to as windows.</p>
 <pre class="language-ruby"><code class="language-ruby">page<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>browser<span class="token punctuation">.</span>switch_to<span class="token punctuation">.</span>window<span class="token punctuation">(</span>page<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>browser<span class="token punctuation">.</span>window_handles<span class="token punctuation">.</span>last<span class="token punctuation">)</span></code></pre>
 <p>This code grabs the browser object and calls switch_to window on it and passes in the last opened window.</p>
@@ -72,13 +72,13 @@
 <pre class="language-ruby"><code class="language-ruby">When <span class="token operator">/</span><span class="token operator">^</span><span class="token constant">I</span> access the <span class="token keyword">new</span> tab$<span class="token operator">/</span> <span class="token keyword">do</span>
   page<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>browser<span class="token punctuation">.</span>switch_to<span class="token punctuation">.</span>window<span class="token punctuation">(</span>page<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>browser<span class="token punctuation">.</span>window_handles<span class="token punctuation">.</span>last<span class="token punctuation">)</span>
 <span class="token keyword">end</span></code></pre>
-<h3>The Caveat</h3>
+<h3 id="the-caveat" tabindex="-1"><a class="heading-anchor" href="#the-caveat" aria-hidden="true">#</a> The Caveat</h3>
 <p>This will only work if you are using <a href="http://seleniumhq.org/docs/">selenium-webdriver</a>. It will <a href="https://github.com/thoughtbot/capybara-webkit/issues/47">not work with capybara-webkit</a> unfortunately. So I switched to selenium, but I told it to use chrome instead of the default firefox and it still works great!</p>
 <pre class="language-ruby"><code class="language-ruby">Capybara<span class="token punctuation">.</span>javascript_driver <span class="token operator">=</span> <span class="token symbol">:selenium</span>
 Capybara<span class="token punctuation">.</span>register_driver <span class="token symbol">:selenium</span> <span class="token keyword">do</span> <span class="token operator">|</span>app<span class="token operator">|</span>
   Capybara<span class="token double-colon punctuation">::</span>Selenium<span class="token double-colon punctuation">::</span><span class="token class-name">Driver</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span>app<span class="token punctuation">,</span> <span class="token symbol">:browser</span> <span class="token operator">=></span> <span class="token symbol">:chrome</span><span class="token punctuation">)</span>
 <span class="token keyword">end</span></code></pre>
-<h3>The Finale</h3>
+<h3 id="the-finale" tabindex="-1"><a class="heading-anchor" href="#the-finale" aria-hidden="true">#</a> The Finale</h3>
 <p>Now its time to see the step in action. Notice I had to tag the feature with @javascript so that it uses the selenium webdriver.</p>
 <pre class="language-ruby"><code class="language-ruby"><span class="token variable">@javascript</span>
 <span class="token symbol">Feature</span><span class="token operator">:</span> Open a discussion
