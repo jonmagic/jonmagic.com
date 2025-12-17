@@ -154,13 +154,93 @@ code, pre {
   font-size: 0.95em;
   background-color: var(--code-bg);
   padding: 0.2em 0.4em;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 pre {
-  padding: 1rem;
+  padding: 1.25rem;
   overflow-x: auto;
   white-space: pre-wrap;
+  background-color: var(--code-block-bg);
+  border: 1px solid var(--card-border);
+  border-left: 6px solid var(--accent);
+  border-radius: var(--border-radius-medium);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  margin: 1.5rem 0;
+}
+
+pre code {
+  padding: 0;
+  background: none;
+  border-radius: 0;
+}
+
+/* Tables
+   ========================================================================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius-medium);
+  overflow: hidden;
+  box-shadow: var(--shadow-small);
+}
+
+thead {
+  background: var(--card-bg);
+  border-bottom: 2px solid var(--card-border);
+}
+
+th {
+  padding: 0.875rem 1rem;
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text);
+  border-right: 1px solid var(--card-border);
+}
+
+th:last-child {
+  border-right: none;
+}
+
+td {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--card-border);
+  border-right: 1px solid var(--card-border);
+  vertical-align: top;
+}
+
+td:last-child {
+  border-right: none;
+}
+
+/* Inline code within table cells */
+td code, th code {
+  background: #e0ebf5;
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+  font-size: 0.875em;
+  white-space: nowrap;
+}
+
+/* Standalone inline code (outside tables) */
+p code, li code {
+  background: #e0ebf5;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+/* Dark mode overrides for inline code */
+@media (prefers-color-scheme: dark) {
+  p code, li code,
+  td code, th code {
+    background: #2d3f54;
+    color: #e0ebf5;
+  }
 }
 
 /* ==========================================================================
@@ -749,10 +829,14 @@ pre[class*="language-"] {
 /* Code blocks */
 pre[class*="language-"] {
   display: flex;
-  padding: 1em;
-  margin: .5em 0;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
   overflow: auto;
-  border-radius: 0.3em;
+  border-radius: var(--border-radius-medium);
+  background-color: var(--code-block-bg);
+  border: 1px solid var(--card-border);
+  border-left: 6px solid var(--accent);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
 }
 
 pre[class*="language-"] > code[class*="language-"] {
