@@ -20,7 +20,7 @@ Eventually I realized that my brain, not theirs, is what I should be designing f
 
 That is probably one of the most important things I can share in this post, that optimizing how you work isn't something you tackle in a weekend and then you're done. It's a marathon of experimentation, reflection, and adaptation.
 
-Our brains are constantly changing as they consume new information and chemical changes due to aging so the process is necessarily lifelong and iterative. The tools and processes that work for you today may not work for you in a year or two. You have to keep tuning and adapting.
+Our brains are constantly changing as they consume new information, and we experience chemical changes due to aging, so the process is necessarily lifelong and iterative. The tools and processes that work for you today may not work for you in a year or two. You have to keep tuning and adapting.
 
 This post is a reflection on how I work at the end of 2025, some of it new, but lots of it old.
 
@@ -32,7 +32,7 @@ There are two primary frameworks I use day to day, week to week, month to month,
 
 Five verbs shape my week. I use them to guide my weekly planning and daily execution.
 
-- **Plan**: Reduce ambiguity by choosing a narrative arc and naming what "better" looks like.
+- **Plan**: Reduce ambiguity by formulating a narrative arc and naming what "better" looks like.
 - **Refine**: Shorten loops by improving tools, templates, and paved paths.
 - **Integrate**: Connect efforts across teams, carry context, and make status legible.
 - **Mentor**: Grow people via pairing, reviews, and unblocking; learn out loud together.
@@ -44,7 +44,7 @@ It sounds silly but this little exercise has helped me maintain focus throughout
 
 ### SWOT
 
-My mantra is a direct result of me consistently analzing myself using a framework like  SWOT (Strengths, Weaknesses, Opportunities, Threats). When I first learned about the [SWOT analysis framework](https://jonmagic.com/posts/swot-analysis/) in college I started applying it once or twice a year to my personal and professional life with great results. Over time I've used it more frequently to the point where it's part of my daily mental model driving how I think and make decisions.
+My mantra is a direct result of me consistently analyzing myself using a framework like SWOT (Strengths, Weaknesses, Opportunities, Threats). When I first learned about the [SWOT analysis framework](https://jonmagic.com/posts/swot-analysis/) in college I started applying it once or twice a year to my personal and professional life with great results. Over time I've used it more frequently to the point where it's part of my daily mental model driving how I think and make decisions.
 
 There are other great frameworks like SOAR (Strengths, Opportunities, Aspirations, Results) that focus more on the positive. SWOT always stuck for me because I learned it first but I think the important thing is finding a repeatable mental model that helps guide decisions and trade-offs consistently.
 
@@ -56,7 +56,7 @@ On Sunday evening, I open VS Code Insiders and run a single command from a custo
 
 ![example weekly note](/images/posts/how-i-work-2025-edition/weekly-note.webp)
 
-Manual priming creates a narrative arc. Automation could populate my schedule faster, but I wouldn't remember it. The friction is the feature.
+Manual priming helps me create the narrative arc. Automation could populate my schedule faster, but I wouldn't remember it. The friction is the feature.
 
 During this priming process I'll often use Copilot in VS Code to help me remember things I've been working on recently and try to find interconnections and opportunities to integrate work across teams. The ideas from this often feed back into my calendar as new meetings or checkpoints.
 
@@ -64,19 +64,19 @@ Everything throughout the week now flows from this single source of truth.
 
 | Folder | Purpose |
 | --- | --- |
-| `Weekly Notes/YYYY-MM-DD/` | Planning, goals, schedule, and backlinks to meetings |
-| `Meeting Notes/<person-or-team>.md` | Rolling notes with newest `## YYYY-MM-DD` sections at top |
-| `Daily Projects/YYYY-MM-DD/` | Day-level staging: scratch pads, transcripts, context dumps |
-| `Transcripts/YYYY-MM-DD/` | Raw meeting transcripts before summarization |
-| `Executive Summaries/YYYY-MM-DD/` | Distilled updates for leadership |
-| `Projects/<slug>/` | Multi-week initiatives with numbered working notes |
-| `Snippets/YYYY-MM-DD-to-YYYY-MM-DD.md` | Weekly accomplishments: Ships, Risks, Collaborations, Shoutouts |
-| `Archive/YYYY-MM-DD/` | Cold storage after things have aged out of usefulness for the current year |
+| Weekly Notes | Planning, goals, schedule, and backlinks to meetings |
+| Meeting Notes | Rolling notes with newest sections at top |
+| Daily Projects | Day-level staging: scratch pads, transcripts, context dumps |
+| Transcripts | Raw meeting transcripts before summarization |
+| Executive Summaries | Distilled updates for leadership |
+| Projects | Multi-week initiatives with numbered working notes |
+| Snippets | Weekly accomplishments: Ships, Risks, Collaborations, Shoutouts |
+| Archive | Cold storage after things have aged out of usefulness for the current year |
 
 The structure matters less than the organizing principles that make it fast. For example with Meeting Notes I keep the most recent content at the top. When I open a Meeting Notes file, or when Copilot does, the first screen shows what matters most right now. Historical context is there when I need it, but I don't have to scroll past it to remember what happened yesterday.
 
 > [!NOTE]
-> Since I'm working in VS Code and using Copilot I can give it [custom instructions](https://code.visualstudio.com/docs/copilot/customization/custom-instructions#_use-a-githubcopilotinstructionsmd-file) and you can see my current iteration [here](https://gist.github.com/jonmagic/a7916bfb5505560f0bf1dba3e76f93fa).
+> Since I'm working in VS Code I can give it [custom Copilot instructions](https://code.visualstudio.com/docs/copilot/customization/custom-instructions#_use-a-githubcopilotinstructionsmd-file) and you can see my current iteration [here](https://gist.github.com/jonmagic/a7916bfb5505560f0bf1dba3e76f93fa). <a href="https://gist.github.com/jonmagic/a7916bfb5505560f0bf1dba3e76f93fa">![copilot-instructions.md](/images/posts/how-i-work-2025-edition/copilot-instructions.webp)</a>
 
 I use [wikilinks](https://marketplace.visualstudio.com/items?itemName=svsool.markdown-memo) instead of duplicating content. When I need to reference a decision or a meeting, I link to its source rather than restating it. The trail of breadcrumbs matters because both future-me and my AI agents follow the same path. If I can't trace how I arrived at a conclusion, I probably don't understand it well enough yet.
 
@@ -86,12 +86,12 @@ Numbered prefixes on files encode creation order within a day or project folder.
 
 I've tried plenty of alternatives over the past two decades—Notion, Obsidian, Apple Notes, and yes, GitHub Projects for task tracking. Each has merits, but they all introduced friction that slowed me down because of how my mental and physical muscles work.
 
-Web-based tools require connectivity and content inside proprietary formats has always worried me. GitHub Projects is powerful for cross-team visibility, but the overhead of maintaining boards rarely pays off for my personal workflow.
+Web-based tools lock me into connectivity requirements and proprietary formats that concern me for long-term retention. GitHub Projects is powerful for cross-team visibility, but the overhead of maintaining another system rarely pays off when I already have my brain folder working well.
 
 > [!NOTE]
 > I ask myself one question when evaluating any tool or process: does this shorten my loop from idea to artifact to decision? If I can't answer yes, I'm probably adding decoration.
 
-GitHub Flavored Markdown in VS Code wins for me because it's fast, diffable, searchable, and works offline. AI agents can read and write files directly, which lets me delegate grunt work without switching contexts. The format will outlive any single app, and if I ever need to migrate, the files are just text.
+GitHub Flavored Markdown in VS Code wins for me because it's fast, [diffable](https://en.wiktionary.org/wiki/diffable) (easy to compare changes between versions), searchable, and works offline. AI agents can read and write files directly, which lets me delegate grunt work without switching contexts. The format will outlive any single app, and if I ever need to migrate, the files are just text.
 
 I do use a folder syncing tool to keep my brain accessible across my devices so I can read and write markdown files from my iPhone as needed, but my primary user interface is VS Code Insiders on a Macbook Pro M1.
 
@@ -110,6 +110,8 @@ GitHub remains my system of record for anything collaborative: Issues, Pull Requ
 
 Some of my best thinking happens away from the keyboard and the distractions email and chat. When I'm stuck on a design problem or trying to work out the narrative arc of a post, I'll often [grab my phone and go for a walk](https://jonmagic.com/posts/context-rules-everything-around-me/#the-minimal-reproducible-stack).
 
+![Walk and talk](/images/posts/how-i-work-2025-edition/walking-and-talking-and-then-typing.webp)
+
 I record a voice memo—just talking through the problem out loud, no script, no editing. Sometimes it's coherent, sometimes it's a mess. Doesn't matter. Most of the source of this post was created from the transcripts of walks I took along the Truckee River this week while visiting Reno Nevada.
 
 ## Closing the Loop
@@ -126,9 +128,10 @@ The reason this works for me is that each piece serves multiple purposes. Meetin
 
 ## What's Next
 
-Two frictions I'm still wrestling with:
+Next up is working through current friction points including:
 
+- Workspace Manager (VS Code Workspaces + git worktrees) works well for multi-repo projects, but running the same app in multiple workspaces creates port conflicts (dev servers, databases, other dependencies). I'm evaluating devcontainers and other isolation strategies to fix this.
 - In-person meetings are clunky to turn into usable transcripts. I record on my phone and run it through MacWhisper, but labeling speakers and threading context is still too manual. I haven't found a flow that feels as smooth as labeled transcripts in Zoom or Teams.
 - I'm using Microsoft Teams and M365 more and more for work and feeling some pain. I imagine that will continue for a bit (new UX, new defaults, new bugs), but it also opens doors: maybe I can stop manually starting transcripts, maybe I can wire Teams events straight into my meeting-notes workflow. I'll report back once I stub my toe a few times :sweat_smile:
 
-If you're building your own system, I'm always curious what your current frictions are. Mine are shifting platforms and getting clean transcripts from in-person conversations. I'm betting both will get with time and iteration!
+I love learning about how other people work so <a href="mailto:jonmagic@gmail.com">please send me</a> your favorite tools, processes, or mental models! Happy Holidays 🎊
