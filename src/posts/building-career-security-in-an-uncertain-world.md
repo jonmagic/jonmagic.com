@@ -7,7 +7,6 @@ tags:
   - post
 description: >-
   Practical ways to build career security when job security feels fragile—strengthening relationships, keeping interview skills fresh, sharing work openly, and preparing on your own terms.
-featured: 1
 ---
 
 Earlier today I saw a friend post about layoffs. Someone they were collaborating with on a project had just been let go. "I will be anxiously distracted for the next few days," they wrote, "trying to yet again pivot a collaboration I was planning on."
