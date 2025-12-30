@@ -36,7 +36,7 @@
 &lt;li&gt;&lt;strong&gt;The Implementer&lt;/strong&gt;: An agent that writes the code based on high-level feature requests.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;The Reviewer&lt;/strong&gt;: An agent that reviews the Implementer’s code for correctness, style, and adherence to best practices.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;turning-misses-into-wins&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;heading-anchor&quot; href=&quot;https://jonmagic.com/posts/turning-agent-misses-into-systemic-improvements/#turning-misses-into-wins&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt; Turning Misses into Wins&lt;/h2&gt;
+&lt;h2 id=&quot;turning-misses-into-hits&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;heading-anchor&quot; href=&quot;https://jonmagic.com/posts/turning-agent-misses-into-systemic-improvements/#turning-misses-into-hits&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt; Turning Misses into Hits&lt;/h2&gt;
 &lt;p&gt;Here are a few examples of how I turned agent misses into systemic improvements that made future iterations smoother.&lt;/p&gt;
 &lt;h3 id=&quot;example-1%3A-hallucinated-graphql-fields&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;heading-anchor&quot; href=&quot;https://jonmagic.com/posts/turning-agent-misses-into-systemic-improvements/#example-1%3A-hallucinated-graphql-fields&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt; Example 1: Hallucinated GraphQL Fields&lt;/h3&gt;
 &lt;p&gt;The first systemic failure showed up early. The Implementer built a consumer list workflow and wrote a GraphQL query to fetch consumer data:&lt;/p&gt;
