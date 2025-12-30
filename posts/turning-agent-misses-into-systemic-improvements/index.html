@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script defer data-domain="jonmagic.com" src="https://plausible.io/js/script.outbound-links.js"></script>
+<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Turning Agent Misses into Systemic Improvements</title>
+
+
+<meta property="og:title" content="Turning Agent Misses into Systemic Improvements">
+<meta property="og:description" content="Stop treating agent misses as bugs to fix and start treating them as gaps to close. Every mistake becomes a reason to add a test, document a pattern in a skill, or tighten the instructions. Free yourself to solve new problems instead of re-solving the same ones.">
+<meta property="og:url" content="https://jonmagic.com/posts/turning-agent-misses-into-systemic-improvements/">
+<meta property="og:site_name" content="jonmagic.com">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://jonmagic.com/images/posts/turning-agent-misses-into-systemic-improvements/jonmagic-and-copilots-at-the-software-assembly-line.webp">
+<meta property="og:locale" content="en_US">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Turning Agent Misses into Systemic Improvements">
+<meta name="twitter:description" content="Stop treating agent misses as bugs to fix and start treating them as gaps to close. Every mistake becomes a reason to add a test, document a pattern in a skill, or tighten the instructions. Free yourself to solve new problems instead of re-solving the same ones.">
+
+
+<meta name="description" content="Stop treating agent misses as bugs to fix and start treating them as gaps to close. Every mistake becomes a reason to add a test, document a pattern in a skill, or tighten the instructions. Free yourself to solve new problems instead of re-solving the same ones.">
+<meta name="author" content="Jonathan Hoyt">
+
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/search.css">
+<link rel="alternate" type="application/atom+xml" title="JonMagic.com RSS Feed" href="/feed.xml">
+
+</head>
+
+<body class="">
+  
+  <nav class="site-nav">
+  <div class="nav-container">
+    <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/posts/">Posts</a></li><li><a href="/projects/">Projects</a></li><li><a href="/search/">Search</a></li><li><a href="/about/">About</a></li></ul>
+    <div class="social-links">
+      <a href="https://github.com/jonmagic" title="GitHub Profile">
+        <img src="/images/github.png" alt="GitHub Profile" width="24" height="24" class="github-icon">
+      </a>
+      <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile">
+        <img src="/images/linkedin.png" alt="LinkedIn Profile" width="24" height="24" class="linkedin-icon">
+      </a>
+      <a href="/feed.xml" title="RSS Feed">
+        <img src="/images/rss.png" alt="RSS Feed" width="24" height="24" class="rss-icon">
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <div class="page layout-main">
+    <main class="content">
+      
+      <div class="post-date-container">
+        <span id="post-date-typing" class="post-date-typing" data-date="2025-12-30"></span>
+      </div>
+      
+      <h1 class="site-title">Turning Agent Misses into Systemic Improvements</h1>
+      <p>Over the holiday break I decided to rebuild a slice of an internal web app from my day job as a webview experience inside VS Code. The goal wasn’t really the feature itself—it was to force myself to learn the <a href="https://code.visualstudio.com/api">VS Code extension APIs</a> and to get my hands dirty with <a href="https://github.com/open-truss/open-truss">Open Truss</a>, an open-source workflow framework I’ve been collaborating on with <a href="https://github.com/hktouw">@hktouw</a> and <a href="https://github.com/kmcq">@kmcq</a>.</p>
+<p>I started where I usually do: drafting a plan, spinning up a workspace, and asking Copilot to start coding. But as I worked I got annoyed with doing things the way I’ve been doing them the past year, constantly steering the agent—pasting console errors, describing visual bugs, and nudging it back on track. The loop I’d been relying in 2025 now felt too fragile.</p>
+<p><img src="/images/posts/turning-agent-misses-into-systemic-improvements/jonmagic-and-copilots-at-the-software-assembly-line.webp" alt="jonmagic standing at the software assembly line with agents working the line"></p>
+<p>Then I watched <a href="https://www.youtube.com/watch?v=rIrxkB-02P0">this interview</a> about <a href="https://agentskills.io">SKILLS.md</a> in Copilot, learned about the <a href="https://ghuntley.com/ralph/">Ralph Wiggum AI technique</a>, read <a href="https://heidloff.net/article/why-agents-fail/">Niklas Heidloff’s post from March 2025 on why agents fail</a>, and <a href="https://bits.logic.inc/p/ai-is-forcing-us-to-write-good-code">Steve Krenzel’s piece on the infrastructure tax teams should pay</a>, and a few things started to click.</p>
+<h2 id="the-shift" tabindex="-1"><a class="heading-anchor" href="#the-shift" aria-hidden="true">#</a> The Shift</h2>
+<p>I was spending more time debugging the agent than building features. The loop went like this: prompt Copilot, review the output, find the bug, explain what went wrong, try again. I was the debugger, and every iteration took seconds or minutes because I had to context-switch between the code, the terminal, and the running extension.</p>
+<p>Then I changed one thing. Instead of just fixing what broke, I started asking: <strong>what didn’t the agent see?</strong></p>
+<p>If it hallucinated a GraphQL field, the schema wasn’t visible. If it picked the wrong component, the registry docs were incomplete. If the layout looked wrong, there was no visual gate. Each failure pointed to missing observability, not a dumb agent.</p>
+<p><strong>So I stopped treating agent misses as bugs to fix and started treating them as gaps to close. Every mistake became a reason to add a test or eslint rule, document a pattern in a skill, or tighten the instructions. The work shifted—less “write this code for me” and more “here’s how to see when you’re wrong.”</strong></p>
+<h2 id="a-little-setup" tabindex="-1"><a class="heading-anchor" href="#a-little-setup" aria-hidden="true">#</a> A Little Setup</h2>
+<p>Before we dive into the examples below let me explain a bit about the project I was working on. It’s a web-based Kafka consumer monitoring tool that engineer first responders use to debug stream processing issues—checking consumer lag, partition assignments, offset tracking, etc.</p>
+<p>The existing web app worked fine, but it lived in a browser tab that engineers had to context-switch to. I wanted to bring those affordances into the editor closer to where the changes to address issues actually happens. Click a consumer name in your code, see its current state, jump to logs or metrics—all without leaving VS Code.</p>
+<div class="markdown-alert markdown-alert-note"><p>I think about the intersection of internal tools and AI a lot, so this project was a good fit to see how deeply I can integrate agents and mcp tools into the workflows my stakeholders (analysts, support staff, first responders) use every day. I chose <a href="https://github.com/open-truss/open-truss">Open Truss</a> because we designed it to empower non-engineers to build internal tools with minimal coding, and I wanted to see how AI agents could help fill in the gaps.</p>
+</div>
+<p>I also setup this particular project with three distinct agents:</p>
+<ul>
+<li><strong>The Planner</strong>: An agent that breaks down high-level feature requests into discrete implementation steps.</li>
+<li><strong>The Implementer</strong>: An agent that writes the code based on high-level feature requests.</li>
+<li><strong>The Reviewer</strong>: An agent that reviews the Implementer’s code for correctness, style, and adherence to best practices.</li>
+</ul>
+<h2 id="turning-misses-into-wins" tabindex="-1"><a class="heading-anchor" href="#turning-misses-into-wins" aria-hidden="true">#</a> Turning Misses into Wins</h2>
+<p>Here are a few examples of how I turned agent misses into systemic improvements that made future iterations smoother.</p>
+<h3 id="example-1%3A-hallucinated-graphql-fields" tabindex="-1"><a class="heading-anchor" href="#example-1%3A-hallucinated-graphql-fields" aria-hidden="true">#</a> Example 1: Hallucinated GraphQL Fields</h3>
+<p>The first systemic failure showed up early. The Implementer built a consumer list workflow and wrote a GraphQL query to fetch consumer data:</p>
+<pre class="language-graphql"><code class="language-graphql"><span class="token keyword">query</span> <span class="token definition-query function">AppConsumers</span> <span class="token punctuation">{</span>
+  <span class="token object">appConsumers</span> <span class="token punctuation">{</span>
+    <span class="token object">consumers</span> <span class="token punctuation">{</span>
+      <span class="token property">consumerName</span>
+      <span class="token property">groupId</span>
+      <span class="token property">status</span>        <span class="token comment"># ✗ ERROR</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>When I ran the workflow, it crashed with a schema error:</p>
+<pre><code>[GraphQL] Cannot query field &quot;status&quot; on type &quot;AppConsumer&quot;
+</code></pre>
+<p>I asked Copilot to help me understand what went wrong. It found that the <code>status</code> field existed on the parent response object (<code>AppConsumersResponse</code>), not on individual consumers.</p>
+<p>I could’ve just asked Copilot to fix the query and moved on. Instead, I asked: <strong>what’s preventing the agent from seeing this before it writes the code?</strong></p>
+<p>The schema file lived in <code>generated/schema.graphql</code>—96,000 lines synced from the backend. The agent wasn’t checking it. So I asked Copilot to build a skill that codified the validation workflow:</p>
+<p><strong>From <code>.github/skills/graphql-schema-validation/SKILL.md</code>:</strong></p>
+<pre class="language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">##</span> Critical Rule</span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">ALWAYS verify GraphQL queries against the actual schema before implementation.</span><span class="token punctuation">**</span></span>
+
+<span class="token title important"><span class="token punctuation">###</span> Step 4: Search the Schema</span>
+Use grep to find type definitions:
+
+<span class="token title important"><span class="token punctuation">#</span> Find a type definition</span>
+grep -A 10 "^type AppConsumer {" generated/schema.graphql</code></pre>
+<p><strong>Example output:</strong></p>
+<pre class="language-graphql"><code class="language-graphql"><span class="token keyword">type</span> <span class="token class-name">AppConsumer</span> <span class="token punctuation">{</span>
+  <span class="token attr-name">consumerName</span><span class="token punctuation">:</span> <span class="token scalar">String</span><span class="token operator">!</span>
+  <span class="token attr-name">groupId</span><span class="token punctuation">:</span> <span class="token scalar">String</span>
+  <span class="token attr-name">topic</span><span class="token punctuation">:</span> <span class="token scalar">String</span><span class="token operator">!</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Notice: No <code>status</code> field exists on <code>AppConsumer</code>.</p>
+<p>Then I had Copilot add it to the agent instructions:</p>
+<pre class="language-markdown"><code class="language-markdown"><span class="token list punctuation">-</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">GraphQL queries</span><span class="token punctuation">**</span></span>: Always validate against the schema before writing queries.
+  Use grep to verify field existence on target types. Never assume field availability.
+  See <span class="token code-snippet code keyword">`graphql-schema-validation`</span> skill.</code></pre>
+<p>The next time the Implementer needed to write a query, it ran <code>grep -A 10 &quot;^type ConsumerPartition {&quot; generated/schema.graphql</code> first, saw which fields actually existed, and got it right. No hallucinations. No runtime crashes.</p>
+<h3 id="example-2%3A-stale-renders-from-missing-usesignals()" tabindex="-1"><a class="heading-anchor" href="#example-2%3A-stale-renders-from-missing-usesignals()" aria-hidden="true">#</a> Example 2: Stale Renders from Missing <code>useSignals()</code></h3>
+<p>A few days in, I noticed a pattern. The agent would build a component that read from a signal prop—say, a table that displays consumer data from <code>:consumerData</code>—and the table would render once with empty data, then never update when the signal changed.</p>
+<p>Here’s what the component looked like:</p>
+<pre class="language-tsx"><code class="language-tsx"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">ConsumerTable</span><span class="token punctuation">(</span><span class="token punctuation">{</span> dataSignal <span class="token punctuation">}</span><span class="token operator">:</span> <span class="token punctuation">{</span> dataSignal<span class="token operator">:</span> <span class="token punctuation">{</span> value<span class="token operator">?</span><span class="token operator">:</span> Consumer<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> data <span class="token operator">=</span> dataSignal<span class="token operator">?.</span>value <span class="token operator">??</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Table</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token punctuation">{</span>data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>row <span class="token operator">=></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">TableRow</span></span> <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>row<span class="token punctuation">.</span>id<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token punctuation">{</span>row<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">TableRow</span></span><span class="token punctuation">></span></span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Table</span></span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>The data would load, the signal would update, but the table stayed frozen on “No data found.”</p>
+<p>The problem: Open Truss signals use Preact signals under the hood. React doesn’t automatically subscribe to <code>.value</code> changes unless you call <code>useSignals()</code> at the top of the component (at least the way we’re using it right now). Without it, you get stale renders.</p>
+<p>I could’ve just added the hook and moved on. But I’d already debugged this three times that week. So I asked: <strong>how do I make this failure impossible?</strong></p>
+<p>Copilot updated the component-wrapper skill with a clear warning:</p>
+<p><strong>From <code>.github/skills/open-truss.component-wrapper/SKILL.md</code>:</strong></p>
+<pre class="language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">###</span> ⚠️ Signal-aware components MUST call `useSignals()`</span>
+
+If a component <span class="token bold"><span class="token punctuation">**</span><span class="token content">reads or writes any signal prop</span><span class="token punctuation">**</span></span> (props passed as <span class="token code-snippet code keyword">`:signalName`</span>),
+call <span class="token code-snippet code keyword">`useSignals()`</span> at the top of the function body <span class="token bold"><span class="token punctuation">**</span><span class="token content">before</span><span class="token punctuation">**</span></span> deriving values or rendering.
+
+import { useSignals } from '@open-truss/open-truss'
+
+export function MySignalConsumer({ valueSignal }: { valueSignal: { value?: string } }) {
+  useSignals()  // ← Required for reactivity
+  const value = valueSignal?.value ?? ''
+  return <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>{value}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+}
+
+Missing <span class="token code-snippet code keyword">`useSignals()`</span> leads to stale renders (tables showing "No data found",
+badges not updating, etc.) even though the signal value changes.</code></pre>
+<p>And it added it to the checklist at the bottom of the skill:</p>
+<pre class="language-markdown"><code class="language-markdown"><span class="token list punctuation">-</span> [ ] <span class="token code-snippet code keyword">`useSignals()`</span> is called when any prop is a signal reference (reads/writes <span class="token code-snippet code keyword">`:signalName`</span>)</code></pre>
+<p>After that, every new component got it right on the first try. The agent would see the warning, add the hook, and the stale render bug vanished.</p>
+<h3 id="example-3%3A-test-harness-first%2C-features-second" tabindex="-1"><a class="heading-anchor" href="#example-3%3A-test-harness-first%2C-features-second" aria-hidden="true">#</a> Example 3: Test Harness First, Features Second</h3>
+<p>Manual testing was killing me. I’d ask the agent to build a feature, press F5 to launch the VS Code development window, click around, find a bug, describe it back to the agent, and repeat. The loop took seconds of my time per iteration.</p>
+<p>I asked Copilot to build a Playwright harness that ran Open Truss workflows in a real browser, mocking the VS Code boundary. Now every workflow got a co-located test file that ran <em>before</em> I ever opened VS Code:</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="token comment">// workflows/consumer-detail.test.ts</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'detail tab opens with correct args'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> page <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token comment">// Listen for VS Code command before clicking</span>
+  <span class="token keyword">const</span> commandPromise <span class="token operator">=</span> page<span class="token punctuation">.</span><span class="token function">evaluate</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token builtin">Promise</span></span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'vscode-command'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>e<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>detail<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> once<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token string">'[data-testid="consumer-row-1"]'</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> command <span class="token operator">=</span> <span class="token keyword">await</span> commandPromise
+  <span class="token function">expect</span><span class="token punctuation">(</span>command<span class="token punctuation">.</span>command<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'app.openWorkflow'</span><span class="token punctuation">)</span>
+  <span class="token function">expect</span><span class="token punctuation">(</span>command<span class="token punctuation">.</span>args<span class="token punctuation">.</span>workflow<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'consumer-detail'</span><span class="token punctuation">)</span>
+  <span class="token function">expect</span><span class="token punctuation">(</span>command<span class="token punctuation">.</span>args<span class="token punctuation">.</span>consumerName<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'signal-processor'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>This became a gate: the Implementer couldn’t claim a feature was done until this test passed. No test, no merge. The payoff showed up immediately—test failures told me <em>exactly</em> which assertion broke, not just “it doesn’t work.”</p>
+<h3 id="example-4%3A-visual-qa-catches-what-dom-assertions-miss" tabindex="-1"><a class="heading-anchor" href="#example-4%3A-visual-qa-catches-what-dom-assertions-miss" aria-hidden="true">#</a> Example 4: Visual QA Catches What DOM Assertions Miss</h3>
+<p>After getting tests passing, I kept finding AI generated UI slop that DOM checks couldn’t catch: large gaps between components, weird alignment, UI that just didn’t make sense. So I asked Copilot to add a visual QA step leveraging the <a href="https://github.com/simonw/llm">llm cli</a>:</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'consumer badges have consistent spacing'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> page <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> screenshot <span class="token operator">=</span> <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">screenshot</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">runVisualQA</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    screenshot<span class="token punctuation">,</span>
+    criteria<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">'Status badges have 16px horizontal gap between them'</span><span class="token punctuation">,</span>
+      <span class="token string">'No badges overlap or clip'</span><span class="token punctuation">,</span>
+      <span class="token string">'Badge text is readable and not truncated'</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    model<span class="token operator">:</span> <span class="token string">'gpt-4.1'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">expect</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>verdict<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'pass'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>The <code>runVisualQA</code> function captures the screenshot and pipes it to a headless reviewer that checks for overlap, clipping, and visual affordances. Now visual correctness became data, not vibes. Copilot even added this to the workflow spacing skill so future implementations got it right from the start.</p>
+<div class="markdown-alert markdown-alert-warning"><p>You should disable this for CI unless you like to 🔥💵</p>
+</div>
+<h2 id="what-i-learned" tabindex="-1"><a class="heading-anchor" href="#what-i-learned" aria-hidden="true">#</a> What I Learned</h2>
+<p>Over the last few days of this project, I shipped roughly equal amounts of features and guardrails. Looking at the git log, the commits cluster into three arcs:</p>
+<ol>
+<li><strong>Features</strong>: Kafka consumer monitoring, list/detail splits, templated links, new tab routing</li>
+<li><strong>Observability + guardrails</strong>: Visual QA hooks, workflow spacing standards, registry validation tests</li>
+<li><strong>Enablement plumbing</strong>: Composite builds, schema sync, test harnesses, agent skills</li>
+</ol>
+<p>The payoff was measurable. Human-in-the-loop density dropped from <em>every few minutes</em> to <em>once per slice.</em> The Implementer could take a high-level feature request and deliver working code with minimal back-and-forth. The agents made fewer mistakes because they could see their failures.</p>
+<p>Each failure turned into improved observability, a new skill, or clearer instructions. Those improvements compounded. By week two, features that would’ve taken five to ten rounds of steering are landing in one or two.</p>
+<h2 id="what%E2%80%99s-next" tabindex="-1"><a class="heading-anchor" href="#what%E2%80%99s-next" aria-hidden="true">#</a> What’s Next</h2>
+<p>Now I’m teaching my implementation and review agents to tell me about ways to improve themselves. I want them to suggest updates to the skills they use. The goal is a self-improving AI collaborator that gets better at building software with each iteration, not just faster at writing code.</p>
+<p>A lot of the <a href="https://news.ycombinator.com/item?id=46426624">vocal community is exploring memory systems</a>—databases that persist agent context across sessions, semantic search over past decisions, knowledge graphs of what was learned. That approach treats agent failures as a recall problem: if only the agent remembered the last time it made this mistake, it wouldn’t repeat it.</p>
+<p>For now at least I’m going the opposite direction. Every time the agent sees my project with fresh eyes, it’s testing whether the codebase is clear enough to guide a newcomer. If it keeps hitting the same GraphQL field hallucination, that’s not a memory gap—it’s missing observability. The schema validation skill I built isn’t a workaround for forgetfulness; it’s a permanent improvement that makes that entire class of failure impossible.</p>
+<p>If you’re building with agents, stop trying to prompt your way out of the same agent misses over and over. Build the observability they need to see the world clearly and the skills to improve themselves.</p>
+
+      
+      
+      <aside class="post-cta" aria-labelledby="post-cta-heading">
+  <h2 id="post-cta-heading">If you liked this post</h2>
+  <p>Here are a few easy ways to support or explore more:</p>
+  <ul class="post-cta-actions">
+    <li>Share this on <a href="https://news.ycombinator.com/submitlink?u=https://jonmagic.com/posts/turning-agent-misses-into-systemic-improvements/&t=Turning Agent Misses into Systemic Improvements" rel="noopener noreferrer" target="_blank">Hacker News</a>.</li>
+    <li>Join or start a <a href="https://github.com/jonmagic/jonmagic.com/discussions">discussion about this post or my site</a>.</li>
+    <li>Read more <a href="/posts/">writing</a> or browse my <a href="/projects/">projects</a>.</li>
+    <li>Follow me on <a href="https://github.com/jonmagic">GitHub</a>.</li>
+  </ul>
+  <p class="post-cta-thanks">Thanks for reading — it means a lot.</p>
+</aside>
+
+      
+    </main>
+  </div>
+  
+  <div class="page">
+    <footer>
+  © Jonathan Hoyt <span id="year"></span> — built <s>by hand</s> with an LLM
+</footer>
+
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>
