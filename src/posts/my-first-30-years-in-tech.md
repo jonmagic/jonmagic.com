@@ -27,7 +27,7 @@ At fourteen, my best friend Christian Metts and I decided to start a [virtual re
 
 We had a couple PCs with [VFX1 headsets](https://en.wikipedia.org/wiki/VFX1_Headgear) running a game called Descent. It was pretty cool for the time. But that same summer, the Quake demo came out. We spent more time playing Quake than we did selling our service to mall passersby. The business failed by the end of summer. We paid back our investors by working for my dad, swinging hammers and helping build storage units.
 
-That failure didn't stop me. I'd already been teaching people how to use computers in exchange for things like horseback riding lessons. I started Legend Computer Services and began doing IT consulting for local businesses. After high school, I went to work for a local IT shop. The lead technician quit a few days after I started, so I went from filling ink cartridges to repairing PCs almost overnight.
+That failure didn't stop me. I'd already been teaching people how to use computers in exchange for things like horseback riding lessons. I started Legend Computer Services and began doing IT consulting for friends, mostly other homeschool families. After high school, I went to work for a local IT shop. The lead technician quit a few days after I started, so I went from filling ink cartridges to repairing PCs almost overnight.
 
 The owner was difficult to work for, so I quit a few times and kept doing my own consulting. But I kept going back because I could make more money there than on my own. Eventually I left for good, taking a chunk of the client base with me.
 
