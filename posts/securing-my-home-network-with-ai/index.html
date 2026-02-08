@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script defer data-domain="jonmagic.com" src="https://plausible.io/js/script.outbound-links.js"></script>
+<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Securing My Home Network with AI</title>
+
+
+<meta property="og:title" content="Securing My Home Network with AI">
+<meta property="og:description" content="How I turned home network security into a conversation with an AI agent, and ended up with a hardened NAS, documented infrastructure, and a self-improving project harness along the way.">
+<meta property="og:url" content="https://jonmagic.com/posts/securing-my-home-network-with-ai/">
+<meta property="og:site_name" content="jonmagic.com">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://jonmagic.com/images/posts/securing-my-home-network-with-ai/jonmagic-at-desk-vibing-v3.webp">
+<meta property="og:locale" content="en_US">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Securing My Home Network with AI">
+<meta name="twitter:description" content="How I turned home network security into a conversation with an AI agent, and ended up with a hardened NAS, documented infrastructure, and a self-improving project harness along the way.">
+
+
+<meta name="description" content="How I turned home network security into a conversation with an AI agent, and ended up with a hardened NAS, documented infrastructure, and a self-improving project harness along the way.">
+<meta name="author" content="Jonathan Hoyt">
+
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/search.css">
+<link rel="alternate" type="application/atom+xml" title="JonMagic.com RSS Feed" href="/feed.xml">
+
+</head>
+
+<body class="">
+  
+  <nav class="site-nav">
+  <div class="nav-container">
+    <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/posts/">Posts</a></li><li><a href="/projects/">Projects</a></li><li><a href="/search/">Search</a></li><li><a href="/about/">About</a></li></ul>
+    <div class="social-links">
+      <a href="https://github.com/jonmagic" title="GitHub Profile">
+        <img src="/images/github.png" alt="GitHub Profile" width="24" height="24" class="github-icon">
+      </a>
+      <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile">
+        <img src="/images/linkedin.png" alt="LinkedIn Profile" width="24" height="24" class="linkedin-icon">
+      </a>
+      <a href="/feed.xml" title="RSS Feed">
+        <img src="/images/rss.png" alt="RSS Feed" width="24" height="24" class="rss-icon">
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <div class="page layout-main">
+    <main class="content">
+      
+      <div class="post-date-container">
+        <span id="post-date-typing" class="post-date-typing" data-date="2026-02-08"></span>
+      </div>
+      
+      <h1 class="site-title">Securing My Home Network with AI</h1>
+      <p>I spent the weekend making my home network more secure, and the whole thing was just a conversation.</p>
+<p>Not “I asked an AI to generate a security checklist and then went through it.” More like: I sat down with a CLI agent, started talking about my network, and kept going. Over the next several hours, we port-scanned the network, audited what was exposed, hardened the NAS, built documentation crawlers, wrote an 8-phase improvement plan, and generated 24 Markdown docs from the Synology API. I never opened a browser to search for how to do any of it. I just kept talking.</p>
+<p><img src="/images/posts/securing-my-home-network-with-ai/jonmagic-at-desk-vibing-v3.webp" alt="A weekend nmap session"></p>
+<p>I’ve been thinking a lot about <a href="/posts/designing-collaborations-not-just-automations/">designing collaborations rather than just automations</a>, and this project turned out to be the most fun example yet. The AI did the coding. I made the decisions. And the project harness we built along the way kept getting smarter.</p>
+<h2 id="the-setup" tabindex="-1"><a class="heading-anchor" href="#the-setup" aria-hidden="true">#</a> The Setup</h2>
+<p>My home network is the usual story of accumulated decisions. Fiber into a gateway in IP passthrough mode, feeding a mesh router, serving about 46 devices on a flat network. A Synology NAS running Docker containers for game servers, an nginx reverse proxy, Let’s Encrypt cert management, and a few other things.</p>
+<p>One of the first things the agent generated was a topology diagram. Here’s a simplified version with fake addresses:</p>
+<pre><code>Internet
+  │
+  ▼
+┌──────────────┐
+│   Gateway    │  passthrough mode
+│  (fiber ISP) │
+└──────┬───────┘
+       │
+┌──────┴───────┐
+│  Mesh Router │
+│  + 2 sats    │
+└──────┬───────┘
+       │
+       ├── NAS
+       │    ├── Docker: nginx reverse proxy (TLS)
+       │    ├── Docker: game servers
+       │    ├── Docker: certbot (Let's Encrypt)
+       │    └── Tailscale VPN
+       │
+       ├── Laptops, phones, tablets
+       ├── Smart TV, streaming devices
+       ├── IoT: smart plugs, cameras, sensors
+       └── ... ~40 more devices
+</code></pre>
+<p>Having this in a version-controlled Markdown file—generated from the conversation—turned out to be surprisingly useful. It became the reference point for every decision that followed.</p>
+<p>I’d been meaning to audit the whole setup for a while. Not because anything was broken—everything worked fine—but because I’d been port-forwarding and enabling services for years without ever going back to see what the cumulative result looked like. It was a weekend project I kept not starting.</p>
+<p>What made it fun this time was the format. Instead of researching and executing solo, I opened <a href="https://opencode.ai">OpenCode</a>—a CLI coding agent—and just started a conversation.</p>
+<h2 id="just-keep-talking" tabindex="-1"><a class="heading-anchor" href="#just-keep-talking" aria-hidden="true">#</a> Just Keep Talking</h2>
+<p>The first thing I said was something like “help me understand what’s exposed on my network.” The agent ran <code>nmap</code>, parsed the results, and we talked through each open port together. Some were intentional (the game server, the reverse proxy). Some were not—services I’d never intentionally exposed to the internet. We built a security audit document right there in the conversation, categorizing everything by severity.</p>
+<p>Here’s roughly what that audit looked like (with fake details):</p>
+<pre><code>External Port Scan Results
+──────────────────────────
+PORT      SERVICE                 STATUS
+xx/tcp    reverse proxy (HTTP)    ✓ Intentional
+xx/tcp    reverse proxy (TLS)     ✓ Intentional
+xx/tcp    game server             ✓ Intentional
+xx/tcp    storage replication     ✗ NOT INTENTIONAL
+xx/tcp    admin UI                ✗ NOT INTENTIONAL
+xx/tcp    discovery service       ✗ NOT INTENTIONAL
+
+Risk: 3 services exposed that should only be reachable on LAN
+</code></pre>
+<p>Seeing it laid out like that made the problem concrete. Three ports I’d never meant to expose, sitting there for who knows how long.</p>
+<p>What surprised me was how much I was learning just by talking it through. I work on GitHub’s Safety &amp; Integrity team building infrastructure for abuse prevention at scale, but at home I didn’t have runbooks or institutional knowledge. The conversation replaced all of that. I’d ask “what does this service do and why would it be exposed?” and the agent would explain, and then I’d decide what to do about it. It felt like pair programming with someone who happens to know every Synology forum post ever written.</p>
+<p>From that first scan, the conversation just kept going. We narrowed the port forwarding rules on the router. We disabled remote management on the Orbi. We started on the NAS. Each thing led naturally to the next thing, and I never had to context-switch to a browser or a different tool.</p>
+<h2 id="the-project-harness" tabindex="-1"><a class="heading-anchor" href="#the-project-harness" aria-hidden="true">#</a> The Project Harness</h2>
+<p>A few sessions in, I realized this was becoming a real project. So I did what I’d do at work—I gave it structure.</p>
+<p>I set up a repo with three kinds of content: <strong>reference docs</strong> generated by crawlers and API scripts (snapshots of every device’s current configuration), <strong>plans</strong> for multi-step work like NAS hardening, and <strong><a href="https://agentconfig.org/skills/">agent skills</a></strong> that teach the agent how to operate specific parts of the network.</p>
+<p>The skills are the fun part. Each one is a Markdown file that gives the agent context about a specific piece of the network. How to SSH into the NAS, which auth method to use. Where Docker containers live on disk. What the network topology looks like. When the agent loads a skill, it has the context to actually do things safely instead of guessing.</p>
+<p>Here’s what made this feel different from other AI projects I’ve done: the skills grew out of the conversation itself. Every time the agent needed information it didn’t have—or made a wrong assumption—we’d write that knowledge into a skill file. This is the <a href="/posts/turning-agent-misses-into-systemic-improvements/">improvement loop</a> pattern applied to infrastructure instead of code.</p>
+<p>Some of the skills we ended up with:</p>
+<ul>
+<li><strong>nas-manage</strong>: Connection details, storage layout, Docker container inventory, and a note that the root filesystem sitting at 90% is normal (so the agent doesn’t flag it as a problem every time).</li>
+<li><strong>network-monitor</strong>: Ping sweeps, port checks, service availability commands.</li>
+<li><strong>network-config</strong>: How to query the router and gateway using their crawled documentation.</li>
+<li><strong>crawl-device</strong>: How to re-crawl each device’s UI to regenerate docs after making changes.</li>
+<li><strong>improvement-loop</strong>: The systematic process for turning agent mistakes into permanent fixes.</li>
+</ul>
+<blockquote>
+<p><strong>Skills vs. docs — a work in progress.</strong> The line between “this is a skill” and “this is a doc” is still blurry. Skills are addressed to the agent: “when asked to do X, here’s how.” Docs are records of state: “here’s what the network looks like right now.” But in practice, skills embed reference data (IPs, device tables) so the agent can act without extra lookups, which means that data lives in two places. And some docs contain step-by-step instructions that read like skills. The pragmatic rule we landed on: if the agent needs it to <em>do something</em>, it’s a skill; if it exists as a <em>record</em>, it’s a doc. But I’d like to tighten this up — probably by having skills link to docs for reference data instead of duplicating it.</p>
+</blockquote>
+<p>By the later sessions, the agent could SSH into the NAS, check a configuration, and update the documentation without me explaining anything. The harness had absorbed enough context to be genuinely useful.</p>
+<h2 id="nas-hardening%3A-the-fun-bits" tabindex="-1"><a class="heading-anchor" href="#nas-hardening%3A-the-fun-bits" aria-hidden="true">#</a> NAS Hardening: The Fun Bits</h2>
+<p>The NAS hardening was the meatiest part. We wrote a 10-step plan and worked through it together. Most of it was straightforward—disable SSDP and Avahi, tighten Auto Block, raise the password policy, enforce 2FA. The agent would suggest a change, explain why, and I’d apply it through the DSM UI while the agent verified from the command line.</p>
+<p>But a few moments were genuinely entertaining.</p>
+<p><strong>The SSH near-lockout.</strong> We were hardening <code>sshd_config</code>—disabling password auth, requiring keys only—and at one point <code>PubkeyAuthentication</code> got set to <code>no</code> instead of <code>yes</code>. Which would have locked me out of my own NAS. Except the agent had suggested earlier in the conversation that I keep a backup SSH session open while making changes. So I did. And that backup session saved me. The lesson went straight into an operational notes doc, and now the <code>nas-manage</code> skill includes a reminder to always keep a backup session.</p>
+<p><strong>The rsync mystery.</strong> After SSH hardening, every deploy script I have broke. Multiple projects use rsync over SSH to deploy to the NAS, and suddenly none of them worked. We dug into it together and discovered that Synology’s rsync binary is setuid root and uses PAM for authentication—even when it’s invoked over an already-authenticated SSH session. Disabling the Synology rsync service had broken the PAM chain. The fix was simple (re-enable the rsync service), but finding it would have been a solo debugging nightmare. In the conversation, we traced through the PAM config, checked the binary permissions, and figured it out in maybe ten minutes. That one went into the operational notes too.</p>
+<p><strong>The 2FA cascade.</strong> After we enabled TOTP for all NAS accounts, the documentation crawl script stopped working because the Synology API now required an OTP code for authentication. That one’s still on the todo list—we noted what broke and moved on. I like that the conversation naturally captured the dependency so future-me won’t have to rediscover it.</p>
+<h2 id="documentation-just%E2%80%A6-appeared" tabindex="-1"><a class="heading-anchor" href="#documentation-just%E2%80%A6-appeared" aria-hidden="true">#</a> Documentation Just… Appeared</h2>
+<p>This is the thing I keep coming back to. I didn’t set out to document my network. I set out to make it more secure. But because the conversation naturally involved checking configurations, running API queries, and verifying changes, documentation fell out as a side effect.</p>
+<p>The NAS crawl script hits 80+ Synology API endpoints, and a Python script turns the JSON responses into 24 readable Markdown files covering security, network, Docker, file services, packages, and more. Every time we changed a setting, the natural next step was “let’s re-crawl and make sure the docs reflect reality.” So we did.</p>
+<p>For the Orbi router and AT&amp;T gateway—which don’t have APIs—we built Playwright crawlers that log in, navigate every page, take screenshots, and generate Markdown from the page content. Version-controlled snapshots of every device’s configuration that I can diff over time.</p>
+<p>The improvement plan became a living document too. Eight phases, from the emergency port-forwarding fixes we’d already done through future work like VLAN segmentation, Pi-hole DNS, and a monitoring stack. Each phase has scope, success criteria, and links to the relevant skills and docs. It’s the kind of planning document I’d write for a project at work, and having one for my home network feels like an unexpected luxury.</p>
+<h2 id="my-favorite-artifact" tabindex="-1"><a class="heading-anchor" href="#my-favorite-artifact" aria-hidden="true">#</a> My Favorite Artifact</h2>
+<p>The operational notes document is my favorite thing we produced. It’s a single file capturing every hard-won lesson:</p>
+<ul>
+<li>Synology rsync is setuid root and uses PAM—keep the rsync service enabled or deploys break.</li>
+<li>DSM’s “HSTS” checkbox only enables HTTP-to-HTTPS redirect, not the actual <code>Strict-Transport-Security</code> header.</li>
+<li>NetBIOS has no separate toggle in DSM 7—it’s tied to the SMB service.</li>
+<li>Docker needs the full <code>/usr/local/bin/docker</code> path for non-interactive SSH sessions.</li>
+<li>The default-deny firewall rule also blocks ICMP, so add an explicit allow if you want ping monitoring.</li>
+</ul>
+<p>Each one of these is the kind of thing you’d find buried on page three of a forum thread. Having them in a version-controlled file means I won’t rediscover them the hard way, and the AI agent can reference them in future sessions. The knowledge compounds.</p>
+<h2 id="why-this-was-fun" tabindex="-1"><a class="heading-anchor" href="#why-this-was-fun" aria-hidden="true">#</a> Why This Was Fun</h2>
+<p>I think what made this project work—and what made it fun instead of tedious—comes down to a few things.</p>
+<p><strong>It was a conversation, not a checklist.</strong> I didn’t have to plan everything up front and then execute. I just started talking, and the work emerged naturally. Each discovery led to the next question, which led to the next change.</p>
+<p><strong>The project got smarter as we went.</strong> Every skill we wrote, every operational note we captured, every doc we regenerated made the next session easier. By the end, the agent had enough context about my network to be a genuinely useful collaborator rather than a generic assistant.</p>
+<p><strong>The outputs were varied and interesting.</strong> We weren’t just toggling settings. We were building crawlers, writing shell scripts, debugging PAM authentication, designing firewall rules, generating documentation. The variety kept it engaging in a way that grinding through a hardening guide wouldn’t have been.</p>
+<p><strong>I stayed in the loop without drowning in details.</strong> I wasn’t reviewing individual lines of code or verifying command syntax. I was reading the documentation the agent generated, following its explanations of what each change would do, and making decisions based on that. The whole interaction happened in natural language rather than code, which meant I could focus on understanding my network instead of wrestling with configuration syntax. It’s a different kind of understanding than reading every line yourself, but it’s real—and it’s the reason I’d feel confident making changes on my own now.</p>
+<h2 id="what%E2%80%99s-next" tabindex="-1"><a class="heading-anchor" href="#what%E2%80%99s-next" aria-hidden="true">#</a> What’s Next</h2>
+<p>The external attack surface is down to three intentional ports and one annoying DNS issue that needs an architecture change to fix. Router hardening is done—at least as far as the Orbi lets us go. The remaining phases are VLAN segmentation, Pi-hole, monitoring, and eventually some hardware upgrades.</p>
+<p>I’ll keep working through them the same way: start a conversation, let the work emerge, encode what I learn into skills and docs as I go. The harness gets better every session, so each phase should be smoother than the last.</p>
+<p>If you’ve been putting off a project like this because it feels like a slog, try making it a conversation instead. It’s a different experience entirely.</p>
+
+      
+      
+      <aside class="post-cta" aria-labelledby="post-cta-heading">
+  <h2 id="post-cta-heading">If you liked this post</h2>
+  <p>Here are a few easy ways to support or explore more:</p>
+  <ul class="post-cta-actions">
+    <li>Share this on <a href="https://news.ycombinator.com/submitlink?u=https://jonmagic.com/posts/securing-my-home-network-with-ai/&t=Securing My Home Network with AI" rel="noopener noreferrer" target="_blank">Hacker News</a>.</li>
+    <li>Join or start a <a href="https://github.com/jonmagic/jonmagic.com/discussions">discussion about this post or my site</a>.</li>
+    <li>Read more <a href="/posts/">writing</a> or browse my <a href="/projects/">projects</a>.</li>
+    <li>Follow me on <a href="https://github.com/jonmagic">GitHub</a>.</li>
+  </ul>
+  <p class="post-cta-thanks">Thanks for reading — it means a lot.</p>
+</aside>
+
+      
+    </main>
+  </div>
+  
+  <div class="page">
+    <footer>
+  © Jonathan Hoyt <span id="year"></span> — built <s>by hand</s> with an LLM
+</footer>
+
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>
