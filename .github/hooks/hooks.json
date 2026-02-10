@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "hooks": {
+    "preToolUse": [
+      {
+        "type": "command",
+        "bash": "/.mobius/hooks/scripts/pre-tool-use.sh",
+        "timeoutSec": 10
+      }
+    ],
+    "postToolUse": [
+      {
+        "type": "command",
+        "bash": "/.mobius/hooks/scripts/post-tool-use.sh",
+        "timeoutSec": 10
+      }
+    ],
+    "sessionEnd": [
+      {
+        "type": "command",
+        "bash": "/.mobius/hooks/scripts/session-end.sh",
+        "timeoutSec": 10
+      }
+    ]
+  }
+}

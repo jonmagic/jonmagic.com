@@ -21,6 +21,8 @@ I come from a family of entrepreneurs. My parents had full-time jobs, but they a
 
 By eleven or twelve, I was working part-time for my dad's construction business. If I finished my schoolwork by lunch, I could go swing a hammer at whatever house he was building or renovating. I learned what hard work looked like, and I learned that you could make your own way.
 
+Then in September 1995, my dad and my best friend took me to see [Hackers](https://en.wikipedia.org/wiki/Hackers_(film)) in the theater. I was thirteen. Up to that point, I'd pieced together computers from spare parts and learned a tiny bit of BASIC—mostly I was writing batch files and teaching people how to use their Windows 95 machines. But that movie changed everything. It wasn't just the pop culture and the ethos—though growing up in a conservative household, I'd never really experienced that *how far can I bend the rules?* spirit before. What hooked me was that they talked about real hardware. Every computer movie before that had been pure nonsense. Hackers planted a seed: I wanted to build software, not just fix computers. That seed would take years to grow into actual programming, but it started there.
+
 ## The Entrepreneur Phase
 
 At fourteen, my best friend Christian Metts and I decided to start a [virtual reality arcade](https://news.ycombinator.com/item?id=40008927). This was 1996. We wrote a business plan, raised $10,000 from family and friends, and set up shop in the Jackson Crossing Mall in Jackson, Michigan—right near the nail salon and pet store.
