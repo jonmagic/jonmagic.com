@@ -37,8 +37,11 @@ featured: 2
 ## Featured Post
 
 The `featured` field is a numeric value that determines homepage featuring:
-- Lower numbers appear first
+- Lower numbers appear first (1 = most prominent)
 - Only posts with a numeric `featured` value appear in the featured section
+- The homepage shows up to 4 featured posts
+- When a new post is featured, rotate the stack: bump existing numbers up by 1, drop #4, and assign the new post `featured: 1`
+- See the "Featured Posts Rotation" section in SKILL.md for the full process
 
 ```yaml
 ---
@@ -49,7 +52,7 @@ tags:
 description: >-
   AI assistants can do tasks for you or with you. Here's why designing
   collaborations beats pure automation.
-featured: 1
+featured: 3
 ---
 ```
 
