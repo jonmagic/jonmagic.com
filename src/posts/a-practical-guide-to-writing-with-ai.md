@@ -1,0 +1,103 @@
+---
+title: A Practical Guide to Writing with AI
+date: 2026-02-13
+avatar: /images/posts/a-practical-guide-to-writing-with-ai/writing-in-notebook-and-agent-prompt-in-background.webp
+tags:
+  - post
+description: How I use AI as a writing collaborator without losing my voice. A step-by-step process for collecting context, finding story arcs, drafting, editing, and publishing writing that feels human.
+featured: 1
+---
+
+I use AI in my writing all the time. For research, for turning messy transcripts into coherent sentences, for drafting, for getting feedback. But the way I use it matters. This isn't about handing the wheel to an AI and publishing whatever it spits out. It's a collaboration, a conversation, where the AI assists me and I stay in the driver's seat.
+
+![Writing in a notebook with an agent prompt in the background](/images/posts/a-practical-guide-to-writing-with-ai/writing-in-notebook-and-agent-prompt-in-background.webp)
+
+I've been refining this process over the past year and sharing bits of it in PR reviews, Slack threads, and conversations with colleagues. Here's the full picture.
+
+## Why bother with a process?
+
+There's a real tension around AI-written content right now. A colleague put it well: "Why should I bother to read something someone else couldn't be bothered to read?" And she's right. If you feed a prompt into an AI and publish the output without reading it yourself, people can tell. The writing feels strenuous to parse, slightly off, like a conversation with someone who knows all the words but none of the stories.
+
+I've gotten feedback on my own writing from people who know I use AI heavily. The honest ones say they can sometimes tell. But the feedback I hear most is that my writing feels like me, and I think that's because of how I use AI, not whether I use it.
+
+The goal is writing that a reader experiences as human, thoughtful, and worth their time, even though AI was deeply involved in creating it.
+
+## Step 1: Collect all your context in one place
+
+Before I write anything, I gather everything related to the topic. This sounds obvious but it's the step most people skip, and it's the one that makes everything else work.
+
+What I collect:
+
+- Transcripts from every conversation I had while working on the thing
+- Research I did along the way
+- Slack conversations
+- Links to all related issues and PRs
+- Screenshots and diagrams
+- Transcripts from [walk and talks](https://jonmagic.com/posts/context-rules-everything-around-me/#the-minimal-reproducible-stack) where a lot of my initial ideation and final prose takes shape
+
+This sounds like a lot of work, and it can be at first if you haven't developed a habit around collecting these things as you go. All of my workflows center around collecting artifacts in my Brain folder (a personal knowledge base), so by the time I sit down to write it's as simple as "please collect all my context on topic X" and the agent does the work for me.
+
+In my experience the quality of AI-assisted writing is directly proportional to the quality of context you give the AI. Garbage in, garbage out. Rich context in, rich writing out.
+
+## Step 2: Organize and find your story arc
+
+Give all the context to an agent and ask it to help you organize it. Then ask for a few pitches with story arcs.
+
+For agents, I use whatever fits the moment. Right now my go-to is an agent called OpenCode, but I also use Copilot CLI, and Copilot in VS Code. The tool doesn't matter much. What matters is giving it the full picture and asking it to help you see the shape of the story.
+
+Here's something I've learned the hard way: AI-generated story arcs can feel samey. People who read a lot of AI-assisted writing start to recognize the patterns — the "journey from X to Y" structure, the tidy three-act narratives. The arcs aren't bad, but they're recognizable, and recognizable is the opposite of what you want.
+
+So I've been leaning more into interview mode. Instead of asking the agent for story arc pitches and picking one, I ask it to interview me about the topic. Agents are surprisingly good at interviewing and it often gets me to think about things I hadn't considered. Questions like "what surprised you most about this work?" or "who was the audience you kept thinking about?" pull out the narrative I was carrying in my head but hadn't articulated. The arc that emerges from an interview is yours — it has your emphasis, your surprises, your priorities — and that's much harder for a reader to clock as AI-shaped.
+
+You can still ask for pitches if you want a starting point. Just be aware that the more the structure comes from the AI, the more it'll read like AI. If none of the arcs feel right, give it that feedback. Ask for more ideas, or give it some of your own. But when I want the piece to really feel like mine, I start with the interview.
+
+## Step 3: Get the rough draft
+
+Once you have a story arc figured out you can either write it by hand or ask the agent for a rough draft. I usually ask for a rough draft, including placeholders for diagrams or pictures.
+
+I get pretty good results from rough drafts, but that didn't happen by accident. Over time I've built up a "voice and tone" profile that includes examples of my writing along with the principles I apply when I write. The examples come from things I've published on my blog and elsewhere. This gives the AI a concrete target to aim for rather than its default style.
+
+If you don't have a voice profile yet, you can start by giving the agent three or four pieces of your own writing and saying "match this tone." It's not as refined as a full voice guide but it gets you most of the way there.
+
+## Step 4: The editing conversation
+
+This is where the real work happens, and it's what separates writing that feels human from writing that feels like AI slop.
+
+**If the agent wrote the draft:** Go sentence by sentence and create a list of feedback. You can just edit things yourself manually, but if it's going to need major rework it's often better to give the AI all that extra context. Make this a conversation or an interview.
+
+**If you wrote it yourself:** Ask the agent to give you feedback. It'll catch repetition, unclear transitions, and structural issues you're too close to see.
+
+Things I watch for in AI-generated prose, from specific feedback I've given on real PR reviews:
+
+1. **Repetition of themes.** AI loves to hammer a point home across multiple sections. In a recent review I flagged that the same arc ("this went from painful to boring") appeared in three separate sections. Once is powerful. Three times is a newsletter.
+2. **The colon tell.** Phrases like "If you've ever been near infrastructure, you know: DDoS isn't theoretical" are an AI fingerprint. Turn colons into commas, or better yet rewrite those portions. A caveat: some people naturally write with colons, so this is only a tell if it's not already part of your style. These stylistic fingerprints cut both ways. AI introduced me to em dashes and now I genuinely love using them, so I give myself a pass. A colleague who always used em dashes told me she's been trying to break the habit now that AI overuses them. The point isn't to avoid specific punctuation — it's to know your own patterns well enough to tell the difference between your voice and the AI's.
+3. **Headers that try too hard.** Story-arc headers like "The Turning Point" or "Why Everything Changed" can feel less human. Simple, direct headers work better.
+4. **Read it out loud.** If a section doesn't sound like something you'd actually say, make small tweaks until it feels like you. This is the single most effective editing technique I've found.
+
+## Step 5: The voice memo trick
+
+For writing that really needs to sound like you, I use a technique that's become central to my process.
+
+I use the Voice Memos app on my phone to record myself talking through the story at a high level, just the natural flow of how I'd explain it to someone. Then I take the transcription and use it as a base to write from. This gets my natural storytelling rhythm into the writing in a way that typing from scratch often doesn't.
+
+Then I lean heavily on AI for research, writing and rewriting small sections. When I hit the detailed parts of the story, I do more voice recordings to capture the nuance, then use those transcripts to refine the writing.
+
+The result is prose that has my actual cadence and phrasing baked in at the structural level, with AI handling the polish and filling in details I'd otherwise spend hours looking up.
+
+## Step 6: Human review
+
+Give it to another human now that you've checked all your work and the agent's work. Get their feedback. This step is non-negotiable. AI can't tell you if your writing resonates with a real person. Only a real person can do that.
+
+## Step 7: Publish
+
+Mash that publish button.
+
+## The underlying philosophy
+
+I use AI more for research and outlining than for final content. The finished piece has large portions written by me. I sometimes joke that AI was designed to just sound like me, but the truth is I've put deliberate work into making the collaboration seamless.
+
+The people who are frustrated with AI writing, and they have every reason to be, are reacting to writers who aren't doing the work. They're not reading their own output. They're not editing. They're not bringing their own voice to the table. And readers can feel it.
+
+Writing with AI is a collaboration. The AI brings speed, research capability, and tireless willingness to try different framings. You bring the stories, the judgment, and the voice. Neither one works well without the other.
+
+The skill that matters isn't "prompting" or "using AI." It's learning how to have a productive conversation with a collaborator who has perfect recall and no taste. That's a skill worth developing.

@@ -5,7 +5,6 @@ tags:
   - post
 description: >-
   Capture once, reuse everywhere. I record meetings, auto-transcribe, then feed transcripts to AI prompts for summaries, action lists, and architecture drafts. Context Rules Everything Around Me.
-featured: 4
 ---
 
 I was drowning in meetings, losing track of decisions, and manually typing notes I never revisited. Then I found a better way—capture once, reuse everywhere with AI. In this post, I’ll show how I record and transcribe meetings, feed transcripts to large language models, and generate immediate action lists, summaries, and architecture drafts. It transformed my workflow from frantic note-taking to an effortless *meeting superpower*.

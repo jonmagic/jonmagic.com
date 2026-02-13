@@ -7,7 +7,7 @@ tags:
   - post
 description: >-
   How the blind pursuit of automation can distract from the more important goal of building understanding and how designing collaborations may be the future of coding careers.
-featured: 3
+featured: 4
 ---
 
 In my last post, [*The Uncertain Future of Coding Careers (and Why I'm Still Hopeful)*](https://jonmagic.com/posts/the-uncertain-future-of-coding-careers-and-why-im-still-hopeful/), I wrote about something I've always found exciting as a developer: working myself out of a job so I can work myself into the next one. I don't come from a CS background and my programming journey has always been focused on solving problems that matter to me, and that often means automating away the tedious parts of my work.
