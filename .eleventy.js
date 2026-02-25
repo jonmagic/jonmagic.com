@@ -170,6 +170,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/images/favicon.ico": "favicon.ico" });
   eleventyConfig.addPassthroughCopy({ "src/images/animated-favicon.gif": "animated-favicon.gif" });
   eleventyConfig.addPassthroughCopy("src/js");
+  eleventyConfig.addPassthroughCopy("src/d7x9k3");
   eleventyConfig.addPassthroughCopy("src/_data/postCropData.json");
 
   eleventyConfig.addGlobalData("layout", "layout.njk");
