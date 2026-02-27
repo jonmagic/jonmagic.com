@@ -1,0 +1,139 @@
+---
+title: "Stop Putting Secrets in .env Files"
+date: 2026-02-27
+tags:
+  - post
+description: Your .env files are a liability. Two simple patterns for injecting secrets from 1Password or macOS Keychain so credentials never touch disk as plaintext.
+---
+
+A few weeks ago I was out on a boat with my friend Harrison ([@hktouw](https://github.com/hktouw)), talking about the kinds of things you talk about when you have hours of open water and no agenda. We covered Tesla's self-driving, AI adoption, investing, and then landed on something that's been bugging me for a while: why do we still store credentials in plaintext `.env` files?
+
+Harrison had a great idea. "Why not just store the whole `.env` file in a note in 1Password?" he said. Simple. Obvious in hindsight. And it led me down a rabbit hole of rethinking how I handle secrets in every project.
+
+The result is a pattern I've been using for the past month that I want to share. It's not complicated. It doesn't require enterprise tooling. It works today with tools you probably already have.
+
+## The problem with .env files
+
+We all know `.env` files are supposed to be gitignored. And they usually are. But `.gitignore` is a safety net, not a strategy.
+
+Here's what actually happens with `.env` files:
+
+- They get copied into Slack DMs when onboarding a new teammate
+- They accumulate across 20+ projects with the same stale API key
+- A credential gets rotated and you're hunting through every project directory to find the copies
+- Someone clones the repo on a new machine and asks you to send them the `.env` file
+- They sit on disk as plaintext, readable by any process running as your user
+
+The twelve-factor app told us to put config in the environment. Good advice. But `.env` files are a leaky implementation of that principle. They're plaintext files pretending to be environment variables.
+
+## The fix: inject at runtime, never store on disk
+
+The pattern is simple. Instead of loading secrets from a file, you use a wrapper script that fetches secrets from a secure store and injects them as environment variables into your process:
+
+```bash
+# Instead of this:
+source .env && node server.js
+
+# Do this:
+./with-1password.sh node server.js
+# or
+./with-keychain.sh node server.js
+```
+
+Your application doesn't change at all. It still reads `process.env.API_KEY` or `$DATABASE_URL` the same way it always did. The difference is where the values come from.
+
+I built a [demo repo](https://github.com/jonmagic/secure-env-demo) with two working implementations: one for 1Password CLI and one for macOS Keychain. You can clone it and try both in about five minutes.
+
+## Option A: 1Password CLI
+
+This is the approach Harrison and I were originally talking about, and it's the one I reach for most. If you already use 1Password, the CLI (`op`) makes this almost frictionless.
+
+The key insight is that 1Password supports **secret references** — URIs like `op://Development/myapp/api-key` that point to a field in your vault. You can put these references in a file that's safe to commit:
+
+```bash
+# .env.1password — safe to commit, contains no secrets
+API_KEY=op://Development/secure-env-demo/api-key
+DATABASE_URL=op://Development/secure-env-demo/database-url
+WEBHOOK_SECRET=op://Development/secure-env-demo/webhook-secret
+```
+
+Then the wrapper script is almost trivially simple:
+
+```bash
+#!/usr/bin/env bash
+exec op run --env-file=".env.1password" -- "$@"
+```
+
+That's it. `op run` reads the references, fetches each secret from your vault (authenticating via Touch ID or your master password), injects them as environment variables, and runs your command. Secrets never touch disk as plaintext. As a bonus, `op run` automatically masks secret values if they accidentally appear in stdout.
+
+**Setup is a one-time thing.** You create a vault item with your secrets (the demo repo includes a setup script for this), customize the references in `.env.1password`, and you're done. Every developer on the team can share the same `.env.1password` file in version control and resolve it against their own 1Password account.
+
+## Option B: macOS Keychain
+
+Not everyone uses 1Password, and that's fine. If you're on a Mac, you already have a secrets manager built into the OS. The `security` command can read and write to your login keychain, and macOS gates access with your password or Touch ID.
+
+The wrapper script reads each secret from Keychain and exports it:
+
+```bash
+#!/usr/bin/env bash
+declare -A SECRETS=(
+  [API_KEY]="secure-env-demo/api-key"
+  [DATABASE_URL]="secure-env-demo/database-url"
+  [WEBHOOK_SECRET]="secure-env-demo/webhook-secret"
+)
+
+for var in "${!SECRETS[@]}"; do
+  service="${SECRETS[$var]}"
+  value=$(security find-generic-password -a "$USER" -s "$service" -w)
+  export "$var=$value"
+done
+
+exec "$@"
+```
+
+Storing a secret is one command:
+
+```bash
+security add-generic-password -a "$USER" -s "secure-env-demo/api-key" -w "sk-your-key" -U
+```
+
+It's a bit more manual than the 1Password approach — you maintain the mapping in the script rather than a reference file — but it works without any third-party dependencies.
+
+## What you gain
+
+The immediate benefit is obvious: no more plaintext secrets on disk. But there are a few less obvious wins.
+
+**One source of truth.** When a credential rotates, you update it in one place. Every project that references it picks up the change automatically.
+
+**Onboarding gets simpler.** Instead of "here's the `.env` file, don't lose it," you say "set up 1Password and run the setup script." The secrets are in the vault with proper access controls.
+
+**Auditing.** 1Password and Keychain both maintain access logs. You can see who accessed which secrets and when. A `.env` file gives you none of that.
+
+**It works with anything.** The wrapper pattern is language and framework agnostic. `./with-1password.sh docker compose up` works just as well as `./with-1password.sh pytest`.
+
+## What about other tools?
+
+There's a whole ecosystem of secrets management tools — [Doppler](https://doppler.com), [Infisical](https://infisical.com), [HashiCorp Vault](https://www.vaultproject.io/), [SOPS](https://github.com/getsops/sops), [dotenvx](https://dotenvx.com). They're all good, and if you're running a team of 50+ engineers you should probably be evaluating them.
+
+But for most developers working on personal projects or small teams, the 1Password or Keychain approach hits a sweet spot: minimal setup, no infrastructure to manage, and you're probably already paying for the tools.
+
+The important thing isn't which tool you pick. It's the pattern: **store secrets in a vault, inject at runtime, never write plaintext to disk.**
+
+## Try it
+
+The [secure-env-demo](https://github.com/jonmagic/secure-env-demo) repo has everything you need to try both approaches. Clone it, pick the one that fits your setup, and run the demo app:
+
+```bash
+git clone https://github.com/jonmagic/secure-env-demo.git
+cd secure-env-demo
+
+# 1Password path:
+./setup-1password.sh
+./with-1password.sh ./app.sh
+
+# Keychain path:
+./setup-keychain.sh
+./with-keychain.sh ./app.sh
+```
+
+It's a small change to how you work, but once you do it you won't go back. Every time I see a `.env` file now I think about that conversation on the boat and wonder why I didn't do this years ago.
