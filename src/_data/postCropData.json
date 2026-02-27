@@ -167,6 +167,12 @@
     "xPercent": 72.5,
     "yPercent": 15
   },
+  "stop-putting-secrets-in-dotenv-files": {
+    "x": 15,
+    "y": 13,
+    "xPercent": 18.75,
+    "yPercent": 65
+  },
   "starting-to-unplug": {
     "x": 18,
     "y": 14,

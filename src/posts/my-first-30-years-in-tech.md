@@ -6,7 +6,7 @@ tags:
   - post
 description: >-
   A reflection on two 15-year halves of a career—entrepreneur from age 14 to 29, employee from 29 to 44—and discovering what I actually love about this work.
-featured: 3
+featured: 4
 ---
 
 I turned 44 recently, which means I've now spent exactly half my professional life as an entrepreneur and half as an employee. Fifteen years building and running my own businesses, followed by fifteen years working for others. The symmetry wasn't planned, but it's given me a chance to reflect on what I've learned about myself along the way.

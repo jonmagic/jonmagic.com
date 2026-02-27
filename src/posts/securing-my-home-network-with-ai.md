@@ -8,7 +8,7 @@ description: >-
   How I turned home network security into a conversation with an AI agent,
   and ended up with a hardened NAS, documented infrastructure, and a
   self-improving project harness along the way.
-featured: 2
+featured: 3
 ---
 
 I spent the weekend making my home network more secure, and the whole thing was just a conversation.
