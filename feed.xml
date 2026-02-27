@@ -4,12 +4,102 @@
   <subtitle>My thoughts on software development, team building, and life.</subtitle>
   <link href="https://jonmagic.com/feed.xml" rel="self"/>
   <link href="https://jonmagic.com"/>
-  <updated>2026-02-13T00:00:00Z</updated>
+  <updated>2026-02-27T00:00:00Z</updated>
   <id>https://jonmagic.com/</id>
   <author>
     <name>Jonathan Hoyt</name>
     <email>jonmagic@gmail.com</email>
   </author>
+  
+  <entry>
+    <title>Stop Putting Secrets in .env Files</title>
+    <link href="https://jonmagic.com/posts/stop-putting-secrets-in-dotenv-files/"/>
+    <updated>2026-02-27T00:00:00Z</updated>
+    <id>https://jonmagic.com/posts/stop-putting-secrets-in-dotenv-files/</id>
+    <content type="html">&lt;p&gt;A few weeks ago my friend Harrison (&lt;a href=&quot;https://github.com/hktouw&quot;&gt;@hktouw&lt;/a&gt;) and I did our yearly Tesla FSD cruise around the Bay Area — seven hours of letting the car drive while we talk about whatever comes to mind. This was the first year we never had to take over the wheel, which meant even more time for conversation. We covered AI adoption, investing, and then landed on something that’s been bugging me for a while. Why do we still store credentials in plaintext &lt;code&gt;.env&lt;/code&gt; files?&lt;/p&gt;
+&lt;p&gt;I’d been using 1Password to store individual secrets for a while, pulling them one at a time with the CLI. Harrison took it a step further. “Why not store the whole &lt;code&gt;.env&lt;/code&gt; file’s worth of secrets as fields in a single 1Password item?” he said. Simple. Obvious in hindsight. And it led me down a rabbit hole of rethinking how I handle secrets in every project.&lt;/p&gt;
+&lt;p&gt;The result is a pattern I’ve been using for the past month that I want to share. It’s not complicated. It doesn’t require enterprise tooling. It works today with tools you probably already have.&lt;/p&gt;
+&lt;p&gt;&lt;video src=&quot;https://jonmagic.com/images/posts/stop-putting-secrets-in-dotenv-files/secure-env-demo.mp4&quot; controls=&quot;&quot; width=&quot;100%&quot;&gt;&lt;/video&gt;&lt;/p&gt;
+&lt;h2 id=&quot;the-problem-with-.env-files&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;heading-anchor&quot; href=&quot;https://jonmagic.com/posts/stop-putting-secrets-in-dotenv-files/#the-problem-with-.env-files&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt; The problem with .env files&lt;/h2&gt;
+&lt;p&gt;We all know &lt;code&gt;.env&lt;/code&gt; files are supposed to be gitignored. And they usually are. But beyond the git risk, having credentials stored in plaintext just feels bad. If you leave your laptop unlocked at a coffee shop or someone gets access to your machine, those &lt;code&gt;.env&lt;/code&gt; files are sitting right there — high-value targets with zero protection.&lt;/p&gt;
+&lt;p&gt;Here’s what actually happens with &lt;code&gt;.env&lt;/code&gt; files.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;They get copied into Slack DMs when onboarding a new teammate&lt;/li&gt;
+&lt;li&gt;They accumulate across 20+ projects with the same stale API key&lt;/li&gt;
+&lt;li&gt;A credential gets rotated and you’re hunting through every project directory to find the copies&lt;/li&gt;
+&lt;li&gt;Someone clones the repo on a new machine and asks you to send them the &lt;code&gt;.env&lt;/code&gt; file&lt;/li&gt;
+&lt;li&gt;They sit on disk as plaintext, readable by any process running as your user&lt;/li&gt;
+&lt;li&gt;If someone gains access to your machine, they instantly have every credential you’ve ever stored this way&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The twelve-factor app told us to put config in the environment. Good advice. But &lt;code&gt;.env&lt;/code&gt; files are a leaky implementation of that principle. They’re plaintext files pretending to be environment variables.&lt;/p&gt;
+&lt;h2 id=&quot;inject-at-runtime%2C-never-store-on-disk&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;heading-anchor&quot; href=&quot;https://jonmagic.com/posts/stop-putting-secrets-in-dotenv-files/#inject-at-runtime%2C-never-store-on-disk&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt; Inject at runtime, never store on disk&lt;/h2&gt;
+&lt;p&gt;The pattern is simple. Instead of loading secrets from a file, you use a wrapper script that fetches secrets from a secure store and injects them as environment variables into your process:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Instead of this:&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;source&lt;/span&gt; .env &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;node&lt;/span&gt; server.js
+
+&lt;span class=&quot;token comment&quot;&gt;# Do this:&lt;/span&gt;
+./with-1password.sh &lt;span class=&quot;token function&quot;&gt;node&lt;/span&gt; server.js
+&lt;span class=&quot;token comment&quot;&gt;# or&lt;/span&gt;
+./with-keychain.sh &lt;span class=&quot;token function&quot;&gt;node&lt;/span&gt; server.js&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Your application doesn’t change at all. It still reads &lt;code&gt;process.env.API_KEY&lt;/code&gt; or &lt;code&gt;$DATABASE_URL&lt;/code&gt; the same way it always did. The difference is where the values come from.&lt;/p&gt;
+&lt;p&gt;I built a &lt;a href=&quot;https://github.com/jonmagic/secure-env-demo&quot;&gt;demo repo&lt;/a&gt; with two working implementations: one for 1Password CLI and one for macOS Keychain. You can clone it and try both in about five minutes.&lt;/p&gt;
+&lt;h2 id=&quot;1password-cli&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;heading-anchor&quot; href=&quot;https://jonmagic.com/posts/stop-putting-secrets-in-dotenv-files/#1password-cli&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt; 1Password CLI&lt;/h2&gt;
+&lt;p&gt;This is the approach Harrison and I were originally talking about, and it’s the one I reach for most. If you already use 1Password, the CLI (&lt;code&gt;op&lt;/code&gt;) makes this almost frictionless.&lt;/p&gt;
+&lt;p&gt;The key insight is that 1Password supports &lt;strong&gt;secret references&lt;/strong&gt; — URIs like &lt;code&gt;op://Development/myapp/api-key&lt;/code&gt; that point to a field in your vault. You can put these references in a file that’s safe to commit:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# .env.1password — safe to commit, contains no secrets&lt;/span&gt;
+&lt;span class=&quot;token assign-left variable&quot;&gt;API_KEY&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;op://Development/secure-env-demo/api-key
+&lt;span class=&quot;token assign-left variable&quot;&gt;DATABASE_URL&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;op://Development/secure-env-demo/database-url
+&lt;span class=&quot;token assign-left variable&quot;&gt;WEBHOOK_SECRET&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;op://Development/secure-env-demo/webhook-secret&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then the wrapper script is almost trivially simple:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token shebang important&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;op&lt;/span&gt; run --env-file&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;.env.1password&quot;&lt;/span&gt; -- &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$@&lt;/span&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That’s it. &lt;code&gt;op run&lt;/code&gt; reads the references, fetches each secret from your vault (authenticating via Touch ID or your master password), injects them as environment variables, and runs your command. Secrets never touch disk as plaintext. As a bonus, &lt;code&gt;op run&lt;/code&gt; automatically masks secret values if they accidentally appear in stdout.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Setup is a one-time thing.&lt;/strong&gt; You create a vault item with your secrets (the demo repo includes a setup script for this), customize the references in &lt;code&gt;.env.1password&lt;/code&gt;, and you’re done. Every developer on the team can share the same &lt;code&gt;.env.1password&lt;/code&gt; file in version control and resolve it against their own 1Password account.&lt;/p&gt;
+&lt;h2 id=&quot;or-macos-keychain&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;heading-anchor&quot; href=&quot;https://jonmagic.com/posts/stop-putting-secrets-in-dotenv-files/#or-macos-keychain&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt; Or macOS Keychain&lt;/h2&gt;
+&lt;p&gt;Not everyone uses 1Password, and that’s fine. If you’re on a Mac, you already have a secrets manager built into the OS. The &lt;code&gt;security&lt;/code&gt; command can read and write to your login keychain, and macOS gates access with your password or Touch ID.&lt;/p&gt;
+&lt;p&gt;The wrapper script reads each secret from Keychain and exports it.&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token shebang important&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-A&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;SECRETS&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;API_KEY&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;secure-env-demo/api-key&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;DATABASE_URL&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;secure-env-demo/database-url&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;WEBHOOK_SECRET&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;secure-env-demo/webhook-secret&quot;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token for-or-select variable&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;${&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;SECRETS&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;@&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;}&lt;/span&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;token assign-left variable&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;${SECRETS&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;$var&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;}&lt;/span&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;token assign-left variable&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;security find-generic-password &lt;span class=&quot;token parameter variable&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token environment constant&quot;&gt;$USER&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-s&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$service&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-w&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token builtin class-name&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$var&lt;/span&gt;=&lt;span class=&quot;token variable&quot;&gt;$value&lt;/span&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;done&lt;/span&gt;
+
+&lt;span class=&quot;token builtin class-name&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$@&lt;/span&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Storing a secret is one command.&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;security add-generic-password &lt;span class=&quot;token parameter variable&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token environment constant&quot;&gt;$USER&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-s&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;secure-env-demo/api-key&quot;&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-w&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;sk-your-key&quot;&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-U&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It’s a bit more manual than the 1Password approach — you maintain the mapping in the script rather than a reference file — but it works without any third-party dependencies.&lt;/p&gt;
+&lt;h2 id=&quot;what-you-gain&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;heading-anchor&quot; href=&quot;https://jonmagic.com/posts/stop-putting-secrets-in-dotenv-files/#what-you-gain&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt; What you gain&lt;/h2&gt;
+&lt;p&gt;The immediate benefit is obvious — no more plaintext secrets on disk. But there are a few less obvious wins.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;One source of truth.&lt;/strong&gt; When a credential rotates, you update it in one place. Every project that references it picks up the change automatically.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Onboarding gets simpler.&lt;/strong&gt; Instead of “here’s the &lt;code&gt;.env&lt;/code&gt; file, don’t lose it,” you say “set up 1Password and run the setup script.” The secrets are in the vault with proper access controls.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Auditing.&lt;/strong&gt; 1Password and Keychain both maintain access logs. You can see who accessed which secrets and when. A &lt;code&gt;.env&lt;/code&gt; file gives you none of that.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;It works with anything.&lt;/strong&gt; The wrapper pattern is language and framework agnostic. &lt;code&gt;./with-1password.sh docker compose up&lt;/code&gt; works just as well as &lt;code&gt;./with-1password.sh pytest&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;what-about-other-tools%3F&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;heading-anchor&quot; href=&quot;https://jonmagic.com/posts/stop-putting-secrets-in-dotenv-files/#what-about-other-tools%3F&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt; What about other tools?&lt;/h2&gt;
+&lt;p&gt;There’s a whole ecosystem of secrets management tools — &lt;a href=&quot;https://doppler.com/&quot;&gt;Doppler&lt;/a&gt;, &lt;a href=&quot;https://infisical.com/&quot;&gt;Infisical&lt;/a&gt;, &lt;a href=&quot;https://www.vaultproject.io/&quot;&gt;HashiCorp Vault&lt;/a&gt;, &lt;a href=&quot;https://github.com/getsops/sops&quot;&gt;SOPS&lt;/a&gt;, &lt;a href=&quot;https://dotenvx.com/&quot;&gt;dotenvx&lt;/a&gt;. They’re all good, and if you’re running a team of 50+ engineers you should probably be evaluating them.&lt;/p&gt;
+&lt;p&gt;But for most developers working on personal projects or small teams, the 1Password or Keychain approach hits a sweet spot: minimal setup, no infrastructure to manage, and you’re probably already paying for the tools.&lt;/p&gt;
+&lt;p&gt;The important thing isn’t which tool you pick. It’s the pattern. &lt;strong&gt;Store secrets in a vault, inject at runtime, never write plaintext to disk.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;try-it&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;heading-anchor&quot; href=&quot;https://jonmagic.com/posts/stop-putting-secrets-in-dotenv-files/#try-it&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt; Try it&lt;/h2&gt;
+&lt;p&gt;The &lt;a href=&quot;https://github.com/jonmagic/secure-env-demo&quot;&gt;secure-env-demo&lt;/a&gt; repo has everything you need to try both approaches. Clone it, pick the one that fits your setup, and run the demo app:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone https://github.com/jonmagic/secure-env-demo.git
+&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; secure-env-demo
+
+&lt;span class=&quot;token comment&quot;&gt;# 1Password path:&lt;/span&gt;
+./setup-1password.sh
+./with-1password.sh ./app.sh
+
+&lt;span class=&quot;token comment&quot;&gt;# Keychain path:&lt;/span&gt;
+./setup-keychain.sh
+./with-keychain.sh ./app.sh&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It’s a small change to how you work, but once you do it you won’t go back. Every time I see a &lt;code&gt;.env&lt;/code&gt; file now I think about that conversation in the Tesla and wonder why I didn’t do this years ago.&lt;/p&gt;
+</content>
+  </entry>
   
   <entry>
     <title>A Practical Guide to Writing with AI</title>
