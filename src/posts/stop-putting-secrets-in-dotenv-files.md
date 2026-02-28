@@ -10,6 +10,14 @@ description: >-
   from 1Password or macOS Keychain so credentials never touch disk as plaintext.
 ---
 
+**Update (Feb 28, 2026):** This post got a lot of discussion on [Hacker News](https://news.ycombinator.com/item?id=47188465) and [Lobsters](https://lobste.rs/s/eai9st/stop_putting_secrets_env_files). Two things worth addressing.
+
+First, several people pointed out [1Password Environments](https://developer.1password.com/docs/environments/local-env-file), a newer feature I hadn't tried yet. It mounts a `.env` file backed by a UNIX named pipe (FIFO) so your existing dotenv libraries just work, but no plaintext ever lands on disk. Authorization persists until 1Password locks, which solves the repeated Touch ID prompts you'd get with `op run`. If you're already using 1Password this is probably the best option available today.
+
+Second, a fair critique. Injecting secrets as environment variables doesn't make them invisible. On Linux, any process running as your user can read `/proc/self/environ` (or `/proc/<pid>/environ` for other processes you own). On macOS there's no `/proc` filesystem, but environment variables are still accessible through other means. Runtime injection is a meaningful improvement over plaintext files sitting on disk, but it's not a complete security boundary. For higher-stakes environments, look at tools that use short-lived credentials, mounted secrets via tmpfs, or hardware-backed keystores.
+
+---
+
 A few weeks ago my friend Harrison ([@hktouw](https://github.com/hktouw)) and I did our yearly Tesla FSD cruise around the Bay Area — seven hours of letting the car drive while we talk about whatever comes to mind. This was the first year we never had to take over the wheel, which meant even more time for conversation. We covered AI adoption, investing, and then landed on something that's been bugging me for a while. Why do we still store credentials in plaintext `.env` files?
 
 I'd been using 1Password to store individual secrets for a while, pulling them one at a time with the CLI. Harrison took it a step further. "Why not store the whole `.env` file's worth of secrets as fields in a single 1Password item?" he said. Simple. Obvious in hindsight. And it led me down a rabbit hole of rethinking how I handle secrets in every project.
