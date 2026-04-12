@@ -5,7 +5,7 @@ avatar: /images/posts/a-practical-guide-to-writing-with-ai/writing-in-notebook-a
 tags:
   - post
 description: How I use AI as a writing collaborator without losing my voice. A step-by-step process for collecting context, finding story arcs, drafting, editing, and publishing writing that feels human.
-featured: 2
+featured: 3
 ---
 
 I use AI in my writing all the time. For research, for turning messy transcripts into coherent sentences, for drafting, for getting feedback. But the way I use it matters. This isn't about handing the wheel to an AI and publishing whatever it spits out. It's a collaboration, a conversation, where the AI assists me and I stay in the driver's seat.

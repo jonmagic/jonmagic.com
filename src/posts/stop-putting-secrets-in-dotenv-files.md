@@ -2,7 +2,7 @@
 title: "Stop Putting Secrets in .env Files"
 date: 2026-02-27
 avatar: /images/posts/stop-putting-secrets-in-dotenv-files/secure-env-demo.webp
-featured: 1
+featured: 2
 tags:
   - post
 description: >-
