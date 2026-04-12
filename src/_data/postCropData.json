@@ -107,12 +107,6 @@
     "xPercent": 42.5,
     "yPercent": 95
   },
-  "the-hidden-database-powering-your-copilot-cli-sessions": {
-    "x": 14,
-    "y": 13,
-    "xPercent": 17.5,
-    "yPercent": 65
-  },
   "the-death-of-free": {
     "x": 11,
     "y": 19,
@@ -520,6 +514,12 @@
     "y": 10,
     "xPercent": 0,
     "yPercent": 50
+  },
+  "github-copilot-session-search-and-resume-cli": {
+    "x": 74,
+    "y": 19,
+    "xPercent": 92.5,
+    "yPercent": 95
   },
   "getting-hacked": {
     "x": 28,
