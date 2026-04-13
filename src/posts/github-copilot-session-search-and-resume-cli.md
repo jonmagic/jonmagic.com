@@ -8,7 +8,7 @@ description: >-
 featured: 1
 ---
 
-Last week I switched to [copilot-cli](https://docs.github.com/en/copilot/copilot-cli) as my full-time coding agent. I'd been splitting my time between it and [opencode](https://opencode.ai) for months, using Copilot a few times a week, gravitating back to opencode for daily work. But after returning from two weeks of vacation to a fresh laptop, I committed to using only the latest copilot-cli for a full week. By the end of it I sent this to the team internally:
+Last week I switched to [copilot-cli](https://docs.github.com/en/copilot/how-tos/copilot-cli) as my full-time coding agent. I'd been splitting my time between it and [opencode](https://opencode.ai) for months, using Copilot a few times a week, gravitating back to opencode for daily work. But after returning from two weeks of vacation to a fresh laptop, I committed to using only the latest copilot-cli for a full week. By the end of it I sent this to the team internally:
 
 > I gotta say, things are finally at the point where I'm not tempted to switch back to opencode. Amazing work everyone. I'm going to start annoying my friends that still use claude code and get them to try switching to copilot again.
 
