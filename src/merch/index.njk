@@ -12,7 +12,7 @@ description: Designs inspired by the writing on this site. Ships from TeePublic.
 
 <div class="merch-grid">
   {%- for item in collections.merch -%}
-  <article class="merch-tile merch-tile--{{ item.data.shirt_color or 'cream' }}">
+  <article id="{{ item.fileSlug }}" class="merch-tile merch-tile--{{ item.data.shirt_color or 'cream' }}">
     <a class="merch-tile-preview"
        href="{{ item.data.teepublic_url }}"
        target="_blank"

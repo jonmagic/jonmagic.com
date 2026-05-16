@@ -2,16 +2,44 @@
   <h2 id="post-cta-heading">If you liked this post</h2>
   <p>Here are a few easy ways to support or explore more:</p>
   <ul class="post-cta-actions">
-    <li>Share this on <a href="https://news.ycombinator.com/submitlink?u={{ (metadata.url + page.url) | url }}&t={{ title | url }}" rel="noopener noreferrer" target="_blank">Hacker News</a>.</li>
-    <li>Join or start a <a href="https://github.com/jonmagic/jonmagic.com/discussions">discussion about this post or my site</a>.</li>
-    <li>Read more <a href="/posts/">writing</a> or browse my <a href="/projects/">projects</a>.</li>
-    <li>Follow me on <a href="https://github.com/jonmagic">GitHub</a>.</li>
+    <li>Share this on <a href="https://news.ycombinator.com/submitlink?u={{ (metadata.url + page.url) | url }}&t={{ title | url }}" rel="noopener noreferrer" target="_blank" data-plausible-event-name="outbound-cta" data-plausible-event-target="hn-submit">Hacker News</a>.</li>
+    <li>Join or start a <a href="https://github.com/jonmagic/jonmagic.com/discussions" data-plausible-event-name="outbound-cta" data-plausible-event-target="site-discussions">discussion about this post or my site</a>.</li>
+    <li>Read more <a href="/posts/" data-plausible-event-name="internal-cta" data-plausible-event-target="cta-to-posts">writing</a> or browse my <a href="/projects/" data-plausible-event-name="internal-cta" data-plausible-event-target="cta-to-projects">projects</a>.</li>
+    <li>Follow me on <a href="https://github.com/jonmagic" data-plausible-event-name="outbound-cta" data-plausible-event-target="github-jonmagic">GitHub</a>.</li>
   </ul>
-  <a class="post-merch-cta" href="https://www.teepublic.com/user/jonmagic" aria-label="You, me, and an LLM. Check out my merch." target="_blank">
+
+  {%- if not disableMerchCta -%}
+    {%- set merchTile = false -%}
+    {%- if merch -%}
+      {%- for item in collections.merch -%}
+        {%- if item.fileSlug == merch -%}{%- set merchTile = item -%}{%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+    {%- if merchTile -%}
+  <a class="post-merch-cta post-merch-cta--contextual"
+     href="/merch/#{{ merchTile.fileSlug }}"
+     aria-label="{{ merchTile.data.title }}. See it in the merch shop."
+     data-plausible-event-name="internal-cta"
+     data-plausible-event-target="post-merch-{{ merchTile.fileSlug }}">
+    <img class="post-merch-thumb" src="{{ merchTile.data.image }}" alt="" width="120" height="132" loading="lazy">
     <span class="post-merch-copy">
-      <strong>You, me, and an LLM</strong>
-      <span>Check out my merch</span>
+      <strong>{{ merchTile.data.title }}</strong>
+      <span>See it in the merch shop →</span>
     </span>
   </a>
+    {%- else -%}
+  <a class="post-merch-cta"
+     href="/merch/"
+     aria-label="Browse jonmagic.com merch"
+     data-plausible-event-name="internal-cta"
+     data-plausible-event-target="post-merch-shop">
+    <span class="post-merch-copy">
+      <strong>You, me, and an LLM</strong>
+      <span>Browse the merch shop →</span>
+    </span>
+  </a>
+    {%- endif -%}
+  {%- endif -%}
+
   <p class="post-cta-thanks">Thanks for reading — it means a lot.</p>
 </aside>

@@ -518,6 +518,29 @@ img.avatar {
     text-decoration: none;
   }
 
+  .post-merch-cta--contextual {
+    background: var(--paper-strip);
+    padding: 0.85rem 1rem;
+    gap: 1rem;
+    min-height: auto;
+  }
+
+  .post-merch-thumb {
+    flex: 0 0 auto;
+    width: 96px;
+    height: auto;
+    background: #ffffff;
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius-small);
+    padding: 0.35rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .post-merch-thumb {
+      background: #f5f1e6;
+    }
+  }
+
   .post-merch-copy {
     display: inline-flex;
     flex-direction: column;
