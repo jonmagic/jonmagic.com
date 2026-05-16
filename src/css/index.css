@@ -1,5 +1,6 @@
 @import "./reset.css";
 @import "./tokens.css";
+@import "./prose.css";
 @import "./base.css";
 @import "./search.css";
 @import "./vendor-prism.css";
