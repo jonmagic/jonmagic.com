@@ -1,0 +1,44 @@
+---
+layout: layout
+title: Elsewhere
+description: Other places I run, publish, and used to work.
+---
+
+<p class="page-lede">
+  This site is where I write. Here is everything else: the sites I run today,
+  the code I publish, where to reach me, and a small ledger of work that
+  shaped how I think.
+</p>
+
+{% macro elsewhereSection(label, slug) -%}
+<section class="elsewhere-section">
+  <h2 class="elsewhere-heading">
+    <span class="elsewhere-heading-mark">§</span> {{ label }}
+  </h2>
+  <ul class="elsewhere-list">
+    {%- for item in collections.elsewhere -%}
+      {%- if item.data.category == slug -%}
+      <li class="elsewhere-item">
+        <a href="{{ item.data.url }}"
+           target="_blank"
+           rel="noopener"
+           class="elsewhere-link"
+           data-plausible-event-name="outbound-cta"
+           data-plausible-event-target="elsewhere-{{ item.fileSlug }}">
+          <span class="elsewhere-title">{{ item.data.title }}</span>
+          {%- if item.data.note %} <span class="elsewhere-note">{{ item.data.note }}</span>{% endif -%}
+        </a>
+        {%- if item.data.description -%}
+        <p class="elsewhere-desc">{{ item.data.description }}</p>
+        {%- endif -%}
+      </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+</section>
+{%- endmacro %}
+
+{{ elsewhereSection('Sites I run', 'sites-i-run') }}
+{{ elsewhereSection('Where I publish code', 'where-i-publish-code') }}
+{{ elsewhereSection('Where to find me', 'where-to-find-me') }}
+{{ elsewhereSection('Previously', 'previously') }}

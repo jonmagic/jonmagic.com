@@ -671,3 +671,81 @@ img.avatar {
   margin-top: 2rem;
   max-width: 38rem;
 }
+
+/* ==========================================================================
+   7. Elsewhere
+   ========================================================================== */
+
+.elsewhere-section {
+  margin: 2rem 0 2.5rem;
+}
+
+.elsewhere-heading {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--paper-strip);
+}
+
+.elsewhere-heading-mark {
+  color: var(--accent);
+  margin-right: 0.35em;
+}
+
+.elsewhere-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.elsewhere-item {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--divider);
+}
+
+.elsewhere-item:last-child {
+  border-bottom: 0;
+}
+
+.elsewhere-link {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.elsewhere-link:hover .elsewhere-title {
+  color: var(--accent);
+}
+
+.elsewhere-title {
+  transition: color 0.15s ease;
+}
+
+.elsewhere-note {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-left: 0.6rem;
+}
+
+.elsewhere-desc {
+  margin: 0.25rem 0 0;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+/* Footer previously line */
+.footer-line { margin: 0 0 0.35rem; }
+.footer-previously {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
