@@ -1,0 +1,22 @@
+{# Renders an end-of-post "Receipts" strip when frontmatter has a `kit` array. #}
+{# Each kit item: { text, url, label?, note?, target?, internal? } #}
+{# `internal: true` skips target="_blank" and uses an internal-cta event. #}
+{# `target` overrides the Plausible event slug; defaults to the item text/url. #}
+{%- if kit and kit.length -%}
+<aside class="post-kit" aria-label="Related links and receipts">
+  <span class="post-kit-label">Receipts</span>
+  <ul class="post-kit-list">
+    {%- for item in kit -%}
+    <li class="post-kit-item">
+      {%- if item.label -%}<span class="post-kit-item-label">{{ item.label }}:</span>{%- endif -%}
+      <a href="{{ item.url }}"
+         {%- if not item.internal %} target="_blank" rel="noopener"{%- endif %}
+         data-plausible-event-name="{% if item.internal %}internal-cta{% else %}outbound-cta{% endif %}"
+         data-plausible-event-target="kit-{{ item.target }}">{{ item.text or item.url }}</a>
+      {%- if item.note %} <span class="post-kit-item-note">— {{ item.note }}</span>{%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+</aside>
+{%- endif -%}
+

@@ -1,0 +1,13 @@
+/* Default accent variant: red. Re-stated here so the body class is */
+/* a no-op (token already lives in tokens.css). */
+.accent-red {
+  --accent: #c43e2a;
+  --link-hover: #c43e2a;
+}
+
+@media (prefers-color-scheme: dark) {
+  .accent-red {
+    --accent: #ff6b57;
+    --link-hover: #ff6b57;
+  }
+}

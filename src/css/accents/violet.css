@@ -1,0 +1,11 @@
+.accent-violet {
+  --accent: #8250df;
+  --link-hover: #8250df;
+}
+
+@media (prefers-color-scheme: dark) {
+  .accent-violet {
+    --accent: #bc8cff;
+    --link-hover: #bc8cff;
+  }
+}

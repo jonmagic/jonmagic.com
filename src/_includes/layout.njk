@@ -4,6 +4,7 @@
   {% include "head.njk" %}
 </head>
 {% set bodyClasses = ["homepage"] if page.url == "/" else [] %}
+{% if accent %}{% set bodyClasses = bodyClasses.concat(["accent-" + accent]) %}{% endif %}
 <body class="{{ bodyClasses | join(' ') }}">
   {% if page.url == "/" %}
   <header class="site-header">
@@ -33,8 +34,10 @@
         <span id="post-date-typing" class="post-date-typing" data-date="{{ date.toISOString().split('T')[0] }}"></span>
       </div>
       {% endif %}
+      {% include "post-eyebrow.njk" %}
       <h1 class="site-title">{{ title }}</h1>
       {{ content | safe }}
+      {% include "post-kit.njk" %}
       {# Conditional post CTA for posts from 2010 or newer #}
       {% if date and page.url and page.url.startsWith('/posts/') and date.getFullYear() >= 2010 %}
       {% include 'post-cta.njk' %}
