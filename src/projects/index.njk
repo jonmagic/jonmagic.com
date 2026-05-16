@@ -6,8 +6,14 @@ title: jonmagic.com projects
 <div class="projects-grid">
 {%- set sortedProjects = collections.projects | sort(false, false, 'data.order') -%}
 {%- for project in sortedProjects -%}
-  <a href="{{ project.data.github }}" class="project-card-link u-link-reset">
-    <article class="project-card">
+  {%- set primary = project.data.site or project.data.github -%}
+  <article class="project-card">
+    <a href="{{ primary }}"
+       class="project-card-link u-link-reset"
+       target="_blank"
+       rel="noopener"
+       data-plausible-event-name="outbound-cta"
+       data-plausible-event-target="project-{{ project.fileSlug }}">
       <div class="project-card-header">
         <h2 class="project-name">{{ project.data.title }}</h2>
         {%- if project.data.avatar -%}
@@ -19,7 +25,25 @@ title: jonmagic.com projects
       <div class="project-summary">
         <p>{{ project.data.description }}</p>
       </div>
-    </article>
-  </a>
+    </a>
+    <div class="project-card-actions">
+      {%- if project.data.site -%}
+      <a class="project-action project-action-primary"
+         href="{{ project.data.site }}"
+         target="_blank"
+         rel="noopener"
+         data-plausible-event-name="outbound-cta"
+         data-plausible-event-target="project-{{ project.fileSlug }}-site">Visit site →</a>
+      {%- endif -%}
+      {%- if project.data.github -%}
+      <a class="project-action"
+         href="{{ project.data.github }}"
+         target="_blank"
+         rel="noopener"
+         data-plausible-event-name="outbound-cta"
+         data-plausible-event-target="project-{{ project.fileSlug }}-code">View code →</a>
+      {%- endif -%}
+    </div>
+  </article>
 {%- endfor -%}
 </div>

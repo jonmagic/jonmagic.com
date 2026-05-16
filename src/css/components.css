@@ -101,19 +101,47 @@ img.avatar {
 }
 
 .project-card {
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--card-border);
   border-radius: var(--border-radius-medium);
-  padding: 1.5rem;
   background: var(--card-bg);
   transition: all 0.2s ease;
   height: 100%;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-.project-card-link:hover .project-card {
+.project-card:hover,
+.project-card:focus-within {
   border-color: var(--accent);
   transform: translateY(-2px);
   box-shadow: var(--shadow-large);
+}
+
+.project-card-link {
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.project-card-actions {
+  display: flex;
+  gap: 1rem;
+  padding: 0.85rem 1.5rem 1.25rem;
+  border-top: 1px solid var(--divider);
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.project-action {
+  color: var(--muted);
+}
+
+.project-action-primary {
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .project-card-header {
