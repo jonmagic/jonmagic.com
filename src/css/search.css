@@ -98,12 +98,14 @@
 }
 
 .search-score {
-  background: var(--accent-light, #e3f2fd);
-  color: var(--accent-dark, #1565c0);
+  background: var(--accent);
+  color: white;
   padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  font-weight: 500;
+  border-radius: var(--border-radius-small);
+  font-family: var(--font-mono);
   font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
 }
 
 .search-date {
@@ -189,24 +191,7 @@
   }
 }
 
-.search-score {
-  background: var(--accent);
-  color: white;
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--border-radius-small);
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 500;
-  line-height: 1;
-}
-
 /* Search results specific styling */
 .search-results.posts-grid {
   margin-top: 1rem;
-}
-
-.search-results-header {
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  color: var(--muted);
 }

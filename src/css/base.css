@@ -13,6 +13,7 @@
   --accent: #0366d6;
   --muted: #666;
   --code-bg: #f6f8fa;
+  --code-block-bg: var(--code-bg);
   --card-bg: #ffffff;
   --card-border: #ccc;
   --subtle-bg: #e8e5e0;
@@ -39,6 +40,7 @@
     --accent: #58a6ff;
     --muted: #8b949e;
     --code-bg: #161b22;
+    --code-block-bg: var(--code-bg);
     --card-bg: #161b22;
     --card-border: #30363d;
     --subtle-bg: #161b22;
