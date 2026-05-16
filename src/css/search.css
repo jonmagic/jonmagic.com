@@ -79,7 +79,7 @@
 }
 
 .search-result h3 a {
-  color: var(--field-focus);
+  color: var(--accent);
   text-decoration: none;
   transition: color 0.2s ease;
 }
