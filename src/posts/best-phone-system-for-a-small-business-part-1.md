@@ -26,7 +26,7 @@ I’ve done phone systems for businesses that only need 2 or 3 phones, and syste
 
 For this setup I’m going to describe below, we’ve got a business with around 30 employees, 20 of which have their own extensions on the phone system. There is a sales group, support group, and various administrators, as well as production staff.
 
-Any $400 to $600 PC will work for our base system. 2.0ghz+ Intel or AMD processor, at least 1gb of ram (I put in 2gb since its so cheap). Looking for hardware with a good warranty? Check out my company [SabreTech Consulting LLC](http://www.sabretechllc.com) for some great PC’s. We ship anywhere in the US (and actually, a lot of our PC’s are overseas as well, thru an associate of ours).
+Any $400 to $600 PC will work for our base system. 2.0ghz+ Intel or AMD processor, at least 1gb of ram (I put in 2gb since its so cheap). Looking for hardware with a good warranty? Check out my company [SabreTech Consulting LLC](https://web.archive.org/web/2012/http://www.sabretechllc.com) for some great PC’s. We ship anywhere in the US (and actually, a lot of our PC’s are overseas as well, thru an associate of ours).
 
 Let me back up for a second and explain the two ways we can get “dial tone” to our phone system (i.e. be able to make calls to the outside world).
 

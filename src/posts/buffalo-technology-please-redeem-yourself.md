@@ -14,7 +14,7 @@ I’ve been eyeing the [Buffalo Terastation](http://www.buffalo-technology.com/p
 
 One of my clients needed a file storage / backup solution, and the Terastation seemed to fit the bill. I found it for a great price (1TB for 6 bills), punched in my credit card number, and 4 days later it was in my hands.
 
-I received the unit the middle of December, but we were so busy at [SabreTech](http://www.sabretechllc.com) I scheduled the install for after the first of the year. I did go ahead and set the unit up, configured everything via the web interface, and tested it. I left in on the bench for 24 hours running, and then logged in and shut it down, everything seemed to be perfect.
+I received the unit the middle of December, but we were so busy at [SabreTech](https://web.archive.org/web/2012/http://www.sabretechllc.com) I scheduled the install for after the first of the year. I did go ahead and set the unit up, configured everything via the web interface, and tested it. I left in on the bench for 24 hours running, and then logged in and shut it down, everything seemed to be perfect.
 
 Fast forward 3 weeks, when I go onsite and begin the setup for the client. After plugging it in it did its Star Trek like flashy light thing, then signaled that drives 2, 3, and 4 were either full or not working. I logged into the web interface, and it said those drives were not attached. So I shut it down and then started it back up; same thing. Rinse and repeat, again, the same result… So I took it back to my office, started it up and called tech support.
 

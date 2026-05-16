@@ -22,4 +22,4 @@ The shower was initially not as hot as I like my showers, but a quick email to A
 
 I can’t recommend [46 Monument Avenue](http://www.airbnb.com/rooms/45987) and Atef Aziz enough. From his hospitality to the beautifully furnished accommodations, this stay in Boston was a delight.
 
-[See more about his rental here.](http://www.46monumentavenue.com/)
+[See more about his rental here.](https://web.archive.org/web/2012/https://web.archive.org/web/2012/http://www.46monumentavenue.com/)
