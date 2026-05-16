@@ -666,6 +666,7 @@ img.avatar {
     flex-wrap: wrap;
     gap: 0.5rem;
     width: 100%;
+    padding: 0;
   }
 
   .nav-links {
@@ -682,6 +683,8 @@ img.avatar {
 
   .nav-links a {
     display: inline-block;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
   }
 
   .social-links {
