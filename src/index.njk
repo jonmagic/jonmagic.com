@@ -3,26 +3,26 @@ layout: layout
 title: jonmagic.com
 ---
 
-<div class="home-layout">
-  <main class="main-content">
+<div>
+  <main>
     {# Featured posts list #}
-    <section class="featured-posts">
+    <section>
       <h2>Featured Posts</h2>
       {% set featured = collections.posts | featured %}
       {% if featured and featured.length > 0 %}
         <ul class="featured-list">
           {% for post in featured %}
-            <li class="featured-item">
-              <div class="featured-meta">
-                <div class="featured-info">
-                  <h3 class="featured-title"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
-                  <p class="featured-desc">{{ post.data.description }}</p>
+            <li>
+              <div>
+                <div>
+                  <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+                  <p>{{ post.data.description }}</p>
                 </div>
               </div>
             </li>
           {% endfor %}
           <li>
-            <h3><a href="/posts/" class="view-all">View All Posts</a></h3>
+            <h3><a href="/posts/">View All Posts</a></h3>
           </li>
         </ul>
       {% else %}

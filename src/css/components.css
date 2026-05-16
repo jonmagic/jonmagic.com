@@ -5,24 +5,6 @@
   Notes: post-card markup is shared by posts index and the search result template.
 */
 
-@media (prefers-color-scheme: dark) {
-  /* Dark mode text overrides for project cards */
-  .project-summary,
-  .project-summary p {
-    color: #c9d1d9 !important;
-  }
-
-  .project-card-link:hover .project-summary,
-  .project-card-link:hover .project-summary p {
-    color: #c9d1d9 !important;
-  }
-
-  /* Make GitHub icon visible in dark mode */
-  .social-links .github-icon {
-    filter: invert(1) brightness(0.8);
-  }
-}
-
 /* ==========================================================================
    3. Component Styles
    ========================================================================== */
@@ -194,6 +176,15 @@ img.avatar {
 .project-card-link:hover .project-summary,
 .project-card-link:hover .project-summary p {
   color: var(--muted);
+}
+
+@media (prefers-color-scheme: dark) {
+  .project-summary,
+  .project-summary p,
+  .project-card-link:hover .project-summary,
+  .project-card-link:hover .project-summary p {
+    color: #c9d1d9;
+  }
 }
 
 /* Posts Grid
@@ -386,7 +377,14 @@ img.avatar {
 
 @media (prefers-color-scheme: dark) {
   .dos-typing-container {
-    color: #a6e22e !important; /* Match Prism string color in dark mode */
+    color: #a6e22e; /* Match Prism string color in dark mode */
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Make GitHub icon visible in dark mode */
+  .social-links .github-icon {
+    filter: invert(1) brightness(0.8);
   }
 }
 
