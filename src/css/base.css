@@ -496,6 +496,12 @@ img.avatar {
   white-space: nowrap;
 }
 
+@media (prefers-color-scheme: dark) {
+  .project-name {
+    color: #f0f6fc;
+  }
+}
+
 .project-avatar {
   position: absolute;
   top: -0.65rem;
