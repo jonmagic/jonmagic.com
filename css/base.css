@@ -1312,6 +1312,11 @@ pre[class*="language-"] {
     }
 
     .post-merch-copy {
+      margin: 0.85rem;
       padding: 1rem;
+      background: rgba(254, 252, 249, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: var(--border-radius-small);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
     }
   }
