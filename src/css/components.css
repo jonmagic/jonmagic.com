@@ -28,8 +28,8 @@ img.avatar {
 }
 
 .avatar-placeholder {
-  width: 128px;
-  height: 128px;
+  width: var(--portrait-size);
+  height: var(--portrait-size);
   background: var(--subtle-bg);
   border-radius: var(--border-radius-large);
   overflow: hidden;
@@ -406,7 +406,8 @@ img.avatar {
   }
 
   .avatar-placeholder {
-    display: none;
+    width: var(--portrait-size-mobile);
+    height: var(--portrait-size-mobile);
   }
 }
 
