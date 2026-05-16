@@ -6,7 +6,7 @@ title: jonmagic.com projects
 <div class="projects-grid">
 {%- set sortedProjects = collections.projects | sort(false, false, 'data.order') -%}
 {%- for project in sortedProjects -%}
-  <a href="{{ project.data.github }}" class="project-card-link">
+  <a href="{{ project.data.github }}" class="project-card-link u-link-reset">
     <article class="project-card">
       <div class="project-card-header">
         <h2 class="project-name">{{ project.data.title }}</h2>

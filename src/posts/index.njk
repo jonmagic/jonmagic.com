@@ -7,7 +7,7 @@ title: jonmagic.com posts
 {%- set allPosts = collections.posts | reverse -%}
 {%- for post in allPosts -%}
   {%- set cropData = postCropData[post.fileSlug] -%}
-  <a href="{{ post.url }}" class="post-card-link">
+  <a href="{{ post.url }}" class="post-card-link u-link-reset">
     <div class="post-card">
       <div class="post-card-background"
            data-crop-x="{{ cropData.x if cropData else 0 }}"
