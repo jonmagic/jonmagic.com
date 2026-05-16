@@ -325,25 +325,44 @@ img.avatar {
 .social-links {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
-.social-links a {
-  display: inline-block;
-  padding: 0.25rem;
+.social-links a,
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem;
+  color: var(--muted);
   background: transparent;
   border-radius: 4px;
-  transition: transform 0.15s ease;
+  transition: color 0.15s ease, transform 0.15s ease;
 }
 
-.social-links a:hover {
+.social-links a:hover,
+.social-link:hover {
+  color: var(--accent);
   transform: scale(1.1);
+  text-decoration: none;
 }
 
-.social-links img {
-  width: 24px;
-  height: 24px;
+.social-icon {
+  width: 22px;
+  height: 22px;
   display: block;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 @media (max-width: 768px) {
@@ -352,9 +371,10 @@ img.avatar {
     margin: 0;
   }
 
-  .social-links a {
-    display: inline-block;
-    margin-left: 0.5rem;
+  .social-links a,
+  .social-link {
+    display: inline-flex;
+    margin-left: 0.35rem;
   }
 
   .avatar-placeholder {
@@ -378,13 +398,6 @@ img.avatar {
 @media (prefers-color-scheme: dark) {
   .dos-typing-container {
     color: #a6e22e; /* Match Prism string color in dark mode */
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  /* Make GitHub icon visible in dark mode */
-  .social-links .github-icon {
-    filter: invert(1) brightness(0.8);
   }
 }
 
