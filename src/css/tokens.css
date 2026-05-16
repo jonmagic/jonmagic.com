@@ -29,6 +29,7 @@
   --field-focus-ring: rgba(0, 122, 204, 0.1);
   --badge-bg: var(--accent);
   --badge-text: #ffffff;
+  --nav-bg: #f5f2f0;
 
   --success: #28a745;
   --info: #17a2b8;
@@ -73,6 +74,7 @@
     --field-focus-ring: rgba(102, 179, 255, 0.1);
     --badge-bg: #1a365d;
     --badge-text: #63b3ed;
+    --nav-bg: #272822;
     --error-bg: #2d1b1f;
     --error-text: #f56565;
     --error-border: #4a1a1f;
