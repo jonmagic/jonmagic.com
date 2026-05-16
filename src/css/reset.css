@@ -1,18 +1,31 @@
 /*
   File: reset.css
-  Owns: local browser normalization before site styles.
+  Owns: local browser normalization, box sizing, and body defaults.
 */
 
 html {
   -webkit-text-size-adjust: 100%;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 main {
   display: block;
 }
 
+html,
 body {
   margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 button,

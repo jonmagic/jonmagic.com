@@ -1,6 +1,9 @@
-/* ==========================================================================
-   1. Globals and Base Styles
-   ========================================================================== */
+/*
+  File: components.css
+  Owns: post-card, project-card, featured-list, post-cta, social-links, avatars, typing.
+  Used by: src/index.njk, src/posts/index.njk, src/projects/index.njk, src/search.njk, src/_includes/post-cta.njk.
+  Notes: post-card markup is shared by posts index and the search result template.
+*/
 
 @media (prefers-color-scheme: dark) {
   /* Dark mode text overrides for project cards */
@@ -18,24 +21,6 @@
   .social-links .github-icon {
     filter: invert(1) brightness(0.8);
   }
-}
-
-/* Reset and Body
-   ========================================================================== */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: 1.6;
 }
 
 /* ==========================================================================

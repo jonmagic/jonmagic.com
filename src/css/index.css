@@ -2,6 +2,6 @@
 @import "./tokens.css";
 @import "./prose.css";
 @import "./layout.css";
-@import "./base.css";
+@import "./components.css";
 @import "./search.css";
 @import "./vendor-prism.css";
