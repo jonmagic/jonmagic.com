@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5000 5500" role="img" aria-labelledby="title desc">
+  <title id="title">Evidence over vibes</title>
+  <desc id="desc">Field-manual style three-line statement with a stamped accent rule.</desc>
+  <defs>
+    <style>
+      .stamp {
+        font-family: "Bebas Neue", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+        font-weight: 700;
+        text-anchor: middle;
+        letter-spacing: 14px;
+      }
+      .label {
+        font-family: SFMono-Regular, Consolas, monospace;
+        text-anchor: middle;
+        fill: #15120f;
+        letter-spacing: 24px;
+      }
+      .ink { fill: #15120f; }
+      .accent { fill: #c43e2a; }
+    </style>
+  </defs>
+  <text class="label" x="2500" y="1700" font-size="200">§ FIELD MANUAL</text>
+  <text class="stamp ink" x="2500" y="2700" font-size="780">EVIDENCE</text>
+  <text class="stamp ink" x="2500" y="3300" font-size="420">OVER</text>
+  <text class="stamp accent" x="2500" y="4000" font-size="780">VIBES</text>
+  <line x1="1400" y1="4400" x2="3600" y2="4400" stroke="#15120f" stroke-width="14"/>
+</svg>

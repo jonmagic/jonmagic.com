@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5000 5500" role="img" aria-labelledby="title desc">
+  <title id="title">Transcript or it didn't happen</title>
+  <desc id="desc">A dark-shirt design with stacked proof-label text and an abstract waveform.</desc>
+
+  <defs>
+    <style>
+      .headline {
+        font-family: "Bebas Neue", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+        font-weight: 400;
+        letter-spacing: 4px;
+        text-anchor: end;
+      }
+
+      .headline-active {
+        fill: #ff3b30;
+      }
+
+      .headline-inactive {
+        fill: #d9d6cc;
+      }
+
+      .wave-inactive {
+        fill: #d9d6cc;
+      }
+
+      .wave-active {
+        fill: #ff3b30;
+      }
+    </style>
+  </defs>
+
+  <g id="transcript-or-it-didnt-happen" transform="translate(520 875)">
+    <g id="proof-label">
+      <text class="headline headline-active" x="2760" y="420" font-size="560">Transcript</text>
+      <text class="headline headline-inactive" x="2760" y="975" font-size="560">or it didn't</text>
+      <text class="headline headline-inactive" x="2760" y="1560" font-size="610">happen</text>
+    </g>
+
+    <g id="waveform" transform="translate(1718 1688) scale(1.55)">
+      <rect class="wave-active" x="0" y="145" width="42" height="190" rx="21"/>
+      <rect class="wave-active" x="70" y="80" width="42" height="320" rx="21"/>
+      <rect class="wave-active" x="140" y="15" width="42" height="450" rx="21"/>
+      <rect class="wave-inactive" x="210" y="105" width="42" height="270" rx="21"/>
+      <rect class="wave-inactive" x="280" y="55" width="42" height="370" rx="21"/>
+      <rect class="wave-inactive" x="350" y="130" width="42" height="220" rx="21"/>
+      <rect class="wave-inactive" x="420" y="65" width="42" height="350" rx="21"/>
+      <rect class="wave-inactive" x="490" y="170" width="42" height="140" rx="21"/>
+      <rect class="wave-inactive" x="560" y="115" width="42" height="250" rx="21"/>
+      <rect class="wave-inactive" x="630" y="205" width="42" height="70" rx="21"/>
+    </g>
+  </g>
+</svg>

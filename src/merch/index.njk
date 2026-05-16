@@ -1,0 +1,59 @@
+---
+layout: layout
+title: jonmagic.com merch
+description: Designs inspired by the writing on this site. Ships from TeePublic.
+---
+
+<p class="page-lede">
+  Designs that come out of the writing on this site. Source SVGs live in
+  <a href="https://github.com/jonmagic" data-plausible-event-name="outbound-cta" data-plausible-event-target="github-jonmagic">my workspace</a>;
+  shirts and stickers ship from TeePublic.
+</p>
+
+<div class="merch-grid">
+  {%- for item in collections.merch -%}
+  <article class="merch-tile merch-tile--{{ item.data.shirt_color or 'cream' }}">
+    <a class="merch-tile-preview"
+       href="{{ item.data.teepublic_url }}"
+       target="_blank"
+       rel="noopener"
+       data-plausible-event-name="outbound-cta"
+       data-plausible-event-target="merch-{{ item.fileSlug }}"
+       aria-label="{{ item.data.title }} on TeePublic">
+      <img src="{{ item.data.image }}"
+           alt="{{ item.data.title }} design preview"
+           loading="lazy"
+           width="800"
+           height="880">
+    </a>
+    <div class="merch-tile-body">
+      <h2 class="merch-tile-title">{{ item.data.title }}</h2>
+      {%- if item.data.description -%}
+      <p class="merch-tile-blurb">{{ item.data.description }}</p>
+      {%- endif -%}
+      {%- if item.data.colorways and item.data.colorways.length -%}
+      <p class="merch-tile-colorways">
+        <span class="merch-tile-label">colorways</span>
+        {{ item.data.colorways | join(" · ") }}
+      </p>
+      {%- endif -%}
+      <p class="merch-tile-actions">
+        <a class="merch-tile-buy"
+           href="{{ item.data.teepublic_url }}"
+           target="_blank"
+           rel="noopener"
+           data-plausible-event-name="outbound-cta"
+           data-plausible-event-target="merch-{{ item.fileSlug }}-buy">Buy on TeePublic →</a>
+        {%- if item.data.originating_post -%}
+        <a class="merch-tile-source" href="{{ item.data.originating_post }}">From this post →</a>
+        {%- endif -%}
+      </p>
+    </div>
+  </article>
+  {%- endfor -%}
+</div>
+
+<p class="merch-footnote">
+  TeePublic prints these on demand and handles fulfillment. If anything looks off, email me at
+  <a href="mailto:jonmagic@gmail.com">jonmagic@gmail.com</a> and I will help.
+</p>
