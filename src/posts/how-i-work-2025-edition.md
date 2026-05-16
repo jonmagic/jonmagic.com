@@ -7,6 +7,7 @@ tags:
   - post
 description: >-
   Optimizing for your own brain, not someone else's system. How I use Markdown files in VS Code as my single source of truth, leverage Copilot as a pair partner, and capture everything from meetings to voice memos to close the loop from idea to artifact to decision.
+merch: transcript-or-it-didnt-happen
 ---
 
 I took this week off to reflect and spend some time closer to the mountains as I start my forty-fourth year on this planet. One of the things I've been thinking about and have been meaning to write about is how my processes and tools have evolved over the past two decades.

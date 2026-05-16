@@ -6,6 +6,29 @@ tags:
 description: >-
   A small CLI tool for browsing, searching, and resuming copilot-cli sessions. Built on the SQLite database copilot-cli already maintains for you.
 featured: 1
+accent: green
+eyebrow: "§ TOOL · 2026"
+disableMerchCta: true
+popular: true
+trending: true
+kit:
+  - label: Repo
+    text: jonmagic/copilot-sessions
+    url: https://github.com/jonmagic/copilot-sessions
+    target: copilot-sessions
+  - label: Docs
+    text: copilot-cli reference
+    url: https://docs.github.com/en/copilot/how-tos/copilot-cli
+    target: copilot-cli-docs
+  - label: Related
+    text: How I Work, 2025 Edition
+    url: /posts/how-i-work-2025-edition/
+    target: how-i-work-2025
+    internal: true
+  - label: Discuss
+    text: Discussion on this post
+    url: https://github.com/jonmagic/jonmagic.com/discussions
+    target: site-discussions
 ---
 
 Last week I switched to [copilot-cli](https://docs.github.com/en/copilot/how-tos/copilot-cli) as my full-time coding agent. I'd been splitting my time between it and [opencode](https://opencode.ai) for months, using Copilot a few times a week, gravitating back to opencode for daily work. But after returning from two weeks of vacation to a fresh laptop, I committed to using only the latest copilot-cli for a full week. By the end of it I sent this to the team internally:
