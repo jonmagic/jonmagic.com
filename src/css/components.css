@@ -778,3 +778,49 @@ img.avatar {
   color: var(--muted);
   letter-spacing: 0.04em;
 }
+
+/* ==========================================================================
+   8. About letter
+   ========================================================================== */
+
+.about-portrait {
+  float: right;
+  width: var(--portrait-size);
+  margin: 0 0 1.25rem 1.5rem;
+  text-align: center;
+}
+
+.about-portrait-img {
+  width: var(--portrait-size);
+  height: var(--portrait-size);
+  border-radius: var(--border-radius-large);
+  object-fit: cover;
+  box-shadow: var(--shadow-medium);
+  display: block;
+  margin: 0;
+}
+
+.about-portrait-caption {
+  margin: 0.6rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.about-letter::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+@media (max-width: 640px) {
+  .about-portrait {
+    float: none;
+    width: 100%;
+    margin: 0 0 1.5rem;
+  }
+  .about-portrait-img {
+    margin: 0 auto;
+  }
+}
