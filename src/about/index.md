@@ -15,22 +15,28 @@ description: A short letter from Jonathan Hoyt — what I do, what I care about,
 
 <section class="about-letter">
 
-Hi. I am Jon, and I am still trying to be useful.
+Hi, I'm jonmagic,
 
-I have spent almost three decades around computers and about fifteen years as a full time software engineer. Most of what I have learned came from people who took the time to teach me when there was no good reason to, so I try to lead the way they did. That is what I mean when I say I want to lead with a servant's heart: stay close to the work, help the people next to me ship a little farther than they thought they could, and trust that the rest takes care of itself.
+I used my first computer in 1986 and started building, repairing, and teaching folks how to use them in the early 90s. It has never really been separate from who I am. I built and sold a small IT consultancy, joined GitHub in 2011 through the Ordered List and Speaker Deck acquisition, and I've been at GitHub in one form or another ever since.
 
-These days I think a lot about how humans and AI agents work together. Not "automate the human out of the loop," but the slower, more honest version: design the collaboration so the easiest path is the correct one, capture the receipts so we can learn from what actually happened, and keep the people doing the parts only people can do. I write about that here, build small tools at [agentconfig.org](https://agentconfig.org) and [thisistheway.to/ai](https://thisistheway.to/ai), and put the better one-liners on shirts.
+I've worked in support, finance, sales, engineering, and security. That path looks a little strange on paper, but it tracks pretty closely with how I learn. I like getting close to an actual problem, understanding who is stuck, and building the smallest thing that helps.
 
-If any of that lines up with something you are working on, I am open to a small amount of advisory and consulting work. Reasonable things to talk to me about:
+These days I'm a Principal Engineer on GitHub's Safety & Integrity team. The work is more engineering than security operations. I spend a lot of time with datasets, workflows, abuse remediation systems, and tools that help people make better decisions.
 
-- applying AI agents and LLMs to real business problems without breaking trust
-- pulling shipping velocity out of a stuck engineering team
-- planning a product or project so the first version is small enough to actually finish
-- scaling an application from "it works for some customers" to "it works for a lot of them"
+A lot of my recent writing is about AI agents because they've changed how I work. I'm less interested in replacing people with automation and more interested in designing collaborations that preserve the thinking in the work.
 
-Thank you for reading. Truly.
+This site is where I write things down before I forget them. Some posts are practical guides. Some are notes from projects. Some are me trying to explain what changed in how I think about work. I also build small things like [agentconfig.org](https://agentconfig.org) and [thisistheway.to/ai](https://thisistheway.to/ai), and apparently I'm making shirts now.
 
-— Jon
+I'm open to a small amount of advisory or consulting work when it overlaps with problems I know well. Reasonable things to talk to me about:
+
+- applying AI agents to real business problems without breaking trust
+- building engineering systems and workflows for abuse, trust, and safety work
+- turning vague product ideas into a first version that is small enough to ship
+- helping a team understand where the work is getting stuck
+
+Thanks for reading.
+
+_— jonmagic_
 
 ## Contact
 

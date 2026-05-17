@@ -817,79 +817,7 @@ img.avatar {
   max-width: 38rem;
 }
 
-/* ==========================================================================
-   7. Elsewhere
-   ========================================================================== */
-
-.elsewhere-section {
-  margin: 2rem 0 2.5rem;
-}
-
-.elsewhere-heading {
-  font-family: var(--font-brand);
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-  margin: 0 0 0.75rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid var(--paper-strip);
-}
-
-.elsewhere-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.elsewhere-item {
-  padding: 0.85rem 0;
-  border-bottom: 1px solid var(--divider);
-}
-
-.elsewhere-item:last-child {
-  border-bottom: 0;
-}
-
-.elsewhere-link {
-  font-family: var(--font-brand);
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.elsewhere-link:hover .elsewhere-title {
-  color: var(--accent);
-}
-
-.elsewhere-title {
-  transition: color 0.15s ease;
-}
-
-.elsewhere-note {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--muted);
-  margin-left: 0.6rem;
-}
-
-.elsewhere-desc {
-  margin: 0.25rem 0 0;
-  font-family: var(--font-sans);
-  font-size: 0.95rem;
-  line-height: 1.55;
-  color: var(--text);
-}
-
-/* Footer previously line */
 .footer-line { margin: 0 0 0.35rem; }
-.footer-previously {
-  margin: 0;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  color: var(--muted);
-  letter-spacing: 0.04em;
-}
 
 /* ==========================================================================
    8. About letter
@@ -1331,60 +1259,6 @@ img.avatar {
 
 @media (max-width: 720px) {
   .home-merch-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Home elsewhere */
-
-.home-elsewhere-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.85rem;
-}
-
-.home-elsewhere-tile {
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 0.35rem 0.6rem;
-  padding: 0.85rem 1rem;
-  border: 1px solid var(--card-border);
-  border-radius: var(--border-radius-small);
-  text-decoration: none;
-  color: var(--text);
-  background: var(--bg);
-  transition: border-color 0.15s ease, background 0.15s ease;
-}
-
-.home-elsewhere-tile:hover,
-.home-elsewhere-tile:focus-visible {
-  border-color: var(--accent);
-  background: var(--subtle-bg);
-}
-
-.home-elsewhere-title {
-  font-family: var(--font-brand);
-  font-size: 0.92rem;
-  font-weight: 700;
-}
-
-.home-elsewhere-desc {
-  font-family: var(--font-sans);
-  font-size: 0.88rem;
-  color: var(--muted);
-  flex-basis: 100%;
-  margin: 0;
-}
-
-.home-elsewhere-arrow {
-  margin-left: auto;
-  font-family: var(--font-mono);
-  color: var(--accent);
-}
-
-@media (max-width: 720px) {
-  .home-elsewhere-grid {
     grid-template-columns: 1fr;
   }
 }

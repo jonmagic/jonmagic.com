@@ -193,12 +193,6 @@ module.exports = function(eleventyConfig) {
     return items.sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
   });
 
-  // Add a collection for "elsewhere" outposts
-  eleventyConfig.addCollection('elsewhere', function(collectionApi) {
-    const items = collectionApi.getFilteredByGlob('src/elsewhere/*.md');
-    return items.sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
-  });
-
   // Add a custom Nunjucks filter to filter and sort featured posts
   eleventyConfig.addNunjucksFilter('featured', function(posts) {
     if (!Array.isArray(posts)) return [];

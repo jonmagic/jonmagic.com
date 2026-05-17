@@ -50,15 +50,14 @@ title: jonmagic.com
   <p class="home-section-more"><a href="/merch/">All merch →</a></p>
 </section>
 
-{# Section 3: Projects shipping right now (top 3, excluding Elsewhere duplicates) #}
+{# Section 3: Projects shipping right now (top 3) #}
 <section class="home-section home-projects">
   <h2 class="section-rule">Projects shipping right now</h2>
-  {% set sortedProjects = collections.projects | sort(false, false, 'data.order') %}
+  {% set homeProjectOrder = ['thisistheway', 'agentconfig', 'copilot-sessions'] %}
   <div class="home-projects-grid">
-    {% set projectCount = 0 %}
-    {% for project in sortedProjects %}
-    {% if not project.data.home_exclude and projectCount < 3 %}
-    {% set projectCount = projectCount + 1 %}
+    {% for slug in homeProjectOrder %}
+    {% for project in collections.projects %}
+    {% if project.fileSlug == slug %}
     <article class="home-project-card">
       <div class="home-project-header">
         <h3 class="home-project-name">{{ project.data.title }}</h3>
@@ -84,6 +83,7 @@ title: jonmagic.com
       </p>
     </article>
     {% endif %}
+    {% endfor %}
     {% endfor %}
   </div>
   <p class="home-section-more"><a href="/projects/">All projects →</a></p>
@@ -112,34 +112,7 @@ title: jonmagic.com
   <p class="home-section-more"><a href="/posts/">All {{ collections.posts.length }} posts →</a></p>
 </section>
 
-{# Section 5: Elsewhere (4 curated tiles) #}
-{% set elsewhereOrder = ['agentconfig', 'thisistheway', 'theprogrammingbutler', 'teepublic'] %}
-<section class="home-section home-elsewhere">
-  <h2 class="section-rule">Elsewhere</h2>
-  <div class="home-elsewhere-grid">
-    {% for slug in elsewhereOrder %}
-      {% for item in collections.elsewhere %}
-        {% if item.fileSlug == slug %}
-        <a class="home-elsewhere-tile"
-           href="{{ item.data.url }}"
-           target="_blank"
-           rel="noopener"
-           data-plausible-event-name="outbound-cta"
-           data-plausible-event-target="home-elsewhere-{{ item.fileSlug }}">
-          <span class="home-elsewhere-title">{{ item.data.title }}</span>
-          {% if item.data.description %}
-          <span class="home-elsewhere-desc">{{ item.data.description }}</span>
-          {% endif %}
-          <span class="home-elsewhere-arrow">→</span>
-        </a>
-        {% endif %}
-      {% endfor %}
-    {% endfor %}
-  </div>
-  <p class="home-section-more"><a href="/elsewhere/">Everywhere else →</a></p>
-</section>
-
-{# Section 6: Letter teaser #}
+{# Section 5: Letter teaser #}
 <section class="home-section home-letter">
   <h2 class="section-rule">About this site</h2>
   <blockquote class="home-letter-quote">
