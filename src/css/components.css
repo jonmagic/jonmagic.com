@@ -40,6 +40,13 @@ img.avatar {
   box-shadow: var(--shadow-medium);
 }
 
+@media (max-width: 768px) {
+  .avatar-placeholder {
+    width: var(--portrait-size-mobile);
+    height: var(--portrait-size-mobile);
+  }
+}
+
 .avatar-column {
   width: 96px;
   flex-shrink: 0;

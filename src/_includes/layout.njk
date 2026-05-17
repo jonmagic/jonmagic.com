@@ -12,7 +12,11 @@
     <div class="site-title-group">
       <h1 class="site-title">{{ title }}</h1>
       {% if metadata.tagline %}
-      <p class="site-tagline">{{ metadata.tagline }}</p>
+      <p class="site-tagline">
+        {% for line in metadata.tagline %}
+        <span>{{ line }}</span>
+        {% endfor %}
+      </p>
       {% endif %}
     </div>
   </header>
