@@ -13,9 +13,10 @@
 }
 
 .site-header {
-  display: flex;
-  align-items: center;
-  gap: clamp(1.25rem, 4vw, 2.75rem);
+  display: grid;
+  grid-template-columns: var(--portrait-size) minmax(0, 1fr);
+  align-items: end;
+  column-gap: clamp(1.25rem, 4vw, 2.75rem);
   margin: 2rem auto 1.25rem;
   max-width: var(--max-width-large);
   padding: 0 calc(var(--spacing) * 1.1);
@@ -26,7 +27,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  flex: 1;
+  align-self: stretch;
   min-width: 0;
 }
 
@@ -46,6 +47,9 @@
 }
 
 .site-tagline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
   margin: 0;
   font-family: var(--font-sans);
   font-size: clamp(1rem, 2vw, 1.25rem);
@@ -210,8 +214,8 @@ footer {
   }
 
   .site-header {
-    flex-direction: column;
-    align-items: flex-start;
+    grid-template-columns: var(--portrait-size-mobile) minmax(0, 1fr);
+    align-items: end;
     gap: 1rem;
     margin-top: 1.25rem;
     padding: 0.75rem var(--spacing) 0;
