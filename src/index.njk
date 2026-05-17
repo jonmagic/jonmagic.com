@@ -32,17 +32,22 @@ title: jonmagic.com
   </div>
 </section>
 
-{# Section 2: Merch (3 tiles) #}
+{# Section 2: Merch #}
 <section class="home-section home-merch">
   <h2 class="section-rule">Merch</h2>
   <div class="home-merch-grid">
     {% for item in collections.merch %}
-    <a class="home-merch-tile merch-tile--{{ item.data.shirt_color or 'cream' }}"
+    <a class="home-merch-tile merch-tile--{{ item.data.shirt_color or 'cream' }}{% if item.data.image_dark %} home-merch-tile--theme-aware{% endif %}"
        href="/merch/#{{ item.fileSlug }}"
        data-plausible-event-name="internal-cta"
        data-plausible-event-target="home-merch-{{ item.fileSlug }}"
        aria-label="{{ item.data.title }}, see in shop">
-      <img src="{{ item.data.image }}" alt="" loading="eager" width="400" height="440">
+      <picture>
+        {%- if item.data.image_dark -%}
+        <source media="(prefers-color-scheme: dark)" srcset="{{ item.data.image_dark }}">
+        {%- endif -%}
+        <img src="{{ item.data.image }}" alt="" loading="eager" width="400" height="440">
+      </picture>
       <span class="home-merch-title">{{ item.data.title }}</span>
     </a>
     {% endfor %}

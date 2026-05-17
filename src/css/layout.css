@@ -72,6 +72,10 @@
   padding: 0 var(--spacing);
 }
 
+body:not(.homepage) .site-nav {
+  margin-top: 1.25rem;
+}
+
 .nav-container {
   display: flex;
   align-items: center;
@@ -201,6 +205,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+  body:not(.homepage) .site-nav {
+    margin-top: max(0.75rem, env(safe-area-inset-top));
+  }
+
   .site-header {
     flex-direction: column;
     align-items: flex-start;

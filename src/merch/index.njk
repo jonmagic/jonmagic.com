@@ -1,12 +1,13 @@
 ---
 layout: layout
 title: jonmagic.com merch
-description: Current merch designs from the jonmagic merch workspace.
+description: Small-batch developer shirts available on TeePublic.
 ---
 
 <p class="page-lede">
-  Current designs from the merch workspace. Public product pages are coming soon,
-  so this page is mostly a preview of the pieces and their variants.
+  Small-batch developer shirts from my actual workflows, original ideas,
+  and AI-assisted design experiments. They are available on TeePublic now,
+  with variants linked from each design.
 </p>
 
 <div class="merch-grid">
@@ -14,26 +15,36 @@ description: Current merch designs from the jonmagic merch workspace.
   <article id="{{ item.fileSlug }}" class="merch-tile merch-tile--{{ item.data.shirt_color or 'cream' }}">
     {%- set productUrl = item.data.product_url or item.data.teepublic_url -%}
     {%- if productUrl -%}
-    <a class="merch-tile-preview"
+    <a class="merch-tile-preview{% if item.data.image_dark %} merch-tile-preview--theme-aware{% endif %}"
        href="{{ productUrl }}"
        target="_blank"
        rel="noopener"
        data-plausible-event-name="outbound-cta"
        data-plausible-event-target="merch-{{ item.fileSlug }}"
-       aria-label="{{ item.data.title }} product page">
-       <img src="{{ item.data.image }}"
-            alt="{{ item.data.title }} design preview"
-            loading="lazy"
-            width="800"
-            height="880">
+       aria-label="{{ item.data.title }} on TeePublic">
+      <picture>
+        {%- if item.data.image_dark -%}
+        <source media="(prefers-color-scheme: dark)" srcset="{{ item.data.image_dark }}">
+        {%- endif -%}
+        <img src="{{ item.data.image }}"
+             alt="{{ item.data.title }} design preview"
+             loading="lazy"
+             width="800"
+             height="880">
+      </picture>
     </a>
     {%- else -%}
-    <div class="merch-tile-preview">
-      <img src="{{ item.data.image }}"
-           alt="{{ item.data.title }} design preview"
-           loading="lazy"
-           width="800"
-           height="880">
+    <div class="merch-tile-preview{% if item.data.image_dark %} merch-tile-preview--theme-aware{% endif %}">
+      <picture>
+        {%- if item.data.image_dark -%}
+        <source media="(prefers-color-scheme: dark)" srcset="{{ item.data.image_dark }}">
+        {%- endif -%}
+        <img src="{{ item.data.image }}"
+             alt="{{ item.data.title }} design preview"
+             loading="lazy"
+             width="800"
+             height="880">
+      </picture>
     </div>
     {%- endif -%}
     <div class="merch-tile-body">
@@ -50,7 +61,23 @@ description: Current merch designs from the jonmagic merch workspace.
       {%- if item.data.variants and item.data.variants.length -%}
       <div class="merch-variants" aria-label="{{ item.data.title }} variants">
         {%- for variant in item.data.variants -%}
+        {%- set variantUrl = variant.product_url or variant.teepublic_url -%}
         <figure class="merch-variant merch-tile--{{ variant.shirt_color or item.data.shirt_color or 'cream' }}">
+          {%- if variantUrl -%}
+          <a class="merch-variant-preview"
+             href="{{ variantUrl }}"
+             target="_blank"
+             rel="noopener"
+             data-plausible-event-name="outbound-cta"
+             data-plausible-event-target="merch-{{ item.fileSlug }}-variant-{{ loop.index }}"
+             aria-label="{{ item.data.title }} {{ variant.name }} on TeePublic">
+            <img src="{{ variant.image }}"
+                 alt="{{ item.data.title }} {{ variant.name }} variant"
+                 loading="lazy"
+                 width="360"
+                 height="396">
+          </a>
+          {%- else -%}
           <div class="merch-variant-preview">
             <img src="{{ variant.image }}"
                  alt="{{ item.data.title }} {{ variant.name }} variant"
@@ -58,8 +85,13 @@ description: Current merch designs from the jonmagic merch workspace.
                  width="360"
                  height="396">
           </div>
+          {%- endif -%}
           <figcaption>
+            {%- if variantUrl -%}
+            <a class="merch-variant-name" href="{{ variantUrl }}" target="_blank" rel="noopener">{{ variant.name }}</a>
+            {%- else -%}
             <span class="merch-variant-name">{{ variant.name }}</span>
+            {%- endif -%}
             {%- if variant.description -%}
             <span class="merch-variant-desc">{{ variant.description }}</span>
             {%- endif -%}
@@ -75,9 +107,14 @@ description: Current merch designs from the jonmagic merch workspace.
            target="_blank"
            rel="noopener"
            data-plausible-event-name="outbound-cta"
-           data-plausible-event-target="merch-{{ item.fileSlug }}-buy">View product page →</a>
+           data-plausible-event-target="merch-{{ item.fileSlug }}-buy">View on TeePublic →</a>
         {%- else -%}
-        <span class="merch-tile-pending">Product page coming soon</span>
+        <a class="merch-tile-buy"
+           href="https://www.teepublic.com/user/jonmagic"
+           target="_blank"
+           rel="noopener"
+           data-plausible-event-name="outbound-cta"
+           data-plausible-event-target="merch-{{ item.fileSlug }}-shop">Browse TeePublic shop →</a>
         {%- endif -%}
         {%- if item.data.originating_post -%}
         <a class="merch-tile-source" href="{{ item.data.originating_post }}">From this post →</a>
