@@ -32,21 +32,50 @@
 
 </head>
 
+
 <body class="">
   
-  <nav class="site-nav">
+  <nav class="site-nav" aria-label="Primary">
   <div class="nav-container">
-    <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/posts/">Posts</a></li><li><a href="https://www.teepublic.com/user/jonmagic" target="_blank">Merch</a></li><li><a href="/projects/">Projects</a></li><li><a href="/search/">Search</a></li><li><a href="/about/">About</a></li></ul>
-    <div class="social-links">
-      <a href="https://github.com/jonmagic" title="GitHub Profile">
-        <img src="/images/github.png" alt="GitHub Profile" width="24" height="24" class="github-icon">
-      </a>
-      <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile">
-        <img src="/images/linkedin.png" alt="LinkedIn Profile" width="24" height="24" class="linkedin-icon">
-      </a>
-      <a href="/feed.xml" title="RSS Feed">
-        <img src="/images/rss.png" alt="RSS Feed" width="24" height="24" class="rss-icon">
-      </a>
+    <a class="nav-brand" href="/">
+      <span class="nav-brand-name">jonmagic</span><span class="nav-brand-dot">.com</span>
+    </a>
+
+    <div class="nav-main">
+      <ul class="nav-links">
+        <li><a href="/posts/">Writing</a></li>
+        <li><a href="/merch/">Merch</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+
+      <div class="social-links">
+        <a href="/search/" title="Search posts" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <circle cx="11" cy="11" r="7"/>
+            <line x1="20" y1="20" x2="16.5" y2="16.5"/>
+          </svg>
+          <span class="visually-hidden">Search</span>
+        </a>
+        <a href="https://github.com/jonmagic" title="GitHub Profile" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true" focusable="false">
+            <path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.57.1.78-.25.78-.55v-1.93c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.16 1.18a10.96 10.96 0 0 1 2.87-.39c.97 0 1.95.13 2.87.39 2.2-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.73.8 1.18 1.82 1.18 3.08 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.07.78 2.16v3.2c0 .31.21.66.79.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/>
+          </svg>
+          <span class="visually-hidden">GitHub</span>
+        </a>
+        <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true" focusable="false">
+            <path d="M4.98 3.5A2.5 2.5 0 1 1 4.97 8.5 2.5 2.5 0 0 1 4.98 3.5zM3 9.5h4V21H3V9.5zm6.5 0h3.83v1.57h.05a4.2 4.2 0 0 1 3.78-2.07c4.04 0 4.79 2.66 4.79 6.11V21h-4v-5.06c0-1.21-.02-2.77-1.69-2.77-1.7 0-1.96 1.32-1.96 2.68V21h-4V9.5z"/>
+          </svg>
+          <span class="visually-hidden">LinkedIn</span>
+        </a>
+        <a href="/feed.xml" title="RSS Feed" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true" focusable="false">
+            <path d="M5 3a16 16 0 0 1 16 16 1.5 1.5 0 0 1-3 0A13 13 0 0 0 5 6a1.5 1.5 0 0 1 0-3zm0 6a10 10 0 0 1 10 10 1.5 1.5 0 0 1-3 0 7 7 0 0 0-7-7 1.5 1.5 0 0 1 0-3zm1.5 7.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5z"/>
+          </svg>
+          <span class="visually-hidden">RSS Feed</span>
+        </a>
+      </div>
     </div>
   </div>
 </nav>
@@ -58,11 +87,16 @@
         <span id="post-date-typing" class="post-date-typing" data-date="2007-03-28"></span>
       </div>
       
+      
       <h1 class="site-title">ATT is not my friend</h1>
       <p>When we bought SabreTech, Brad and I had our phone service changed and found out a nice little policy of ATT (SBC at the time)… We were paying for a static IP address, which means our internet address won’t change on a day to day, year to year basis… But it turns out, if you make any kind of change to your account, dsl or regular phone stuff, they assign you a new set of IPs… This is a major pain for a company like ours, so we’ve avoided making changes to our account since then.</p>
 <p>Until last month that is, when we had to have some of our phone stuff fixed because ATT screwed it up (won’t go into details)… Anyways, when we called to have this stuff fixed, we were assured our IPs wouldn’t change…</p>
 <p>Welcome Today, guess what I find when I get into work this morning… Our internet is down, and I have a sneaking suspicion it is because they changed our IPs… I call ATT dsl tech support, and after they tested the line I suggested they check what IP range I was assigned and sure enough, they changed it… I was irate, and for once that produced results (I never know which way to go with these things, play the nice guy, or play the frustrated client)…</p>
 <p>Thankfully, unlike last time, they were able to get us back up and running within 30 minutes (I had to stay on hold the entire time). This whole thing just burns me though, I’m tired of working with large corps that can’t tell their head from their tail, and unfortunately there are no other options around here… So I guess you just have to pay the price, and lose several hours of your life a year for stupid stuff like this… So if anyone ever tells you service x only costs y dollars from large corp z, make sure you figure in the time you’ll have dealing with their stupidity…</p>
+
+      
+
+
 
       
       
@@ -71,7 +105,9 @@
   
   <div class="page">
     <footer>
-  © Jonathan Hoyt <span id="year"></span> — built with ❤️ and an LLM in a loop
+  <p class="footer-line">
+    © Jonathan Hoyt <span id="year"></span> — built with ❤️ and an LLM in a loop
+  </p>
 </footer>
 
   </div>

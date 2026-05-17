@@ -32,21 +32,50 @@
 
 </head>
 
+
 <body class="">
   
-  <nav class="site-nav">
+  <nav class="site-nav" aria-label="Primary">
   <div class="nav-container">
-    <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/posts/">Posts</a></li><li><a href="https://www.teepublic.com/user/jonmagic" target="_blank">Merch</a></li><li><a href="/projects/">Projects</a></li><li><a href="/search/">Search</a></li><li><a href="/about/">About</a></li></ul>
-    <div class="social-links">
-      <a href="https://github.com/jonmagic" title="GitHub Profile">
-        <img src="/images/github.png" alt="GitHub Profile" width="24" height="24" class="github-icon">
-      </a>
-      <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile">
-        <img src="/images/linkedin.png" alt="LinkedIn Profile" width="24" height="24" class="linkedin-icon">
-      </a>
-      <a href="/feed.xml" title="RSS Feed">
-        <img src="/images/rss.png" alt="RSS Feed" width="24" height="24" class="rss-icon">
-      </a>
+    <a class="nav-brand" href="/">
+      <span class="nav-brand-name">jonmagic</span><span class="nav-brand-dot">.com</span>
+    </a>
+
+    <div class="nav-main">
+      <ul class="nav-links">
+        <li><a href="/posts/">Writing</a></li>
+        <li><a href="/merch/">Merch</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+
+      <div class="social-links">
+        <a href="/search/" title="Search posts" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <circle cx="11" cy="11" r="7"/>
+            <line x1="20" y1="20" x2="16.5" y2="16.5"/>
+          </svg>
+          <span class="visually-hidden">Search</span>
+        </a>
+        <a href="https://github.com/jonmagic" title="GitHub Profile" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true" focusable="false">
+            <path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.57.1.78-.25.78-.55v-1.93c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.16 1.18a10.96 10.96 0 0 1 2.87-.39c.97 0 1.95.13 2.87.39 2.2-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.73.8 1.18 1.82 1.18 3.08 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.07.78 2.16v3.2c0 .31.21.66.79.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/>
+          </svg>
+          <span class="visually-hidden">GitHub</span>
+        </a>
+        <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true" focusable="false">
+            <path d="M4.98 3.5A2.5 2.5 0 1 1 4.97 8.5 2.5 2.5 0 0 1 4.98 3.5zM3 9.5h4V21H3V9.5zm6.5 0h3.83v1.57h.05a4.2 4.2 0 0 1 3.78-2.07c4.04 0 4.79 2.66 4.79 6.11V21h-4v-5.06c0-1.21-.02-2.77-1.69-2.77-1.7 0-1.96 1.32-1.96 2.68V21h-4V9.5z"/>
+          </svg>
+          <span class="visually-hidden">LinkedIn</span>
+        </a>
+        <a href="/feed.xml" title="RSS Feed" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true" focusable="false">
+            <path d="M5 3a16 16 0 0 1 16 16 1.5 1.5 0 0 1-3 0A13 13 0 0 0 5 6a1.5 1.5 0 0 1 0-3zm0 6a10 10 0 0 1 10 10 1.5 1.5 0 0 1-3 0 7 7 0 0 0-7-7 1.5 1.5 0 0 1 0-3zm1.5 7.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5z"/>
+          </svg>
+          <span class="visually-hidden">RSS Feed</span>
+        </a>
+      </div>
     </div>
   </div>
 </nav>
@@ -58,15 +87,20 @@
         <span id="post-date-typing" class="post-date-typing" data-date="2011-03-03"></span>
       </div>
       
+      
       <h1 class="site-title">Share the Dream</h1>
       <p>Sharing in the vision and energy of your team is a key factor to success and happiness at work.</p>
 <h3 id="putting-your-dreams-on-hold" tabindex="-1"><a class="heading-anchor" href="#putting-your-dreams-on-hold" aria-hidden="true">#</a> Putting Your Dreams On Hold</h3>
-<p>When I started at OrderedList there was <a href="http://speakerdeck.com">one product</a> I was really passionate about because I had done most of the work on it. I quickly realized though that I needed to put that passion on hold, or better said, redirect it towards <a href="http://harmonyapp.com">Harmony</a>, so that I could help push the vision of my team forward. I needed to share their dreams and hopefully incorporate mine at some point.</p>
-<p>As soon as I dug into <a href="http://harmonyapp.com">Harmony</a>, fixing weak spots in the test suite, spearheading the move to Rails 3, working on a new feature (<strong>that I’m dying to tell you about</strong>), my heart began to change, my passion became their passion, and I was happy again and part of the team.</p>
+<p>When I started at OrderedList there was <a href="http://speakerdeck.com">one product</a> I was really passionate about because I had done most of the work on it. I quickly realized though that I needed to put that passion on hold, or better said, redirect it towards Harmony, so that I could help push the vision of my team forward. I needed to share their dreams and hopefully incorporate mine at some point.</p>
+<p>As soon as I dug into Harmony, fixing weak spots in the test suite, spearheading the move to Rails 3, working on a new feature (<strong>that I’m dying to tell you about</strong>), my heart began to change, my passion became their passion, and I was happy again and part of the team.</p>
 <h3 id="sharing-the-energy" tabindex="-1"><a class="heading-anchor" href="#sharing-the-energy" aria-hidden="true">#</a> Sharing The Energy</h3>
-<p>Almost as soon as I really started getting passionate about <a href="http://harmonyapp.com">Harmony</a> John came home from sick leave and had this crazy idea to build a <a href="http://gaug.es">web analytics service</a>, which we now call <a href="http://gaug.es">Gauges</a>. At first all I could think was, <strong>boring</strong>, but hanging around Steve, John, and Brandon I started to catch the buzz, the energy, and the excitement!</p>
+<p>Almost as soon as I really started getting passionate about Harmony John came home from sick leave and had this crazy idea to build a <a href="http://gaug.es">web analytics service</a>, which we now call <a href="http://gaug.es">Gauges</a>. At first all I could think was, <strong>boring</strong>, but hanging around Steve, John, and Brandon I started to catch the buzz, the energy, and the excitement!</p>
 <p>This is when I began to realize that I didn’t necessarily have to put my dreams on hold, I just needed to share in my team’s excitement and get them excited about what I’m excited about by letting them see my own energy.</p>
 <p>Every team is different, but letting your coworkers see your excitement and passion about a product/project and sharing in their dreams at the same time is one easy way to stay happy at work and be excited to go to the office every day.</p>
+
+      
+
+
 
       
       
@@ -74,18 +108,20 @@
   <h2 id="post-cta-heading">If you liked this post</h2>
   <p>Here are a few easy ways to support or explore more:</p>
   <ul class="post-cta-actions">
-    <li>Share this on <a href="https://news.ycombinator.com/submitlink?u=https://jonmagic.com/posts/share-the-dream/&t=Share the Dream" rel="noopener noreferrer" target="_blank">Hacker News</a>.</li>
-    <li>Join or start a <a href="https://github.com/jonmagic/jonmagic.com/discussions">discussion about this post or my site</a>.</li>
-    <li>Read more <a href="/posts/">writing</a> or browse my <a href="/projects/">projects</a>.</li>
-    <li>Follow me on <a href="https://github.com/jonmagic">GitHub</a>.</li>
-  </ul>
-  <a class="post-merch-cta" href="https://www.teepublic.com/user/jonmagic" aria-label="You, me, and an LLM. Check out my merch." target="_blank">
+    <li>Share this on <a href="https://news.ycombinator.com/submitlink?u=https://jonmagic.com/posts/share-the-dream/&t=Share the Dream" rel="noopener noreferrer" target="_blank" data-plausible-event-name="outbound-cta" data-plausible-event-target="hn-submit">Hacker News</a>.</li>
+    <li>Join or start a <a href="https://github.com/jonmagic/jonmagic.com/discussions" data-plausible-event-name="outbound-cta" data-plausible-event-target="site-discussions">discussion about this post or my site</a>.</li>
+    <li>Read more <a href="/posts/" data-plausible-event-name="internal-cta" data-plausible-event-target="cta-to-posts">writing</a> or browse my <a href="/projects/" data-plausible-event-name="internal-cta" data-plausible-event-target="cta-to-projects">projects</a>.</li>
+    <li>Follow me on <a href="https://github.com/jonmagic" data-plausible-event-name="outbound-cta" data-plausible-event-target="github-jonmagic">GitHub</a>.</li>
+  </ul><a class="post-merch-cta"
+     href="/merch/"
+     aria-label="Browse jonmagic.com merch"
+     data-plausible-event-name="internal-cta"
+     data-plausible-event-target="post-merch-shop">
     <span class="post-merch-copy">
-      <strong>You, me, and an LLM</strong>
-      <span>Check out my merch</span>
+      <strong>Browse current merch designs</strong>
+      <span>Browse the merch shop →</span>
     </span>
-  </a>
-  <p class="post-cta-thanks">Thanks for reading — it means a lot.</p>
+  </a><p class="post-cta-thanks">Thanks for reading — it means a lot.</p>
 </aside>
 
       
@@ -94,7 +130,9 @@
   
   <div class="page">
     <footer>
-  © Jonathan Hoyt <span id="year"></span> — built with ❤️ and an LLM in a loop
+  <p class="footer-line">
+    © Jonathan Hoyt <span id="year"></span> — built with ❤️ and an LLM in a loop
+  </p>
 </footer>
 
   </div>

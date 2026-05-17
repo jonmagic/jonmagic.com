@@ -1,0 +1,11 @@
+.accent-green {
+  --accent: #1a7f37;
+  --link-hover: #1a7f37;
+}
+
+@media (prefers-color-scheme: dark) {
+  .accent-green {
+    --accent: #3fb950;
+    --link-hover: #3fb950;
+  }
+}

@@ -5,12 +5,15 @@
 */
 
 :root {
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-mono: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  --font-sans: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-brand: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-editor: Menlo, Monaco, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", monospace;
+  --font-mono: var(--font-editor);
 
   --bg: #fefcf9;
   --text: #111111;
-  --accent: #0366d6;
+  --accent: #c43e2a;
+  --accent-secondary: #0366d6;
   --muted: #666;
   --code-bg: #f6f8fa;
   --code-block-bg: var(--code-bg);
@@ -18,18 +21,21 @@
   --card-border: #ccc;
   --subtle-bg: #e8e5e0;
   --subtle-border: #d1cdc7;
+  --paper-strip: #d9d6cc;
   --accent-text: #ffffff;
   --text-strong: #333;
-  --link-hover: #005a9e;
+  --link-hover: #8e2818;
   --divider: #eee;
   --field-bg: #ffffff;
   --field-text: #333;
   --field-border: #ccc;
-  --field-focus: #007acc;
-  --field-focus-ring: rgba(0, 122, 204, 0.1);
+  --field-focus: #c43e2a;
+  --field-focus-ring: rgba(196, 62, 42, 0.12);
   --badge-bg: var(--accent);
   --badge-text: #ffffff;
-  --nav-bg: #f5f2f0;
+  --nav-bg: rgba(255, 255, 255, 0.82);
+  --nav-border: rgba(17, 17, 17, 0.12);
+  --nav-shadow: 0 12px 36px rgba(17, 17, 17, 0.08);
 
   --success: #28a745;
   --info: #17a2b8;
@@ -41,6 +47,9 @@
   --spacing: 1.25rem;
   --max-width: 700px;
   --max-width-large: 950px;
+
+  --portrait-size: 200px;
+  --portrait-size-mobile: 120px;
 
   --border-radius-small: 6px;
   --border-radius-medium: 8px;
@@ -55,7 +64,8 @@
   :root {
     --bg: #0d1117;
     --text: #c9d1d9;
-    --accent: #58a6ff;
+    --accent: #ff6b57;
+    --accent-secondary: #58a6ff;
     --muted: #8b949e;
     --code-bg: #161b22;
     --code-block-bg: var(--code-bg);
@@ -63,18 +73,21 @@
     --card-border: #30363d;
     --subtle-bg: #161b22;
     --subtle-border: #30363d;
+    --paper-strip: #1a1f24;
     --accent-text: #0d1117;
     --text-strong: #e0e0e0;
-    --link-hover: #58a6ff;
+    --link-hover: #ff8a78;
     --divider: #30363d;
     --field-bg: #2d2d2d;
     --field-text: #e0e0e0;
     --field-border: #444;
-    --field-focus: #66b3ff;
-    --field-focus-ring: rgba(102, 179, 255, 0.1);
-    --badge-bg: #1a365d;
-    --badge-text: #63b3ed;
-    --nav-bg: #272822;
+    --field-focus: #ff6b57;
+    --field-focus-ring: rgba(255, 107, 87, 0.15);
+    --badge-bg: #5a1a13;
+    --badge-text: #ff8a78;
+    --nav-bg: rgba(22, 27, 34, 0.86);
+    --nav-border: rgba(240, 246, 252, 0.13);
+    --nav-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
     --error-bg: #2d1b1f;
     --error-text: #f56565;
     --error-border: #4a1a1f;

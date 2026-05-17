@@ -1,5 +1,10 @@
 @import "./reset.css";
 @import "./tokens.css";
+@import "./accents/red.css";
+@import "./accents/blue.css";
+@import "./accents/green.css";
+@import "./accents/violet.css";
+@import "./accents/amber.css";
 @import "./prose.css";
 @import "./layout.css";
 @import "./components.css";
