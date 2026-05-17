@@ -1,31 +1,41 @@
 ---
 layout: layout
 title: jonmagic.com merch
-description: Designs inspired by the writing on this site. Ships from TeePublic.
+description: Current merch designs from the jonmagic merch workspace.
 ---
 
 <p class="page-lede">
-  Designs that come out of the writing on this site. Source SVGs live in
-  <a href="https://github.com/jonmagic" data-plausible-event-name="outbound-cta" data-plausible-event-target="github-jonmagic">my workspace</a>;
-  shirts and stickers ship from TeePublic.
+  Current designs from the merch workspace. Public product pages are coming soon,
+  so this page is mostly a preview of the pieces and their variants.
 </p>
 
 <div class="merch-grid">
   {%- for item in collections.merch -%}
   <article id="{{ item.fileSlug }}" class="merch-tile merch-tile--{{ item.data.shirt_color or 'cream' }}">
+    {%- set productUrl = item.data.product_url or item.data.teepublic_url -%}
+    {%- if productUrl -%}
     <a class="merch-tile-preview"
-       href="{{ item.data.teepublic_url }}"
+       href="{{ productUrl }}"
        target="_blank"
        rel="noopener"
        data-plausible-event-name="outbound-cta"
        data-plausible-event-target="merch-{{ item.fileSlug }}"
-       aria-label="{{ item.data.title }} on TeePublic">
+       aria-label="{{ item.data.title }} product page">
+       <img src="{{ item.data.image }}"
+            alt="{{ item.data.title }} design preview"
+            loading="lazy"
+            width="800"
+            height="880">
+    </a>
+    {%- else -%}
+    <div class="merch-tile-preview">
       <img src="{{ item.data.image }}"
            alt="{{ item.data.title }} design preview"
            loading="lazy"
            width="800"
            height="880">
-    </a>
+    </div>
+    {%- endif -%}
     <div class="merch-tile-body">
       <h2 class="merch-tile-title">{{ item.data.title }}</h2>
       {%- if item.data.description -%}
@@ -37,13 +47,38 @@ description: Designs inspired by the writing on this site. Ships from TeePublic.
         {{ item.data.colorways | join(" · ") }}
       </p>
       {%- endif -%}
+      {%- if item.data.variants and item.data.variants.length -%}
+      <div class="merch-variants" aria-label="{{ item.data.title }} variants">
+        {%- for variant in item.data.variants -%}
+        <figure class="merch-variant merch-tile--{{ variant.shirt_color or item.data.shirt_color or 'cream' }}">
+          <div class="merch-variant-preview">
+            <img src="{{ variant.image }}"
+                 alt="{{ item.data.title }} {{ variant.name }} variant"
+                 loading="lazy"
+                 width="360"
+                 height="396">
+          </div>
+          <figcaption>
+            <span class="merch-variant-name">{{ variant.name }}</span>
+            {%- if variant.description -%}
+            <span class="merch-variant-desc">{{ variant.description }}</span>
+            {%- endif -%}
+          </figcaption>
+        </figure>
+        {%- endfor -%}
+      </div>
+      {%- endif -%}
       <p class="merch-tile-actions">
+        {%- if productUrl -%}
         <a class="merch-tile-buy"
-           href="{{ item.data.teepublic_url }}"
+           href="{{ productUrl }}"
            target="_blank"
            rel="noopener"
            data-plausible-event-name="outbound-cta"
-           data-plausible-event-target="merch-{{ item.fileSlug }}-buy">Buy on TeePublic →</a>
+           data-plausible-event-target="merch-{{ item.fileSlug }}-buy">View product page →</a>
+        {%- else -%}
+        <span class="merch-tile-pending">Product page coming soon</span>
+        {%- endif -%}
         {%- if item.data.originating_post -%}
         <a class="merch-tile-source" href="{{ item.data.originating_post }}">From this post →</a>
         {%- endif -%}
@@ -54,6 +89,6 @@ description: Designs inspired by the writing on this site. Ships from TeePublic.
 </div>
 
 <p class="merch-footnote">
-  TeePublic prints these on demand and handles fulfillment. If anything looks off, email me at
+  If anything looks off, email me at
   <a href="mailto:jonmagic@gmail.com">jonmagic@gmail.com</a> and I will help.
 </p>

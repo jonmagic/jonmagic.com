@@ -32,12 +32,33 @@ title: jonmagic.com
   </div>
 </section>
 
-{# Section 2: Projects (top 3 by order asc) #}
+{# Section 2: Merch (3 tiles) #}
+<section class="home-section home-merch">
+  <h2 class="section-rule">Merch</h2>
+  <div class="home-merch-grid">
+    {% for item in collections.merch %}
+    <a class="home-merch-tile merch-tile--{{ item.data.shirt_color or 'cream' }}"
+       href="/merch/#{{ item.fileSlug }}"
+       data-plausible-event-name="internal-cta"
+       data-plausible-event-target="home-merch-{{ item.fileSlug }}"
+       aria-label="{{ item.data.title }}, see in shop">
+      <img src="{{ item.data.image }}" alt="" loading="eager" width="400" height="440">
+      <span class="home-merch-title">{{ item.data.title }}</span>
+    </a>
+    {% endfor %}
+  </div>
+  <p class="home-section-more"><a href="/merch/">All merch →</a></p>
+</section>
+
+{# Section 3: Projects shipping right now (top 3, excluding Elsewhere duplicates) #}
 <section class="home-section home-projects">
   <h2 class="section-rule">Projects shipping right now</h2>
   {% set sortedProjects = collections.projects | sort(false, false, 'data.order') %}
   <div class="home-projects-grid">
-    {% for project in sortedProjects %}{% if loop.index0 < 3 %}
+    {% set projectCount = 0 %}
+    {% for project in sortedProjects %}
+    {% if not project.data.home_exclude and projectCount < 3 %}
+    {% set projectCount = projectCount + 1 %}
     <article class="home-project-card">
       <div class="home-project-header">
         <h3 class="home-project-name">{{ project.data.title }}</h3>
@@ -62,12 +83,13 @@ title: jonmagic.com
         {% endif %}
       </p>
     </article>
-    {% endif %}{% endfor %}
+    {% endif %}
+    {% endfor %}
   </div>
   <p class="home-section-more"><a href="/projects/">All projects →</a></p>
 </section>
 
-{# Section 3: Recent writing (last 8 reverse-chrono, year markers when year changes) #}
+{# Section 4: Recent writing (last 8 reverse-chrono, year markers when year changes) #}
 <section class="home-section home-recent">
   <h2 class="section-rule">Recent writing</h2>
   {% set recent = collections.posts | reverse %}
@@ -88,24 +110,6 @@ title: jonmagic.com
     {% endif %}{% endfor %}
   </ol>
   <p class="home-section-more"><a href="/posts/">All {{ collections.posts.length }} posts →</a></p>
-</section>
-
-{# Section 4: Merch (3 tiles) #}
-<section class="home-section home-merch">
-  <h2 class="section-rule">Merch</h2>
-  <div class="home-merch-grid">
-    {% for item in collections.merch %}{% if loop.index0 < 3 %}
-    <a class="home-merch-tile merch-tile--{{ item.data.shirt_color or 'cream' }}"
-       href="/merch/#{{ item.fileSlug }}"
-       data-plausible-event-name="internal-cta"
-       data-plausible-event-target="home-merch-{{ item.fileSlug }}"
-       aria-label="{{ item.data.title }}, see in shop">
-      <img src="{{ item.data.image }}" alt="" loading="eager" width="400" height="440">
-      <span class="home-merch-title">{{ item.data.title }}</span>
-    </a>
-    {% endif %}{% endfor %}
-  </div>
-  <p class="home-section-more"><a href="/merch/">All merch →</a></p>
 </section>
 
 {# Section 5: Elsewhere (4 curated tiles) #}

@@ -1,15 +1,22 @@
 ---
 title: "Transcript or it didn't happen"
-image: /images/merch/transcript-or-it-didnt-happen.svg
-image_light: /images/merch/transcript-or-it-didnt-happen-light.svg
+image: /images/merch/2026-05-16-transcript-or-it-didnt-happen.png
+image_light: /images/merch/2026-05-16-transcript-or-it-didnt-happen-light.png
 shirt_color: black
 colorways:
-  - black
-  - navy
-  - charcoal
-teepublic_url: https://www.teepublic.com/user/jonmagic
+  - dark shirts
+  - light shirts
+variants:
+  - name: Dark shirts
+    image: /images/merch/2026-05-16-transcript-or-it-didnt-happen.png
+    shirt_color: black
+    description: Dark-shirt colorway.
+  - name: Light shirts
+    image: /images/merch/2026-05-16-transcript-or-it-didnt-happen-light.png
+    shirt_color: cream
+    description: Light-shirt colorway.
 originating_post: /posts/how-i-work-2025-edition/
-order: 2
+order: 4
 permalink: false
-description: Stacked proof-label headline with an active waveform. For anyone who has been bitten by a meeting whose only record is a vibe.
+description: A reminder that a transcript pays dividends every time, and relying on memory or notes alone will eventually fail.
 ---

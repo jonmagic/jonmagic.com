@@ -656,10 +656,13 @@ img.avatar {
 }
 
 .merch-tile-preview {
-  display: block;
-  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 10 / 11;
   background: var(--paper-strip);
-  padding: 1.5rem;
+  padding: 0.85rem;
+  overflow: hidden;
 }
 
 .merch-tile--black .merch-tile-preview,
@@ -673,10 +676,74 @@ img.avatar {
 }
 
 .merch-tile-preview img {
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
   display: block;
+}
+
+.merch-variants {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.35rem;
+}
+
+.merch-variant {
+  margin: 0;
+}
+
+.merch-variant-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 10 / 11;
+  background: var(--paper-strip);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius-small);
+  padding: 0.5rem;
+  overflow: hidden;
+}
+
+.merch-variant.merch-tile--black .merch-variant-preview,
+.merch-variant.merch-tile--navy .merch-variant-preview,
+.merch-variant.merch-tile--charcoal .merch-variant-preview {
+  background: #1a1f24;
+}
+
+.merch-variant.merch-tile--white .merch-variant-preview {
+  background: #f8f5f0;
+}
+
+.merch-variant-preview img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.merch-variant figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  margin-top: 0.35rem;
+}
+
+.merch-variant-name {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.merch-variant-desc {
+  font-size: 0.72rem;
+  line-height: 1.35;
+  color: var(--muted);
 }
 
 .merch-tile-body {
@@ -735,6 +802,10 @@ img.avatar {
 }
 
 .merch-tile-source {
+  color: var(--muted);
+}
+
+.merch-tile-pending {
   color: var(--muted);
 }
 
@@ -1192,7 +1263,7 @@ img.avatar {
 
 .home-merch-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1rem;
 }
 
@@ -1217,8 +1288,12 @@ img.avatar {
 
 .home-merch-tile img {
   display: block;
-  width: 100%;
+  width: auto;
   height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: 10 / 11;
+  object-fit: contain;
   background: #ffffff;
   border-radius: var(--border-radius-small);
   padding: 0.4rem;
