@@ -33,7 +33,7 @@ All in all things went really well, thankfully, since we were all gone to New Or
 
 I’m betting many of you are thinking “how the heck is this sustainable?” I’ll let you know when we figure it out. Seriously though, we do have plans to monetize and I’d like to start talking about them to see what you folks think.
 
-The first idea is just what we’re doing right now, mentioning our other products ([Gauges](http://get.gaug.es) & [Harmony](http://get.harmonyapp.com)) in a very small and tasteful way in the sidebar. For this plan to succeed on its own there would have to be a lot of people clicking through and signing up for our other products.
+The first idea is just what we’re doing right now, mentioning our other products ([Gauges](http://get.gaug.es) & Harmony) in a very small and tasteful way in the sidebar. For this plan to succeed on its own there would have to be a lot of people clicking through and signing up for our other products.
 
 The second plan is to add pro accounts. We’ve heard a lot of great feedback about bigger features people want, like private presentations that you can share with a select group and also statistics. We’d love to hear more about features you want, especially the ones you’d be willing to pay for.
 

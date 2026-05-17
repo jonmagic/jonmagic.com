@@ -1,24 +1,56 @@
 ---
 layout: layout
-title: jonmagic.com posts
+title: Writing
+description: Every post on jonmagic.com, grouped by year, newest first.
 ---
 
-<div class="posts-grid">
+<p class="page-lede">
+  Everything I have written here, newest first. {{ collections.posts.length }} posts
+  back to 2006. Looking for something specific? Try
+  <a href="/search/" data-plausible-event-name="internal-cta" data-plausible-event-target="posts-to-search">semantic search →</a>.
+</p>
+
 {%- set allPosts = collections.posts | reverse -%}
+
 {%- for post in allPosts -%}
-  {%- set cropData = postCropData[post.fileSlug] -%}
-  <a href="{{ post.url }}" class="post-card-link u-link-reset">
-    <div class="post-card">
-      <div class="post-card-background"
-           data-crop-x="{{ cropData.x if cropData else 0 }}"
-           data-crop-y="{{ cropData.y if cropData else 0 }}"
-           style="--crop-x: {{ cropData.xPercent if cropData else 0 }}%; --crop-y: {{ cropData.yPercent if cropData else 0 }}%;">
-      </div>
-      <div class="post-card-content">
-        <h3 class="post-title">{{ post.data.title }}</h3>
-        <div class="post-date">{{ post.date.toISOString().split('T')[0] }}</div>
-      </div>
-    </div>
-  </a>
-{%- endfor -%}
-</div>
+  {%- set thisYear = post.date.getFullYear() | string -%}
+  {%- set prevYear = '' -%}
+  {%- if not loop.first -%}
+    {%- set prevYear = allPosts[loop.index0 - 1].date.getFullYear() | string -%}
+  {%- endif -%}
+  {%- set nextYear = '' -%}
+  {%- if not loop.last -%}
+    {%- set nextYear = allPosts[loop.index0 + 1].date.getFullYear() | string -%}
+  {%- endif -%}
+
+  {%- if thisYear != prevYear %}
+<section class="writing-year">
+  <h2 class="year-marker">
+    <span class="year-marker-bar" aria-hidden="true"></span>
+    <span class="year-marker-label">{{ thisYear }}</span>
+  </h2>
+  <ol class="writing-list">
+  {%- endif %}
+    <li class="writing-item">
+      <a href="{{ post.url }}" class="writing-link">
+        <span class="writing-date">{{ post.date.toISOString().split('T')[0] }}</span>
+        <span class="writing-title">{{ post.data.title }}</span>
+      </a>
+      {%- if post.data.description %}
+      <p class="writing-desc">{{ post.data.description }}</p>
+      {%- endif %}
+    </li>
+  {%- if loop.last or thisYear != nextYear %}
+  </ol>
+</section>
+  {%- endif %}
+{%- endfor %}
+
+<p class="posts-search-link">
+  <a href="/search/" data-plausible-event-name="internal-cta" data-plausible-event-target="posts-footer-search">Search {{ collections.posts.length }} posts →</a>
+</p>
+
+{# Preserve .post-card markup so /search/ template + JS still find the class. #}
+<template id="post-card-shape-keeper" hidden>
+  <div class="post-card"><div class="post-card-background"></div><div class="post-card-content"><h3 class="post-title"></h3><div class="post-date"></div></div></div>
+</template>

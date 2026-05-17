@@ -20,7 +20,7 @@ A week ago we set today as the day to begin, which left me just a few days to pr
 
 Buying a jigsaw, easy. Printing a 70” curve, not as easy :/
 
-The story of acquiring the curve requires some back story. Again, I’ve been planning on building this thing for over a year, so I actually started searching out a plotter to print it a year ago. At the time I worked at [SabreTech](http://sabretechllc.com) and we had quite a few industrial clients with printers, but I never managed to find the right place to get it done.
+The story of acquiring the curve requires some back story. Again, I’ve been planning on building this thing for over a year, so I actually started searching out a plotter to print it a year ago. At the time I worked at [SabreTech](https://web.archive.org/web/2012/https://web.archive.org/web/2012/http://sabretechllc.com) and we had quite a few industrial clients with printers, but I never managed to find the right place to get it done.
 
 One day seven or eight months ago while visiting my college friend Bob at his workplace [Daavlin](http://daavlin.com) (also one of our best clients) I noticed they had a plotter. Bob proceeded to explain that they’d just acquired it, but hadn’t figured out way to hook it up yet (older interface that none of their computers had). I offered to help (I think) in exchange for printing the curve, but he said he’d get it running and told me he’d print the curve anyways.
 

@@ -3,31 +3,123 @@ layout: layout
 title: jonmagic.com
 ---
 
-<div>
-  <main>
-    {# Featured posts list #}
-    <section>
-      <h2>Featured Posts</h2>
-      {% set featured = collections.posts | featured %}
-      {% if featured and featured.length > 0 %}
-        <ul class="featured-list">
-          {% for post in featured %}
-            <li>
-              <div>
-                <div>
-                  <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
-                  <p>{{ post.data.description }}</p>
-                </div>
-              </div>
-            </li>
-          {% endfor %}
-          <li>
-            <h3><a href="/posts/">View All Posts</a></h3>
-          </li>
-        </ul>
-      {% else %}
-        <p>No featured posts yet.</p>
+{# Section 1: Featured #}
+<section class="home-section home-featured">
+  <h2 class="section-rule">Featured writing</h2>
+  {% set featured = collections.posts | featured %}
+  <div class="featured-grid">
+    {% for post in featured %}
+      <article class="featured-card{% if post.data.accent %} accent-{{ post.data.accent }}{% endif %}">
+        {% if post.data.popular or post.data.trending or post.data.eyebrow %}
+        <div class="featured-badges">
+          {% if post.data.eyebrow %}<span class="featured-eyebrow">{{ post.data.eyebrow }}</span>{% endif %}
+          {% if post.data.popular %}<span class="badge badge-popular">Popular</span>{% endif %}
+          {% if post.data.trending %}<span class="badge badge-trending">Trending</span>{% endif %}
+        </div>
+        {% endif %}
+        <a href="{{ post.url }}" class="featured-link">
+          <h3 class="featured-title">{{ post.data.title }}</h3>
+        </a>
+        {% if post.data.description %}
+        <p class="featured-desc">{{ post.data.description }}</p>
+        {% endif %}
+        <p class="featured-meta">
+          <span class="featured-date">{{ post.date.toISOString().split('T')[0] }}</span>
+          <a class="featured-readmore" href="{{ post.url }}">Read →</a>
+        </p>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+{# Section 2: Merch (3 tiles) #}
+<section class="home-section home-merch">
+  <h2 class="section-rule">Merch</h2>
+  <div class="home-merch-grid">
+    {% for item in collections.merch %}
+    <a class="home-merch-tile merch-tile--{{ item.data.shirt_color or 'cream' }}"
+       href="/merch/#{{ item.fileSlug }}"
+       data-plausible-event-name="internal-cta"
+       data-plausible-event-target="home-merch-{{ item.fileSlug }}"
+       aria-label="{{ item.data.title }}, see in shop">
+      <img src="{{ item.data.image }}" alt="" loading="eager" width="400" height="440">
+      <span class="home-merch-title">{{ item.data.title }}</span>
+    </a>
+    {% endfor %}
+  </div>
+  <p class="home-section-more"><a href="/merch/">All merch →</a></p>
+</section>
+
+{# Section 3: Projects shipping right now (top 3) #}
+<section class="home-section home-projects">
+  <h2 class="section-rule">Projects shipping right now</h2>
+  {% set homeProjectOrder = ['thisistheway', 'agentconfig', 'copilot-sessions'] %}
+  <div class="home-projects-grid">
+    {% for slug in homeProjectOrder %}
+    {% for project in collections.projects %}
+    {% if project.fileSlug == slug %}
+    <article class="home-project-card">
+      <div class="home-project-header">
+        <h3 class="home-project-name">{{ project.data.title }}</h3>
+      </div>
+      <p class="home-project-desc">{{ project.data.description }}</p>
+      <p class="home-project-actions">
+        {% if project.data.site %}
+        <a class="home-project-action home-project-action-primary"
+           href="{{ project.data.site }}"
+           target="_blank"
+           rel="noopener"
+           data-plausible-event-name="outbound-cta"
+           data-plausible-event-target="home-project-{{ project.fileSlug }}-site">Visit site →</a>
+        {% endif %}
+        {% if project.data.github %}
+        <a class="home-project-action"
+           href="{{ project.data.github }}"
+           target="_blank"
+           rel="noopener"
+           data-plausible-event-name="outbound-cta"
+           data-plausible-event-target="home-project-{{ project.fileSlug }}-code">View code →</a>
+        {% endif %}
+      </p>
+    </article>
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+  </div>
+  <p class="home-section-more"><a href="/projects/">All projects →</a></p>
+</section>
+
+{# Section 4: Recent writing (last 8 reverse-chrono, year markers when year changes) #}
+<section class="home-section home-recent">
+  <h2 class="section-rule">Recent writing</h2>
+  {% set recent = collections.posts | reverse %}
+  <ol class="writing-list home-writing-list">
+    {% for post in recent %}{% if loop.index0 < 8 %}
+      {% set thisYear = post.date.getFullYear() | string %}
+      {% set prevYear = '' %}
+      {% if not loop.first %}{% set prevYear = recent[loop.index0 - 1].date.getFullYear() | string %}{% endif %}
+      {% if thisYear != prevYear %}
+      <li class="home-year-row"><span class="year-marker-label">{{ thisYear }}</span></li>
       {% endif %}
-    </section>
-  </main>
-</div>
+      <li class="writing-item">
+        <a href="{{ post.url }}" class="writing-link">
+          <span class="writing-date">{{ post.date.toISOString().split('T')[0] }}</span>
+          <span class="writing-title">{{ post.data.title }}</span>
+        </a>
+      </li>
+    {% endif %}{% endfor %}
+  </ol>
+  <p class="home-section-more"><a href="/posts/">All {{ collections.posts.length }} posts →</a></p>
+</section>
+
+{# Section 5: Letter teaser #}
+<section class="home-section home-letter">
+  <h2 class="section-rule">About this site</h2>
+  <blockquote class="home-letter-quote">
+    <p>I write here because writing is how I think.</p>
+    <p>Most posts come from real projects: what I tried, what worked, what surprised me. If a post helps you solve a problem at work tonight, that is the best outcome I can imagine.</p>
+  </blockquote>
+  <p class="home-letter-cta">
+    <a href="/about/" data-plausible-event-name="internal-cta" data-plausible-event-target="home-about">Read the longer letter →</a>
+  </p>
+</section>

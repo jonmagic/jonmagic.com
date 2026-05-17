@@ -18,7 +18,7 @@ How a product was born, from inception to implementation, and distractions to la
 
 1. I was meeting [Steve](http://orderedlist.com/the-team/#steve-smith) and [John](http://orderedlist.com/the-team/john-nunemaker) for lunch and they were talking about how much they disliked the slide sharing options currently available. It was of special interest to them as they do a lot of public speaking and at the time were teaching classes at [Notre Dame](http://nd.edu).
 
-They were dreaming (as they do) of a better way to share presentations with the world. Something elegant, simple, without all the mess. Then reality hit and they realized they just didn’t have the time to build it. Life was too busy, family, client work, teaching, and [Harmony](http://get.harmonyapp.com) ate up all their time, there was just no way they could start working on a new product.
+They were dreaming (as they do) of a better way to share presentations with the world. Something elegant, simple, without all the mess. Then reality hit and they realized they just didn’t have the time to build it. Life was too busy, family, client work, teaching, and Harmony ate up all their time, there was just no way they could start working on a new product.
 
 ### Implementation
 
@@ -33,7 +33,7 @@ The guys taught me test driven development while building Speaker Deck, and over
 
 ### Good Distractions
 
-Almost a year has passed since we started signing up our first beta users and September 26th we launched Speaker Deck to the world! In the past year I ended up going to work for Steve and John and they also hired [Brandon Keepers](http://orderedlist.com/the-team/#brandon-keepers) and [Matt Graham](http://orderedlist.com/the-team/#matt-graham). In that time our team has been doing a lot of consulting work, making our existing product [Harmony](http://get.harmonyapp.com) better, and we even launched [Gauges](http://get.gaug.es), a website analytics service.
+Almost a year has passed since we started signing up our first beta users and September 26th we launched Speaker Deck to the world! In the past year I ended up going to work for Steve and John and they also hired [Brandon Keepers](http://orderedlist.com/the-team/#brandon-keepers) and [Matt Graham](http://orderedlist.com/the-team/#matt-graham). In that time our team has been doing a lot of consulting work, making our existing product Harmony better, and we even launched [Gauges](http://get.gaug.es), a website analytics service.
 
 The entire time we were working on these other projects we were formulating what we wanted Speaker Deck to be and this summer that plan started to solidify and we got back to work on it. The first big thing that needed to happen was [moving Speaker Deck to Heroku and S3](http://jonmagic.com/blog/archives/2011/07/27/moving-speakerdeck-to-heroku/) for hosting.
 

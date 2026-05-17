@@ -25,4 +25,9 @@
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 {# <link rel="icon" href="/animated-favicon.gif" type="image/gif"> #}
 <link rel="stylesheet" href="/css/index.css">
+{%- if kit and kit.length %}
+<link rel="stylesheet" href="/css/post-kit.css">
+{%- elif eyebrow %}
+<link rel="stylesheet" href="/css/post-kit.css">
+{%- endif %}
 <link rel="alternate" type="application/atom+xml" title="JonMagic.com RSS Feed" href="/feed.xml">

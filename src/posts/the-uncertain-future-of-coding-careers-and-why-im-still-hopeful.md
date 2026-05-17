@@ -7,6 +7,29 @@ tags:
 description: >-
   My thoughts on the future of coding careers in the age of AI, and why I believe
   that human creativity and ingenuity will always be in demand.
+accent: violet
+eyebrow: "REFLECTION · 2025"
+disableMerchCta: true
+popular: true
+kit:
+  - label: Follow-up
+    text: Designing Collaborations, Not Just Automations
+    url: /posts/designing-collaborations-not-just-automations/
+    target: designing-collaborations
+    internal: true
+  - label: Follow-up
+    text: How I Work, 2025 Edition
+    url: /posts/how-i-work-2025-edition/
+    target: how-i-work-2025
+    internal: true
+  - label: Hire me
+    text: jonmagic on GitHub
+    url: https://github.com/jonmagic
+    target: github-jonmagic
+  - label: Discuss
+    text: Discussion on this post
+    url: https://github.com/jonmagic/jonmagic.com/discussions
+    target: site-discussions
 ---
 
 A friend of mine, bright, driven, and relatively new to programming, asked me a heavy question the other day. “Did I make a mistake? Did I choose the right career?”

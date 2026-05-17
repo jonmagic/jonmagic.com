@@ -1,21 +1,48 @@
 ---
 layout: layout
-title: Hi, my name is Jon and I'm a husband, father, software developer, and investor.
+title: About
+description: A short letter from Jonathan Hoyt — what I do, what I care about, and how to reach me.
 ---
 
-I have over two decades of experience building businesses, products, and teams. I love to learn, iterate, and fail fast on the path to success. I strive to lead with a servant’s heart and improve the lives of those around me.
+<aside class="about-portrait">
+  <img src="/images/avatars/jonmagic-2023-01-18.webp"
+       alt="Jonathan Hoyt portrait"
+       width="200"
+       height="200"
+       class="about-portrait-img">
+  <p class="about-portrait-caption">Jonathan Hoyt · husband, father, software developer, investor</p>
+</aside>
 
-I am open to new consulting opportunities and advisory roles so reach out if you are looking for someone to help with:
+<section class="about-letter">
 
-- applying AI and ML to solve real business problems
-- improving development processes and shipping velocity
-- product or project planning
-- scaling applications to serve hundreds of thousands or millions of customers
+Hi, I'm jonmagic,
 
-Thank you for your time.
+I used my first computer in 1986 and started building, repairing, and teaching folks how to use them in the early 90s. It has never really been separate from who I am. I built and sold a small IT consultancy, joined GitHub in 2011 through the Ordered List and Speaker Deck acquisition, and I've been at GitHub in one form or another ever since.
+
+I've worked in support, finance, sales, engineering, and security. That path looks a little strange on paper, but it tracks pretty closely with how I learn. I like getting close to an actual problem, understanding who is stuck, and building the smallest thing that helps.
+
+These days I'm a Principal Engineer on GitHub's Safety & Integrity team. The work is more engineering than security operations. I spend a lot of time with datasets, workflows, abuse remediation systems, and tools that help people make better decisions.
+
+A lot of my recent writing is about AI agents because they've changed how I work. I'm less interested in replacing people with automation and more interested in designing collaborations that preserve the thinking in the work.
+
+This site is where I write things down before I forget them. Some posts are practical guides. Some are notes from projects. Some are me trying to explain what changed in how I think about work. I also build small things like [agentconfig.org](https://agentconfig.org) and [thisistheway.to/ai](https://thisistheway.to/ai), and apparently I'm making shirts now.
+
+I'm open to a small amount of advisory or consulting work when it overlaps with problems I know well. Reasonable things to talk to me about:
+
+- applying AI agents to real business problems without breaking trust
+- building engineering systems and workflows for abuse, trust, and safety work
+- turning vague product ideas into a first version that is small enough to ship
+- helping a team understand where the work is getting stuck
+
+Thanks for reading.
+
+_— jonmagic_
 
 ## Contact
 
-- [Send me an email](mailto:jonmagic@gmail.com)
-- [Check out my code on GitHub](https://github.com/jonmagic)
-- [Review my career at LinkedIn](https://www.linkedin.com/in/jonmagic)
+- Email me at [jonmagic@gmail.com](mailto:jonmagic@gmail.com)
+- See the code at [github.com/jonmagic](https://github.com/jonmagic)
+- The closest thing I have to a resume is [linkedin.com/in/jonmagic](https://www.linkedin.com/in/jonmagic)
+- The long version of the career story is in [My First 30 Years in Tech](/posts/my-first-30-years-in-tech/)
+
+</section>

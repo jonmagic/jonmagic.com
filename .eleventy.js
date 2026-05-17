@@ -187,6 +187,12 @@ module.exports = function(eleventyConfig) {
     return collectionApi.getFilteredByGlob('src/projects/*.md');
   });
 
+  // Add a collection for merch designs
+  eleventyConfig.addCollection('merch', function(collectionApi) {
+    const items = collectionApi.getFilteredByGlob('src/merch/*.md');
+    return items.sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
+  });
+
   // Add a custom Nunjucks filter to filter and sort featured posts
   eleventyConfig.addNunjucksFilter('featured', function(posts) {
     if (!Array.isArray(posts)) return [];

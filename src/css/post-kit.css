@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Post art-direction: eyebrow + kit (Receipts strip)
+   Loaded on demand by head.njk when a post sets eyebrow/kit frontmatter.
+   ========================================================================== */
+
+/* Eyebrow */
+
+.post-eyebrow {
+  display: block;
+  margin: 0 0 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* Kit / Receipts strip */
+
+.post-kit {
+  margin: 2rem 0;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--card-border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--border-radius-small);
+  background: var(--subtle-bg);
+}
+
+.post-kit-label {
+  display: block;
+  margin: 0 0 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.post-kit-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.post-kit-item {
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.post-kit-item a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.post-kit-item a:hover,
+.post-kit-item a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.post-kit-item-label {
+  color: var(--muted);
+  margin-right: 0.35rem;
+}

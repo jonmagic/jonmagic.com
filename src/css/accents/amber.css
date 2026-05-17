@@ -1,0 +1,11 @@
+.accent-amber {
+  --accent: #9a6700;
+  --link-hover: #9a6700;
+}
+
+@media (prefers-color-scheme: dark) {
+  .accent-amber {
+    --accent: #d29922;
+    --link-hover: #d29922;
+  }
+}

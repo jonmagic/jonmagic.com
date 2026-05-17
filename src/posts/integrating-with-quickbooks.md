@@ -15,7 +15,7 @@ If you want to integrate with Quickbooks, and especially if you are a developer 
 
 **DISCLAIMER:** I am a former associate of Daniel (and [BehindLogic](http://www.behindlogic.com)) and I got a freebie for writing this post (which is cool cuz I was gonna write it anyway, but don’t tell him)…
 
-I’ve been working on writing [software](http://jonmagic.com/programming/suite) to manage our small IT consultancy, [SabreTech Consulting LLC](http://www.sabretechllc.com) and the time came to be able to integrate with our accounting package, Quickbooks. Awhile back we had tried, unsuccessfully, and so I was not looking forward to it this time around.
+I’ve been working on writing [software](http://jonmagic.com/programming/suite) to manage our small IT consultancy, [SabreTech Consulting LLC](https://web.archive.org/web/2012/http://www.sabretechllc.com) and the time came to be able to integrate with our accounting package, Quickbooks. Awhile back we had tried, unsuccessfully, and so I was not looking forward to it this time around.
 
 But, a friend of mine has been working on writing a [Quickbooks gem](http://www.behindlogic.com) and recently released it to the wild, so I thought I would take a crack at the problem again.
 

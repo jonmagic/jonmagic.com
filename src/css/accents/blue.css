@@ -1,0 +1,11 @@
+.accent-blue {
+  --accent: #0969da;
+  --link-hover: #0969da;
+}
+
+@media (prefers-color-scheme: dark) {
+  .accent-blue {
+    --accent: #58a6ff;
+    --link-hover: #58a6ff;
+  }
+}

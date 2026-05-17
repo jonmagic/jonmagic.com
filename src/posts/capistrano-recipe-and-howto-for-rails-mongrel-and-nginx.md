@@ -11,7 +11,7 @@ description: >-
 
 ### UPDATE: This is outdated due to the release of Capistrano 2… I will work on a new tutorial as soon as I have a project I need to deploy… 1-10-08
 
-All righty then. Recently my firm ([SabreTech](http://www.sabretechllc.com)) got a contract to write and deploy a fairly complicated web app for a local business. Immediately I asked my friend [Xian](http://mintchaos.com) to give me some deployment ideas, and he suggested I use [nginx](http://nginx.net/) as my web server instead of [Apache](http://www.apache.org/) as well as [Slicehost](http://slicehost.com) as my vps host provider…
+All righty then. Recently my firm ([SabreTech](https://web.archive.org/web/2012/http://www.sabretechllc.com)) got a contract to write and deploy a fairly complicated web app for a local business. Immediately I asked my friend [Xian](http://mintchaos.com) to give me some deployment ideas, and he suggested I use [nginx](http://nginx.net/) as my web server instead of [Apache](http://www.apache.org/) as well as [Slicehost](http://slicehost.com) as my vps host provider…
 
 So I set up my Slicehost account and started hacking. About a week later (five hours of work snuck in here and there), I’ve got my vps up and running smoothly. I’ve been using [Capistrano](http://weblog.jamisbuck.org/2006/3/6/switchtower-renamed) for deployment for awhile, but I also wanted to use it to set up my server, and that is when I ran across deprec. [Deprec](http://deprec.rubyforge.org/) is a nice little gem with a ton of capistrano recipes for setting up and deploying a server. It had some great recipes for deploying to [Ubuntu](http://ubuntu.org), so I chose Ubuntu as my OS for my new slice (vps).
 

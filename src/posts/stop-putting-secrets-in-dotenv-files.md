@@ -8,6 +8,27 @@ tags:
 description: >-
   Your .env files are a liability. Two simple patterns for injecting secrets
   from 1Password or macOS Keychain so credentials never touch disk as plaintext.
+accent: blue
+eyebrow: "SECURITY · 2026"
+disableMerchCta: true
+popular: true
+kit:
+  - label: Demo
+    text: jonmagic/secure-env-demo
+    url: https://github.com/jonmagic/secure-env-demo
+    target: secure-env-demo
+  - label: Tool
+    text: 1Password CLI
+    url: https://developer.1password.com/docs/cli/
+    target: 1password-cli
+  - label: Tool
+    text: dotenvx
+    url: https://dotenvx.com
+    target: dotenvx
+  - label: Discuss
+    text: Discussion on this post
+    url: https://github.com/jonmagic/jonmagic.com/discussions
+    target: site-discussions
 ---
 
 > [!NOTE]

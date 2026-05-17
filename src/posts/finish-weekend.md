@@ -13,7 +13,7 @@ While I initially had issues with the concept of Finish Weekend, I’m really gl
 
 ### The Who
 
-My friends at [Collective Idea](http://collectiveidea.com) have apparently been talking about doing a [Finish Weekend](http://finishweekend.com) for a few years and this is the year they made it happen! They put out the word thru Twitter, friends, colleagues, and a ton of people signed up and showed up!
+My friends at [Collective Idea](http://collectiveidea.com) have apparently been talking about doing a Finish Weekend for a few years and this is the year they made it happen! They put out the word thru Twitter, friends, colleagues, and a ton of people signed up and showed up!
 
 I met folks from Detroit, Chicago, South Bend, and even as far away as California! There were programmers, designers, editors, math geeks, marketers, and testers just to name a few.
 
@@ -41,5 +41,5 @@ Of course we’ll need reminded every so often. See you at the next Finish Weeke
 
 ### Links
 
-- Learn more about Finish Weekend at [finishweekend.com](http://finishweekend.com)
+- Learn more about Finish Weekend at finishweekend.com
 - Learn more about the great folks at Collective Idea at [collectiveidea.com](http://collectiveidea.com)

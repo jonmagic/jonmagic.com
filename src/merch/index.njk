@@ -1,0 +1,94 @@
+---
+layout: layout
+title: jonmagic.com merch
+description: Current merch designs from the jonmagic merch workspace.
+---
+
+<p class="page-lede">
+  Current designs from the merch workspace. Public product pages are coming soon,
+  so this page is mostly a preview of the pieces and their variants.
+</p>
+
+<div class="merch-grid">
+  {%- for item in collections.merch -%}
+  <article id="{{ item.fileSlug }}" class="merch-tile merch-tile--{{ item.data.shirt_color or 'cream' }}">
+    {%- set productUrl = item.data.product_url or item.data.teepublic_url -%}
+    {%- if productUrl -%}
+    <a class="merch-tile-preview"
+       href="{{ productUrl }}"
+       target="_blank"
+       rel="noopener"
+       data-plausible-event-name="outbound-cta"
+       data-plausible-event-target="merch-{{ item.fileSlug }}"
+       aria-label="{{ item.data.title }} product page">
+       <img src="{{ item.data.image }}"
+            alt="{{ item.data.title }} design preview"
+            loading="lazy"
+            width="800"
+            height="880">
+    </a>
+    {%- else -%}
+    <div class="merch-tile-preview">
+      <img src="{{ item.data.image }}"
+           alt="{{ item.data.title }} design preview"
+           loading="lazy"
+           width="800"
+           height="880">
+    </div>
+    {%- endif -%}
+    <div class="merch-tile-body">
+      <h2 class="merch-tile-title">{{ item.data.title }}</h2>
+      {%- if item.data.description -%}
+      <p class="merch-tile-blurb">{{ item.data.description }}</p>
+      {%- endif -%}
+      {%- if item.data.colorways and item.data.colorways.length -%}
+      <p class="merch-tile-colorways">
+        <span class="merch-tile-label">colorways</span>
+        {{ item.data.colorways | join(" · ") }}
+      </p>
+      {%- endif -%}
+      {%- if item.data.variants and item.data.variants.length -%}
+      <div class="merch-variants" aria-label="{{ item.data.title }} variants">
+        {%- for variant in item.data.variants -%}
+        <figure class="merch-variant merch-tile--{{ variant.shirt_color or item.data.shirt_color or 'cream' }}">
+          <div class="merch-variant-preview">
+            <img src="{{ variant.image }}"
+                 alt="{{ item.data.title }} {{ variant.name }} variant"
+                 loading="lazy"
+                 width="360"
+                 height="396">
+          </div>
+          <figcaption>
+            <span class="merch-variant-name">{{ variant.name }}</span>
+            {%- if variant.description -%}
+            <span class="merch-variant-desc">{{ variant.description }}</span>
+            {%- endif -%}
+          </figcaption>
+        </figure>
+        {%- endfor -%}
+      </div>
+      {%- endif -%}
+      <p class="merch-tile-actions">
+        {%- if productUrl -%}
+        <a class="merch-tile-buy"
+           href="{{ productUrl }}"
+           target="_blank"
+           rel="noopener"
+           data-plausible-event-name="outbound-cta"
+           data-plausible-event-target="merch-{{ item.fileSlug }}-buy">View product page →</a>
+        {%- else -%}
+        <span class="merch-tile-pending">Product page coming soon</span>
+        {%- endif -%}
+        {%- if item.data.originating_post -%}
+        <a class="merch-tile-source" href="{{ item.data.originating_post }}">From this post →</a>
+        {%- endif -%}
+      </p>
+    </div>
+  </article>
+  {%- endfor -%}
+</div>
+
+<p class="merch-footnote">
+  If anything looks off, email me at
+  <a href="mailto:jonmagic@gmail.com">jonmagic@gmail.com</a> and I will help.
+</p>
