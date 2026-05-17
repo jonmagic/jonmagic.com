@@ -15,12 +15,12 @@
     {%- endfor -%}
   {%- endif -%}
   {%- if merchTile -%}
-  <a class="post-merch-cta post-merch-cta--contextual"
+  <a class="post-merch-cta post-merch-cta--contextual post-merch-cta--{{ merchTile.data.shirt_color or 'cream' }}"
      href="/merch/#{{ merchTile.fileSlug }}"
      aria-label="{{ merchTile.data.title }}. See it in the merch shop."
      data-plausible-event-name="internal-cta"
      data-plausible-event-target="post-merch-{{ merchTile.fileSlug }}">
-    <img class="post-merch-thumb" src="{{ merchTile.data.image }}" alt="" width="120" height="132" loading="lazy">
+    <img class="post-merch-thumb" src="{{ merchTile.data.image }}" alt="" width="120" height="132" loading="eager">
     <span class="post-merch-copy">
       <strong>{{ merchTile.data.title }}</strong>
       <span>See it in the merch shop →</span>

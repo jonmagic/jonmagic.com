@@ -100,7 +100,7 @@ title: jonmagic.com
        data-plausible-event-name="internal-cta"
        data-plausible-event-target="home-merch-{{ item.fileSlug }}"
        aria-label="{{ item.data.title }}, see in shop">
-      <img src="{{ item.data.image }}" alt="" loading="lazy" width="400" height="440">
+      <img src="{{ item.data.image }}" alt="" loading="eager" width="400" height="440">
       <span class="home-merch-title">{{ item.data.title }}</span>
     </a>
     {% endif %}{% endfor %}
