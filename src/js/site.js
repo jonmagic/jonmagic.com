@@ -19,6 +19,25 @@ document.addEventListener('DOMContentLoaded', function() {
     yearSpan.textContent = new Date().getFullYear();
   }
 
+  document.addEventListener('click', function(event) {
+    if (typeof window.plausible !== 'function') return;
+    if (!event.target || typeof event.target.closest !== 'function') return;
+
+    var eventLink = event.target.closest('[data-plausible-event-name]');
+    if (!eventLink) return;
+
+    var eventName = eventLink.getAttribute('data-plausible-event-name');
+    if (!eventName) return;
+
+    var eventTarget = eventLink.getAttribute('data-plausible-event-target') || eventLink.getAttribute('href') || 'unknown';
+    var props = { target: eventTarget };
+    if (eventLink.href) {
+      props.url = eventLink.href;
+    }
+
+    window.plausible(eventName, { props: props });
+  });
+
   // MS-DOS style typing effect with cycling phrases
   var dosTyping = document.getElementById('dos-typing');
   if (dosTyping) {
