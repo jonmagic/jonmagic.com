@@ -10,6 +10,7 @@ description: >-
   from 1Password or macOS Keychain so credentials never touch disk as plaintext.
 accent: blue
 eyebrow: "§ FIELD GUIDE · SECURITY"
+merch: evidence-over-vibes
 disableMerchCta: true
 popular: true
 kit:

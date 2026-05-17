@@ -8,14 +8,13 @@
     <li>Follow me on <a href="https://github.com/jonmagic" data-plausible-event-name="outbound-cta" data-plausible-event-target="github-jonmagic">GitHub</a>.</li>
   </ul>
 
-  {%- if not disableMerchCta -%}
-    {%- set merchTile = false -%}
-    {%- if merch -%}
-      {%- for item in collections.merch -%}
-        {%- if item.fileSlug == merch -%}{%- set merchTile = item -%}{%- endif -%}
-      {%- endfor -%}
-    {%- endif -%}
-    {%- if merchTile -%}
+  {%- set merchTile = false -%}
+  {%- if merch -%}
+    {%- for item in collections.merch -%}
+      {%- if item.fileSlug == merch -%}{%- set merchTile = item -%}{%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+  {%- if merchTile -%}
   <a class="post-merch-cta post-merch-cta--contextual"
      href="/merch/#{{ merchTile.fileSlug }}"
      aria-label="{{ merchTile.data.title }}. See it in the merch shop."
@@ -27,7 +26,7 @@
       <span>See it in the merch shop →</span>
     </span>
   </a>
-    {%- else -%}
+  {%- elif not disableMerchCta -%}
   <a class="post-merch-cta"
      href="/merch/"
      aria-label="Browse jonmagic.com merch"
@@ -38,7 +37,6 @@
       <span>Browse the merch shop →</span>
     </span>
   </a>
-    {%- endif -%}
   {%- endif -%}
 
   <p class="post-cta-thanks">Thanks for reading — it means a lot.</p>
