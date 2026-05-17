@@ -11,7 +11,7 @@ The site CSS is intentionally small and split by ownership. `index.css` is the o
 2. `tokens.css`: site-wide colors, fonts, spacing, radii, shadows, and measures.
 3. `prose.css`: Markdown and raw element styles for headings, links, lists, code, tables, images, and alerts.
 4. `layout.css`: site wrapper, navigation, page, footer, and tiny layout utilities.
-5. `components.css`: cards, featured list, post CTA, social links, avatars, and typing effects.
+5. `components.css`: cards, featured list, post CTA, social links, avatars, and small UI effects.
 6. `search.css`: semantic search page and search-result-specific styles.
 7. `vendor-prism.css`: Prism syntax highlighting, kept separate because it is vendored/customized.
 

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5000 5500" role="img" aria-labelledby="title desc">
   <title id="title">Evidence over vibes</title>
-  <desc id="desc">Field-manual style three-line statement with a stamped accent rule.</desc>
+  <desc id="desc">Three-line statement with a stamped accent rule.</desc>
   <defs>
     <style>
       .stamp {
@@ -19,7 +19,7 @@
       .accent { fill: #c43e2a; }
     </style>
   </defs>
-  <text class="label" x="2500" y="1700" font-size="200">§ FIELD MANUAL</text>
+  <text class="label" x="2500" y="1700" font-size="200">EVIDENCE LOG</text>
   <text class="stamp ink" x="2500" y="2700" font-size="780">EVIDENCE</text>
   <text class="stamp ink" x="2500" y="3300" font-size="420">OVER</text>
   <text class="stamp accent" x="2500" y="4000" font-size="780">VIBES</text>

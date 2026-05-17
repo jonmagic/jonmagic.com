@@ -5,14 +5,13 @@
 */
 
 :root {
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-mono: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  --font-serif: "Iowan Old Style", "Charter", "Source Serif Pro", "Iowan Old Style BT", Georgia, "Times New Roman", serif;
+  --font-sans: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-brand: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-editor: Menlo, Monaco, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", monospace;
+  --font-mono: var(--font-editor);
 
   --bg: #fefcf9;
   --text: #111111;
-  /* Field Manual: red is the global accent. Blue is preserved as --accent-secondary
-     for code affordances and the "blue" art-direction accent variant. */
   --accent: #c43e2a;
   --accent-secondary: #0366d6;
   --muted: #666;
@@ -34,7 +33,9 @@
   --field-focus-ring: rgba(196, 62, 42, 0.12);
   --badge-bg: var(--accent);
   --badge-text: #ffffff;
-  --nav-bg: #f5f2f0;
+  --nav-bg: rgba(255, 255, 255, 0.82);
+  --nav-border: rgba(17, 17, 17, 0.12);
+  --nav-shadow: 0 12px 36px rgba(17, 17, 17, 0.08);
 
   --success: #28a745;
   --info: #17a2b8;
@@ -84,7 +85,9 @@
     --field-focus-ring: rgba(255, 107, 87, 0.15);
     --badge-bg: #5a1a13;
     --badge-text: #ff8a78;
-    --nav-bg: #272822;
+    --nav-bg: rgba(22, 27, 34, 0.86);
+    --nav-border: rgba(240, 246, 252, 0.13);
+    --nav-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
     --error-bg: #2d1b1f;
     --error-text: #f56565;
     --error-border: #4a1a1f;

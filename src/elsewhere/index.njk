@@ -13,7 +13,7 @@ description: Other places I run, publish, and used to work.
 {% macro elsewhereSection(label, slug) -%}
 <section class="elsewhere-section">
   <h2 class="elsewhere-heading">
-    <span class="elsewhere-heading-mark">§</span> {{ label }}
+    {{ label }}
   </h2>
   <ul class="elsewhere-list">
     {%- for item in collections.elsewhere -%}

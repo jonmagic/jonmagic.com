@@ -4,24 +4,24 @@
    ========================================================================== */
 h1, h2, h3 {
   margin-top: var(--spacing);
-  font-family: var(--font-mono);
+  font-family: var(--font-brand);
+  letter-spacing: -0.035em;
 }
 
 h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
-/* Field Manual: long-form prose is serif; site chrome and headings stay mono. */
 .content p,
 .content li,
 .content blockquote,
 .content dl,
 .content figcaption {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   line-height: 1.7;
 }
 
-/* Keep monospace inside prose unaffected by the serif inheritance. */
+/* Keep monospace inside prose unaffected by body/prose typography. */
 .content code,
 .content pre,
 .content kbd,

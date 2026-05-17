@@ -10,5 +10,5 @@ teepublic_url: https://www.teepublic.com/user/jonmagic
 originating_post: /posts/stop-putting-secrets-in-dotenv-files/
 order: 5
 permalink: false
-description: Field-manual stamp. For the engineer who would rather see the screenshot than hear the take.
+description: For the engineer who would rather see the screenshot than hear the take.
 ---

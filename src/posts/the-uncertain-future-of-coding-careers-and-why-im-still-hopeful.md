@@ -8,7 +8,7 @@ description: >-
   My thoughts on the future of coding careers in the age of AI, and why I believe
   that human creativity and ingenuity will always be in demand.
 accent: violet
-eyebrow: "§ REFLECTION · 2025"
+eyebrow: "REFLECTION · 2025"
 disableMerchCta: true
 popular: true
 kit:

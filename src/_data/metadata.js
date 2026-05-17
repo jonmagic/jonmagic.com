@@ -1,6 +1,6 @@
 module.exports = {
   title: "jonmagic.com",
-  description: "Field notes from Jonathan Hoyt on shipping software with AI agents, building teams, and the occasional shirt.",
+  description: "Writing from Jonathan Hoyt on shipping software with AI agents, building teams, and the occasional shirt.",
   tagline: "Evidence over vibes. Transcripts over memory.",
   url: "https://jonmagic.com",
   author: {

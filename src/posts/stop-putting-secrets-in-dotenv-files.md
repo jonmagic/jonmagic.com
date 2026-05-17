@@ -9,7 +9,7 @@ description: >-
   Your .env files are a liability. Two simple patterns for injecting secrets
   from 1Password or macOS Keychain so credentials never touch disk as plaintext.
 accent: blue
-eyebrow: "§ FIELD GUIDE · SECURITY"
+eyebrow: "SECURITY · 2026"
 merch: evidence-over-vibes
 disableMerchCta: true
 popular: true

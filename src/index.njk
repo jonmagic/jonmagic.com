@@ -5,7 +5,7 @@ title: jonmagic.com
 
 {# Section 1: Featured #}
 <section class="home-section home-featured">
-  <h2 class="section-rule"><span class="section-rule-mark">§ 1</span> Featured writing</h2>
+  <h2 class="section-rule">Featured writing</h2>
   {% set featured = collections.posts | featured %}
   <div class="featured-grid">
     {% for post in featured %}
@@ -34,7 +34,7 @@ title: jonmagic.com
 
 {# Section 2: Projects (top 3 by order asc) #}
 <section class="home-section home-projects">
-  <h2 class="section-rule"><span class="section-rule-mark">§ 2</span> Projects shipping right now</h2>
+  <h2 class="section-rule">Projects shipping right now</h2>
   {% set sortedProjects = collections.projects | sort(false, false, 'data.order') %}
   <div class="home-projects-grid">
     {% for project in sortedProjects %}{% if loop.index0 < 3 %}
@@ -69,7 +69,7 @@ title: jonmagic.com
 
 {# Section 3: Recent writing (last 8 reverse-chrono, year markers when year changes) #}
 <section class="home-section home-recent">
-  <h2 class="section-rule"><span class="section-rule-mark">§ 3</span> Recent writing</h2>
+  <h2 class="section-rule">Recent writing</h2>
   {% set recent = collections.posts | reverse %}
   <ol class="writing-list home-writing-list">
     {% for post in recent %}{% if loop.index0 < 8 %}
@@ -92,7 +92,7 @@ title: jonmagic.com
 
 {# Section 4: Merch (3 tiles) #}
 <section class="home-section home-merch">
-  <h2 class="section-rule"><span class="section-rule-mark">§ 4</span> Merch</h2>
+  <h2 class="section-rule">Merch</h2>
   <div class="home-merch-grid">
     {% for item in collections.merch %}{% if loop.index0 < 3 %}
     <a class="home-merch-tile merch-tile--{{ item.data.shirt_color or 'cream' }}"
@@ -111,7 +111,7 @@ title: jonmagic.com
 {# Section 5: Elsewhere (4 curated tiles) #}
 {% set elsewhereOrder = ['agentconfig', 'thisistheway', 'theprogrammingbutler', 'teepublic'] %}
 <section class="home-section home-elsewhere">
-  <h2 class="section-rule"><span class="section-rule-mark">§ 5</span> Elsewhere</h2>
+  <h2 class="section-rule">Elsewhere</h2>
   <div class="home-elsewhere-grid">
     {% for slug in elsewhereOrder %}
       {% for item in collections.elsewhere %}
@@ -137,10 +137,10 @@ title: jonmagic.com
 
 {# Section 6: Letter teaser #}
 <section class="home-section home-letter">
-  <h2 class="section-rule"><span class="section-rule-mark">§ 6</span> About this site</h2>
+  <h2 class="section-rule">About this site</h2>
   <blockquote class="home-letter-quote">
     <p>I write here because writing is how I think.</p>
-    <p>Most posts are field notes from real projects: what I tried, what worked, what surprised me. If a post helps you solve a problem at work tonight, that is the best outcome I can imagine.</p>
+    <p>Most posts come from real projects: what I tried, what worked, what surprised me. If a post helps you solve a problem at work tonight, that is the best outcome I can imagine.</p>
   </blockquote>
   <p class="home-letter-cta">
     <a href="/about/" data-plausible-event-name="internal-cta" data-plausible-event-target="home-about">Read the longer letter →</a>
