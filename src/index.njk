@@ -37,6 +37,7 @@ title: jonmagic.com
   <h2 class="section-rule">Merch</h2>
   <div class="home-merch-grid">
     {% for item in collections.merch %}
+    {% if not item.data.hide_from_home %}
     <a class="home-merch-tile merch-tile--{{ item.data.shirt_color or 'cream' }}{% if item.data.image_dark %} home-merch-tile--theme-aware{% endif %}"
        href="/merch/#{{ item.fileSlug }}"
        data-plausible-event-name="internal-cta"
@@ -50,6 +51,7 @@ title: jonmagic.com
       </picture>
       <span class="home-merch-title">{{ item.data.title }}</span>
     </a>
+    {% endif %}
     {% endfor %}
   </div>
   <p class="home-section-more"><a href="/merch/">All merch →</a></p>

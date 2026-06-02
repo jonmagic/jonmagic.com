@@ -6,7 +6,7 @@ product_url: "https://www.teepublic.com/t-shirt/92905055-the-jonmagic-shield-dar
 colorways:
   - dark shirts
 order: 2
+hide_from_home: true
 permalink: false
 description: A jonmagic crest with a capital JM, because every tiny personal empire deserves a shield.
 ---
-

@@ -32,6 +32,7 @@ variants:
     description: White-ink version for dark shirts.
 originating_post: /posts/context-rules-everything-around-me/
 order: 3
+hide_from_home: true
 permalink: false
 description: A Wu-Tang nod for a world where context is the new cash, and context wins out over prompt engineering.
 ---
