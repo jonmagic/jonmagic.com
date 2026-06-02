@@ -31,7 +31,7 @@ variants:
     product_url: "https://www.teepublic.com/t-shirt/92437098-cream?store_id=4463011"
     description: White-ink version for dark shirts.
 originating_post: /posts/context-rules-everything-around-me/
-order: 1
+order: 3
 permalink: false
 description: A Wu-Tang nod for a world where context is the new cash, and context wins out over prompt engineering.
 ---

@@ -17,7 +17,7 @@ variants:
     shirt_color: black
     product_url: "https://www.teepublic.com/t-shirt/92387120-im-so-old-i-learned-how-to-code-ruby?store_id=4463011"
     description: Ruby-specific TeePublic variant.
-order: 2
+order: 4
 permalink: false
 description: A CRT-terminal joke for anyone who remembers learning to code before agents came along.
 ---
