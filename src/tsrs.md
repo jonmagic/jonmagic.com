@@ -28,7 +28,7 @@ The other half was feedback.
 
 They needed the agent to speak back in short [ELI5](https://simple.wikipedia.org/wiki/ELI5) updates. Not terminal output. Not a long explanation. Just enough audio to know work was starting, something had changed, or a step was ready for them to try.
 
-The first version was not an app. It was a project-level instruction that told the agent when to speak and how short to keep it.
+The first version was not an app. It was a project-level agent instruction that told the agent when to speak and how short to keep it.
 
 ## The missing feedback loop
 
