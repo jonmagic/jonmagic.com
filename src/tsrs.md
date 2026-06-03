@@ -52,9 +52,10 @@ The goal is audio feedback on demand, not constant interruption.
 
 Paste this into your agent instructions if you want agents to send updates to TSRS. It assumes the `relay` command is available on your `PATH`.
 
-<div class="tsrs-copy-panel">
-  <button class="tsrs-copy-button" type="button" data-copy-target="tsrs-agent-instructions">Copy instructions</button>
-  <textarea id="tsrs-agent-instructions" class="tsrs-instructions" readonly rows="24">## Tri-State Relay Service updates
+<button class="tsrs-copy-button" type="button" data-copy-next-code>Copy instructions</button>
+
+````md
+## Tri-State Relay Service updates
 
 Use short Tri-State Relay Service updates so I can follow agent progress without reading the terminal. Do not skip these updates during tool-heavy, multi-step, or long-running work unless the task is a single direct answer with no tool use.
 
@@ -84,8 +85,8 @@ relay \
 
 Use `--type complete` for completion updates and `--priority high` only when the message needs prompt human attention. Include `--cwd` when safe so the source context can be revealed later. If `relay` is missing or the TSRS command fails, do not spend time debugging it during unrelated work. Fall back to a short text status message and continue the task.
 
-Do not call `/usr/bin/say` directly from the CLI. TSRS owns playback so multiple agent sessions share one safe speaker.</textarea>
-</div>
+Do not call `/usr/bin/say` directly from the CLI. TSRS owns playback so multiple agent sessions share one safe speaker.
+````
 
 ## What it is right now
 

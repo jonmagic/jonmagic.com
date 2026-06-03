@@ -306,10 +306,6 @@ img.avatar {
   font-size: 0.95rem;
 }
 
-.tsrs-copy-panel {
-  margin: 1.5rem 0 2rem;
-}
-
 .tsrs-copy-button {
   display: inline-flex;
   align-items: center;
@@ -329,22 +325,6 @@ img.avatar {
 .tsrs-copy-button:focus-visible {
   color: var(--text);
   border-color: var(--accent);
-}
-
-.tsrs-instructions {
-  width: 100%;
-  min-height: 32rem;
-  padding: 1rem;
-  color: var(--text);
-  background: var(--code-block-bg);
-  border: 1px solid var(--card-border);
-  border-left: 6px solid var(--accent);
-  border-radius: var(--border-radius-medium);
-  box-shadow: var(--shadow-small);
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  line-height: 1.5;
-  resize: vertical;
 }
 
 @media (max-width: 720px) {
