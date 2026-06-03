@@ -20,6 +20,29 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   document.addEventListener('click', function(event) {
+    var copyButton = event.target && typeof event.target.closest === 'function'
+      ? event.target.closest('[data-copy-target]')
+      : null;
+    if (copyButton) {
+      var targetId = copyButton.getAttribute('data-copy-target');
+      var target = targetId ? document.getElementById(targetId) : null;
+      if (!target || typeof target.select !== 'function') return;
+
+      target.select();
+      target.setSelectionRange(0, target.value.length);
+
+      navigator.clipboard.writeText(target.value).then(function() {
+        var originalText = copyButton.textContent;
+        copyButton.textContent = 'Copied';
+        setTimeout(function() {
+          copyButton.textContent = originalText;
+        }, 2000);
+      }).catch(function() {
+        copyButton.textContent = 'Copy failed';
+      });
+      return;
+    }
+
     if (typeof window.plausible !== 'function') return;
     if (!event.target || typeof event.target.closest !== 'function') return;
 

@@ -166,6 +166,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setLibrary('md', mdLib);
 
   eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("src/downloads");
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy({ "src/images/favicon.ico": "favicon.ico" });
   eleventyConfig.addPassthroughCopy({ "src/images/animated-favicon.gif": "animated-favicon.gif" });

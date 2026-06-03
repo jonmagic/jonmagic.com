@@ -215,6 +215,150 @@ img.avatar {
   color: var(--muted);
 }
 
+/* TSRS page
+   ========================================================================== */
+.tsrs-hero {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  align-items: center;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  margin: 1.5rem 0 2rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-medium);
+}
+
+.tsrs-icon {
+  width: 160px;
+  height: 160px;
+  margin: 0;
+  border-radius: 32px;
+  box-shadow: var(--shadow-medium);
+}
+
+.content .tsrs-icon {
+  margin: 0;
+}
+
+.tsrs-kicker {
+  margin: 0 0 0.4rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.tsrs-deck {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  color: var(--text);
+}
+
+.tsrs-download-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.1rem;
+  margin: 0 0 1rem;
+  color: var(--accent-text);
+  background: var(--accent);
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 8px 20px rgba(196, 62, 42, 0.22);
+}
+
+.tsrs-download-button:hover,
+.tsrs-download-button:focus-visible {
+  color: var(--accent-text);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.tsrs-hotkey-callout {
+  padding: 1rem;
+  margin: 0 0 0.8rem;
+  background: var(--subtle-bg);
+  border: 1px solid var(--subtle-border);
+  border-left: 6px solid var(--accent);
+  border-radius: var(--border-radius-medium);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.tsrs-hotkey-callout kbd {
+  display: inline-block;
+  margin: 0 0.1rem;
+  padding: 0.15rem 0.35rem;
+  border: 1px solid var(--card-border);
+  border-bottom-width: 2px;
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.85em;
+}
+
+.tsrs-caveat {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.tsrs-copy-panel {
+  margin: 1.5rem 0 2rem;
+}
+
+.tsrs-copy-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 0.75rem;
+  padding: 0.65rem 0.9rem;
+  color: var(--accent);
+  background: var(--subtle-bg);
+  border: 1px solid var(--subtle-border);
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-weight: 700;
+}
+
+.tsrs-copy-button:hover,
+.tsrs-copy-button:focus-visible {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.tsrs-instructions {
+  width: 100%;
+  min-height: 32rem;
+  padding: 1rem;
+  color: var(--text);
+  background: var(--code-block-bg);
+  border: 1px solid var(--card-border);
+  border-left: 6px solid var(--accent);
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--shadow-small);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+@media (max-width: 720px) {
+  .tsrs-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .tsrs-icon {
+    width: 128px;
+    height: 128px;
+    border-radius: 28px;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   .project-summary,
   .project-summary p,
