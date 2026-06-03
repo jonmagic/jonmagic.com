@@ -306,6 +306,21 @@ img.avatar {
   font-size: 0.95rem;
 }
 
+.tsrs-insight {
+  padding: clamp(1rem, 3vw, 1.35rem);
+  margin: 1.5rem 0;
+  color: var(--text);
+  background:
+    linear-gradient(135deg, rgba(196, 62, 42, 0.12), rgba(196, 62, 42, 0.04)),
+    var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-left: 6px solid var(--accent);
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--shadow-small);
+  font-size: 1.08rem;
+  font-weight: 600;
+}
+
 .tsrs-copy-panel {
   margin: 1.5rem 0 2rem;
 }

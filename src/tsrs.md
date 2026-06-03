@@ -36,7 +36,7 @@ That pattern worked because the updates were intentional. The agent did not narr
 
 After about an hour of using it with my kid, I noticed it helped me too.
 
-Audio triggered a different part of my brain than text on a screen. It made the agent's state easier to re-enter. That connected to a problem I kept running into with my own work, where I might have multiple agents running but I can only focus on one project at a time.
+<p class="tsrs-insight">Audio triggered a different part of my brain than text on a screen. It made the agent's state easier to re-enter. That connected to a problem I kept running into with my own work, where I might have multiple agents running but I can only focus on one project at a time.</p>
 
 The important part is not just that the message is audio. It is that the audio arrives when I ask for it, from the line I am ready to hear, without turning every agent into a noisy interruption machine.
 
