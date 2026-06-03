@@ -18,11 +18,11 @@ permalink: /tsrs/
   </div>
 </section>
 
+## It started with my kid
+
 I started building Tri-State Relay Service because I was trying to help my 8yo kid make their own game with AI.
 
 Voice input made the collaboration feel possible in a way typing did not. They could speak to an agent like Copilot or Claude and stay in the flow of describing the game they wanted to make. That solved half of the loop.
-
-## It started with my kid
 
 The other half was feedback.
 
