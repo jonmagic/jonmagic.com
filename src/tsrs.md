@@ -46,7 +46,8 @@ TSRS is a local macOS toolbar app and CLI for brief agent status updates.
 
 Agents send short, intentional updates to a local relay queue. Each project or context gets a line. The app stays quiet by default while I am focused. When I am ready to switch context, I use the hotkey to hear the next useful update and move to that line.
 
-The tri-state part is the mental model: an agent line is either quiet while I am focused somewhere else, queued when it has something worth hearing, or active when I choose to listen and switch into that context.
+> [!NOTE]
+> The tri-state part is the mental model: an agent line is either quiet while I am focused somewhere else, queued when it has something worth hearing, or active when I choose to listen and switch into that context.
 
 The goal is audio feedback on demand, not constant interruption.
 
