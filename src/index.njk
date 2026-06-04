@@ -32,7 +32,20 @@ title: jonmagic.com
   </div>
 </section>
 
-{# Section 2: Merch #}
+{# Section 2: Tri-State Relay Service #}
+<section class="home-section home-tsrs">
+  <h2 class="section-rule">Now shipping</h2>
+  <div class="tsrs-hero">
+    <img class="tsrs-icon" src="/images/tsrs/AppIcon.png" alt="Tri-State Relay Service app icon" width="160" height="160">
+    <div class="tsrs-hero-copy">
+      <p class="tsrs-kicker">Tri-State Relay Service</p>
+      <p class="tsrs-deck">A free macOS relay for hearing short agent updates when you are ready for them.</p>
+      <a class="tsrs-download-button" href="/tsrs/" data-plausible-event-name="internal-cta" data-plausible-event-target="home-tsrs">Download and get started</a>
+    </div>
+  </div>
+</section>
+
+{# Section 3: Merch #}
 <section class="home-section home-merch">
   <h2 class="section-rule">Merch</h2>
   <div class="home-merch-grid">
@@ -57,10 +70,10 @@ title: jonmagic.com
   <p class="home-section-more"><a href="/merch/">All merch →</a></p>
 </section>
 
-{# Section 3: Projects shipping right now (top 3) #}
+{# Section 4: Projects shipping right now (top 3) #}
 <section class="home-section home-projects">
   <h2 class="section-rule">Projects shipping right now</h2>
-  {% set homeProjectOrder = ['thisistheway', 'agentconfig', 'copilot-sessions'] %}
+  {% set homeProjectOrder = ['tri-state-relay-service', 'thisistheway', 'agentconfig'] %}
   <div class="home-projects-grid">
     {% for slug in homeProjectOrder %}
     {% for project in collections.projects %}
@@ -96,7 +109,7 @@ title: jonmagic.com
   <p class="home-section-more"><a href="/projects/">All projects →</a></p>
 </section>
 
-{# Section 4: Recent writing (last 8 reverse-chrono, year markers when year changes) #}
+{# Section 5: Recent writing (last 8 reverse-chrono, year markers when year changes) #}
 <section class="home-section home-recent">
   <h2 class="section-rule">Recent writing</h2>
   {% set recent = collections.posts | reverse %}
@@ -119,7 +132,7 @@ title: jonmagic.com
   <p class="home-section-more"><a href="/posts/">All {{ collections.posts.length }} posts →</a></p>
 </section>
 
-{# Section 5: Letter teaser #}
+{# Section 6: Letter teaser #}
 <section class="home-section home-letter">
   <h2 class="section-rule">About this site</h2>
   <blockquote class="home-letter-quote">
