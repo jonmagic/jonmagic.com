@@ -20,6 +20,40 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   document.addEventListener('click', function(event) {
+    var copyButton = event.target && typeof event.target.closest === 'function'
+      ? event.target.closest('[data-copy-target], [data-copy-next-code]')
+      : null;
+    if (copyButton) {
+      var targetId = copyButton.getAttribute('data-copy-target');
+      var target = targetId ? document.getElementById(targetId) : null;
+      var text = '';
+
+      if (target && typeof target.select === 'function') {
+        target.select();
+        target.setSelectionRange(0, target.value.length);
+        text = target.value;
+      } else if (copyButton.hasAttribute('data-copy-next-code')) {
+        var nextElement = copyButton.nextElementSibling;
+        var codeBlock = nextElement && nextElement.matches('pre')
+          ? nextElement.querySelector('code')
+          : null;
+        text = codeBlock ? codeBlock.textContent : '';
+      }
+
+      if (!text) return;
+
+      navigator.clipboard.writeText(text).then(function() {
+        var originalText = copyButton.textContent;
+        copyButton.textContent = 'Copied';
+        setTimeout(function() {
+          copyButton.textContent = originalText;
+        }, 2000);
+      }).catch(function() {
+        copyButton.textContent = 'Copy failed';
+      });
+      return;
+    }
+
     if (typeof window.plausible !== 'function') return;
     if (!event.target || typeof event.target.closest !== 'function') return;
 
