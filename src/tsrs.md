@@ -108,7 +108,9 @@ agent sessions share one safe speaker.
 
 ## What it is right now
 
-It is early, experimental, and mostly built around my own workflow. It is useful if you run multiple agents and want a quieter way to know when one needs attention.
+It is early, experimental, and mostly built around my own workflow. It can be useful even with one agent because the spoken update gives you another way to re-enter the work.
+
+If all you want is one agent speaking out loud, you can recreate a lot of this with an agent instruction and the macOS `say` command. TSRS is for the version where I want queued updates, named lines, and audio only when I ask for it.
 
 The current download is a macOS arm64 ZIP.
 
