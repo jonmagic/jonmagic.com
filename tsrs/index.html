@@ -109,7 +109,8 @@
 <h2 id="what-tsrs-does" tabindex="-1"><a class="heading-anchor" href="#what-tsrs-does" aria-hidden="true">#</a> What TSRS does</h2>
 <p>TSRS is a local macOS toolbar app and CLI for brief agent status updates.</p>
 <p>Agents send short, intentional updates to a local relay queue. Each project or context gets a line. The app stays quiet by default while I am focused. When I am ready to switch context, I use the hotkey to hear the next useful update and move to that line.</p>
-<p>The tri-state part is the mental model: an agent line is either quiet while I am focused somewhere else, queued when it has something worth hearing, or active when I choose to listen and switch into that context.</p>
+<div class="markdown-alert markdown-alert-note"><p>The tri-state part is the mental model: an agent line is either quiet while I am focused somewhere else, queued when it has something worth hearing, or active when I choose to listen and switch into that context.</p>
+</div>
 <p>The goal is audio feedback on demand, not constant interruption.</p>
 <h2 id="add-it-to-your-agent-instructions" tabindex="-1"><a class="heading-anchor" href="#add-it-to-your-agent-instructions" aria-hidden="true">#</a> Add it to your agent instructions</h2>
 <p>Paste this into your agent instructions if you want agents to send updates to TSRS. It assumes the <code>relay</code> command is available on your <code>PATH</code>.</p>
