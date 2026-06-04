@@ -3,7 +3,7 @@ layout: layout
 title: Tri-State Relay Service
 description: >-
   A small macOS app for hearing short agent updates that make it easier to
-  re-enter the work, inspired by helping my kid code with AI.
+  re-enter the work, inspired by a family AI coding project.
 permalink: /tsrs/
 ---
 
@@ -16,9 +16,9 @@ permalink: /tsrs/
   </div>
 </section>
 
-## It started with my kid
+## It started with a game
 
-I started building this because I was trying to help my 8yo kid make their own game with AI.
+I started building this while helping my 8yo make their own game with AI.
 
 Voice input made the collaboration feel possible in a way typing did not. They could speak to an agent like Copilot or Claude and stay in the flow of describing the game they wanted to make. That solved half of the loop.
 
@@ -32,7 +32,7 @@ The first version was not an app. It was a project-level agent instruction that 
 
 That pattern worked because the updates were intentional. The agent did not narrate every command or read a transcript of its terminal output. It said something useful before a work slice, at key checkpoints, when blocked, and when something was ready for feedback or user testing.
 
-After about an hour of using it with my kid, I noticed it helped me too.
+After about an hour of using it together, I noticed it helped me too.
 
 **Audio triggered a different part of my brain than text on a screen. It made the agent's state easier to re-enter.** That connected to a problem I kept running into with my own work, where I might have multiple agents running but I can only focus on one project at a time.
 
