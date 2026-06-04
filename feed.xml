@@ -4,12 +4,46 @@
   <subtitle>Writing from Jonathan Hoyt on shipping software with AI agents, building teams, and the occasional shirt.</subtitle>
   <link href="https://jonmagic.com/feed.xml" rel="self"/>
   <link href="https://jonmagic.com"/>
-  <updated>2026-04-12T00:00:00Z</updated>
+  <updated>2026-06-04T00:00:00Z</updated>
   <id>https://jonmagic.com/</id>
   <author>
     <name>Jonathan Hoyt</name>
     <email>jonmagic@gmail.com</email>
   </author>
+  
+  <entry>
+    <title>The Feedback Loop I Was Missing</title>
+    <link href="https://jonmagic.com/posts/the-feedback-loop-i-was-missing/"/>
+    <updated>2026-06-04T00:00:00Z</updated>
+    <id>https://jonmagic.com/posts/the-feedback-loop-i-was-missing/</id>
+    <content type="html">&lt;p&gt;This last weekend I was doing my best to live in the moment and my daughter asked me if we could play Minecraft. We did for an hour or two and then, inspired by a conversation with a friend, I asked if she wanted to build her own Minecraft like game.&lt;/p&gt;
+&lt;p&gt;She was excited about the idea so I spent a few minutes with GitHub Copilot and put together an &lt;code&gt;AGENTS.md&lt;/code&gt; that had the rough draft of the milestones to build a game like, instructions to red-green-refactor, &lt;a href=&quot;https://thisistheway.to/ai&quot;&gt;my self improvement loop&lt;/a&gt;, and a basic understanding that the agent would be driven by an eight year old.&lt;/p&gt;
+&lt;p&gt;After setting up her computer with an agent and these instructions things were going quite well but she kept asking me to explain what the agent was doing and every time it required input it would take her a while to turn her feedback into typed text that the agent could act on. &lt;em&gt;This constant struggle to understand the agent and respond resulted in lost attention and flow&lt;/em&gt;. So we started iterating.&lt;/p&gt;
+&lt;h2 id=&quot;speaking-to-the-agent&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;heading-anchor&quot; href=&quot;https://jonmagic.com/posts/the-feedback-loop-i-was-missing/#speaking-to-the-agent&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt; Speaking to the agent&lt;/h2&gt;
+&lt;p&gt;First we leveraged the &lt;a href=&quot;https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/voice-input&quot;&gt;Voice mode&lt;/a&gt; built into agents like Copilot and Claude. This was big win, she could press and hold the spacebar and dictate, read what was captured, and press enter to get the agent back to work. For an hour this was great, but she was getting frustrated waiting on me every time she needed the output explained.&lt;/p&gt;
+&lt;p&gt;Then I had an idea to use the &lt;a href=&quot;https://developer.apple.com/library/archive/documentation/LanguagesUtilities/Conceptual/MacAutomationScriptingGuide/SpeakText.html&quot;&gt;&lt;code&gt;say&lt;/code&gt; cli&lt;/a&gt; that ships with macOS and a set of agent instructions to drive that cli.&lt;/p&gt;
+&lt;div class=&quot;markdown-alert markdown-alert-note&quot;&gt;&lt;p&gt;&lt;code&gt;say &amp;quot;Hello, I am an agent and I am speaking to you.&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;So I updated the &lt;code&gt;AGENTS.md&lt;/code&gt; for the project to include the instructions below and &lt;strong&gt;it worked!&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;markdown-alert markdown-alert-tip&quot;&gt;&lt;p&gt;&lt;strong&gt;When using tools or doing multi-step work, speak short status updates with the macOS &lt;code&gt;say&lt;/code&gt; command. Do not read logs, code, secrets, or long explanations out loud.&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;That said, what it read was still pretty technical, and this reminded me of something a coworker had mentioned they were using a lot in their prompts recently, &lt;a href=&quot;https://jonmagic.com/eli5/&quot;&gt;ELI5&lt;/a&gt;, aka explain it to me like I’m five years old. So I added this to the instructions.&lt;/p&gt;
+&lt;div class=&quot;markdown-alert markdown-alert-tip&quot;&gt;&lt;p&gt;&lt;strong&gt;When you speak, speak like you are explaining to a five year old. Use simple language and short sentences.&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;We got back to work and &lt;strong&gt;&lt;em&gt;the experience was incredible&lt;/em&gt;&lt;/strong&gt;. The agent would speak to us about what it was doing, what changed, and when it needed input. She could understand the updates without me having to explain them and she could stay in the flow by using voice input to respond to the agent’s requests.&lt;/p&gt;
+&lt;h2 id=&quot;audio-triggers-different-brain-pathways&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;heading-anchor&quot; href=&quot;https://jonmagic.com/posts/the-feedback-loop-i-was-missing/#audio-triggers-different-brain-pathways&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt; Audio triggers different brain pathways&lt;/h2&gt;
+&lt;p&gt;After working like this for an hour &lt;strong&gt;&lt;em&gt;I realized my brain was responding to the audio updates in a different way than it did to text on a screen&lt;/em&gt;&lt;/strong&gt;. The audio updates made it easier for me to re-enter the agent’s state and understand what was happening without having to read through a wall of text.&lt;/p&gt;
+&lt;p&gt;This is when the seed of an idea started to germinate 💡 Could a more natural feedback loop solve a problem I’d been struggling with for months? I often have multiple agents running but I can only focus on one project at a time. I was constantly hopping between agent windows to check on the status of each agent, which pulled me out of flow. &lt;em&gt;What if these simple spoken updates were queued so I could listen and react to them when I was ready?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jonmagic.com/images/posts/the-feedback-loop-i-was-missing/banner.webp&quot; alt=&quot;Tri-State Relay Service&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;say&lt;/code&gt; version proved the shape of the feedback loop, but it was too blunt for the way I actually work. If every agent can speak whenever it wants, the room gets noisy fast. I did not want a bunch of agents interrupting me and speaking over each other. &lt;strong&gt;I wanted each agent to leave a short update, and I wanted to decide when I was ready to hear it.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;turning-say-into-relay&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;heading-anchor&quot; href=&quot;https://jonmagic.com/posts/the-feedback-loop-i-was-missing/#turning-say-into-relay&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt; Turning &lt;code&gt;say&lt;/code&gt; into Relay&lt;/h2&gt;
+&lt;p&gt;That became &lt;a href=&quot;https://jonmagic.com/tsrs/&quot;&gt;Tri-State Relay Service&lt;/a&gt;, a small macOS app and CLI where agents leave short updates in a local queue instead of speaking over each other.&lt;/p&gt;
+&lt;p&gt;Each project or context gets a line. A line can stay quiet while I am focused, wait with an update, and become active when I choose to listen.&lt;/p&gt;
+&lt;p&gt;The goal is audio feedback on demand, not constant interruption.&lt;/p&gt;
+&lt;p&gt;I’m releasing it for free. I may open source it someday too, but for now I mostly want to get it into people’s hands and see whether this feedback loop helps anyone else.&lt;/p&gt;
+&lt;p&gt;If you want to try it, &lt;a href=&quot;https://jonmagic.com/tsrs/&quot;&gt;here is the user manual and download&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
   
   <entry>
     <title>GitHub Copilot Session Search and Resume CLI</title>

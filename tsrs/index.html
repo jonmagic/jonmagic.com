@@ -9,7 +9,7 @@
 
 
 <meta property="og:title" content="Tri-State Relay Service">
-<meta property="og:description" content="A small macOS app for hearing short agent updates that make it easier to re-enter the work, inspired by a family AI coding project.">
+<meta property="og:description" content="A free macOS app for hearing short agent updates when you are ready for them, without watching every terminal.">
 <meta property="og:url" content="https://jonmagic.com/tsrs/">
 <meta property="og:site_name" content="jonmagic.com">
 <meta property="og:type" content="website">
@@ -19,10 +19,10 @@
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tri-State Relay Service">
-<meta name="twitter:description" content="A small macOS app for hearing short agent updates that make it easier to re-enter the work, inspired by a family AI coding project.">
+<meta name="twitter:description" content="A free macOS app for hearing short agent updates when you are ready for them, without watching every terminal.">
 
 
-<meta name="description" content="A small macOS app for hearing short agent updates that make it easier to re-enter the work, inspired by a family AI coding project.">
+<meta name="description" content="A free macOS app for hearing short agent updates when you are ready for them, without watching every terminal.">
 <meta name="author" content="Jonathan Hoyt">
 
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -93,25 +93,36 @@
     <a class="tsrs-download-button" href="/downloads/Tri-State%20Relay%20Service.zip" data-plausible-event-name="TSRS Download" data-plausible-event-target="macos-latest">Download for macOS</a>
   </div>
 </section>
-<h2 id="it-started-with-a-game" tabindex="-1"><a class="heading-anchor" href="#it-started-with-a-game" aria-hidden="true">#</a> It started with a game</h2>
-<p>I started building this while helping my 8yo make their own game with AI.</p>
-<p>Voice input made the collaboration feel possible in a way typing did not. They could speak to an agent like Copilot or Claude and stay in the flow of describing the game they wanted to make. That solved half of the loop.</p>
-<p>The other half was feedback.</p>
-<p>They needed the agent to speak back in short <a href="https://simple.wikipedia.org/wiki/ELI5">ELI5</a> updates. Not terminal output. Not a long explanation. Just enough audio to know work was starting, something had changed, or a step was ready for them to try.</p>
-<p>The first version was not an app. It was a project-level agent instruction that told the agent when to speak and how short to keep it.</p>
-<h2 id="the-missing-feedback-loop" tabindex="-1"><a class="heading-anchor" href="#the-missing-feedback-loop" aria-hidden="true">#</a> The missing feedback loop</h2>
-<p>That pattern worked because the updates were intentional. The agent did not narrate every command or read a transcript of its terminal output. It said something useful before a work slice, at key checkpoints, when blocked, and when something was ready for feedback or user testing.</p>
-<p>After about an hour of using it together, I noticed it helped me too.</p>
-<p><strong>Audio triggered a different part of my brain than text on a screen. It made the agent’s state easier to re-enter.</strong> That connected to a problem I kept running into with my own work, where I might have multiple agents running but I can only focus on one project at a time.</p>
-<p>The important part is not just that the message is audio. It is that the audio arrives when I ask for it, from the line I am ready to hear, without turning every agent into a noisy interruption machine.</p>
-<h2 id="what-relay-does" tabindex="-1"><a class="heading-anchor" href="#what-relay-does" aria-hidden="true">#</a> What relay does</h2>
-<p>Tri-State Relay Service is a local macOS toolbar app and CLI for brief agent status updates.</p>
-<p>Agents send short, intentional updates to a local relay queue. Each project or context gets a line. The app stays quiet by default while I am focused. When I am ready to switch context, I use the hotkey to hear the next useful update and move to that line.</p>
-<div class="markdown-alert markdown-alert-note"><p>The tri-state idea is quiet, waiting, active. A line can stay silent while I am focused, hold an update for later, then become the thing I am listening to when I choose to switch context.</p>
-</div>
-<p>The goal is audio feedback on demand, not constant interruption.</p>
-<h2 id="add-it-to-your-agent-instructions" tabindex="-1"><a class="heading-anchor" href="#add-it-to-your-agent-instructions" aria-hidden="true">#</a> Add it to your agent instructions</h2>
-<p>Paste this into your agent instructions if you want agents to send updates to the app. Setup can install the <code>relay</code> command for you.</p>
+<p>Tri-State Relay Service is a local macOS app and CLI where agents leave short updates in a queue. Each project or context gets a line. A line can stay quiet while you are focused, wait with an update, and become active when you choose to listen.</p>
+<p>The story behind this started while I was helping my daughter build a game with AI. I wrote about that in <a href="/posts/the-feedback-loop-i-was-missing/">The Feedback Loop I Was Missing</a>.</p>
+<p>It is free to download. I may open source it someday, but for now I mostly want people to try it and tell me whether the feedback loop helps. If you try it, <a href="https://github.com/jonmagic/jonmagic.com/discussions/13">leave feedback in this GitHub Discussion</a>.</p>
+<!-- TODO media: product demo clip. Replace with:
+<video src="/images/tsrs/product-demo.mp4" controls width="100%"></video>
+-->
+<h2 id="getting-started" tabindex="-1"><a class="heading-anchor" href="#getting-started" aria-hidden="true">#</a> Getting started</h2>
+<p>The fastest path is to get the app running, prove one relay works by hand, and only then wire it into your agents.</p>
+<h3 id="1.-download-and-open-the-app" tabindex="-1"><a class="heading-anchor" href="#1.-download-and-open-the-app" aria-hidden="true">#</a> 1. Download and open the app</h3>
+<p>Download the zip, unzip it, and open the app. On first launch, Tri-State Relay Service opens Settings directly to the <strong>Setup</strong> panel.</p>
+<p>If macOS blocks the app the first time you open it, right-click the app and choose <strong>Open</strong>. This is a direct-download build, not a Mac App Store install.</p>
+<h3 id="2.-walk-through-setup" tabindex="-1"><a class="heading-anchor" href="#2.-walk-through-setup" aria-hidden="true">#</a> 2. Walk through Setup</h3>
+<p>The Setup panel has three steps.</p>
+<ol>
+<li><strong>Install the CLI.</strong> Click <strong>Install relay CLI to /usr/local/bin</strong>. This gives agents a normal <code>relay</code> command to run. If you would rather not install it globally, click <strong>Copy bundled CLI path</strong> and use that full path in your agent instructions.</li>
+<li><strong>Record the shortcut.</strong> Click the shortcut button and press the key combination you want. The default is <code>Control</code> + <code>Option</code> + <code>Command</code> + <code>Space</code>.</li>
+<li><strong>Open at Login.</strong> Turn this on if you want TSRS to start when you log in. It still starts quiet, so relays queue until you ask to hear one.</li>
+</ol>
+<p>Setup is quiet on purpose. The app starts in Focus mode, so a silent app after setup usually means it is working, not stuck.</p>
+<h3 id="3.-send-one-relay-yourself" tabindex="-1"><a class="heading-anchor" href="#3.-send-one-relay-yourself" aria-hidden="true">#</a> 3. Send one relay yourself</h3>
+<p>Before adding agent instructions, make sure the app and CLI can talk to each other.</p>
+<pre class="language-sh"><code class="language-sh">relay <span class="token parameter variable">--version</span>
+relay <span class="token parameter variable">--line</span> <span class="token string">"Test"</span> <span class="token parameter variable">--message</span> <span class="token string">"Setup check."</span>
+relay list
+relay ready</code></pre>
+<p><code>relay list</code> should show the test update. <code>relay ready</code> releases one relay and then returns the app to quiet mode.</p>
+<p>If <code>relay --version</code> fails, open Settings and run the CLI install again. If the install reports a conflict, a different <code>relay</code> already exists at <code>/usr/local/bin/relay</code>. TSRS will not overwrite it silently. Replace it from Settings, remove the old command yourself, or use the bundled CLI path in your agent instructions.</p>
+<p>If <code>relay ready</code> queues but does not speak, check whether the app is muted or whether your microphone appears active. TSRS waits rather than speaking over you while another app is using the mic.</p>
+<h3 id="4.-add-it-to-your-global-agent-instructions" tabindex="-1"><a class="heading-anchor" href="#4.-add-it-to-your-global-agent-instructions" aria-hidden="true">#</a> 4. Add it to your global agent instructions</h3>
+<p>Once the manual relay works, add the instructions below wherever your coding agent reads global instructions. A project-level instruction is fine for trying it, but global instructions are where this becomes useful across projects.</p>
 <p><button class="tsrs-copy-button" type="button" data-copy-next-code>Copy instructions</button></p>
 <pre class="language-md"><code class="language-md"><span class="token title important"><span class="token punctuation">##</span> Relay updates</span>
 
@@ -162,74 +173,41 @@ status message and continue the task.
 
 Do not call <span class="token code-snippet code keyword">`/usr/bin/say`</span> directly from the CLI. The app owns playback so multiple
 agent sessions share one safe speaker.</code></pre>
-<h2 id="user-guide" tabindex="-1"><a class="heading-anchor" href="#user-guide" aria-hidden="true">#</a> User guide</h2>
-<p>The app is a quiet local inbox for updates from your coding agents. Instead of leaving every agent to interrupt you in its own way, agents send short relays to the macOS menu bar app. You stay in control of when one is played.</p>
-<p>The basic idea is simple.</p>
-<ol>
-<li>Install the app and the <code>relay</code> command.</li>
-<li>Tell your agents when to send short status updates.</li>
-<li>Let relays queue quietly while you work.</li>
-<li>Press Play Next when you are ready to hear one.</li>
-</ol>
-<h3 id="start-with-the-app" tabindex="-1"><a class="heading-anchor" href="#start-with-the-app" aria-hidden="true">#</a> Start with the app</h3>
-<p>Launch the macOS app bundle. On first launch, Settings opens automatically and walks you through the essentials.</p>
-<p>The first thing to set up is the command-line tool. The app can install or refresh the <code>relay</code> command for you at this location.</p>
-<pre class="language-text"><code class="language-text">/usr/local/bin/relay</code></pre>
-<p>Use the Settings install button and the app will handle the copy for you. If you would rather not install a copy, Settings can also show the full bundled app path so you can paste that into agent instructions instead.</p>
-<p>After the CLI step, choose a keyboard shortcut and decide whether the app should open at login. The default shortcut is <code>Control</code> + <code>Option</code> + <code>Command</code> + <code>Space</code>. You can change it by clicking the shortcut button and pressing the combination you want. Open at Login is optional and starts in Focus mode, so relays still queue quietly until you ask to hear one.</p>
-<p>Setup stays quiet. Anything that arrives is queued until you choose to hear it.</p>
-<p><a class="tsrs-download-button" href="/downloads/Tri-State%20Relay%20Service.zip" data-plausible-event-name="TSRS Download" data-plausible-event-target="macos-latest-footer">Download Tri-State Relay Service</a></p>
-<h3 id="your-first-relay" tabindex="-1"><a class="heading-anchor" href="#your-first-relay" aria-hidden="true">#</a> Your first relay</h3>
-<p>A relay is a short, human-readable update from an agent. It should sound like a teammate briefly saying what changed, not like a log dump.</p>
-<p>For example.</p>
-<pre class="language-sh"><code class="language-sh">relay <span class="token parameter variable">--line</span> <span class="token string">"My Project"</span> <span class="token parameter variable">--message</span> <span class="token string">"I’m starting the next implementation slice."</span></code></pre>
-<p>When that command runs, the update appears in the app. If you are in Focus mode, it waits silently. When you are ready, use Play Next from the menu bar app or run this command.</p>
+<h3 id="5.-try-it-with-an-agent" tabindex="-1"><a class="heading-anchor" href="#5.-try-it-with-an-agent" aria-hidden="true">#</a> 5. Try it with an agent</h3>
+<p>Start a small agent task in any project. You should see relays queue as the agent works. When you are ready to hear one, use <strong>Play Next</strong> from the menu bar app or run:</p>
 <pre class="language-sh"><code class="language-sh">relay ready</code></pre>
-<p>The app plays one eligible relay, then returns to quiet mode.</p>
-<h3 id="what-makes-a-good-relay" tabindex="-1"><a class="heading-anchor" href="#what-makes-a-good-relay" aria-hidden="true">#</a> What makes a good relay</h3>
-<p>Good relays are short and intentional. Use them for moments like these.</p>
+<p>The app speaks one eligible relay and goes quiet again.</p>
+<h2 id="using-relays-day-to-day" tabindex="-1"><a class="heading-anchor" href="#using-relays-day-to-day" aria-hidden="true">#</a> Using relays day to day</h2>
+<p>A relay is a short, human-readable update from an agent. It should sound like a teammate briefly saying what changed, not like a log dump.</p>
+<p>Good moments for relays are:</p>
 <ol>
 <li>Starting a meaningful work slice.</li>
 <li>Switching phases, such as from investigation to implementation.</li>
-<li>Getting blocked or needing human input.</li>
+<li>Getting blocked or needing input.</li>
 <li>Finishing something useful.</li>
 </ol>
-<p>Avoid sending raw command output, logs, code, secrets, private data, or long explanations. If the message would be annoying to hear out loud, it is probably too much for a relay.</p>
-<p>Good examples.</p>
+<p>Avoid raw command output, logs, code, secrets, private data, or long explanations. If the message would be annoying to hear out loud, it is probably too much.</p>
+<p>Good examples:</p>
 <pre class="language-sh"><code class="language-sh">relay <span class="token parameter variable">--line</span> <span class="token string">"My Project"</span> <span class="token parameter variable">--type</span> update <span class="token parameter variable">--message</span> <span class="token string">"The tests are running now."</span>
 relay <span class="token parameter variable">--line</span> <span class="token string">"My Project"</span> <span class="token parameter variable">--type</span> complete <span class="token parameter variable">--message</span> <span class="token string">"The draft is ready to review."</span>
 relay <span class="token parameter variable">--line</span> <span class="token string">"My Project"</span> <span class="token parameter variable">--priority</span> high <span class="token parameter variable">--message</span> <span class="token string">"I’m blocked and need your choice before continuing."</span></code></pre>
 <h3 id="lines-keep-work-streams-separate" tabindex="-1"><a class="heading-anchor" href="#lines-keep-work-streams-separate" aria-hidden="true">#</a> Lines keep work streams separate</h3>
-<p>A line is a named work stream. If you only have one agent working on one project, one line may be enough. If you have several agents working at once, lines make it much easier to understand which update belongs where.</p>
-<p>For example, you might use these commands.</p>
+<p>A line is a named work stream. If you only have one agent working on one project, one line may be enough. If you have several agents working at once, lines make it easier to understand which update belongs where.</p>
 <pre class="language-sh"><code class="language-sh">relay <span class="token parameter variable">--line</span> <span class="token string">"Website"</span> <span class="token parameter variable">--message</span> <span class="token string">"I found the broken image path."</span>
 relay <span class="token parameter variable">--line</span> <span class="token string">"API"</span> <span class="token parameter variable">--message</span> <span class="token string">"The auth test failure is isolated."</span></code></pre>
-<p>You can also use more specific line names when several agents are working inside the same project.</p>
-<pre class="language-sh"><code class="language-sh">relay <span class="token parameter variable">--line</span> <span class="token string">"App icon"</span> <span class="token parameter variable">--message</span> <span class="token string">"The app icon was rebuilt."</span>
-relay <span class="token parameter variable">--line</span> <span class="token string">"User guide"</span> <span class="token parameter variable">--message</span> <span class="token string">"The user guide rewrite is in progress."</span></code></pre>
 <p>The active line is the line the app plays from automatically when you ask for the next relay. Other lines stay queued until you switch to them or pull from them directly.</p>
-<p>Useful line commands.</p>
+<p>Useful line commands:</p>
 <pre class="language-sh"><code class="language-sh">relay line
 relay line <span class="token string">"Website"</span>
 relay list</code></pre>
-<h3 id="add-it-to-your-agent-instructions-1" tabindex="-1"><a class="heading-anchor" href="#add-it-to-your-agent-instructions-1" aria-hidden="true">#</a> Add it to your agent instructions</h3>
-<p>The easiest way to make it useful is to add a small instruction to your highest-level agent instructions. Put it wherever your coding agent reads its global or project instructions.</p>
-<p>Start simple.</p>
-<pre class="language-text"><code class="language-text">When using tools or doing multi-step work, send short relay updates with this command.
-
-relay --line "My Project" --type update --priority normal --cwd "$PWD" --message "I’m starting the next work slice."
-
-Use --type complete when a meaningful task is done. Keep messages brief and human-authored. Do not send code, logs, secrets, private data, or raw terminal output.</code></pre>
-<p>If you often run more than one agent in the same project, ask the agent to choose or confirm a line name at the start of the session. That gives each work stream a separate lane without changing projects.</p>
-<p>Example.</p>
+<p>If you often run more than one agent in the same project, add this to your global instructions too:</p>
 <pre class="language-text"><code class="language-text">At the start of each session, ask me what the relay line should be called. An empty answer is fine and means to use the current project or folder name. Use that line for all updates during the session.</code></pre>
-<p>You can combine that with a default line rule.</p>
+<p>You can combine that with a default line rule:</p>
 <pre class="language-text"><code class="language-text">Choose the default line from the current working directory. Prefer the git repository or project name. Mention cross-project research in the message text instead of changing the line.</code></pre>
-<p>The goal is not to make agents chatty. The goal is to make their important state changes easy to notice without watching every terminal.</p>
-<h3 id="everyday-controls" tabindex="-1"><a class="heading-anchor" href="#everyday-controls" aria-hidden="true">#</a> Everyday controls</h3>
+<h3 id="focus%2C-ready%2C-and-mute" tabindex="-1"><a class="heading-anchor" href="#focus%2C-ready%2C-and-mute" aria-hidden="true">#</a> Focus, Ready, and Mute</h3>
 <p>The app is designed to be quiet by default.</p>
 <p>Focus mode queues relays without speaking. Ready mode releases one relay, then returns to Focus. Mute prevents playback even if relays are queued.</p>
-<p>Common commands.</p>
+<p>Common commands:</p>
 <pre class="language-sh"><code class="language-sh">relay list
 relay ready
 relay mute
@@ -238,14 +216,14 @@ relay acknowledge
 relay clear-delivered</code></pre>
 <p>In the menu bar app, left click for the fastest Play Next path. Right click opens the command palette. Your keyboard shortcut opens the command palette with Play Next selected, so pressing Return immediately plays the next eligible relay.</p>
 <p>The app owns playback. The CLI submits and manages relays, but it does not speak directly.</p>
-<h3 id="voice-and-shortcut-settings" tabindex="-1"><a class="heading-anchor" href="#voice-and-shortcut-settings" aria-hidden="true">#</a> Voice and shortcut settings</h3>
+<h3 id="voice-and-settings" tabindex="-1"><a class="heading-anchor" href="#voice-and-settings" aria-hidden="true">#</a> Voice and settings</h3>
 <p>Open Settings whenever you want to change the CLI install, keyboard shortcut, Open at Login, or voice.</p>
 <p>Changing the voice is quiet. Use Preview only when you explicitly want to hear a sample. To add more macOS voices, open System Settings &gt; Accessibility &gt; Spoken Content.</p>
 <p>Direct-download builds use app-owned playback and can use installed macOS voices that work with the system speech engine. Natural voices are favored when available, and System Default remains available.</p>
 <h3 id="when-many-updates-pile-up" tabindex="-1"><a class="heading-anchor" href="#when-many-updates-pile-up" aria-hidden="true">#</a> When many updates pile up</h3>
 <p>When you are focused on one line, other lines may collect several updates. This stays manageable by showing or playing the latest useful update for an inactive line instead of making you hear every stale intermediate message.</p>
 <p>For many people, the default behavior is enough. You can work on one line, then switch lines when you are ready to catch up.</p>
-<h3 id="advanced-inactive-line-combiner" tabindex="-1"><a class="heading-anchor" href="#advanced-inactive-line-combiner" aria-hidden="true">#</a> Advanced inactive-line Combiner</h3>
+<h2 id="advanced-inactive-line-combiner" tabindex="-1"><a class="heading-anchor" href="#advanced-inactive-line-combiner" aria-hidden="true">#</a> Advanced inactive-line Combiner</h2>
 <p>The Combiner is for people who want an external agent or command to summarize many queued inactive-line updates into one short relay. It is useful when you run several agents at once and want a catch-up that sounds like a concise teammate summary.</p>
 <p>You can inspect or change the Combiner from the CLI.</p>
 <pre class="language-sh"><code class="language-sh">relay combiner
@@ -253,10 +231,14 @@ relay combiner <span class="token parameter variable">--command</span> <span cla
 relay combiner <span class="token parameter variable">--command</span> none</code></pre>
 <p>The command template receives the inactive-line updates as input and should return one safe, short message. Leave the Combiner unset if you prefer the simpler latest-update behavior.</p>
 <p>Combiner output should follow the same rules as any other relay. No secrets, no raw logs, no code dumps, and no long explanations.</p>
-<h3 id="if-something-does-not-work" tabindex="-1"><a class="heading-anchor" href="#if-something-does-not-work" aria-hidden="true">#</a> If something does not work</h3>
-<p>If agents cannot find <code>relay</code>, open Settings and use the CLI install panel to install or refresh the command. If you did not install it, copy the bundled CLI path from Settings and use that full path in your agent instructions.</p>
-<p>If relays queue but do not speak, check whether the app is focused, muted, or waiting because the microphone appears active. You can always use <code>relay list</code> to see what is waiting.</p>
-<p>The local queue lives on your Mac here.</p>
+<h2 id="troubleshooting" tabindex="-1"><a class="heading-anchor" href="#troubleshooting" aria-hidden="true">#</a> Troubleshooting</h2>
+<p>Most first-run surprises are quiet by design, not failures.</p>
+<p><strong>Agents cannot find <code>relay</code>.</strong> The CLI is not installed, <code>/usr/local/bin</code> is not on your <code>PATH</code>, or your agent cannot see the same shell environment as your terminal. Open Settings and install or refresh the CLI, then run <code>relay --version</code> in a new terminal. If you do not want to install it, copy the bundled CLI path from Settings and use that full path in your agent instructions.</p>
+<p><strong>Install reports a conflict or permission error.</strong> A different <code>relay</code> already exists at <code>/usr/local/bin/relay</code>, or macOS needs permission to install there. Let Settings replace it, remove the old file yourself, or use the bundled CLI path.</p>
+<p><strong>Relays queue but never speak.</strong> Check whether the app is in Focus mode, muted, or waiting because a microphone appears active. Use <code>relay list</code> to confirm what is waiting, then <code>relay ready</code> or Play Next to release one.</p>
+<p><strong>The app launched silent after Open at Login.</strong> That is expected. Open at Login starts in Focus mode so relays queue quietly until you ask to hear one.</p>
+<p><strong>An agent read raw logs or secrets aloud.</strong> Tighten your agent instructions so relays carry short, human-authored summaries only. No code, logs, terminal output, secrets, or private data.</p>
+<p>The local queue lives on your Mac here:</p>
 <pre class="language-text"><code class="language-text">~/Library/Application Support/Tri-State Relay Service/relay.db</code></pre>
 <p>You usually do not need to touch that file. It is listed here only so you know where your local queue data lives.</p>
 
