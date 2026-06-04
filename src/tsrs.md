@@ -57,9 +57,15 @@ Paste this into your agent instructions if you want agents to send updates to TS
 ````md
 ## Tri-State Relay Service updates
 
-Use short Tri-State Relay Service updates so I can follow agent progress without reading the terminal. Do not skip these updates during tool-heavy, multi-step, or long-running work unless the task is a single direct answer with no tool use.
+Use short Tri-State Relay Service updates so I can follow agent progress without
+reading the terminal. Do not skip these updates during tool-heavy, multi-step, or
+long-running work unless the task is a single direct answer with no tool use.
 
-If a response will use any tool for investigation, editing, validation, delegation, or documentation lookup, send a TSRS update before or in the same tool-calling turn as the first tool call. Do not treat "just checking" or "small tool use" as exempt. The only exemption is a final-answer-only response with no tool calls.
+If a response will use any tool for investigation, editing, validation,
+delegation, or documentation lookup, send a TSRS update before or in the same
+tool-calling turn as the first tool call. Do not treat "just checking" or "small
+tool use" as exempt. The only exemption is a final-answer-only response with no
+tool calls.
 
 Send an update before or when:
 
@@ -70,9 +76,16 @@ Send an update before or when:
 5. Completing a slice with a useful outcome.
 6. Suggesting the next concrete step.
 
-Keep updates brief and intentional. Say what is happening or what changed, not raw details. Do not include code, logs, terminal output, file contents, secrets, private data, or long explanations.
+Keep updates brief and intentional. Say what is happening or what changed, not
+raw details. Do not include code, logs, terminal output, file contents, secrets,
+private data, or long explanations.
 
-Use TSRS as the first-choice transport when available. Enqueue updates with `--line`. Choose the line from the agent's current working directory, not from the topic being researched. Prefer the current git repository or project folder name. If the agent is working in `~/Brain`, use `Brain`. If there is no repository, use the nearest meaningful folder name. Mention cross-project research targets in the message text, not by changing the line.
+Use TSRS as the first-choice transport when available. Enqueue updates with
+`--line`. Choose the line from the agent's current working directory, not from
+the topic being researched. Prefer the current git repository or project folder
+name. If the agent is working in `~/Brain`, use `Brain`. If there is no
+repository, use the nearest meaningful folder name. Mention cross-project
+research targets in the message text, not by changing the line.
 
 ```sh
 relay \
@@ -83,9 +96,14 @@ relay \
   --message "I am starting the next implementation slice."
 ```
 
-Use `--type complete` for completion updates and `--priority high` only when the message needs prompt human attention. Include `--cwd` when safe so the source context can be revealed later. If `relay` is missing or the TSRS command fails, do not spend time debugging it during unrelated work. Fall back to a short text status message and continue the task.
+Use `--type complete` for completion updates and `--priority high` only when the
+message needs prompt human attention. Include `--cwd` when safe so the source
+context can be revealed later. If `relay` is missing or the TSRS command fails,
+do not spend time debugging it during unrelated work. Fall back to a short text
+status message and continue the task.
 
-Do not call `/usr/bin/say` directly from the CLI. TSRS owns playback so multiple agent sessions share one safe speaker.
+Do not call `/usr/bin/say` directly from the CLI. TSRS owns playback so multiple
+agent sessions share one safe speaker.
 ````
 
 ## What it is right now
