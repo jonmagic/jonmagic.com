@@ -16,36 +16,48 @@ permalink: /tsrs/
   </div>
 </section>
 
-## It started with a game
+This last weekend I was doing my best to not think about work and my daughter asked me if we could play Minecraft together. We did for an hour or two and then, inspired by a conversation with a friend, I asked if she wanted to build her own Minecraft like game.
 
-I started building this while helping my 8yo make their own game with AI.
+She was excited about the idea so I spent a few minutes with GitHub Copilot and put together an `AGENTS.md` that had the rough draft of the milestones to build a game like, instructions to red-green-refactor, [my self improvement loop](https://thisistheway.to/ai), and a basic understanding that it would be working with a kid.
 
-Voice input made the collaboration feel possible in a way typing did not. They could speak to an agent like Copilot or Claude and stay in the flow of describing the game they wanted to make. That solved half of the loop.
+Next we set up an agent with those instructions on her laptop and we got it to work. The agent instructions were good enough she could just type "next" into the prompt and it would build towards the next milestone and only ask for her input when it hit a playable point or milestone.
 
-The other half was feedback.
+But she kept asking me to explain what the agent was doing and every time it required input it would take her a while to turn her feedback into typed text that the agent could act on. This constant struggle to understand the agent and then respond resulted in lost attention and flow. So we started iterating.
 
-They needed the agent to speak back in short [ELI5](https://simple.wikipedia.org/wiki/ELI5) updates. Not terminal output. Not a long explanation. Just enough audio to know work was starting, something had changed, or a step was ready for them to try.
+First we leveraged the Voice mode built into agents like Copilot and Claude. This was big win, she could press and hold the spacebar and dictate, read what was captured, and press enter to get the agent back to work. For an hour this was great, but she was getting frustrated waiting on me every time she needed the output explained.
 
-The first version was not an app. It was a project-level agent instruction that told the agent when to speak and how short to keep it.
+Then I had an idea to use the `say` cli that ships with macOS and a set of agent instructions to drive that cli. I updated the `AGENTS.md` for the project to include instructions for the agent to speak short updates about what it was doing and when it needed input. What it read was still pretty technical and this reminded me of something a coworker had mentioned they were using a lot, [ELI5](https://jonmagic.com/eli5/), aka explain it to me like I'm five years old. The prompt update looked something like this:
 
-## The missing feedback loop
+> **Always communicate via the macos say command with short updates about what you are doing, what changed, and when you need input. Use language an eight year old would understand. Do not read logs, code, secrets, or long explanations out loud.**
+>
+> **You must speak before or during tool use, when switching phases of work, when you are blocked, and when something is ready for the user to try.**
 
-That pattern worked because the updates were intentional. The agent did not narrate every command or read a transcript of its terminal output. It said something useful before a work slice, at key checkpoints, when blocked, and when something was ready for feedback or user testing.
+> [!TIP]
+> Try the one-project version first. You can feel the basic idea without installing Tri-State Relay Service.
+>
+> ```sh
+> say "I am starting the next work slice."
+> ```
+>
+> Then add a tiny instruction to one project.
+>
+> ```text
+> When using tools or doing multi-step work, speak short status updates with the macOS say command. Use simple language. Do not read logs, code, secrets, or long explanations out loud.
+> ```
 
-After about an hour of using it together, I noticed it helped me too.
+We got back to work and the experience was incredible. The agent would speak to us in simple language about what it was doing, what changed, and when it needed input. She could understand the updates without me having to explain them, and she could stay in the flow by using voice input to respond to the agent's requests for input.
 
-**Audio triggered a different part of my brain than text on a screen. It made the agent's state easier to re-enter.** That connected to a problem I kept running into with my own work, where I might have multiple agents running but I can only focus on one project at a time.
+## Audio triggers different brain pathways
 
-The important part is not just that the message is audio. It is that the audio arrives when I ask for it, from the line I am ready to hear, without turning every agent into a noisy interruption machine.
+After working like this for an hour I realized my brain was responding to the audio updates in a different way than it did to text on a screen. The audio updates made it easier for me to re-enter the agent's state and understand what was happening without having to read through a wall of text.
 
-## What relay does
+This is when the seed of an idea started to germinate. Could multi-modal communication plus down-sampling solve a problem I'd been struggling with for months? I often have multiple agents running but I can only focus on one project at a time. I was constantly hopping between agent windows to check on the status of each agent, which pulled me out of flow. What if an audio update flow could let me stay focused and only switch when I was ready?
 
-Tri-State Relay Service is a local macOS toolbar app and CLI for brief agent status updates.
+The `say` version proved the shape of the feedback loop, but it was too blunt for the way I actually work. If every agent can speak whenever it wants, the room gets noisy fast. I did not want a bunch of terminals interrupting me and speaking over each other. I wanted each agent to leave a short update, and I wanted to decide when I was ready to hear it.
 
-Agents send short, intentional updates to a local relay queue. Each project or context gets a line. The app stays quiet by default while I am focused. When I am ready to switch context, I use the hotkey to hear the next useful update and move to that line.
+[Tri-State Relay Service](https://jonmagic.com/tsrs/) grew out of that.
 
-> [!NOTE]
-> The tri-state idea is quiet, waiting, active. A line can stay silent while I am focused, hold an update for later, then become the thing I am listening to when I choose to switch context.
+It is a local macOS app and CLI where agents send short updates to a queue. Each project or context gets a line. A line can be quiet while I am focused, waiting with an update, or active when I choose to listen.
 
 The goal is audio feedback on demand, not constant interruption.
 
