@@ -74,8 +74,7 @@ Once the manual relay works, add the instructions below wherever your coding age
 
 Use short relay updates so I can follow agent progress without
 reading the terminal. Send one whenever you use a tool for investigation,
-editing, validation, delegation, or lookup, including "small" tool use. The only
-exemption is a final-answer-only response with no tool calls.
+editing, validation, delegation, or lookup, including "small" tool use.
 
 Send an update before or when one of these things happens.
 
