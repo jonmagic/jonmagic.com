@@ -75,14 +75,20 @@ If `relay ready` queues but does not speak, check whether the app is muted or wh
 
 Once the manual relay works, add the instructions below wherever your coding agent reads global instructions. A project-level instruction is fine for trying it, but global instructions are where this becomes useful across projects.
 
+If your agent ignores softer instructions, use this stricter version. The important part is telling the agent this is mandatory and tying it directly to tool use.
+
 <button class="tsrs-copy-button" type="button" data-copy-next-code>Copy instructions</button>
 
 ````md
 ## Relay updates
 
-Use short relay updates so I can follow agent progress without
-watching the session. Send one whenever you use a tool for investigation,
-editing, validation, delegation, or lookup, including "small" tool use.
+This is a mandatory operating rule, not a nice-to-have. Use short relay updates
+so I can follow agent progress without watching the session.
+
+If a response will use any tool for investigation, editing, validation,
+delegation, or documentation lookup, send a relay update before or in the same
+tool-calling turn as the first tool call. Do not treat "just checking" or "small
+tool use" as exempt.
 
 Send an update before or when one of these things happens.
 
@@ -92,6 +98,13 @@ Send an update before or when one of these things happens.
 4. Getting blocked or needing human input.
 5. Completing a slice with a useful outcome.
 6. Suggesting the next concrete step.
+7. Confirming the final answer after using tools when the outcome matters. Say
+   the conclusion in plain English, not just that validation completed.
+
+When both a normal text preamble and a relay update would apply, the relay
+update is the source of truth for progress updates. A short text preamble may
+accompany it, but it does not replace the relay update unless the relay command
+fails.
 
 Keep updates brief and intentional. Say what is happening or what changed, not
 raw details. Do not include code, logs, terminal output, file contents, secrets,
