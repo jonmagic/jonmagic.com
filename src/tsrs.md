@@ -5,6 +5,8 @@ description: >-
   A free macOS app for hearing short agent updates when you are ready for them,
   without watching every agent session.
 permalink: /tsrs/
+analyticsProject: tri-state-relay-service
+analyticsTopic: agent-updates
 ---
 
 <section class="tsrs-hero">

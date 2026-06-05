@@ -3,6 +3,8 @@ layout: layout
 title: What ELI5 means
 description: A simple explanation of ELI5, the shorthand for "explain like I'm five."
 permalink: /eli5/
+analyticsProject: eli5
+analyticsTopic: plain-language
 ---
 
 ELI5 means "explain like I'm five."

@@ -1,4 +1,30 @@
-<script defer data-domain="jonmagic.com" src="https://plausible.io/js/script.outbound-links.js"></script>
+{%- set analyticsPageType = analyticsType or "page" -%}
+{%- if page.url == "/" -%}
+  {%- set analyticsPageType = "home" -%}
+{%- elif page.url and page.url.startsWith("/posts/") and date -%}
+  {%- set analyticsPageType = "post" -%}
+{%- elif page.url == "/posts/" -%}
+  {%- set analyticsPageType = "writing_index" -%}
+{%- elif page.url == "/projects/" -%}
+  {%- set analyticsPageType = "projects_index" -%}
+{%- elif page.url and page.url.startsWith("/merch/") -%}
+  {%- set analyticsPageType = "merch" -%}
+{%- elif page.url == "/search/" -%}
+  {%- set analyticsPageType = "search" -%}
+{%- elif page.url == "/about/" -%}
+  {%- set analyticsPageType = "about" -%}
+{%- elif page.url == "/tsrs/" -%}
+  {%- set analyticsPageType = "project" -%}
+{%- elif page.url == "/eli5/" -%}
+  {%- set analyticsPageType = "tool" -%}
+{%- endif -%}
+<script defer data-domain="jonmagic.com" src="https://plausible.io/js/script.pageview-props.outbound-links.js"
+  event-page_type="{{ analyticsPageType }}"
+  event-page_slug="{{ page.fileSlug or 'home' }}"
+  {%- if page.url %} event-path="{{ page.url }}"{% endif %}
+  {%- if date %} event-year="{{ date.getFullYear() }}"{% endif %}
+  {%- if analyticsProject %} event-project="{{ analyticsProject }}"{% endif %}
+  {%- if analyticsTopic %} event-topic="{{ analyticsTopic }}"{% endif %}></script>
 <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
