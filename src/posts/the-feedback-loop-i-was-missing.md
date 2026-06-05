@@ -10,17 +10,17 @@ description: >-
 featured: 1
 ---
 
-This last weekend I was doing my best to live in the moment and my daughter asked me if we could play Minecraft. We did for an hour or two and then, inspired by a conversation with a friend, I asked if she wanted to build her own Minecraft like game.
+This last weekend I was doing my best to live in the moment and my daughter asked me if we could play Minecraft. We did for an hour or two and then, inspired by a conversation with a friend, I asked if she wanted to build her own Minecraft-like game.
 
-She was excited about the idea so I spent a few minutes with GitHub Copilot and put together an `AGENTS.md` that had the rough draft of the milestones to build a game like, instructions to red-green-refactor, [my self improvement loop](https://thisistheway.to/ai), and a basic understanding that the agent would be driven by an eight year old.
+She was excited about the idea so I spent a few minutes with GitHub Copilot and put together an `AGENTS.md` that had the rough draft of the milestones to build a game like, instructions to red-green-refactor, [my self-improvement loop](https://thisistheway.to/ai), and an understanding that the agent would be driven by an eight-year-old.
 
-After setting up her computer with an agent and these instructions things were going quite well but she kept asking me to explain what the agent was doing and every time it required input it would take her a while to turn her feedback into typed text that the agent could act on. _This constant struggle to understand the agent and respond resulted in lost attention and flow_. So we started iterating.
+After setting up her computer with an agent and these instructions, things were going quite well but she kept asking me to explain what the agent was doing and every time it required input it would take her a while to turn her feedback into typed text that the agent could act on. _This constant struggle to understand the agent and respond resulted in lost attention and flow_. So we started iterating.
 
-## Speaking to the agent
+## Speaking with the agent
 
-First we leveraged the [Voice mode](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/voice-input) built into agents like Copilot and Claude. This was big win, she could press and hold the spacebar and dictate, read what was captured, and press enter to get the agent back to work. For an hour this was great, but she was getting frustrated waiting on me every time she needed the output explained.
+First we leveraged the [Voice mode](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/voice-input) built into agents like Copilot and Claude. This was a big win, she could press and hold the spacebar and dictate, read what was captured, and press enter to get the agent back to work. For an hour this was great, but she was getting frustrated waiting on me every time she needed the output explained.
 
-Then I had an idea to use the [`say` cli](https://developer.apple.com/library/archive/documentation/LanguagesUtilities/Conceptual/MacAutomationScriptingGuide/SpeakText.html) that ships with macOS and a set of agent instructions to drive that cli.
+Then I had an idea to use the [`say` CLI](https://developer.apple.com/library/archive/documentation/LanguagesUtilities/Conceptual/MacAutomationScriptingGuide/SpeakText.html) that ships with macOS and a set of agent instructions to drive that CLI.
 
 > [!NOTE]
 > `say "Hello, I am an agent and I am speaking to you."`
@@ -34,7 +34,7 @@ So I updated the `AGENTS.md` for the project to include the instructions below a
 That said, what it read was still pretty technical, and this reminded me of something a coworker had mentioned they were using a lot in their prompts recently, [ELI5](https://jonmagic.com/eli5/), aka explain it to me like I'm five years old. So I added this to the instructions.
 
 > [!TIP]
-> **When you speak, speak like you are explaining to a five year old. Use simple language and short sentences.**
+> **When you speak, speak like you are explaining to a five-year-old. Use simple language and short sentences.**
 
 We got back to work and **_the experience was incredible_**. The agent would speak to us about what it was doing, what changed, and when it needed input. She could understand the updates without me having to explain them and she could stay in the flow by using voice input to respond to the agent's requests.
 
