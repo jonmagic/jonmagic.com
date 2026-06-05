@@ -127,14 +127,9 @@ relay ready</code></pre>
 <pre class="language-md"><code class="language-md"><span class="token title important"><span class="token punctuation">##</span> Relay updates</span>
 
 Use short relay updates so I can follow agent progress without
-reading the terminal. Do not skip these updates during tool-heavy, multi-step, or
-long-running work unless the task is a single direct answer with no tool use.
-
-If a response will use any tool for investigation, editing, validation,
-delegation, or documentation lookup, send a relay update before or in the same
-tool-calling turn as the first tool call. Do not treat "just checking" or "small
-tool use" as exempt. The only exemption is a final-answer-only response with no
-tool calls.
+reading the terminal. Send one whenever you use a tool for investigation,
+editing, validation, delegation, or lookup, including "small" tool use. The only
+exemption is a final-answer-only response with no tool calls.
 
 Send an update before or when one of these things happens.
 
@@ -149,12 +144,11 @@ Keep updates brief and intentional. Say what is happening or what changed, not
 raw details. Do not include code, logs, terminal output, file contents, secrets,
 private data, or long explanations.
 
-Use the relay command as the first-choice transport when available. Enqueue updates with
-<span class="token code-snippet code keyword">`--line`</span>. Choose the line from the agent's current working directory, not from
-the topic being researched. Prefer the current git repository or project folder
-name. If the agent is working in <span class="token code-snippet code keyword">`~/Brain`</span>, use <span class="token code-snippet code keyword">`Brain`</span>. If there is no
-repository, use the nearest meaningful folder name. Mention cross-project
-research targets in the message text, not by changing the line.
+Use the <span class="token code-snippet code keyword">`relay`</span> command when it is available. Enqueue updates with <span class="token code-snippet code keyword">`--line`</span>.
+Choose the line from the agent's current working directory, not from the topic
+being researched. Prefer the current git repository or project folder name. If
+there is no repository, use the nearest meaningful folder name. Mention
+cross-project research targets in the message text, not by changing the line.
 
 <span class="token code"><span class="token punctuation">```</span><span class="token code-language">sh</span>
 <span class="token code-block language-sh">relay <span class="token punctuation">\</span>
@@ -166,12 +160,12 @@ research targets in the message text, not by changing the line.
 <span class="token punctuation">```</span></span>
 
 Use <span class="token code-snippet code keyword">`--type complete`</span> for completion updates and <span class="token code-snippet code keyword">`--priority high`</span> only when the
-message needs prompt human attention. Include <span class="token code-snippet code keyword">`--cwd`</span> when safe so the source
-context can be revealed later. If <span class="token code-snippet code keyword">`relay`</span> is missing or the command fails,
-do not spend time debugging it during unrelated work. Fall back to a short text
-status message and continue the task.
+message needs prompt human attention. Include <span class="token code-snippet code keyword">`--cwd`</span> unless the path itself is
+sensitive. If <span class="token code-snippet code keyword">`relay`</span> is missing or the command fails, do not spend time
+debugging it during unrelated work. Fall back to a short text status message and
+continue the task.
 
-Do not call <span class="token code-snippet code keyword">`/usr/bin/say`</span> directly from the CLI. The app owns playback so multiple
+Do not trigger system text-to-speech directly. The app owns playback so multiple
 agent sessions share one safe speaker.</code></pre>
 <h3 id="5.-try-it-with-an-agent" tabindex="-1"><a class="heading-anchor" href="#5.-try-it-with-an-agent" aria-hidden="true">#</a> 5. Try it with an agent</h3>
 <p>Start a small agent task in any project. You should see relays queue as the agent works. When you are ready to hear one, use <strong>Play Next</strong> from the menu bar app or run:</p>
