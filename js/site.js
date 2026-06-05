@@ -65,6 +65,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var eventTarget = eventLink.getAttribute('data-plausible-event-target') || eventLink.getAttribute('href') || 'unknown';
     var props = { target: eventTarget };
+    var plausibleScript = document.querySelector('script[data-domain="jonmagic.com"]');
+    if (plausibleScript) {
+      Array.prototype.slice.call(plausibleScript.attributes).forEach(function(attr) {
+        if (attr.name.indexOf('event-') === 0 && attr.value) {
+          props[attr.name.replace('event-', '')] = attr.value;
+        }
+      });
+    }
     if (eventLink.href) {
       props.url = eventLink.href;
     }
