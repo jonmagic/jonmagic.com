@@ -5,9 +5,11 @@ avatar: /images/posts/the-feedback-loop-i-was-missing/banner.webp
 tags:
   - post
 description: >-
-  How helping my daughter build a game with AI led to a better audio feedback
-  loop for working with coding agents.
+  How building a game with my kid and AI showed me that audio feedback lands
+  differently than text, and turned into a better way to follow coding agents
+  without watching every session.
 featured: 1
+accent: violet
 popular: true
 trending: true
 ---
