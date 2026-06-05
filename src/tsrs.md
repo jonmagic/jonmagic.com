@@ -3,7 +3,7 @@ layout: layout
 title: Tri-State Relay Service
 description: >-
   A free macOS app for hearing short agent updates when you are ready for them,
-  without watching every terminal.
+  without watching every agent session.
 permalink: /tsrs/
 ---
 
@@ -11,7 +11,7 @@ permalink: /tsrs/
   <img class="tsrs-icon" src="/images/tsrs/AppIcon.png" alt="Tri-State Relay Service app icon" width="160" height="160">
   <div class="tsrs-hero-copy">
     <p class="tsrs-kicker">A local macOS relay for agent updates</p>
-    <p class="tsrs-deck">Short audio updates make agent work easier to re-enter without watching every terminal.</p>
+    <p class="tsrs-deck">Short audio updates make agent work easier to re-enter without keeping every agent window in view.</p>
     <a class="tsrs-download-button" href="/downloads/Tri-State%20Relay%20Service.zip" data-plausible-event-name="TSRS Download" data-plausible-event-target="macos-latest">Download for macOS</a>
   </div>
 </section>
@@ -73,7 +73,7 @@ Once the manual relay works, add the instructions below wherever your coding age
 ## Relay updates
 
 Use short relay updates so I can follow agent progress without
-reading the terminal. Send one whenever you use a tool for investigation,
+watching the session. Send one whenever you use a tool for investigation,
 editing, validation, delegation, or lookup, including "small" tool use.
 
 Send an update before or when one of these things happens.
