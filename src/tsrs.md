@@ -73,14 +73,9 @@ Once the manual relay works, add the instructions below wherever your coding age
 ## Relay updates
 
 Use short relay updates so I can follow agent progress without
-reading the terminal. Do not skip these updates during tool-heavy, multi-step, or
-long-running work unless the task is a single direct answer with no tool use.
-
-If a response will use any tool for investigation, editing, validation,
-delegation, or documentation lookup, send a relay update before or in the same
-tool-calling turn as the first tool call. Do not treat "just checking" or "small
-tool use" as exempt. The only exemption is a final-answer-only response with no
-tool calls.
+reading the terminal. Send one whenever you use a tool for investigation,
+editing, validation, delegation, or lookup, including "small" tool use. The only
+exemption is a final-answer-only response with no tool calls.
 
 Send an update before or when one of these things happens.
 
@@ -95,12 +90,11 @@ Keep updates brief and intentional. Say what is happening or what changed, not
 raw details. Do not include code, logs, terminal output, file contents, secrets,
 private data, or long explanations.
 
-Use the relay command as the first-choice transport when available. Enqueue updates with
-`--line`. Choose the line from the agent's current working directory, not from
-the topic being researched. Prefer the current git repository or project folder
-name. If the agent is working in `~/Brain`, use `Brain`. If there is no
-repository, use the nearest meaningful folder name. Mention cross-project
-research targets in the message text, not by changing the line.
+Use the `relay` command when it is available. Enqueue updates with `--line`.
+Choose the line from the agent's current working directory, not from the topic
+being researched. Prefer the current git repository or project folder name. If
+there is no repository, use the nearest meaningful folder name. Mention
+cross-project research targets in the message text, not by changing the line.
 
 ```sh
 relay \
@@ -112,12 +106,12 @@ relay \
 ```
 
 Use `--type complete` for completion updates and `--priority high` only when the
-message needs prompt human attention. Include `--cwd` when safe so the source
-context can be revealed later. If `relay` is missing or the command fails,
-do not spend time debugging it during unrelated work. Fall back to a short text
-status message and continue the task.
+message needs prompt human attention. Include `--cwd` unless the path itself is
+sensitive. If `relay` is missing or the command fails, do not spend time
+debugging it during unrelated work. Fall back to a short text status message and
+continue the task.
 
-Do not call `/usr/bin/say` directly from the CLI. The app owns playback so multiple
+Do not trigger system text-to-speech directly. The app owns playback so multiple
 agent sessions share one safe speaker.
 ````
 
