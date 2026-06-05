@@ -7,6 +7,7 @@ tags:
   - post
 description: >-
   Stop treating agent misses as bugs to fix and start treating them as gaps to close. Every mistake becomes a reason to add a test, document a pattern in a skill, or tighten the instructions. Free yourself to solve new problems instead of re-solving the same ones.
+featured: 2
 ---
 
 Over the holiday break I decided to rebuild a slice of an internal web app from my day job as a webview experience inside VS Code. The goal wasn't really the feature itself—it was to force myself to learn the [VS Code extension APIs](https://code.visualstudio.com/api) and to get my hands dirty with [Open Truss](https://github.com/open-truss/open-truss), an open-source workflow framework I've been collaborating on with [@hktouw](https://github.com/hktouw) and [@kmcq](https://github.com/kmcq).

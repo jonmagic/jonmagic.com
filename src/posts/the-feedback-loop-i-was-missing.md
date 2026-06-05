@@ -8,6 +8,8 @@ description: >-
   How helping my daughter build a game with AI led to a better audio feedback
   loop for working with coding agents.
 featured: 1
+popular: true
+trending: true
 ---
 
 This last weekend I was doing my best to live in the moment and my daughter asked me if we could play Minecraft. We did for an hour or two and then, inspired by a conversation with a friend, I asked if she wanted to build her own Minecraft-like game.
