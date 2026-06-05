@@ -60,6 +60,6 @@ Each project or context gets a line. A line can stay quiet while I am focused, w
 
 The goal is audio feedback on demand, not constant interruption.
 
-I'm releasing it for free. I may open source it someday too, but for now I mostly want to get it into people's hands and see whether this feedback loop helps anyone else.
+I'm releasing it for free and [the source is on GitHub](https://github.com/jonmagic/tri-state-relay-service). I mostly want to get it into people's hands and see whether this feedback loop helps anyone else.
 
 If you want to try it, [here is the user manual and download](/tsrs/).
