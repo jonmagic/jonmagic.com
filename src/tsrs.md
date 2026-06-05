@@ -26,6 +26,14 @@ It is free to download. I may open source it someday, but for now I mostly want 
 <video src="/images/tsrs/product-demo.mp4" controls width="100%"></video>
 -->
 
+## Current release
+
+**1.0.0 — Initial public release**
+
+Tri-State Relay Service is now available as a signed direct-download macOS app. This release adds visible app and CLI versioning, keeps the stable download URL for the site, and stores a versioned release archive for debugging or rollback.
+
+The app and `relay` CLI should both report `1.0.0`.
+
 ## Getting started
 
 The fastest path is to get the app running, prove one relay works by hand, and only then wire it into your agents.
