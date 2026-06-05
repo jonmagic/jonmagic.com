@@ -40,7 +40,7 @@
 &lt;p&gt;That became &lt;a href=&quot;https://jonmagic.com/tsrs/&quot;&gt;Tri-State Relay Service&lt;/a&gt;, a small macOS app and CLI where agents leave short updates in a local queue instead of speaking over each other.&lt;/p&gt;
 &lt;p&gt;Each project or context gets a line. A line can stay quiet while I am focused, wait with an update, and become active when I choose to listen.&lt;/p&gt;
 &lt;p&gt;The goal is audio feedback on demand, not constant interruption.&lt;/p&gt;
-&lt;p&gt;I’m releasing it for free. I may open source it someday too, but for now I mostly want to get it into people’s hands and see whether this feedback loop helps anyone else.&lt;/p&gt;
+&lt;p&gt;I’m releasing it for free and &lt;a href=&quot;https://github.com/jonmagic/tri-state-relay-service&quot;&gt;the source is on GitHub&lt;/a&gt;. I mostly want to get it into people’s hands and see whether this feedback loop helps anyone else.&lt;/p&gt;
 &lt;p&gt;If you want to try it, &lt;a href=&quot;https://jonmagic.com/tsrs/&quot;&gt;here is the user manual and download&lt;/a&gt;.&lt;/p&gt;
 </content>
   </entry>
