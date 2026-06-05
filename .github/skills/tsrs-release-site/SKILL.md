@@ -1,6 +1,6 @@
 ---
 name: tsrs-release-site
-description: Update jonmagic.com for new Tri-State Relay Service releases. Use when publishing a TSRS release, updating /tsrs/ version notes, stable download links, or release changelog from ~/code/jonmagic/tri-state-relay-service.
+description: Update jonmagic.com for new Tri-State Relay Service releases. Use when publishing a TSRS release, updating /tsrs/ version notes, versioned download links, or release changelog from ~/code/jonmagic/tri-state-relay-service.
 ---
 
 # TSRS Release Site
@@ -9,7 +9,7 @@ description: Update jonmagic.com for new Tri-State Relay Service releases. Use w
 
 Maintain the jonmagic.com product page and related site surfaces for Tri-State Relay Service releases.
 
-This skill keeps the public site aligned with the TSRS app release without turning the site into a full release engineering system. The site should use a stable download URL for the main CTA, show the current public version, and include a concise changelog based on the release window.
+This skill keeps the public site aligned with the TSRS app release without turning the site into a full release engineering system. The site should point the main CTA at the current versioned release archive, show the current public version, and include a concise changelog based on the release window.
 
 ## When to Use
 
@@ -17,7 +17,7 @@ Use this skill when:
 
 - A new Tri-State Relay Service app release is cut.
 - `/tsrs/` needs a version, release note, or download update.
-- The stable download URL or versioned archive needs to be checked.
+- The versioned download URL or release archive needs to be checked.
 - A public changelog needs to be drafted from recent TSRS commits.
 - The TSRS project card or homepage copy needs to stay aligned with the release.
 
@@ -44,24 +44,25 @@ rg 'let relayCliVersion = ' ~/code/jonmagic/tri-state-relay-service/src/macos/Re
 
 ## Download URL Rules
 
-Keep the public download button stable:
+Point the public download button at the current versioned archive:
 
 ```text
-/downloads/Tri-State%20Relay%20Service.zip
+/downloads/Tri-State%20Relay%20Service-<version>-macos-<arch>.zip
 ```
 
-The site may also keep versioned release archives, for example:
+For example:
 
 ```text
-src/downloads/Tri-State Relay Service-1.0.0-macos-arm64.zip
+/downloads/Tri-State%20Relay%20Service-1.0.0-macos-arm64.zip
 ```
 
-For each release, check that both are present when expected:
+For each release, check that the versioned archive is present:
 
-1. `src/downloads/Tri-State Relay Service.zip`, the stable public download.
-2. `src/downloads/Tri-State Relay Service-<version>-macos-<arch>.zip`, the versioned archive.
+```text
+src/downloads/Tri-State Relay Service-<version>-macos-<arch>.zip
+```
 
-Do not change public links to versioned filenames unless the user explicitly asks.
+Do not add or rely on an unversioned `Tri-State Relay Service.zip` download unless the user explicitly asks.
 
 ## Changelog Rules
 
@@ -80,7 +81,7 @@ Good 1.0.0-style wording:
 
 **1.0.0 — Initial public release**
 
-Tri-State Relay Service is now available as a signed direct-download macOS app. This release adds visible app and CLI versioning, keeps the stable download URL for the site, and stores a versioned release archive for debugging or rollback.
+Tri-State Relay Service is now available as a signed direct-download macOS app. This release adds visible app and CLI versioning, and the download button points directly at the versioned release archive.
 
 The app and `relay` CLI should both report `1.0.0`.
 ```
@@ -88,7 +89,7 @@ The app and `relay` CLI should both report `1.0.0`.
 ## Site Surfaces to Check
 
 1. `src/tsrs.md`
-   - Hero download URL should stay stable.
+   - Hero download URL should point at the current versioned archive.
    - `## Current release` should show the current version.
    - Getting-started instructions should still match the app behavior.
 2. `src/projects/tri-state-relay-service.md`
@@ -96,7 +97,7 @@ The app and `relay` CLI should both report `1.0.0`.
 3. `src/index.njk`
    - Homepage TSRS feature copy should still be accurate.
 4. `src/downloads/`
-   - Stable and versioned zip files should be present when publishing.
+   - The current versioned zip file should be present when publishing.
 
 ## Workflow
 
@@ -105,7 +106,7 @@ The app and `relay` CLI should both report `1.0.0`.
 3. Inspect recent TSRS commits using the correct release boundary.
 4. Draft a short public changelog for `/tsrs/`.
 5. Update the site surfaces that need version or release copy changes.
-6. Confirm the stable download URL still points at `Tri-State Relay Service.zip`.
+6. Confirm the download URL points at the current versioned archive.
 7. Run `npm run build` in the site repo.
 8. Report changed files and any release assumptions.
 
