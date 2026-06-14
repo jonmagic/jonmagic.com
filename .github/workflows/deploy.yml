@@ -9,12 +9,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Checkout Tri-State Relay Service changelog
+        uses: actions/checkout@v4
+        with:
+          repository: jonmagic/tri-state-relay-service
+          path: tri-state-relay-service
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
       - run: npm ci
       - run: npm run build
+        env:
+          TSRS_CHANGELOG_PATH: ${{ github.workspace }}/tri-state-relay-service/CHANGELOG.md
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
