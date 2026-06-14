@@ -199,24 +199,26 @@ You can combine that with a default line rule:
 Choose the default line from the current working directory. Prefer the git repository or project name. Mention cross-project research in the message text instead of changing the line.
 ```
 
-### Focus, Ready, and Mute
+### Focus, Ready, Live, and Mute
 
 The app is designed to be quiet by default.
 
-Focus mode queues relays without speaking. Ready mode releases one relay, then returns to Focus. Mute prevents playback even if relays are queued.
+Focus mode queues relays without speaking. Ready mode releases one relay, then returns to Focus. Live mode keeps playing new relays automatically, grouped by line. Mute prevents playback even if relays are queued.
 
 Common commands:
 
 ```sh
 relay list
 relay ready
+relay live
+relay focus
 relay mute
 relay unmute
 relay acknowledge
 relay clear-delivered
 ```
 
-In the menu bar app, left click for the fastest Play Next path. Right click opens the command palette. Your keyboard shortcut opens the command palette with Play Next selected, so pressing Return immediately plays the next eligible relay.
+In the menu bar app, left click for the fastest Play Next path. Use Start Live when you want new updates to keep playing automatically and Stop Live when you want to return to Focus. Right click opens the command palette. Your keyboard shortcut opens the command palette with Play Next selected, so pressing Return immediately plays the next eligible relay.
 
 The app owns playback. The CLI submits and manages relays, but it does not speak directly.
 
@@ -233,6 +235,8 @@ Direct-download builds use app-owned playback and can use installed macOS voices
 When you are focused on one line, other lines may collect several updates. This stays manageable by showing or playing the latest useful update for an inactive line instead of making you hear every stale intermediate message.
 
 For many people, the default behavior is enough. You can work on one line, then switch lines when you are ready to catch up.
+
+If you want TSRS to keep playing instead, use Live mode. Live drains the relays that were available for one line, switches to the next queued line, and then returns to a previous line if more relays arrived there in the meantime. A high-priority relay on another line waits until the current line batch finishes.
 
 ## Advanced inactive-line Combiner
 
@@ -258,7 +262,7 @@ Most first-run surprises are quiet by design, not failures.
 
 **Install reports a conflict or permission error.** A different `relay` already exists at `/usr/local/bin/relay`, or macOS needs permission to install there. Let Settings replace it, remove the old file yourself, or use the bundled CLI path.
 
-**Relays queue but never speak.** Check whether the app is in Focus mode, muted, or waiting because a microphone appears active. Use `relay list` to confirm what is waiting, then `relay ready` or Play Next to release one.
+**Relays queue but never speak.** Check whether the app is in Focus mode, muted, not in Live mode, or waiting because a microphone appears active. Use `relay list` to confirm what is waiting, then `relay ready`, `relay live`, Play Next, or Start Live to release relays.
 
 **The app launched silent after Open at Login.** That is expected. Open at Login starts in Focus mode so relays queue quietly until you ask to hear one.
 
