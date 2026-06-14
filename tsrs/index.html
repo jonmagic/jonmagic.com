@@ -221,15 +221,17 @@ relay list</code></pre>
 <pre class="language-text"><code class="language-text">At the start of each session, ask me what the relay line should be called. An empty answer is fine and means to use the current project or folder name. Use that line for all updates during the session.</code></pre>
 <p>You can combine that with a default line rule:</p>
 <pre class="language-text"><code class="language-text">Choose the default line from the current working directory. Prefer the git repository or project name. Mention cross-project research in the message text instead of changing the line.</code></pre>
-<h3 id="focus%2C-ready%2C-live%2C-and-mute" tabindex="-1"><a class="heading-anchor" href="#focus%2C-ready%2C-live%2C-and-mute" aria-hidden="true">#</a> Focus, Ready, Live, and Mute</h3>
+<h3 id="focus%2C-ready%2C-and-live" tabindex="-1"><a class="heading-anchor" href="#focus%2C-ready%2C-and-live" aria-hidden="true">#</a> Focus, Ready, and Live</h3>
 <p>The app is designed to be quiet by default.</p>
-<p>Focus mode queues relays without speaking. Ready mode releases one relay, then returns to Focus. Live mode keeps playing new relays automatically, grouped by line. Mute prevents playback even if relays are queued.</p>
-<p>Common commands:</p>
+<p>The three playback states are Focus, Ready, and Live. Focus queues relays without speaking. Ready releases one relay, then returns to Focus. Live keeps playing new relays automatically, grouped by line.</p>
+<p>Mute is a separate safety override. It prevents playback even if relays are queued or Live is on.</p>
+<p>Primary playback commands:</p>
 <pre class="language-sh"><code class="language-sh">relay list
 relay ready
 relay live
-relay focus
-relay mute
+relay focus</code></pre>
+<p>Other queue controls:</p>
+<pre class="language-sh"><code class="language-sh">relay mute
 relay unmute
 relay acknowledge
 relay clear-delivered</code></pre>
