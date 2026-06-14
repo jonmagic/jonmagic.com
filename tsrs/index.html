@@ -221,17 +221,19 @@ relay list</code></pre>
 <pre class="language-text"><code class="language-text">At the start of each session, ask me what the relay line should be called. An empty answer is fine and means to use the current project or folder name. Use that line for all updates during the session.</code></pre>
 <p>You can combine that with a default line rule:</p>
 <pre class="language-text"><code class="language-text">Choose the default line from the current working directory. Prefer the git repository or project name. Mention cross-project research in the message text instead of changing the line.</code></pre>
-<h3 id="focus%2C-ready%2C-and-mute" tabindex="-1"><a class="heading-anchor" href="#focus%2C-ready%2C-and-mute" aria-hidden="true">#</a> Focus, Ready, and Mute</h3>
+<h3 id="focus%2C-ready%2C-live%2C-and-mute" tabindex="-1"><a class="heading-anchor" href="#focus%2C-ready%2C-live%2C-and-mute" aria-hidden="true">#</a> Focus, Ready, Live, and Mute</h3>
 <p>The app is designed to be quiet by default.</p>
-<p>Focus mode queues relays without speaking. Ready mode releases one relay, then returns to Focus. Mute prevents playback even if relays are queued.</p>
+<p>Focus mode queues relays without speaking. Ready mode releases one relay, then returns to Focus. Live mode keeps playing new relays automatically, grouped by line. Mute prevents playback even if relays are queued.</p>
 <p>Common commands:</p>
 <pre class="language-sh"><code class="language-sh">relay list
 relay ready
+relay live
+relay focus
 relay mute
 relay unmute
 relay acknowledge
 relay clear-delivered</code></pre>
-<p>In the menu bar app, left click for the fastest Play Next path. Right click opens the command palette. Your keyboard shortcut opens the command palette with Play Next selected, so pressing Return immediately plays the next eligible relay.</p>
+<p>In the menu bar app, left click for the fastest Play Next path. Use Start Live when you want new updates to keep playing automatically and Stop Live when you want to return to Focus. Right click opens the command palette. Your keyboard shortcut opens the command palette with Play Next selected, so pressing Return immediately plays the next eligible relay.</p>
 <p>The app owns playback. The CLI submits and manages relays, but it does not speak directly.</p>
 <h3 id="voice-and-settings" tabindex="-1"><a class="heading-anchor" href="#voice-and-settings" aria-hidden="true">#</a> Voice and settings</h3>
 <p>Open Settings whenever you want to change the CLI install, keyboard shortcut, Open at Login, or voice.</p>
@@ -240,6 +242,7 @@ relay clear-delivered</code></pre>
 <h3 id="when-many-updates-pile-up" tabindex="-1"><a class="heading-anchor" href="#when-many-updates-pile-up" aria-hidden="true">#</a> When many updates pile up</h3>
 <p>When you are focused on one line, other lines may collect several updates. This stays manageable by showing or playing the latest useful update for an inactive line instead of making you hear every stale intermediate message.</p>
 <p>For many people, the default behavior is enough. You can work on one line, then switch lines when you are ready to catch up.</p>
+<p>If you want TSRS to keep playing instead, use Live mode. Live drains the relays that were available for one line, switches to the next queued line, and then returns to a previous line if more relays arrived there in the meantime. A high-priority relay on another line waits until the current line batch finishes.</p>
 <h2 id="advanced-inactive-line-combiner" tabindex="-1"><a class="heading-anchor" href="#advanced-inactive-line-combiner" aria-hidden="true">#</a> Advanced inactive-line Combiner</h2>
 <p>The Combiner is for people who want an external agent or command to summarize many queued inactive-line updates into one short relay. It is useful when you run several agents at once and want a catch-up that sounds like a concise teammate summary.</p>
 <p>You can inspect or change the Combiner from the CLI.</p>
@@ -252,7 +255,7 @@ relay combiner <span class="token parameter variable">--command</span> none</cod
 <p>Most first-run surprises are quiet by design, not failures.</p>
 <p><strong>Agents cannot find <code>relay</code>.</strong> The CLI is not installed, <code>/usr/local/bin</code> is not on your <code>PATH</code>, or your agent cannot see the same shell environment as your terminal. Open Settings and install or refresh the CLI, then run <code>relay --version</code> in a new terminal. If you do not want to install it, copy the bundled CLI path from Settings and use that full path in your agent instructions.</p>
 <p><strong>Install reports a conflict or permission error.</strong> A different <code>relay</code> already exists at <code>/usr/local/bin/relay</code>, or macOS needs permission to install there. Let Settings replace it, remove the old file yourself, or use the bundled CLI path.</p>
-<p><strong>Relays queue but never speak.</strong> Check whether the app is in Focus mode, muted, or waiting because a microphone appears active. Use <code>relay list</code> to confirm what is waiting, then <code>relay ready</code> or Play Next to release one.</p>
+<p><strong>Relays queue but never speak.</strong> Check whether the app is in Focus mode, muted, not in Live mode, or waiting because a microphone appears active. Use <code>relay list</code> to confirm what is waiting, then <code>relay ready</code>, <code>relay live</code>, Play Next, or Start Live to release relays.</p>
 <p><strong>The app launched silent after Open at Login.</strong> That is expected. Open at Login starts in Focus mode so relays queue quietly until you ask to hear one.</p>
 <p><strong>An agent read raw logs or secrets aloud.</strong> Tighten your agent instructions so relays carry short, human-authored summaries only. No code, logs, terminal output, secrets, or private data.</p>
 <p>The local queue lives on your Mac here:</p>
