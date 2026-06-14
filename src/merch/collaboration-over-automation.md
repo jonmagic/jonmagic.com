@@ -20,7 +20,7 @@ variants:
     product_url: "https://www.teepublic.com/t-shirt/92422696-collaboration-over-automation?store_id=4463011"
     description: White ink for dark shirts.
 originating_post: /posts/designing-collaborations-not-just-automations/
-order: 5
+order: 3
 permalink: false
 description: A reminder to preserve the thinking in the work. If a task builds understanding, don't just automate it away. Design a collaboration that keeps the learning and cuts the grunt work.
 ---
