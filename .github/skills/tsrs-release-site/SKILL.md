@@ -66,31 +66,28 @@ Do not add or rely on an unversioned `Tri-State Relay Service.zip` download unle
 
 ## Changelog Rules
 
-For `/tsrs/`, update the `## Current release` section.
+For `/tsrs/`, keep the release notes sourced from `~/code/jonmagic/tri-state-relay-service/CHANGELOG.md` through `src/_data/tsrsRelease.js`. Do not duplicate changelog prose directly into `src/tsrs.md`.
 
-Use a concise public changelog. Do not summarize all pre-release history unless the user asks for launch-summary copy. For release notes, use only the release window:
+Use a concise public changelog in the TSRS repo. Do not summarize all pre-release history unless the user asks for launch-summary copy. For release notes, use only the release window:
 
 - Prefer the previous release tag or previous version boundary when available.
 - For the first public release, use the user-provided time or commit boundary.
 - If the boundary is ambiguous, ask before drafting release notes.
 
-Good 1.0.0-style wording:
+Good 1.0.0-style wording in `CHANGELOG.md`:
 
 ```md
-## Current release
+## 1.0.0 - Initial public release
 
-**1.0.0 — Initial public release**
-
-Tri-State Relay Service is now available as a signed direct-download macOS app. This release adds visible app and CLI versioning, and the download button points directly at the versioned release archive.
-
-The app and `relay` CLI should both report `1.0.0`.
+- Shipped a signed direct-download macOS app.
+- Bundled the `relay` CLI with matching app and CLI versioning.
 ```
 
 ## Site Surfaces to Check
 
 1. `src/tsrs.md`
    - Hero download URL should point at the current versioned archive.
-   - `## Current release` should show the current version.
+   - `## Current release` should render the current version from `tsrsRelease.current`.
    - Getting-started instructions should still match the app behavior.
 2. `src/projects/tri-state-relay-service.md`
    - Description should still match product positioning.
@@ -104,8 +101,8 @@ The app and `relay` CLI should both report `1.0.0`.
 1. Inspect the app repo version metadata.
 2. Verify app and CLI versions match.
 3. Inspect recent TSRS commits using the correct release boundary.
-4. Draft a short public changelog for `/tsrs/`.
-5. Update the site surfaces that need version or release copy changes.
+4. Update `CHANGELOG.md` in the TSRS repo.
+5. Update the site surfaces that need version or release copy changes, keeping `/tsrs/` wired to `tsrsRelease`.
 6. Confirm the download URL points at the current versioned archive.
 7. Run `npm run build` in the site repo.
 8. Report changed files and any release assumptions.

@@ -14,7 +14,7 @@ analyticsTopic: agent-updates
   <div class="tsrs-hero-copy">
     <p class="tsrs-kicker">A local macOS relay for agent updates</p>
     <p class="tsrs-deck">Short audio updates make agent work easier to re-enter without keeping every agent window in view.</p>
-    <a class="tsrs-download-button" href="/downloads/Tri-State%20Relay%20Service-1.0.0-macos-arm64.zip" data-plausible-event-name="TSRS Download" data-plausible-event-target="macos-1.0.0-arm64">Download for macOS</a>
+    <a class="tsrs-download-button" href="{{ tsrsRelease.downloadPath }}" data-plausible-event-name="TSRS Download" data-plausible-event-target="{{ tsrsRelease.analyticsTarget }}">Download for macOS</a>
   </div>
 </section>
 
@@ -30,11 +30,11 @@ It is free to download. I may open source it someday, but for now I mostly want 
 
 ## Current release
 
-**1.0.0 — Initial public release**
+**{{ tsrsRelease.current.heading }}**
 
-Tri-State Relay Service is now available as a signed direct-download macOS app. This release adds visible app and CLI versioning, and the download button points directly at the versioned release archive.
+{{ tsrsRelease.current.notesHtml | safe }}
 
-The app and `relay` CLI should both report `1.0.0`.
+The app and `relay` CLI should both report `{{ tsrsRelease.current.version }}`.
 
 ## Getting started
 

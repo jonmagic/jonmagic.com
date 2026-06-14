@@ -173,6 +173,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/d7x9k3");
   eleventyConfig.addPassthroughCopy("src/_data/postCropData.json");
+  eleventyConfig.addWatchTarget(process.env.TSRS_CHANGELOG_PATH || "../tri-state-relay-service/CHANGELOG.md");
 
   eleventyConfig.addGlobalData("layout", "layout.njk");
   eleventyConfig.addGlobalData("post", "post.njk");
@@ -204,6 +205,9 @@ module.exports = function(eleventyConfig) {
     });
     // Sort ascending by 'featured' value
     return filtered.sort((a, b) => a.data.featured - b.data.featured);
+  });
+  eleventyConfig.addLiquidFilter("safe", function(value) {
+    return value;
   });
 
   // Generate avatars.json, postCropData.json, and vectors.json before build
