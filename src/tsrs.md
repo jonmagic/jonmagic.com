@@ -22,7 +22,7 @@ Tri-State Relay Service is a local macOS app and CLI where agents leave short up
 
 The story behind this started while I was helping my daughter build a game with AI. I wrote about that in [The Feedback Loop I Was Missing](/posts/the-feedback-loop-i-was-missing/).
 
-It is free to download. I may open source it someday, but for now I mostly want people to try it and tell me whether the feedback loop helps. If you try it, [leave feedback in this GitHub Discussion](https://github.com/jonmagic/jonmagic.com/discussions/13).
+It is free to download, and [the source is on GitHub](https://github.com/jonmagic/tri-state-relay-service). I mostly want people to try it and tell me whether the feedback loop helps. If you try it, [leave feedback in this GitHub Discussion](https://github.com/jonmagic/jonmagic.com/discussions/13).
 
 <!-- TODO media: product demo clip. Replace with:
 <video src="/images/tsrs/product-demo.mp4" controls width="100%"></video>
