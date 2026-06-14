@@ -199,19 +199,26 @@ You can combine that with a default line rule:
 Choose the default line from the current working directory. Prefer the git repository or project name. Mention cross-project research in the message text instead of changing the line.
 ```
 
-### Focus, Ready, Live, and Mute
+### Focus, Ready, and Live
 
 The app is designed to be quiet by default.
 
-Focus mode queues relays without speaking. Ready mode releases one relay, then returns to Focus. Live mode keeps playing new relays automatically, grouped by line. Mute prevents playback even if relays are queued.
+The three playback states are Focus, Ready, and Live. Focus queues relays without speaking. Ready releases one relay, then returns to Focus. Live keeps playing new relays automatically, grouped by line.
 
-Common commands:
+Mute is a separate safety override. It prevents playback even if relays are queued or Live is on.
+
+Primary playback commands:
 
 ```sh
 relay list
 relay ready
 relay live
 relay focus
+```
+
+Other queue controls:
+
+```sh
 relay mute
 relay unmute
 relay acknowledge
