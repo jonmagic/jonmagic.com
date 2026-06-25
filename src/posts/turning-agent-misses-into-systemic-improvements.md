@@ -7,7 +7,7 @@ tags:
   - post
 description: >-
   Stop treating agent misses as bugs to fix and start treating them as gaps to close. Every mistake becomes a reason to add a test, document a pattern in a skill, or tighten the instructions. Free yourself to solve new problems instead of re-solving the same ones.
-featured: 2
+featured: 3
 accent: amber
 ---
 

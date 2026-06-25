@@ -10,9 +10,10 @@ title: jonmagic.com
   <div class="featured-grid">
     {% for post in featured %}
       <article class="featured-card{% if post.data.accent %} accent-{{ post.data.accent }}{% endif %}">
-        {% if post.data.popular or post.data.trending or post.data.eyebrow %}
+        {% if post.data.new or post.data.popular or post.data.trending or post.data.eyebrow %}
         <div class="featured-badges">
           {% if post.data.eyebrow %}<span class="featured-eyebrow">{{ post.data.eyebrow }}</span>{% endif %}
+          {% if post.data.new %}<span class="badge badge-new">New</span>{% endif %}
           {% if post.data.popular %}<span class="badge badge-popular">Popular</span>{% endif %}
           {% if post.data.trending %}<span class="badge badge-trending">Trending</span>{% endif %}
         </div>

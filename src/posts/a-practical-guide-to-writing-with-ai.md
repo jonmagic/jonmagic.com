@@ -5,7 +5,6 @@ avatar: /images/posts/a-practical-guide-to-writing-with-ai/writing-in-notebook-a
 tags:
   - post
 description: How I use AI as a writing collaborator without losing my voice. A step-by-step process for collecting context, finding story arcs, drafting, editing, and publishing writing that feels human.
-featured: 4
 accent: green
 ---
 
