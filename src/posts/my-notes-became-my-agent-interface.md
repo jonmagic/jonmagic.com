@@ -13,7 +13,7 @@ new: true
 
 A few weeks ago I was in a Copilot CLI conversation with my Brain folder in scope, trying to make a small version of [Andrej Karpathy's LLM wiki approach](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) fit into my day. The idea made sense to me right away. Keep source material around, let agents help turn it into useful wiki pages, keep those pages maintained, and stop rebuilding context from scratch every time you sit down to work.
 
-I thought I was going to love it, and then it didn't really stick. That isn't a knock on the idea. I still think it's a good one, and I think a lot of people should try it. What I noticed after a few attempts was more personal than that. I already had a folder tuned around how my attention, memory, and work move, and making it behave like a wiki flattened out a few differences that matter to me.
+I thought I was going to love it, and then it didn't really stick the way I expected. That isn't a knock on the idea. I still think it's a good one, and I think a lot of people should try it. What I noticed after a few attempts was more personal than that. I already had a folder tuned around how my attention, memory, and work move, and making the whole thing behave like a wiki flattened out a few differences that matter to me.
 
 I wrote about that folder in [How I Work, 2025 Edition](/posts/how-i-work-2025-edition/), so I'm not going to re-explain the whole thing here. The short version is that I have a directory of Markdown files I call my Brain. It has weekly notes, daily project notes, meeting notes, transcripts, summaries, project notes, bookmarks, scripts, skills, and local instructions for agents. The Brain isn't a metaphor and it isn't a side project. It is the place I go when I don't trust memory enough to plan from it.
 
@@ -31,7 +31,7 @@ Files in `Daily Projects/` can be messy because I may only need them for the nex
 
 Those are small distinctions, but agents are very literal collaborators. They can search a folder full of Markdown, and they can usually find something that looks relevant, but "relevant" is not the same thing as current, safe to edit, or grounded in the source. If I don't make those differences visible, the agent has to infer them from filenames, recency, and whatever context I happened to put in the prompt.
 
-That is where the wiki experiment helped me. It didn't convince me to replace the Brain. It helped me see that the Brain already had useful structure, but some of that structure was only obvious to me.
+That is where the wiki experiment helped me. It didn't convince me to replace the whole Brain, but I did end up adapting it in one place. Over the last eight weeks, `Projects/` have turned into mini wikis for long-running work, with current state, decisions, source trails, open questions, and local agent instructions living together. I think what didn't fit was making the whole Brain behave that way.
 
 ## Sunday night is still part of the system
 
@@ -58,7 +58,7 @@ I don't want this table to become the spine of the post, because copying my fold
 | `Meeting Notes/` | Rolling notes from conversations and follow-ups | As conversations happen | Keeps decisions and context from disappearing into memory |
 | `Transcripts/` | Raw transcripts from meetings or voice memos | Source material, usually append-only | Gives me something to check when a summary feels too confident |
 | `Executive Summaries/` | Distilled summaries of long conversations, threads, or transcripts | After enough source exists | Turns a pile of context into something I can reuse |
-| `Projects/` | Current state, decisions, risks, references, open questions | Slower, as understanding changes | Gives future-me and agents a stable place to restart |
+| `Projects/` | Current state, decisions, risks, references, open questions | Slower, as understanding changes | Gives long-running work its own mini wiki |
 | `Bookmarks/` | Links, docs, articles, and why I saved them | Whenever outside context matters | Keeps external memory from becoming a pile of URLs |
 | Skills, scripts, and `AGENTS.md` | Repeated instructions, helper workflows, validation rules | When friction repeats | Stops me from typing the same rule into every prompt |
 
@@ -111,4 +111,4 @@ That is how my Brain has grown. It has been a long series of small repairs aroun
 
 Trying the LLM wiki idea was useful because it reminded me that the goal is not to have a prettier archive. The goal is to make the work easier to re-enter while it is happening, for me and for the agents helping me.
 
-The folders are just one implementation. I think what actually matters is noticing when context is moving too fast for your tools to see it, when something needs to survive longer than your memory, and when repeated friction is asking you to write a rule down so you don't have to carry it anymore.
+The folders are just one implementation. I think what actually matters is noticing when context is moving too fast for your tools to see it, when something needs to survive longer than your memory, when a project deserves its own mini wiki, and when repeated friction is asking you to write a rule down so you don't have to carry it anymore.
