@@ -20,6 +20,9 @@ npm ci          # Install dependencies
 ```
 src/
 ├── posts/           # Blog posts (*.md)
+├── li/              # LinkedIn short redirect pages
+├── bsky/            # Bluesky short redirect pages
+├── x/               # X short redirect pages
 ├── projects/        # Project pages (*.md)
 ├── about/           # About page
 ├── images/
@@ -61,6 +64,11 @@ Defined in `.eleventy.js`:
 - Random contribution graph crops per post
 - Generated from title/date hash for consistency
 - Stored in `src/_data/postCropData.json`
+
+### Social Redirects
+- First-party social short links live under `src/li/`, `src/bsky/`, and `src/x/`.
+- Use `/{channel}/{short-slug}/` paths in social posts and redirect to the canonical post with `utm_source=<channel>&utm_medium=social`.
+- Redirect pages should be `layout: false`, `eleventyExcludeFromCollections: true`, `noindex, follow`, canonicalized to the real post, and include useful social preview metadata.
 
 ### Avatar Shuffling
 - Avatars in `src/images/avatars/` (webp format)
@@ -107,3 +115,8 @@ Automatically created in `_site/`:
 - Push to `main` triggers GitHub Actions
 - Builds and deploys `_site/` to `gh-pages` branch
 - Uses `peaceiris/actions-gh-pages` action
+
+## Agent Instructions
+
+- Root `AGENTS.md` is the canonical instruction file for this repo.
+- Do not add or restore `.github/copilot-instructions.md`.

@@ -62,9 +62,42 @@ layout: layout  # Usually omit; defaults to layout.njk
 5. **Rotate featured posts** (if featuring the new post)
    - Follow the Featured Posts Rotation steps below
 
-6. **Build and preview**
+6. **Create social redirects** (if the post will be promoted)
+   - Follow the Social Redirects section below
+
+7. **Build and preview**
    - Run `npm run start` to build and serve locally
    - Verify post appears correctly
+
+## Social Redirects
+
+When a post will be shared on social platforms, create short first-party redirect pages so social copy can use readable URLs while Plausible still receives channel attribution.
+
+Use the shortest useful slug for the social link, not necessarily the full post slug:
+
+```text
+src/li/{short-slug}.njk    -> /li/{short-slug}/
+src/bsky/{short-slug}.njk  -> /bsky/{short-slug}/
+src/x/{short-slug}.njk     -> /x/{short-slug}/
+```
+
+Each redirect page should:
+
+- use `layout: false` and `eleventyExcludeFromCollections: true`,
+- use `meta name="robots" content="noindex, follow"`,
+- set `link rel="canonical"` to the real post URL,
+- include useful OG/Twitter title, description, and image metadata,
+- redirect with meta refresh, JavaScript, and a normal fallback link,
+- use relative redirect targets so local testing stays on `localhost`,
+- keep UTM params minimal: `utm_source=<channel>` and `utm_medium=social`.
+
+Example redirect target:
+
+```text
+/posts/my-post/?utm_source=linkedin&utm_medium=social
+```
+
+Do not add more UTM parameters unless there is a concrete measurement need.
 
 ## Featured Posts Rotation
 
