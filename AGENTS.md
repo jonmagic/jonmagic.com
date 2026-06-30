@@ -73,7 +73,8 @@ Publishing a post includes revisiting the homepage featured posts.
 2. Give top billing to posts less than 2 weeks old. The newest post should be `featured: 1` with `new: true`; other still-new posts follow in reverse-chronological order.
 3. Fill the remaining featured slots with the strongest existing posts by Plausible performance, preferring posts that are strong in both 30-day and 90-day views.
 4. Keep exactly 4 posts with numeric `featured` values and remove `featured` from posts that fall out of the homepage set.
-5. Use badges only when they are still accurate, such as `new: true` for posts less than 2 weeks old or `popular: true` for data-backed high-traffic posts.
+5. Give each featured post a different `accent` color so the homepage cards are visually distinct.
+6. Use badges only when they are still accurate, such as `new: true` for the latest less-than-2-week-old post or `popular: true` for data-backed high-traffic posts.
 
 ## Project skills
 

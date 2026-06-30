@@ -128,6 +128,8 @@ The homepage shows up to 4 featured posts. Publishing a post includes updating t
    - Exactly 4 posts should have numeric `featured` values
    - The `featured` filter in `.eleventy.js` sorts ascending, so lower numbers appear first
    - Removing the `featured` field is the correct way to un-feature a post
+   - Each featured post should use a different `accent` value so homepage cards are visually distinct
+   - Use `new: true` only for the latest less-than-2-week-old post, and use `popular: true` when a post is a data-backed high-traffic homepage choice
 
 ### Example selection
 

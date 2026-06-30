@@ -10,6 +10,7 @@ description: >-
   execution.
 featured: 1
 new: true
+accent: red
 ---
 
 I was talking with friends recently about what changes when agents become a normal part of building software.

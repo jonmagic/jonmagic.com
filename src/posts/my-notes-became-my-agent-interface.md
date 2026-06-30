@@ -8,7 +8,8 @@ description: >-
   How my Markdown notes grew into an interface for agents, and what that taught
   me about keeping useful friction while turning repeated pain into structure.
 featured: 2
-new: true
+accent: amber
+popular: true
 ---
 
 A few weeks ago I was in a Copilot CLI conversation with my Brain folder in scope, trying to make a small version of [Andrej Karpathy's LLM wiki approach](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) fit into my day. The idea made sense to me right away. Keep source material around, let agents help turn it into useful wiki pages, keep those pages maintained, and stop rebuilding context from scratch every time you sit down to work.
