@@ -59,8 +59,8 @@ layout: layout  # Usually omit; defaults to layout.njk
    - Use Markdown with standard formatting
    - Images: `![alt text](/images/posts/{slug}/image-name.webp)`
 
-5. **Rotate featured posts** (if featuring the new post)
-   - Follow the Featured Posts Rotation steps below
+5. **Update homepage featured posts**
+   - Follow the Featured Posts Selection steps below
 
 6. **Create social redirects** (if the post will be promoted)
    - Follow the Social Redirects section below
@@ -99,9 +99,9 @@ Example redirect target:
 
 Do not add more UTM parameters unless there is a concrete measurement need.
 
-## Featured Posts Rotation
+## Featured Posts Selection
 
-The homepage shows up to 4 featured posts. When publishing a new post that should be featured, rotate the stack:
+The homepage shows up to 4 featured posts. Publishing a post includes updating the featured set.
 
 ### Steps
 
@@ -109,45 +109,38 @@ The homepage shows up to 4 featured posts. When publishing a new post that shoul
    - Search `src/posts/*.md` for files containing `featured:` in their frontmatter
    - Note each post's current `featured` value
 
-2. **Remove the oldest featured post from the stack**
-   - The post with `featured: 4` (the highest number) gets dropped
-   - Remove the `featured` field entirely from that post's frontmatter
+2. **Query Plausible before choosing non-new posts**
+   - Use `~/.copilot/skills/plausible-site-stats/scripts/plausible-stats top-pages --range 30d --limit 30`
+   - Use `~/.copilot/skills/plausible-site-stats/scripts/plausible-stats top-pages --range 90d --limit 30`
+   - Do not print or store Plausible credentials
 
-3. **Renumber remaining featured posts**
-   - Increment each remaining post's `featured` value by 1
-   - `featured: 3` becomes `featured: 4`
-   - `featured: 2` becomes `featured: 3`
-   - `featured: 1` becomes `featured: 2`
+3. **Give new posts top billing**
+   - Posts less than 2 weeks old should appear first
+   - The newest post should be `featured: 1` with `new: true`
+   - Other still-new posts follow in reverse-chronological order
 
-4. **Add the new post as featured #1**
-   - Add `featured: 1` to the new post's frontmatter
+4. **Fill the remaining slots from data**
+   - Pick the strongest existing posts from Plausible, preferring posts that are strong in both 30-day and 90-day windows
+   - Add `popular: true` only when a post is data-backed as a high-traffic homepage choice
+   - Remove `featured` from posts that fall out of the 4-slot set
 
-### Example
+5. **Keep the homepage set exact**
+   - Exactly 4 posts should have numeric `featured` values
+   - The `featured` filter in `.eleventy.js` sorts ascending, so lower numbers appear first
+   - Removing the `featured` field is the correct way to un-feature a post
 
-Before rotation:
+### Example selection
+
 | # | Post |
 |---|------|
-| 1 | Post A |
-| 2 | Post B |
-| 3 | Post C |
-| 4 | Post D |
-
-After rotation (new Post E published):
-| # | Post |
-|---|------|
-| 1 | Post E (new) |
-| 2 | Post A |
-| 3 | Post B |
-| 4 | Post C |
-
-Post D is no longer featured (its `featured` field is removed).
+| 1 | Newest post less than 2 weeks old |
+| 2 | Another post less than 2 weeks old |
+| 3 | Strongest 30d/90d Plausible post |
+| 4 | Next strongest 30d/90d Plausible post |
 
 ### Important Notes
 
-- Always confirm with the user before modifying featured posts
-- The `featured` filter in `.eleventy.js` sorts ascending (lower number = higher priority)
-- Only posts with a numeric `featured` value appear in the featured section
-- Removing the `featured` field (not setting it to 0 or null) is the correct way to un-feature a post
+- If Plausible is unavailable, do not guess. Keep the current featured set except for adding the new post at the top and note that data-backed selection could not be completed.
 
 ## Frontmatter Examples
 

@@ -5,9 +5,11 @@ tags:
   - post
 description: >-
   A small CLI tool for browsing, searching, and resuming copilot-cli sessions. Built on the SQLite database copilot-cli already maintains for you.
+featured: 3
 accent: green
 eyebrow: "TOOL · 2026"
 disableMerchCta: true
+popular: true
 kit:
   - label: Repo
     text: jonmagic/copilot-sessions

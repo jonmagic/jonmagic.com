@@ -67,12 +67,13 @@ Do not auto-post to social platforms. Draft copy and links, then wait for explic
 
 The homepage shows up to 4 featured posts, sorted by numeric `featured`.
 
-When making a new post featured:
+Publishing a post includes revisiting the homepage featured posts.
 
-1. Remove `featured` from the old `featured: 4` post.
-2. Increment current `featured: 1..3` posts by one.
-3. Set the new post to `featured: 1`.
-4. If the new post should show a homepage badge, use `new: true`.
+1. Query Plausible top pages for `jonmagic.com` with 30-day and 90-day ranges.
+2. Give top billing to posts less than 2 weeks old. The newest post should be `featured: 1` with `new: true`; other still-new posts follow in reverse-chronological order.
+3. Fill the remaining featured slots with the strongest existing posts by Plausible performance, preferring posts that are strong in both 30-day and 90-day views.
+4. Keep exactly 4 posts with numeric `featured` values and remove `featured` from posts that fall out of the homepage set.
+5. Use badges only when they are still accurate, such as `new: true` for posts less than 2 weeks old or `popular: true` for data-backed high-traffic posts.
 
 ## Project skills
 

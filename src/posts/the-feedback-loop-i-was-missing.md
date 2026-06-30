@@ -8,7 +8,6 @@ description: >-
   How building a game with my kid and AI showed me that audio feedback lands
   differently than text, and turned into a better way to follow coding agents
   without watching every session.
-featured: 2
 accent: violet
 popular: true
 trending: true
