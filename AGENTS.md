@@ -44,6 +44,7 @@ Use these paths when the channel is relevant:
 - LinkedIn: `src/li/{short-slug}.njk` -> `/li/{short-slug}/`
 - Bluesky: `src/bsky/{short-slug}.njk` -> `/bsky/{short-slug}/`
 - X: `src/x/{short-slug}.njk` -> `/x/{short-slug}/`
+- Slack: `src/slack/{short-slug}.njk` -> `/slack/{short-slug}/`
 
 Redirect pages should:
 
@@ -61,7 +62,7 @@ Example target:
 /posts/my-post/?utm_source=linkedin&utm_medium=social
 ```
 
-Do not auto-post to social platforms. Draft copy and links, then wait for explicit human approval.
+Do not auto-post to social platforms or Slack. Draft copy and links, then wait for explicit human approval.
 
 ## Featured posts
 

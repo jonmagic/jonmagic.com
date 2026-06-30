@@ -79,6 +79,7 @@ Use the shortest useful slug for the social link, not necessarily the full post 
 src/li/{short-slug}.njk    -> /li/{short-slug}/
 src/bsky/{short-slug}.njk  -> /bsky/{short-slug}/
 src/x/{short-slug}.njk     -> /x/{short-slug}/
+src/slack/{short-slug}.njk -> /slack/{short-slug}/
 ```
 
 Each redirect page should:
@@ -98,6 +99,7 @@ Example redirect target:
 ```
 
 Do not add more UTM parameters unless there is a concrete measurement need.
+Do not auto-post to social platforms or Slack.
 
 ## Featured Posts Selection
 
