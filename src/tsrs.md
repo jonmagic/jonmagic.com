@@ -261,6 +261,68 @@ The command template receives the inactive-line updates as input and should retu
 
 Combiner output should follow the same rules as any other relay. No secrets, no raw logs, no code dumps, and no long explanations.
 
+## Advanced BYO voice command
+
+Direct builds can use a configured voice command to generate an audio file for TSRS to play. This is modeled after `say -o`: the command must write audio to an output path and must not speak directly. TSRS still owns playback, mute, Focus, Ready, Live, and delivered-state marking.
+
+Advanced voice, inactive-line combiner, and cleanup retention settings live in:
+
+```text
+~/Library/Application Support/Tri-State Relay Service/config.toml
+```
+
+On upgrade, TSRS creates this file once from existing 1.1.2 SQLite settings. If the file already exists, TSRS preserves it and treats it as the source of truth for those advanced settings.
+
+Useful config commands:
+
+```sh
+relay config path
+relay config show
+relay config validate
+relay config set --voice-command "/usr/bin/say -f <text-file> -o <output-file>"
+```
+
+If `config.toml` is malformed or uses unsupported placeholders, `relay config validate` reports the error. Playback fails quiet while the config is invalid: relays stay queued, Settings/status surface the config error, and TSRS does not claim messages for speech until the config is fixed.
+
+Supported placeholders are inserted as single arguments, not shell-expanded:
+
+| Placeholder | Meaning |
+| --- | --- |
+| `<text-file>` | UTF-8 file containing the relay text to synthesize |
+| `<output-file>` | Audio file path TSRS will play after the command exits |
+| `<voice-id>` | The provider voice id for the relay line when a provider is active; otherwise the selected TSRS voice name |
+| `<app-bin>` | The app bundle's `Contents/MacOS` directory |
+
+The default `/usr/bin/say` path does not use provider line voices. It keeps using System Default unless you deliberately replace the voice command with a provider wrapper.
+
+### Speechify line voices
+
+Direct builds include a Speechify-compatible wrapper at `<app-bin>/speechify`. Store your API key in Keychain yourself:
+
+```sh
+security add-generic-password -a "$USER" -s TSRS_SPEECHIFY_API_KEY -w "paste-api-key-here" -U
+```
+
+Then edit `config.toml` to opt into Speechify line voices:
+
+```toml
+[voice]
+provider = "speechify"
+command = "<app-bin>/speechify --text-file <text-file> --output-file <output-file> --voice-id <voice-id> --keychain-service TSRS_SPEECHIFY_API_KEY"
+
+[speechify]
+default_voice_id = "george"
+auto_assign_line_voices = true
+catalog_command = "<app-bin>/speechify voices --keychain-service TSRS_SPEECHIFY_API_KEY"
+assignment_strategy = "stable-hash"
+
+[speechify.line_voices]
+Brain = "george"
+"Tri-State Relay Service" = "henry"
+```
+
+When a line has an explicit mapping, TSRS substitutes that id into `<voice-id>`. When a new line has no mapping and `auto_assign_line_voices` is true, TSRS runs `catalog_command`, picks a stable id from the returned catalog, writes it once to `[speechify.line_voices]`, and reuses that sticky mapping after restart. If the catalog command fails or returns no ids, TSRS falls back to `default_voice_id` and still lets the wrapper synthesize audio.
+
 ## Troubleshooting
 
 Most first-run surprises are quiet by design, not failures.
