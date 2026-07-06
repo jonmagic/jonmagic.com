@@ -109,7 +109,7 @@
 <li>Removed the duplicate <code>relay settings</code> command and made <code>relay combiner</code> read-only; use <code>relay config set --combiner-command</code> to change the combiner.</li>
 <li>Preserved 1.1.2 upgrade migration from SQLite settings into <code>config.toml</code>.</li>
 <li>Added BYO voice command playback while keeping app-owned speech, mute, Focus, Ready, and Live safeguards.</li>
-<li>Added Speechify-compatible voice synthesis support for direct builds, including Keychain-based API-key lookup and rate-limit handling.</li>
+<li>Added Speechify-compatible voice synthesis support for the direct-download app, including Keychain-based API-key lookup and rate-limit handling.</li>
 <li>Added provider voice configuration with sticky per-line voice IDs and optional stable assignment for new lines.</li>
 <li>Added local spoken-usage counters by provider, model, voice, and line so custom voice cost can be estimated without storing another copy of relay text.</li>
 <li>Added cleanup controls for old relay rows, spoken-usage buckets, and temporary voice audio files.</li>
