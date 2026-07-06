@@ -253,8 +253,8 @@ You can inspect or change the Combiner from the CLI.
 
 ```sh
 relay combiner
-relay combiner --command "llm prompt <input> --system <system> --no-stream --no-log"
-relay combiner --command none
+relay config set --combiner-command "llm prompt <input> --system <system> --no-stream --no-log"
+relay config set --combiner-command none
 ```
 
 The command template receives the inactive-line updates as input and should return one safe, short message. Leave the Combiner unset if you prefer the simpler latest-update behavior.
