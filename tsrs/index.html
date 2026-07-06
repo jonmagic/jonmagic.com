@@ -245,7 +245,7 @@ relay clear-delivered</code></pre>
 <h3 id="voice-and-settings" tabindex="-1"><a class="heading-anchor" href="#voice-and-settings" aria-hidden="true">#</a> Voice and settings</h3>
 <p>Open Settings whenever you want to change the CLI install, keyboard shortcut, Open at Login, or voice.</p>
 <p>Changing the voice is quiet. Use Preview only when you explicitly want to hear a sample. To add more macOS voices, open System Settings &gt; Accessibility &gt; Spoken Content.</p>
-<p>Direct-download builds use app-owned playback and can use installed macOS voices that work with the system speech engine. Natural voices are favored when available, and System Default remains available.</p>
+<p>The app you download from this page uses app-owned playback and can use installed macOS voices that work with the system speech engine. Natural voices are favored when available, and System Default remains available.</p>
 <h3 id="when-many-updates-pile-up" tabindex="-1"><a class="heading-anchor" href="#when-many-updates-pile-up" aria-hidden="true">#</a> When many updates pile up</h3>
 <p>When you are focused on one line, other lines may collect several updates. This stays manageable by showing or playing the latest useful update for an inactive line instead of making you hear every stale intermediate message.</p>
 <p>For many people, the default behavior is enough. You can work on one line, then switch lines when you are ready to catch up.</p>
@@ -259,7 +259,7 @@ relay config <span class="token builtin class-name">set</span> --combiner-comman
 <p>The command template receives the inactive-line updates as input and should return one safe, short message. Leave the Combiner unset if you prefer the simpler latest-update behavior.</p>
 <p>Combiner output should follow the same rules as any other relay. No secrets, no raw logs, no code dumps, and no long explanations.</p>
 <h2 id="advanced-byo-voice-command" tabindex="-1"><a class="heading-anchor" href="#advanced-byo-voice-command" aria-hidden="true">#</a> Advanced BYO voice command</h2>
-<p>Direct builds can use a configured voice command to generate an audio file for TSRS to play. This is modeled after <code>say -o</code>: the command must write audio to an output path and must not speak directly. TSRS still owns playback, mute, Focus, Ready, Live, and delivered-state marking.</p>
+<p>The app you download from this page can use a configured voice command to generate an audio file for TSRS to play. This is modeled after <code>say -o</code>: the command must write audio to an output path and must not speak directly. TSRS still owns playback, mute, Focus, Ready, Live, and delivered-state marking.</p>
 <p>Advanced voice, inactive-line combiner, and cleanup retention settings live in:</p>
 <pre class="language-text"><code class="language-text">~/Library/Application Support/Tri-State Relay Service/config.toml</code></pre>
 <p>On upgrade, TSRS creates this file once from existing 1.1.2 SQLite settings. If the file already exists, TSRS preserves it and treats it as the source of truth for those advanced settings.</p>
@@ -298,7 +298,7 @@ relay config <span class="token builtin class-name">set</span> --voice-command <
 </table>
 <p>The default <code>/usr/bin/say</code> path does not use provider line voices. It keeps using System Default unless you deliberately replace the voice command with a provider wrapper.</p>
 <h3 id="speechify-line-voices" tabindex="-1"><a class="heading-anchor" href="#speechify-line-voices" aria-hidden="true">#</a> Speechify line voices</h3>
-<p>Direct builds include a Speechify-compatible wrapper at <code>&lt;app-bin&gt;/speechify</code>. Store your API key in Keychain yourself:</p>
+<p>The app download includes a Speechify-compatible wrapper at <code>&lt;app-bin&gt;/speechify</code>. Store your API key in Keychain yourself:</p>
 <pre class="language-sh"><code class="language-sh">security add-generic-password <span class="token parameter variable">-a</span> <span class="token string">"<span class="token environment constant">$USER</span>"</span> <span class="token parameter variable">-s</span> TSRS_SPEECHIFY_API_KEY <span class="token parameter variable">-w</span> <span class="token string">"paste-api-key-here"</span> <span class="token parameter variable">-U</span></code></pre>
 <p>Then edit <code>config.toml</code> to opt into Speechify line voices:</p>
 <pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">voice</span><span class="token punctuation">]</span>
