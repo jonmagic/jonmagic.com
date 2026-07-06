@@ -258,6 +258,63 @@ relay config <span class="token builtin class-name">set</span> --combiner-comman
 relay config <span class="token builtin class-name">set</span> --combiner-command none</code></pre>
 <p>The command template receives the inactive-line updates as input and should return one safe, short message. Leave the Combiner unset if you prefer the simpler latest-update behavior.</p>
 <p>Combiner output should follow the same rules as any other relay. No secrets, no raw logs, no code dumps, and no long explanations.</p>
+<h2 id="advanced-byo-voice-command" tabindex="-1"><a class="heading-anchor" href="#advanced-byo-voice-command" aria-hidden="true">#</a> Advanced BYO voice command</h2>
+<p>Direct builds can use a configured voice command to generate an audio file for TSRS to play. This is modeled after <code>say -o</code>: the command must write audio to an output path and must not speak directly. TSRS still owns playback, mute, Focus, Ready, Live, and delivered-state marking.</p>
+<p>Advanced voice, inactive-line combiner, and cleanup retention settings live in:</p>
+<pre class="language-text"><code class="language-text">~/Library/Application Support/Tri-State Relay Service/config.toml</code></pre>
+<p>On upgrade, TSRS creates this file once from existing 1.1.2 SQLite settings. If the file already exists, TSRS preserves it and treats it as the source of truth for those advanced settings.</p>
+<p>Useful config commands:</p>
+<pre class="language-sh"><code class="language-sh">relay config path
+relay config show
+relay config validate
+relay config <span class="token builtin class-name">set</span> --voice-command <span class="token string">"/usr/bin/say -f &lt;text-file> -o &lt;output-file>"</span></code></pre>
+<p>If <code>config.toml</code> is malformed or uses unsupported placeholders, <code>relay config validate</code> reports the error. Playback fails quiet while the config is invalid: relays stay queued, Settings/status surface the config error, and TSRS does not claim messages for speech until the config is fixed.</p>
+<p>Supported placeholders are inserted as single arguments, not shell-expanded:</p>
+<table>
+<thead>
+<tr>
+<th>Placeholder</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;text-file&gt;</code></td>
+<td>UTF-8 file containing the relay text to synthesize</td>
+</tr>
+<tr>
+<td><code>&lt;output-file&gt;</code></td>
+<td>Audio file path TSRS will play after the command exits</td>
+</tr>
+<tr>
+<td><code>&lt;voice-id&gt;</code></td>
+<td>The provider voice id for the relay line when a provider is active; otherwise the selected TSRS voice name</td>
+</tr>
+<tr>
+<td><code>&lt;app-bin&gt;</code></td>
+<td>The app bundle’s <code>Contents/MacOS</code> directory</td>
+</tr>
+</tbody>
+</table>
+<p>The default <code>/usr/bin/say</code> path does not use provider line voices. It keeps using System Default unless you deliberately replace the voice command with a provider wrapper.</p>
+<h3 id="speechify-line-voices" tabindex="-1"><a class="heading-anchor" href="#speechify-line-voices" aria-hidden="true">#</a> Speechify line voices</h3>
+<p>Direct builds include a Speechify-compatible wrapper at <code>&lt;app-bin&gt;/speechify</code>. Store your API key in Keychain yourself:</p>
+<pre class="language-sh"><code class="language-sh">security add-generic-password <span class="token parameter variable">-a</span> <span class="token string">"<span class="token environment constant">$USER</span>"</span> <span class="token parameter variable">-s</span> TSRS_SPEECHIFY_API_KEY <span class="token parameter variable">-w</span> <span class="token string">"paste-api-key-here"</span> <span class="token parameter variable">-U</span></code></pre>
+<p>Then edit <code>config.toml</code> to opt into Speechify line voices:</p>
+<pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">voice</span><span class="token punctuation">]</span>
+<span class="token key property">provider</span> <span class="token punctuation">=</span> <span class="token string">"speechify"</span>
+<span class="token key property">command</span> <span class="token punctuation">=</span> <span class="token string">"&lt;app-bin>/speechify --text-file &lt;text-file> --output-file &lt;output-file> --voice-id &lt;voice-id> --keychain-service TSRS_SPEECHIFY_API_KEY"</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">speechify</span><span class="token punctuation">]</span>
+<span class="token key property">default_voice_id</span> <span class="token punctuation">=</span> <span class="token string">"george"</span>
+<span class="token key property">auto_assign_line_voices</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+<span class="token key property">catalog_command</span> <span class="token punctuation">=</span> <span class="token string">"&lt;app-bin>/speechify voices --keychain-service TSRS_SPEECHIFY_API_KEY"</span>
+<span class="token key property">assignment_strategy</span> <span class="token punctuation">=</span> <span class="token string">"stable-hash"</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">speechify.line_voices</span><span class="token punctuation">]</span>
+<span class="token key property">Brain</span> <span class="token punctuation">=</span> <span class="token string">"george"</span>
+<span class="token key property">"Tri-State Relay Service"</span> <span class="token punctuation">=</span> <span class="token string">"henry"</span></code></pre>
+<p>When a line has an explicit mapping, TSRS substitutes that id into <code>&lt;voice-id&gt;</code>. When a new line has no mapping and <code>auto_assign_line_voices</code> is true, TSRS runs <code>catalog_command</code>, picks a stable id from the returned catalog, writes it once to <code>[speechify.line_voices]</code>, and reuses that sticky mapping after restart. If the catalog command fails or returns no ids, TSRS falls back to <code>default_voice_id</code> and still lets the wrapper synthesize audio.</p>
 <h2 id="troubleshooting" tabindex="-1"><a class="heading-anchor" href="#troubleshooting" aria-hidden="true">#</a> Troubleshooting</h2>
 <p>Most first-run surprises are quiet by design, not failures.</p>
 <p><strong>Agents cannot find <code>relay</code>.</strong> The CLI is not installed, <code>/usr/local/bin</code> is not on your <code>PATH</code>, or your agent cannot see the same shell environment as your terminal. Open Settings and install or refresh the CLI, then run <code>relay --version</code> in a new terminal. If you do not want to install it, copy the bundled CLI path from Settings and use that full path in your agent instructions.</p>
