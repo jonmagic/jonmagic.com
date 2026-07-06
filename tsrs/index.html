@@ -298,7 +298,7 @@ relay config <span class="token builtin class-name">set</span> --voice-command <
 </table>
 <p>The default <code>/usr/bin/say</code> path does not use provider line voices. It keeps using System Default unless you deliberately replace the voice command with a provider wrapper.</p>
 <h3 id="speechify-line-voices" tabindex="-1"><a class="heading-anchor" href="#speechify-line-voices" aria-hidden="true">#</a> Speechify line voices</h3>
-<p>The app download includes a Speechify-compatible wrapper at <code>&lt;app-bin&gt;/speechify</code>. Store your API key in Keychain yourself:</p>
+<p>The app download includes a Speechify-compatible wrapper at <code>&lt;app-bin&gt;/speechify</code>. Start with the <a href="https://docs.speechify.ai/">Speechify API docs</a> to understand the API, and use the <a href="https://platform.speechify.ai/">Speechify dashboard</a> to sign up and manage API keys. Store your API key in Keychain yourself:</p>
 <pre class="language-sh"><code class="language-sh">security add-generic-password <span class="token parameter variable">-a</span> <span class="token string">"<span class="token environment constant">$USER</span>"</span> <span class="token parameter variable">-s</span> TSRS_SPEECHIFY_API_KEY <span class="token parameter variable">-w</span> <span class="token string">"paste-api-key-here"</span> <span class="token parameter variable">-U</span></code></pre>
 <p>Then edit <code>config.toml</code> to opt into Speechify line voices:</p>
 <pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">voice</span><span class="token punctuation">]</span>
