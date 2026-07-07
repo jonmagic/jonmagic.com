@@ -33,6 +33,7 @@ There are no explicit lint, test, docs, or migration scripts.
 - Every post needs the `post` tag.
 - Post images go in `src/images/posts/{post-slug}/`.
 - Markdown image paths should be `/images/posts/{post-slug}/{image}.webp`.
+- Header art is usually generated as one source image with aspect ratio `5:N`, where `N = 2 * number_of_5x2_crops`, then cut into stacked 5:2 crops. If the crop count is unspecified, ask or assume 4 crops and document the 5:8 source-image assumption.
 - Run `npm run build` after post, image, data, CSS, template, or redirect changes.
 
 ## Social redirect conventions
