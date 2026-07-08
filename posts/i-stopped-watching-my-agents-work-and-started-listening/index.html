@@ -11,7 +11,7 @@
 
 
 <meta property="og:title" content="I stopped watching my agents work and started listening">
-<meta property="og:description" content="How Tri-State Relay Service grew from queued audio updates into Live mode, and why recognizable workstreams changed how I follow agent work.">
+<meta property="og:description" content="How Tri-State Relay Service grew from queued audio updates into Live mode, and why per-line voices make agent work easier to follow.">
 <meta property="og:url" content="https://jonmagic.com/posts/i-stopped-watching-my-agents-work-and-started-listening/">
 <meta property="og:site_name" content="jonmagic.com">
 <meta property="og:type" content="article">
@@ -21,10 +21,10 @@
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="I stopped watching my agents work and started listening">
-<meta name="twitter:description" content="How Tri-State Relay Service grew from queued audio updates into Live mode, and why recognizable workstreams changed how I follow agent work.">
+<meta name="twitter:description" content="How Tri-State Relay Service grew from queued audio updates into Live mode, and why per-line voices make agent work easier to follow.">
 
 
-<meta name="description" content="How Tri-State Relay Service grew from queued audio updates into Live mode, and why recognizable workstreams changed how I follow agent work.">
+<meta name="description" content="How Tri-State Relay Service grew from queued audio updates into Live mode, and why per-line voices make agent work easier to follow.">
 <meta name="author" content="Jonathan Hoyt">
 
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -94,62 +94,60 @@
       <p>I shipped the first version of <a href="/tsrs/">Tri-State Relay Service</a> (TSRS) because I needed agents to stop interrupting me.</p>
 <p>The original problem was simple. I had figured out that <a href="/posts/the-feedback-loop-i-was-missing/">short spoken updates helped me follow agent work</a> without reading a wall of terminal output, but plain <a href="https://developer.apple.com/library/archive/documentation/LanguagesUtilities/Conceptual/MacAutomationScriptingGuide/SpeakText.html"><code>say</code></a> calls broke down as soon as more than one agent was running. If every process can talk whenever it wants, the room gets noisy fast.</p>
 <p>So I built a queue.</p>
-<p>Agents leave short updates. The app keeps them quiet. I decide when I am ready to hear one. The important part was not that agents could talk. The important part was that they could wait.</p>
+<p>Agents leave short updates, TSRS holds them, and I hit Ready when I want to hear the next one. An agent can say “I’m done with the next step,” but it does not get to decide when my room gets audio.</p>
 <p><img src="/images/posts/i-stopped-watching-my-agents-work-and-started-listening/panel-01.webp" alt="A quiet TSRS-inspired relay machine waiting on a dark desk"></p>
 <h2 id="the-queue-solved-the-interruption-problem" tabindex="-1"><a class="heading-anchor" href="#the-queue-solved-the-interruption-problem" aria-hidden="true">#</a> The queue solved the interruption problem</h2>
 <p>The first version of TSRS felt a lot like voicemail.</p>
-<p><a href="/tsrs/#focus%2C-ready%2C-and-live">Focus mode</a> means nothing speaks. Ready mode means I am ready for one more update. The app plays one relay, then goes quiet again. That model worked because it gave the pacing back to me.</p>
-<p>That was the piece missing from raw <code>say</code>. Audio was useful, but only if the app owned playback. The CLI could enqueue a message, but it could not decide that now was a good time to speak near me. The Mac app had to own that decision.</p>
-<p>That boundary still matters. TSRS is not a notification system where every agent gets to interrupt me. It is a local relay inbox where I can hear the next useful update when I want it.</p>
+<p><a href="/tsrs/#focus%2C-ready%2C-and-live">Focus mode</a> means nothing speaks. Ready mode means I am ready for one more update. The app plays one relay, then goes quiet again. I liked that because it put the pacing back in my hands.</p>
+<p>Plain <code>say</code> could not do that for me. <code>say</code> is fine when one process is speaking, but it has no idea what else is happening in the room. TSRS gives the Mac app the final say over playback, so the CLI can leave a relay without interrupting me.</p>
+<p>I still want that split. TSRS is not a notification system where every agent gets to interrupt me. It is a local relay inbox where I can hear the next useful update when I want it.</p>
 <figure>
   <video src="/images/posts/i-stopped-watching-my-agents-work-and-started-listening/demo-queue-ready.mp4" controls width="100%" preload="none" poster="/images/posts/i-stopped-watching-my-agents-work-and-started-listening/demo-queue-ready-poster.webp"></video>
   <figcaption>Focus mode keeps the room quiet. Ready releases one queued update, then TSRS goes quiet again.</figcaption>
 </figure>
 <p>For a while, that was enough.</p>
-<h2 id="%E2%80%9Cready-for-one-more%E2%80%9D-was-not-the-only-mode-i-needed" tabindex="-1"><a class="heading-anchor" href="#%E2%80%9Cready-for-one-more%E2%80%9D-was-not-the-only-mode-i-needed" aria-hidden="true">#</a> “Ready for one more” was not the only mode I needed</h2>
-<p>When I talked about TSRS with a teammate, he asked the question that helped me name the tradeoff more clearly.</p>
-<p>Reading gives you control over pace. You decide when to read, what to skim, what to reread, and when to stop. Spoken updates are different. Once someone starts talking, they own a little piece of your attention until they stop.</p>
-<p>That is exactly why TSRS had modes.</p>
-<p>If I am deep in a task, I do not want anything to speak unless I ask for it. That is Focus and Ready. But that is not the only way I use agents.</p>
-<p>Sometimes I am sitting at my laptop with several agents running, not really typing, mostly watching work move. In that mode, triggering Play Next over and over starts to feel like its own kind of busywork. I am already choosing to listen. I just do not want to babysit the queue.</p>
-<p>That is why I added <a href="/tsrs/#focus%2C-ready%2C-and-live">Live mode</a>.</p>
+<h2 id="i-did-not-always-want-to-press-ready-again" tabindex="-1"><a class="heading-anchor" href="#i-did-not-always-want-to-press-ready-again" aria-hidden="true">#</a> I did not always want to press Ready again</h2>
+<p>When I talked about TSRS with a teammate, he helped me think through why listening felt different from reading.</p>
+<p>Reading is easy to control. You decide when to read, what to skim, what to reread, and when to stop. Spoken updates are different. Once audio starts, it owns a little of your attention until it ends.</p>
+<p>Focus and Ready worked well for that. If I am deep in a task, I do not want anything to speak unless I ask for it. But that is not the only way I use agents.</p>
+<p>Sometimes I am sitting at my laptop with several agents running, not really typing, mostly watching them finish steps. In that mode, triggering Play Next over and over starts to feel like its own kind of busywork. I am already choosing to listen. I just do not want to babysit the queue.</p>
+<p>So I added <a href="/tsrs/#focus%2C-ready%2C-and-live">Live mode</a>.</p>
 <p><img src="/images/posts/i-stopped-watching-my-agents-work-and-started-listening/panel-02.webp" alt="A TSRS-inspired relay machine with several incoming agent lines converging into it"></p>
-<h2 id="live-mode-was-for-watching-work-move" tabindex="-1"><a class="heading-anchor" href="#live-mode-was-for-watching-work-move" aria-hidden="true">#</a> Live mode was for watching work move</h2>
-<p>Live mode lets TSRS keep playing new updates automatically.</p>
-<p>It still keeps the app-owned safety boundary. Mute still wins. Focus still turns speech off. The app still groups playback by line so one noisy project does not starve everything else. But the feeling is different.</p>
-<p>Focus and Ready are voicemail. Live is closer to sitting near a small team while they call out what changed. Or like you are sitting at the command center at NASA or SpaceX while the engineers call out telemetry and status updates. You are not reading a wall of text. You are not waiting for a single next update. You are watching work move.</p>
-<p>That sounds like a small change, but it changed how I used the app. With Live on, TSRS was no longer only something I checked between tasks. It became a way to stay loosely aware while multiple agents worked.</p>
+<h2 id="live-mode-is-for-when-i-am-already-listening" tabindex="-1"><a class="heading-anchor" href="#live-mode-is-for-when-i-am-already-listening" aria-hidden="true">#</a> Live mode is for when I am already listening</h2>
+<p>Live mode lets TSRS keep playing new updates as they arrive.</p>
+<p>The same rules still apply. Mute wins. Focus still turns speech off. The app still groups playback by line so one noisy project does not hog the speaker. The difference is that I do not have to keep touching the queue.</p>
+<p>Focus and Ready are voicemail. Live is closer to sitting near a small team while they call out status. Or like you are sitting at the command center at NASA or SpaceX while the engineers call out telemetry updates. You are not reading a wall of text. You hear enough to know something is happening.</p>
+<p>With Live on, TSRS became something I could leave running while agents worked, instead of something I checked between tasks.</p>
 <figure>
   <video src="/images/posts/i-stopped-watching-my-agents-work-and-started-listening/demo-live-mode.mp4" controls width="100%" preload="none" poster="/images/posts/i-stopped-watching-my-agents-work-and-started-listening/demo-live-mode-poster.webp"></video>
   <figcaption>Live mode plays updates as they arrive, but mute still wins.</figcaption>
 </figure>
-<p>And that is when another problem became obvious.</p>
+<p>After a few sessions in Live mode, I noticed the next annoyance.</p>
 <h2 id="every-line-sounded-the-same" tabindex="-1"><a class="heading-anchor" href="#every-line-sounded-the-same" aria-hidden="true">#</a> Every line sounded the same</h2>
-<p>When every line uses the same voice, my ear has to do the routing work.</p>
-<p>I hear the update, then I have to parse the line name, then I have to map that back to the project in my head. That is still better than hopping between terminal windows, but it is not as natural as it could be.</p>
-<p>Humans are good at recognizing voices. I do not need someone to announce their name in every sentence when I already know what they sound like. A familiar voice carries context before the words land.</p>
-<p>That is what Live mode made me want.</p>
-<p>I do not want the agents to talk more. I want them to be easier to place in my attention. If the <em>Brain line</em> sounds different from the <em>Tri-State Relay Service line</em>, and the <em>Blog line</em> sounds different from the <em>PR review line</em>, I can understand more before I have to think.</p>
+<p>When every line uses the same voice, I have to keep figuring out which project I am hearing.</p>
+<p>I hear the update, then I have to parse the line name, then I have to map that back to the project in my head. It is still better than hopping between terminal windows, but it is not as good as recognizing the voice before I parse the sentence.</p>
+<p>Humans are good at recognizing voices. I do not need someone to announce their name in every sentence when I already know what they sound like. I know who it is before I process the sentence.</p>
+<p>Line voices were the next thing I wanted.</p>
+<p>I do not need agents to talk more. I need the updates to be easier to recognize. If the <em>Brain line</em> sounds different from the <em>Tri-State Relay Service line</em>, and the <em>Blog line</em> sounds different from the <em>PR review line</em>, I can keep track without working so hard.</p>
 <h2 id="i-needed-to-know-who-was-talking" tabindex="-1"><a class="heading-anchor" href="#i-needed-to-know-who-was-talking" aria-hidden="true">#</a> I needed to know who was talking</h2>
-<p>That is the product feature I wanted.</p>
-<p>Not novelty voices. Not agents pretending to be characters. A TSRS line is a workstream, and if I am going to hear several workstreams in Live mode, each one should be easy to recognize.</p>
-<p>Right after I shared the first version of TSRS internally, people asked for audio examples. Someone imagined a “Mona” style assistant for coding work and joked that it needed a pirate voice mod. I laughed, because that is the fun version of the idea, but it is not the useful version.</p>
-<p>The useful version is simpler. The Brain line should sound like the Brain line. The Blog line should sound like the Blog line. The PR review line should sound like PR review work. I should not have to wait for the label in the sentence before my attention knows where to put the update.</p>
+<p>I was not trying to make novelty voices or a bunch of agent characters. A TSRS line usually maps to a project I care about, and if I am going to hear several of them in Live mode, I should be able to recognize which one is speaking.</p>
+<p>Right after I shared the first version of TSRS internally, people asked for audio examples. Someone imagined a “Mona” style assistant for coding work and joked that it needed a pirate voice mod. I laughed, because that would be fun, but it was not what I needed.</p>
+<p>What I wanted was more boring and more useful. The Brain line should sound like the Brain line. The Blog line should sound like the Blog line. The PR review line should sound like PR review work. I should not have to wait for the line name before I know which project the update belongs to.</p>
 <figure>
   <video src="/images/posts/i-stopped-watching-my-agents-work-and-started-listening/demo-line-voices.mp4" controls width="100%" preload="none" poster="/images/posts/i-stopped-watching-my-agents-work-and-started-listening/demo-line-voices-poster.webp"></video>
-  <figcaption>The Brain, TSRS, and Blog lines each get a voice, so the work is easier to recognize before I parse the label.</figcaption>
+  <figcaption>The Brain, TSRS, and Blog lines each get a voice, so the work is easier to recognize before I hear the label.</figcaption>
 </figure>
 <p><a href="https://github.com/jonmagic/tri-state-relay-service/releases/tag/v2.1.0">Tri-State Relay Service 2.1.0</a> makes that possible with per-line voice IDs and a bring-your-own voice command. You choose a voice path for the app, then assign voices from that path to your lines. The default macOS voices still work locally out of the box. <a href="https://docs.speechify.ai/">Speechify</a> is there as an explicit cloud option. <a href="https://github.com/hexgrad/kokoro">Kokoro</a> is there if you bring your own local setup and want richer voices without sending relay text away.</p>
-<div class="markdown-alert markdown-alert-note"><p><a href="https://github.com/hexgrad/kokoro">Kokoro</a> was one of my favorite discoveries while working on this project. I was hoping there might be a way to make the line voices feel richer without making every relay leave my machine, and Kokoro made that feel possible. It still asks you to bring your own local setup, but that feels like the right tradeoff for a tool that sits this close to my attention.</p>
+<div class="markdown-alert markdown-alert-note"><p><a href="https://github.com/hexgrad/kokoro">Kokoro</a> was one of my favorite discoveries while working on this project. I was hoping there might be a way to make the line voices sound better without making every relay leave my machine, and Kokoro made that feel possible. It still asks you to bring your own local setup, and I am okay with that for a tool I am letting talk near me.</p>
 </div>
-<p>The important thing is that the playback contract does not change.</p>
+<p>I kept the playback rules the same.</p>
 <p>The CLI still never speaks directly. The app owns playback. Mute wins. Focus wins. Bad config fails quiet. If audio generation fails, the relay cannot get stranded pretending it is still speaking.</p>
-<p>That is what makes the feature feel safe enough to leave on. TSRS can become more expressive without becoming more demanding. Live mode keeps me aware of what changed, and line voices make that awareness easier to understand.</p>
-<h2 id="now-the-room-makes-sense" tabindex="-1"><a class="heading-anchor" href="#now-the-room-makes-sense" aria-hidden="true">#</a> Now the room makes sense</h2>
-<p>The app started as a way to stop agents from interrupting me.</p>
-<p>Now it feels closer to a quiet room of workstreams I can recognize without looking away.</p>
-<p>The Brain line speaks up, and I know it is Brain work. The Blog line speaks up, and I know there is a draft to review. A PR review line finishes, and I know where my attention goes next.</p>
-<p>My agents do not need personalities. They just need to sound like the work they are doing.</p>
+<p>Those rules are why I am comfortable leaving it on. Live mode lets me hear updates as they happen, and line voices help me tell which project they came from without staring at the screen.</p>
+<h2 id="now-i-can-leave-it-on" tabindex="-1"><a class="heading-anchor" href="#now-i-can-leave-it-on" aria-hidden="true">#</a> Now I can leave it on</h2>
+<p>TSRS started as a way to stop agents from interrupting me.</p>
+<p>Now it feels closer to a quiet workroom where I can tell what is happening without looking away.</p>
+<p>The Brain line speaks up, and I know it is Brain work. The Blog line speaks up, and I know there is a draft to review. A PR review line finishes, and I know which window I probably need to check next.</p>
+<p>For me, that is enough. I do not need my agents to have personalities. I need the audio to help me follow the work.</p>
 <p><img src="/images/posts/i-stopped-watching-my-agents-work-and-started-listening/panel-04.webp" alt="Distinct colored voice lines passing through a TSRS-inspired relay machine"></p>
 
       
