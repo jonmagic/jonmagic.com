@@ -49,7 +49,7 @@
   &lt;figcaption&gt;Live mode plays updates as they arrive, but mute still wins.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;And that is when another problem became obvious.&lt;/p&gt;
-&lt;h2 id=&quot;then-every-line-sounded-the-same&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;heading-anchor&quot; href=&quot;https://jonmagic.com/posts/i-stopped-watching-my-agents-work-and-started-listening/#then-every-line-sounded-the-same&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt; Then every line sounded the same&lt;/h2&gt;
+&lt;h2 id=&quot;every-line-sounded-the-same&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;heading-anchor&quot; href=&quot;https://jonmagic.com/posts/i-stopped-watching-my-agents-work-and-started-listening/#every-line-sounded-the-same&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt; Every line sounded the same&lt;/h2&gt;
 &lt;p&gt;When every line uses the same voice, my ear has to do the routing work.&lt;/p&gt;
 &lt;p&gt;I hear the update, then I have to parse the line name, then I have to map that back to the project in my head. That is still better than hopping between terminal windows, but it is not as natural as it could be.&lt;/p&gt;
 &lt;p&gt;Humans are good at recognizing voices. I do not need someone to announce their name in every sentence when I already know what they sound like. A familiar voice carries context before the words land.&lt;/p&gt;
