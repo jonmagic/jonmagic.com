@@ -92,7 +92,7 @@
   <div class="tsrs-hero-copy">
     <p class="tsrs-kicker">A local macOS relay for agent updates</p>
     <p class="tsrs-deck">Short audio updates make agent work easier to re-enter without keeping every agent window in view.</p>
-    <a class="tsrs-download-button" href="/downloads/Tri-State%20Relay%20Service-2.0.0-macos-arm64.zip" data-plausible-event-name="TSRS Download" data-plausible-event-target="macos-2.0.0-arm64">Download for macOS</a>
+    <a class="tsrs-download-button" href="/downloads/Tri-State%20Relay%20Service-2.1.0-macos-arm64.zip" data-plausible-event-name="TSRS Download" data-plausible-event-target="macos-2.1.0-arm64">Download for macOS</a>
   </div>
 </section>
 <p>Tri-State Relay Service is a local macOS app and CLI where agents leave short updates in a queue. Each project or context gets a line. A line can stay quiet while you are focused, wait with an update, and become active when you choose to listen.</p>
@@ -102,20 +102,16 @@
 <video src="/images/tsrs/product-demo.mp4" controls width="100%"></video>
 -->
 <h2 id="current-release" tabindex="-1"><a class="heading-anchor" href="#current-release" aria-hidden="true">#</a> Current release</h2>
-<p><strong>2.0.0 - Advanced config and custom voices</strong></p>
+<p><strong>2.1.0 - Optional local Kokoro voices</strong></p>
 <ul>
-<li>Made <code>relay config</code> the single CLI surface for TOML-backed advanced configuration.</li>
-<li>Added <code>relay config set --voice-command</code>, <code>--combiner-command</code>, and <code>--cleanup-retention-minutes</code>.</li>
-<li>Removed the duplicate <code>relay settings</code> command and made <code>relay combiner</code> read-only; use <code>relay config set --combiner-command</code> to change the combiner.</li>
-<li>Preserved 1.1.2 upgrade migration from SQLite settings into <code>config.toml</code>.</li>
-<li>Added BYO voice command playback while keeping app-owned speech, mute, Focus, Ready, and Live safeguards.</li>
-<li>Added Speechify-compatible voice synthesis support for the direct-download app, including Keychain-based API-key lookup and rate-limit handling.</li>
-<li>Added provider voice configuration with sticky per-line voice IDs and optional stable assignment for new lines.</li>
-<li>Added local spoken-usage counters by provider, model, voice, and line so custom voice cost can be estimated without storing another copy of relay text.</li>
-<li>Added cleanup controls for old relay rows, spoken-usage buckets, and temporary voice audio files.</li>
-<li>Added Settings UI capture and roundtrip verification for release-quality Settings changes.</li>
+<li>Added a Kokoro-compatible voice helper for direct-download builds that can use a user-installed local Kokoro venv without bundling Kokoro packages, model weights, voices, spaCy models, or caches.</li>
+<li>Added an invisible same-user Kokoro helper server that keeps <code>KPipeline</code> warm across relays and automatically shuts down when the active voice provider is no longer <code>kokoro</code>.</li>
+<li>Kept the Kokoro helper server alive when a client disconnects before reading its response.</li>
+<li>Changed BYO voice output to a Core Audio-friendly <code>relay.audio</code> path so Kokoro can return WAV bytes without conversion.</li>
+<li>Documented the optional Kokoro install path, missing-install failure mode, provider TOML example, local helper lifecycle, and Apache-2.0 Kokoro package/model license boundary.</li>
+<li>Updated the app and CLI version to 2.1.0.</li>
 </ul>
-<p>The app and <code>relay</code> CLI should both report <code>2.0.0</code>.</p>
+<p>The app and <code>relay</code> CLI should both report <code>2.1.0</code>.</p>
 <h2 id="getting-started" tabindex="-1"><a class="heading-anchor" href="#getting-started" aria-hidden="true">#</a> Getting started</h2>
 <p>The fastest path is to get the app running, prove one relay works by hand, and only then wire it into your agents.</p>
 <h3 id="1.-download-and-open-the-app" tabindex="-1"><a class="heading-anchor" href="#1.-download-and-open-the-app" aria-hidden="true">#</a> 1. Download and open the app</h3>
@@ -246,6 +242,7 @@ relay clear-delivered</code></pre>
 <p>Open Settings whenever you want to change the CLI install, keyboard shortcut, Open at Login, or voice.</p>
 <p>Changing the voice is quiet. Use Preview only when you explicitly want to hear a sample. To add more macOS voices, open System Settings &gt; Accessibility &gt; Spoken Content.</p>
 <p>The app you download from this page uses app-owned playback and can use installed macOS voices that work with the system speech engine. Natural voices are favored when available, and System Default remains available.</p>
+<p>The default voice path does not require any external service or model install. If you want richer line voices, use the <a href="#advanced-byo-voice-command">Advanced BYO voice command</a> section below.</p>
 <h3 id="when-many-updates-pile-up" tabindex="-1"><a class="heading-anchor" href="#when-many-updates-pile-up" aria-hidden="true">#</a> When many updates pile up</h3>
 <p>When you are focused on one line, other lines may collect several updates. This stays manageable by showing or playing the latest useful update for an inactive line instead of making you hear every stale intermediate message.</p>
 <p>For many people, the default behavior is enough. You can work on one line, then switch lines when you are ready to catch up.</p>
@@ -260,6 +257,13 @@ relay config <span class="token builtin class-name">set</span> --combiner-comman
 <p>Combiner output should follow the same rules as any other relay. No secrets, no raw logs, no code dumps, and no long explanations.</p>
 <h2 id="advanced-byo-voice-command" tabindex="-1"><a class="heading-anchor" href="#advanced-byo-voice-command" aria-hidden="true">#</a> Advanced BYO voice command</h2>
 <p>The app you download from this page can use a configured voice command to generate an audio file for TSRS to play. This is modeled after <code>say -o</code>: the command must write audio to an output path and must not speak directly. TSRS still owns playback, mute, Focus, Ready, Live, and delivered-state marking.</p>
+<p>BYO voice is the advanced path for richer voices. The contract stays the same no matter which provider you choose: TSRS passes relay text to a command, the command writes an audio file, and TSRS decides whether it is still safe to play it.</p>
+<p>There are three useful paths.</p>
+<ol>
+<li>Use <a href="https://github.com/hexgrad/kokoro">Kokoro</a> locally when you want richer line voices without sending relay text to a cloud provider.</li>
+<li>Use <a href="https://platform.speechify.ai/">Speechify</a> when you want a hosted voice provider and are comfortable with relay text leaving your Mac.</li>
+<li>Bring your own command when you already have another local or hosted voice tool that can write an audio file.</li>
+</ol>
 <p>Advanced voice, inactive-line combiner, and cleanup retention settings live in:</p>
 <pre class="language-text"><code class="language-text">~/Library/Application Support/Tri-State Relay Service/config.toml</code></pre>
 <p>On upgrade, TSRS creates this file once from existing 1.1.2 SQLite settings. If the file already exists, TSRS preserves it and treats it as the source of truth for those advanced settings.</p>
@@ -297,6 +301,28 @@ relay config <span class="token builtin class-name">set</span> --voice-command <
 </tbody>
 </table>
 <p>The default <code>/usr/bin/say</code> path does not use provider line voices. It keeps using System Default unless you deliberately replace the voice command with a provider wrapper.</p>
+<h3 id="local-kokoro-line-voices" tabindex="-1"><a class="heading-anchor" href="#local-kokoro-line-voices" aria-hidden="true">#</a> Local Kokoro line voices</h3>
+<p><a href="https://github.com/hexgrad/kokoro">Kokoro</a> is the local-first option for richer line voices. TSRS does not bundle Kokoro, Python packages, model weights, voice files, spaCy models, or dependency caches. The bundled <code>&lt;app-bin&gt;/kokoro</code> helper only connects TSRS to a Kokoro environment you choose to install.</p>
+<p>One tested macOS setup:</p>
+<pre class="language-sh"><code class="language-sh">brew <span class="token function">install</span> uv espeak-ng
+uv venv <span class="token parameter variable">--python</span> <span class="token number">3.11</span> ~/.local/share/tsrs-kokoro/venv
+uv pip <span class="token function">install</span> <span class="token parameter variable">--python</span> ~/.local/share/tsrs-kokoro/venv/bin/python <span class="token assign-left variable">kokoro</span><span class="token operator">==</span><span class="token number">0.9</span>.4</code></pre>
+<p>Then edit <code>config.toml</code> to opt into Kokoro line voices:</p>
+<pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">voice</span><span class="token punctuation">]</span>
+<span class="token key property">provider</span> <span class="token punctuation">=</span> <span class="token string">"kokoro"</span>
+<span class="token key property">command</span> <span class="token punctuation">=</span> <span class="token string">"&lt;app-bin>/kokoro --venv ~/.local/share/tsrs-kokoro/venv --text-file &lt;text-file> --output-file &lt;output-file> --voice-id &lt;voice-id>"</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">kokoro</span><span class="token punctuation">]</span>
+<span class="token key property">default_voice_id</span> <span class="token punctuation">=</span> <span class="token string">"af_heart"</span>
+<span class="token key property">auto_assign_line_voices</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+<span class="token key property">catalog_command</span> <span class="token punctuation">=</span> <span class="token string">"&lt;app-bin>/kokoro voices --language a"</span>
+<span class="token key property">assignment_strategy</span> <span class="token punctuation">=</span> <span class="token string">"stable-hash"</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">kokoro.line_voices</span><span class="token punctuation">]</span>
+<span class="token key property">Brain</span> <span class="token punctuation">=</span> <span class="token string">"af_heart"</span>
+<span class="token key property">"Tri-State Relay Service"</span> <span class="token punctuation">=</span> <span class="token string">"am_puck"</span></code></pre>
+<p>The first Kokoro relay may take several seconds while Python imports Kokoro and loads the model. After that, the helper keeps a same-user local server warm so follow-up relays are much faster. If Kokoro is not installed, the helper exits with the setup commands above instead of installing packages itself. When you switch <code>[voice] provider</code> away from <code>kokoro</code>, TSRS asks the helper to stop its local server.</p>
+<p>Kokoro’s Python package and Kokoro-82M model weights are Apache-2.0. If you redistribute a prebuilt Kokoro environment, model cache, or voice assets yourself, carry the Kokoro Apache-2.0 license and the notices/licenses for its dependencies and model assets with that redistributed bundle. The stock TSRS download only ships the integration helper.</p>
 <h3 id="speechify-line-voices" tabindex="-1"><a class="heading-anchor" href="#speechify-line-voices" aria-hidden="true">#</a> Speechify line voices</h3>
 <p>The app download includes a Speechify-compatible wrapper at <code>&lt;app-bin&gt;/speechify</code>. Start with the <a href="https://docs.speechify.ai/">Speechify API docs</a> to understand the API, and use the <a href="https://platform.speechify.ai/">Speechify dashboard</a> to sign up and manage API keys. Store your API key in Keychain yourself:</p>
 <pre class="language-sh"><code class="language-sh">security add-generic-password <span class="token parameter variable">-a</span> <span class="token string">"<span class="token environment constant">$USER</span>"</span> <span class="token parameter variable">-s</span> TSRS_SPEECHIFY_API_KEY <span class="token parameter variable">-w</span> <span class="token string">"paste-api-key-here"</span> <span class="token parameter variable">-U</span></code></pre>
@@ -315,11 +341,20 @@ relay config <span class="token builtin class-name">set</span> --voice-command <
 <span class="token key property">Brain</span> <span class="token punctuation">=</span> <span class="token string">"george"</span>
 <span class="token key property">"Tri-State Relay Service"</span> <span class="token punctuation">=</span> <span class="token string">"henry"</span></code></pre>
 <p>When a line has an explicit mapping, TSRS substitutes that id into <code>&lt;voice-id&gt;</code>. When a new line has no mapping and <code>auto_assign_line_voices</code> is true, TSRS runs <code>catalog_command</code>, picks a stable id from the returned catalog, writes it once to <code>[speechify.line_voices]</code>, and reuses that sticky mapping after restart. If the catalog command fails or returns no ids, TSRS falls back to <code>default_voice_id</code> and still lets the wrapper synthesize audio.</p>
+<h3 id="bring-your-own-voice-command" tabindex="-1"><a class="heading-anchor" href="#bring-your-own-voice-command" aria-hidden="true">#</a> Bring your own voice command</h3>
+<p>You can also point TSRS at your own script or CLI. This is useful if you already have a local model, a different hosted provider, or a workflow that prepares audio some other way.</p>
+<p>The command must accept the placeholders TSRS provides, write the final audio to <code>&lt;output-file&gt;</code>, and exit without speaking directly. TSRS plays that file only after it re-checks mute, Focus, Ready, Live, and delivery state.</p>
+<p>For example:</p>
+<pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">voice</span><span class="token punctuation">]</span>
+<span class="token key property">provider</span> <span class="token punctuation">=</span> <span class="token string">"custom"</span>
+<span class="token key property">command</span> <span class="token punctuation">=</span> <span class="token string">"/path/to/my-voice-command --text-file &lt;text-file> --output-file &lt;output-file> --voice-id &lt;voice-id>"</span></code></pre>
+<p>Use <code>relay config validate</code> after changing the command. If validation fails, playback fails quiet until the config is fixed.</p>
 <h2 id="troubleshooting" tabindex="-1"><a class="heading-anchor" href="#troubleshooting" aria-hidden="true">#</a> Troubleshooting</h2>
 <p>Most first-run surprises are quiet by design, not failures.</p>
 <p><strong>Agents cannot find <code>relay</code>.</strong> The CLI is not installed, <code>/usr/local/bin</code> is not on your <code>PATH</code>, or your agent cannot see the same shell environment as your terminal. Open Settings and install or refresh the CLI, then run <code>relay --version</code> in a new terminal. If you do not want to install it, copy the bundled CLI path from Settings and use that full path in your agent instructions.</p>
 <p><strong>Install reports a conflict or permission error.</strong> A different <code>relay</code> already exists at <code>/usr/local/bin/relay</code>, or macOS needs permission to install there. Let Settings replace it, remove the old file yourself, or use the bundled CLI path.</p>
 <p><strong>Relays queue but never speak.</strong> Check whether the app is in Focus mode, muted, not in Live mode, or waiting because a microphone appears active. Use <code>relay list</code> to confirm what is waiting, then <code>relay ready</code>, <code>relay live</code>, Play Next, or Start Live to release relays.</p>
+<p><strong>Kokoro is configured but nothing speaks.</strong> Run <code>relay status</code> and check <code>voiceCommandLastError</code>. If Kokoro is not installed, the helper prints the setup commands. If the local helper server looks stale, run <code>&lt;app-bin&gt;/kokoro server stop</code>; the next Kokoro relay starts it again.</p>
 <p><strong>The app launched silent after Open at Login.</strong> That is expected. Open at Login starts in Focus mode so relays queue quietly until you ask to hear one.</p>
 <p><strong>An agent read raw logs or secrets aloud.</strong> Tighten your agent instructions so relays carry short, human-authored summaries only. No code, logs, terminal output, secrets, or private data.</p>
 <p>The local queue lives on your Mac here:</p>
