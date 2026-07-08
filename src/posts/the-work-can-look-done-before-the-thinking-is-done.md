@@ -8,9 +8,9 @@ description: >-
   Why agent-assisted work can look finished before the thinking is finished,
   and why visible reasoning needs to become part of mentoring, review, and
   execution.
-featured: 1
-new: true
+featured: 2
 accent: red
+popular: true
 ---
 
 I was talking with friends recently about what changes when agents become a normal part of building software.

@@ -237,6 +237,8 @@ Changing the voice is quiet. Use Preview only when you explicitly want to hear a
 
 The app you download from this page uses app-owned playback and can use installed macOS voices that work with the system speech engine. Natural voices are favored when available, and System Default remains available.
 
+The default voice path does not require any external service or model install. If you want richer line voices, use the [Advanced BYO voice command](#advanced-byo-voice-command) section below.
+
 ### When many updates pile up
 
 When you are focused on one line, other lines may collect several updates. This stays manageable by showing or playing the latest useful update for an inactive line instead of making you hear every stale intermediate message.
@@ -264,6 +266,14 @@ Combiner output should follow the same rules as any other relay. No secrets, no 
 ## Advanced BYO voice command
 
 The app you download from this page can use a configured voice command to generate an audio file for TSRS to play. This is modeled after `say -o`: the command must write audio to an output path and must not speak directly. TSRS still owns playback, mute, Focus, Ready, Live, and delivered-state marking.
+
+BYO voice is the advanced path for richer voices. The contract stays the same no matter which provider you choose: TSRS passes relay text to a command, the command writes an audio file, and TSRS decides whether it is still safe to play it.
+
+There are three useful paths.
+
+1. Use [Kokoro](https://github.com/hexgrad/kokoro) locally when you want richer line voices without sending relay text to a cloud provider.
+2. Use [Speechify](https://platform.speechify.ai/) when you want a hosted voice provider and are comfortable with relay text leaving your Mac.
+3. Bring your own command when you already have another local or hosted voice tool that can write an audio file.
 
 Advanced voice, inactive-line combiner, and cleanup retention settings live in:
 
@@ -295,6 +305,40 @@ Supported placeholders are inserted as single arguments, not shell-expanded:
 
 The default `/usr/bin/say` path does not use provider line voices. It keeps using System Default unless you deliberately replace the voice command with a provider wrapper.
 
+### Local Kokoro line voices
+
+[Kokoro](https://github.com/hexgrad/kokoro) is the local-first option for richer line voices. TSRS does not bundle Kokoro, Python packages, model weights, voice files, spaCy models, or dependency caches. The bundled `<app-bin>/kokoro` helper only connects TSRS to a Kokoro environment you choose to install.
+
+One tested macOS setup:
+
+```sh
+brew install uv espeak-ng
+uv venv --python 3.11 ~/.local/share/tsrs-kokoro/venv
+uv pip install --python ~/.local/share/tsrs-kokoro/venv/bin/python kokoro==0.9.4
+```
+
+Then edit `config.toml` to opt into Kokoro line voices:
+
+```toml
+[voice]
+provider = "kokoro"
+command = "<app-bin>/kokoro --venv ~/.local/share/tsrs-kokoro/venv --text-file <text-file> --output-file <output-file> --voice-id <voice-id>"
+
+[kokoro]
+default_voice_id = "af_heart"
+auto_assign_line_voices = true
+catalog_command = "<app-bin>/kokoro voices --language a"
+assignment_strategy = "stable-hash"
+
+[kokoro.line_voices]
+Brain = "af_heart"
+"Tri-State Relay Service" = "am_puck"
+```
+
+The first Kokoro relay may take several seconds while Python imports Kokoro and loads the model. After that, the helper keeps a same-user local server warm so follow-up relays are much faster. If Kokoro is not installed, the helper exits with the setup commands above instead of installing packages itself. When you switch `[voice] provider` away from `kokoro`, TSRS asks the helper to stop its local server.
+
+Kokoro's Python package and Kokoro-82M model weights are Apache-2.0. If you redistribute a prebuilt Kokoro environment, model cache, or voice assets yourself, carry the Kokoro Apache-2.0 license and the notices/licenses for its dependencies and model assets with that redistributed bundle. The stock TSRS download only ships the integration helper.
+
 ### Speechify line voices
 
 The app download includes a Speechify-compatible wrapper at `<app-bin>/speechify`. Start with the [Speechify API docs](https://docs.speechify.ai/) to understand the API, and use the [Speechify dashboard](https://platform.speechify.ai/) to sign up and manage API keys. Store your API key in Keychain yourself:
@@ -323,6 +367,22 @@ Brain = "george"
 
 When a line has an explicit mapping, TSRS substitutes that id into `<voice-id>`. When a new line has no mapping and `auto_assign_line_voices` is true, TSRS runs `catalog_command`, picks a stable id from the returned catalog, writes it once to `[speechify.line_voices]`, and reuses that sticky mapping after restart. If the catalog command fails or returns no ids, TSRS falls back to `default_voice_id` and still lets the wrapper synthesize audio.
 
+### Bring your own voice command
+
+You can also point TSRS at your own script or CLI. This is useful if you already have a local model, a different hosted provider, or a workflow that prepares audio some other way.
+
+The command must accept the placeholders TSRS provides, write the final audio to `<output-file>`, and exit without speaking directly. TSRS plays that file only after it re-checks mute, Focus, Ready, Live, and delivery state.
+
+For example:
+
+```toml
+[voice]
+provider = "custom"
+command = "/path/to/my-voice-command --text-file <text-file> --output-file <output-file> --voice-id <voice-id>"
+```
+
+Use `relay config validate` after changing the command. If validation fails, playback fails quiet until the config is fixed.
+
 ## Troubleshooting
 
 Most first-run surprises are quiet by design, not failures.
@@ -332,6 +392,8 @@ Most first-run surprises are quiet by design, not failures.
 **Install reports a conflict or permission error.** A different `relay` already exists at `/usr/local/bin/relay`, or macOS needs permission to install there. Let Settings replace it, remove the old file yourself, or use the bundled CLI path.
 
 **Relays queue but never speak.** Check whether the app is in Focus mode, muted, not in Live mode, or waiting because a microphone appears active. Use `relay list` to confirm what is waiting, then `relay ready`, `relay live`, Play Next, or Start Live to release relays.
+
+**Kokoro is configured but nothing speaks.** Run `relay status` and check `voiceCommandLastError`. If Kokoro is not installed, the helper prints the setup commands. If the local helper server looks stale, run `<app-bin>/kokoro server stop`; the next Kokoro relay starts it again.
 
 **The app launched silent after Open at Login.** That is expected. Open at Login starts in Focus mode so relays queue quietly until you ask to hear one.
 
