@@ -72,7 +72,7 @@ That sounds like a small change, but it changed how I used the app. With Live on
 
 And that is when another problem became obvious.
 
-## Then every line sounded the same
+## Every line sounded the same
 
 When every line uses the same voice, my ear has to do the routing work.
 
