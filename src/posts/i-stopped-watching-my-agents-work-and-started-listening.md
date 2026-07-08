@@ -84,7 +84,7 @@ That is what Live mode made me want.
 
 I do not want the agents to talk more. I want them to be easier to place in my attention. If the _Brain line_ sounds different from the _Tri-State Relay Service line_, and the _Blog line_ sounds different from the _PR review line_, I can understand more before I have to think.
 
-## Then I needed to know who was talking
+## I needed to know who was talking
 
 That is the product feature I wanted.
 
