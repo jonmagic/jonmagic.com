@@ -20,7 +20,7 @@ analyticsTopic: agent-updates
 
 Tri-State Relay Service is a local macOS app and CLI where agents leave short updates in a queue. Each project or context gets a line. A line can stay quiet while you are focused, wait with an update, and become active when you choose to listen.
 
-The story behind this started while I was helping my daughter build a game with AI. I wrote about that in [The Feedback Loop I Was Missing](/posts/the-feedback-loop-i-was-missing/).
+The story started while I was helping my daughter build a game with AI. I wrote about the original idea in [The Feedback Loop I Was Missing](/posts/the-feedback-loop-i-was-missing/) and how it evolved in [I stopped watching my agents work and started listening](/posts/i-stopped-watching-my-agents-work-and-started-listening/).
 
 It is free to download, and [the source is on GitHub](https://github.com/jonmagic/tri-state-relay-service). I mostly want people to try it and tell me whether the feedback loop helps. If you try it, [leave feedback in this GitHub Discussion](https://github.com/jonmagic/jonmagic.com/discussions/13).
 
