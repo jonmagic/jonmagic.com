@@ -7,7 +7,6 @@ tags:
 description: >-
   How my Markdown notes grew into an interface for agents, and what that taught
   me about keeping useful friction while turning repeated pain into structure.
-featured: 3
 accent: amber
 popular: true
 ---

@@ -7,10 +7,10 @@ tags:
 description: >-
   Your .env files are a liability. Two simple patterns for injecting secrets
   from 1Password or macOS Keychain so credentials never touch disk as plaintext.
+featured: 4
 accent: blue
 eyebrow: "SECURITY · 2026"
 disableMerchCta: true
-popular: true
 kit:
   - label: Demo
     text: jonmagic/secure-env-demo
