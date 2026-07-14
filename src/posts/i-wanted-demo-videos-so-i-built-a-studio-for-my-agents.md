@@ -85,7 +85,7 @@ The studio stayed small. There is no draggable timeline, plugin system, or pile 
 
 Once Dailies could play video inside a set, I wanted to see how recursive we could make it.
 
-I asked whether a Dailies video could become the footage for the new Dailies video feature. Some real inside-Hollywood inception shit.
+I asked whether a Dailies video could become the footage for the new Dailies video feature. It felt a little like the scene in *Spaceballs* where they watch *Spaceballs*, except Dailies would use its own film as footage for the next one.
 
 The agent built a five-act feature reel about how Dailies works. We rendered it, committed the MP4 as a fixture, and then created an outer production that played three windows from that film inside a studio monitor.
 
