@@ -7,7 +7,6 @@ tags:
 description: >-
   How Tri-State Relay Service grew from queued audio updates into Live mode,
   and why per-line voices make agent work easier to follow.
-featured: 2
 accent: violet
 popular: true
 ---

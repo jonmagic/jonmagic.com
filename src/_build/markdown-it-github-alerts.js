@@ -4,6 +4,8 @@
  */
 
 function githubAlerts(md) {
+  const alertPattern = /^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION|TLDR)\]/;
+
   // Override blockquote rendering
   md.renderer.rules.blockquote_open = function(tokens, idx, options, env, renderer) {
     const token = tokens[idx];
@@ -22,22 +24,24 @@ function githubAlerts(md) {
 
       if (nextToken.type === 'inline' && !contentFound) {
         const content = nextToken.content;
-        const alertMatch = content.match(/^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]/);
+        const alertMatch = content.match(alertPattern);
 
         if (alertMatch) {
           alertType = alertMatch[1].toLowerCase();
-          alertTitle = alertMatch[1].charAt(0) + alertMatch[1].slice(1).toLowerCase();
+          alertTitle = alertType === 'tldr'
+            ? 'tl;dr'
+            : alertMatch[1].charAt(0) + alertMatch[1].slice(1).toLowerCase();
 
           // Remove the alert marker from the content
-          nextToken.content = content.replace(/^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*/, '').trim();
+          nextToken.content = content.replace(alertPattern, '').trim();
 
           // Also remove from child tokens if they exist
           if (nextToken.children && nextToken.children.length > 0) {
             // Find the first text token that contains the alert marker
             for (let j = 0; j < nextToken.children.length; j++) {
               const child = nextToken.children[j];
-              if (child.type === 'text' && child.content.match(/^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]/)) {
-                child.content = child.content.replace(/^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*/, '').trim();
+              if (child.type === 'text' && child.content.match(alertPattern)) {
+                child.content = child.content.replace(alertPattern, '').trim();
                 // If the text token is now empty, remove it
                 if (child.content === '') {
                   nextToken.children.splice(j, 1);
@@ -53,6 +57,7 @@ function githubAlerts(md) {
 
           // Mark this blockquote as an alert
           token.attrSet('data-alert-type', alertType);
+          token.attrSet('data-alert-title', alertTitle);
           contentFound = true;
         }
         break;
@@ -60,6 +65,10 @@ function githubAlerts(md) {
     }
 
     if (alertType) {
+      if (alertType === 'tldr') {
+        return `<aside class="markdown-alert markdown-alert-tldr"><p class="markdown-alert-title">${alertTitle}</p>`;
+      }
+
       return `<div class="markdown-alert markdown-alert-${alertType}">`;
     }
 
@@ -77,6 +86,10 @@ function githubAlerts(md) {
         openTokenIndex = i;
         break;
       }
+    }
+
+    if (openTokenIndex >= 0 && tokens[openTokenIndex].attrGet('data-alert-type') === 'tldr') {
+      return '</aside>\n';
     }
 
     if (openTokenIndex >= 0 && tokens[openTokenIndex].attrGet('data-alert-type')) {

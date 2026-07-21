@@ -7,6 +7,7 @@ description: >-
   A small CLI tool for browsing, searching, and resuming copilot-cli sessions. Built on the SQLite database copilot-cli already maintains for you.
 featured: 3
 accent: green
+popular: true
 eyebrow: "TOOL · 2026"
 disableMerchCta: true
 kit:

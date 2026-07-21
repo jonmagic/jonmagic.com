@@ -7,9 +7,9 @@ tags:
 description: >-
   How a few Relay demos turned into Dailies, a tool that builds narrated videos
   from Markdown and can use one film as footage for the next.
-featured: 1
-new: true
+featured: 2
 accent: amber
+eyebrow: "BUILD LOG · 2026"
 ---
 
 When I finished writing [I stopped watching my agents work and started listening](https://jonmagic.com/posts/i-stopped-watching-my-agents-work-and-started-listening/), I still had one problem.
