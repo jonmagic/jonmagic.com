@@ -98,9 +98,11 @@ body:not(.homepage) .site-nav {
 
 .nav-brand {
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
+  justify-content: center;
   gap: 0.02em;
-  padding: 0.58rem 0.85rem 0.6rem;
+  min-height: 2.25rem;
+  padding: 0 0.85rem;
   color: var(--text);
   font-family: var(--font-brand);
   font-size: 0.95rem;
@@ -139,6 +141,8 @@ body:not(.homepage) .site-nav {
 .nav-links {
   display: flex;
   align-items: center;
+  position: relative;
+  top: 1px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -152,7 +156,9 @@ body:not(.homepage) .site-nav {
 .nav-links a {
   display: inline-flex;
   align-items: center;
-  padding: 0.55rem 0.82rem;
+  justify-content: center;
+  min-height: 2.25rem;
+  padding: 0 0.82rem;
   color: var(--muted);
   text-decoration: none;
   font-family: var(--font-sans);
@@ -238,6 +244,7 @@ footer {
   .nav-links {
     flex-wrap: wrap;
     gap: 0.25rem;
+    top: 0;
     width: 100%;
   }
 
@@ -247,7 +254,8 @@ footer {
   }
 
   .nav-links a {
-    padding: 0.58rem 0.75rem;
+    min-height: 2.35rem;
+    padding: 0 0.75rem;
     font-size: 0.95rem;
   }
 }
