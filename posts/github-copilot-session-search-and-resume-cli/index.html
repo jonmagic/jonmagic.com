@@ -11,7 +11,7 @@
 
 
 <meta property="og:title" content="GitHub Copilot Session Search and Resume CLI">
-<meta property="og:description" content="A small CLI tool for browsing, searching, and resuming copilot-cli sessions. Built on the SQLite database copilot-cli already maintains for you.">
+<meta property="og:description" content="Copilot now has built-in session search and resume. The original CLI and a current look at the local session data under ~/.copilot/ are preserved here.">
 <meta property="og:url" content="https://jonmagic.com/posts/github-copilot-session-search-and-resume-cli/">
 <meta property="og:site_name" content="jonmagic.com">
 <meta property="og:type" content="article">
@@ -21,10 +21,10 @@
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub Copilot Session Search and Resume CLI">
-<meta name="twitter:description" content="A small CLI tool for browsing, searching, and resuming copilot-cli sessions. Built on the SQLite database copilot-cli already maintains for you.">
+<meta name="twitter:description" content="Copilot now has built-in session search and resume. The original CLI and a current look at the local session data under ~/.copilot/ are preserved here.">
 
 
-<meta name="description" content="A small CLI tool for browsing, searching, and resuming copilot-cli sessions. Built on the SQLite database copilot-cli already maintains for you.">
+<meta name="description" content="Copilot now has built-in session search and resume. The original CLI and a current look at the local session data under ~/.copilot/ are preserved here.">
 <meta name="author" content="Jonathan Hoyt">
 
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -92,26 +92,32 @@
       
       <p class="post-eyebrow">TOOL · 2026</p>
       <h1 class="site-title">GitHub Copilot Session Search and Resume CLI</h1>
-      <p>Last week I switched to <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli">copilot-cli</a> as my full-time coding agent. I’d been splitting my time between it and <a href="https://opencode.ai">opencode</a> for months, using Copilot a few times a week, gravitating back to opencode for daily work. But after returning from two weeks of vacation to a fresh laptop, I committed to using only the latest copilot-cli for a full week. By the end of it I sent this to the team internally:</p>
+      <div class="markdown-alert markdown-alert-note"><p>I updated this post on August 9, 2026. Copilot CLI and VS Code now have built-in tools for finding previous sessions, so I recommend starting with the <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview#resume-an-interactive-session">Copilot CLI resume documentation</a> and the <a href="https://code.visualstudio.com/docs/agents/run/sessions/session-history">VS Code session history documentation</a>. I kept the original tool and the <code>~/.copilot/</code> notes below because the local session data is still useful to understand and build on.</p>
+</div>
+<p>Last week I switched to <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli">copilot-cli</a> as my full-time coding agent. I’d been splitting my time between it and <a href="https://opencode.ai">opencode</a> for months, using Copilot a few times a week, gravitating back to opencode for daily work. But after returning from two weeks of vacation to a fresh laptop, I committed to using only the latest copilot-cli for a full week. By the end of it I sent this to the team internally:</p>
 <blockquote>
 <p>I gotta say, things are finally at the point where I’m not tempted to switch back to opencode. Amazing work everyone. I’m going to start annoying my friends that still use claude code and get them to try switching to copilot again.</p>
 </blockquote>
-<p>One friction point lingered though. Finding my way back to previous sessions.</p>
+<p>One friction point lingered though. Finding my way back to previous sessions. Copilot has since fixed that directly in the CLI.</p>
 <h2 id="e-too-many-sessions" tabindex="-1"><a class="heading-anchor" href="#e-too-many-sessions" aria-hidden="true">#</a> e-too-many-sessions</h2>
 <p>I run multiple Copilot sessions a day across different folders and repos. My <a href="https://jonmagic.com/posts/context-rules-everything-around-me/">Brain</a> (personal knowledge base), work projects, side projects, home automation. Open a tab, start a session, do some work, close it, move on. An hour later I’d think “I need to pick that back up” and have no idea which session it was. My workaround was manually copy-pasting session IDs into my <a href="https://jonmagic.com/posts/context-rules-everything-around-me/">weekly note</a> so I could <code>copilot --resume=&lt;uuid&gt;</code> later. It worked, but it felt wrong.</p>
+<h2 id="use-the-built-in-session-tools-now" tabindex="-1"><a class="heading-anchor" href="#use-the-built-in-session-tools-now" aria-hidden="true">#</a> Use the built-in session tools now</h2>
+<p>Copilot CLI now includes <code>/resume</code>, which opens a session picker, and <code>copilot --continue</code>, which resumes the most recently closed local session. You can also pass a session ID or name to <code>/resume</code>. The <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview#resume-an-interactive-session">Copilot CLI documentation</a> has the current commands.</p>
+<p>Session search has moved well beyond the fuzzy title search I built here. Chronicle can search by keyword, file path, pull request, or issue reference with <code>/chronicle:search &lt;query&gt;</code>, and you can ask natural-language questions about previous work. VS Code can sync local sessions to your GitHub account and query sessions from VS Code, Copilot CLI, coding agent, code review, and the GitHub Copilot Desktop app. The <a href="https://code.visualstudio.com/docs/agents/run/sessions/session-history">VS Code session history documentation</a> covers search, sync, privacy controls, deletion, and reindexing.</p>
 <h2 id="~%2F.copilot%2F" tabindex="-1"><a class="heading-anchor" href="#~%2F.copilot%2F" aria-hidden="true">#</a> ~/.copilot/ 👀</h2>
-<p>The copilot-cli stores all its state on disk at <code>~/.copilot/</code>. Each session gets its own directory under <code>session-state/</code> with an <code>events.jsonl</code> event log and a <code>workspace.yaml</code> metadata file. But the interesting discovery was <code>session-store.db</code>, a SQLite database copilot-cli maintains automatically.</p>
+<p>Copilot CLI still stores its local state under <code>~/.copilot/</code>. Each local session gets a directory under <code>session-state/</code> with a <code>workspace.yaml</code> metadata file and, for active sessions, an <code>events.jsonl</code> event log. Some sessions have additional files such as <code>session.db</code>, plans, checkpoints, or VS Code metadata. The exact files vary by Copilot version and how the session was created.</p>
+<p>The other useful file is still <code>session-store.db</code>, a SQLite database Copilot maintains automatically.</p>
 <pre><code>~/.copilot/
 ├── config.json
 ├── session-state/           # One directory per session
 │   └── &lt;uuid&gt;/
-│       ├── events.jsonl     # Every event that happened
+│       ├── events.jsonl     # Event stream when present
 │       ├── workspace.yaml   # Session metadata
-│       └── checkpoints/     # Snapshot history
-├── session-store.db         # ← The good stuff
+│       └── ...              # Other files vary by session and version
+├── session-store.db         # Searchable local session index
 └── mcp-config.json
 </code></pre>
-<p>I opened <code>session-store.db</code> with <code>sqlite3</code> and found six tables.</p>
+<p>I opened <code>session-store.db</code> with <code>sqlite3</code>. It has gained more internal tables since I first wrote this post, but these core session tables are still there.</p>
 <table>
 <thead>
 <tr>
@@ -146,7 +152,7 @@
 </tr>
 </tbody>
 </table>
-<p>That last one caught my eye. It looks like copilot-cli maintains an <a href="https://www.sqlite.org/fts5.html">FTS5 full-text search index</a> across all session content. And the summaries in the <code>sessions</code> table? Already generated automatically, no LLM call needed to get a human-readable title for every session.</p>
+<p>That last one caught my eye. Copilot maintains an <a href="https://www.sqlite.org/fts5.html">FTS5 full-text search index</a> across session content, along with human-readable summaries in the <code>sessions</code> table. That local index is now used by built-in session history features, but it is still available if you want to explore your own data.</p>
 <h2 id="copilot-sessions" tabindex="-1"><a class="heading-anchor" href="#copilot-sessions" aria-hidden="true">#</a> copilot-sessions</h2>
 <p>Once I understood the data, the tool was straightforward. Query the database, pipe through <a href="https://github.com/junegunn/fzf">fzf</a> for interactive fuzzy search, resume the chosen session:</p>
 <pre class="language-bash"><code class="language-bash"><span class="token comment"># Browse recent sessions</span>
@@ -167,17 +173,19 @@ cs <span class="token parameter variable">-l</span></code></pre>
 <p>Pick one, hit Enter, and Copilot resumes right in your terminal. <code>ctrl-y</code> copies the session ID to clipboard if you need it elsewhere.</p>
 <p>Search uses fzf’s fuzzy matching against session summaries, all user messages, and repository names. That means it’s typo-tolerant. <code>mincraft</code> finds your Minecraft session, <code>sptoify</code> finds Spotify. It supports substring matching and multi-word queries too. The user messages are appended off-screen so fzf can match against them without cluttering the display.</p>
 <p>All the formatting (relative timestamps, repo name truncation, column layout) happens inside a single SQLite query. No bash loops or per-row shell-outs. Startup is about 20ms for hundreds of sessions.</p>
-<p>I published it as <a href="https://github.com/jonmagic/copilot-sessions">copilot-sessions</a>.</p>
-<div class="markdown-alert markdown-alert-tip"><p>If you use <code>copilot -p &lt;prompt&gt;</code> for automations (e.g., a cronjob running every few minutes), those sessions will show up in your search results too. I found it helpful to have the automation’s prompt include a step that deletes its own session from <code>session-store.db</code> at the end so it doesn’t clutter things up or become resumable.</p>
+<p>I published it as <a href="https://github.com/jonmagic/copilot-sessions">copilot-sessions</a>. It is still a useful example of querying the local database and it has a compact <code>fzf</code> workflow, but most people should use Copilot’s built-in session tools now.</p>
+<div class="markdown-alert markdown-alert-warning"><p>Treat <code>session-store.db</code> and the files under <code>session-state/</code> as internal implementation details. The schema and event format can change between Copilot releases. I no longer recommend deleting or modifying rows directly. Use the built-in session deletion and privacy controls described in the VS Code documentation.</p>
 </div>
 <h2 id="%E2%80%A6one-more-thing" tabindex="-1"><a class="heading-anchor" href="#%E2%80%A6one-more-thing" aria-hidden="true">#</a> …one more thing</h2>
-<p>The <code>events.jsonl</code> file in each session directory is a streaming log of everything that happened. Every tool call, every file edit, every shell command, all with timestamps:</p>
+<p>When present, <code>events.jsonl</code> is still a streaming log of what happened in a session. It includes user and assistant turns, tool activity, model changes, hooks, and session lifecycle events, all with timestamps. The event payloads evolve, but the broad structure still looks like this:</p>
 <pre class="language-jsonl"><code class="language-jsonl">{"type":"session.start","timestamp":"...","data":{"context":{"repository":"jonmagic/copilot-sessions","branch":"main"}}}
-{"type":"tool.execution_start","timestamp":"...","data":{"toolName":"grep","arguments":{...}}}
+{"type":"user.message","timestamp":"...","data":{"content":"..."}}
+{"type":"assistant.turn_start","timestamp":"...","data":{"turnId":"..."}}
+{"type":"tool.execution_start","timestamp":"...","data":{"toolName":"...","arguments":{...}}}
 {"type":"tool.execution_complete","timestamp":"...","data":{"success":true}}
-{"type":"session.shutdown","timestamp":"...","data":{"modelMetrics":{"gpt-5.4":{"usage":{"inputTokens":192048}}}}}</code></pre>
-<p>There’s a lot you could build on this. Session analytics, cross-session file search, timeline visualizations. For now I’m happy just being able to find my sessions without keeping a manual list.</p>
-<div class="markdown-alert markdown-alert-note"><p>I work at GitHub, which helped me confirm some of these findings by reviewing internal code. But everything described here is observable by anyone with copilot-cli installed. Just open <code>~/.copilot/</code> and start exploring.</p>
+{"type":"session.shutdown","timestamp":"...","data":{...}}</code></pre>
+<p>There’s still a lot you could build on this. Session analytics, cross-session file search, timeline visualizations. I am glad the basic search and resume problem no longer needs a separate tool though.</p>
+<div class="markdown-alert markdown-alert-note"><p>I work at GitHub, which helped me confirm some of the original findings by reviewing internal code. Everything described in the updated <code>~/.copilot/</code> section is observable with Copilot CLI installed, but these files are not a supported public API and may change.</p>
 </div>
 
       
@@ -187,9 +195,11 @@ cs <span class="token parameter variable">-l</span></code></pre>
   <span class="post-kit-label">Receipts</span>
   <ul class="post-kit-list"><li class="post-kit-item"><span class="post-kit-item-label">Repo:</span><a href="https://github.com/jonmagic/copilot-sessions" target="_blank" rel="noopener"
          data-plausible-event-name="outbound-cta"
-         data-plausible-event-target="kit-copilot-sessions">jonmagic/copilot-sessions</a></li><li class="post-kit-item"><span class="post-kit-item-label">Docs:</span><a href="https://docs.github.com/en/copilot/how-tos/copilot-cli" target="_blank" rel="noopener"
+         data-plausible-event-target="kit-copilot-sessions">jonmagic/copilot-sessions</a></li><li class="post-kit-item"><span class="post-kit-item-label">Docs:</span><a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview#resume-an-interactive-session" target="_blank" rel="noopener"
          data-plausible-event-name="outbound-cta"
-         data-plausible-event-target="kit-copilot-cli-docs">copilot-cli reference</a></li><li class="post-kit-item"><span class="post-kit-item-label">Related:</span><a href="/posts/how-i-work-2025-edition/"
+         data-plausible-event-target="kit-copilot-cli-sessions">Resume Copilot CLI sessions</a></li><li class="post-kit-item"><span class="post-kit-item-label">VS Code:</span><a href="https://code.visualstudio.com/docs/agents/run/sessions/session-history" target="_blank" rel="noopener"
+         data-plausible-event-name="outbound-cta"
+         data-plausible-event-target="kit-vscode-session-history">Sync and query session history</a></li><li class="post-kit-item"><span class="post-kit-item-label">Related:</span><a href="/posts/how-i-work-2025-edition/"
          data-plausible-event-name="internal-cta"
          data-plausible-event-target="kit-how-i-work-2025">How I Work, 2025 Edition</a></li><li class="post-kit-item"><span class="post-kit-item-label">Discuss:</span><a href="https://github.com/jonmagic/jonmagic.com/discussions" target="_blank" rel="noopener"
          data-plausible-event-name="outbound-cta"
