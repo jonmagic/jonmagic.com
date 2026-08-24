@@ -92,7 +92,7 @@
   <div class="tsrs-hero-copy">
     <p class="tsrs-kicker">A local macOS relay for agent updates</p>
     <p class="tsrs-deck">Short audio updates make agent work easier to re-enter without keeping every agent window in view.</p>
-    <a class="tsrs-download-button" href="/downloads/Tri-State%20Relay%20Service-2.1.1-macos-arm64.zip" data-plausible-event-name="TSRS Download" data-plausible-event-target="macos-2.1.1-arm64">Download for macOS</a>
+    <a class="tsrs-download-button" href="/downloads/Tri-State%20Relay%20Service-2.2.0-macos-arm64.zip" data-plausible-event-name="TSRS Download" data-plausible-event-target="macos-2.2.0-arm64">Download for macOS</a>
   </div>
 </section>
 <p>Tri-State Relay Service is a local macOS app and CLI where agents leave short updates in a queue. Each project or context gets a line. A line can stay quiet while you are focused, wait with an update, and become active when you choose to listen.</p>
@@ -102,19 +102,17 @@
 <video src="/images/tsrs/product-demo.mp4" controls width="100%"></video>
 -->
 <h2 id="current-release" tabindex="-1"><a class="heading-anchor" href="#current-release" aria-hidden="true">#</a> Current release</h2>
-<p><strong>2.1.1 - Stuck playback recovery and fast-forward</strong></p>
+<p><strong>2.2.0 - Stable line voices and input-aware playback</strong></p>
 <ul>
-<li>Fixed playback hanging indefinitely when a speech subprocess never exits, which left the menu bar showing playing with no audio until the app was restarted.</li>
-<li>Added a playback watchdog that force-recovers stalled playback, terminating the stalled process, resetting voice-command resolution, the audio player, and the synthesizer, and marking the stalled relay failed.</li>
-<li>The stall deadline scales with message length, and each playback phase gets its own deadline, so a long relay is never cut off mid-sentence and a slow voice synthesis never eats the budget for the audio that follows.</li>
-<li>Playback callbacks now verify that they still own the process, audio player, or utterance that produced them, so a late callback from recovered playback can no longer mark or interrupt the relay that replaced it.</li>
-<li>Stall recovery waits for the cancelled speech process to exit before starting the next relay, so recovery cannot briefly overlap two voices.</li>
-<li>Fixed the inactive-line combiner requeueing a relay that was skipped or cleared while the combiner was still running.</li>
-<li>Fixed <code>relay clear</code> so it also removes relays stuck in <code>speaking</code> and stops audio that is currently playing, instead of leaving the app speaking a relay that was already cleared.</li>
-<li>Added <code>relay ff [--line &lt;line&gt;]</code> to fast-forward past every queued relay by marking it <code>skipped</code> instead of deleting it, so skipping the backlog no longer destroys relay history.</li>
-<li>Updated the app and CLI version to 2.1.1.</li>
+<li>Kept app-owned playback available while output-only audio is active and while temporary input capture is safely coordinated.</li>
+<li>Published bounded playback observations for local integrations without moving speech ownership out of the app.</li>
+<li>Added persistent voice reservations so new Relay lines receive stable, unused provider voices when available.</li>
+<li>Added <code>relay voice ensure --line &lt;line&gt; [--voice-id &lt;voice-id&gt;]</code> for persona-agnostic automatic or explicit line-to-voice assignment.</li>
+<li>Validated explicit voice IDs against the active provider catalog before persisting them.</li>
+<li>Fixed PATH-invoked <code>relay</code> commands so bundled Kokoro and Speechify helpers resolve from the real app bundle rather than the current working directory.</li>
+<li>Updated the app and CLI version to 2.2.0.</li>
 </ul>
-<p>The app and <code>relay</code> CLI should both report <code>2.1.1</code>.</p>
+<p>The app and <code>relay</code> CLI should both report <code>2.2.0</code>.</p>
 <h2 id="getting-started" tabindex="-1"><a class="heading-anchor" href="#getting-started" aria-hidden="true">#</a> Getting started</h2>
 <p>The fastest path is to get the app running, prove one relay works by hand, and only then wire it into your agents.</p>
 <h3 id="1.-download-and-open-the-app" tabindex="-1"><a class="heading-anchor" href="#1.-download-and-open-the-app" aria-hidden="true">#</a> 1. Download and open the app</h3>
