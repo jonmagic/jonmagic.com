@@ -8,8 +8,6 @@ description: >-
   Trust should not be a blank check. For expensive product capabilities,
   access should grow with evidence while teams measure both exposure and
   legitimate-user friction.
-featured: 1
-new: true
 accent: blue
 ---
 
