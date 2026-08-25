@@ -4,12 +4,36 @@
   <subtitle>Writing from Jonathan Hoyt on shipping software with AI agents, building teams, and the occasional shirt.</subtitle>
   <link href="https://jonmagic.com/feed.xml" rel="self"/>
   <link href="https://jonmagic.com"/>
-  <updated>2026-07-21T00:00:00Z</updated>
+  <updated>2026-08-25T00:00:00Z</updated>
   <id>https://jonmagic.com/</id>
   <author>
     <name>Jonathan Hoyt</name>
     <email>jonmagic@gmail.com</email>
   </author>
+  
+  <entry>
+    <title>A few small Tri-State Relay Service improvements</title>
+    <link href="https://jonmagic.com/posts/a-few-small-tri-state-relay-service-improvements/"/>
+    <updated>2026-08-25T00:00:00Z</updated>
+    <id>https://jonmagic.com/posts/a-few-small-tri-state-relay-service-improvements/</id>
+    <content type="html">&lt;p&gt;I just released a new version of &lt;a href=&quot;https://jonmagic.com/tsrs/&quot;&gt;Tri-State Relay Service&lt;/a&gt; with a few small improvements that have made it even more helpful for my day-to-day usage.&lt;/p&gt;
+&lt;p&gt;The biggest one is a playback boost for generated voices. I have some voices I like, but a few were quiet enough that I would miss updates even with my Mac volume all the way up. TSRS can now add between 0 and 12 dB of gain before it plays generated audio, with a limiter so the louder voices do not get wrecked in the process.&lt;/p&gt;
+&lt;p&gt;I set the default to 6 dB, which has been enough for me so far. There is a compact slider in Settings &amp;gt; Voice when I want to adjust it from the menu bar app, and I can change it from the terminal too.&lt;/p&gt;
+&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;relay config &lt;span class=&quot;token builtin class-name&quot;&gt;set&lt;/span&gt; --playback-gain-db &lt;span class=&quot;token number&quot;&gt;9.5&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The setting also lives in &lt;code&gt;config.toml&lt;/code&gt;, which is useful when I am setting up a new machine or want to keep the exact configuration in one place.&lt;/p&gt;
+&lt;pre class=&quot;language-toml&quot;&gt;&lt;code class=&quot;language-toml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token table class-name&quot;&gt;voice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token key property&quot;&gt;gain_db&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;9.5&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;markdown-alert markdown-alert-note&quot;&gt;&lt;p&gt;I build two to four little productivity improvements most weeks, and most of them do not last very long. They solve whatever was annoying me that day, then I move on and forget they exist. TSRS has been around for months now, and I keep making it better because I keep using it. That is a much bigger signal to me than whether any single feature feels exciting.&lt;/p&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;the-boring-improvements-are-the-ones-i-notice&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;heading-anchor&quot; href=&quot;https://jonmagic.com/posts/a-few-small-tri-state-relay-service-improvements/#the-boring-improvements-are-the-ones-i-notice&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt; The boring improvements are the ones I notice&lt;/h2&gt;
+&lt;p&gt;The playback boost is in &lt;a href=&quot;https://github.com/jonmagic/tri-state-relay-service/releases/tag/v2.3.0&quot;&gt;Tri-State Relay Service 2.3.0&lt;/a&gt;, but I have also been making a few reliability improvements over the last couple of releases.&lt;/p&gt;
+&lt;p&gt;TSRS can recover when a voice provider or playback process gets stuck, instead of leaving the app thinking it is still speaking. &lt;code&gt;relay ff&lt;/code&gt; lets me skip a backlog without deleting its history. New lines can also keep stable voice assignments, so I do not have to relearn which voice belongs to which project after I add something new.&lt;/p&gt;
+&lt;p&gt;None of this changes the basic rule I care about. Agents can leave me updates, but the app decides when audio plays. Focus, Ready, Live, and Mute still work the same way. The command-line tool can ask the app to queue something, but it cannot start talking over whatever I am doing.&lt;/p&gt;
+&lt;p&gt;I have been using Live mode more lately when I am already sitting at my desk and want to hear work moving. The different line voices help me know which project is talking, and the playback boost means I can actually hear the quieter ones.&lt;/p&gt;
+&lt;p&gt;That is a small thing, but it has made TSRS more useful for me.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/jonmagic/tri-state-relay-service/releases/tag/v2.3.0&quot;&gt;Tri-State Relay Service 2.3.0 is available as a signed macOS download.&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
   
   <entry>
     <title>Trusted Does Not Mean Unlimited</title>
