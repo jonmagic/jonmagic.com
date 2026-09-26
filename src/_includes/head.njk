@@ -47,6 +47,9 @@
 {# Standard meta tags #}
 <meta name="description" content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}">
 <meta name="author" content="{{ metadata.author.name }}">
+{% if robots %}
+<meta name="robots" content="{{ robots }}">
+{% endif %}
 
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 {# <link rel="icon" href="/animated-favicon.gif" type="image/gif"> #}
