@@ -580,40 +580,81 @@ img.avatar {
 }
 
   /* ==========================================================================
-     5. Post CTA
+     5. Post end: Further thinking + post CTA
      ==========================================================================
-     Lightweight call-to-action shown under newer posts
+     Unboxed end-of-post sections that share a small mono label so the
+     ending reads as one quiet area instead of stacked cards.
      */
 
+  .further-thinking,
   .post-cta {
     margin-top: 3rem;
-    padding: 1.75rem 1.5rem 1.5rem;
-    border: 1px solid var(--card-border);
-    background: var(--card-bg);
-    border-radius: var(--border-radius-medium);
-    box-shadow: var(--shadow-small);
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--subtle-border);
   }
 
-  .post-cta h2 {
-    margin-top: 0;
+  .further-thinking + .post-cta {
+    margin-top: 2.5rem;
+  }
+
+  .further-thinking .further-thinking-heading,
+  .post-cta .post-cta-heading {
+    margin: 0 0 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .further-thinking-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .further-thinking-meta {
+    margin: 0 0 0.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  .further-thinking-title {
     font-family: var(--font-brand);
-    font-size: 1.15rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
   }
 
-  .post-cta p {
-    margin: 0 0 0.75rem 0;
+  .further-thinking .further-thinking-note {
+    margin: 0.35rem 0 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .post-cta .post-cta-actions {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0;
     font-size: 0.95rem;
   }
 
-  .post-cta p:last-child { margin-bottom: 0; }
-
-  .post-cta-actions {
-    margin: 0 0 0.75rem 1.1rem;
-    padding: 0;
+  .post-cta-actions li {
+    white-space: nowrap;
   }
 
-  .post-cta-actions li {
-    margin-bottom: 0.4rem;
+  .post-cta-actions li:not(:last-child)::after {
+    content: "·";
+    margin: 0 0.6rem;
+    color: var(--muted);
   }
 
   .post-merch-cta {
@@ -700,20 +741,13 @@ img.avatar {
     font-size: 0.95rem;
   }
 
-  .post-cta-thanks {
-    font-style: italic;
-    color: var(--muted);
-  }
-
   @media (prefers-color-scheme: dark) {
-    .post-cta {
-      background: var(--subtle-bg);
-      border-color: var(--subtle-border);
-      box-shadow: none;
-    }
-
     .post-merch-cta {
       background: #fefcf9 url('/images/merch-cta.webp') center right / cover no-repeat;
+    }
+
+    .post-merch-cta:not(.post-merch-cta--contextual) .post-merch-copy strong {
+      color: #111111;
     }
 
     .post-merch-cta--contextual {
