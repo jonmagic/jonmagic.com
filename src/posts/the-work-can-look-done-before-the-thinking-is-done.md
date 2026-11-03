@@ -10,6 +10,13 @@ description: >-
   execution.
 accent: red
 popular: true
+further_thinking:
+  - date: 2026-11-03
+    title: Critical thinking when agents do the work
+    url: https://x.com/addyosmani/status/2117512471930167377
+    author: "@addyosmani"
+    note: >-
+      This covers similar ground, with useful additions around verification and maintaining expertise. An agent can write a feature and its tests with the same mistaken assumption, so green checks don't necessarily settle whether it works. That adds a concrete question to the learning loop described here: what did our validation actually prove, and what could it miss?
 ---
 
 I was talking with friends recently about what changes when agents become a normal part of building software.

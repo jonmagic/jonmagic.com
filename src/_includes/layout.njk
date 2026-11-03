@@ -39,6 +39,7 @@
       <h1 class="site-title">{{ title }}</h1>
       {{ content | safe }}
       {% include "post-kit.njk" %}
+      {% include "further-thinking.njk" %}
       {# Conditional post CTA for posts from 2010 or newer #}
       {% if date and page.url and page.url.startsWith('/posts/') and date.getFullYear() >= 2010 %}
       {% include 'post-cta.njk' %}

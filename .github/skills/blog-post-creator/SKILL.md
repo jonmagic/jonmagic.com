@@ -40,6 +40,20 @@ featured: 1  # Numeric value for homepage featuring (lower = higher priority)
 layout: layout  # Usually omit; defaults to layout.njk
 ```
 
+#### Further thinking
+
+Add `further_thinking` when outside writing extends, challenges, or adds to a post. Only add an entry when the note can say concretely what the piece adds; list entries newest first.
+
+```yaml
+further_thinking:
+  - date: 2026-11-03
+    title: Title of the outside piece
+    url: https://example.com/the-piece
+    author: "@handle"
+    note: >-
+      Two or three sentences on what this adds to the post.
+```
+
 ## Process
 
 1. **Determine the slug**

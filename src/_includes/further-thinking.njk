@@ -1,0 +1,24 @@
+{# Renders a curated "Further thinking" section when frontmatter has a `further_thinking` array. #}
+{# Each item: { date, title, url, author?, note } — `note` says what the outside piece adds to this post. #}
+{%- if further_thinking and further_thinking.length -%}
+<section class="further-thinking" aria-labelledby="further-thinking-heading">
+  <h2 id="further-thinking-heading" class="further-thinking-heading">Further thinking</h2>
+  <ul class="further-thinking-list">
+    {%- for item in further_thinking -%}
+    {%- set itemDate = item.date.toISOString().split('T')[0] if item.date.toISOString else item.date %}
+    <li class="further-thinking-item">
+      <div class="further-thinking-meta"><time datetime="{{ itemDate }}">{{ itemDate }}</time>{% if item.author %} · {{ item.author }}{% endif %}</div>
+      <a class="further-thinking-title"
+         href="{{ item.url }}"
+         target="_blank"
+         rel="noopener"
+         data-plausible-event-name="outbound-cta"
+         data-plausible-event-target="further-thinking-{{ item.title | slugify }}">{{ item.title }}</a>
+      {%- if item.note %}
+      <p class="further-thinking-note">{{ item.note }}</p>
+      {%- endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif -%}
