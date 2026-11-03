@@ -1,0 +1,46 @@
+/* Styles owned by the standalone voter guide. */
+.vote-guide { max-width: 860px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+.vote-hero { padding: 2rem 0 2.5rem; border-bottom: 3px solid var(--text); }
+.vote-hero h1 { font-size: clamp(2.5rem, 7vw, 4.8rem); line-height: 1.04; letter-spacing: -.055em; margin: 1rem 0 1.5rem; }
+.vote-eyebrow { font-family: var(--font-mono); font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.vote-intro { max-width: 640px; font-size: 1.25rem; }
+.vote-meta, .vote-links { font-size: .9rem; }
+.vote-meta { color: var(--muted); }
+.vote-notice { margin: 1.5rem 0; padding: 1.25rem 1.5rem; background: var(--subtle-bg); border-left: 4px solid var(--accent); }
+.vote-notice h2 { font-size: 1.2rem; margin-top: 0; }
+.vote-notice p:last-child { margin-bottom: 0; }
+.vote-sections { display: flex; flex-wrap: wrap; gap: .5rem 1.3rem; padding: 1.2rem 0; border-bottom: 1px solid var(--card-border); }
+.vote-sections a { font-size: .9rem; padding: .3rem 0; }
+.vote-section { padding-top: 3rem; scroll-margin-top: 2rem; }
+.vote-section > h2 { margin-top: .5rem; font-size: clamp(1.7rem, 4vw, 2.3rem); letter-spacing: -.025em; }
+.vote-dates { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.vote-dates > div { border-top: 3px solid var(--accent); padding-top: 1rem; }
+.vote-dates strong { font-size: 2rem; letter-spacing: -.04em; }
+.vote-dates p { font-size: .95rem; }
+.vote-card { border-top: 1px solid var(--card-border); padding: 1.6rem 0; break-inside: avoid; }
+.vote-card h3 { margin: .3rem 0 .8rem; font-size: 1.25rem; }
+.vote-card .vote-eyebrow { margin: 0 0 .5rem; }
+.vote-card > a { font-size: .9rem; }
+.vote-context { color: var(--muted); }
+.vote-guide a { text-underline-offset: .2em; }
+.vote-guide a:focus-visible, .vote-skip:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.vote-skip { position: absolute; top: -100px; left: 1rem; background: var(--bg); padding: 1rem; z-index: 100; }
+.vote-skip:focus { top: 1rem; }
+@media (max-width: 480px) {
+  .vote-guide { padding-top: .5rem; }
+  .vote-dates { grid-template-columns: 1fr; }
+  .vote-dates > div { display: grid; grid-template-columns: 95px 1fr; gap: 1rem; }
+  .vote-dates p { margin-top: 0; }
+}
+@media print {
+  .vote-page { --bg: #fff; --text: #000; --muted: #333; --accent: #000; --subtle-bg: #fff; --card-border: #aaa; background: #fff; color: #000; }
+  .vote-page .site-nav, .vote-page footer, .vote-sections, .vote-skip { display: none; }
+  .vote-guide { max-width: none; padding: 0; font-size: 10pt; }
+  .vote-hero { padding-top: 0; }
+  .vote-hero h1 { font-size: 30pt; }
+  .vote-section { padding-top: 1rem; }
+  .vote-card { padding: .7rem 0; }
+  .vote-guide a { color: #000; }
+  .vote-card > a::after { content: ' (' attr(href) ')'; overflow-wrap: anywhere; font-size: 8pt; }
+  .vote-notice { border: 1px solid #aaa; }
+}

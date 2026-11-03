@@ -1,0 +1,204 @@
+{
+  "updated": "September 18, 2026",
+  "races": [
+    {
+      "office": "U.S. House, District 15",
+      "candidates": "Kevin Mullin (D) vs. Charles Hoelter (R)",
+      "summary": "Kevin Mullin is the incumbent U.S. representative. Charles Hoelter is a retired training supervisor. Confirm your congressional district with the county before using this comparison.",
+      "url": "https://calmatters.org/california-voter-guide-2026/us-house/"
+    },
+    {
+      "office": "State Assembly, District 21",
+      "candidates": "Diane Papan (D) vs. Jabra J. Muhawieh (R)",
+      "summary": "Diane Papan is the incumbent assemblymember. Jabra J. Muhawieh is an enrolled agent and businessman. Confirm your Assembly district with the county before using this comparison.",
+      "url": "https://calmatters.org/california-voter-guide-2026/state-assembly/"
+    },
+    {
+      "office": "Governor",
+      "candidates": "Xavier Becerra (D) vs. Steve Hilton (R)",
+      "summary": "Becerra supports state financing for affordable housing and a progressive income tax. He supports clean-energy goals but is open to revising them over affordability concerns. Hilton favors tax cuts, fewer development restrictions and rolling back climate mandates. Both oppose Proposition 40.",
+      "url": "https://calmatters.org/california-voter-guide-2026/governor/"
+    },
+    {
+      "office": "Lieutenant Governor",
+      "candidates": "Fiona Ma (D) vs. Gloria Romero (R)",
+      "summary": "Ma is the current state treasurer and emphasizes long state-government experience. Romero, a former Democratic state Senate majority leader who became a Republican in 2024, differs notably on school choice, COVID-era policy and gender-identity issues.",
+      "url": "https://calmatters.org/california-voter-guide-2026/lieutenant-governor/"
+    },
+    {
+      "office": "Secretary of State",
+      "candidates": "Shirley N. Weber (D) vs. Donald P. Wagner (R)",
+      "summary": "Weber, the incumbent, emphasizes voting access, transparency and cybersecurity. Wagner supports voter-ID requirements and has criticized the speed of California's ballot counting.",
+      "url": "https://calmatters.org/california-voter-guide-2026/secretary-of-state/"
+    },
+    {
+      "office": "Controller",
+      "candidates": "Malia Cohen (D) vs. Herb Morgan (R)",
+      "summary": "Cohen is the incumbent chief accountant and emphasizes fiscal caution, transparency and administration. Morgan is an investment executive running principally on fraud/waste detection and independent oversight.",
+      "url": "https://calmatters.org/california-voter-guide-2026/controller/"
+    },
+    {
+      "office": "Treasurer",
+      "candidates": "Eleni Kounalakis (D) vs. Jennifer Hawks (R)",
+      "summary": "Kounalakis is the lieutenant governor and points to extensive state-board experience; Hawks is a retired private-sector executive who argues that not having held elected office would make her a more independent check on state government.",
+      "url": "https://calmatters.org/california-voter-guide-2026/treasurer/"
+    },
+    {
+      "office": "Attorney General",
+      "candidates": "Rob Bonta (D) vs. Michael Gates (R)",
+      "summary": "Bonta has used the office to enforce state housing and criminal-justice laws and challenge federal Trump-administration policies. Gates, formerly Huntington Beach city attorney and later a federal DOJ official, has challenged several California housing and criminal-justice policies.",
+      "url": "https://calmatters.org/california-voter-guide-2026/attorney-general/"
+    },
+    {
+      "office": "Insurance Commissioner",
+      "candidates": "Ben Allen (D) vs. Jane Kim (D)",
+      "summary": "Allen emphasizes wildfire mitigation, stronger Insurance Department staffing/enforcement and tighter FAIR Plan oversight. Kim proposes a state-backed “natural disaster insurance for all” system, expanded low-cost auto coverage and stronger penalties/transparency around claims.",
+      "url": "https://calmatters.org/california-voter-guide-2026/insurance-commissioner/"
+    },
+    {
+      "office": "Board of Equalization, District 2",
+      "candidates": "Sally Lieber (D) vs. John Pimentel (D)",
+      "summary": "Lieber is the incumbent; Pimentel is a San Mateo County Community College District trustee. This office administers parts of California's tax system.",
+      "url": "https://calmatters.org/california-voter-guide-2026/board-of-equalization/"
+    },
+    {
+      "office": "Superintendent of Public Instruction",
+      "candidates": "Richard Barrera vs. Sonja Shaw — nonpartisan",
+      "summary": "Barrera emphasizes school funding, early-childhood education and the teacher pipeline. Shaw emphasizes academic basics, parental authority and opposition to some transgender-student policies. A new law also transfers significant Department of Education authority away from this office beginning in 2027.",
+      "url": "https://calmatters.org/california-voter-guide-2026/superintendent-of-public-instruction/"
+    }
+  ],
+  "local": [
+    {
+      "name": "San Mateo H — sales tax",
+      "summary": "Raises San Mateo's city transactions/use tax by ¼ percentage point, effectively taking the city's local component from 0.25% to 0.50%. The city estimates roughly $7 million/year. It is a general tax rather than money legally restricted to one program, has local auditing/oversight, and does not have a sunset date. A NO leaves the current city tax unchanged.",
+      "url": "https://smcacre.gov/elections/november-3-2026-statewide-general-election"
+    },
+    {
+      "name": "San Mateo F — charter amendments",
+      "summary": "Makes a package of city-charter procedural changes: among them, extending certain council-vacancy deadlines from 30 to 60 days, modernizing meeting/publication/procurement language and conforming the charter to district elections. This is mostly a governance/administrative measure rather than a tax measure.",
+      "url": "https://smcacre.gov/elections/november-3-2026-statewide-general-election"
+    },
+    {
+      "name": "County L — extreme weather",
+      "summary": "Adds charter language making long-term resilience to fire, flooding, heat, drought, storms and sea-level rise a county priority. It does not by itself levy a tax or appropriate a specific amount.",
+      "url": "https://smcacre.gov/elections/november-3-2026-statewide-general-election"
+    },
+    {
+      "name": "County AA — affirmation of rights",
+      "summary": "Adds charter language affirming dignity, civil rights, equal protection, equity, inclusion, accessibility and opportunity. It similarly changes the county charter rather than establishing a specific spending program.",
+      "url": "https://smcacre.gov/elections/november-3-2026-statewide-general-election"
+    },
+    {
+      "name": "County J — vacancies",
+      "summary": "Extends the Board of Supervisors' window for filling certain elected-office vacancies from 30 to 60 days and adds a noticed public-meeting/comment requirement before an appointment.",
+      "url": "https://smcacre.gov/elections/november-3-2026-statewide-general-election"
+    },
+    {
+      "name": "County U — redistricting",
+      "summary": "Moves the drawing of the county's five supervisor districts after each census from the Board of Supervisors to an independent redistricting commission. NBC Bay Area also highlights this as one of San Mateo County's notable measures.",
+      "url": "https://smcacre.gov/elections/november-3-2026-statewide-general-election"
+    },
+    {
+      "name": "Regional Transit Measure (RTM)",
+      "summary": "Adds a 0.5% sales tax in San Mateo County (1% in San Francisco) for 14 years. It is projected to raise about $980 million annually regionwide, primarily supporting BART, Muni, Caltrain, AC Transit and other transit, along with rider programs and some county transportation/road projects.",
+      "url": "https://smcacre.gov/elections/november-3-2026-statewide-general-election"
+    },
+    {
+      "name": "Measure V — Community College bond",
+      "summary": "Authorizes $848 million in San Mateo County Community College District bonds for facilities, technology, safety and infrastructure. The official tax-rate estimate reaches roughly $18 per $100,000 of assessed value, with about $1.35 billion estimated total principal-and-interest repayment. Requires 55%.",
+      "url": "https://smcacre.gov/elections/november-3-2026-statewide-general-election"
+    },
+    {
+      "name": "Measure W — SMFCSD bond",
+      "summary": "Authorizes $498 million for San Mateo-Foster City school facilities: classrooms/STEM spaces, roofs/windows, emergency systems, accessibility/security and teacher/staff housing among the listed uses. Estimated average tax is about $29 per $100,000 of assessed value, with roughly $900 million total repayment including interest. Requires 55%.",
+      "url": "https://smcacre.gov/elections/november-3-2026-statewide-general-election"
+    }
+  ],
+  "propositions": [
+    {
+      "name": "1 — Housing bond",
+      "yes": "borrow $11.25B for affordable rental housing, supportive housing, veterans' mortgages, homeownership assistance and related programs.",
+      "context": "Legislative Analyst estimates $500–600M/year for ~25 years to repay it.",
+      "url": "https://voterguide.sos.ca.gov/propositions/1/"
+    },
+    {
+      "name": "2 — Rainy-day fund",
+      "yes": "raise the maximum state reserve from 10% to 20% of General Fund tax revenue and permit money to be used for California's federal unemployment-insurance debt.",
+      "context": "The policy question is larger fiscal reserves versus keeping more revenue subject to existing spending/refund rules.",
+      "url": "https://voterguide.sos.ca.gov/propositions/2/"
+    },
+    {
+      "name": "3 — High-income tax",
+      "yes": "make permanent the higher state income-tax rates on high earners that currently expire, with revenue supporting schools and healthcare.",
+      "context": "It converts what has been a temporary/extended tax into a permanent one.",
+      "url": "https://voterguide.sos.ca.gov/propositions/3/"
+    },
+    {
+      "name": "4 — Campaign finance",
+      "yes": "remove California's prohibition on state/local public financing of election campaigns, allowing governments to create such systems.",
+      "context": "It authorizes public financing; it does not itself create one statewide.",
+      "url": "https://voterguide.sos.ca.gov/propositions/4/"
+    },
+    {
+      "name": "5 — Recall elections",
+      "yes": "separate the recall question from the election of a permanent successor; a temporary replacement would serve until the later election, and the recalled officeholder could run in it.",
+      "context": "",
+      "url": "https://voterguide.sos.ca.gov/propositions/5/"
+    },
+    {
+      "name": "37 — Homebuyer loans",
+      "yes": "authorize up to $25B in revenue bonds for fixed-rate secondary mortgages of up to 17% of qualifying newly built homes, with borrowers providing at least 3% down.",
+      "context": "Bonds are repaid from borrowers' mortgage payments; the state analysis says no direct state/local cost.",
+      "url": "https://voterguide.sos.ca.gov/propositions/37/"
+    },
+    {
+      "name": "38 — Immunology bond",
+      "yes": "borrow $8.4B for immunology/immunotherapy research.",
+      "context": "LAO estimates about $500M/year for 25 years. CalMatters found that the criteria for roughly half the funding appear to leave one UCLA-affiliated nonprofit as the current qualifying institution; the campaign says the detailed criteria are intended to ensure a research institute can begin high-quality work immediately.",
+      "url": "https://voterguide.sos.ca.gov/propositions/38/"
+    },
+    {
+      "name": "39 — Voter ID",
+      "yes": "require government-issued ID for in-person voting and identifying information for mail voting.",
+      "context": "This would materially change California's current voter-identification rules.",
+      "url": "https://voterguide.sos.ca.gov/propositions/39/"
+    },
+    {
+      "name": "40 — Billionaire tax",
+      "yes": "impose a one-time wealth tax on qualifying billionaires, primarily to fund healthcare, with some funding for education and food assistance.",
+      "context": "Official fiscal analysis anticipates tens of billions temporarily, while also noting possible ongoing income-tax revenue losses if billionaires leave or change residency.",
+      "url": "https://voterguide.sos.ca.gov/propositions/40/"
+    },
+    {
+      "name": "41 — Tax/spending rules",
+      "yes": "require audits of new special-tax programs and generally make new-tax revenue subject to the state spending limit.",
+      "context": "It was drafted partly in response to Prop. 40.",
+      "url": "https://voterguide.sos.ca.gov/propositions/41/"
+    },
+    {
+      "name": "42 — Personal-property taxes",
+      "yes": "constitutionally bar new state taxes based merely on ownership of personal property/assets and certain retroactive taxes.",
+      "context": "Propositions 40, 41 and 42 contain potentially conflicting provisions. Read their official analyses together before deciding.",
+      "url": "https://voterguide.sos.ca.gov/propositions/42/"
+    },
+    {
+      "name": "43 — local tax threshold",
+      "yes": "raise the approval threshold for citizen-initiated local special taxes from a majority to two-thirds, matching the threshold applicable to local-government-initiated special taxes.",
+      "context": "",
+      "url": "https://voterguide.sos.ca.gov/propositions/43/"
+    },
+    {
+      "name": "44 — community clinics",
+      "yes": "require nonprofit federally qualified health centers to spend 90% of revenue on “program services” and allow penalties for falling below the requirement.",
+      "context": "Supporters frame it as patient-care accountability; clinic organizations argue the definition/penalties could reduce services or force closures.",
+      "url": "https://voterguide.sos.ca.gov/propositions/44/"
+    },
+    {
+      "name": "45 — CEQA review",
+      "yes": "impose faster environmental-review timelines for specified housing, transportation, water, health and clean-energy projects and limit some judicial delays.",
+      "context": "The central policy tension is faster permitting versus retaining the existing scope of environmental review/litigation.",
+      "url": "https://voterguide.sos.ca.gov/propositions/45/"
+    }
+  ]
+}

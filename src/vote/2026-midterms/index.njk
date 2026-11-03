@@ -1,0 +1,114 @@
+---
+layout: false
+title: 2026 midterms · A San Mateo voter guide
+description: A plain-language guide to California candidates, propositions and San Mateo ballot measures for the November 3, 2026 election.
+permalink: /vote/2026-midterms/
+analyticsProject: vote-2026
+analyticsTopic: voter-guide
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include "head.njk" %}
+  <link rel="canonical" href="https://jonmagic.com/vote/2026-midterms/">
+  <link rel="stylesheet" href="/css/vote.css">
+</head>
+<body class="vote-page">
+  <a class="vote-skip" href="#guide">Skip to the guide</a>
+  {% include "site-nav.njk" %}
+  <main id="guide" class="vote-guide">
+    <header class="vote-hero">
+      <p class="vote-eyebrow">San Mateo, California · November 3, 2026</p>
+      <h1>2026 midterms.<br>A San Mateo guide.</h1>
+      <p class="vote-intro">The 2026 midterms, from Sacramento to San Mateo. Candidates, ballot measures and the sources to read before you decide.</p>
+      <p class="vote-meta">By Jonathan Hoyt · Updated {{ vote2026.updated }} · No endorsements</p>
+    </header>
+    <aside class="vote-notice" aria-label="Check your ballot">
+      <h2>Start with your own ballot</h2>
+      <p>This guide grew out of research for San Mateo’s 94401 area. Your street address determines your districts, and neighbors in the same ZIP code can have different ballots. The local races below are a starting point, not a complete address-specific ballot.</p>
+      <a href="https://smcacre.gov/elections/my-election-info">Check your registration and ballot with San Mateo County →</a>
+    </aside>
+    <nav class="vote-sections" aria-label="Guide sections">
+      <a href="#dates">Make a plan</a>
+      <a href="#candidates">Candidates</a>
+      <a href="#local">Local measures</a>
+      <a href="#propositions">State propositions</a>
+      <a href="#judges">Judges</a>
+      <a href="#sources">Sources</a>
+    </nav>
+    <section id="dates" class="vote-section">
+      <p class="vote-eyebrow">01 / Make a plan</p>
+      <h2>Three dates to keep handy</h2>
+      <div class="vote-dates">
+        <div><strong>Oct 5</strong><p>Counties begin mailing ballots on or before this date.</p></div>
+        <div><strong>Oct 19</strong><p>Regular voter registration deadline.</p></div>
+        <div><strong>Nov 3</strong><p>Election Day. Polls are open 7 a.m. to 8 p.m.</p></div>
+      </div>
+      <p>Missed the registration deadline? California offers same-day registration. Check the county’s instructions and voting locations before you go.</p>
+      <p class="vote-links"><a href="https://registertovote.ca.gov/">Register to vote</a> · <a href="https://smcacre.gov/elections/november-3-2026-statewide-general-election">County voting information</a> · <a href="https://voterguide.sos.ca.gov/">Official dates and voting guide</a></p>
+    </section>
+    <section id="candidates" class="vote-section">
+      <p class="vote-eyebrow">02 / Candidates</p>
+      <h2>Who’s running</h2>
+      <p>Statewide offices plus U.S. House District 15, Assembly District 21 and Board of Equalization District 2. Check district races against your sample ballot. D means Democratic; R means Republican.</p>
+      {% for race in vote2026.races %}
+      <article class="vote-card" id="race-{{ loop.index }}">
+        <p class="vote-eyebrow">{{ race.office | escape }}</p>
+        <h3>{{ race.candidates | escape }}</h3>
+        <p>{{ race.summary | escape }}</p>
+        <a href="{{ race.url | escape }}">Read the CalMatters guide →</a>
+      </article>
+      {% endfor %}
+      <p>For school boards, city council and other local offices, use the <a href="https://smcacre.gov/elections/november-3-2026-statewide-general-election">county candidate roster and your sample ballot</a>. An uncontested seat or a district on a different election cycle may not appear. This guide does not infer those omissions from your ZIP code.</p>
+    </section>
+    <section id="local" class="vote-section">
+      <p class="vote-eyebrow">03 / Close to home</p>
+      <h2>Nine local measures to understand</h2>
+      <p>City, county, transit and school measures from the original San Mateo research. Match each one to your ballot. These summaries describe what approval would change; a no vote rejects the proposal.</p>
+      {% for measure in vote2026.local %}
+      <article class="vote-card" id="local-{{ loop.index }}">
+        <h3>{{ measure.name | escape }}</h3>
+        <p>{{ measure.summary | escape }}</p>
+        <a href="{{ measure.url | escape }}">County measure text, analysis and arguments →</a>
+      </article>
+      {% endfor %}
+      <aside class="vote-notice"><p>For school bonds, assessed value means the value on your property-tax assessment, which can differ substantially from market value. The tax figures above are estimates, not a quote for your property.</p></aside>
+    </section>
+    <section id="propositions" class="vote-section">
+      <p class="vote-eyebrow">04 / Across California</p>
+      <h2>The 14 state propositions</h2>
+      <p>A quick explanation of what a yes vote would do. A no vote rejects that proposition. Follow the official guide for the full text, fiscal analysis, and arguments on both sides.</p>
+      {% for prop in vote2026.propositions %}
+      <article class="vote-card" id="prop-{{ prop.name.split(' ')[0] }}">
+        <h3>Proposition {{ prop.name | escape }}</h3>
+        <p><strong>A yes vote would</strong> {{ prop.yes | escape }}</p>
+        {% if prop.context %}<p class="vote-context">{{ prop.context | escape }}</p>{% endif %}
+        <a href="{{ prop.url | escape }}">Official analysis and arguments →</a>
+      </article>
+      {% endfor %}
+    </section>
+    <section id="judges" class="vote-section">
+      <p class="vote-eyebrow">05 / The courts</p>
+      <h2>Judicial retention</h2>
+      <p>Judicial retention questions ask whether a justice should remain in office. They are different from choosing between two candidates. Use your sample ballot to identify the justices you are voting on, then read their professional backgrounds in the state guide.</p>
+      <a href="https://voterguide.sos.ca.gov/justices/">Read the official judicial information →</a>
+    </section>
+    <section id="sources" class="vote-section">
+      <p class="vote-eyebrow">06 / Keep reading</p>
+      <h2>Go to the source</h2>
+      <ul>
+        <li><a href="https://voterguide.sos.ca.gov/">California Secretary of State</a> for official proposition text, fiscal analyses, candidate statements and voting information.</li>
+        <li><a href="https://smcacre.gov/elections/november-3-2026-statewide-general-election">San Mateo County Elections</a> for local measure documents, candidate rosters and voting locations.</li>
+        <li><a href="https://calmatters.org/california-voter-guide-2026/">CalMatters</a> for candidate comparisons and explanations of the statewide propositions.</li>
+        <li><a href="https://www.nbcbayarea.com/news/local/bay-area-voter-guide-2026-election/4126572/">NBC Bay Area</a> for regional election coverage. This link came from the original research and could not be independently retrieved when this page was prepared.</li>
+      </ul>
+      <h3>About this guide</h3>
+      <p>I started with an AI-assisted research conversation because I wanted to understand the choices on my ballot. This page adapts those September 17 notes into something easier to read and share.</p>
+      <p>The election dates, statewide proposition list, local measure list and district candidate roster were checked against state and county sources on September 18, 2026. The summaries are condensed research notes, not official ballot language or a claim that every detail has been independently verified. Read the linked analyses before voting. This page is manually maintained and does not update automatically.</p>
+      <p>You can print this page from your browser. <a href="#guide">Back to the top ↑</a></p>
+    </section>
+  </main>
+  <div class="page">{% include "footer.njk" %}</div>
+  <script src="/js/site.js"></script>
+</body>
+</html>
