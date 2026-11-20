@@ -8,6 +8,13 @@ description: >-
 featured: 1
 new: true
 accent: blue
+further_thinking:
+  - date: 2026-11-20
+    title: Surviving the AI Squeeze
+    url: https://justin.searls.co/links/2026-11-20-surviving-the-ai-squeeze/
+    author: Justin Searls
+    note: >-
+      Justin responds directly to the widening gap inside tech companies and pushes harder on why traditional fixes fall short. He argues that corporate training cannot solve an identity and mindset shift, that single-player agentic work makes mentoring harder, and that executives, managers, and developers all have to act like the job has already changed.
 ---
 
 Today I got an email from a friend outside tech whose work involves turning spoken notes into written records. Most of the clients they supported were recently moved to an AI tool to save money. A handful of people chose to keep working with my friend anyway, which helped, and they scrambled to pick up harder work that automated tools still struggle with, so now they are working much longer hours for a fraction of what they used to make.
