@@ -8,6 +8,7 @@ description: >-
   Why agent-assisted work can look finished before the thinking is finished,
   and why visible reasoning needs to become part of mentoring, review, and
   execution.
+featured: 2
 accent: red
 popular: true
 further_thinking:

@@ -5,8 +5,6 @@ tags:
   - post
 description: >-
   Tri-State Relay Service 2.3.0 adds configurable playback boost, plus a few recent reliability improvements that have made the local agent relay more useful day to day.
-featured: 1
-new: true
 accent: blue
 ---
 

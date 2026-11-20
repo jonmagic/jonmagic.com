@@ -5,7 +5,6 @@ tags:
   - post
 description: >-
   Copilot now has built-in session search and resume. The original CLI and a current look at the local session data under ~/.copilot/ are preserved here.
-featured: 3
 accent: green
 popular: true
 eyebrow: "TOOL · 2026"
