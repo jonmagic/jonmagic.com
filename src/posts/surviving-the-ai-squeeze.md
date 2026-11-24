@@ -5,8 +5,8 @@ tags:
   - post
 description: >-
   An email from a friend outside tech forced me to rethink how I talk about AI and work. Three ways the next few years could go, and practical moves for any career.
-featured: 1
-new: true
+featured: 2
+popular: true
 accent: blue
 further_thinking:
   - date: 2026-11-20
@@ -21,7 +21,7 @@ Today I got an email from a friend outside tech whose work involves turning spok
 
 Reading that email hit me hard, partly because of the week I had just been having.
 
-A few days earlier, I was texting with two close friends in tech about pushing our AI ambition way higher after I spent ten days building a real software system with agents running around the clock. Yesterday, my dad sent me a podcast about navigating a rough job market, and I texted back feeling pretty grateful for my own footing after nearly fifteen years at the same company. And today, Anthropic went public on the Nasdaq, setting off a massive [Hacker News thread](https://news.ycombinator.com/item?id=50562754) full of software engineers wrestling with whether their own careers are about to change for good.
+A few days earlier, I was texting with two close friends in tech about pushing our AI ambition way higher after I spent ten days [building a real software system with agents running around the clock](/posts/trying-over-and-over-to-build-a-continuous-software-machine/). Yesterday, my dad sent me a podcast about navigating a rough job market, and I texted back feeling pretty grateful for my own footing after nearly fifteen years at the same company. And today, Anthropic went public on the Nasdaq, setting off a massive [Hacker News thread](https://news.ycombinator.com/item?id=50562754) full of software engineers wrestling with whether their own careers are about to change for good.
 
 Seeing those moments land in the same week made me stop and rethink how I have been talking about AI and work.
 

@@ -7,7 +7,6 @@ tags:
   - post
 description: >-
   Practical ways to build career security when job security feels fragile—strengthening relationships, keeping interview skills fresh, sharing work openly, and preparing on your own terms.
-featured: 3
 accent: amber
 ---
 
