@@ -1,7 +1,7 @@
 ---
-title: Trying Over and Over to Build a Continuous Software Machine
+title: Building a Continuous Software Engine the Hard Way
 date: 2026-11-23
-avatar: /images/posts/trying-over-and-over-to-build-a-continuous-software-machine/social.webp
+avatar: /images/posts/building-a-continuous-software-engine-the-hard-way/social.webp
 tags:
   - post
 description: >-
