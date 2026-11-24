@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script defer data-domain="jonmagic.com" src="https://plausible.io/js/script.pageview-props.outbound-links.js"
+  event-page_type="post"
+  event-page_slug="building-a-continuous-software-engine-the-hard-way" event-path="/posts/building-a-continuous-software-engine-the-hard-way/" event-year="2026"></script>
+<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building a Continuous Software Engine the Hard Way</title>
+
+
+<meta property="og:title" content="Building a Continuous Software Engine the Hard Way">
+<meta property="og:description" content="I published Build a Continuous Software Engine after spending three weeks breaking continuous agent machines until one finally started working.">
+<meta property="og:url" content="https://jonmagic.com/posts/building-a-continuous-software-engine-the-hard-way/">
+<meta property="og:site_name" content="jonmagic.com">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://jonmagic.com/images/posts/building-a-continuous-software-engine-the-hard-way/social.webp">
+<meta property="og:locale" content="en_US">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Building a Continuous Software Engine the Hard Way">
+<meta name="twitter:description" content="I published Build a Continuous Software Engine after spending three weeks breaking continuous agent machines until one finally started working.">
+
+
+<meta name="description" content="I published Build a Continuous Software Engine after spending three weeks breaking continuous agent machines until one finally started working.">
+<meta name="author" content="Jonathan Hoyt">
+
+
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+<link rel="stylesheet" href="/css/index.css">
+<link rel="alternate" type="application/atom+xml" title="JonMagic.com RSS Feed" href="/feed.xml">
+
+</head>
+
+
+<body class="accent-green">
+  
+  <nav class="site-nav" aria-label="Primary">
+  <div class="nav-container">
+    <a class="nav-brand" href="/">
+      <span class="nav-brand-name">jonmagic</span><span class="nav-brand-dot">.com</span>
+    </a>
+
+    <div class="nav-main">
+      <ul class="nav-links">
+        <li><a href="/posts/">Writing</a></li>
+        <li><a href="/merch/">Merch</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+
+      <div class="social-links">
+        <a href="/search/" title="Search posts" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <circle cx="11" cy="11" r="7"/>
+            <line x1="20" y1="20" x2="16.5" y2="16.5"/>
+          </svg>
+          <span class="visually-hidden">Search</span>
+        </a>
+        <a href="https://github.com/jonmagic" title="GitHub Profile" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true" focusable="false">
+            <path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.57.1.78-.25.78-.55v-1.93c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.16 1.18a10.96 10.96 0 0 1 2.87-.39c.97 0 1.95.13 2.87.39 2.2-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.73.8 1.18 1.82 1.18 3.08 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.07.78 2.16v3.2c0 .31.21.66.79.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/>
+          </svg>
+          <span class="visually-hidden">GitHub</span>
+        </a>
+        <a href="https://linkedin.com/in/jonmagic" title="LinkedIn Profile" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true" focusable="false">
+            <path d="M4.98 3.5A2.5 2.5 0 1 1 4.97 8.5 2.5 2.5 0 0 1 4.98 3.5zM3 9.5h4V21H3V9.5zm6.5 0h3.83v1.57h.05a4.2 4.2 0 0 1 3.78-2.07c4.04 0 4.79 2.66 4.79 6.11V21h-4v-5.06c0-1.21-.02-2.77-1.69-2.77-1.7 0-1.96 1.32-1.96 2.68V21h-4V9.5z"/>
+          </svg>
+          <span class="visually-hidden">LinkedIn</span>
+        </a>
+        <a href="/feed.xml" title="RSS Feed" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true" focusable="false">
+            <path d="M5 3a16 16 0 0 1 16 16 1.5 1.5 0 0 1-3 0A13 13 0 0 0 5 6a1.5 1.5 0 0 1 0-3zm0 6a10 10 0 0 1 10 10 1.5 1.5 0 0 1-3 0 7 7 0 0 0-7-7 1.5 1.5 0 0 1 0-3zm1.5 7.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5z"/>
+          </svg>
+          <span class="visually-hidden">RSS Feed</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+  <div class="page layout-main">
+    <main class="content">
+      
+      <div class="post-date-container">
+        <span id="post-date-typing" class="post-date-typing" data-date="2026-11-23"></span>
+      </div>
+      
+      
+      <h1 class="site-title">Building a Continuous Software Engine the Hard Way</h1>
+      <p>Earlier today a colleague asked me what happened to the autonomous agent harness I was demoing last week.</p>
+<p>“It burned itself to the ground,” I told them. “So I spent the weekend starting over.”</p>
+<p>A few minutes earlier, someone else in the room had asked what I actually mean by continuous agentic engineering, and whether it is just another name for a software factory. I have stopped calling them factories, because a factory is optimized to stamp out the same widget over and over. What I have been trying to build for the past few weeks is closer to a machine you can point at a real codebase, walk away from for 24 hours, and come back to without finding a ball of mud you no longer understand.</p>
+<p>Getting something to simply run overnight without wedging itself has been much harder than the demos make it look. It is still early, maybe too early to tell for sure, since the newest version has only been running live for about a day. Even so, it survived its first full night across three live repositories, feels right in a way none of my earlier attempts did, and finally gave me enough clarity to publish <a href="https://thisistheway.to/engine">Build a Continuous Software Engine</a> alongside the <a href="https://thisistheway.to/ai">AI-assisted engineering guide</a> I published earlier this year on <code>thisistheway.to</code>. This post is the messier story behind that guide, trying over and over until I understood the machinery well enough to teach it.</p>
+<div class="markdown-alert markdown-alert-note"><p><strong>Please note most problems do not need a continuous engine like this.</strong> I would not use one to write a blog post, knock out a one-session feature, explore early product or UI design, or touch sensitive credentials and irreversible production changes without real sandboxing. It earns its keep on multi-day or multi-week work you can verify with tests, specs, or an existing system, like building a library or storage engine, migrating a codebase between languages or frameworks, paying down years of technical debt and disjointed docs, or hardening an existing service with edge-case tests and consistent instrumentation.</p>
+</div>
+<h2 id="watching-the-pioneers%2C-then-jumping-in" tabindex="-1"><a class="heading-anchor" href="#watching-the-pioneers%2C-then-jumping-in" aria-hidden="true">#</a> Watching the pioneers, then jumping in</h2>
+<p>For months I had been reading and watching engineers and labs talk about long-running agent harnesses, and the whole idea kept nagging at me.</p>
+<p>Back in December, <a href="https://ghuntley.com/ralph/">Geoffrey Huntley’s Ralph Wiggum posts</a> and later <a href="https://ghuntley.com/loop/">everything is a ralph loop</a> got me thinking about keeping agents in a tight feedback loop instead of hand-holding every step, which showed up in <a href="/posts/turning-agent-misses-into-systemic-improvements/">Turning Agent Misses into Systemic Improvements</a>. Since then a wave of much deeper work has come out. Anthropic published great writeups on <a href="https://www.anthropic.com/research/effective-harnesses-for-long-running-agents">effective harnesses for long-running agents</a> and <a href="https://www.anthropic.com/research/harness-design-long-running-apps">harness design for long-running apps</a>, followed by their workshop <a href="https://www.youtube.com/watch?v=mR-WAvEPRwE">Build Agents That Run for Hours</a> and Addy Osmani’s talk on <a href="https://www.youtube.com/watch?v=n97BCfyFIvw">the engineer of the future choosing what is worth doing</a>. OpenAI published <a href="https://openai.com/index/harness-engineering/">Harness engineering</a>, and Ryan Lopopolo gave two talks, one on <a href="https://www.youtube.com/watch?v=am_oeAoUhew">building software when humans steer and agents execute</a> and another on <a href="https://www.youtube.com/watch?v=MFQIKbr1IEo">shipping code at 70 PRs a week</a>.</p>
+<p>At the same time, individual engineers I respect were building their own machines in the open. Justin Searls wrote about turning himself into <a href="https://justin.searls.co/posts/im-just-a-meat-proxy/">a meat proxy</a>, John Nunemaker wrote about <a href="https://www.johnnunemaker.com/dont-make-a-human-do-what-ai-is-amazing-at/">not making a human do what AI is amazing at</a>, and Simon Willison put real language around <a href="https://simonwillison.net/guides/agentic-engineering-patterns/what-is-agentic-engineering/">what agentic engineering actually looks like</a>.</p>
+<p>Watching all of that gave me a rough picture, and I realized the only way I was going to actually understand how these machines work was to build them myself.</p>
+<p>On October 30 I went down the rabbit hole for real. I started a TypeScript streaming library and tried to wire up agents that could keep shipping end-to-end features, updating documentation, and cleaning up the codebase while I was away from the keyboard. Over the next three weeks that project crossed 1,100 commits, and it taught me fast how wide the gap is between a loop that looks impressive in a demo and a machine you can leave running overnight.</p>
+<h2 id="trying-to-teach-it-before-i-understood-it" tabindex="-1"><a class="heading-anchor" href="#trying-to-teach-it-before-i-understood-it" aria-hidden="true">#</a> Trying to teach it before I understood it</h2>
+<p>Around November 9, about ten days in, I got excited enough that I started writing a continuous engineering guide on <code>thisistheway.to</code>.</p>
+<p>Two days later I abandoned the draft.</p>
+<p>Writing has a way of exposing everything you are hand-waving. I could describe the high-level idea of an autonomous loop, and I could not give someone honest, concrete advice about how to keep that loop from wedging itself at three in the morning. I was still guessing at the machinery. So I closed the draft and went back to building a real orchestrator from scratch.</p>
+<h2 id="all-the-ways-i-built-it-wrong" tabindex="-1"><a class="heading-anchor" href="#all-the-ways-i-built-it-wrong" aria-hidden="true">#</a> All the ways I built it wrong</h2>
+<p>Between November 11 and November 21, I built my first dedicated autonomous harness. It grew to about 855 commits, 99 source files, and roughly 27,500 lines of code, and I pointed it at the streaming library and a new storage engine project I started on November 18.</p>
+<p>I learned a lot from running that harness around the clock, mostly by watching it fail in creative ways.</p>
+<h3 id="letting-the-agent-supervise-itself-and-own-the-state" tabindex="-1"><a class="heading-anchor" href="#letting-the-agent-supervise-itself-and-own-the-state" aria-hidden="true">#</a> Letting the agent supervise itself and own the state</h3>
+<p>Early on, I let long agent conversations carry too much state and asked agents to decide when their own work was ready. Over long runs the context drifted, agents graded their own diffs way too generously, and prompt-driven recovery could not reliably tell when a run was hung, spinning in circles, or bouncing back and forth between the same two fixes.</p>
+<p>Ordinary deterministic code has to own the state, the leases, and the transitions, while each agent call stays short, bounded, and replaceable. I wrote that lesson up in <a href="https://thisistheway.to/engine/state-and-contracts">State &amp; Contracts Outside the Context Window</a>.</p>
+<h3 id="piling-patches-onto-a-harness-that-was-already-too-big" tabindex="-1"><a class="heading-anchor" href="#piling-patches-onto-a-harness-that-was-already-too-big" aria-hidden="true">#</a> Piling patches onto a harness that was already too big</h3>
+<p>By the time the harness reached 99 files and 27,500 lines, I had lost the ability to hold the whole thing in my head. Every patch I added to handle one weird edge case seemed to introduce two new failure modes somewhere else.</p>
+<p>Worse, when the orchestrator kept getting stuck, I caught myself building external babysitter loops to poke it back awake instead of fixing why it froze in the first place. Once you are building a supervisor to watch your supervisor, the foundation is telling you something.</p>
+<h3 id="trusting-the-builder%E2%80%99s-green-checks" tabindex="-1"><a class="heading-anchor" href="#trusting-the-builder%E2%80%99s-green-checks" aria-hidden="true">#</a> Trusting the builder’s green checks</h3>
+<p>Earlier this year I wrote <a href="/posts/the-work-can-look-done-before-the-thinking-is-done/">The Work Can Look Done Before the Thinking Is Done</a>, and unattended agents proved that point faster than any human ever could. When nobody independent was reading the diff, a builder agent would occasionally weaken a test, loosen an assertion, or bump a timeout just to turn a red check green.</p>
+<p>A passing test suite only proves what the tests actually check, and the agent that wrote a buggy change can easily write a generous test that misses it. Even an independent fresh-context reviewer only catches what you thought to specify, and two agents using similar models can still share the same blind spots. Verification moves the bottleneck toward specs and checks instead of removing it. Separating the builder from an independent reviewer, running pre-landing health checks, and using targeted rollback as a fast recovery heuristic when landing breaks became the backbone of <a href="https://thisistheway.to/engine/verification-and-landing">Independent Verification &amp; Transactional Landing</a>.</p>
+<h3 id="ignoring-boring-systems-hygiene-until-everything-wedged" tabindex="-1"><a class="heading-anchor" href="#ignoring-boring-systems-hygiene-until-everything-wedged" aria-hidden="true">#</a> Ignoring boring systems hygiene until everything wedged</h3>
+<p>Most of the overnight failures were boring distributed-systems bugs dressed up as AI problems. Hung child and grandchild processes survived kills and kept holding locks. Brief network blips burned through retry budgets and killed healthy work. Duplicate readiness checks in the scheduler created quiet deadlocks where worker slots sat completely idle while waiting on approvals or blocked dependencies.</p>
+<p>If you want a machine to keep making progress while you sleep, liveness has to be treated as a first-class engineering problem instead of an afterthought. I pulled all of those failure modes into <a href="https://thisistheway.to/engine/liveness-and-recovery">Never Getting Stuck: Watchdogs, Recovery &amp; Liveness</a>.</p>
+<h2 id="starting-over-from-scratch" tabindex="-1"><a class="heading-anchor" href="#starting-over-from-scratch" aria-hidden="true">#</a> Starting over from scratch</h2>
+<p>Yesterday, on November 22, I stopped patching the 27,500-line harness and started over with a blank slate. I wrote down the principles I had learned the hard way over the previous three weeks and ran a bake-off, asking four frontier models to build the same minimal engine in separate Git worktrees, then having five models across different providers judge them blindly with live black-box fault probes until all five reached unanimous agreement. The winner came out to about 32 files and 5,500 lines of code, with no build step, one runtime dependency (the GitHub Copilot SDK, though any agent SDK could sit in that slot), and hard caps of 450 lines per source file and 150 lines for the README so a human or a fresh agent can still hold it in their head.</p>
+<p>This time I committed to the core idea running through those Anthropic and OpenAI harness engineering writeups, stop trying to make an agent reliable enough to hold the whole system together, and build deterministic software reliable enough to run unreliable agents. The orchestrator owns SQLite leases and fences, runs each worker in its own Git worktree, wraps commands in detached process-group watchdogs, sends every change through an independent fresh-context reviewer and pre-landing health checks, and uses targeted rollback as a fast recovery move when health breaks (even when restoring green checks does not prove root cause on its own).</p>
+<div class="markdown-alert markdown-alert-note"><p>Git worktrees only isolate filesystems, not credentials, privileges, or network access. Real process sandboxing is still work ahead for anything beyond personal local repositories.</p>
+</div>
+<p>Last night I put the new engine under <code>launchd</code> across three live repositories to see what happened when I walked away. In roughly its first 24 hours it landed 137 verified commits, with 40% to 57% passing on the first try depending on the repo, which I actually like seeing because it means independent review is catching real defects almost half the time before they touch <code>main</code>. It rode out network blips without burning retries and proposed fix goals on its own for recurring rebase and test conflicts. It still hit a real bug around hour 20, when the scheduler and planner deadlocked each other, and instead of leaving tangled state it preserved clean raw evidence, took a bug description, proposed the fix plan, unified its own scheduler once I approved the direction, and shipped an exhaustive 3,456-state liveness test covering its scheduler transitions.</p>
+<p>Real engineering landed in that stretch. On itself, the engine added oscillation guards to stop alternating retry loops, verified runtime upgrade rollbacks, graceful drain waits, and fixes for real pagination and concurrency bugs. On the streaming library, it shipped stateful distinct-count recovery, versioned relationship rollup fixes, and expiry-driven re-evaluation. On the storage engine, it ran controlled performance experiments on write-ahead log waits, Bloom-filter sizing, and checkpoint concurrency, and honestly rejected optimizations that came back inconclusive instead of forcing them into production code. A large share of those 137 commits were diagnostic benchmarks and result writeups rather than production features, which is why raw commit count is still not the metric I trust, and 24 hours is obviously early. Even so, for the first time in a month, the machine is small enough to reason about, honest when it fails, and producing work I would actually keep.</p>
+<h3 id="just-in-time-decomposition" tabindex="-1"><a class="heading-anchor" href="#just-in-time-decomposition" aria-hidden="true">#</a> Just-in-time decomposition</h3>
+<p>What made that hour-20 recovery work cleanly on the steering side was divorcing the design from any specific issue tracker or PR workflow and focusing on just-in-time decomposition. Trying to plan fifty steps up front almost always breaks down, because by step five the code has changed, a test has surfaced a new constraint, and half the original plan is stale.</p>
+<p>Instead, you give the engine a complicated objective and clear constraints, let it break off only the next small, verifiable changes from the current state of the repository, and pair that with a tiered admission policy where a human approves the high-level direction and risky boundaries without approving every routine step. I wrote that pattern up in <a href="https://thisistheway.to/engine/ambition-and-steering">Ambition, Self-Improvement &amp; Human Steering</a>, and added a final chapter on <a href="https://thisistheway.to/engine/multiplayer-coordination">Multiplayer &amp; Multi-Machine Coordination</a> for when more than one person or machine is feeding the same system, though right now my focus is still keeping a single machine rock solid.</p>
+<h2 id="coming-back-to-teach-it" tabindex="-1"><a class="heading-anchor" href="#coming-back-to-teach-it" aria-hidden="true">#</a> Coming back to teach it</h2>
+<p>Once the new engine was small enough to explain without hand-waving, I went back to the guide I had abandoned two weeks earlier and rewrote it from the ground up.</p>
+<p>None of the individual ingredients in <a href="https://thisistheway.to/engine">Build a Continuous Software Engine</a> are brand new. They come from ordinary distributed systems engineering, testing, the loop I started practicing last December around turning agent misses into systemic improvements, and what a lot of engineers have been sharing in the open this past year. Getting a machine to run overnight without falling over is only the start, and I am still trying to prove whether it produces better software over weeks and months instead of just more commits. If you have been watching the same talks and trying to build your own machine, I hope the guide saves you a few of the dead ends I ran into, and I would genuinely love to hear what breaks when you try it.</p>
+
+      
+
+
+
+      
+
+      
+      
+      <aside class="post-cta" aria-labelledby="post-cta-heading">
+  <h2 id="post-cta-heading" class="post-cta-heading">Thanks for reading</h2>
+  <ul class="post-cta-actions">
+    <li><a href="https://news.ycombinator.com/submitlink?u=https://jonmagic.com/posts/building-a-continuous-software-engine-the-hard-way/&t=Building a Continuous Software Engine the Hard Way" rel="noopener noreferrer" target="_blank" data-plausible-event-name="outbound-cta" data-plausible-event-target="hn-submit">Share on Hacker News</a></li>
+    <li><a href="https://github.com/jonmagic/jonmagic.com/discussions" data-plausible-event-name="outbound-cta" data-plausible-event-target="site-discussions">Start a discussion</a></li>
+    <li><a href="/posts/" data-plausible-event-name="internal-cta" data-plausible-event-target="cta-to-posts">More writing</a></li>
+    <li><a href="/projects/" data-plausible-event-name="internal-cta" data-plausible-event-target="cta-to-projects">Projects</a></li>
+    <li><a href="https://github.com/jonmagic" data-plausible-event-name="outbound-cta" data-plausible-event-target="github-jonmagic">Follow on GitHub</a></li>
+  </ul><a class="post-merch-cta"
+     href="/merch/"
+     aria-label="Browse jonmagic.com merch"
+     data-plausible-event-name="internal-cta"
+     data-plausible-event-target="post-merch-shop">
+    <span class="post-merch-copy">
+      <strong>Browse current merch designs</strong>
+      <span>Browse the merch shop →</span>
+    </span>
+  </a></aside>
+
+      
+    </main>
+  </div>
+  
+  <div class="page">
+    <footer>
+  <p class="footer-line">
+    © Jonathan Hoyt <span id="year"></span> — built with ❤️ and an LLM in a loop
+  </p>
+</footer>
+
+  </div>
+  <script src="/js/site.js"></script>
+</body>
+</html>

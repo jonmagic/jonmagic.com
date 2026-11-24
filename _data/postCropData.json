@@ -71,12 +71,6 @@
     "xPercent": 61.25000000000001,
     "yPercent": 0
   },
-  "trying-over-and-over-to-build-a-continuous-software-machine": {
-    "x": 63,
-    "y": 17,
-    "xPercent": 78.75,
-    "yPercent": 85
-  },
   "trusted-does-not-mean-unlimited": {
     "x": 13,
     "y": 11,
@@ -699,6 +693,12 @@
     "x": 62,
     "y": 12,
     "xPercent": 77.5,
+    "yPercent": 60
+  },
+  "building-a-continuous-software-engine-the-hard-way": {
+    "x": 4,
+    "y": 12,
+    "xPercent": 5,
     "yPercent": 60
   },
   "buffalo-technology-please-redeem-yourself": {
