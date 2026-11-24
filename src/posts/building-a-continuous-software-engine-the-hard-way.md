@@ -19,6 +19,8 @@ A few minutes earlier, someone else in the room had asked what I actually mean b
 
 Getting something to simply run overnight without wedging itself has been much harder than the demos make it look. It is still early, maybe too early to tell for sure, since the newest version has only been running live for about a day. Even so, it survived its first full night across three live repositories, feels right in a way none of my earlier attempts did, and finally gave me enough clarity to publish [Build a Continuous Software Engine](https://thisistheway.to/engine) alongside the [AI-assisted engineering guide](https://thisistheway.to/ai) I published earlier this year on `thisistheway.to`. This post is the messier story behind that guide, trying over and over until I understood the machinery well enough to teach it.
 
+*Already read this yesterday? Jump straight to the [November 24 update](#update%2C-november-24) at the bottom for how night two went.*
+
 > [!NOTE]
 > **Please note most problems do not need a continuous engine like this.** I would not use one to write a blog post, knock out a one-session feature, explore early product or UI design, or touch sensitive credentials and irreversible production changes without real sandboxing. It earns its keep on multi-day or multi-week work you can verify with tests, specs, or an existing system, like building a library or storage engine, migrating a codebase between languages or frameworks, paying down years of technical debt and disjointed docs, or hardening an existing service with edge-case tests and consistent instrumentation.
 
@@ -96,3 +98,15 @@ Instead, you give the engine a complicated objective and clear constraints, let 
 Once the new engine was small enough to explain without hand-waving, I went back to the guide I had abandoned two weeks earlier and rewrote it from the ground up.
 
 None of the individual ingredients in [Build a Continuous Software Engine](https://thisistheway.to/engine) are brand new. They come from ordinary distributed systems engineering, testing, the loop I started practicing last December around turning agent misses into systemic improvements, and what a lot of engineers have been sharing in the open this past year. Getting a machine to run overnight without falling over is only the start, and I am still trying to prove whether it produces better software over weeks and months instead of just more commits. If you have been watching the same talks and trying to build your own machine, I hope the guide saves you a few of the dead ends I ran into, and I would genuinely love to hear what breaks when you try it.
+
+## Update, November 24
+
+The engine ran overnight again across all three repositories, landing 109 autonomous commits over the past 24 hours (54 of them after I published this post last night).
+
+It still needed a bit of steering and a few small fixes through the night. Before bed I had broadened the ambition docs so routine work stopped waiting on human approval and then it nudged the storage engine to move from profiling to shipping real optimizations, and a handful of boring systems bugs turned up on the engine itself, like a short retry backoff triggering duplicate planning, dangling handles blocking process exit, and brief network blips interrupting claim renewals.
+
+Since that last fix landed at 3:14 AM, there have been zero interventions. All three loops have been running cleanly on their own for more than four hours straight, riding out real transient network timeouts without losing work.
+
+What shipped overnight also felt like a clear step up from night one. The engine built out its own multi-project local dashboard with pause, retry, and approval controls, and even noticed that module approaching the 450-line cap and split it up on its own. The streaming library shipped real stateful operators like recoverable session windows and hopping-window joins. And the storage engine moved past diagnostic benchmarks to land real production speedups on its write-ahead log and compaction paths (including roughly 2× to 3× throughput gains on writes and checksums), while still honestly reverting four other candidates that regressed latency or memory.
+
+It is still only 48 hours in, and I am sure more edge cases are waiting, but watching the interventions taper off while the work landing gets more substantive is the first real sign that this setup is starting to hold.
