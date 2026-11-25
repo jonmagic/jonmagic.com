@@ -9,6 +9,13 @@ description: >-
 featured: 1
 new: true
 accent: green
+further_thinking:
+  - date: 2026-10-25
+    title: The new set of problems for engineers to solve
+    url: https://www.katelynlesse.com/blog/new-problems-for-engineers-to-solve
+    author: Katelyn Lesse
+    note: >-
+      Katelyn maps out the systems problems waiting right past a single local engine, including stateful idle-heavy runtimes, agent identity and long-running authorization, strong sandboxed isolation against prompt injection and unpatched vulnerabilities, and tamper-proof tracing with real kill switches. My post only nods to sandboxing as future work, and hers lays out why those infrastructure and security layers are where a lot of the real engineering work lives next.
 ---
 
 Earlier today a colleague asked me what happened to the autonomous agent harness I was demoing last week.
